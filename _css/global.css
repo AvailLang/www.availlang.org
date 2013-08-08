@@ -1,8 +1,4 @@
 @charset "UTF-8";
-/* Simple fluid media
-   Note: Fluid media requires that you remove the media's height and width attributes from the HTML
-   http://www.alistapart.com/articles/fluid-images/ 
-*/
 img, object, embed, video {
 	max-width: 100%;
 }
@@ -11,70 +7,325 @@ img, object, embed, video {
 	width:100%;
 }
 
-/*
-	Dreamweaver Fluid Grid Properties
-	----------------------------------
-	dw-num-cols-mobile:		5;
-	dw-num-cols-tablet:		8;
-	dw-num-cols-desktop:	10;
-	dw-gutter-percentage:	25;
-	
-	Inspiration from "Responsive Web Design" by Ethan Marcotte 
-	http://www.alistapart.com/articles/responsive-web-design
-	
-	and Golden Grid System by Joni Korpi
-	http://goldengridsystem.com/
-*/
-
 /* Mobile Layout: 480px and below. */
 
-.gridContainer {
-	margin-left: auto;
-	margin-right: auto;
-	width: 87.36%;
-	padding-left: 1.82%;
-	padding-right: 1.82%;
+
+/********** Overrides of default HTML styling **********/
+a {
+	color: inherit;
+	text-decoration: inherit; /* no underline */
 }
-#LayoutDiv1 {
-	clear: both;
-	float: left;
-	margin-left: 0;
+
+a:hover {
+	color: rgb(160,64,1); /* dark orange */
+	text-shadow: 0 0 0.2em #F87};
+}
+
+a:visited {
+	color: inherit;
+}
+
+body {
+	font-family: 'Lato', sans-serif; 
+	font-weight: 300;
+	-webkit-font-smoothing: subpixel-antialiased;
+}
+
+code {
+	color: rgb(0, 0, 160); /* dark blue */
+	font-family: 'DejaVu Sans Mono', Consolas, 'Lucida Console', Menlo, Monaco, monospace, sans-serif;
+}
+
+h1 {
+	font-family: 'Raleway', sans-serif;
+}
+h2 {
+	color: rgb(0,90,0);
+
+	font-family: 'Raleway', sans-serif;
+	font-size: 22px;
+	
+	margin-top: 22px;
+	margin-bottom: 11px;
+}
+h3 {
+	color: rgb(0,90,0);
+
+	font-family: 'Raleway', sans-serif;
+	font-size: 19px;
+
+	margin-bottom: 18px;	
+}
+h4 {
+	color: rgb(0,90,0);
+
+	font-family: 'Raleway', sans-serif;
+	font-size: 15px;
+
+	margin-bottom: 16px;	
+}
+h5 {
+	color: rgb(0,90,0);
+
+	font-family: 'Raleway', sans-serif;
+	font-size: 12px;
+
+	margin-bottom: 14px;
+}
+
+/********** Custom visual styles **********/
+
+body.gradientLogo {
+	background-image: url(/_images/GreenBackground2.png);
+	background-repeat: no-repeat;
+	background-color: rgb(248,248,248); 
+}
+
+.no-margin {
+	margin: 0, 0, 0, 0;
+}
+
+.no-padding {
+	padding: 0, 0, 0, 0;
+}
+
+.text-highlight {
+	text-align: center;
+}
+
+
+/********** Page structure **********/
+
+  /*** Page Header ***/
+
+.headerWrapper {
+	height: 89px;
 	width: 100%;
-	display: block;
+	display: table-cell;
+	vertical-align: middle;
+
 }
+
+.header {
+	color: rgb(0,60,0);
+
+	font-family: 'Raleway', sans-serif;
+
+	/* Right-align the text and adjust for a small screen */
+	padding-left: 180px;
+	padding-right: 10px;
+	padding-bottom: 5px;
+	text-align: right;
+	font-size: 20px;
+	line-height: 20px;
+}
+
+
+  /*** Page Content ***/
+
+.mainWrapper {
+	width: 100%;
+}
+
+
+     /*** Navigation Bar ***/
+
+.navWrapper {
+	/* Default to vertical inline */
+}
+
+.navigation {
+	margin-left: 14px;
+	margin-bottom: 14px;
+
+	/* Set down from the title area */
+	margin-top: 14px;
+}
+
+.navSection {
+	margin-bottom: 14px;
+}
+
+.navSectionHeader {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+
+	color: rgb(0,90,0);
+	font-family: 'Raleway', sans-serif;
+	font-size: 20px;
+}
+
+.navLinks {
+	padding-left: 12px;
+	margin-top: 2px;
+}
+
+.navLink {
+	padding-top: 5px;
+	padding-bottom: 5px;
+		
+	color: rgb(0,50,0);
+	text-decoration: none;
+
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 16px;
+}
+
+
+     /*** Main Content ***/
+
+.contentWrapper {	
+	/* Default to no left margin because of vertical inline */
+}
+
+.content {
+	background-color: rgb(255,255,255);
+
+	/* Set down from inline navigation menu, and inset a small amount for small screens */
+	margin-top: 14px;
+	padding: 20px;	
+}
+
+.shadow {
+	-moz-box-shadow: 0 0 10px #888;
+	-webkit-box-shadow: 0 0 10px #888;
+	box-shadow: 0 0 10px #888;
+	/* For IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=10, Direction=0, Color='#808080')";
+	/* For IE 5.5 - 7 */
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=10, Direction=0, Color='#808080');
+}
+
+
+       /*** Content Styles ***/
+
+.page-title {
+	margin-top: 0px;
+	padding-top: 0px;
+	font-family: 'Raleway', sans-serif;
+	font-size: 20px;
+	line-height: 20px;
+}
+
+.restricted-width-container {
+	display: block;
+	white-space: nowrap;
+}
+
+.code-block {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	padding: 15px;	
+	border-radius: 15px;
+
+	font-family: 'DejaVu Sans Mono', Consolas, 'Lucida Console', Menlo, Monaco, monospace, sans-serif;
+	font-size: 13px;
+	display: block;
+	line-height: 13px;
+	overflow: auto;
+	tab-size: 4;
+	text-align: left;
+	white-space: pre;
+	word-wrap: normal;
+
+	/* Slight inset for small screen */
+	margin-left: 20px;
+	margin-right: 20px;
+}
+.bad-code {
+	background-color: rgb(255, 221, 244); /* reds */
+	color: rgb(112, 32, 32);
+}
+
+.good-code {
+	background-color: rgb(226, 232, 255); /* blues */
+	color: rgb(0, 0, 160);
+}
+
+
+.book-navigation {
+	display: block;
+	height: 39px;
+}
+
+
+  /*** Footer ***/
+
+.footerWrapper {
+	width: 100%;
+}
+
+.footer{
+	/* layout */
+	margin-left: 14px;
+	margin-right: 14px;
+	margin-bottom: 20px;
+	padding-top: 20px;
+}
+
+
 
 /* Tablet Layout: 481px to 768px. Inherits styles from: Mobile Layout. */
 
 @media only screen and (min-width: 481px) {
-.gridContainer {
-	width: 90.675%;
-	padding-left: 1.1625%;
-	padding-right: 1.1625%;
-}
-#LayoutDiv1 {
-	clear: both;
-	float: left;
-	margin-left: 0;
-	width: 100%;
-	display: block;
-}
+
+	.header {
+		/* Left-align text against the logo */
+		padding-left: 184px; 
+		text-align: left;
+		font-size: 24px;	
+		line-height: 23px;
+	}
+
+
+	.navWrapper {
+		/* Float to the left of the content */
+		float: left;
+	}
+	
+	.navigation {
+		/* Readjust for left float */
+		margin-top: 0px;
+	}
+	
+	
+	.contentWrapper {	
+		/* To allow for floated navigation pane */
+		margin-left: 150px;
+	}
+		
+	.content {
+		/* Set the white content pane in from the sides of the page */
+		margin: 20px;
+	}
+	
+	.code-block {
+		/* Set in farther since the page is larger */
+		margin-left: 35px;
+		margin-right: 35px;
+	}
+
 }
 
 /* Desktop Layout: 769px to a max of 1232px.  Inherits styles from: Mobile Layout and Tablet Layout. */
 
 @media only screen and (min-width: 769px) {
-.gridContainer {
-	width: 88.2%;
-	max-width: 1232px;
-	padding-left: 0.9%;
-	padding-right: 0.9%;
-	margin: auto;
-}
-#LayoutDiv1 {
-	clear: both;
-	float: left;
-	margin-left: 0;
-	width: 100%;
-	display: block;
-}
+	.navLink {
+	}
+
+
+	.content {
+		/* Increased padding when the screen width is a reasonable size */
+		padding: 40px;
+	}
+	
+	.code-block {
+		/* Set in even more fartherer since the page is way big */
+		margin-left: 45px;
+		margin-right: 45px;
+	}
+	
 }

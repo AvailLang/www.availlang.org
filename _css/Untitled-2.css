@@ -1,0 +1,254 @@
+@charset "UTF-8";
+img, object, embed, video {
+	max-width: 100%;
+}
+/* IE 6 does not support max-width so default to width 100% */
+.ie6 img {
+	width:100%;
+}
+
+
+/* Mobile Layout: 480px and below. */
+
+
+/********** Overrides of default HTML styling **********/
+a {
+	color: inherit;
+	text-decoration: inherit; /* no underline */
+}
+
+a:hover {
+	color: rgb(160,64,1); /* dark orange */
+}
+
+a:visited {
+	color: inherit;
+}
+
+
+code {
+	color: rgb(0, 0, 160); /* dark blue */
+	font-family: Consolas, 'Lucida Console', Menlo, Monaco, 'DejaVu Sans Mono', monospace, sans-serif; /* fixedwidth fonts */
+}
+
+h1 {
+}
+h2 {
+	color: rgb(0,90,0);
+	font-size: 18px;
+	font-weight: 700;
+}
+h3 {
+	margin-top: 0px;
+	
+	color: rgb(0,90,0);
+	font-size: 16px;
+	font-weight: 700;
+}
+h4 {
+	margin-top: 0px;
+
+	color: rgb(0,90,0);
+	font-size: 14px;
+	font-weight: 700;
+}
+h5 {
+	color: rgb(0,90,0);
+	font-size: 12px;
+	font-weight: 700;
+}
+
+/********** Custom visual styles **********/
+
+/* (single-use) */
+body.gradientLogo {
+	background-image: url(/_images/GreenBackground2.png);
+	background-repeat: no-repeat;
+	background-color: rgb(248,248,248); 
+}
+
+/* (reusable) */
+.shadow {
+	-moz-box-shadow: 0 0 10px #888;
+	-webkit-box-shadow: 0 0 10px #888;
+	box-shadow: 0 0 10px #888;
+	/* For IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=10, Direction=0, Color='#808080')";
+	/* For IE 5.5 - 7 */
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=10, Direction=0, Color='#808080');
+}
+
+.restricted-width-container {
+	display: block;
+	white-space: nowrap;
+}
+
+.code-block {
+	margin-bottom: 15px;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 15px;
+	padding: 15px;
+	
+	border-radius: 15px;
+
+	font-family: 'DejaVu Sans Mono', Consolas, 'Lucida Console', Menlo, Monaco, 	monospace, sans-serif;	
+	display: block;
+	line-height: 15px;
+	overflow: auto;
+	tab-size: 4;
+	text-align: left;
+	white-space: pre;
+	word-wrap: normal;
+
+}
+.bad-code {
+	background-color: rgb(255, 221, 244); /* reds */
+	color: rgb(112, 32, 32);
+}
+
+.good-code {
+	background-color: rgb(226, 232, 255); /* blues */
+	color: rgb(0, 0, 160);
+}
+
+.navLinks {
+	padding-left: 20px;
+	margin-top: 2px;
+}
+
+.navLink {
+	padding-top: 5px;
+	padding-bottom: 5px;
+		
+	color: rgb(0,50,0);
+	text-decoration: none;
+	text-transform:uppercase;
+	font-size: 12px;
+}
+
+.book-navigation {
+	display: block;
+	height: 39px;
+}
+
+
+
+
+/********** Page structure **********/
+
+.headerWrapper {
+	height: 89px;
+	width: 100%;
+}
+
+.mainWrapper {
+	width: 100%;
+}
+
+.navWrapper {
+}
+
+.contentWrapper {	
+	margin-left: 0px;
+}
+
+.footerWrapper {
+	width: 100%;
+}
+
+
+
+.header {
+	/* layout */
+	padding-top: 19px;
+	margin-left: 184px; /* text to the right of the logo in the background */
+
+    /* text style */
+	color: rgb(0,60,0);
+	line-height: 23px;
+	font-size: 24px;
+	font-weight: 800;
+}
+
+
+.navigation {
+	/* layout */
+	margin-top: 14px;
+	margin-left: 14px;
+	margin-bottom: 14px;
+}
+
+.navSection {
+	margin-bottom: 14px;
+}
+
+.navSectionHeader {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.content {
+	/* layout */
+	margin-top: 14px;
+	padding: 15px;
+	
+	/* style */
+	background-color: rgb(255,255,255);
+}
+
+.footer{
+	/* layout */
+	margin-left: 14px;
+	margin-right: 14px;
+	margin-bottom: 20px;
+	padding-top: 20px;
+}
+
+
+
+/* Tablet Layout: 481px to 768px. Inherits styles from: Mobile Layout. */
+
+@media only screen and (min-width: 481px) {
+.code-block {
+	margin-left: 35px;
+	margin-right: 35px;
+}
+
+.navWrapper {
+	float: left;
+}
+
+.contentWrapper {	
+	margin-left: 150px;
+}
+
+.header {
+	padding-top: 30px;
+}
+
+.navigation {
+	margin-top: 0px;
+}
+
+.content {
+	/* layout */
+	margin: 20px;
+	
+	/* style */
+	background-color: rgb(255,255,255);
+}
+
+}
+
+/* Desktop Layout: 769px to a max of 1232px.  Inherits styles from: Mobile Layout and Tablet Layout. */
+
+@media only screen and (min-width: 769px) {
+.code-block {
+	margin-left: 45px;
+	margin-right: 45px;
+}
+
+}
