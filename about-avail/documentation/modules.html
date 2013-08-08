@@ -1,0 +1,178 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+<head>
+<link href='http://fonts.googleapis.com/css?family=Raleway:700|Lato:300,400' rel='stylesheet' type='text/css'>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Avail Documentation - Modules</title>
+<link href="/_css/boilerplate.css" rel="stylesheet" type="text/css">
+<link href="/_css/global.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="gradient-logo">
+<div class="header-wrapper">
+  <a class="header-text" href="/index.html">The Avail Programming Language</a>
+</div>
+<div class="main-wrapper">
+  <div class="nav-wrapper">
+    <div class="navigation">
+      <div class="nav-section">
+        <div class="nav-section-header">About Avail</div>
+        <div class="nav-links">
+          <div><a class="nav-link" href="/about-avail/introduction/index.html">Introduction</a></div>
+          <div><a class="nav-link" href="/about-avail/history/index.html">History</a></div>
+          <div><a class="nav-link" href="/about-avail/newsletters/index.html">Newsletters</a></div>
+          <div><a class="nav-link" href="/about-avail/documentation/index.html">Documentation</a></div>
+          <div><a class="nav-link" href="/about-avail/glossary/index.html">Glossary</a></div>
+          <div><a class="nav-link" href="/about-avail/trac/index.html">Trac</a></div>
+        </div>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">Using Avail</div>
+        <div class="nav-links">
+          <div><a class="nav-link" href="/get-avail/licensing/index.html">Licensing</a></div>
+        </div>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-header">About Us</div>
+        <div class="nav-links">
+          <div><a class="nav-link" href="/about-us/philosophy/index.html">Philosophy</a></div>
+          <div><a class="nav-link" href="/about-us/team/index.html">Team</a></div>
+          <div><a class="nav-link" href="/about-us/blogs/index.html">Blogs</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content-wrapper">
+    <div class="content shadow">
+  
+  <section>
+  <div class="no-margin no-padding">
+<h2 class="content-title">Modules</h2>
+
+<p><h3>Programming in the Large</h3>
+In Avail, programming in the large is accomplished by building and organizing a project as hierarchies of <em>modules</em>. An Avail module offers services to its clients, i.e. other Avail modules, by exporting messages. To implement these services, a module may extend or use other modules and define program elements such as constants, variables, methods, and macros.
+</p><p>
+<h3>Composition of a Module</h3>
+A module comprises a [Modules#Header header] and a [Modules#Body body]. Currently the header is a hard-wired syntactical construct which introduces the source text to the Avail compiler. (NB: In the future this construct may be provided by means of a special bootstrap macro that may be replaced or augmented by an Avail developer). A body consists of zero or more program elements. While some of these may be arbitrary statements, most are expected to define constants, variables, and methods.
+</p>
+<h4>Header</h4>
+<p>
+A <em>header</em> has the following syntax:
+</p>
+<div class="restricted-width-container">
+<div class="good-code code-block">Module
+   "MyModule"
+Versions
+   "Current Version", "Supported Previous Version"
+Extends
+   "PublicA" ("2.0", "1.0") = ("Message1", "Message2"),
+   "PublicB" ("3.0"),
+   "PublicC" = ("Message3", "Message4"),
+   "PublicD"
+Uses
+   "PrivateE" ("5.0", "4.0") = ("Message5", "Message6"),
+   "PrivateF" ("6.0"),
+   "PrivateG" = ("Message7", "Message8"),
+   "PrivateH"
+Names
+   "do something with_",
+   "do something else with_"
+Body
+</div></div>
+<p>
+The <code>Module</code> keyword indicates the section that establishes the <em>local name</em> of the module. This name appears in a single string literal following the section keyword. During compilation, the compiler will reject a module if the local name does not match the name of the enclosing file sans the <code>.avail</code> extension. That is, a module <code>"Foo"</code> must reside in a file <code>"Foo.avail"</code>.
+</p><p>
+The optional <code>Versions</code> section, introduced by the eponymous keyword, indicates all supported versions of the module. After the section keyword, each of the zero or more string literals (separated by commas) provided corresponds to a supported version. By convention, newer versions appear to the left of older ones. The first version should therefore be the current version, and the last version should be the next version that will go out of support. This is only a convention; the compiler does not attach any significance to the ordering. The contents of these string literals may be arbitrary, but should reflect the documented versions of the module. This allows module vendors to establish their own conventions for versioning. It is recommended that vendors retain, in comments at the end of this section, the names of (previous) versions which are no longer supported. An empty or nonexistent <code>Versions</code> section indicates that the module is not versioned.
+</p><p>
+The <code>Names</code> keyword introduces the methods (defined or extended with additional functions) within the module that have been specifically selected to be available (public) for clients that extend or use the module. After the section keyword, each of the zero or more string literals (separated by commas) is the name of a method that is intended to be public. Note that module-level constants and variables cannot be directly exported. It is trivial, however, to return values (i.e. constants) and containers (i.e. variables) from exported methods, thereby effectively bypassing this restriction. All implementations of a method present in modules which have been recursively imported are eligible for lookup if the method name is visible to the importing module through any source. All methods not named here or named in other export sections of imported modules are private to the module.
+</p><p>
+The <code>Extends</code> keyword introduces the modules whose public methods will, by virtue of having been imported here, become publicly accessible through this module (when the current module itself is extended or used). After the section keyword, each of the zero or more string literals (separated by commas) is the name of a module to be extended. These local names must be resolvable to an absolute file reference via the [Modules#Module_Name_Resolution standard module name resolution rules]. Each local module name may optionally be followed by a compatible versions list. It may also be followed by a filtered import list (which is always preceded by an equals). If both appear, the versions list must appear before the filtered import list.
+</p><p>
+A compatible versions list is a parenthesized list of zero or more string literals (separated by commas) that represent compatible versions of the module to be extended. If the resolved module does not list any of the same versions mentioned in this list, then the compiler aborts compilation and produces an error message that indicates that version incompatibility was detected. If the compatible versions list is omitted for a module, then the compiler will not attempt to enforce compatibility, which may result in syntax or runtime errors.
+</p><p>
+A filtered import list is a parenthesized list of zero or more string literals (separated by commas) that match the names of specific public methods to be imported from the module. If the filtered import list is omitted for a module, then it defaults to the entire set of public methods exported by that module. Each method in the filtered import list will be re-exported to a client that extends or uses the importing module.
+</p><p>
+The <code>Uses</code> section is syntactically identical to the <code>Extends</code> section. It also checks version compatibility of imported modules, filters foreign names, and makes foreign names available for use. It differs in that messages imported from modules in this section have visibility private to the importing module; they will not be re-exported to a client that extends or uses the importing module. 
+</p>
+<h4>Body</h4>
+<p>
+The <em>body</em>, i.e. the text following the <code>Body</code> keyword, will be understood by the compiler as a series of statements that should be evaluated in lexical order. These may be arbitrary statements with arbitrary side effects. Pragmatically, most of these statements should define new constants, variables, and messages, though module-level statements may also implement useful unit tests. By convention, a module's newly defined messages should either <code>1)</code> introduce new messages or <code>2)</code> override imported messages to specialize locally defined types.
+</p>
+<h3>Organization of Modules</h3>
+<p>
+Every accessible module resides within an Avail <em>root</em> via zero or more nested packages. A <em>package</em> comprises a representative and zero or more other modules. A <em>package representative</em> is an ordinary module whose local name matches the name of the package in which it resides. Modules coexisting together in a package are said to be <em>siblings</em>.
+</p><p>
+Roots and packages correspond to filesystem directories, while package representatives and modules correspond to regular files of <code>UTF-8</code> encoded Avail source text. Roots are specified to an Avail runtime by way of an Avail module path.
+</p>
+<h4>The Avail Module Path</h4>
+<p>
+The <em>Avail module path</em> comprises an ordered list of <em>root bindings</em>. A root binding uniquely maps a root name to an absolutely specified root. A <em>root name</em> typically "belongs" to an Avail vendor in some legal or conventional way. The Avail development team strongly encourages developers to use registered trademarks or registered domain names exclusively as root names. By convention (only) the root name for the Avail standard library is "avail".
+</p><p>
+An Avail module path has the following syntax:
+<code>avail=/usr/lib/avail;vendorX=/absolute/location/of/vendorX/modules</code>
+</p><p>
+That is, the Avail module path is a semicolon (<code>;</code>)-separated list of root bindings. Each root binding centers around an equals (<code>=</code>), to the left of which is a root name and to the right of which is an absolute filesystem path where the modules founded at the root name reside.
+</p><p>
+Typically the Avail module path is provided to the runtime by an environment variable like <code>AVAIL_MODULE_PATH</code>, a virtual machine property, a command line argument, or method argument passed by a host application that embeds Avail. The Avail module path is provided when the runtime is first created (e.g. by launching the virtual machine) and typically remains immutable throughout the life of the runtime.
+</p>
+<h4>Canonical Name</h4>
+<p>
+Though a module is only permitted to specify local names in its header, every module possesses an unambiguous <em>canonical name</em> that uniquely identifies it to an Avail runtime. The process of module name resolution attempts to resolve a local name used by a module to an accessible canonical name. Every valid canonical name is founded at a root name specified on the Avail module path and reflects its module's position within a hierarchy of packages.
+</p><p>
+A canonical name has the following syntax:
+<code>/root/package1/package2/package3/localName</code>
+</p><p>
+A canonical name comprises a root name, the names of zero or more intervening packages in descending hierarchical order, and a local name. If the local name corresponds to a package, then it actually refers to the representative within that package.
+</p><p>
+Here are several sample canonical names:
+<code>/avail/Kernel/Bootstrap/Pragmas</code>
+<code>/avail/Kernel/IO/Input File</code>
+<code>/elushae.org/Proteus</code>
+</p><p>
+A canonical name serves to locate a module _logically_ to an Avail runtime as well as _physically_ to an Avail compiler hunting for source text or an Avail linker hunting for compiled objects.
+</p>
+<h3>Module Name Resolution</h3>
+<p>
+As mentioned above, a module is permitted to reference other modules in its header via local names only. The Avail runtime follows a standard procedure to resolve a local name to a canonical name and then ultimately to an absolute file reference:
+<ul>
+	<li>Express the local name as a fully-qualified canonical name by chasing the packages within which the referrer is nested back to a root. A module <code>N</code> that resides, in turn, within a package <code>B</code>, a package <code>A</code>, and a root <code>P</code> will yield a canonical name of <code>/P/A/B/N</code>. If it extends or uses a module with local name <code>M</code>, then that package's canonical name will be <code>/P/A/B/M</code>. We will now demonstrate the resolution of local name <code>M</code> and starting canonical name <code>/P/A/B/M</code>.</li>
+	<li>If a [Modules#Module_Renaming module renaming rule] exists that maps <code>/P/A/B/M</code> to some other canonical name, say <code>/Q/A/B/C/D/M'</code>, then apply the rule to yield the substitute canonical name.</li>
+	<li>Let us say that the canonical name obtained thus far for local name <code>M</code> is now <code>/P/A/B/M</code>. If a module or package exists at <code>/P/A/B/M</code>, then use this as the canonical name. If no such module or package exists, then search the enclosing packages successively until the root is reached. That is, if <code>/P/A/B/M</code> does not correspond to a module or package, then try <code>/P/A/M</code> and then <code>/P/M</code>.</li>
+	<li>Let us say that the search for local name <code>M</code> failed. Let us also say that the Avail module path defines roots <code>S</code>, <code>P</code>, <code>Q</code>, and <code>R</code> in this order. In turn, try each of the canonical names <code>/S/M</code>, <code>/Q/M</code>, and <code>/R/M</code>. Yield the first canonical name that resolves to a module or package. If no such module or package can be found, then resolution has failed.</li>
+	<li>Let us say that the search for local name <code>M</code> resolved to canonical name <code>/P/A/M</code>. Let us also say that the root name <code>P</code> corresponds to the root <code>C:\Avail\Third Parties\Sensational</code>. Convert the canonical name <code>/P/A/M</code> to a file reference by translating the the root name and then appending the extension <code>.avail</code> onto each non-root name. Yield the file reference <code>C:\Avail\Third Parties\Sensational\A.avail\M.avail</code>.</li>
+	<li>If <code>C:\Avail\Third Parties\Sensational\A.avail\M.avail</code> is a regular file, then resolution has completed; this is the file reference that the resolver should answer.</li>
+	<li>If <code>C:\Avail\Third Parties\Sensational\A.avail\M.avail</code> is a directory, then redirect the file reference to the package representative: <code>C:\Avail\Third Parties\Sensational\A.avail\M.avail\M.avail</code>. If this file reference is a regular file, then resolution has completed; this is the file reference that the resolver should answer. Otherwise resolution has failed.</li>
+</ul>
+</p>
+<h4>Module Renaming</h4>
+<p>
+Note that modules other than representatives residing within packages that are siblings of the referrer are generally unnameable and therefore inaccessible. This is a design feature of the Avail module system. It effectively seals a package against access by modules that reside above it (i.e. closer to a root). This allows a package to hide modules private to its implementation while still permitting a package to designate a single module, the package representative, as a public interface usable by modules within the enclosing package only. Modules are permitted to "reach up" arbitrarily far and import any modules directly above them. This allows, for instance, two subsystems of an application, such as UI and logging, to interact with one another.
+</p><p>
+The system implementer (or equivalent role) may circumvent the usual module visibility rules by providing a <em>renames file</em>. A renames file enumerates zero or more substitution rules that transform a canonical name <code>M</code> into a canonical name <code>M'</code>. Once the substitution of <code>M'</code> for <code>M</code> has occurred, then the usual module name resolution rules take over to yield an absolute file reference.
+</p><p>
+A renames file has the following syntax:
+<code>"/R/A/B/C/D" -> "/R/A/B/E/F/G"</code>
+<code>"/R/X" -> "/R/Y"</code>
+<code>"/R/Z" -> "/R/Y/P/Q"</code>
+</p><p>
+That is, it comprises zero or more module renaming rules. The central feature of each rule is a right arrow (->) on the left of which is the source canonical name and on the right of which is the target canonical name. There are no restrictions about what canonical names may appear, thereby allowing the system implementer to arbitrarily redirect module accesses from within one package, even to modules that normally would not be visible. Note that module renaming rules are not applied recursively. Once a transformation has occurred, the standard module name resolution rules will proceed as normal.
+</p>
+</section>
+<section>
+<h5 class="return-link"><a href="./index.html">&lt; back to Documentation</a></h5>
+</section>
+    </div>
+  </div>
+  <div class="footerWrapper">
+    <div class="footer">© 2012-2013 The Avail Foundation, LLC</div>
+  </div>
+</div>
+</body>
+</html>

@@ -12,7 +12,8 @@ img, object, embed, video {
 
 /********** Overrides of default HTML styling **********/
 a {
-	color: inherit;
+	color: green;
+	font-weight: 400;
 	text-decoration: inherit; /* no underline */
 }
 
@@ -25,57 +26,63 @@ a:visited {
 	color: inherit;
 }
 
+b, strong { 
+	font-weight: 400;
+}
+
 body {
-	font-family: 'Lato', sans-serif; 
-	font-weight: 300;
+	margin: 0; 
+	font-size: 15px; 
+	line-height: 1.4; 
 	-webkit-font-smoothing: subpixel-antialiased;
 }
 
-code {
-	color: rgb(0, 0, 160); /* dark blue */
-	font-family: 'DejaVu Sans Mono', Consolas, 'Lucida Console', Menlo, Monaco, monospace, sans-serif;
+body, button, input, select, textarea { 
+	font-family: 'Lato', sans-serif; 
+	font-weight: 300; 
+	color: #222;
+}
+
+em {
+	font-style: italic;
 }
 
 h1 {
 	font-family: 'Raleway', sans-serif;
 }
 h2 {
-	color: rgb(0,90,0);
-
+	color: green;
 	font-family: 'Raleway', sans-serif;
 	font-size: 22px;
-	
-	margin-top: 22px;
+	padding-top: 16.5px;
 	margin-bottom: 11px;
 }
 h3 {
-	color: rgb(0,90,0);
-
+	color: green;
 	font-family: 'Raleway', sans-serif;
 	font-size: 19px;
-
-	margin-bottom: 18px;	
+	padding-top: 12px;
+	margin-bottom: 9.5px;	
 }
 h4 {
-	color: rgb(0,90,0);
-
+	color: green;
 	font-family: 'Raleway', sans-serif;
 	font-size: 15px;
-
-	margin-bottom: 16px;	
+	padding-top: 10px;
+	margin-bottom: 7.5px;	
 }
 h5 {
-	color: rgb(0,90,0);
-
+	color: green;
 	font-family: 'Raleway', sans-serif;
 	font-size: 12px;
-
-	margin-bottom: 14px;
+	padding-top: 8px;
+	margin-bottom: 6px;
 }
+
 
 /********** Custom visual styles **********/
 
-body.gradientLogo {
+body.gradient-logo {
 	background-image: url(/_images/GreenBackground2.png);
 	background-repeat: no-repeat;
 	background-color: rgb(248,248,248); 
@@ -98,18 +105,11 @@ body.gradientLogo {
 
   /*** Page Header ***/
 
-.headerWrapper {
+.header-wrapper {
 	height: 89px;
 	width: 100%;
 	display: table-cell;
 	vertical-align: middle;
-
-}
-
-.header {
-	color: rgb(0,60,0);
-
-	font-family: 'Raleway', sans-serif;
 
 	/* Right-align the text and adjust for a small screen */
 	padding-left: 180px;
@@ -120,17 +120,22 @@ body.gradientLogo {
 	line-height: 20px;
 }
 
+.header-text {
+	color: rgb(0,60,0); /* dark x 3 green - considerably darker than darkgreen */
+	font-family: 'Raleway', sans-serif;
+}
+
 
   /*** Page Content ***/
 
-.mainWrapper {
+.main-wrapper {
 	width: 100%;
 }
 
 
      /*** Navigation Bar ***/
 
-.navWrapper {
+.nav-wrapper {
 	/* Default to vertical inline */
 }
 
@@ -142,31 +147,31 @@ body.gradientLogo {
 	margin-top: 14px;
 }
 
-.navSection {
+.nav-section {
 	margin-bottom: 14px;
 }
 
-.navSectionHeader {
+.nav-section-header {
 	margin-top: 0px;
 	margin-bottom: 0px;
 	padding-top: 0px;
 	padding-bottom: 0px;
 
-	color: rgb(0,90,0);
+	color: rgb(0,90,0);  /* dark x 2 green - darker than darkgreen */
 	font-family: 'Raleway', sans-serif;
 	font-size: 20px;
 }
 
-.navLinks {
+.nav-links {
 	padding-left: 12px;
 	margin-top: 2px;
 }
 
-.navLink {
+.nav-link {
 	padding-top: 5px;
 	padding-bottom: 5px;
 		
-	color: rgb(0,50,0);
+	color: rgb(0,60,0);  /* dark x 3 green - considerably darker than darkgreen */
 	text-decoration: none;
 
 	font-size: 16px;
@@ -177,12 +182,12 @@ body.gradientLogo {
 
      /*** Main Content ***/
 
-.contentWrapper {	
+.content-wrapper {	
 	/* Default to no left margin because of vertical inline */
 }
 
 .content {
-	background-color: rgb(255,255,255);
+	background-color: white;
 
 	/* Set down from inline navigation menu, and inset a small amount for small screens */
 	margin-top: 14px;
@@ -202,12 +207,66 @@ body.gradientLogo {
 
        /*** Content Styles ***/
 
-.page-title {
+.content-title {
 	margin-top: 0px;
 	padding-top: 0px;
 	font-family: 'Raleway', sans-serif;
 	font-size: 20px;
 	line-height: 20px;
+	color: rgb(0,90,0);
+}
+
+.content-meta-info {
+	color: gray;
+	margin-top: -10px;
+	padding-top: -10px;
+	font-size: 14px;
+}
+
+.book-nav {
+	padding-top: 20px;
+	margin-bottom: -12px;
+	text-align: center;
+	list-style-type: none;
+}
+
+.book-nav-back {
+	display: inline;
+	text-align: left;
+
+	color: green;
+	font-family: 'Raleway', sans-serif;
+	font-size: 12px;
+}
+
+.book-nav-up {
+	display: inline;
+	text-align: center;
+
+	color: green;
+	font-family: 'Raleway', sans-serif;
+	font-size: 12px;
+}
+
+.book-nav-forward {
+	display: inline;
+	text-align: right;
+
+	color: green;
+	font-family: 'Raleway', sans-serif;
+	font-size: 12px;
+}
+
+.book-nav-spacer {
+	display: inline;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+	
+
+code {
+	color: rgb(0, 0, 160); /* dark blue */
+	font-family: 'DejaVu Sans Mono', Consolas, 'Lucida Console', Menlo, Monaco, monospace, sans-serif;
 }
 
 .restricted-width-container {
@@ -226,7 +285,9 @@ body.gradientLogo {
 	display: block;
 	line-height: 13px;
 	overflow: auto;
-	tab-size: 4;
+	-moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
 	text-align: left;
 	white-space: pre;
 	word-wrap: normal;
@@ -245,6 +306,11 @@ body.gradientLogo {
 	color: rgb(0, 0, 160);
 }
 
+.neutral-code {
+	background-color: #eeeeee; /* light grey */
+	color: rgb(0, 0, 160); /* dark blue */
+}
+
 
 .book-navigation {
 	display: block;
@@ -254,7 +320,7 @@ body.gradientLogo {
 
   /*** Footer ***/
 
-.footerWrapper {
+.footer-wrapper {
 	width: 100%;
 }
 
@@ -272,7 +338,7 @@ body.gradientLogo {
 
 @media only screen and (min-width: 481px) {
 
-	.header {
+	.header-wrapper {
 		/* Left-align text against the logo */
 		padding-left: 184px; 
 		text-align: left;
@@ -281,7 +347,7 @@ body.gradientLogo {
 	}
 
 
-	.navWrapper {
+	.nav-wrapper {
 		/* Float to the left of the content */
 		float: left;
 	}
@@ -292,7 +358,7 @@ body.gradientLogo {
 	}
 	
 	
-	.contentWrapper {	
+	.content-wrapper {	
 		/* To allow for floated navigation pane */
 		margin-left: 150px;
 	}
@@ -313,7 +379,7 @@ body.gradientLogo {
 /* Desktop Layout: 769px to a max of 1232px.  Inherits styles from: Mobile Layout and Tablet Layout. */
 
 @media only screen and (min-width: 769px) {
-	.navLink {
+	.nav-link {
 	}
 
 
