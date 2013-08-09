@@ -6,55 +6,20 @@
 <html class="">
 <!--<![endif]-->
 
-<head>
-<link href='http://fonts.googleapis.com/css?family=Raleway:700|Lato:300,400' rel='stylesheet' type='text/css'>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Avail Newsletters - E02: Good Things Come to Those Who Wait</title>
-<link href="/_css/boilerplate.css" rel="stylesheet" type="text/css">
-<link href="/_css/global.css" rel="stylesheet" type="text/css">
-</head>
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Avail Newsletters - E02: Good Things Come to Those Who Wait</title>
+	
+	</head>
 
-<body class="gradient-logo">
-<div class="header-wrapper">
-  <a class="header-text" href="/index.html">The Avail Programming Language</a>
-</div>
-<div class="main-wrapper">
-  <div class="nav-wrapper">
-    <div class="navigation">
-      <div class="nav-section">
-        <div class="nav-section-header">About Avail</div>
-        <div class="nav-links">
-          <div><a class="nav-link" href="/about-avail/introduction/index.html">Introduction</a></div>
-          <div><a class="nav-link" href="/about-avail/history/index.html">History</a></div>
-          <div><a class="nav-link" href="/about-avail/newsletters/index.html">Newsletters</a></div>
-          <div><a class="nav-link" href="/about-avail/documentation/index.html">Documentation</a></div>
-          <div><a class="nav-link" href="/about-avail/glossary/index.html">Glossary</a></div>
-          <div><a class="nav-link" href="/about-avail/trac/index.html">Trac</a></div>
-        </div>
-      </div>
-      <div class="nav-section">
-        <div class="nav-section-header">Using Avail</div>
-        <div class="nav-links">
-          <div><a class="nav-link" href="/get-avail/licensing/index.html">Licensing</a></div>
-        </div>
-      </div>
-      <div class="nav-section">
-        <div class="nav-section-header">About Us</div>
-        <div class="nav-links">
-          <div><a class="nav-link" href="/about-us/philosophy/index.html">Philosophy</a></div>
-          <div><a class="nav-link" href="/about-us/team/index.html">Team</a></div>
-          <div><a class="nav-link" href="/about-us/blogs/index.html">Blogs</a></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="content-wrapper">
-    <div class="content shadow">
-       <section>
-          <div class="no-margin no-padding">
-          
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+		
 <h2 class="content-title">Good Things Come to Those Who Wait</h2>
+		
 <div class="content-meta-info">Edition 2 - February 8, 2013</div>
 <p>
 In the last newsletter, vague claims were made that newsletters would be published weekly. (Ha!) Well… This claim was made back in October, rather giving the impression that Avail development has been standing still. I hope that the high frequency of blog posts has disabused you of this notion, even if you are disconsolate about the scarcity of newsletters.
@@ -69,22 +34,19 @@ Synchronization of the fibers themselves, within Avail code, is made possible vi
 </p><p>
 The Avail library also includes several parallel algorithms: <code>"For each of⁇_in parallel do_"</code> and <code>"map_in parallel through_"</code>. These behave like <code>"For each of⁇_do_"</code> and <code>"map_through_"</code>, their serial cousins, except that multiple fibers are used to process the elements. The current algorithms work only for tuples, but many more algorithms are coming soon.
 </p><p>
-The new module "Foundation Tests/Concurrency Tests" contains numerous examples of creating fibers, waiting for fibers to complete, retrieving final values produced by fibers, using synchronization devices, and using parallel algorithms. An addition to the site's <a href="https://www.availlang.org/documentation">documentation section</a> that describes Avail's concurrency model in greater detail is underway. Obviously there is much more to say about concurrency in Avail, and that will be the official venue for saying it.
+The new module "Foundation Tests/Concurrency Tests" contains numerous examples of creating fibers, waiting for fibers to complete, retrieving final values produced by fibers, using synchronization devices, and using parallel algorithms. An addition to the site's <a href="/about-avail/documentation.html">documentation section</a> that describes Avail's concurrency model in greater detail is underway. Obviously there is much more to say about concurrency in Avail, and that will be the official venue for saying it.
 </p><p>
 The next newsletter will celebrate (at least) the arrival of asynchronous file and socket I/O. Given the new architecture, these features should be trivial to build… so hopefully four months won't pass again! We are also working on hammering the kinks out of a license agreement so that you, dear reader, can actually get your hands on Avail.</p>
-</section>
-<section>
 <tr class="book-nav">
-<div class="book-nav">
-<li class="book-nav-back"><a class="book-nav-back" href="./E01.html">&lt; Previous</a></li>
-<li class="book-nav-spacer">|</li>
-<li class="book-nav-up"><a class="book-nav-up" href="./index.html">Return to Newsletters</a></li>
-</div></tr></section>
-    </div>
-  </div>
-  <div class="footerWrapper">
-    <div class="footer">© 2012-2013 The Avail Foundation, LLC</div>
-  </div>
-</div>
-</body>
+	<div class="book-nav">
+		<li class="book-nav-back"><a class="book-nav-back" href="./E01.html">&lt; Previous</a></li>
+		<li class="book-nav-spacer">|</li>
+		<li class="book-nav-up"><a class="book-nav-up" href="./index.html">Return to Newsletters</a></li>
+	</div>
+</tr>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
 </html>

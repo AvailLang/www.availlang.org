@@ -43,37 +43,26 @@ body, button, input, select, textarea {
 	color: #222;
 }
 
-em {
-	font-style: italic;
-}
-
-h1 {
+h1, h2, h3, h4, h5 {
 	font-family: 'Raleway', sans-serif;
+	color: green;
 }
 h2 {
-	color: green;
-	font-family: 'Raleway', sans-serif;
 	font-size: 22px;
 	padding-top: 16.5px;
 	margin-bottom: 11px;
 }
 h3 {
-	color: green;
-	font-family: 'Raleway', sans-serif;
 	font-size: 19px;
 	padding-top: 12px;
 	margin-bottom: 9.5px;	
 }
 h4 {
-	color: green;
-	font-family: 'Raleway', sans-serif;
 	font-size: 15px;
 	padding-top: 10px;
 	margin-bottom: 7.5px;	
 }
 h5 {
-	color: green;
-	font-family: 'Raleway', sans-serif;
 	font-size: 12px;
 	padding-top: 8px;
 	margin-bottom: 6px;
@@ -225,39 +214,29 @@ body.gradient-logo {
 
 .book-nav {
 	padding-top: 20px;
-	margin-bottom: -12px;
+	margin-bottom: -10px;
 	text-align: center;
 	list-style-type: none;
 }
 
-.book-nav-back {
+.book-nav-back, .book-nav-up, .book-nav-forward {
 	display: inline;
 	white-space: nowrap;
-	text-align: left;
-
 	color: green;
 	font-family: 'Raleway', sans-serif;
 	font-size: 12px;
+}
+
+.book-nav-back {
+	text-align: left;
 }
 
 .book-nav-up {
-	display: inline;
-	white-space: nowrap;
 	text-align: center;
-
-	color: green;
-	font-family: 'Raleway', sans-serif;
-	font-size: 12px;
 }
 
 .book-nav-forward {
-	display: inline;
-	white-space: nowrap;
 	text-align: right;
-
-	color: green;
-	font-family: 'Raleway', sans-serif;
-	font-size: 12px;
 }
 
 .book-nav-spacer {
@@ -328,11 +307,14 @@ code {
 }
 
 .footer{
-	/* layout */
 	margin-left: 14px;
 	margin-right: 14px;
 	margin-bottom: 20px;
 	padding-top: 20px;
+	color: gray;
+
+	/* Center align on small screen */
+	text-align: center;
 }
 
 
@@ -377,9 +359,13 @@ code {
 		margin-right: 35px;
 	}
 
+	.footer {
+		text-align: left;
+	}
+	
 }
 
-/* Desktop Layout: 769px to a max of 1232px.  Inherits styles from: Mobile Layout and Tablet Layout. */
+/* Desktop Layout: 769px and up.  Inherits styles from: Mobile Layout and Tablet Layout. */
 
 @media only screen and (min-width: 769px) {
 	.nav-link {

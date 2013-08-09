@@ -7,134 +7,61 @@
 <!--<![endif]-->
 
 <head>
-<link href='http://fonts.googleapis.com/css?family=Raleway:700|Lato:300,400' rel='stylesheet' type='text/css'>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Avail - History</title>
-<link href="/_css/boilerplate.css" rel="stylesheet" type="text/css">
-<link href="/_css/global.css" rel="stylesheet" type="text/css">
-</head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Avail - History</title>
+	
+	</head>
 
-<body class="gradient-logo">
-<div class="header-wrapper">
-  <a class="header-text" href="/index.html">The Avail Programming Language</a>
-</div>
-<div class="main-wrapper">
-  <div class="nav-wrapper">
-    <div class="navigation">
-      <div class="nav-section">
-        <div class="nav-section-header">About Avail</div>
-        <div class="nav-links">
-          <div><a class="nav-link" href="/about-avail/introduction/index.html">Introduction</a></div>
-          <div><a class="nav-link" href="/about-avail/history/index.html">History</a></div>
-          <div><a class="nav-link" href="/about-avail/newsletters/index.html">Newsletters</a></div>
-          <div><a class="nav-link" href="/about-avail/documentation/index.html">Documentation</a></div>
-          <div><a class="nav-link" href="/about-avail/glossary/index.html">Glossary</a></div>
-          <div><a class="nav-link" href="/about-avail/trac/index.html">Trac</a></div>
-        </div>
-      </div>
-      <div class="nav-section">
-        <div class="nav-section-header">Using Avail</div>
-        <div class="nav-links">
-          <div><a class="nav-link" href="/get-avail/licensing/index.html">Licensing</a></div>
-        </div>
-      </div>
-      <div class="nav-section">
-        <div class="nav-section-header">About Us</div>
-        <div class="nav-links">
-          <div><a class="nav-link" href="/about-us/philosophy/index.html">Philosophy</a></div>
-          <div><a class="nav-link" href="/about-us/team/index.html">Team</a></div>
-          <div><a class="nav-link" href="/about-us/blogs/index.html">Blogs</a></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="content-wrapper">
-    <div class="content shadow">
-  
-  <section>
-  <div class="no-margin no-padding">
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+		
 <h2 class="content-title">The History of Avail</h2>
+
 <p>
-In the 1980s and early 1990s I (<a href="https://www.availlang.org/team/mark">Mark</a>) learned a lot about programming.  There were plenty of languages and programming philosophies to study.  I followed a path through Basic, 6502 Assembly Language, Forth, Lisp, Smalltalk, and C.  There were plenty of other languages that got use, but these are the ones that shaped my early programming reflexes.  C++ showed up after a while, but I recognized that this was not a significant step forward for me.  Even C was more about filling in some blanks than learning anything fundamentally new.  For a few years there didn't seem to be any truly new programming languages.  I now understand that this was because I had been studying decades of existing work over a compressed timescale, like using Netflix to watch seasons at a time of a TV series, only to be disappointed when catching up to the current season or reaching the end of a cancelled series.  But the feeling at the time was real, and I knew something had to be done about it, so about 1993 I decided to bring together some of the ideas I had uncovered to try to extend the state of the art.  Some time around then I came up with the acronym AVAIL -- Advanced Value And Identity Language.
-
+In the 1980s and early 1990s I (<a href="/about-us/team/index.html#Mark">Mark</a>) learned a lot about programming.  There were plenty of languages and programming philosophies to study.  I followed a path through Basic, 6502 Assembly Language, Forth, Lisp, Smalltalk, and C.  There were plenty of other languages that got use, but these are the ones that shaped my early programming reflexes.  C++ showed up after a while, but I recognized that this was not a significant step forward for me.  Even C was more about filling in some blanks than learning anything fundamentally new.  For a few years there didn't seem to be any truly new programming languages.  I now understand that this was because I had been studying decades of existing work over a compressed timescale, like using Netflix to watch seasons at a time of a TV series, only to be disappointed when catching up to the current season or reaching the end of a cancelled series.  But the feeling at the time was real, and I knew something had to be done about it, so about 1993 I decided to bring together some of the ideas I had uncovered to try to extend the state of the art.  Some time around then I came up with the acronym AVAIL -- Advanced Value And Identity Language.
 </p><p>
-
 So I harvested what I could from existing languages.  There's no point reinventing ideas that have already been refined by others.  However, I recognized that my ideas and choices were not going to fit well together unless I made a radical departure from some traditions.  At the time I described it as choosing a point in design space that was far from other languages, like a genetic algorithm searching for a global maximum by choosing a new starting point for hill-climbing instead of making incremental improvements to existing language families.
-
 </p><p>
-
 Back then my primary language was Smalltalk, so I harvested more from it than from other languages.  Like flexible syntax that you could read aloud.  Or more generally, long, meaningful names.  And an axiomatically simple syntax that you could describe in under a page.  Forth is equally axiomatic, but it has no scalable organizational structure.  Smalltalk at the time had no namespace support, so it had something I think of as two-dimensional scale:  You could have globally named classes, and they could have globally named methods.  At small scales you can consider the two to be orthogonal, but as a system grows larger you begin to notice a vast increase in accidental polymorphism:  The same method name meaning two completely different things in different parts of the system.  Since a common technique in Smalltalk is to add methods to the root of the class hierarchy known as Object, well, that's completely not going to work.  Even modern Smalltalk with namespaces is utterly incapable of reliably loading two independently created modules of code and using them from a third.  So really even the modern Smalltalk with namespaces has at best one-dimensional scaling.
-
 </p><p>
-
 When Java showed up on the scene, I noticed that they had quite cleverly applied a political solution to what I had perceived to be a technological problem.  Java namespaces should include the name of the organization that created them.  This way, at least presumably, conflicts can be dealt with by parties working for a common organization, privy to each other's release schedules, and perhaps with access to the same code repository.  Or at least use a deeper hierarchical structure if the organization is less… organized.  However, this did nothing for method name conflicts, but that's not an actual problem in Java, since you can't add methods to classes that you don't own.  Note that Smalltalk wouldn't be saved by that language "feature" even if it advocated the same political namespace organization for its classes.
-
 </p><p>
-
 Breaking from my intention of not trying to patch an existing language, I considered Smalltalk's greatest shortcoming: no static analysis.  The only thing the compiler checks is that classes that you refer to actually exist -- and even that restriction can be bypassed with a click.  A Smalltalk development environment might give a warning when you write code that sends a message that has not been implemented, and even suggest similar spellings of existing messages in case it was a typo.  However, Smalltalk code is entirely untyped, so any global or local variable can have any value in it.  Any method can return any value whatsoever.  Because of this lack of typing, Smalltalk can't make an <em>appropriate</em> guess, or list all legal messages at that position.  A type system defines a treaty which acts as a compromise, or more appropriately a contract, between the provider of some value and the consumer of that value.  Smalltalk has none of this.
-
 </p><p>
-
 In practice, say you're trying to understand a large Smalltalk program.  Since it's large, assume it was written by a team.  If you wrote it by yourself over many years, think of there being multiple "yourselves" at different points in time, so it's still essentially a team.  Without loss of generality, assume you don't remember the details of most of it.  A method in class <code>Grommet</code> might have a <code>#spindle:</code> method, whose argument is called <code>degree</code>.  Without domain-specific knowledge, you have no idea whether this degree is supposed to be a unit of temperature, 1/360th of a revolution, or a document from an academic institution.  So what do you do?  You start looking at the method body and make guesses about what it really should be.  This can take a very long time.  Even longer if you're looking at dead code, which is often also dead wrong.  Smalltalk method comments might give hints, but they tend to be wrong more often than right, since they're unaffected by refactoring tools -- and programmers with deadlines.  In a typed program you look at the declaration for the variable, or at worst you follow the simple type deduction rules that the compiler used to allow you to leave off the type declaration.  Either way, it takes at most seconds of effort, usually less.
-
 </p><p>
-
 There is a convention in Smalltalk to use an article and class name for arguments as a form of implicit typing, but then you lose information about the purpose and role of the argument.  It also doesn't work if the value is really a scalar to be interpreted some way, such as an angular degree, or the number of milliseconds to wait.  Worse, the lack of typing in Smalltalk is treated as a feature, and often an argument can have one of several disparate types, as long as they support whatever operations the method happens to use.  And whatever the methods that it invokes happen to use against the object.  Et cetera.  In other words, a method argument is of the right type if the program doesn't happen to fail.  Yeah, there's not much hope of doing static analysis on Smalltalk code.
-
 </p><p>
-
 So, to allow Avail to scale more than one-dimensionally, it had to be statically typed.  I recall working in the late 1980s with an experimental multiple inheritance extension for Smalltalk from Tektronix.  It was obviously a kludge, but interesting nonetheless.  What I got most out of using it was the realization that, while useful, one shouldn't have multiple inheritance without static typing.  My gut feeling was that not only couldn't you reliably tell what types of objects were produced by expressions, but you couldn't even tell which subset of methods could be invoked.  In the opposite corner, The C-Front compiler of that era didn't support multiple inheritance.  That was an equal disaster for scale programming, since now you couldn't declare a useful collection of abstractions.  For example, a String couldn't be both a Collection of characters and something Comparable.  You could choose whether you wanted to be able to sort some strings, print their characters, or duplicate every operation and mechanism that used Collection or Comparable.  Thanks to single inheritance and static typing you got to choose exactly one.
-
 </p><p>
-
 From these experiences I concluded that static typing and multiple inheritance are beneficially coupled: Don't even think about including one without the other.  Because static typing was necessary for scale, I also made sure multiple inheritance was completely present.  When Java came onto the scene I saw their halfway implementation of multiple inheritance.  Well, it's better than nothing.  At least you can have something that's both a Comparable and a Collection without having to duplicate major chunks of the library.  You still have to duplicate the implementation, of course, but in practice that's usually fairly tame.
-
 </p><p>
-
 After finally encountering functional programming in the mid-90s [what took me so long?], and studying it for a while, I decided to reject it almost entirely.  Simple functions tended to be pretty straightforward, just computing some value based on the inputs.  But that style could be accomplished in any language, so technically it wasn't really borrowed from the functional style.  Other parts of it seemed… clever, but contrived.  Using a monad for I/O is a brilliant compromise, and not as utterly indecipherable as some of my coworkers make it out to be.  However, an equally brilliant compromise would have been to have an imperative layer at the top, with a functional layer below.  Imperative code could invoke functional code, but not the other way.  The functional code could even have lazy evaluation semantics.  But that's not actually functional programming any more.  The Functional Purists effectively define functional programming by what it <em>doesn't</em> allow.  Sadly, they really seem to have missed something obvious.  Let me explain.
-
 </p><p>
-
 When you write a reasonably complex functional program, large parts of it can be implemented cleanly in functional style without difficulty.  There are enormous scale problems, but that's another matter.  So now you encounter a problem that has a natural solution in imperative style and only awkward, unnatural solutions in functional style.  This happens all the time in the literature when specifying or simulating any kind of stateful hardware such as a CPU, or really any state machine.  You're then forced to pass some kind of side-channel information as an additional argument to any operations that need that information.  Anything that has to simulate a change to that information also has to pass the successor state information back out again.  Great, it can be done, and large portions of the program don't need to operate on that information so it doesn't need to be passed, but in those regions where it has to be passed, it's more awkward than imperative programming.  Now here's the kicker:  The purists say that a functional program is subject to stricter and more effective mechanical and human verification, and just more sound general reasoning about a functional program than the equivalent imperative one.  Nope.  Since any imperative program can be mechanically transformed this way to run on a purely functional substrate, there cannot be any mechanical verification or other processes that can run against a functional program that can't also be run against an imperative program that was transformed into a functional program.  The entire premise of no side-effects is not sound.  Not strictly so, since you still have to pass information around as a pseudo-monad to represent the imperative state, but close enough that I literally can't see a single valid benefit to the functional paradigm.  Maybe execution speed in the case that a lazy functional implementation can omit execution of large portions of code.  The equivalent imperative version would need a very powerful theorem prover in its optimizer to systematically eliminate unnecessary or contingent code.  A functional compiler has to approach it from the opposite side by deducing when it's safe and worthwhile to use fast, strict evaluation rather than slow, lazy evaluation.
-
 </p><p>
-
 What I did take from functional programming is confirmation that my choice of mostly immutable objects was a useful one.  And I confirmed that there are existing optimization techniques for safely but imperceptibly recycling immutable objects in place in certain circumstances.  It was more than a decade later before I ran into Bagwell's Ideal Hash Trees as a simple, efficient mechanism for persistent representations of sets and maps.  For those unfamiliar, a persistent data structure allows a new, slightly altered version to be created from an old version without destroying the old version or having to duplicate large parts of it.
-
 </p><p>
-
 Over this timeframe I saw vast improvements in the quality of generated code from the low level compilers.  I also saw vast improvements in processor speeds.  That's a good thing too, because Avail started out not just slow, but glacial.  I had a metacircular compiler implemented in Avail in the late '90s running on a 100MHz PowerPC.  The Avail VM was written in a hybrid of VisualWorks Smalltalk and C++, with almost all of the C++ code mechanically translated from Smalltalk.  It took the metacircular compiler 45 minutes to compile a single line of Avail code.  Yes, minutes.  A lot has happened to Avail's performance besides bumped clock rates and code generation since then.  But I realized as code generators were getting better and better that there was no point in trying to redo all the person-centuries of work that went into coding and debugging these generators.  But I couldn't rely on them identifying performance optimization opportunities at higher levels of abstraction.  For example, if I have a set s, then s union s is always s.  If I add two positive integers together I always get a positive integer.  These facts, really theorems, are a consequence of having high level data types provided directly by the Avail language.  There is simply no way that a generic low-level code generator could ever leverage these rules.  So at some point I decided to leave the low-level optimizations to the substrate, but to perform high-level optimizations in the Avail VM.  I haven't found a lot of other work on high level optimization, and it probably wouldn't transfer easily to Avail anyhow.
-
 </p><p>
-
 Optimization is a tricky subject.  On the one hand, you want your code to go pretty fast.  Nobody needs *every* clock cycle, but the point of diminishing returns is different for a simple Javascript application than for a quantum field simulation that will take years to run.  But besides the "good enough" threshold, hand-optimization is deadly to readability and maintainability.  Even C99 eventually allowed an "inline" annotation to try to get programmers to stop mutilating their code.  An inline annotation on a C function is a suggestion to a compiler to let it embed the body of the called function directly into its call sites.  This saves the cost of the call, including not having to save other registers to the stack and restore them later, but it also opened up opportunities for things like folding comparisons and arithmetic written for the general case to be applied to the more specific cases at the call site.  The SmallEiffel compiler even inlined polymorphic message sends by embedding a search tree of comparisons and branches.  For a while, CPU branch prediction performance was growing much faster than the speed of indirect calls.
-
 </p><p>
-
 But let's consider the C perspective a little more closely.  Or at least what I perceive to be the C perspective:  To let a programmer give a compiler hints to do its job better with minimal mutilation of the code.  In other words, keep the source code almost the same, but provide the compiler hints about how to do its job better.  Aliasing hints can be specified with a "restrict" keyword.  That doesn't exactly tell the compiler what to do, but it does grant it permission to do things that aren't otherwise legal optimizations.
-
 </p><p>
-
 But if the hint is wrong… the object code may be wrong as well.  It's still considerably better than the bad old days of C and C++ where a few thousand lines of non-trivial code would either contain workarounds for compiler bugs or have to be compiled with some of the optimizations disabled.  That's not a value added feature for the consumer of the compiler, the programmer.  It's not due to the compiler writers taking unnecessary shortcuts, since it would take millennia of testing to find some of those bugs.  It's not some beta feature that usually works but might have quirks that can be worked around.  These were production compilers.  Here's what it actually is: An engineering error.  And it costs <em>everybody</em> money, time, and even success at one's goals.  This is something I really didn't want for Avail.  Optimizations -- yes.  Buggy, incorrect optimizations -- no.  My goal in this regard is to provide transformation rules along with proofs of their correctness.  Or to allow an Avail programmer to provide transformation rules that we didn't think of yet, as long as she provides the corresponding proof to be checked.  We won't need proofs right down to the metal, because the Avail VM has some simple substrates that are a much more appropriate representation for this kind of thing.  We're working on this part, but it'll get there eventually.
-
 </p><p>
-
 For about a decade Avail development languished.  Balancing priorities with family and work were part of that, but the biggest cause was… C++.  The VM for Avail was written in Smalltalk, and I could run it that way.  But I had developed a translator that would read the Smalltalk source code and output corresponding C++ code.  The problem was that the object code had bugs.  It seemed like there were zero useful tools for debugging C++ code.  Bugs would take me <em>months</em> to find, and sometimes they wouldn't be mine.  The C++ compilers would simply be producing wrong code.  And unless I spent even more time trying to figure out how to trick the compilers, I had nothing.  By the way, C++ with all optimizations off was actually somewhat slower than Smalltalk, so there was no point anymore.  The C++ stuff started in the late '90s, and I had really been hoping that having the majority of the VM in C++ would have made development more tractable.  Remember, Avail was <em>slow</em>, so I was trying to find the easy kills that let me work within the language itself, rather than the VM.  C++ was worse than a dead end.  It was a foul pit actively sucking the soul out of Avail.  Obviously I don't consider this to have been a positive experience.  I believe using C++ is almost always contraindicated, although for simpler projects -- with easier to hit kill switches -- I might dredge through all its language lawyer nonsense and paper thin pseudo-abstractions one more time.  But I think it would still disappoint me.  I'm hoping I can stay clear of <em>that</em> pit for a long time.
-
 </p><p>
-
 The next step for Avail was… another developer:  Todd -- a <em>damned</em> good developer, with <em>awesome</em> instincts.  And the best thing is that we disagree about things -- for really good reasons.  I believe it was 2008 when we started converting the Smalltalk-to-C++ translator to produce Java code instead.  A few months later it looked like we had Java code that would at least compile.  I wanted to keep tweaking the translator so we could systematically correct things like the structure of comments, translations of names of methods, etc.  He said to let it go, and after some discussion, and a very deep breath... I did.  I archived all the Smalltalk code, and the Java version became the new master version.  We ended up doing quite a few passes through the files with regex in hand, many of which we could have avoided if we had kept going with the translator.  But the jump had happened.  We were already changing things in Java that we couldn't have done meaningfully in the original Smalltalk.  Real development was happening in Java -- one of the most stable, well built, and well tested languages ever.  I think the Java VM itself has segfaulted maybe once since we started using it.  We've since pilfered variations of Java's checked exception model and JavaDoc -- and probably a lot more than that.
-
 </p><p>
-
 Along the way we started showing more people, doing weekly tutorials, that kind of thing, as much to have the additional help as to sound out and get feedback about how to explain the ideas in Avail.  In 2012 we saw how quickly we were approaching a quality and completeness level we could live with, so we founded The Avail Foundation, LLC.  <em>Lots</em> more happened before then, and much has happened since then, but those will be stories to tell another day.</p>
-</section>
-    </div>
-  </div>
-  <div class="footerWrapper">
-    <div class="footer">© 2012-2013 The Avail Foundation, LLC</div>
-  </div>
-</div>
-</body>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
 </html>
+

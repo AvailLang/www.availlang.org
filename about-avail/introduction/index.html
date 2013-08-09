@@ -6,55 +6,20 @@
 <html class="">
 <!--<![endif]-->
 
-<head>
-<link href='http://fonts.googleapis.com/css?family=Raleway:700|Lato:300,300italic,400' rel='stylesheet' type='text/css'>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Avail - Introduction</title>
-<link href="/_css/boilerplate.css" rel="stylesheet" type="text/css">
-<link href="/_css/global.css" rel="stylesheet" type="text/css">
-</head>
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Avail - Introduction</title>
+	
+	</head>
 
-<body class="gradient-logo">
-<div class="header-wrapper">
-  <a class="header-text" href="/index.html">The Avail Programming Language</a>
-</div>
-<div class="main-wrapper">
-  <div class="nav-wrapper">
-    <div class="navigation">
-      <div class="nav-section">
-        <div class="nav-section-header">About Avail</div>
-        <div class="nav-links">
-          <div><a class="nav-link" href="/about-avail/introduction/index.html">Introduction</a></div>
-          <div><a class="nav-link" href="/about-avail/history/index.html">History</a></div>
-          <div><a class="nav-link" href="/about-avail/newsletters/index.html">Newsletters</a></div>
-          <div><a class="nav-link" href="/about-avail/documentation/index.html">Documentation</a></div>
-          <div><a class="nav-link" href="/about-avail/glossary/index.html">Glossary</a></div>
-          <div><a class="nav-link" href="/about-avail/trac/index.html">Trac</a></div>
-        </div>
-      </div>
-      <div class="nav-section">
-        <div class="nav-section-header">Using Avail</div>
-        <div class="nav-links">
-          <div><a class="nav-link" href="/get-avail/licensing/index.html">Licensing</a></div>
-        </div>
-      </div>
-      <div class="nav-section">
-        <div class="nav-section-header">About Us</div>
-        <div class="nav-links">
-          <div><a class="nav-link" href="/about-us/philosophy/index.html">Philosophy</a></div>
-          <div><a class="nav-link" href="/about-us/team/index.html">Team</a></div>
-          <div><a class="nav-link" href="/about-us/blogs/index.html">Blogs</a></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="content-wrapper">
-    <div class="content shadow">
-  
-  <section>
-  <div class="no-margin no-padding">
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+		
 <h2 class="content-title">Introduction to Avail</h2>
+
 <p>
 Avail is a multiparadigmatic general purpose programming language whose feature set emphasizes support for <em>articulate programming</em>.
 </p><p>
@@ -84,31 +49,28 @@ Articulate programming endeavors to streamline software development by reducing 
 Avail is the pioneer of articulate programming. Its numerous features cooperate for a singular purpose: to enable a programmer to talk about her objects of interest using the best language for the domain of her problem. Avail's feature set includes:
 </p>
 <ul>
-<li>A modular, dynamic, unrestricted grammar supported by an efficient compiler that concurrently explores all possible parses in pursuit of a semantically unambiguous interpretation.</li>
-<li>An infinite algebraic type lattice that confers a distinct type upon every distinct value.</li>
-<li>Intrinsic support for a rich collection of immutable types, including tuples, sets, maps, functions, and continuations.</li>
-<li>A static type system capable of leveraging every feature of the type lattice.</li>
-<li>Efficient multiple dispatch for all named operations.</li>
-<li>Automatic memory management capable of coalescing equivalent immutable values.</li>
-<li>A concurrency model that features lightweight threads multiplexed onto a pool of native threads and managed by a time-slicing, priority-driven preemptive scheduler.</li>
-<li>Lock elision for accesses of values that are visible only to a single lightweight thread.</li>
-<li>Fully asynchronous I/O: no native thread is ever blocked waiting for an I/O event.</li>
-<li>Reified immutable continuations that support resumable exceptions, computational backtracking, and general coroutines.</li>
-<li>A module system that supports hierarchical encapsulation and feature renaming.</li>
-<li>Separation of source code and object code.</li>
-<li>A universal serialization framework that supports even functions, continuations, and lightweight threads.</li>
-<li>Sincere and model-complete introspective facilities.</li>
-<li>A mechanism for observing expressions rather than values, thereby enabling a novel method of efficient, transactional change propagation that is more natural and powerful than the observer pattern or functional reactive programming.</li>
-<li>A dynamic translator that supports type inference, function inlining, and deoptimization.</li>
-<li>Bidirectional foreign function interface to Java.</li>
+	<li>A modular, dynamic, unrestricted grammar supported by an efficient compiler that concurrently explores all possible parses in pursuit of a semantically unambiguous interpretation.</li>
+	<li>An infinite algebraic type lattice that confers a distinct type upon every distinct value.</li>
+	<li>Intrinsic support for a rich collection of immutable types, including tuples, sets, maps, functions, and continuations.</li>
+	<li>A static type system capable of leveraging every feature of the type lattice.</li>
+	<li>Efficient multiple dispatch for all named operations.</li>
+	<li>Automatic memory management capable of coalescing equivalent immutable values.</li>
+	<li>A concurrency model that features lightweight threads multiplexed onto a pool of native threads and managed by a time-slicing, priority-driven preemptive scheduler.</li>
+	<li>Lock elision for accesses of values that are visible only to a single lightweight thread.</li>
+	<li>Fully asynchronous I/O: no native thread is ever blocked waiting for an I/O event.</li>
+	<li>Reified immutable continuations that support resumable exceptions, computational backtracking, and general coroutines.</li>
+	<li>A module system that supports hierarchical encapsulation and feature renaming.</li>
+	<li>Separation of source code and object code.</li>
+	<li>A universal serialization framework that supports even functions, continuations, and lightweight threads.</li>
+	<li>Sincere and model-complete introspective facilities.</li>
+	<li>A mechanism for observing expressions rather than values, thereby enabling a novel method of efficient, transactional change propagation that is more natural and powerful than the observer pattern or functional reactive programming.</li>
+	<li>A dynamic translator that supports type inference, function inlining, and deoptimization.</li>
+	<li>Bidirectional foreign function interface to Java.</li>
 </ul>
-</div></div>
-</section>
-    </div>
-  </div>
-  <div class="footerWrapper">
-    <div class="footer">© 2012-2013 The Avail Foundation, LLC</div>
-  </div>
-</div>
-</body>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
 </html>
+
