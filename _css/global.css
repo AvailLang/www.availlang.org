@@ -232,6 +232,7 @@ body.gradient-logo {
 
 .book-nav-back {
 	display: inline;
+	white-space: nowrap;
 	text-align: left;
 
 	color: green;
@@ -241,6 +242,7 @@ body.gradient-logo {
 
 .book-nav-up {
 	display: inline;
+	white-space: nowrap;
 	text-align: center;
 
 	color: green;
@@ -250,6 +252,7 @@ body.gradient-logo {
 
 .book-nav-forward {
 	display: inline;
+	white-space: nowrap;
 	text-align: right;
 
 	color: green;
