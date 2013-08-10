@@ -1,0 +1,51 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Avail - Type System</title>
+	
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+
+		<h2 class="content-title"><code>type ≝ {⊤}ᵀ</code></h2>
+<div class="diagram">
+<iframe src="/images/diagrams/type-system-type-focus.svg" seamless></iframe>
+</div>
+<p>
+Since <code><a href="./02-types.html-top">⊤</a></code> is the most general type, then, by the <a href="./06-metatypes.html">law of metacovariance</a>, <code>{⊤}ᵀ</code> is the most general metatype. This type is usually referred to as <code>type</code> in Avail code. Every type is an instance of <code>type</code> and every metatype is a subtype of <code>type</code>. It is a sibling of <code><a href="./15-types-nontype.html">nontype</a></code>, and every value is either an instance of <code>nontype</code> or <code>type</code>.
+</p>
+<p>
+Consider <code>⊤</code>, <code>any</code>, and <code>nontype</code>. None of these are subtypes of <code>type</code>. In fact, the first two are supertypes of <code>type</code> and the third is a sibling. Yet these are types, and therefore instances of <code>type</code>. Every type is a value, so <code>type</code> must be an instance of both <code>⊤</code> and <code>any</code>. These facts taken together imply that <code>any</code> and <code>type</code> are mutually instances of each other! This is natural enough, given the criteria for membership in each, but it does not necessarily sit well with intuition.
+</p>
+<div class="restricted-width-container">
+<div class="good-code code-block">Assert: type = {⊤}ᵀ;
+Assert: type ⊆ any;
+Assert: type ∈ any;
+Assert: any ∈ type;</div>
+</div>
+<tr class="book-nav">
+	<div class="book-nav">
+		<li class="book-nav-back"><a class="book-nav-back" href="./13-types-any.html">‹ <code>any</code></a></li>
+		<li class="book-nav-spacer">|</li>
+		<li class="book-nav-up"><a class="book-nav-up" href="../type-system.html">Return to Type System</a></li>
+		<li class="book-nav-spacer">|</li>
+		<li class="book-nav-forward"><a class="book-nav-forward" href="./15-types-nontype.html"><code>nontype</code> ›</a></li>
+	</div>
+</tr>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>

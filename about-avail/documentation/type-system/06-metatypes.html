@@ -1,0 +1,65 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Avail - Type System</title>
+	
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+
+		<h2 class="content-title">Metatypes</h2>
+<p>
+In Avail, types are also values. Types are not simply the province of the compiler, and do not just occur as <a href="./08-type-annotations.html">scaffolding</a> in the source code of a program. Rather, they may also flow through a running program as values. A rich set of operations is provided for the purpose of navigating the type lattice, interrogating the relationships between types, and deriving types from values.
+</p>
+<p>
+Given that every value is an instance of some number of types, and that types themselves are also values, types are therefore instances of other types. These other types are <strong>metatypes</strong>: types whose instances are also types. Each type has its own most specific metatype. For example, <code>5's type's type</code> ≝ <code>{{5}ᵀ}ᵀ</code>. A value may be recursively interrogated for its type <em>ad infinitum</em>, and every step of this interrogation produces a value that is distinct from those produced by previous (or subsequent) steps. So <code>5's type</code>, <code>5's type's type</code>, <code>5's type's type's type</code>, … are all distinct types:
+</p>
+<div class="restricted-width-container">
+<div class="good-code code-block">/* This loop will run forever, but that's what gets the point across. */
+value : any := 5;
+Repeat
+[
+	Assert: value ≠ value's type;
+	value := value's type;
+]</div>
+</div>
+<p>
+The integer <code>5</code> is the sole instance of <code>{5}ᵀ</code>. It is also an instance of <code>{…, -1, 0, 1, …}ᵀ</code>, of which <code>{5}ᵀ</code> is a subtype. So what is the relationship between <code>{{…, -1, 0, 1, …}ᵀ}ᵀ</code> and <code>{{5}ᵀ}ᵀ</code>? In the design of a type system, there are many logically consistent answers to this question, but not all answers have equal utility. In Avail, a simple rule universally answers questions of this form: given two types <code>A</code> and <code>B</code>, if <code>A</code> is a subtype of <code>B</code>, then <code>A's type</code> is a subtype of <code>B's type</code>: <code>∀<sub>A,B ∈ type</sub>: A ⊆ B → {A}ᵀ ⊆ {B}ᵀ</code>. This is the <strong>law of metacovariance</strong>.
+</p>
+<div class="restricted-width-container">
+<div class="good-code code-block">/* This loop will run forever, because the law of metacovariance is universal. */
+subtype : type := 5's type;
+supertype : type := integer;
+Repeat
+[
+	Assert: subtype ⊆ supertype;
+	subtype := subtype's type;
+	supertype := supertype's type;
+]</div>
+</div>
+<tr class="book-nav">
+	<div class="book-nav">
+		<li class="book-nav-back"><a class="book-nav-back" href="./05-type-parameterization.html">‹ Type Parameterization</a></li>
+		<li class="book-nav-spacer">|</li>
+		<li class="book-nav-up"><a class="book-nav-up" href="../type-system.html">Return to Type System</a></li>
+		<li class="book-nav-spacer">|</li>
+		<li class="book-nav-forward"><a class="book-nav-forward" href="./07-type-names.html">Type Names ›</a></li>
+	</div>
+</tr>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>

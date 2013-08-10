@@ -1,0 +1,115 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Avail - Type System</title>
+	
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+
+		<h2 class="content-title"><code>string ≝ &lt;character…|&gt;</code></h2>
+<div class="diagram" style="float: right;">
+<iframe src="/images/diagrams/type-system-string-focus.svg" seamless></iframe>
+</div>
+<p>
+A <strong>string</strong> represents text without respect to style or encoding. Naturally, the content of a string consists of <a href="./16-types-character.html">characters</a> arrayed in a fixed order. Just as the words <em>east</em> and <em>teas</em> are different because the orderings of their letters are different, so the strings <code>"east"</code> and <code>"teas"</code> are different because the orderings of their characters are different.
+</p>
+<p>
+The type <code>string</code> is <a href="./07-type-names.html">synonymous</a> with <code>&lt;character…|&gt;</code>. It is the <a href="./21-types-tuple.html">tuple type</a> whose leading types are the empty tuple (&lt;&gt;), whose default type is <code>character</code>, and whose cardinality restriction is <code><a href="./02-types.html-whole-number">whole number</a></code>. So, a string is merely a tuple whose elements are characters exclusively.
+</p>
+<p>
+Like <a href="./20-types-extended-integer.html">integer</a> and <a href="./18-types-double.html">double</a> literals, string literals are understood directly by the Avail compiler. A string literal begins with a <em>quotation mark</em> <code>"</code> (<code>U+0022</code>), continues with arbitrary Unicode characters optionally interleaved with escape sequences, and ends with a quotation mark. The string literal metacharacters are quotation mark and <em>reverse solidus</em> <code>\</code> (<code>U+005C</code>) — also called backslash. A reverse solidus alters the meaning of the next character, called the <strong>escaped character</strong>:
+</p>
+<ul>
+<li>
+When the escaped character is reverse solidus or quotation mark, then its special meaning as a metacharacter is disabled. So the string <code>"\\"</code> has a size of <code>1</code> and its only character is a reverse solidus, and the string <code>"\"Hello, Alice, this is Bob.\""</code> has a size of <code>28</code> and its first and last characters are quotation marks.
+</li>
+<li>
+When the escaped character is <code>t</code>, then the intended character is <em>character tabulation</em> (<code>U+0009</code>), also called <em>horizontal tab</em>. So the string <code>"\tIndented"</code> has a size of <code>9</code> and its first character is character tabulation.
+</li>
+<li>
+When the escaped character is <code>n</code>, then the intended character is <em>line feed</em> (<code>U+000A</code>). So the string <code>"Hello, world!\n"</code> has a size of <code>14</code> and its last character is a line feed.
+</li>
+<li>
+When the escaped character is <code>r</code>, then the intended character is <em>carriage return</em> (<code>U+000D</code>). So the string <code>"Hello, world!\r"</code> has a size of <code>14</code> and its last character is a carriage return.
+</li>
+<li>
+When the escaped character is <em>left parenthesis</em>, then the compiler expects a sequence of comma-separated hexadecimal numerals and finally a <em>right parenthesis</em>. Each hexadecimal numeral must denote an integral value from <code>0</code> to <code>10FFFF<sub>16</sub></code> (<code>1114111<sub>10</sub></code>); the case of the hexadecimal digits <code>A</code> through <code>F</code> does not matter. Each number represents the character associated with the Unicode code point of the same value. The construct as a whole then denotes a sequence of characters. So <code>"\(66, 6E, 6F, 72, 64, 21)!"</code> is the same string as <code>"fnord!!"</code> Because the Avail compiler is able to handle Unicode characters natively, there is scarcely need to use this facility outside of embedding invisible characters, such as control characters or special whitespace, into a string literal. In Avail, <code>"はじめまして。私の名前はスミス・トッドです。"</code> is a perfectly reasonable string literal — at least for the author!
+</li>
+<li>
+When the escaped character is <em>line feed</em>, then the compiler elides the line feed altogether. This permits a string literal to span multiple lines without forcing its content to span multiple lines. Note that an occurrence of <em>carriage return</em> after the reverse solidus, or even the combination <em>carriage return</em>+<em>line feed</em>, is treated similarly; it is stripped from the resulting string.
+<div class="restricted-width-container">
+<div class="good-code code-block">s ::= "Hello, \
+world!\n";
+Assert: s = "Hello, world!\n";</div>
+</div>
+</li>
+<li>
+When the escaped character is <em>vertical line</em> (<code>U+007C</code>), then the compiler discards all whitespace from the beginning of the same line up to the reverse solidus. This region is not permitted to contain characters other than whitespace, in fact. This feature permits nice formatting of multiline string literals within source code, and is particularly powerful in conjunction with escaping of line feeds. Across several lines, the combination <code>\|</code> forms a visual wall that the string's content resides to the right of:
+<div class="restricted-width-container">
+<div class="good-code code-block">/* Obviously some liberties have been taken here… */
+If Abraham Lincoln is rallying the troops against vampires then
+[
+	gettysburgChangeOfAddress ::= "\
+		\|Four score and seven years ago our fathers brought forth on this \
+		\|continent a new nation, conceived in liberty, and dedicated to \
+		\|the proposition that all men are created equal.
+		\|
+		\|Now we are engaged in a great civil war, testing whether that \
+		\|nation, or any nation, so conceived and so dedicated, can long \
+		\|endure. We are met on a great battle-field of that war. We have \
+		\|come to dedicate a portion of that field, as a final resting \
+		\|place for those who here gave their lives that that nation might \
+		\|live. It is altogether fitting and proper that we should do this.
+		\|
+		\|But, in a larger sense, we can not dedicate, we can not \
+		\|consecrate, we can not hallow this ground. The brave men, living \
+		\|and dead, who struggled here, have consecrated it, far above our \
+		\|poor power to add or detract. The world will little note, nor \
+		\|long remember what we say here, but it can never forget what \
+		\|they did here. It is for us the living, rather, to be dedicated \
+		\|here to the unfinished work which they who fought here have thus \
+		\|far so nobly advanced. It is rather for us to be here dedicated \
+		\|to the great task remaining before us—that from these honored \
+		\|dead we take increased devotion to that cause for which they \
+		\|gave the last full measure of devotion—that we here highly \
+		\|resolve that these dead shall not have died in vain—that this \
+		\|nation, under God, shall have a new birth of freedom—and that \
+		\|government of the people, by the people, for the people, shall \
+		\|not perish from the earth.
+		\|
+		\|So let's destroy those friggin' vampires!\n";
+	Print: gettysburgChangeOfAddress;
+];</div>
+</div>
+</li>
+</ul>
+<p>
+The empty string is written as <code>""</code>. It is the same value as the empty tuple, <code>&lt;&gt;</code>.
+</p>
+<tr class="book-nav">
+	<div class="book-nav">
+		<li class="book-nav-back"><a class="book-nav-back" href="./21-types-tuple.html">‹ <code>tuple</code></a></li>
+		<li class="book-nav-spacer">|</li>
+		<li class="book-nav-up"><a class="book-nav-up" href="../type-system.html">Return to Type System</a></li>
+		<li class="book-nav-spacer">|</li>
+		<li class="book-nav-forward"><a class="book-nav-forward" href="./23-types-set.html"><code>set</code> ›</a></li>
+	</div>
+</tr>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>

@@ -27,18 +27,18 @@ The addition of restrictions to multiple methods within the same statement requi
 </p><p>
 Grammatical restrictions are parts of their methods, and the effect of multiple grammatical restrictions on a single method is cumulative.
 </p><p>
-<strong>Grammar:</strong> <code>SET_OF_2-ARG_METHODS can’t have &lt;DISALLOWED_LEFT_ARG_METHODS, DISALLOWED_RIGHT_ARG_METHODS>;</code><br />
+<strong>Grammar:</strong> <code>SET_OF_2-ARG_METHODS can’t have ‹DISALLOWED_LEFT_ARG_METHODS, DISALLOWED_RIGHT_ARG_METHODS>;</code><br />
 <strong>Example:</strong> <code>{"_+_", "_-_"} can’t have <{}, {"_+_","_-_"}>;</code>
 </p><p>
 In this example we effect the elimination of ambiguity for nested calls that do not use parentheses (such as <code>3 + 4 + 5</code>). Since calls to <code>"_+_"</code> and <code>"_-_"</code> are not allowed in their right argument positions, the compiler must necessarily evaluate the expression from left to right.
 </p>
 <tr class="book-nav">
 	<div class="book-nav">
-		<li class="book-nav-back"><a class="book-nav-back" href="./function.html">&lt; Function</a></li>
+		<li class="book-nav-back"><a class="book-nav-back" href="./function.html">‹ Function</a></li>
 		<li class="book-nav-spacer">|</li>
 		<li class="book-nav-up"><a class="book-nav-up" href="./index.html">Return to Glossary</a></li>
 		<li class="book-nav-spacer">|</li>
-		<li class="book-nav-forward"><a class="book-nav-forward" href="./initialization.html">Initialization &gt;</a></li>
+		<li class="book-nav-forward"><a class="book-nav-forward" href="./initialization.html">Initialization ›</a></li>
 	</div>
 </tr>
 

@@ -1,0 +1,98 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Avail - Type System</title>
+	
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+
+		<h2 class="content-title">The Avail Type System</h2>
+		
+<p>
+This series provides a comprehensive treatment of the Avail type system. The series begins with pages that describe the underlying type theory. Each of the remaining pages describes one of Avail's many intrinsic types.
+</p>
+<footnote>
+* indicates that the content for this page has not yet been completed.
+</footnote>
+<ul>
+	<li><a href="./type-system/01-values.html">Values</a></li>
+	<li><a href="./type-system/02-types.html">Types</a></li>
+	<li><a href="./type-system/03-type-relations.html">Type Relations</a></li>
+	<li><a href="./type-system/04-type-compatibility.html">Type Compatibility</a></li>
+	<li><a href="./type-system/05-type-parameterization.html">Type Parameterization</a></li>
+	<li><a href="./type-system/06-metatypes.html">Metatypes</a></li>
+	<li><a href="./type-system/07-type-names.html">Type Names</a></li>
+	<li><a href="./type-system/08-type-annotations.html">Type Annotations</a></li>
+	<li><a href="./type-system/09-type-inference.html">Type Inference</a></li>
+	<li><a href="./type-system/10-semantic-restrictions.html">Semantic Restrictions</a></li>
+	<li><a href="./type-system/11-type-lattice.html">Type Lattice</a></li>
+	<li><a href="./type-system/12-types-⊤.html"><code>⊤</code> (top)</a></li>
+	<li><a href="./type-system/13-types-any.html"><code>any</code></a></li>
+	<li><a href="./type-system/14-types-type.html"><code>type</code></a></li>
+	<li><a href="./type-system/15-types-nontype.html"><code>nontype</code></a></li>
+	<li><a href="./type-system/16-types-character.html"><code>character</code></a></li>
+	<li><a href="./type-system/17-types-number.html"><code>number</code></a></li>
+	<li><a href="./type-system/18-types-double.html"><code>double</code></a></li>
+	<li><a href="./type-system/19-types-float.html"><code>float</code></a></li>
+	<li><a href="./type-system/20-types-extended-integer.html"><code>extended integer</code></a></li>
+	<li><a href="./type-system/21-types-tuple.html"><code>tuple</code></a></li>
+	<li><a href="./type-system/22-types-string.html"><code>string</code></a></li>
+	<li><a href="./type-system/23-types-set.html"><code>set</code></a></li>
+	<li><a href="./type-system/24-types-map.html"><code>map</code></a> *</li>
+	<li><a href="./type-system/25-types-function.html"><code>function</code></a> *</li>
+	<li><a href="./type-system/26-types-function-implementation.html"><code>function implementation</code></a> *</li>
+	<li><a href="./type-system/27-types-method.html"><code>method</code></a> *</li>
+	<li><a href="./type-system/28-types-definition.html"><code>definition</code></a> *</li>
+	<li><a href="./type-system/29-types-method-definition.html"><code>method definition</code></a> *</li>
+	<li><a href="./type-system/30-types-abstract-definition.html"><code>abstract definition</code></a> *</li>
+	<li><a href="./type-system/31-types-forward-definition.html"><code>forward definition</code></a> *</li>
+	<li><a href="./type-system/32-types-macro-definition.html"><code>macro definition</code></a> *</li>
+	<li><a href="./type-system/33-types-continuation.html"><code>continuation</code></a> *</li>
+	<li><a href="./type-system/34-types-fiber.html"><code>fiber</code></a> *</li>
+	<li><a href="./type-system/35-types-variable.html"><code>variable</code></a> *</li>
+	<li><a href="./type-system/36-types-atom.html"><code>atom</code></a></li>
+	<li><a href="./type-system/37-types-boolean.html"><code>boolean</code></a></li>
+	<li><a href="./type-system/38-types-object.html"><code>object</code></a> *</li>
+	<li><a href="./type-system/39-types-exception.html"><code>exception</code></a> *</li>
+	<li><a href="./type-system/40-types-pojo.html"><code>pojo</code></a> *</li>
+	<li><a href="./type-system/41-types-token.html"><code>token</code></a> *</li>
+	<li><a href="./type-system/42-types-literal-token.html"><code>literal token</code></a> *</li>
+	<li><a href="./type-system/43-types-phrase.html"><code>phrase</code></a> *</li>
+	<li><a href="./type-system/44-types-declaration-phrase.html"><code>declaration phrase</code></a> *</li>
+	<li><a href="./type-system/45-types-argument-phrase.html"><code>argument phrase</code></a> *</li>
+	<li><a href="./type-system/46-types-module-constant-phrase.html"><code>module constant phrase</code></a> *</li>
+	<li><a href="./type-system/47-types-local-constant-phrase.html"><code>local constant phrase</code></a> *</li>
+	<li><a href="./type-system/48-types-module-variable-phrase.html"><code>module variable phrase</code></a> *</li>
+	<li><a href="./type-system/49-types-local-variable-phrase.html"><code>local variable phrase</code></a> *</li>
+	<li><a href="./type-system/50-types-label-phrase.html"><code>label phrase</code></a> *</li>
+	<li><a href="./type-system/51-types-primitive-failure-reason-phrase.html"><code>primitive failure reason phrase</code></a> *</li>
+	<li><a href="./type-system/52-types-expression-phrase.html"><code>expression phrase</code></a> *</li>
+	<li><a href="./type-system/53-types-literal-phrase.html"><code>literal phrase</code></a> *</li>
+	<li><a href="./type-system/54-types-variable-use-phrase.html"><code>variable use phrase</code></a> *</li>
+	<li><a href="./type-system/55-types-variable-reference-phrase.html"><code>variable reference phrase</code></a> *</li>
+	<li><a href="./type-system/56-types-assignment-phrase.html"><code>assignment phrase</code></a> *</li>
+	<li><a href="./type-system/57-types-list-phrase.html"><code>list phrase</code></a> *</li>
+	<li><a href="./type-system/58-types-send-phrase.html"><code>send phrase</code></a> *</li>
+	<li><a href="./type-system/59-types-block-phrase.html"><code>block phrase</code></a> *</li>
+	<li><a href="./type-system/60-types-sequence-phrase.html"><code>sequence phrase</code></a> *</li>
+	<li><a href="./type-system/61-types-module.html"><code>module</code></a> *</li>
+	<li><a href="./type-system/62-types-⊥.html"><code>⊥</code> (bottom)</a></li>
+</ul>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Avail - Type System</title>
+	
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+
+		<h2 class="content-title">Values</h2>
+<p>
+At execution time, an Avail program may be understood as a stepwise progression of operations on <strong>values</strong>. Intuitively, a value is a unit of meaning; the number <code>3</code>, the empty tuple <code>&lt;&gt;</code>, the string <code>"happiness"</code>, and the function <code>[x : integer | x + 1]</code> are all values. Dogmatically, a value is an instance of some number of <a href="./02-types.html">types</a>. Schematically, a value is anything that may be:
+</p>
+<ul>
+	<li>bound to a constant,</li>
+	<li>stored into a variable,</li>
+	<li>associated with an atom property,</li>
+	<li>associated with a fiber property,</li>
+	<li>accepted by a function,</li>
+	<li>returned by a function,</li>
+	<li>accepted by a method, or</li>
+	<li>returned by a method.</li>
+</ul>
+<p>
+The overwhelming majority of values in Avail are <strong>immutable</strong>, meaning that neither their structure nor their content are subject to change. It follows that an immutable value should be <strong>identityless</strong>; having no qualities subject to change, there is no basis for identification of an immutable value that transcends its structure or content. No operations are, or can be, defined that permit a programmer to distinguish between two equal values. Equal values are therefore <strong>fungible</strong>, that is, interchangeable in every scenario.
+</p>
+<p>
+This contrasts sharply with traditional imperative programming languages, where only primitive entities like integers are identityless. In more traditional designs, most values are <strong>reference values</strong>, whether or not they are immutable. Though reference values may have the same structure and content, they may also reside at different locations in memory. This is perfectly natural, except that language features usually provide access to this information. Even if a value's memory location is not directly available, then there is usually a variant of the equality operation that answers whether two values are coincident in memory (and therefore truly "the same"). Access to such information supports the construction of a large class of incorrect programs, but has little utility outside the domain of low-level, system programming. In Avail, values are <strong>referentially transparent</strong>, meaning that it is not possible to discover whether two equal values reside at the same location in memory.
+</p>
+<p>
+In Avail, <strong>identity</strong> is coupled to the capacity to change. Thus only <strong>mutable</strong> values possess identity. A mutable value has either a flexible structure or impermanent content, and operations are provided to alter each as appropriate. Unlike immutable values, which are compared by structure and content, mutable values are compared only by identity.
+</p>
+<tr class="book-nav">
+	<div class="book-nav">
+		<li class="book-nav-up"><a class="book-nav-up" href="../type-system.html">Return to Type System</a></li>
+		<li class="book-nav-spacer">|</li>
+		<li class="book-nav-forward"><a class="book-nav-forward" href="./02-types.html">Types ›</a></li>
+	</div>
+</tr>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>

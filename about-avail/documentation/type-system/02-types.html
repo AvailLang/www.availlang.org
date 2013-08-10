@@ -1,0 +1,48 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Avail - Type System</title>
+	
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+
+		<h2 class="content-title">Types</h2>
+<p>
+A <strong>type</strong> is a classification of values by conceptual similarity. In practice, this demarcation occurs along operational boundaries. It is meaningful to compute the sum, difference, or product of any two integers, so it stands to reason that <em>1)</em> there exists some type whose instances support all three operations (addition, subtraction, and multiplication) and <em>2)</em> at least some instances of this type are integers. As a general rule, the instances of a type should support the same operations, albeit providing potentially different results; for example, each pairwise permutation of <code>3</code>, <code>5</code>, <code>7</code>, and <code>9</code> supports addition, and <code>5 + 7</code> and <code>3 + 9</code> yield equal values while <code>3 + 5</code> and <code>7 + 9</code> yield different values.
+</p>
+<p>
+There may be circumstances, however, where some combination of instances of a common type are not valid for a particular operation. Such a combination of instances is a <strong>singularity</strong>. Consider the case of division. Though <code>0</code> is always an acceptable numerator, it can never serve as the denominator. It is still fair to say that the type whose instances are integers supports the four basic arithmetic operations even though division exhibits singularity whenever <code>0</code> is the denominator.
+</p>
+<p>
+Curly brackets (<code>{}</code>) enclosing a comma-separated list and ultimately followed by a superscript <code>T</code> denote a type as an enumeration of its instances; in this context, a leading horizontal ellipsis (<code>…</code>) within the curly brackets indicates an infinite leading progression and a trailing horizontal ellipsis indicates an infinite trailing progression. Conceptually then, a type is analogous to a set of values whose members are its instances. For example, <code>{1, 2, 3}ᵀ</code> denotes the type whose instances are the integers <code>1</code>, <code>2</code>, and <code>3</code>; <code>{…, -3, -2, -1}ᵀ</code> denotes the type whose instances are the negative integers; <code>{1, 2, 3, …}ᵀ</code> denotes the type whose instances are the positive integers; and <code>{…, -1, 0, 1, …}ᵀ</code> denotes the type whose instances are the integers. The element-of operator (∈) indicates that a value is an instance of a type; for example, <code>3 ∈ {1, 3, 5}ᵀ</code>.
+</p>
+<p>
+There is no requirement that a value belong to only one type. In fact, every value belongs to infinitely many types, the most specific of which has that value as its only instance. The most specific type of the integer <code>5</code> then is <code>5's type</code> ≝ <code>{5}ᵀ</code>. This is the <strong>instance type</strong>. Additionally, any number of types may include some value as an instance. The fact of <code>5</code>'s membership in <code>{5}ᵀ</code> does not preclude its membership in <code>{1, 5, 9}ᵀ</code>, <code>{1, 2, 3, …}ᵀ</code>, or <code>{…, -1, 0, 1, …}ᵀ</code>. There is also no requirement that a type comprise only values considered to have a natural affinity. Though the examples have focused on integers thus far, this is for brevity only. <code>{5, ∅, "rhododendron", [Print: "Howdy!\n";]}ᵀ</code> is a perfectly valid type, though perhaps not obviously a useful one.
+</p>
+<tr class="book-nav">
+	<div class="book-nav">
+		<li class="book-nav-back"><a class="book-nav-back" href="./01-values.html">‹ Values</a></li>
+		<li class="book-nav-spacer">|</li>
+		<li class="book-nav-up"><a class="book-nav-up" href="../type-system.html">Return to Type System</a></li>
+		<li class="book-nav-spacer">|</li>
+		<li class="book-nav-forward"><a class="book-nav-forward" href="./03-type-relations.html">Type Relations ›</a></li>
+	</div>
+</tr>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>

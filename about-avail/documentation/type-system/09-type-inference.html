@@ -1,0 +1,156 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Avail - Type System</title>
+	
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+
+		<h2 class="content-title">Type Inference</h2>
+<p>
+Most phrase kinds neither require nor permit <a href="./08-type-annotations.html">type annotation</a>. The compiler infers the types of such phrases by examining their composition. The exact process of type inference depends upon the phrase kind.
+</p>
+<ul>
+<li>
+The most basic type inference occurs for <strong>literal value</strong> phrases. A literal value is one primitively known to the compiler. Literal values are supported through special syntax. The compiler only understands three kinds of values primitively: integers, double-precision floating point numbers, and strings. The type of a literal value phrase is the instance type of the value itself.
+<div class="restricted-width-container">
+<div class="good-code code-block">/* These initializations are legal because the compiler infers the instance types
+ * of literal values.
+ */
+i : 5’s type := 5;
+d : 10.1’s type := 10.1;
+s : "daffodil"’s type := "daffodil";</div>
+</div>
+</li>
+<li>
+A <strong>module constant definition</strong> phrase permanently binds a name to a value. The new constant has the type that is most specific to the bound value; that is, the type whose only instance is the value itself. The module constant definition itself is a statement, and therefore its inferred type is <code><a href="./02-types.html-top">⊤</a></code>.
+<div class="restricted-width-container">
+<div class="good-code code-block">/* This illustrates that the compiler can produce the precise double-precision
+ * floating point approximation of "π". The assignment to "pi", a variable that
+ * can only store the value 3.141592653589793, is legal only because "π" is known
+ * to have a compatible type.
+ */ 
+π ::= 3.141592653589793;
+pi : 3.141592653589793’s type := π;</div>
+</div>
+</li>
+<li>
+A <strong>local constant definition</strong> phrase binds a name to a value within the remainder of the nearest enclosing scope. A local constant definition may be bound to any expression whatsoever, including one that refers to variables and arguments. Its type is the same as the inferred type of the expression. The local constant definition itself is a statement, and therefore its inferred type is <code>⊤</code>.
+<div class="restricted-width-container">
+<div class="good-code code-block">aFunction ::=
+	[
+		/* The compiler infers that "k" has type "integer", because this is
+		 * the static type inferred for this particular send of "_+_".
+		 */
+		x : integer := 5;
+		k ::= x + 10;
+		k
+	];</div>
+</div>
+</li>
+<li>
+Whether or not its return type is annotated, some type inference is required for a <strong>label declaration</strong>. If the return type is specified, then it is used during type inference; otherwise, the compiler behaves as though there were an annotation of <code>⊥</code>. The actual type inferred for a label is a continuation type whose parameter types match the enclosing function’s parameter types and whose return type is the one declared or determined. The label declaration is a statement, and therefore its inferred type is <code>⊤</code>.
+<div class="restricted-width-container">
+<div class="good-code code-block">/* This function converts a number into a numeral (in a silly way). */
+stringifier ::=
+	[
+		aNumber : number
+	|
+		/* This label is inappropriate, but together with the assertion
+		 * illustrates that the compiler infers that "body" is a continuation
+		 * accepting a number (when restarted) and yielding a string (when
+		 * exited).
+		 */
+		$body : string;
+		Assert: body ∈ $[number]→string;
+		Exit body with “aNumber”
+	] : string;</div>
+</div>
+</li>
+<li>
+A <strong>variable use</strong> phrase indicates that the value of a variable, constant, or label should be read at execution time. The inferred type of such a phrase is obvious: it is the same as the type declared or inferred for the entity.
+<div class="restricted-width-container">
+<div class="good-code code-block">/* The initialization of "x" is permissible because "one" has a declared type of
+ * "integer".
+ */
+one : integer := 1;
+x : integer := one;</div>
+</div>
+</li>
+<li>
+A <strong>variable reference</strong> phrase denotes a usage of the variable itself, not the value that it stores. In Avail, a variable is a value, and thus an instance of some number of types. If the variable was declared in the module scope, then the type inferred for a variable reference phrase is the instance type of the variable itself; otherwise the variable is a local variable, and the type inferred is the type of variables able to yield and store values of the variable’s annotated type.
+<div class="restricted-width-container">
+<div class="good-code code-block">/* Assuming that this is the module scope, then "referenceToX" is declared with
+ * the instance type of the variable "x".
+ */
+x : integer := 20;
+referenceToX : (↑x)’s type := ↑x;
+Assert: ↓referenceToX = 20;
+
+aFunction ::=
+	[
+		/* The instance type of "y" is not available to the compiler, because
+		 * a new variable is created each time this function is applied.
+		 */
+		y : integer := 50;
+		referenceToIntegerVariable : ↑integer := ↑y;
+		Assert: ↓referenceToIntegerVariable = 50;
+	];</div>
+</div>
+</li>
+<li>
+A <strong>function definition</strong> must always explicitly type its parameters via <strong>parameter declarations</strong>. The return type annotation of an ordinary function definition is optional, however, so type inference may be necessary to ascertain it. If the return type annotation is present, then it is used to type the function. Otherwise, the return type of a function is inferred to match that of the last expression of the implementation. The type inferred for the function itself is a function type with appropriate parameter types and return type.
+<div class="restricted-width-container">
+<div class="good-code code-block">multiplier : [integer, integer]→integer :=
+	[
+		/* These type annotations are mandatory. */
+		multiplicand : integer,
+		multiplier : integer
+	|
+		/* The send of "_×_" is the last (and only) expression. Its type is
+		 * inferred to be "integer", thus the function's return type is also
+		 * inferred to be "integer".
+		 */
+		multiplicand × multiplier
+	];</div>
+</div>
+</li>
+<li>
+<strong>Message sends</strong> constitute the bulk of an Avail program. The type inferred for a message send is the <a href="./03-type-relations.html">type intersection</a> of the method's declared or inferred return type and all <a href="./10-semantic-restrictions.html">semantic restrictions</a> applicable at the call site.
+<div class="restricted-width-container">
+<div class="good-code code-block">/* Assume that "_+_" has a declared return type of "integer", and that there
+ * exists a semantic restriction capable of producing an integral instance type
+ * when presented with two instance types. Under these assumptions, the following
+ * initializing declaration is legitimate.
+ */
+sum : 7's type := 5 + 2;</div>
+</div>
+</li>
+</ul>
+<tr class="book-nav">
+	<div class="book-nav">
+		<li class="book-nav-back"><a class="book-nav-back" href="./08-type-annotations.html">‹ Type Annotations</a></li>
+		<li class="book-nav-spacer">|</li>
+		<li class="book-nav-up"><a class="book-nav-up" href="../type-system.html">Return to Type System</a></li>
+		<li class="book-nav-spacer">|</li>
+		<li class="book-nav-forward"><a class="book-nav-forward" href="./10-semantic-restrictions.html">Semantic Restrictions ›</a></li>
+	</div>
+</tr>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>

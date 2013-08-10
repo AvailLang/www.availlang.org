@@ -24,15 +24,15 @@
 <p>
 Apologies for the long hiatus between newsletters. Before the website went up, these were sent from a personal e-mail account to the small list of Avail insiders. But the website is now a more appropriate venue, so please look for newsletters here. There is no commitment to a particular frequency yet, but having said that, hopefully there will be a newsletter every week so that interested parties can stay current with Avail developments.
 </p>
-<h4>Wump it Good</h4>
+<h3>Wump it Good</h3>
 <p>
 This week, <em>Wump the Wumpus</em>, an Avail adaptation of Gregory Yob's 1972-3 text adventure classic, <em>Hunt the Wumpus</em>, was published to the source repository. The project-relative path to the codebase is <code>examples/Wump the Wumpus</code>. To actually play the game, build <code>examples/Play Wump the Wumpus</code>. While the game is meant to amuse for a few minutes or hours at most, the primary value resides in its source code. <em>Wump the Wumpus</em> is a pedagogic exercise in developing a nontrivial application in Avail.
 </p>
-<h4>Unfinished Business</h4>
+<h3>Unfinished Business</h3>
 <p>
 The exception handling machinery now supports unwind protection. The method formerly named <code>"Guard|guard_«intercept_»"</code> is now <code>"Guard|guard_«intercept_»«ensure_»"</code>. The first argument is the <em>guarded function</em>, the second argument is a tuple of <em>exception handlers</em>, and the (new) third argument is an optional <em>unwind handler</em>. Whether a guarded function runs to completion or is curtailed by an exception, the associated unwind handler always runs. This functionality is equivalent to the <code>try/catch/finally</code> control structure from Java or C#, the <code>try/except/finally</code> control structure from Python, or the <code>begin/rescue/ensure</code> control structure from Ruby. The unit test, <code>new-avail/Avail/Foundation Tests/Exception Tests</code>, is rife with examples that should demonstrate the nuances of exception handling.
 </p>
-<h4>If At First You Don't Succeed&hellip;</h4>
+<h3>If At First You Don't Succeed&hellip;</h3>
 <p>
 The standard library now supports computational backtracking. Backtracking is the technique of checkpointing the execution of an algorithm so that it is possible to abandon a path of computation and proceed along a different path that diverges at a checkpoint. To use backtracking, first establish a dynamic fence with <code>"Backtracking fence_"</code>. The argument is a function within which backtracking primitives may occur. There are two classes of backtracking primitives: those which establish checkpoints and those which resume checkpoints. In the former class are <code>"first try"</code>, which establishes a checkpoint and then answers <code>true</code>; <code>"trial`#of_"</code>, which establishes a checkpoint and then answers <code>1</code>; and <code>"trial element of_"</code>, which establishes a checkpoint and then answers the first value from its argument tuple or set. In the latter class is <code>"Try again"</code>, which causes the most recent checkpoint to resume <em>and answer a different value</em>. Following <code>"Try again"</code>, a previous <code>"first try"</code> will resume and answer <code>false</code>; a previous <code>"trial`#of_"</code> will resume and answer the next natural number less than or equal to its argument; a previous <code>"trial element of_"</code> will resume and answer the next element from its argument. If a checkpoint has already returned every possible value because of repeated sends of <code>"Try again"</code>, then it becomes invalid and the next most recent checkpoint is resumed. If no checkpoints are active within the nearest <code>"Backtracking fence_"</code>, then <code>"Try again"</code> raises a <code>no-checkpoint exception</code>. Use of a backtracking primitive outside of a function dynamically guarded by <code>"Backtracking fence_"</code> will raise a <code>no-backtracking-fence exception</code>. The unit test, <code>new-avail/Avail/Foundation Tests/Backtracking Tests</code>, includes the archetypal <strong>N queens problem</strong>, a classical example of the immense power of backtracking:
 </p>
@@ -42,7 +42,7 @@ Private method "_queens" is
 [
 	n : natural number
 |
-	queens : &lt;natural number…|&gt; := 1 to n;
+	queens : ‹natural number…|› := 1 to n;
 	Backtracking fence
 	[
 		From 1 to n do
@@ -60,20 +60,20 @@ Private method "_queens" is
 		];
 	];
 	queens
-] : &lt;natural number…|&gt;;
+] : ‹natural number…|›;
 
 /* Make the type really strong. */
 Semantic restriction "_queens" is
 [
 	n : natural number's type
 |
-	&lt;&lt;&gt;, [1..⎡n⎤]…|n&gt;
+	‹‹›, [1..⎡n⎤]…|n›
 ];
 
 Test "eight queens" in backtracking test suite is
 [
-	solution : &lt;[1..8]…|8&gt; := 8 queens;
-	Require: &lt;1, 3, 5, 2, 8, 6, 4, 7&gt; = solution;
+	solution : ‹[1..8]…|8› := 8 queens;
+	Require: ‹1, 3, 5, 2, 8, 6, 4, 7› = solution;
 ];</div>
 </div>
 <p>
@@ -83,7 +83,7 @@ Many more things are cooking. More on those as they become ready for consumption
 	<div class="book-nav">
 		<li class="book-nav-up"><a class="book-nav-up" href="./index.html">Return to Newsletters</a></li>
 		<li class="book-nav-spacer">|</li>
-		<li class="book-nav-forward"><a class="book-nav-forward" href="./E02.html">Next &gt;</a></li>
+		<li class="book-nav-forward"><a class="book-nav-forward" href="./E02.html">Next ›</a></li>
 	</div>
 </tr>
 

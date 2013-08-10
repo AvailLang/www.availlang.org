@@ -1,0 +1,185 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Avail - Type System</title>
+	
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+
+		<h2 class="content-title">Type Annotations</h2>
+<p>
+Avail is a <strong>statically typed language</strong>. As such, every phrase comprising a source program is either <em>1)</em> annotated with a particular type by the programmer or <em>2)</em> inferred to yield a particular type by the compiler. Which of these mechanisms is employed depends only upon the kind of the phrase in question. Most phrase kinds acquire their types through compiler inference. Only a few phrase kinds mandate type annotation by the programmer:
+</p>
+<ul>
+<li>A <strong>variable declaration</strong> phrase introduces a named mutable storage location into the current scope and specifies a type to which stored values must conform. A variable declaration that also stores an initial value is an <strong>initializing variable declaration</strong>.
+<div class="restricted-width-container">
+<div class="good-code code-block">/* After this declaration and until the end of the enclosing scope, code may refer
+ * to "n". The variable begins life unassigned; an attempt to read from it will
+ * raise an exception.
+ */
+n : integer;
+
+/* This next declaration introduces "greeting", a variable initialized with a
+ * famous string and capable of storing any other string (irrespective of its
+ * fame).
+ */
+greeting : string := "Hello, world!\n";</div>
+</div>
+</li>
+<li>A <strong>function parameter declaration</strong> phrase introduces a named function parameter and specifies a type to which its values must conform during function application.
+<div class="restricted-width-container">
+<div class="good-code code-block">/* "plusOne" is a function applicable to a single argument, an integer, that
+ * produces a value exactly one greater than this argument.
+ */
+plusOne ::= [x : integer | x + 1];
+Assert: plusOne(20) = 21;</div>
+</div>
+</li>
+<li>Some functions rely on virtual machine primitives for their implementations. For example, adding two numbers together is so basic that it would be inappropriate, if not impossible, to provide an implementation in Avail source code; therefore the virtual machine must implement this capability directly and expose it for use in Avail source code. Such a function is a <strong>primitive function</strong>. A primitive function begins its body with a <strong>primitive linkage statement</strong> that specifies, by ordinal, which virtual machine primitive should be invoked when the function is applied. A primitive linkage statement includes a <strong>primitive failure variable declaration</strong> that is mandatory whenever the target primitive is permitted to fail in some circumstance and forbidden otherwise. When a fallible primitive actually fails, a value is stored into the primitive failure variable; this value indicates what went wrong, and is usually a numeric error code. Only in the event of failure is the sequence of statements following the primitive linkage statement actually executed. It has the responsibility of handling the failure somehow, and the failure variable should help it fulfill this role. The <strong>return type declaration</strong> specifies the type of values producible by the function. This declaration is optional for ordinary Avail functions, but mandatory for primitive functions.
+<div class="restricted-width-container">
+<div class="good-code code-block">/* This primitive function accepts two numeric arguments and answers their sum. */
+adder ::=
+	[
+		augend : number,
+		addend : number
+	|
+		/* Addition fails when the arguments are unlike infinities, so the
+		 * primitive failure variable type annotation is mandatory.
+		 * "failureCode" will contain a specific numeric error code if the
+		 * primitive fails. The method "cannot-add-unlike-infinities code"
+		 * answers this particular error code.
+		 */
+		Primitive 1 (failureCode : natural number);
+		Assert: failureCode = cannot-add-unlike-infinities code;
+		Raise a cannot-add-unlike-infinities exception
+	] : number;
+Assert: adder(10, 25) = 35;</div>
+</div>
+</li>
+</ul>
+<p>
+Only two phrase kinds permit type annotation but do not necessarily require it:
+</p>
+<ul>
+<li>
+Any function definition may include a trailing <strong>return type declaration</strong>. As mentioned above, this declaration is optional for ordinary Avail functions. Though the return type of any non-primitive function can be inferred directly from its implementation, the programmer may explicitly annotate a function with its return type in order to <em>1)</em> sincerely document, as a courtesy to humans, the type of values producible or <em>2)</em> weaken the type beyond what would be inferred by the compiler.
+<div class="restricted-width-container">
+<div class="good-code code-block">/* "explicitPlusOne" is the same function as "plusOne" above, but annotated with
+ * an explicit return type.
+ */
+explicitPlusOne ::= [x : integer | x + 1] : integer;
+Assert: explicitPlusOne(20) = 21;</div>
+</div>
+</li>
+<li>
+Any non-primitive function definition may begin with a <strong>label declaration</strong>. A label is a special constant that is bound to a continuation when the enclosing function is applied. This continuation, when restarted, causes the body of the function to execute. The same continuation, when exited, causes control to return to the function’s caller. A label declaration permits an optional return type declaration. If specified, then this declaration must be compatible with the return type declaration, annotated or inferred, of the enclosing function. If not specified, then this declaration is inferred to be <code><a href="./02-types.html-top">⊥</a></code>.
+<div class="restricted-width-container">
+<div class="good-code code-block">/* This is an implementation of the classical while loop. */
+Method "While_do_" is
+[
+	predicate : []→boolean,
+	body : [⊥]→⊤
+|
+	/* "loop" is a label. Whenever "predicate" yields true, then "body" is
+	 * applied and the continuation bound to "loop" is restarted, i.e., control
+	 * suddenly resumes at the the beginning of the function.
+	 */
+	$loop;
+	If predicate() then
+	[
+		body();
+		Restart loop
+	];
+] : ⊤;
+
+/* This answers the first element of a tuple that satisfies the given predicate,
+ * or 0 if no such element exists.
+ */
+Method "first index of_where_" is
+[
+	elements : tuple,
+	predicate : [any]→boolean
+|
+	/* If "elements" contains an element that satisfies "predicate", then we
+	 * want to exit the implementation early; there’s no point in testing the
+	 * remaining elements. So we need to annotate "foundIt" with the return type
+	 * "natural number" (a subtype of "whole number") so that we can safely exit
+	 * the continuation.
+	 */
+	$foundIt : natural number;
+	For each of elements do
+	[
+		element : any,
+		index : natural number
+	|
+		If predicate(element) then
+		[
+			Exit foundIt with index
+		];
+	];
+	0
+] : whole number;</div>
+</div>
+</li>
+</ul>
+<p>
+A type annotation may be any expression that yields a type when evaluated, so long as that expression does not incorporate variables and constants introduced in intermediate scopes. The compiler always evaluates type annotations in the module scope rather than the nearest enclosing scope. This is essential for a statically typed language. It guarantees that the type represented by an annotation cannot depend upon values not known until execution time.
+</p>
+<p>
+All of this also implies, correctly, that the compiler must run user code in order to ascertain the type intended by an annotation. Avail differs from other programming languages in that the compiler itself can and does invoke user code, yet a firm distinction is maintained between the compilation time and execution time of a program. In order to build a program, the compiler must execute all module-level statements. Type annotations may always rely on the side-effects of previously executed module-level statements.
+</p>
+<div class="restricted-width-container">
+<div class="good-code code-block">/* Assuming that this is the module scope, then the following type annotations are
+ * all perfectly legal. "someInteger" and "anInteger" are declared as integer
+ * variables and "aString" is declared as, you guessed it, a string variable.
+ */
+int ::= integer;
+someInteger : int := 5;
+typeVariable : type := int;
+anInteger : typeVariable := 10;
+typeVariable := string;
+aString : typeVariable := "Sure is contrived…\n";</div>
+</div>
+<div class="restricted-width-container">
+<div class="bad-code code-block">/* The compiler will reject compilation of this method, because the type of
+ * "badVariable" cannot be known until the program is run, and may vary from one
+ * invocation to another.
+ */
+Method "declare local variable as_" is
+[
+	arg : type
+|
+	badVariable : arg;
+	/* Note that it’s hard to figure out what we might be able to do with
+	 * "badVariable", since it will potentially have a different type on every
+	 * invocation.
+	 */
+];</div>
+</div>
+<tr class="book-nav">
+	<div class="book-nav">
+		<li class="book-nav-back"><a class="book-nav-back" href="./07-type-names.html">‹ Type Names</a></li>
+		<li class="book-nav-spacer">|</li>
+		<li class="book-nav-up"><a class="book-nav-up" href="../type-system.html">Return to Type System</a></li>
+		<li class="book-nav-spacer">|</li>
+		<li class="book-nav-forward"><a class="book-nav-forward" href="./09-type-inference.html">Type Inference ›</a></li>
+	</div>
+</tr>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>

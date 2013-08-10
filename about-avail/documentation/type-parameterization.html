@@ -58,7 +58,7 @@ Assert: firstChar(15) = …;</div>
 The actual function, <code>[s : string | s[1]]</code>, requires that its argument be a string. Attempting to apply this function to something other than a string must therefore be illegal. But the variable <code>firstChar</code> holds a function that accepts any argument, so on its face <code>firstChar(15)</code> must be legal because <code>15</code> is an instance of <code>any</code>. And the application is, in fact, legal. So what is wrong here?
 </p>
 <p>
-The problem is this: the initialization of <code>firstChar</code> is invalid. It implicitly reasons that because <code>string</code> is a subtype of <code><a href="/content/types-any">any</a></code>, then <code>[string]→character</code> must be a subtype of <code>[any]→character</code>. Though seductive, this reasoning is erroneous. Consider the following code snippet as a correction to the previous one:
+The problem is this: the initialization of <code>firstChar</code> is invalid. It implicitly reasons that because <code>string</code> is a subtype of <code><a href="./type-system/13-types-any.html">any</a></code>, then <code>[string]→character</code> must be a subtype of <code>[any]→character</code>. Though seductive, this reasoning is erroneous. Consider the following code snippet as a correction to the previous one:
 </p>
 <div class="restricted-width-container">
 <div class="good-code code-block">/* "firstChar" can hold a function that accepts a single argument, which must be
@@ -91,7 +91,7 @@ Formally, given an incomplete type <code>T</code>, a complete type <code>T<sub>X
 <p>
 Avail provides no access to incomplete types. Parameterized types are constructed, ultimately, using primitive operations that accept the required type parameters and answer completed types.
 </p>
-<h5 class="return-link"><a href="./index.html">&lt; back to Documentation</a></h5>
+<h5 class="return-link"><a href="./index.html">‹ back to Documentation</a></h5>
 
 <!--#include virtual="/_include/body-bottom.ssi" -->
 
