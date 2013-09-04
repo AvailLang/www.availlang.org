@@ -1,0 +1,173 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Avail - Rich's Blog</title>
+	
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+		
+<a href="./index.html"><h3 class="content-supertitle">Rich's Blog</h3></a>
+<h2 class="content-title">Two nights, one blog</h2>
+
+<div class="content-meta-info">November 6, 2012</div>
+<p>
+So I slipped up in my endeavor to blog each time I spend a considerable amount of time working on Avail.  Between Todd's paper on semantic restrictions and Stacks, I pumped many hours into Avail last night.  However I did not blog about it.  As the submission deadline for the paper is fast approaching, I felt it important that I spend a good amount of time reviewing his paper.  I pretty much went straight to bed after I was done.  But seeing as the recent time change just went into effect, I'm going to slyly shift the blame to that.  Here it goes:
+</p><p>
+<em>On account of that darn time change, I was unable to get my blog post in last night!  If only time hadn't recently changed, I'd been able to blog about Avail last night.  What is a simple programmer to do?  Le sigh... </em>
+</p><p>
+Now that I've successfully shifted blame away from myself, let's talk about Avail!  When last I talked about my progress on Stacks, I indicated that I was working on the <code>Avail scanner</code>.  I had discussed the dispatch table and some of the abstract methods that would be keyed at the various code points.  For the most part, I've now finished that module.  I may need to tweak and add here or there, but I feel good about what is there.  Since yesterday, I've added a few methods that round off the functionality: 1) a method to read through the scanner's source, <code>"Exhaust_"</code>, 2) a method that advances the scanner's iterator, <code>"Next character from_"</code>, and 3) a utility method that allows you to run through the scanner's source until the provided condition is no longer true, <code>"read from_while_"</code>.  I've added the three methods at the bottom of this blog if you are interested.
+</p><p>
+Having completed the task of the <code>Avail scanner</code> abstraction, I've moved to concrete implementation of the <code>stacks scanner</code> in the module <em>Stacks Lexer</em>.  As of right now it is definitely a work in progress. However, I find that the abstraction of <code>Avail scanner</code> makes this task much easier than it was the first umpteen iterations.  So far it is making my code look cleaner as well as making it more modular.  I don't think I'll need the monster methods anymore.  But as it is still in pieces on the workbench, I'll talk more about it when I've made more significant progress.  For now, it is later than it claims to be (silly time change!) and I need to begin winding down the brain so I can get some decent z's. Until next I post...
+</p><p>
+<br /><em>As promised, the Avail methods written for Avail scanner:</em>
+</p>
+<div class="restricted-width-container">
+<div class="good-code code-block">/**
+ * Advance the scanner's source and increment the line number and column number
+ * if able
+ *
+ * @method "Next character from_"
+ * @categories "Avail Lexical Scanner"
+ * @param "scanner" "Avail scanner" 
+ *		an Avail scanner
+ * @returnType "⊤"
+ *		none
+ * @raises "Raise an exhausted-iterator exception" 
+ *		there is nothing left on the iterator to consume
+ * @author "Richard Arriaga"
+ */
+Public method "Next character from_" is
+[
+ 	scanner : Avail scanner
+ |
+ 	Unless scanner's source is exhausted then
+ 	[
+		Advance scanner's source;
+		If scanner's source is not exhausted then
+		[ 
+			if scanner's source's current element = ¢"\n" then 
+			[
+				↓scanner's column number ?= 1;
+				scanner's line number++;
+			]
+			else
+			[
+			 	scanner's column number++;
+			];
+		];
+ 	] 
+ 	else
+ 	[
+ 	 	Raise an exhausted-iterator exception
+ 	];
+ ]:⊤;
+
+/**
+ * Advance the scanner's source until exhaustion.  Perform appropriate functions
+ * for each element of the scanner's source's elements
+ *
+ * @method "Exhaust_"
+ * @categories "Avail Lexical Scanner"
+ * @param "scanner" "Avail scanner" 
+ *		an Avail scanner
+ * @returnType "⊤"
+ *		none
+ * @author "Richard Arriaga"
+ */
+Public method "Exhaust_" is
+[
+	scanner : Avail scanner
+|
+	While
+	[
+		scanner's source is not exhausted 
+	]
+	do
+	[
+		c ::= scanner's source's current element; 
+		/*  TODO:  Current implementation is incomplete due to lacking character
+		 * functionality.  May miss many operator characters.  Once tuple
+		 * performance issue and character module limitiations addressed,
+		 * this needs to be revisited.*/
+		f ::= dispatchTable[c's code point] else
+			[ /* else addresses limits in dispatch table.  Assertions not
+			   * 100% effective on providing correct coverage.            */
+			 	[
+			 	 	s : Avail scanner
+			 	 |
+			 	 	if s's source's current element is whitespace then
+			 	 	[
+			 	 	 	Process white space from s;
+			 	 	] 
+			 	 	else
+			 	 	[
+			 	 	 	Process identifier starter from s;
+			 	 	];
+			 	]
+			];
+		f(scanner);
+		Next character from scanner;
+	];
+]:⊤;
+
+/**
+ * Read from Avail scanner's source while supplied condition is true or the 
+ * source is exhausted.
+ *
+ * @method "read from_while_"
+ * @public
+ * @categories "Avail Lexical Scanner"
+ * @param "scanner" "Avail scanner" 
+ *		an avail scanner 
+ * @param "predicate" "boolean" 
+ *		The function that guards repeated application of reading from the source
+ * @returnType "&lt;character…|>"
+ *		the tuple of characters read from the source
+ * @author "Richard Arriaga"
+ */
+Public method "read from_while_" is
+[
+ 	scanner : Avail scanner,
+ 	predicate : []→boolean
+ |
+ 	buffer : &lt;character…|> := &lt;>;
+	While 
+	[
+	 	scanner's source is not exhausted ∧ 
+	 		[predicate()]
+	]
+	do
+	[
+	 	Next character from scanner;
+	 	buffer := buffer ++ &lt;scanner's source's current element>;
+	];
+	buffer
+ ]:&lt;character…|>;</div></div>
+</p>
+<tr class="book-nav">
+	<div class="book-nav">
+		<li class="book-nav-back"><a class="book-nav-back" href="./E03.html">‹ Previous</a></li>
+		<li class="book-nav-spacer">|</li>
+		<li class="book-nav-up"><a class="book-nav-up" href="./index.html">Return to Rich's Blog</a></li>
+		<li class="book-nav-spacer">|</li>
+		<li class="book-nav-forward"><a class="book-nav-forward" href="./E05.html">Next ›</a></li>
+	</div>
+</tr>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>

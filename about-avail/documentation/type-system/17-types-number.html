@@ -19,8 +19,8 @@
 <!--#include virtual="/_include/body-top.ssi" -->
 
 		<h2 class="content-title"><code>number</code></h2>
-<div class="diagram" style="float: right;">
-<iframe src="/images/diagrams/type-system-number-focus.svg" seamless></iframe>
+<div class="scrolling" style="float: right;">
+<iframe src="/_images/type-system/type-system-number-focus.svg" seamless></iframe>
 </div>
 <p>
 A <strong>number</strong> is an immutable mathematical object. Uses of numbers include counting, annotating entities to distinguish them, and measuring the magnitudes of quantities. Avail natively supports integers and two distinct precisions of floating-point approximations of real numbers. Integers are discrete, and thus excel at counting and labeling. Real numbers form a continuum, and are therefore suitable for taking measurements.
@@ -28,6 +28,9 @@ A <strong>number</strong> is an immutable mathematical object. Uses of numbers i
 <p>
 The method <code>"_→double"</code> converts an of instance of <code>number</code> into the best fit instance of <code><a href="./18-types-double.html">double</a></code>, which is the appropriate infinity if the argument is an integer that exceeds the representational limits of <code>double</code>. The method <code>"_→float</code> converts a number into the best fit <a href="./19-types-float.html">float</a>, which is the appropriate infinity if the argument is an integer that exceeds the representational limits of <code>float</code>. The method <code>"_→extended integer"</code> converts a number into an <a href="./20-types-extended-integer.html">extended integer</a> by rounding it toward zero.
 </p>
+</div>
+</section>
+<div class="book-nav">
 <tr class="book-nav">
 	<div class="book-nav">
 		<li class="book-nav-back"><a class="book-nav-back" href="./16-types-character.html">‹ <code>character</code></a></li>
@@ -37,6 +40,7 @@ The method <code>"_→double"</code> converts an of instance of <code>number</co
 		<li class="book-nav-forward"><a class="book-nav-forward" href="./18-types-double.html"><code>double</code> ›</a></li>
 	</div>
 </tr>
+</div>
 
 <!--#include virtual="/_include/body-bottom.ssi" -->
 

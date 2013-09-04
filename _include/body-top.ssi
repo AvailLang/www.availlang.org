@@ -18,7 +18,9 @@
 					<div class="nav-section">
 						<div class="nav-section-header">Using Avail</div>
 						<div class="nav-links">
-							<div><a class="nav-link" href="/get-avail/licensing/index.html">Licensing</a></div>
+							<div><a class="nav-link" href="/using-avail/try-it-out.html">Try it Out</a></div>
+							<div><a class="nav-link" href="/using-avail/licensing.html">Licensing</a></div>
+							<div><a class="nav-link" href="/using-avail/source.html">Get the Source</a></div>
 						</div>
 					</div>
 					<div class="nav-section">

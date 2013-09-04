@@ -1,0 +1,256 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Avail Team - Doc Tag Guidelines</title>
+	
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+
+		<h2 class="content-title">Documentation Tag Guidelines</h2>
+		
+<style>
+
+.tblGenFixed td {padding:0 3px;overflow:hidden;letter-spacing:0;word-spacing:0;background-color:#fff;z-index:1;border-top:0px none;border-left:0px none;border-bottom:1px solid #CCC;border-right:1px solid #CCC;} 
+
+.dn {display:none} 
+
+.tblGenFixed td.s0 {background-color:white;font-family:arial,sans,sans-serif;font-size:80.0%;font-weight:normal;font-style:normal;text-decoration:none;vertical-align:bottom;direction:Context;white-space:normal;overflow:hidden;border-top:1px solid #CCC;border-right:;border-bottom:;border-left:1px solid #CCC;} 
+
+.tblGenFixed td.s2 {background-color:#000000;font-family:calibri,arial,sans,sans-serif;font-size:80.0%;font-weight:bold;font-style:normal;color:#FFFFFF;text-decoration:none;text-align:left;vertical-align:top;direction:auto-ltr;white-space:normal;overflow:hidden;border-top:1px solid black;border-right:1px solid black;border-bottom:1px solid black;} 
+
+.tblGenFixed td.s1 {background-color:white;font-family:arial,sans,sans-serif;font-size:80.0%;font-weight:normal;font-style:normal;text-decoration:none;vertical-align:bottom;direction:Context;white-space:normal;overflow:hidden;border-top:1px solid #CCC;border-right:1px solid black;border-bottom:;} 
+
+.tblGenFixed td.s9 {background-color:#f2f2f2;font-family:calibri,arial,sans,sans-serif;font-size:80.0%;font-weight:normal;font-style:normal;color:#BFBFBF;text-decoration:none;text-align:left;vertical-align:top;direction:auto-ltr;white-space:normal;overflow:hidden;border-right:1px solid black;border-bottom:1px solid black;} 
+
+.tblGenFixed td.s7 {background-color:white;font-family:calibri,arial,sans,sans-serif;font-size:80.0%;font-weight:normal;font-style:normal;color:#59C629;text-decoration:none;text-align:left;vertical-align:top;direction:auto-ltr;white-space:normal;overflow:hidden;border-right:1px solid black;border-bottom:1px solid black;border-left:1px solid black;} 
+
+.tblGenFixed td.s8 {background-color:white;font-family:calibri,arial,sans,sans-serif;font-size:80.0%;font-weight:normal;font-style:normal;color:#000000;text-decoration:none;text-align:left;vertical-align:top;direction:auto-ltr;white-space:normal;overflow:hidden;border-right:1px solid black;border-bottom:1px solid black;} 
+
+.tblGenFixed td.s5 {background-color:#e5ffe7;font-family:calibri,arial,sans,sans-serif;font-size:80.0%;font-weight:normal;font-style:normal;color:#000000;text-decoration:none;text-align:left;vertical-align:top;direction:auto-ltr;white-space:normal;overflow:hidden;border-right:1px solid black;border-bottom:1px solid black;} 
+
+.tblGenFixed td.s6 {background-color:#dce8f3;font-family:calibri,arial,sans,sans-serif;font-size:80.0%;font-weight:normal;font-style:normal;color:#000000;text-decoration:none;text-align:left;vertical-align:top;direction:auto-ltr;white-space:normal;overflow:hidden;border-right:1px solid black;border-bottom:1px solid black;} 
+
+.tblGenFixed td.s3 {background-color:white;font-family:arial,sans,sans-serif;font-size:80.0%;font-weight:normal;font-style:normal;text-decoration:none;vertical-align:bottom;direction:Context;white-space:normal;overflow:hidden;border-right:;border-bottom:1px solid black;border-left:1px solid #CCC;} 
+
+.tblGenFixed td.s4 {background-color:white;font-family:arial,sans,sans-serif;font-size:80.0%;font-weight:normal;font-style:normal;text-decoration:none;vertical-align:bottom;direction:Context;white-space:normal;overflow:hidden;border-right:1px solid black;border-bottom:1px solid black;} 
+
+</style>
+
+<table dir='ltr' border=0 cellpadding=0 cellspacing=0 class='tblGenFixed' id='tblMain'>
+
+<tr class='rShim'>
+
+<td class='rShim' style='width:75px;'>
+<td class='rShim' style='width:276px;'>
+<td class='rShim' style='width:144px;'>
+<td class='rShim' style='width:220px;'>
+<td class='rShim' style='width:230px;'>
+<td class='rShim' style='width:200px;'>
+<td class='rShim' style='width:80px;'>
+<td class='rShim' style='width:80px;'>
+
+<tr dir='ltr'>
+<td class='s0'>
+<td class='s1'>
+<td dir='ltr' class='s2'>Method Overview
+<td dir='ltr' class='s2'>Grammatical Restriction
+<td dir='ltr' class='s2'>Method Implementation
+<td dir='ltr' class='s2'>Semantic Restriction
+<td dir='ltr' class='s2'>Module
+<td dir='ltr' class='s2'>Class
+</tr>
+
+<tr dir='ltr'>
+<td class='s3'>
+<td class='s4'>
+<td dir='ltr' class='s5'>OPTIONAL and SINGLE.
+<td dir='ltr' class='s6'>REQUIRED if gram&shy;mat&shy;ical re&shy;strictions are pre&shy;sent. SINGLE inci&shy;dence is pre&shy;ferred be&shy;cause multiple desc&shy;riptions cannot be thought&shy;fully combined.
+<td dir='ltr' class='s6'>REQUIRED for most imple&shy;ment&shy;ations (MULTIPLE); when multiple imple&shy;ment&shy;ations are used instead of a single imple&shy;ment&shy;ation with semantic restrictions, the imple&shy;ment&shy;ations&#39; com&shy;bined attri&shy;butes and effect can be desc&shy;ribed with a single imple&shy;ment&shy;ation block.
+<td dir='ltr' class='s6'>REQUIRED for each semantic restriction (MULTIPLE).
+<td dir='ltr' class='s6'>REQUIRED and SINGLE
+<td dir='ltr' class='s6'>REQUIRED and SINGLE
+</tr>
+
+<tr dir='ltr'>
+<td dir='ltr' class='s7'>Description
+<td dir='ltr' class='s8'>SINGLE - All of the text that ap&shy;pears in the docu&shy;ment&shy;ation block pre&shy;ceding the first tag, ex&shy;cluding the single newline before the first tag.
+<td dir='ltr' class='s5'>OPTIONAL - Talks about the method in general, with&shy;out commenting on details specific to individual implementations.
+<td dir='ltr' class='s5'>OPTIONAL - The reason for the restriction.
+<td dir='ltr' class='s5'>OPTIONAL - Details of the imple&shy;ment&shy;ation unique to this set of para&shy;meters.
+<td dir='ltr' class='s5'>OPTIONAL, DISCOURAGED - Semantic restriction desc&shy;ription should be USED SPARINGLY and only when the reasoning behind the restrict&shy;ion&#39;s inclusion in the method is not obvious or de&shy;ducible.
+<td dir='ltr' class='s5'>OPTIONAL
+<td dir='ltr' class='s5'>OPTIONAL
+</tr>
+
+<tr dir='ltr'>
+<td dir='ltr' class='s7'>@method
+<td dir='ltr' class='s8'>SINGLE - Precedes name of the method desc&shy;ribed, which is in quotes. This tagline MUST appear first in the list of taglines.
+<td dir='ltr' class='s6'>REQUIRED
+<td dir='ltr' class='s6'>REQUIRED
+<td dir='ltr' class='s6'>REQUIRED
+<td dir='ltr' class='s6'>REQUIRED
+<td dir='ltr' class='s9'>NOT USED
+<td dir='ltr' class='s9'>NOT USED
+</tr>
+
+<tr dir='ltr'>
+<td dir='ltr' class='s7'>@public
+<td dir='ltr' class='s8'>SINGLE - Indi&shy;cates that the method or object will be freely access&shy;ible for use in any AVAIL program regard&shy;less of its visi&shy;bility in the module hier&shy;archy. No text follows the tag. 
+<td dir='ltr' class='s5'>OPTIONAL
+<td dir='ltr' class='s9'>NOT USED
+<td dir='ltr' class='s5'>OPTIONAL
+<td dir='ltr' class='s9'>NOT USED
+<td dir='ltr' class='s9'>NOT USED
+<td dir='ltr' class='s5'>OPTIONAL
+</tr>
+
+<tr dir='ltr'>
+<td dir='ltr' class='s7'>@category
+<td dir='ltr' class='s8'>MULTIPLE - &#39;Pre&shy;cedes a single category name, in un&shy;quoted text. Indicates that the top-level object will appear in the speci&shy;fied cate&shy;gory&#39;s list of com&shy;ponents.
+<td dir='ltr' class='s6'>REQUIRED at least once, either in Method Overview or Implementation
+<td dir='ltr' class='s9'>NOT USED
+<td dir='ltr' class='s5'>OPTIONAL
+<td dir='ltr' class='s9'>NOT USED
+<td dir='ltr' class='s9'>NOT USED
+<td dir='ltr' class='s6'>REQUIRED at least once.
+</tr>
+
+<tr dir='ltr'>
+<td dir='ltr' class='s7'>@see
+<td dir='ltr' class='s8'>MULTIPLE - &#39;Precedes an ex&shy;ternal reference, in unquoted text. This text may include links.
+<td dir='ltr' class='s5'>OPTIONAL - References pertain to overall method design.
+<td dir='ltr' class='s5'>OPTIONAL - References pertain to reasoning behind the restriction.
+<td dir='ltr' class='s5'>OPTIONAL - References pertain specifically to this implementation design
+<td dir='ltr' class='s5'>OPTIONAL - Materials necessary to understand or justify the restriction.
+<td dir='ltr' class='s5'>OPTIONAL
+<td dir='ltr' class='s5'>OPTIONAL
+</tr>
+
+<tr dir='ltr'>
+<td dir='ltr' class='s7'>@param
+<td dir='ltr' class='s8'>MULTIPLE - for methods only. One @param tagline is required for each parameter in the method name, and the taglines de&shy;scribe the para&shy;meters in order from left to right.
+<td dir='ltr' class='s6'>REQUIRED for each para&shy;meter - Pre&shy;cedes a re&shy;quired quoted para&shy;meter name and an optional un&shy;quoted text description.
+<td dir='ltr' class='s9'>NOT USED
+<td dir='ltr' class='s6'>REQUIRED for each para&shy;meter - Pre&shy;cedes a re&shy;quired quoted para&shy;meter name, required quoted para&shy;meter type, and an optional unquoted text description.
+<td dir='ltr' class='s9'>NOT USED
+<td dir='ltr' class='s9'>NOT USED
+<td dir='ltr' class='s9'>NOT USED</tr>
+
+<tr dir='ltr'>
+<td dir='ltr' class='s7'>@restricts
+<td dir='ltr' class='s8'>MULTIPLE - for Semantic Re&shy;strictions only. One @restricts is required for each para&shy;meter in the method name, and the taglines describe the para&shy;meters in order from left to right.
+<td dir='ltr' class='s9'>NOT USED
+<td dir='ltr' class='s9'>NOT USED
+<td dir='ltr' class='s9'>NOT USED
+<td dir='ltr' class='s6'>REQUIRED for each para&shy;meter in the method - Each tag pre&shy;cedes a re&shy;quired quoted para&shy;meter type and an optional un&shy;quoted text description.<br/>
+<td dir='ltr' class='s9'>NOT USED
+<td dir='ltr' class='s9'>NOT USED
+</tr>
+
+<tr dir='ltr'>
+<td dir='ltr' class='s7'>@returns
+<td dir='ltr' class='s8'>SINGLE
+<td dir='ltr' class='s6'>REQUIRED - Pre&shy;cedes an un&shy;quoted text description of what the method generally returns.
+<td dir='ltr' class='s9'>NOT USED
+<td dir='ltr' class='s6'>REQUIRED - Pre&shy;cedes a re&shy;quired quoted return type and an optional un&shy;quoted text description of what the method generally returns.
+<td dir='ltr' class='s9'>NOT USED
+<td dir='ltr' class='s9'>NOT USED
+<td dir='ltr' class='s9'>NOT USED
+</tr>
+
+<tr dir='ltr'>
+<td dir='ltr' class='s7'>@raises
+<td dir='ltr' class='s8'>MULTIPLE - Pre&shy;cedes a quoted exception type ex&shy;pression and an optional un&shy;quoted text description of the con&shy;ditions in which an ex&shy;ception of the named type would be raised.
+<td dir='ltr' class='s5'>OPTIONAL for the super&shy;type common to the ex&shy;ception types raised in the imple&shy;ment&shy;ations and re&shy;strictions.
+<td dir='ltr' class='s9'>NOT USED
+<td dir='ltr' class='s6'>REQUIRED for all exceptions raised within the imple&shy;ment&shy;ation logic.
+<td dir='ltr' class='s6'>REQUIRED for all exceptions raised in the restriction logic.
+<td dir='ltr' class='s9'>NOT USED
+<td dir='ltr' class='s9'>NOT USED
+</tr>
+
+<tr dir='ltr'>
+<td dir='ltr' class='s7'>@author
+<td dir='ltr' class='s8'>MULTIPLE - Pre&shy;cedes an unquoted text line containing a single author&#39;s name, possibly linked to an email address or webpage.
+<td dir='ltr' class='s5'>OPTIONAL - Those who have a hand in the naming or general archi&shy;tecture of the method.
+<td dir='ltr' class='s5'>OPTIONAL - Those who have a hand in the creation of the grammati&shy;cal restriction.
+<td dir='ltr' class='s5'>OPTIONAL - Those who have a hand in the creation of the imple&shy;ment&shy;ation.
+<td dir='ltr' class='s5'>OPTIONAL - Those who have a hand in the creation of the semantic restriction.
+<td dir='ltr' class='s5'>OPTIONAL
+<td dir='ltr' class='s5'>OPTIONAL
+</tr>
+
+<tr dir='ltr'>
+<td dir='ltr' class='s7'>@forbids
+<td dir='ltr' class='s8'>MULTIPLE - for Grammatical Re&shy;strictions only. One @forbids tagline is required for each para&shy;meter where un&shy;accept&shy;able arguments, in the form of method names, are being excluded.
+<td dir='ltr' class='s9'>NOT USED
+<td dir='ltr' class='s6'>REQUIRED for each re&shy;strict&shy;ed para&shy;meter. Each tag pre&shy;cedes a re&shy;quired quoted para&shy;meter slot number, followed by space-separated, quoted method names. Method names here need not be linked manually; they will be linked auto&shy;matically.
+<td dir='ltr' class='s9'>NOT USED
+<td dir='ltr' class='s9'>NOT USED
+<td dir='ltr' class='s9'>NOT USED
+<td dir='ltr' class='s9'>NOT USED
+</tr>
+
+<tr dir='ltr'>
+<td dir='ltr' class='s7'>@type
+<td dir='ltr' class='s8'>SINGLE - Precedes name of the class described, which is in quotes. This tagline MUST appear first in the list of taglines.
+<td dir='ltr' class='s9'>NOT USED
+<td dir='ltr' class='s9'>NOT USED
+<td dir='ltr' class='s9'>NOT USED
+<td dir='ltr' class='s9'>NOT USED
+<td dir='ltr' class='s9'>NOT USED
+<td dir='ltr' class='s6'>REQUIRED
+</tr>
+
+<tr dir='ltr'>
+<td dir='ltr' class='s7'>@supertype
+<td dir='ltr' class='s8'>MULTIPLE - for Class defi&shy;nitions only. One @supertype tag for each super&shy;type of the class being defined.
+<td dir='ltr' class='s9'>NOT USED
+<td dir='ltr' class='s9'>NOT USED
+<td dir='ltr' class='s9'>NOT USED
+<td dir='ltr' class='s9'>NOT USED
+<td dir='ltr' class='s9'>NOT USED
+<td dir='ltr' class='s6'>REQUIRED
+</tr>
+
+<tr dir='ltr'>
+<td dir='ltr' class='s7'>@field
+<td dir='ltr' class='s8'>MULTIPLE - for class defi&shy;nitions only. One @field tag per line per field of a class. The tag pre&shy;cedes the field name in quotes followed by the field type in quotes followed by the field de&shy;scription.
+<td dir='ltr' class='s9'>NOT USED
+<td dir='ltr' class='s9'>NOT USED
+<td dir='ltr' class='s9'>NOT USED
+<td dir='ltr' class='s9'>NOT USED
+<td dir='ltr' class='s9'>NOT USED
+<td dir='ltr' class='s6'>REQUIRED for each field
+</tr>
+
+<tr dir='ltr'>
+<td dir='ltr' class='s7'>@module
+<td dir='ltr' class='s8'>SINGLE - for Module document&shy;ation only. Indicates that any further content in the document block is for a module.
+<td dir='ltr' class='s9'>NOT USED
+<td dir='ltr' class='s9'>NOT USED
+<td dir='ltr' class='s9'>NOT USED
+<td dir='ltr' class='s9'>NOT USED
+<td dir='ltr' class='s6'>REQUIRED - no text follows.
+<td dir='ltr' class='s9'>NOT USED
+</tr>
+
+</table>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>

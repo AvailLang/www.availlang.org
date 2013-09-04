@@ -1,0 +1,46 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Avail - Rich's Blog</title>
+	
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+		
+<a href="./index.html"><h3 class="content-supertitle">Rich's Blog</h3></a>
+<h2 class="content-title">It will eat your afternoon!</h2>
+
+<div class="content-meta-info">November 11, 2012</div>
+<p>
+This will be a short blog as I'm fighting off a cough/sore throat thing that has robbed me of my weekend.  I didn't work on Avail yesterday as I was actively not doing anything on account of being sick.  I can't sustain the doing of nothing, so I worked on Avail today.  This is a very very important thing to know:  <strong>DO NOT</strong> try to export a method name out of two different modules.  It will create a situation of ambiguity to the parser when the method is called.  I defined the abstraction of <code>"tokenize_"</code> in the module, Avail Scanner. I had already defined this in Stacks Scanner, so it was in the export names section of the module.  Having not taken that out, I received an error message indicating that there were two different parsings when this method was being called.  The problem is, the two parses provided by the error message were exactly the same!  I did not think to check that the different parsings were equal for quite some time, so I banged my head against this for a few hours.  After an exhaustive rewrite of the method in which I was calling <code>"tokenize_"</code>, I FINALLY realized that I was likely exporting it in both modules (that's when I checked that the parsings were in fact different).  I removed <code>"tokenize_"</code> from the Names section of Stacks Scanner, and what do you know, it works...
+</p><p>
+Moral of the story:  <em><strong>Don't export a method out of two modules!</strong></em>
+</p><p>
+Seriously, you won't like it...
+</p>
+<tr class="book-nav">
+	<div class="book-nav">
+		<li class="book-nav-back"><a class="book-nav-back" href="./E05.html">‹ Previous</a></li>
+		<li class="book-nav-spacer">|</li>
+		<li class="book-nav-up"><a class="book-nav-up" href="./index.html">Return to Rich's Blog</a></li>
+		<li class="book-nav-spacer">|</li>
+		<li class="book-nav-forward"><a class="book-nav-forward" href="./E07.html">Next ›</a></li>
+	</div>
+</tr>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>

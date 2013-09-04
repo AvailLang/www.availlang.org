@@ -19,8 +19,8 @@
 <!--#include virtual="/_include/body-top.ssi" -->
 
 		<h2 class="content-title"><code>extended integer ≝ [-∞..∞]</code></h2>
-<div class="diagram">
-<iframe src="/images/diagrams/type-system-extended-integer-focus.svg" seamless></iframe>
+<div class="scrolling">
+<iframe src="/_images/type-system/type-system-extended-integer-focus.svg" seamless></iframe>
 </div>
 <p>
 The literal representation of an integer is a sequence of one or more decimal digits, such as <code>0</code>, <code>1</code>, <code>200</code>, <code>50000</code>, or <code>598798234908600912387587829348623580980827481650893468592374832569783</code>. Negative integer literals are created using the method <code>"-_"</code>, which defines a <a href="./10-semantic-restrictions.html">semantic restriction</a> that strengthens the answer's type to an instance type whenever the argument's value is precisely known, as is the case for <code>-1</code> or <code>-42</code>. <code>∞</code> and <code>-∞</code> are positive and negative infinity, respectively. 

@@ -86,7 +86,12 @@ body.gradient-logo {
 }
 
 .text-highlight {
-	text-align: center;
+	margin: 25px;	
+	border-radius: 15px;
+/*	background-color: rgb(240,240,240); */
+
+	font-weight: 400;
+	font-style: italic;
 }
 
 
@@ -177,10 +182,14 @@ body.gradient-logo {
 
 .content {
 	background-color: white;
+	
+	min-height: 293px;
 
 	/* Set down from inline navigation menu, and inset a small amount for small screens */
 	margin-top: 14px;
-	padding: 20px;	
+	padding: 20px;
+	
+	overflow-y: auto;
 }
 
 .shadow {
@@ -195,6 +204,13 @@ body.gradient-logo {
 
 
        /*** Content Styles ***/
+
+.content-supertitle {
+	margin-top: 0px;
+	padding-top: 0px;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
 
 .content-title {
 	margin-top: 0px;
@@ -223,6 +239,8 @@ body.gradient-logo {
 	color: green;
 	font-family: 'Raleway', sans-serif;
 	font-size: 12px;
+	position: relative;
+	bottom: 0;
 }
 
 .book-nav-back {
@@ -297,6 +315,9 @@ code {
 	height: 39px;
 }
 
+.scrolling {
+	overflow: auto;
+}
 
   /*** Footer ***/
 
