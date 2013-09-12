@@ -94,6 +94,11 @@ body.gradient-logo {
 	font-style: italic;
 }
 
+.inset {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
 
 /********** Page structure **********/
 

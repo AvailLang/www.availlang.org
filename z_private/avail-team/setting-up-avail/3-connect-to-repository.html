@@ -1,0 +1,75 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Avail Team - Setting Up Avail</title>
+	
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+
+		<h2 class="content-title">Step 3: Connect to the Avail Source Repository</h2>
+		
+<p>
+In this process you will connect to Avail's Git source repository at AvailLang.org using your supplied credentials and download a copy of the code to your local machine.
+</p><p>
+<h3>Connect Git to the Avail repository</h3>
+<ul>
+	<li>From the <strong>File</strong> menu, choose <strong>Import…</strong>.</li>
+	<li>Open the <strong>Git</strong> folder and choose <strong>Projects from Git</strong>; hit <strong>Next</strong>.</li>
+	<li>Select <strong>URI</strong>; hit <strong>Next</strong>.</li>
+<img src="../_images/ConnectToRepository1.png">
+	<li>IGNORE the URI field (it auto-populates from the Host and Repository path fields). Enter the following information exactly (it is case-sensitive):</li>
+	<small><table class="inset">
+		<tr><td><strong>Host</strong></td><td><em>availlang.org</em></td></tr>
+		<tr><td><strong>Repository path</strong></td><td><em>/home/availlang_src/Avail</em></td></tr>
+		<tr><td><strong>Protocol</strong></td><td><em>ssh</em></td></tr>
+		<tr><td><strong>Port</strong></td><td><em>22</em></td></tr>
+		<tr><td><strong>User</strong></td><td><em>availlang_src</em></td></tr>
+		<tr><td><strong>Password</strong></td><td><em>4\/41Lp4$$wds[#3]</em></td></tr>
+	</table></small>
+	<li>Hit <strong>Next</strong>.</li>
+	<li>Everything in the next (Branch Selection) window should be correct; hit <strong>Next</strong>.</li>
+	<li>In the <strong>Local Destination</strong> window, <strong>Directory</strong> field, either type in or Browse to the workspace folder where the Avail project should be stored. Hit <strong>Next</strong>.</li>
+	<li>Everything on the next screen is fine (with Import existing projects selected). Hit <strong>Next</strong>.</li>
+	<li>From here on it should be <strong>Next</strong>(s) and <strong>Finish</strong>.</li>
+</ul>
+</p><p>
+<h3>Git's Version Control Options</h3>
+The version control menu is available by right-clicking on the Avail project and selecting the Team menu. If you are familiar with SVN, you will note this is the same procedure as with that plugin.
+</p><p>
+Selected commands from this menu:
+<ul>
+	<li><strong>Commit</strong> - This is NOT the same command as SVN's commit! In addition to tracking changes made to the master, Git has local version control; commit will commit the changes you have made locally to your own version stream, and has nothing to do with the master.</li>
+	<li><strong>Push to Upstream</strong> - This is the command that merges your local changes to the repository with the effect that the master will be changed by your edits.</li>
+	<li><strong>Fetch from Upstream</strong> - Creates a <em>new</em> version branch locally based on the master. Does not change any files in your local working copy. Use this to keep an eye on what's happening in the master without having to resolve any conflicts or lose old versions of files that you're still looking at.</li>
+	<li><strong>Pull</strong> - Pulls the master data and merges it into your working version. You must manually resolve any true conflicts.</li>
+</ul>
+</p><p>
+For more information on working with Git, visit <a href="http://git-scm.com/">http://git-scm.com/</a>.
+</p>
+<tr class="book-nav">
+	<div class="book-nav">
+		<li class="book-nav-back"><a class="book-nav-back" href="./2-install-eclipse.html">‹ Step 3: Install Eclipse</a></li>
+		<li class="book-nav-spacer">|</li>
+		<li class="book-nav-up"><a class="book-nav-up" href="./index.html">Return to Setup Outline</a></li>
+		<li class="book-nav-spacer">|</li>
+		<li class="book-nav-forward"><a class="book-nav-forward" href="./4-set-git-identity.html">Step 4: Set your Git Identity ›</a></li>
+	</div>
+</tr>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>
