@@ -1,21 +1,4 @@
 @charset "utf-8";
-/*
-/* 
- * HTML5 ✰ Boilerplate
- *
- * What follows is the result of much research on cross-browser styling. 
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- *
- * Detailed information about this CSS: h5bp.com/css
- * 
- * Dreamweaver modifications:
- * 1. Commented out selection highlight
- * 2. Removed media queries section (we add our own in a separate file)
- *
- * ==|== normalize ==========================================================
- */
-
 
 /* =============================================================================
    HTML5 display definitions
@@ -195,27 +178,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 td { vertical-align: top; }
 
 
-/* ==|== primary styles =====================================================
-   Author: 
-   ========================================================================== */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ==|== non-semantic helper classes ========================================
-   Please define your styles before this section.
    ========================================================================== */
 
 /* For image replacement */
