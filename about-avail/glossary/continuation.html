@@ -21,13 +21,13 @@
 <h2 class="content-title">Continuation</h2>
 
 <p>
-An entity which crystallizes the entire execution state of the running thread (the stack, program counter, etc.) for later use. The parameter types and return types of the continuation match the corresponding types of the <a href="/about-avail/glossary/block.html">block</a> in which it is defined. 
+An entity which crystallizes the entire execution state of the running thread (the stack, program counter, etc.) for later use. The parameter types and return types of the continuation match the corresponding types of the <a href="./block.html">block</a> in which it is defined. 
 </p><p>
-Continuations can be exited or resumed. When a continuation is exited, the program execution state is replaced with the contents of the continuation, and the most recently entered block (the top block on the continuation's stored stack) is exited with the supplied return value (if any). When a continuation is resumed, the program execution state is replaced with the contents of the continuation, and the next statement in line is executed. Both the exit and resume instructions are of return type <a href="/about-avail/glossary/bottom.html"><code>⊥</code></a>, since continuations do not "return".
+Continuations can be exited or resumed. When a continuation is exited, the program execution state is replaced with the contents of the continuation, and the most recently entered block (the top block on the continuation's stored stack) is exited with the supplied return value (if any). When a continuation is resumed, the program execution state is replaced with the contents of the continuation, and the next statement in line is executed. Both the exit and resume instructions are of return type <a href="./bottom.html"><code>⊥</code></a>, since continuations do not "return".
 </p><p>
 <strong>Grammar:</strong> <code>VARNAME : $[PARAMTYPES] > RETURNTYPE := REFERENCE;</code>
 </p><p>
-<em>References:</em> <a href="./type-system/33-types-continuation.html">An in-depth look at continuations</a>
+<em>References:</em> <a href="/about-avail/documentation/type-system/33-types-continuation.html">An in-depth look at continuations</a>
 </p>
 <tr class="book-nav">
 	<div class="book-nav">

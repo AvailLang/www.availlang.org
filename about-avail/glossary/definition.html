@@ -21,16 +21,16 @@
 <h2 class="content-title">Definition</h2>
 
 <p>
-A phrase specifying a new <a href="/about-avail/glossary/constant.html">constant</a>'s <a href="/about-avail/glossary/name.html">name</a> and its permanent value. This value is given in the form of an <a href="/about-avail/glossary/expression.html">expression</a> that evaluates to any type other than <a href="/about-avail/glossary/top.html">top</a> or <a href="/about-avail/glossary/bottom.html">bottom</a>. The expression may be a <a href="/about-avail/glossary/literal.html">literal</a>, in which case the type of the constant's type becomes the literal's type. Otherwise, the type of the constant will depend on its definition context: in a top-level statement within a <a href="/about-avail/glossary/module.html">module</a>, the value expression will produce an object, so the constant's type will be the specific instance type of the object; within a <a href="/about-avail/glossary/function.html">function</a> definition, a constant's type will be the static type of the expression. (A definition statement, like any <a href="/about-avail/glossary/statement.html">statement</a>, ends in a semicolon.)
+A phrase specifying a new <a href="./constant.html">constant</a>'s <a href="./name.html">name</a> and its permanent value. This value is given in the form of an <a href="./expression.html">expression</a> that evaluates to any type other than <a href="./top.html">top</a> or <a href="./bottom.html">bottom</a>. The expression may be a <a href="./literal.html">literal</a>, in which case the type of the constant's type becomes the literal's type. Otherwise, the type of the constant will depend on its definition context: in a top-level statement within a <a href="/about-avail/documentation/modules.html">module</a>, the value expression will produce an object, so the constant's type will be the specific instance type of the object; within a <a href="./function.html">function</a> definition, a constant's type will be the static type of the expression. (A definition statement, like any <a href="./statement.html">statement</a>, ends in a semicolon.)
 </p><p>
 <strong>Grammar:</strong> <code>CONSTNAME ::= EXPRESSION</code><br />
 <strong>Example:</strong> <code>cubeSideCount ::= 6</code>
 </p><p>
-Or, the addition of a new <a href="/glossary/method-implementation">implementation</a>, <a href="/glossary/grammatical-restriction">grammatical restriction</a>, or <a href="/glossary/semantic-restriction">semantic restriction</a> to a <a href="/about-avail/glossary/method.html">method</a>.
+Or, the addition of a new implementation, <a href="./grammatical-restriction.html">grammatical restriction</a>, or <a href="./semantic-restriction.html">semantic restriction</a> to a <a href="./method.html">method</a>.
 </p><p>
 <strong>Grammar:</strong> <code>NEWTHING METHODNAME is BLOCK</code>
 </p><p>
-<em>See also:</em> In-depth looks at <a href="./type-system/28-types-definition.html">definitions</a>, <a href="./type-system/29-types-method-definition.html">method definitions</a>, <a href="./type-system/02-types.html-abstract-definition">abstract definitions</a>, <a href="./type-system/02-types.html-forward-definition">forward definitions</a>, and <a href="./type-system/02-types.html-macro-definition">macro definitions</a>.
+<em>See also:</em> In-depth looks at <a href="/about-avail/documentation/type-system/28-types-definition.html">definitions</a>, <a href="/about-avail/documentation/type-system/29-types-method-definition.html">method definitions</a>, <a href="/about-avail/documentation/type-system/30-types-abstract-definition.html">abstract definitions</a>, <a href="/about-avail/documentation/type-system/31-types-forward-definition.html">forward definitions</a>, and <a href="/about-avail/documentation/type-system/32-types-macro-definition.html">macro definitions</a>.
 </p>
 <tr class="book-nav">
 	<div class="book-nav">

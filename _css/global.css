@@ -188,8 +188,6 @@ body.gradient-logo {
 .content {
 	background-color: white;
 	
-	min-height: 293px;
-
 	/* Set down from inline navigation menu, and inset a small amount for small screens */
 	margin-top: 14px;
 	padding: 20px;
@@ -345,7 +343,7 @@ code {
 
 /* Tablet Layout: 481px to 768px. Inherits styles from: Mobile Layout. */
 
-@media only screen and (min-width: 481px) {
+@media only screen and (min-width: 768px) {
 
 	.header-wrapper {
 		/* Left-align text against the logo */
@@ -373,8 +371,10 @@ code {
 	}
 		
 	.content {
-		/* Set the white content pane in from the sides of the page */
+		/* Set the white content pane in from the sides of the page, and have a minimum height that is no shorter than the navigation menu*/
 		margin: 20px;
+		min-height: 150px;
+
 	}
 	
 	.code-block {
@@ -382,19 +382,18 @@ code {
 		margin-left: 35px;
 		margin-right: 35px;
 	}
-
-	.footer {
-		text-align: left;
-	}
-	
 }
 
-/* Desktop Layout: 769px and up.  Inherits styles from: Mobile Layout and Tablet Layout. */
+/* Smaller-monitor Desktop Layout: 1000px and up.  Inherits styles from: Mobile Layout and Tablet Layout. */
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 1000px) {
 	.nav-link {
 	}
 
+	.content-wrapper {	
+		/* Larger space induces a right margin */
+		margin-right: 150px;
+	}
 
 	.content {
 		/* Increased padding when the screen width is a reasonable size */

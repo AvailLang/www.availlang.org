@@ -64,7 +64,7 @@ The primitive set type constructor is <code>"{_|_}"</code>. It accepts the membe
 </p>
 <ul>
 <li>
-The method <code>"{_|_.._}"</code> accepts the member type, the lower bound of the cardinality restriction, and the upper bound of the cardinality restriction, respectively. To determine the cardinality restriction, take the specified lower and upper bounds — <code>lower</code> and <code>upper</code>, respectively, in the following expression — and compute the type <code>[lower..upper+1)</code>. <a href="./20-types-extended-integer.html-canonization">Canonization of integral ranges</a> causes the specified upper bound to be considered inclusive if it is finite and exclusive if it is infinite.
+The method <code>"{_|_.._}"</code> accepts the member type, the lower bound of the cardinality restriction, and the upper bound of the cardinality restriction, respectively. To determine the cardinality restriction, take the specified lower and upper bounds — <code>lower</code> and <code>upper</code>, respectively, in the following expression — and compute the type <code>[lower..upper+1)</code>. <a href="./20-types-extended-integer.html#types-extended-integer-canonization">Canonization of integral ranges</a> causes the specified upper bound to be considered inclusive if it is finite and exclusive if it is infinite.
 <div class="restricted-width-container">
 <div class="good-code code-block">/* Here's a set type with an inclusive upper bound on its cardinality
  * restriction.
@@ -113,7 +113,7 @@ Assert: {&lt;&gt;, &lt;"megaphone"&gt;} ∈ setType;
 </div>
 </li>
 <li>
-The method <code>"{_|_}"</code> is overridden to accept, respectively, the member type and a <a href="./02-types.html-whole-number">whole number</a> that specifies the exact size of instances. To determine the cardinality restriction, take the argument, <code>exact</code>, and compute the type <code>[exact..exact]</code>.
+The method <code>"{_|_}"</code> is overridden to accept, respectively, the member type and a <a href="./20-types-extended-integer.html#types-whole-number">whole number</a> that specifies the exact size of instances. To determine the cardinality restriction, take the argument, <code>exact</code>, and compute the type <code>[exact..exact]</code>.
 <div class="restricted-width-container">
 <div class="good-code code-block">setType ::= {[2..4]|3};
 Assert: setType's element type = [2..4];

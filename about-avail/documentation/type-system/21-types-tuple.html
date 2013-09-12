@@ -23,7 +23,7 @@
 <iframe src="/_images/type-system/type-system-tuple-focus.svg" seamless></iframe>
 </div>
 <p>
-A <strong>tuple</strong> is an immutable, finite, ordered list of indexable, heterogeneous values, called <strong>elements</strong>, each of which is accessible by a <a href="./02-types.html-natural-number">natural number</a> <strong>subscript</strong>. The number of elements is the <strong>size</strong> of the tuple. Taking this apart:
+A <strong>tuple</strong> is an immutable, finite, ordered list of indexable, heterogeneous values, called <strong>elements</strong>, each of which is accessible by a <a href="./20-types-extended-integer.html#types-natural-number">natural number</a> <strong>subscript</strong>. The number of elements is the <strong>size</strong> of the tuple. Taking this apart:
 </p>
 <ul>
 <li>
@@ -39,7 +39,7 @@ A <strong>tuple</strong> is an immutable, finite, ordered list of indexable, het
 <strong>Indexable</strong> means that an element can be accessed using a numeric key that describes its position within the tuple. For a tuple, this key, called the subscript, is a natural number ranging from <code>1</code> to the size of the tuple. Given that <code>t</code> is a tuple and <code>i</code> is a natural number, then <code>|t|</code> is the size of <code>t</code>, and <code>t[i]</code> is the <code>i</code>-th element of <code>t</code>. If a tuple <code>t</code> has <code>n</code> elements, that is, <code>|t| = n</code>, then the elements of <code>t</code> are <code>t[1]</code>, <code>t[2]</code>, …, and <code>t[n]</code>. The methods for sizing and subscripting are <code>"`|_`|"</code> and <code>"_[_]"</code>, respectively.
 </li>
 <li>
-<strong>Heterogeneous</strong> means that the elements do not universally conform to a single most general type. Type conformance of elements, when considered relative to a tuple type, is by position within a tuple. More will be said on this <a href="./21-types-tuple.html-leading-types">below</a>.
+<strong>Heterogeneous</strong> means that the elements do not universally conform to a single most general type. Type conformance of elements, when considered relative to a tuple type, is by position within a tuple. More will be said on this <a href="#types-tuple-leading-types">below</a>.
 </li>
 </ul>
 <p>
@@ -56,7 +56,7 @@ The tuple type specifies three <a href="/content/type-parameters">parameters</a>
 The <strong><a id="types-tuple-leading-types">leading types</a></strong> associate some of the prefix positions — that is, the lefthand side — of a tuple with types to which the elements at those positions must conform. To demystify this, consider a tuple type whose leading types are <code><a href="./17-types-number.html">number</a></code>, <code><a href="./13-types-any.html">any</a></code>, and <code>[10..20]</code>. Every instance of this type is a tuple (<code>t</code>) whose first element (<code>t[1]</code>) is a number, whose second element (<code>t[2]</code>) is any value whatsoever, and whose third element (<code>t[3]</code>) is an integer from <code>10</code> to <code>20</code>. The leading types comprise a tuple of types, <code>&lt;type…|&gt;</code>; more on reading this notation below. The method <code>"_'s⁇leading types"</code> answers the leading types of a tuple type.
 </li>
 <li>
-The <strong>default type</strong> specifies the type of every element residing at a suffix position — that is, a position to the right of the last position governed by a leading type. Assume that a tuple type's leading types are <code><a href="./22-types-string.html">string</a></code> and <code><a href="./25-types-function.html">function</a></code>. Further assume that its default type is <a href="./02-types.html-integer">integer</a>. Then every instance of this type is a tuple (<code>t</code>) such that <code>t[1]</code> is a string, <code>t[2]</code> is a function, and <code>t[3]</code>, <code>t[4]</code>, …, and <code>t[|t|]</code> are integers. The method <code>"_'s⁇default type"</code> answers the default type of a tuple type.
+The <strong>default type</strong> specifies the type of every element residing at a suffix position — that is, a position to the right of the last position governed by a leading type. Assume that a tuple type's leading types are <code><a href="./22-types-string.html">string</a></code> and <code><a href="./25-types-function.html">function</a></code>. Further assume that its default type is <a href="./20-types-extended-integer.html#types-integer">integer</a>. Then every instance of this type is a tuple (<code>t</code>) such that <code>t[1]</code> is a string, <code>t[2]</code> is a function, and <code>t[3]</code>, <code>t[4]</code>, …, and <code>t[|t|]</code> are integers. The method <code>"_'s⁇default type"</code> answers the default type of a tuple type.
 </li>
 <li>
 The <strong>cardinality restriction</strong> is an integral type that specifies the range of sizes that describe instances. If the cardinality restriction is <code>[2..4]</code>, then only a tuple whose size is <code>2</code>, <code>3</code>, or <code>4</code> is an instance. The method <code>"`|`|_`|`|"</code>, read as <em>sizes of</em>, answers the cardinality restriction of a tuple type. The floor operation, <code>⎣_⎦</code>, answers the lower bound of a tuple type's cardinality restriction. The ceiling operation, <code>⎡_⎤</code>, answers the upper bound of a tuple type's cardinality restriction.
@@ -70,7 +70,7 @@ The primitive tuple type constructor is <code>"&lt;_,_`…`|_&gt;"</code>. It ac
 </p>
 <ul>
 <li>
-The method <code>"&lt;«_‡,»`…|_.._&gt;"</code> accepts a nonempty lexical tuple of types, the lower bound of the cardinality restriction, and the upper bound of the cardinality restriction, respectively. The first argument comprises both the leading types and the default type; the default type is simply the last type named before the horizontal ellipsis (<code>…</code>). Just to be explicit, if only one type is specified, then the leading types are <code>&lt;&gt;</code> and the type named is the default type. To determine the cardinality restriction, take the specified lower and upper bounds — <code>lower</code> and <code>upper</code>, respectively, in the following expression — and compute the type <code>[lower..upper+1)</code>. <a href="./20-types-extended-integer.html-canonization">Canonization of integral ranges</a> causes the specified upper bound to be considered inclusive if it is finite and exclusive if it is infinite.
+The method <code>"&lt;«_‡,»`…|_.._&gt;"</code> accepts a nonempty lexical tuple of types, the lower bound of the cardinality restriction, and the upper bound of the cardinality restriction, respectively. The first argument comprises both the leading types and the default type; the default type is simply the last type named before the horizontal ellipsis (<code>…</code>). Just to be explicit, if only one type is specified, then the leading types are <code>&lt;&gt;</code> and the type named is the default type. To determine the cardinality restriction, take the specified lower and upper bounds — <code>lower</code> and <code>upper</code>, respectively, in the following expression — and compute the type <code>[lower..upper+1)</code>. <a href="./20-types-extended-integer.html#types-extended-integer-canonization">Canonization of integral ranges</a> causes the specified upper bound to be considered inclusive if it is finite and exclusive if it is infinite.
 <div class="restricted-width-container">
 <div class="good-code code-block">/* Here's a tuple type with an inclusive upper bound on its cardinality
  * restriction.
@@ -124,7 +124,7 @@ Assert: &lt;"A", "K", 47&gt; ∈ tupleType;</div>
 </div>
 </li>
 <li>
-The method <code>"&lt;«_‡,»`…|_&gt;"</code> accepts a nonempty lexical tuple of types and a <a href="./02-types.html-whole-number">whole number</a> representing the exact size of instances, respectively. The first argument comprises both the leading types and the default type. To determine the cardinality restriction, take the argument, <code>exact</code>, and compute the type <code>[exact..exact]</code>.
+The method <code>"&lt;«_‡,»`…|_&gt;"</code> accepts a nonempty lexical tuple of types and a <a href="./20-types-extended-integer.html#types-whole-number">whole number</a> representing the exact size of instances, respectively. The first argument comprises both the leading types and the default type. To determine the cardinality restriction, take the argument, <code>exact</code>, and compute the type <code>[exact..exact]</code>.
 <div class="restricted-width-container">
 <div class="good-code code-block">tupleType ::= &lt;1's type, [1..3]…|3&gt;;
 Assert: tupleType's leading types = &lt;1's type&gt;;
