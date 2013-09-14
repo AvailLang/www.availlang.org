@@ -297,6 +297,7 @@ code {
 	margin-left: 20px;
 	margin-right: 20px;
 }
+
 .bad-code {
 	background-color: rgb(255, 221, 244); /* reds */
 	color: rgb(112, 32, 32);
@@ -312,6 +313,11 @@ code {
 	color: rgb(0, 0, 160); /* dark blue */
 }
 
+
+.console {
+	background-color: #000000; /* black */
+	color: #ffffff; /* white */
+}
 
 .book-navigation {
 	display: block;
