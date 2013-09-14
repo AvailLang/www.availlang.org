@@ -1,0 +1,84 @@
+strict graph "Type lattice: focus on extended integer."
+{
+	ranksep="0.25";
+	node
+	[
+		shape="plaintext",
+		fontname="Consolas",
+		fontsize="10",
+		fontcolor="#0000A0",
+		target="_top"
+	];
+
+	/* Labels for the nodes. */
+        ⊤ [href="/about-avail/documentation/type-system/types-top.html"];
+        any [href="/about-avail/documentation/type-system/types-any.html"];
+        nontype [href="/about-avail/documentation/type-system/types-nontype.html"];
+	number [href="/about-avail/documentation/type-system/types-number.html"];
+	"extended integer"
+	[
+		label="extended integer = [-∞..∞]",
+		href="/about-avail/documentation/type-system/types-extended-integer.html",
+		shape="ellipse",
+		style="filled",
+		fillcolor="#E2E8FF",
+		peripheries="0"
+	];
+	"-∞ type" [label="{-∞}ᵀ"];
+	integer [label="integer = (-∞..∞)"];
+	"∞ type" [label="{∞}ᵀ"];
+	"nonpositive integer"
+	[
+		label="nonpositive integer = (-∞..0]",
+		href="/about-avail/documentation/type-system/types-extended-integer#types-nonpositive-integer.html"
+	];
+	"negative integer"
+	[
+		label="negative integer = (-∞..-1]",
+		href="/about-avail/documentation/type-system/types-extended-integer#types-negative-integer.html"
+	];
+	"whole number"
+	[
+		label="whole number = [0..∞)",
+		href="/about-avail/documentation/type-system/types-extended-integer#types-whole-number.html"
+	];
+	"natural number"
+	[
+		label="natural number = [1..∞)",
+		href="/about-avail/documentation/type-system/types-extended-integer#types-natural-number.html"
+	];
+	"…[1..6]" [label=""];
+	"[42..49]…" [label=""];
+	"…[2..5]" [label=""];
+	"[7..9]…" [label=""];
+	⊥ [href="/about-avail/documentation/type-system/types-bottom.html"];
+
+	/* Connectivity. */
+	⊤ -- any -- nontype -- number -- "extended integer";
+	"extended integer" -- {rank="same"; "-∞ type" integer "∞ type"}
+		[color="#d0d0d0", style="dashed"];
+	"-∞ type" -- integer -- "∞ type" [color="#707070", style="dotted"];
+	integer -- {rank="same"; "nonpositive integer" "whole number"}
+		[color="#d0d0d0", style="dashed"];
+	"nonpositive integer" -- "whole number" [color="#707070", style="dotted"];
+	"nonpositive integer" -- "negative integer";
+	"whole number" -- "natural number";
+	{rank="same"; "negative integer" "natural number"};
+	"negative integer" -- "natural number" [color="#707070", style="dotted"];
+	"natural number" -- {"[1..6]" "[2..11]" "[42..49]"}
+		[color="#d0d0d0", style="dashed"];
+	{rank="same"; "…[1..6]" "[1..6]" "[2..11]" "[42..49]" "[42..49]…"};
+	"…[1..6]" -- "[1..6]" -- "[2..11]" -- "[42..49]" -- "[42..49]…"
+		[color="#707070", style="dotted"];
+	"[1..6]" -- "[2..5]" [color="#d0d0d0", style="dashed"];
+	"[2..11]" -- {"[2..5]" "[7..9]"} [color="#d0d0d0", style="dashed"];
+	{rank="same"; "…[2..5]" "[2..5]" "[7..9]" "[7..9]…"};
+	"…[2..5]" -- "[2..5]" -- "[7..9]" -- "[7..9]…"
+		[color="#707070", style="dotted"];
+	"[7..9]" -- {rank="same"; "{7}ᵀ" "{8}ᵀ" "{9}ᵀ"}
+		[color="#d0d0d0", style="dashed"];
+	"{7}ᵀ" -- "{8}ᵀ" -- "{9}ᵀ" [color="#707070", style="dotted"];
+	{"negative integer" "[1..6]" "[2..5]" "[42..49]"} -- ⊥
+		[color="#d0d0d0", style="dashed"];
+	{"-∞ type" "{7}ᵀ" "{8}ᵀ" "{9}ᵀ" "∞ type"} -- ⊥;
+}

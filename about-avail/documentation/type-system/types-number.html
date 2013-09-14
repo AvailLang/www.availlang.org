@@ -1,0 +1,49 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Avail - Type System</title>
+	
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+
+		<h2 class="content-title"><code>number</code></h2>
+<div class="scrolling" style="float: right;">
+<iframe src="/_images/type-system/type-system-number-focus.svg" seamless></iframe>
+</div>
+<p>
+A <strong>number</strong> is an immutable mathematical object. Uses of numbers include counting, annotating entities to distinguish them, and measuring the magnitudes of quantities. Avail natively supports integers and two distinct precisions of floating-point approximations of real numbers. Integers are discrete, and thus excel at counting and labeling. Real numbers form a continuum, and are therefore suitable for taking measurements.
+</p>
+<p>
+The method <code>"_→double"</code> converts an of instance of <code>number</code> into the best fit instance of <code><a href="./types-double.html">double</a></code>, which is the appropriate infinity if the argument is an integer that exceeds the representational limits of <code>double</code>. The method <code>"_→float</code> converts a number into the best fit <a href="./types-float.html">float</a>, which is the appropriate infinity if the argument is an integer that exceeds the representational limits of <code>float</code>. The method <code>"_→extended integer"</code> converts a number into an <a href="./types-extended-integer.html">extended integer</a> by rounding it toward zero.
+</p>
+</div>
+</section>
+<div class="book-nav">
+<tr class="book-nav">
+	<div class="book-nav">
+		<li class="book-nav-back"><a class="book-nav-back" href="./types-character.html">‹ <code>character</code></a></li>
+		<li class="book-nav-spacer">|</li>
+		<li class="book-nav-up"><a class="book-nav-up" href="../type-system.html">Return to Type System</a></li>
+		<li class="book-nav-spacer">|</li>
+		<li class="book-nav-forward"><a class="book-nav-forward" href="./types-double.html"><code>double</code> ›</a></li>
+	</div>
+</tr>
+</div>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>

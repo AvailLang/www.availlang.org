@@ -1,0 +1,45 @@
+strict graph "Type lattice: focus on character."
+{
+	ranksep="0.25";
+	node
+	[
+		shape="plaintext",
+		fontname="Consolas",
+		fontsize="10",
+		fontcolor="#0000A0",
+		target="_top"
+	];
+
+	/* Labels for the nodes. */
+        ⊤ [href="/about-avail/documentation/type-system/types-top.html"];
+        any [href="/about-avail/documentation/type-system/types-any.html"];
+        nontype [href="/about-avail/documentation/type-system/types-nontype.html"];
+	character
+	[
+		href="/about-avail/documentation/type-system/types-character.html",
+		shape="ellipse",
+		style="filled",
+		fillcolor="#E2E8FF",
+		peripheries="0"
+	];
+	"…1" [label=""];
+	"¢+ type" [label="{¢+}ᵀ"];
+	"¢3 type" [label="{¢3}ᵀ"];
+	"¢a type" [label="{¢a}ᵀ"];
+	"¢A type" [label="{¢A}ᵀ"];
+	"…2" [label=""];
+       ⊥ [href="/about-avail/documentation/type-system/types-bottom.html"];
+
+	/* Coneectivity. */
+	⊤ -- any -- nontype -- character;
+	{rank="same"; "…1" "¢+ type" "¢3 type" "¢a type" "¢A type" "…2"};
+	character -- {"¢+ type" "¢3 type" "¢a type" "¢A type"};
+	edge [color="#707070", style="dotted"];
+	"…1" -- "¢+ type";
+	"¢+ type" -- "¢3 type";
+	"¢3 type" -- "¢a type";
+	"¢a type" -- "¢A type";
+	"¢A type" -- "…2";
+	edge [color="#000000", style="solid"];
+	{"¢3 type" "¢+ type" "¢a type" "¢A type"} -- ⊥;
+}

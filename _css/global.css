@@ -323,20 +323,29 @@ code {
 
 .footer-wrapper {
 	width: 100%;
+	text-align: center;
 }
 
 .footer{
-	margin-left: 14px;
-	margin-right: 14px;
+	margin-left: 10px;
+	margin-right: 10px;
 	margin-bottom: 20px;
 	padding-top: 20px;
 	color: gray;
+	display: inline-block;
+	font-weight: 300;
 
 	/* Center align on small screen */
 	text-align: center;
 }
 
-
+a.footer{
+	margin: 0px;
+	padding: 0px;
+	color: gray;
+	display: inline-block;
+	font-weight: 300;
+}
 
 /* Tablet Layout: 481px to 768px. Inherits styles from: Mobile Layout. */
 

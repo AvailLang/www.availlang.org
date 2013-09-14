@@ -11,13 +11,13 @@
 <polygon fill="white" stroke="white" points="-4,5 -4,-418 423,-418 423,5 -4,5"/>
 <!-- ⊤ -->
 <g id="node1" class="node"><title>⊤</title>
-<a xlink:href="/content/types-top" xlink:title="⊤" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-top.html" xlink:title="⊤" target="_top">
 <text text-anchor="middle" x="136" y="-391" font-family="Consolas" font-size="10.00" fill="#0000a0">⊤</text>
 </a>
 </g>
 <!-- any -->
 <g id="node2" class="node"><title>any</title>
-<a xlink:href="/content/types-any" xlink:title="any" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-any.html" xlink:title="any" target="_top">
 <text text-anchor="middle" x="136" y="-337.854" font-family="Consolas" font-size="10.00" fill="#0000a0">any</text>
 </a>
 </g>
@@ -27,7 +27,7 @@
 </g>
 <!-- nontype -->
 <g id="node3" class="node"><title>nontype</title>
-<a xlink:href="/content/types-nontype" xlink:title="nontype" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-nontype.html" xlink:title="nontype" target="_top">
 <text text-anchor="middle" x="136" y="-283.854" font-family="Consolas" font-size="10.00" fill="#0000a0">nontype</text>
 </a>
 </g>
@@ -37,7 +37,7 @@
 </g>
 <!-- tuple -->
 <g id="node4" class="node"><title>tuple</title>
-<a xlink:href="/content/types-tuple" xlink:title="tuple = &lt;any…|&gt;" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-tuple.html" xlink:title="tuple = &lt;any…|&gt;" target="_top">
 <text text-anchor="middle" x="136" y="-229.854" font-family="Consolas" font-size="10.00" fill="#0000a0">tuple = &lt;any…|&gt;</text>
 </a>
 </g>
@@ -47,7 +47,7 @@
 </g>
 <!-- string -->
 <g id="node5" class="node"><title>string</title>
-<a xlink:href="/content/types-string" xlink:title="string = &lt;character…|&gt;" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-string.html" xlink:title="string = &lt;character…|&gt;" target="_top">
 <ellipse fill="#e2e8ff" stroke="#e2e8ff" cx="136" cy="-180" rx="81.2483" ry="18"/>
 <text text-anchor="middle" x="136" y="-175.854" font-family="Consolas" font-size="10.00" fill="#0000a0">string = &lt;character…|&gt;</text>
 </a>
@@ -58,7 +58,7 @@
 </g>
 <!-- nonempty string -->
 <g id="node7" class="node"><title>nonempty string</title>
-<a xlink:href="/content/types-nonempty-string" xlink:title="nonempty string = &lt;character…|1..&gt;" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-nonempty-string.html" xlink:title="nonempty string = &lt;character…|1..&gt;" target="_top">
 <text text-anchor="middle" x="245" y="-121.854" font-family="Consolas" font-size="10.00" fill="#0000a0">nonempty string = &lt;character…|1..&gt;</text>
 </a>
 </g>
@@ -90,7 +90,7 @@
 </g>
 <!-- ⊥ -->
 <g id="node10" class="node"><title>⊥</title>
-<a xlink:href="/content/types-bottom" xlink:title="⊥" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-bottom.html" xlink:title="⊥" target="_top">
 <text text-anchor="middle" x="154" y="-13" font-family="Consolas" font-size="10.00" fill="#0000a0">⊥</text>
 </a>
 </g>

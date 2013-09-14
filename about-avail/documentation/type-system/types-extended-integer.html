@@ -1,0 +1,127 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Avail - Type System</title>
+	
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+
+		<h2 class="content-title"><code>extended integer ≝ [-∞..∞]</code></h2>
+<div class="scrolling">
+<iframe src="/_images/type-system/type-system-extended-integer-focus.svg" seamless></iframe>
+</div>
+<p>
+The literal representation of an integer is a sequence of one or more decimal digits, such as <code>0</code>, <code>1</code>, <code>200</code>, <code>50000</code>, or <code>598798234908600912387587829348623580980827481650893468592374832569783</code>. Negative integer literals are created using the method <code>"-_"</code>, which defines a <a href="./semantic-restrictions.html">semantic restriction</a> that strengthens the answer's type to an instance type whenever the argument's value is precisely known, as is the case for <code>-1</code> or <code>-42</code>. <code>∞</code> and <code>-∞</code> are positive and negative infinity, respectively. 
+</p>
+<p>
+Avail's integral type specifies four <a href="./type-parameterization.html">parameters</a> for completion:
+</p>
+<ul>
+<li>
+The <strong>lower bound</strong> is an integer which specifies the smallest allowed value. The floor operation, <code>"⎣_⎦"</code>, answers the lower bound of an integral type.
+</li>
+<li>
+The <strong>lower bound inclusion indicator</strong> is a <code><a href="./types-boolean.html">boolean</a></code> value that establishes whether the lower bound is a member of the integral type. When this value is <code>true</code>, then the lower bound is included in the type's membership. When this value is <code>false</code>, then it is not so included. The method <code>"⎣_⎦is inclusive"</code> answers the lower bound inclusion indicator of an integral type.
+</li>
+<li>
+The <strong>upper bound</strong> is an integer which specifies the largest allowed value. The ceiling operation, <code>"⎡_⎤"</code>, answers the upper bound of an integral type.
+</li>
+<li>
+The <strong>upper bound inclusion indicator</strong> is a <code>boolean</code> value that establishes whether the upper bound is a member of the integral type. When this value is <code>true</code>, then the upper bound is included in the type's membership. When this value is <code>false</code>, then it is not so included. The method <code>"⎡_⎤is inclusive"</code> answers the upper bound inclusion indicator of an integral type.
+</li>
+</ul>
+<p>
+The primitive integral type constructor is <code>"integer range from_(inclusive=_)to_(inclusive=_)"</code>. As expected from the name, it accepts the lower bound, lower bound inclusion indicator, upper bound, and upper bound inclusion indicator, respectively. This method supports the most general type construction case, that of four statically unknown type completion arguments. Most type construction is done by the compiler during execution of <a href="./type-annotations.html">type annotations</a>, however, so typically most or all of the integral type completion arguments will be known at compile-time. For these cases, the system library provides the following convenience methods:
+</p>
+<ul>
+<li>
+The method <code>"[_.._]"</code> accepts two arguments, the lower and upper bounds, respectively, and constructs an integral type whose bounds are both inclusive.
+<div class="restricted-width-container">
+<div class="good-code code-block">Assert: 1 ∈ [1..10];
+Assert: 10 ∈ [1..10];</div>
+</div>
+</li>
+<li>
+The method <code>"[_.._)"</code> accepts the same arguments and constructs an integral type whose lower bound is inclusive and whose upper bound is exclusive.
+<div class="restricted-width-container">
+<div class="good-code code-block">Assert: 1 ∈ [1..10);
+Assert: 10 ∉ [1..10);</div>
+</div>
+</li>
+<li>
+The method <code>"(_.._]"</code> accepts the same arguments and constructs an integral type whose lower bound is exclusive and whose upper bound is inclusive.
+<div class="restricted-width-container">
+<div class="good-code code-block">Assert: 1 ∉ (1..10];
+Assert: 10 ∈ (1..10];</div>
+</div>
+</li>
+<li>
+The method <code>"(_.._)"</code> accepts the same arguments and constructs an integral type whose bounds are both exclusive.
+<div class="restricted-width-container">
+<div class="good-code code-block">Assert: 1 ∉ (1..10);
+Assert: 10 ∉ (1..10);</div>
+</div>
+</li>
+</ul>
+<p>
+<a id="types-extended-integer-canonization"></a>
+Irrespective of which integral type constructor is chosen, a canonization step converts an exclusive bound into an equivalent inclusive bound whenever possible — that is, when the bound is not infinite.
+</p>
+<div class="restricted-width-container">
+<div class="good-code code-block">/* Both bounds are canonized. The lower bound is adjusted upward by one, and the
+ * lower bound inclusion indicator becomes "true". Correspondingly, the upper
+ * bound is adjusted downward by one, and the upper bound inclusion indicator
+ * becomes "true".
+ */
+Assert: (1..10) = [2..9];
+Assert: ⎣(1..10)⎦ = 2;
+Assert: ⎣(1..10)⎦ is inclusive;
+Assert: ⎡(1..10)⎤ = 9;
+Assert: ⎡(1..10)⎤ is inclusive;
+
+/* Only the finite lower bound is canonized. */
+Assert: (1..∞) = [2..∞);
+Assert: (1..∞) ≠ [2..∞];
+Assert: ⎣(1..∞)⎦ = 2;
+Assert: ⎣(1..∞)⎦ is inclusive;
+Assert: ⎡(1..∞)⎤ = ∞;
+Assert: ¬⎡(1..∞)⎤ is inclusive;
+
+/* Only the finite upper bound is canonized. */
+Assert: (-∞..1) = (-∞..0];
+Assert: (-∞..1) ≠ [-∞..0];
+Assert: ⎣(-∞..1)⎦ = -∞;
+Assert: ¬⎣(-∞..1)⎦ is inclusive;
+Assert: ⎡(-∞..1)⎤ = 0;
+Assert: ⎡(-∞..1)⎤ is inclusive;</div>
+</div>
+<p>
+The system library provides <a href="./type-names.html">type names</a> for several useful integral types. <code>extended integer</code> is an alias for <code>[-∞..∞]</code>, the most general integral type; it includes all finite integers, plus negative infinity (<code>-∞</code>) and positive infinity (<code>∞</code>). <code><a id="types-integer">integer</a></code> is defined as <code>(-∞..∞)</code>, and is the type of all finite integers. <code><a id="types-whole-number">whole number</a></code> is <code>[0..∞)</code>, and describes all counting numbers. <code><a id="types-natural-number">natural number</a></code> is <code>[1..∞)</code>, and is the type of subscripts. On the other end of the number line are <code><a id="types-nonpositive-integer">nonpositive integer</a></code> — <code>(-∞..0]</code> — and <code><a id="types-negative-integer">negative integer</a></code> — <code>(-∞..-1]</code>.
+</p>
+<tr class="book-nav">
+	<div class="book-nav">
+		<li class="book-nav-back"><a class="book-nav-back" href="./types-float.html">‹ <code>float</code></a></li>
+		<li class="book-nav-spacer">|</li>
+		<li class="book-nav-up"><a class="book-nav-up" href="../type-system.html">Return to Type System</a></li>
+		<li class="book-nav-spacer">|</li>
+		<li class="book-nav-forward"><a class="book-nav-forward" href="./types-tuple.html"><code>tuple</code> ›</a></li>
+	</div>
+</tr>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>

@@ -1,0 +1,36 @@
+strict graph "Type lattice: focus on number."
+{
+	nodesep="0.0125";
+	ranksep="0.25";
+	node
+	[
+		shape="plaintext",
+		fontname="Consolas",
+		fontsize="10",
+		fontcolor="#0000A0",
+		target="_top"
+	];
+
+	/* Labels for the nodes. */
+        ⊤ [href="/about-avail/documentation/type-system/types-top.html"];
+        any [href="/about-avail/documentation/type-system/types-any.html"];
+        nontype [href="/about-avail/documentation/type-system/types-nontype.html"];
+	number
+	[
+		shape="ellipse",
+		href="/about-avail/documentation/type-system/types-number.html",
+		style="filled",
+		fillcolor="#E2E8FF",
+		peripheries="0"
+	];
+	double [href="/about-avail/documentation/type-system/types-double.html"];
+	"extended integer" [href="/about-avail/documentation/type-system/types-extended-integer.html"];
+	float [href="/about-avail/documentation/type-system/types-float.html"];
+	⊥ [href="/about-avail/documentation/type-system/types-bottom.html"];
+
+	/* Connectivity. */
+	⊤ -- any -- nontype -- number -- {double "extended integer" float};
+	{double "extended integer" float}
+		-- ⊥ [color="#d0d0d0", style="dashed"];
+}
+

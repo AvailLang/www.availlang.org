@@ -1,0 +1,65 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Avail - Type System</title>
+	
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+
+		<h2 class="content-title"><code>character</code></h2>
+<div class="scrolling" style="float: right;">
+<iframe src="/_images/type-system/type-system-character-focus.svg" seamless></iframe>
+</div>
+<p>
+A <strong>character</strong> is a sign or symbol in the semiotic sense: an entity with distinct identity that is nonetheless generally intended and understood to represent something other than itself. The visual representation of a character is a <strong>glyph</strong>. A character is necessarily distinct from how it is written or printed. The same character will differ in any two handwritten occurrences, even when the same person is responsible for the production of both. Likewise the printed representation of a character will differ by font or style. For example, each of "<span style="font-family: Futura;">a</span>", "<span style="font-family: Times New Roman;">a</span>", and "<span style="font-family: Helvetica;">a</span>" are understood by readers of Roman-influenced languages as representing the same character. So a character has identity independent of any and all glyphs that transcribe it.
+</p>
+<p>
+Avail is only concerned with character value, not meaning or transcription. A character is always equal to itself and always unequal to another character. Characters are immutable and possess but a single intrinsic property: Unicode code point. <a href="http://www.unicode.org">Unicode</a> is an international standard for the codification of all widely used characters. A <strong>code point</strong> is a numeric value that is uniquely associated with a character relative to some system of codification. Thus a character's Unicode code point singularly identifies it within the Unicode scheme.
+</p>
+<div class="restricted-width-container">
+<div class="good-code code-block">For each of "abcde" do
+[
+	c : character
+|
+	/* A character and a code point are distinct in Avail. */
+	Assert: c ≠ c's code point;
+	Assert: c = c's code point→character;
+];</div>
+</div>
+<p>
+A character literal is expressed as a <em>cent sign</em> <code>¢</code> (<code>U+00A2</code>) followed by a single-character lexeme or length-one string literal. Avail character literal notation is provided by the method <code>"¢…"</code>. The single-character form is sufficient for nearly every character, but the string literal form must be employed when the desired character is a <em>quotation mark</em> <code>"</code> (<code>U+0022</code>), <em>semicolon</em> <code>;</code> (<code>U+003B</code>), or nonprintable character.
+</p>
+<div class="restricted-width-container">
+<div class="good-code code-block">Assert: "cat"[1] = ¢c;
+Assert: "dog"[2] = ¢o;
+Assert: "42"[1] = ¢4;
+/* The first character of the next string is a horizontal tab. */
+Assert: "	tab"[1] = ¢"\t";</div>
+</div>
+<tr class="book-nav">
+	<div class="book-nav">
+		<li class="book-nav-back"><a class="book-nav-back" href="./types-nontype.html">‹ <code>nontype</code></a></li>
+		<li class="book-nav-spacer">|</li>
+		<li class="book-nav-up"><a class="book-nav-up" href="../type-system.html">Return to Type System</a></li>
+		<li class="book-nav-spacer">|</li>
+		<li class="book-nav-forward"><a class="book-nav-forward" href="./types-number.html"><code>number</code> ›</a></li>
+	</div>
+</tr>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>

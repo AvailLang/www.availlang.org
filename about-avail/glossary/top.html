@@ -24,9 +24,9 @@
 ⊤<br />
 (Unicode character U+22A4: "down tack")
 </p><p>
-"Nothing". The abstract <a href="./subtype-supertype.html">supertype</a> of all types; the weakest and most general type. Top has a single instance, the which is accessible only to the Avail runtime.
+"Everything". The <a href="./subtype-supertype.html">supertype</a> of all types; the weakest and most general type. Every value is an instance of top, even a hidden nil value which is accessible only to the Avail runtime.
 </p><p>
-Top serves as the "return type" for <a href="./function.html">functions</a> that do not produce a value. The ⊤ object is discarded implicitly when it is returned by an <a href="./expression.html">expression</a> evaluation.
+Top serves as the "return type" for <a href="./function.html">functions</a> that do not produce a usable value. The confluence of the type rules and syntax rules of Avail ensure that any value produced by an expression of type top is always destined to be discarded implicitly when it is produced by an <a href="./expression.html">expression</a> evaluation.
 </p><p>
 <em>See also:</em> <a href="./bottom.html">Bottom</a>
 </p>
