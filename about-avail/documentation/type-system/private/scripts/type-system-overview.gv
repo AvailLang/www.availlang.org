@@ -29,8 +29,8 @@ strict graph "An overview of the Avail type system."
 	method [href="/about-avail/documentation/type-system/types-method"];
 	"method definition"
 	[
-		label="method\ndeclaration",
-		href="/about-avail/documentation/type-system/types-method-site"
+		label="method\ndefinition",
+		href="/about-avail/documentation/type-system/types-method-definition"
 	];
 	module [href="/about-avail/documentation/type-system/types-module"];
 	number [href="/about-avail/documentation/type-system/types-number"];
