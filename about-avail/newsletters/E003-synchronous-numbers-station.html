@@ -1,0 +1,115 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Avail Newsletters, Edition #3, Supplemental: Synchronous Numbers Station</title>
+	
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+
+		<h2 class="content-title">Synchronous Numbers Station</h2>
+		
+<div class="restricted-width-container">
+<div class="good-code code-block">/* Mystify the client at the other end of the specified client socket by sending
+ * some cryptic numbers.
+ */
+Method "Mystify_" is
+[
+	client : client socket
+|
+	rng ::= a Mersenne Twister;
+	Guard
+	[
+		/* Allow fast reuse of the local address. */
+		client's address reusability := true;
+		/* Send the size of the stream of mysterious numbers. */
+		howMany ::= 5 × rng's next [1..51];
+		Write &lt;howMany&gt; to client;
+		/* Send some mysterious numbers. */
+		weirdNumbers ::= map 1 to howMany through [i : byte | rng's next byte];
+		Write weirdNumbers to client;
+	]
+	ensure [Close client;];
+] : ⊤;
+
+/* At the present time, the spaces are required in the specification of an IP
+ * address. This limitation will be removed once Avail has a backtracking
+ * lexical scanner.
+ *
+ * Incidentally, port 0 represents a wildcard port; the system will choose a
+ * suitable one.
+ */
+serverAddress ::= 127 . 0 . 0 . 1 : 0;
+
+/* Run the numbers station. The server stops automatically after mystifying
+ * three clients.
+ */
+Method "Start Lincolnshire Poacher" is
+[
+	server ::= a server socket named "Lincolnshire Poacher";
+	Guard
+	[
+		server's address reusability := true;
+		Bind server to serverAddress;
+		Repeat
+		[
+			client ::= accept a new connection on server;
+			Fork [Mystify client;];
+		] 3 times;
+	]
+	ensure [Close server;]
+] : ⊤;
+
+/* Connect to the server, receive the mysterious numbers, and regurgitate them
+ * to standard output as hyphen-separated quintets.
+ */
+Method "Be mystified" is
+[
+	client ::= a client socket named "amateur spy";
+	Guard
+	[
+		client's address reusability := true;
+		Bind client to 127 . 0 . 0 . 1 : 0;
+		Connect client to serverAddress;
+		expected ::= (read 1 byte from client)[1];
+		weirdNumbers ::= read expected bytes from client;
+		/* Report the mysterious numbers. */
+		quintets ::= map 1 to |weirdNumbers| - 1 by 5 through
+			[i : byte | weirdNumbers[i..i + 4]];
+		For each of quintets do
+		[
+			q : &lt;byte…|5&gt;
+		|
+			Print: format "“①”-“②”-“③”-“④”-“⑤”\n" with unchecked q;
+		];
+	]
+	ensure [Close client;];
+] : ⊤;
+
+/* Run it! */
+Start Lincolnshire Poacher;
+Repeat [Be mystified;] 3 times;</div>
+</div>
+
+<tr class="book-nav">
+	<div class="book-nav">
+		<li class="book-nav-up"><a class="book-nav-up" href="./E003.html">Return to Avail Newsletters, Edition #3</a></li>
+	</div>
+</tr>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>

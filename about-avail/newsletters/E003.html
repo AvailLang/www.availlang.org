@@ -1,0 +1,188 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Avail Newsletters, Edition #3: Even Better Things Come to Those Who Wait for a Really Long Time?</title>
+	
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+
+<h2 class="content-title">Even Better Things Come to Those Who Wait for a Really Long Time?</h2>
+		
+<div class="content-meta-info">Edition #3 - September 13, 2013</div>
+
+<h3>Brand new website</h3>
+<p>The most visible change for you, dear reader, is the website itself. We had been using a content-management system that, while widely praised on the Internet, proved much too slow and clunky to serve our needs. Perhaps we lacked the requisite hardware? Perhaps we lacked the requisite expertise with the CMS? Probably both! Anyway, we chucked the entire system completely and rebuilt the website from scratch. The end result is much faster; I also find it prettier. Write our <a href="mailto:webmaster@availlang.org?subject=Brand%20new%20website%20">webmaster</a> and tell us what you think!</p>
+
+<h3>Command-line compiler</h3>
+<p>The Avail team uses a graphical builder to interact with Avail systems under development. When the software is finally made available in the coming months, this graphical builder will also be made available to prospective Avail programmers. But sometimes it is very handy to have a command-line compiler. <strong>availc</strong> is Avail's new command-line compiler. Technically, it is rather more than just a compiler; it is a complete recursive build system. <a href="./E003-availc-help.html">Check out availc's help listing.</a></p>
+
+<h3>Module binaries</h3>
+<p>For quite some time, the Avail compiler only yielded in-memory representations of compiled modules. These compiled modules could not be persisted, so it was always necessary to compile Avail code before running it. Obviously this was a gross limitation. Who wants to recompile their code from source whenever they want to run their program?</p>
+
+<p>The Avail compiler now produces persistent binary modules that correspond to its input source modules. These binary modules are aggregated into compressed, indexed repository files. A repository file corresponds to an Avail root, and includes not only the root's binary modules, but also module metadata that can be used by tools for various purposes. At the time of writing, the only such tool is the recursive Avail builder, which accepts as input the name of the ultimate target module and uses available metadata to determine exactly which modules must be (re)compiled in order to effect a build of the target.</p>
+
+<p>The new scheme supports separate compilation, which represents an enormous benefit to developers. In today's world of intellectual property paranoia, however, perhaps the most important benefit of this technology is the ability to deliver an Avail application without its source code.</p>
+
+<h3>Module entry points</h3>
+<p>In the past, Avail programs were run as side-effects of compilation. This might be acceptable for a mere scripting language, but Avail has always indulged in loftier ambitions.</p>
+
+<p>As mentioned above, the compiler's goal is no longer to run programs, but to produce module binaries. The module header syntax now supports an <code>Entry Points</code> section. This section enumerates those methods which are considered acceptable outermost operations. Think of these entry points as being like the <strong>main</strong> procedures of C or Java. But in Avail, the programmer can name them, and she can have as many as she likes, even within the same module.</p>
+
+<h3>Import renaming</h3>
+<p>In Avail, the same lexical message (i.e., method name) may be introduced in many different modules. Each such introduction creates a brand new message, represented by an <code>atom</code>, and each such message is considered distinct; so several different message may exist that share a textual name. In the ordinary course of using messages, the compiler uses semantic information at a call site in order to disambiguate method selection. But if more than one method is viable based upon the available semantic information, then the compiler is stuck; it doesn't know which method to select. This situation arises even more frequently when the programmer extends an existing method, but more than one method could be intended because of message collision.</p>
+
+<p>Since it is only possible to introduce a particular message once per module, all message collisions result from module imports. It is now possible to handle such collisions simply by renaming one or more of the imported messages. Consider the following trivial scenario.</p>
+
+<div class="restricted-width-container">
+<div class="good-code code-block">Module "A"
+Names
+	"Foo_"
+Body
+
+/* Stuff… */</div>
+</div>
+
+<div class="restricted-width-container">
+<div class="good-code code-block">Module "B"
+Names
+	"Foo_"
+Body
+
+/* Stuff… */</div>
+</div>
+
+<div class="restricted-width-container">
+<div class="good-code code-block">Module "A plus B"
+Uses
+	"A" ("Foo_" → "Bar_"),
+	"B" ("Foo_" → "Baz_")
+Names
+	"Foo_"
+Body
+
+Bar "Huh?";
+Baz "Dunno.";
+
+/* Stuff… */</div>
+</div>
+
+<p>Here we have the three messages <code>"Foo_"</code>, from modules <code>A</code>, <code>B</code>, and <code>A plus B</code>, happily coexisting in module <code>A plus B</code> as <code>"Bar_"</code>, <code>"Baz_"</code>, and <code>"Foo_"</code>, respectively.</p>
+
+<h3>Limited visibility of method features</h3>
+<p>Methods have identity, and definitions and restrictions alter methods. Previously, any definitions, grammatical restrictions, and semantic restrictions of a method became visible to every module instantaneously upon application. Not only was this a bad thing in general, but it caused instability during compilation of Avail modules. The Avail builder not only builds independent modules in parallel, but it also parses top-level statements in parallel and executes semantic restrictions in parallel. So many race conditions were possible because of the visibility rules that governed method features.</p>
+
+<p>Now only those method features which are statically visible as a consequence of module imports are available within a module. This not only eliminates the race conditions mentioned above, but improves program correctness in general. In order to benefit from a method feature such a definition or restriction, a module must now import those modules which introduce the desired features.</p>
+
+<h3>Improved dynamic translation</h3>
+<p>The Avail compiler translates <code>phrase</code>s to <code>function implementation</code>s. A <code>phrase</code> corresponds to a grammatical program element, while a <code>function implementation</code> constitutes generated code. The instruction set for this generated code, called <strong>L1</strong>, is extremely simple; L1 comprises fewer than two dozen instructions. These instructions describe high-level Avail execution concepts directly, and some require significant time to interpret.</p>
+
+<p>In order to improve performance, the Avail virtual machine includes a dynamic translator that translates L1 to a larger, richer instruction set that better describes machine concepts. This instruction set is called <strong>L2</strong>. The dynamic translator has deep knowledge of Avail's type system and primitive operations, and leverages this knowledge to effect powerful and complex optimizations.</p>
+
+<p>Since the last newsletter was written, the dynamic translator has been rebuilt to achieve a twofold performance improvement. …But Avail is still one of the slowest performing programming languages out there. Its core architecture, however, permits more and deeper optimizations than are available in other programming language designs. So one day Avail will be quite fast indeed!</p>
+
+<p>…But it's not there yet.</p>
+
+<h3>JVM bytecode generation</h3>
+<p>The Avail virtual machine now includes a framework for dynamically generating Java class files. At a future time, hopefully soon, the dynamic translator will be updated to ultimately produce Java class files that correspond to L2 chunks. (An L2 chunk is the equivalent of an L1 <code>function implementation</code>, but is not exposed to an Avail programmer.) Obviously this is hoped to yield a significant performance boost. …But it isn't wired into the dynamic translator yet.</p>
+
+<h3>Improved tuple scalability</h3>
+<p>Beyond a particular threshold, tuple concatenation and tuple slicing is now implemented using an in-memory B-tree mechanism. The previous implementation of these features was poorly tuned, and certain operations behaved highly pathologically. As a consequence, manipulating large tuples is considerably more efficient now.</p>
+
+<h3>Interval tuples</h3>
+<p>Creation of interval tuples, e.g., <code>&lt;1, 2, 3, 4, 5&gt;</code>, using the primitive methods <code>"_to_"</code> and <code>"_to_by_"</code> now exhibit constant time complexity rather than linear time complexity. Since interval tuples are very common, this represents a solid performance enhancement.</p>
+
+<h3>Path-oriented persistent updates</h3>
+<p>Updating complex immutable data structures can be difficult. Pure functional languages manage this complexity using constructors, deconstructors, and many small persistent update functions. These techniques are powerful, but tend to undermine lexical locality. Avail now provides path-oriented persistent updates via two primitives named <code>"_«[_]»→_"</code>. These primitives support subscripting of tuples and maps, and allow deeply nested elements to be persistently updated easily. Because these are primitive operations, the virtual machine is free to leverage the mutability of the data structures. In particular, the implementation permits values for which only one reference exists to be destructively mutated, allowing very fast updates.</p>
+
+<h3>TCP/IP Networking</h3>
+<p>Complete support for asynchronous stream-oriented communication between networked peers via TCP sockets is now available. The <a href="./E003-asynchronous-numbers-station.html">supplemental toy program</a> demonstrates a complete interaction between a server and a client. The server is a simple <a href="http://en.wikipedia.org/wiki/Numbers_station">"numbers station"</a>; it begins by announcing the number of values that it will transmit, then sends those values to its clients.</p>
+
+<p>Note that the toy program doesn't use asynchronous I/O to very good effect; it repeatedly uses semaphores to serialize most I/O operations. The server does make small advantage of the mechanism when it accepts incoming connections, however. <a href="./E003-synchronous-numbers-station.html">This equivalent supplemental toy program</a> using synchronous I/O is rather smaller.</p>
+
+<p>Datagram-oriented communication is not yet available, but is planned. And the virtual machine will eventually provide asynchronous DNS lookups too, even on platforms that do not directly offer such support. So stay tuned!</p>
+
+<h3>Codecs</h3>
+<p>A complete abstraction of codecs is now available. Generically, the process of encoding (<code>"encode_using_" [tuple, encoder]→&lt;byte…|&gt;</code>) transforms a tuple of values into a tuple of bytes, while the process of decoding (<code>"decode_using_" [&lt;byte…|&gt;, decoder]→tuple</code>) transforms a tuple of bytes into a tuple of values. A higher level API based on <code>iterator</code>s is also available.</p>
+
+<p>At the time of writing, the only concrete codec is the UTF-8 codec.</p>
+
+<h3>User-defined stringification</h3>
+<p>A programmer can supply default stringification for his types by overriding the <code>Foundation</code> method <code>"“_”"</code>. In the past, these overrides could not be invoked by the Avail virtual machine; they could only be invoked from within an Avail program. The virtual machine is now able to use the Avail stringification mechanism. (For those who are very interested, the virtual machine is made aware of the stringification message <code>"“_”"</code> through a module pragma. This pragma can be defined anywhere, in principle, but for universality is defined in the very first bootstrap module, <code>Origin</code>.)</p>
+
+<h3>Change propagation</h3>
+<p>Avail has an exciting new approach to change propagation. Traditional imperative languages are burdened with the cumbersome <a href="http://en.wikipedia.org/wiki/Observer_pattern">observer pattern</a>, which Maier and Odersky note violate numerous design principles in the introduction of their paper <a href="http://infoscience.epfl.ch/record/176887/files/DeprecatingObservers2012.pdf">Deprecating the Observer Pattern with Scala.React</a>.</p>
+
+<p>Avail offers a mechanism for observing functions rather than values. When the result of a function changes (from its previous answer), another function is invoked. The first function specifies when to do something, while the second says how to react. This is demonstrated by a simple example.</p>
+
+<div class="restricted-width-container">
+<div class="good-code code-block">Whenever [x + y] changes,
+do [sum : integer | Print: format "New sum is “①”" with sum;];</div>
+</div>
+
+<p>Whenever <code>[x + y]</code> (the signal) would produce a new sum, this new sum is printed. How does this work? The method <code>"Whenever_changes,⁇do_"</code> arranges for the virtual machine to discover the mutable state upon which the signal depends. Whenever this mutable state actually changes, the first function is reevaluated. When its result changes, then the reactor is invoked. In this example, <code>x</code> and <code>y</code> are <code>variable</code>s, which are mutable values. So a statement like:</p>
+
+<div class="restricted-width-container">
+<div class="good-code code-block">x := 20;</div>
+</div>
+
+<p>Or:</p>
+
+<div class="restricted-width-container">
+<div class="good-code code-block">y := 137;</div>
+</div>
+
+<p>Will cause the reevaluation of the signal. Consider the following snippet, which causes two reevaluations of the signal and two invocations of the reactor.</p>
+
+<div class="restricted-width-container">
+<div class="good-code code-block">x := 0;
+y := 1;</div>
+</div>
+
+<p>This is often not the desired behavior. If change propagation is used to update graphical components, then excessive signaling can lead to flashing and flickering as the graphical component reacts repeatedly to redraw itself. To circumvent this, Avail permits transactional observation.</p>
+
+<div class="restricted-width-container">
+<div class="good-code code-block">Observe
+[
+	x := 0;
+	y := 1;	
+];</div>
+</div>
+
+<p>Upon entering an explicit transaction, the virtual machine begins accumulating information about what mutable state has been updated. Upon exiting an explicit transaction, the implementation arranges for the dependent signals to be reevaluated. Ultimately, each associated reactor runs at most once. Multiple reactors triggered by the same transaction are run in parallel.</p>
+
+<p>This is a trivial example, of course, but signals, reactors, and transactions can be arbitrarily complex, permitting very elaborate change propagation without the need for explicit events, event queue management, notification, etc.</p>
+
+<hr/>
+
+<h3>Supplements</h3>
+<ol>
+<li><a href="./E003-availc-help.html">availc -?</a> (help listing)</li>
+<li><a href="./E003-asynchronous-numbers-station.html">Asynchronous Numbers Station</a> (code)</li>
+<li><a href="./E003-synchronous-numbers-station.html">Synchronous Numbers Station</a> (code)</li>
+</ol>
+
+<tr class="book-nav">
+	<div class="book-nav">
+		<li class="book-nav-back"><a class="book-nav-back" href="./E002.html">‹ Previous</a></li>
+		<li class="book-nav-spacer">|</li>
+		<li class="book-nav-up"><a class="book-nav-up" href="./index.html">Return to Newsletters</a></li>
+	</div>
+</tr>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>
