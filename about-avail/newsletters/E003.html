@@ -41,7 +41,7 @@
 <p>As mentioned above, the compiler's goal is no longer to run programs, but to produce module binaries. The module header syntax now supports an <code>Entry Points</code> section. This section enumerates those methods which are considered acceptable outermost operations. Think of these entry points as being like the <strong>main</strong> procedures of C or Java. But in Avail, the programmer can name them, and she can have as many as she likes, even within the same module.</p>
 
 <h3>Import renaming</h3>
-<p>In Avail, the same lexical message (i.e., method name) may be introduced in many different modules. Each such introduction creates a brand new message, represented by an <code>atom</code>, and each such message is considered distinct; so several different message may exist that share a textual name. In the ordinary course of using messages, the compiler uses semantic information at a call site in order to disambiguate method selection. But if more than one method is viable based upon the available semantic information, then the compiler is stuck; it doesn't know which method to select. This situation arises even more frequently when the programmer extends an existing method, but more than one method could be intended because of message collision.</p>
+<p>In Avail, the same lexical message (i.e., method name) may be introduced in many different modules. Each such introduction creates a brand new message, represented by an <code>atom</code>, and each such message is considered distinct; so several different messages may exist that share a textual name. In the ordinary course of using messages, the compiler uses semantic information at a call site in order to disambiguate method selection. But if more than one method is viable based upon the available semantic information, then the compiler is stuck; it doesn't know which method to select. This situation arises even more frequently when the programmer extends an existing method, but more than one method could be intended because of message collision.</p>
 
 <p>Since it is only possible to introduce a particular message once per module, all message collisions result from module imports. It is now possible to handle such collisions simply by renaming one or more of the imported messages. Consider the following trivial scenario.</p>
 
@@ -83,7 +83,7 @@ Baz "Dunno.";
 <h3>Limited visibility of method features</h3>
 <p>Methods have identity, and definitions and restrictions alter methods. Previously, any definitions, grammatical restrictions, and semantic restrictions of a method became visible to every module instantaneously upon application. Not only was this a bad thing in general, but it caused instability during compilation of Avail modules. The Avail builder not only builds independent modules in parallel, but it also parses top-level statements in parallel and executes semantic restrictions in parallel. So many race conditions were possible because of the visibility rules that governed method features.</p>
 
-<p>Now only those method features which are statically visible as a consequence of module imports are available within a module. This not only eliminates the race conditions mentioned above, but improves program correctness in general. In order to benefit from a method feature such as a definition or restriction, a module must now import those modules which introduce the desired features.</p>
+<p>Now only those method features which are statically visible as a consequence of module imports are available within a module. This not only eliminates the race conditions mentioned above, but improves program correctness in general. In order to benefit from a method feature such as a definition or restriction, a module must now recursively import those modules which introduce the desired features.</p>
 
 <h3>Improved dynamic translation</h3>
 <p>The Avail compiler translates <code>phrase</code>s to <code>function implementation</code>s. A <code>phrase</code> corresponds to a grammatical program element, while a <code>function implementation</code> constitutes generated code. The instruction set for this generated code, called <strong>L1</strong>, is extremely simple; L1 comprises fewer than two dozen instructions. These instructions describe high-level Avail execution concepts directly, and some require significant time to interpret.</p>
@@ -95,7 +95,7 @@ Baz "Dunno.";
 <p>…But it's not there yet.</p>
 
 <h3>JVM bytecode generation</h3>
-<p>The Avail virtual machine now includes a framework for dynamically generating Java class files. At a future time – hopefully soon! – the dynamic translator will be updated to ultimately produce Java class files that correspond to L2 chunks. (An L2 chunk is the equivalent of an L1 <code>function implementation</code>, but is not exposed to an Avail programmer.) Obviously this is hoped to yield a significant performance boost. …But it isn't wired into the dynamic translator yet.</p>
+<p>The Avail virtual machine now includes a framework for dynamically generating Java class files. At a future time – hopefully soon! – the dynamic translator will be updated to ultimately produce Java class files that correspond to L2 chunks. (An L2 chunk is the equivalent of an L1 <code>function implementation</code>, but is not exposed to an Avail programmer.) Obviously we hope this yields a significant performance boost. …But it isn't wired into the dynamic translator yet.</p>
 
 <h3>Improved tuple scalability</h3>
 <p>Beyond a particular threshold, tuple concatenation and tuple slicing is now implemented using an in-memory B-tree mechanism. The previous implementation of these features was poorly tuned, and certain operations behaved highly pathologically. As a consequence, manipulating large tuples is considerably more efficient now.</p>
@@ -137,13 +137,13 @@ do [sum : integer | Print: format "New sum is “①”" with sum;];</div>
 <div class="good-code code-block">x := 20;</div>
 </div>
 
-<p>Or:</p>
+<p>or:</p>
 
 <div class="restricted-width-container">
 <div class="good-code code-block">y := 137;</div>
 </div>
 
-<p>Will cause the reevaluation of the signal. Consider the following snippet, which causes two reevaluations of the signal and two invocations of the reactor.</p>
+<p>will cause the reevaluation of the signal. Consider the following snippet, which causes two reevaluations of the signal and two invocations of the reactor.</p>
 
 <div class="restricted-width-container">
 <div class="good-code code-block">x := 0;
