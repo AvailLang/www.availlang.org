@@ -1,0 +1,80 @@
+strict graph "An overview of the Avail's metatypes."
+{
+	nodesep="0.0125";
+	node
+	[
+		shape="plaintext",
+		fontname="Consolas",
+		fontsize="8",
+		fontcolor="#0000A0",
+		target="_top"
+	];
+
+	/* Labels for the nodes. */
+        ⊤ [href="/about-avail/documentation/type-system/types-top"];
+        any [href="/about-avail/documentation/type-system/types-any"];
+        nontype [href="/about-avail/documentation/type-system/types-nontype"];
+	type
+	[
+		label="type = {⊤}ᵀ",
+		href="/about-avail/documentation/type-system/types-type",
+		shape="ellipse",
+		style="filled",
+		fillcolor="#E2E8FF",
+		peripheries="0"
+	];
+	"any meta" [label="{any}ᵀ"];
+	"atom meta" [label="{atom}ᵀ"];
+	"character meta" [label="{character}ᵀ"];
+	"continuation meta" [label="{continuation}ᵀ"];
+	"fiber meta" [label="{fiber}ᵀ"];
+	"function meta" [label="{function}ᵀ"];
+	"function implementation meta" [label="{function implementation}ᵀ"];
+	"map meta" [label="{map}ᵀ"];
+	"meta" [label="{type}ᵀ = {{⊤}ᵀ}ᵀ"];
+	"method meta" [label="{method}ᵀ"];
+	"method definition meta" [label="{method definition}ᵀ"];
+	"module meta" [label="{module}ᵀ"];
+	"number meta" [label="{number}ᵀ"];
+	"object meta" [label="{object}ᵀ"];
+	"nontype meta" [label="{nontype}ᵀ"];
+	"phrase meta" [label="{phrase}ᵀ"];
+	"pojo meta" [label="{pojo}ᵀ"];
+	"token meta" [label="{token}ᵀ"];
+	"tuple meta" [label="{tuple}ᵀ"];
+	"set meta" [label="{set}ᵀ"];
+	"variable meta" [label="{variable}ᵀ"];
+	"⊥ meta" [label="{⊥}ᵀ"];
+	⊥ [href="/about-avail/documentation/type-system/types-bottom"];
+
+	/* Connectivity. */
+	⊤ -- any -- {nontype type};
+	type -- "any meta";
+	"any meta" -- {"nontype meta" "meta"};
+	"nontype meta" --
+	{
+		"atom meta"
+		"character meta" "continuation meta"
+		"fiber meta" "function meta" "function implementation meta"
+		"map meta" "method meta" "method definition meta" "module meta"
+		"number meta"
+		"object meta"
+		"phrase meta" "pojo meta"
+		"token meta" "tuple meta"
+		"set meta"
+		"variable meta"
+	};
+	{
+		"atom meta"
+		"character meta" "continuation meta"
+		"fiber meta" "function meta"
+			"function implementation meta"
+		"map meta" "method meta" "method definition meta" "module meta"
+		"object meta"
+		"phrase meta" "pojo meta"
+		"set meta"
+		"token meta" "meta"
+		"variable meta"
+	} -- "⊥ meta" [color="#d0d0d0", style="dashed"];
+	{"⊥ meta" "nontype"} -- ⊥ [color="#e5e5e5", style="dashed"];
+}

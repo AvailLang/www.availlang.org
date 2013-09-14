@@ -1,0 +1,52 @@
+strict graph "Type lattice: focus on string."
+{
+	ranksep="0.25";
+	node
+	[
+		shape="plaintext",
+		fontname="Consolas",
+		fontsize="10",
+		fontcolor="#0000A0",
+		target="_top"
+	];
+
+	/* Labels for the nodes. */
+        ⊤ [href="/about-avail/documentation/type-system/types-top"];
+        any [href="/about-avail/documentation/type-system/types-any"];
+        nontype [href="/about-avail/documentation/type-system/types-nontype"];
+	tuple
+	[
+		label="tuple = <any…|>",
+		href="/about-avail/documentation/type-system/types-tuple"
+	];
+	string
+	[
+		label="string = <character…|>"
+		href="/about-avail/documentation/type-system/types-string",
+		shape="ellipse",
+		style="filled",
+		fillcolor="#E2E8FF",
+		peripheries="0"
+	];
+	"…nonempty string" [label=""];
+	"nonempty string"
+	[
+		label="nonempty string = <character…|1..>",
+		href="/about-avail/documentation/type-system/types-nonempty-string"
+	];
+	"nonempty string…" [label=""];
+	empty [label="{\"\"}ᵀ = {<>}ᵀ"];
+	⊥ [href="/about-avail/documentation/type-system/types-bottom"];
+
+	/* Connectivity. */
+	⊤ -- any -- nontype -- tuple -- string;
+	string -- "nonempty string" [color="#d0d0d0", style="dashed"];
+	{rank="same"; "…nonempty string" "nonempty string" "nonempty string…"};
+	"…nonempty string" -- "nonempty string" -- "nonempty string…"
+		[color="#707070", style="dotted"];
+	{rank="same"; "nonempty string" "<⊥…|0>"};
+	string -- "<⊥…|0>" [color="#d0d0d0", style="dashed"];
+	"<⊥…|0>" -- empty;
+	"nonempty string" -- ⊥ [color="#d0d0d0", style="dashed"];
+	empty -- ⊥;
+}

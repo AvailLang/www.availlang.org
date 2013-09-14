@@ -11,13 +11,13 @@
 <polygon fill="white" stroke="white" points="-4,5 -4,-472 515,-472 515,5 -4,5"/>
 <!-- ⊤ -->
 <g id="node1" class="node"><title>⊤</title>
-<a xlink:href="/content/types-top" xlink:title="⊤" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-top" xlink:title="⊤" target="_top">
 <text text-anchor="middle" x="367" y="-445" font-family="Consolas" font-size="10.00" fill="#0000a0">⊤</text>
 </a>
 </g>
 <!-- any -->
 <g id="node2" class="node"><title>any</title>
-<a xlink:href="/content/types-any" xlink:title="any" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-any" xlink:title="any" target="_top">
 <text text-anchor="middle" x="367" y="-391.854" font-family="Consolas" font-size="10.00" fill="#0000a0">any</text>
 </a>
 </g>
@@ -27,7 +27,7 @@
 </g>
 <!-- nontype -->
 <g id="node3" class="node"><title>nontype</title>
-<a xlink:href="/content/types-nontype" xlink:title="nontype" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-nontype" xlink:title="nontype" target="_top">
 <text text-anchor="middle" x="367" y="-337.854" font-family="Consolas" font-size="10.00" fill="#0000a0">nontype</text>
 </a>
 </g>
@@ -37,7 +37,7 @@
 </g>
 <!-- set -->
 <g id="node4" class="node"><title>set</title>
-<a xlink:href="/content/types-set" xlink:title="set = {any|}" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-set" xlink:title="set = {any|}" target="_top">
 <ellipse fill="#e2e8ff" stroke="#e2e8ff" cx="367" cy="-288" rx="48.4713" ry="18"/>
 <text text-anchor="middle" x="367" y="-283.854" font-family="Consolas" font-size="10.00" fill="#0000a0">set = {any|}</text>
 </a>
@@ -106,7 +106,7 @@
 </g>
 <!-- ⊥ -->
 <g id="node13" class="node"><title>⊥</title>
-<a xlink:href="/content/types-bottom" xlink:title="⊥" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-bottom" xlink:title="⊥" target="_top">
 <text text-anchor="middle" x="254" y="-13" font-family="Consolas" font-size="10.00" fill="#0000a0">⊥</text>
 </a>
 </g>

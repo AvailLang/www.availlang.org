@@ -11,13 +11,13 @@
 <polygon fill="white" stroke="white" points="-4,5 -4,-472 525,-472 525,5 -4,5"/>
 <!-- ⊤ -->
 <g id="node1" class="node"><title>⊤</title>
-<a xlink:href="/content/types-top" xlink:title="⊤" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-top" xlink:title="⊤" target="_top">
 <text text-anchor="middle" x="319" y="-445" font-family="Consolas" font-size="10.00" fill="#0000a0">⊤</text>
 </a>
 </g>
 <!-- any -->
 <g id="node2" class="node"><title>any</title>
-<a xlink:href="/content/types-any" xlink:title="any" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-any" xlink:title="any" target="_top">
 <text text-anchor="middle" x="319" y="-391.854" font-family="Consolas" font-size="10.00" fill="#0000a0">any</text>
 </a>
 </g>
@@ -27,7 +27,7 @@
 </g>
 <!-- nontype -->
 <g id="node3" class="node"><title>nontype</title>
-<a xlink:href="/content/types-nontype" xlink:title="nontype" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-nontype" xlink:title="nontype" target="_top">
 <text text-anchor="middle" x="319" y="-337.854" font-family="Consolas" font-size="10.00" fill="#0000a0">nontype</text>
 </a>
 </g>
@@ -37,7 +37,7 @@
 </g>
 <!-- tuple -->
 <g id="node4" class="node"><title>tuple</title>
-<a xlink:href="/content/types-tuple" xlink:title="tuple = &lt;any…|&gt;" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-tuple" xlink:title="tuple = &lt;any…|&gt;" target="_top">
 <ellipse fill="#e2e8ff" stroke="#e2e8ff" cx="319" cy="-288" rx="58.2556" ry="18"/>
 <text text-anchor="middle" x="319" y="-283.854" font-family="Consolas" font-size="10.00" fill="#0000a0">tuple = &lt;any…|&gt;</text>
 </a>
@@ -56,7 +56,7 @@
 </g>
 <!-- string -->
 <g id="node7" class="node"><title>string</title>
-<a xlink:href="/content/types-string" xlink:title="string = &lt;character…|&gt;" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-string" xlink:title="string = &lt;character…|&gt;" target="_top">
 <text text-anchor="middle" x="380" y="-229.854" font-family="Consolas" font-size="10.00" fill="#0000a0">string = &lt;character…|&gt;</text>
 </a>
 </g>
@@ -108,7 +108,7 @@
 </g>
 <!-- ⊥ -->
 <g id="node13" class="node"><title>⊥</title>
-<a xlink:href="/content/types-bottom" xlink:title="⊥" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-bottom" xlink:title="⊥" target="_top">
 <text text-anchor="middle" x="254" y="-13" font-family="Consolas" font-size="10.00" fill="#0000a0">⊥</text>
 </a>
 </g>

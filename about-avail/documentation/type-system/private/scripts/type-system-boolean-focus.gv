@@ -1,0 +1,36 @@
+strict graph "Type lattice: focus on boolean."
+{
+	nodesep="0.0125";
+	ranksep="0.25";
+	node
+	[
+		shape="plaintext",
+		fontname="Consolas",
+		fontsize="10",
+		fontcolor="#0000A0",
+		target="_top"
+	];
+
+	/* Labels for the nodes. */
+	⊤ [href="/about-avail/documentation/type-system/types-top"];
+	any [href="/about-avail/documentation/type-system/types-any"];
+	nontype [href="/about-avail/documentation/type-system/types-nontype"];
+	atom [href="/about-avail/documentation/type-system/types-atom"];
+	boolean
+	[
+		label="boolean = {true, false}ᵀ",
+		href="/about-avail/documentation/type-system/types-boolean",
+		shape="ellipse",
+		style="filled",
+		fillcolor="#E2E8FF",
+		peripheries="0"
+	];
+	"true type" [label="{true}ᵀ"];
+	"false type" [label="{false}ᵀ"];
+	⊥ [href="/about-avail/documentation/type-system/types-bottom"];
+
+	/* Connectivity. */
+	⊤ -- any -- nontype -- atom -- boolean
+		-- {"true type" "false type"} -- ⊥;
+}
+

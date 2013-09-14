@@ -1,0 +1,45 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Avail - Type System</title>
+	
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+
+		<h2 class="content-title"><code>double</code></h2>
+<p>
+A <strong>double</strong> — that is, an <a href="http://grouper.ieee.org/groups/754">IEEE 754</a> double-precision floating point number — is an approximation of a real number. The representation uses 32 binary digits, hereinafter <strong>bits</strong>, organized as 1 sign bit, 52 bits of mantissa, and 11 bits of exponent. The <strong>sign bit</strong> distinguishes positive (sign bit = 0) and negative (sign bit = 1) values. The <strong>mantissa</strong> encodes the significant binary digits of the number. The <strong>exponent</strong> scales the mantissa by a particular power of 2. Finite <code>double</code> values range from <code>-1.79769313486231570e+308</code> to <code>1.79769313486231570e+308</code>. The smallest nonzero <code>double</code> values are <code>±4.94065645841246544e-324</code>. Positive zero (<code>0.0</code>) are negative zero (<code>-0.0</code>) are considered distinct. Infinities are supported, but indicate an overflow of representational limits (rather than infinity). Some encodings do not represent real values; such a value is a <strong>not-a-number (NaN)</strong>. No two differing <code>NaN</code> encodings are considered equal. This is a departure from a strict interpretation of IEEE 754.
+</p>
+<p>
+In Avail, a literal double begins with one or more decimal digits, contains a <em>full stop</em> <code>.</code> (<code>U+002E</code>) and fractional part, and optionally ends with exponential notation — an <code>E</code> or <code>e</code> followed by one or more decimal digits. Examples include <code>1.0</code>, <code>0.1</code>, <code>0.0025</code>, <code>2.5E-3</code>, <code>2500.0</code>, <code>2.5E3</code>, and <code>3.141592653589793</code>.
+</p>
+<p>
+Though <code>double</code> numerically subsumes <code><a href="/about-avail/documentation/type-system/type-float">float</a></code>, they are considered siblings because their values differ by internal representation. <code>double</code> is not a supertype of <code>float</code>. No <code>float</code> value is also a <code>double</code> value, and no <code>double</code> value is also a <code>float</code> value.
+</p>
+<tr class="book-nav">
+	<div class="book-nav">
+		<li class="book-nav-back"><a class="book-nav-back" href="./types-number.html">‹ <code>number</code></a></li>
+		<li class="book-nav-spacer">|</li>
+		<li class="book-nav-up"><a class="book-nav-up" href="../type-system.html">Return to Type System</a></li>
+		<li class="book-nav-spacer">|</li>
+		<li class="book-nav-forward"><a class="book-nav-forward" href="./types-float.html"><code>float</code> ›</a></li>
+	</div>
+</tr>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>

@@ -1,0 +1,72 @@
+strict graph "An overview of the Avail type system."
+{
+	nodesep="0.0125";
+	node
+	[
+		shape="plaintext",
+		fontname="Consolas",
+		fontsize="8",
+		fontcolor="#0000A0",
+		target="_top"
+	];
+
+	/* Node descriptions. */
+        ⊤ [href="/about-avail/documentation/type-system/types-top"];
+        any [href="/about-avail/documentation/type-system/types-any"];
+        nontype [href="/about-avail/documentation/type-system/types-nontype"];
+	type [href="/about-avail/documentation/type-system/types-type"];
+	atom [href="/about-avail/documentation/type-system/types-atom"];
+	character [href="/about-avail/documentation/type-system/types-character"];
+	continuation [href="/about-avail/documentation/type-system/types-continuation"];
+	fiber [href="/about-avail/documentation/type-system/types-fiber"];
+	function [href="/about-avail/documentation/type-system/types-function"];
+	"function implementation"
+	[
+		label="function\nimplementation",
+		href="/about-avail/documentation/type-system/types-function-implementation"
+	];
+	map [href="/about-avail/documentation/type-system/types-map"];
+	method [href="/about-avail/documentation/type-system/types-method"];
+	"method definition"
+	[
+		label="method\ndeclaration",
+		href="/about-avail/documentation/type-system/types-method-site"
+	];
+	module [href="/about-avail/documentation/type-system/types-module"];
+	number [href="/about-avail/documentation/type-system/types-number"];
+	object [href="/about-avail/documentation/type-system/types-object"];
+	phrase [href="/about-avail/documentation/type-system/types-phrase"];
+	pojo [href="/about-avail/documentation/type-system/types-pojo"];
+	token [href="/about-avail/documentation/type-system/types-token"];
+	tuple [href="/about-avail/documentation/type-system/types-tuple"];
+	set [href="/about-avail/documentation/type-system/types-set"];
+	variable [href="/about-avail/documentation/type-system/types-variable"];
+	⊥ [href="/about-avail/documentation/type-system/types-bottom"];
+
+	⊤ -- any -- {nontype type};
+	nontype --
+	{
+		atom
+		character continuation
+		fiber function "function implementation"
+		map method "method definition" module
+		number
+		object
+		phrase pojo
+		token tuple
+		set
+		variable
+	};
+	{
+		atom
+		character continuation
+		fiber function "function implementation"
+		map method "method definition" module
+		number
+		object
+		phrase pojo
+		set
+		token tuple type
+		variable
+	} -- ⊥ [color="#d0d0d0", style="dashed"];
+}

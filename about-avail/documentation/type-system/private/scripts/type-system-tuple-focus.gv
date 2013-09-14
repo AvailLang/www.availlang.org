@@ -1,0 +1,63 @@
+strict graph "Type lattice: focus on tuple."
+{
+	ranksep="0.25";
+	node
+	[
+		shape="plaintext",
+		fontname="Consolas",
+		fontsize="10",
+		fontcolor="#0000A0",
+		target="_top"
+	];
+
+	/* Labels for the nodes. */
+        ⊤ [href="/about-avail/documentation/type-system/types-top"];
+        any [href="/about-avail/documentation/type-system/types-any"];
+        nontype [href="/about-avail/documentation/type-system/types-nontype"];
+	tuple
+	[
+		label="tuple = <any…|>",
+		href="/about-avail/documentation/type-system/types-tuple",
+		shape="ellipse",
+		style="filled",
+		fillcolor="#E2E8FF",
+		peripheries="0"
+	];
+	"…numbers" [label=""];
+	numbers [label="<number…|>"];
+	string
+	[
+		label="string = <character…|>"
+		href="/about-avail/documentation/type-system/types-string"
+	];
+	"string…" [label=""];
+	empty [label="{<>}ᵀ"];
+	integers [label="<integer…|1..>"];
+	"…integers" [label=""];
+	"integers…" [label=""];
+	⊥ [href="/about-avail/documentation/type-system/types-bottom"];
+
+	/* Connectivity. */
+	⊤ -- any -- nontype -- tuple;
+	{rank="same"; "…numbers" numbers string "string…"};
+	tuple -- {numbers string} [color="#d0d0d0", style="dashed"];
+	"…numbers" -- numbers -- string -- "string…" [color="#707070", style="dotted"];
+	numbers -- integers [color="#d0d0d0", style="dashed"];
+	{numbers string} -- "<⊥…|0>" [color="#d0d0d0", style="dashed"];
+	"<⊥…|0>" -- empty;
+	{rank="same"; integers "…integers" "integers…"};
+	"…integers" -- integers -- "integers…"
+		[color="#707070", style="dotted"];
+	integers -- {"<[1..10], [2..8]…|2..3>"}
+		[color="#d0d0d0", style="dashed"];
+	{rank="same";
+		empty
+		"{<1, 2>}ᵀ" "{<10, 8, 3>}ᵀ" "{<1, 2, 3, 4>}ᵀ" "{<20, 10>}ᵀ"};
+	integers -- {"{<1, 2, 3, 4>}ᵀ" "{<20, 10>}ᵀ"}
+		[color="#d0d0d0", style="dashed"];
+	"<[1..10], [2..8]…|2..3>" -- {"{<1, 2>}ᵀ" "{<10, 8, 3>}ᵀ"}
+		[color="#d0d0d0", style="dashed"];
+	{"{<1, 2>}ᵀ" "{<10, 8, 3>}ᵀ" "{<1, 2, 3, 4>}ᵀ" "{<20, 10>}ᵀ"} -- ⊥;
+	
+	empty -- ⊥;
+}

@@ -1,0 +1,168 @@
+strict graph "Avail type system"
+{
+	nodesep="0.1";
+        ranksep="0.25";
+        node
+        [
+                shape="plaintext",
+                fontname="Consolas",
+                fontsize="10",
+                fontcolor="#0000A0",
+                target="_top"
+        ];
+
+	/* Labels for the nodes. */
+        ⊤ [href="/about-avail/documentation/type-system/types-top"];
+        any [href="/about-avail/documentation/type-system/types-any"];
+        nontype [href="/about-avail/documentation/type-system/types-nontype"];
+        phrase
+        [
+                label="phrase = phrase⇒⊤",
+                href="/about-avail/documentation/type-system/types-phrase",
+                shape="ellipse",
+                style="filled",
+                fillcolor="#E2E8FF",
+                peripheries="0"
+        ];
+	"declaration phrase"
+		[href="/about-avail/documentation/type-system/types-declaration-phrase"];
+	"expression phrase"
+		[href="/about-avail/documentation/type-system/types-expression-phrase"];
+	"sequence phrase"
+		[href="/about-avail/documentation/type-system/types-sequence-phrase"];
+	"argument phrase"
+	[
+		label="argument\nphrase",
+		href="/about-avail/documentation/type-system/types-argument-phrase"
+	];
+	"label phrase"
+	[
+		label="label\nphrase",
+		href="/about-avail/documentation/type-system/types-label-phrase"
+	];
+	"local constant phrase"
+	[
+		label="local constant\nphrase",
+		href="/about-avail/documentation/type-system/types-local-constant-phrase"
+	];
+	"local variable phrase"
+	[
+		label="local variable\nphrase",
+		href="/about-avail/documentation/type-system/types-local-variable-phrase"
+	];
+	"module constant phrase"
+	[
+		label="module constant\nphrase",
+		href="/about-avail/documentation/type-system/types-module-constant-phrase"
+	];
+	"module variable phrase"
+	[
+		label="module variable\nphrase",
+		href="/about-avail/documentation/type-system/types-module-variable-phrase"
+	];
+	"primitive failure reason phrase"
+	[
+		label="primitive failure reason\nphrase",
+		href="/about-avail/documentation/type-system/types-primitive-failure-reason-phrase"
+	];
+	"assignment phrase"
+	[
+		label="assignment\nphrase",
+		href="/about-avail/documentation/type-system/types-assignment-phrase"
+	];
+	"block phrase"
+	[
+		label="block\nphrase",
+		href="/about-avail/documentation/type-system/types-block-phrase"
+	];
+	"list phrase"
+	[
+		label="list\nphrase",
+		href="/about-avail/documentation/type-system/types-list-phrase"
+	];
+	"literal phrase"
+	[
+		label="literal\nphrase",
+		href="/about-avail/documentation/type-system/types-literal-phrase"
+	];
+	"send phrase"
+	[
+		label="send\nphrase",
+		href="/about-avail/documentation/type-system/types-send-phrase"
+	];
+	"variable reference phrase"
+	[
+		label="variable reference\nphrase",
+		href="/about-avail/documentation/type-system/types-variable-reference-phrase"
+	];
+	"variable use phrase"
+	[
+		label="variable use\nphrase",
+		href="/about-avail/documentation/type-system/types-variable-use-phrase"
+	];
+       ⊥ [href="/about-avail/documentation/type-system/types-bottom"];
+
+	/* Connections. */
+	⊤ -- any -- nontype -- phrase;
+	phrase --
+	{
+		rank="same";
+		"declaration phrase"
+		"expression phrase"
+		"sequence phrase"
+	};
+	"declaration phrase" --
+	{
+		"argument phrase"
+		"label phrase"
+		"local constant phrase"
+		"local variable phrase"
+		"module constant phrase"
+		"module variable phrase"
+		"primitive failure reason phrase"
+	};
+	"argument phrase"
+		-- "label phrase"
+		-- "local constant phrase"
+		-- "local variable phrase"
+		-- "module constant phrase"
+		-- "module variable phrase"
+		-- "primitive failure reason phrase"
+		[style="invis"];
+
+	"expression phrase" --
+	{
+		"assignment phrase"
+		"block phrase"
+		"list phrase"
+		"literal phrase"
+		"send phrase"
+		"variable reference phrase"
+		"variable use phrase"
+	};
+	"assignment phrase"
+		-- "block phrase"
+		-- "list phrase"
+		-- "literal phrase"
+		-- "send phrase"
+		-- "variable reference phrase"
+		-- "variable use phrase"
+		[style="invis"];
+	{rank="same"; "argument phrase" "assignment phrase"};
+	{rank="same"; "label phrase" "block phrase"};
+	{rank="same"; "local constant phrase" "list phrase"};
+	{rank="same"; "local variable phrase" "literal phrase"};
+	{rank="same"; "module constant phrase" "send phrase"};
+	{rank="same"; "module variable phrase" "variable reference phrase"};
+	{rank="same"; "primitive failure reason phrase" "variable use phrase"};
+	{
+		"argument phrase" "assignment phrase"
+		"block phrase"
+		"label phrase" "local constant phrase" "local variable phrase"
+		"list phrase" "literal phrase"
+		"module constant phrase" "module variable phrase"
+		"primitive failure reason phrase"
+		"send phrase" "sequence phrase"
+		"variable reference phrase" "variable use phrase"
+	} -- ⊥ [color="#d0d0d0", style="dashed"];
+}

@@ -1,0 +1,54 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Avail - Type System</title>
+	
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+
+		<h2 class="content-title">Type Compatibility</h2>
+<p>
+Consider the addition operation. It accepts two integral operands — the augend and the addend — and yields an integral sum. The type of both augend and addend is <code>{…, −1, 0, 1, …}ᵀ</code>. Each operand can happily alias any finite integer. Yet addition does not become invalid if the operands are constrained to narrower types:
+</p>
+<div class="restricted-width-container">
+<div class="good-code code-block">/* "augend" is constrained to be any integer on the closed interval [10, 100].
+ * "addend" is constrained to be any integer on the closed interval [5, 15].
+ * Both types are subtypes of "integer" = {…, -1, 0, 1, …}ᵀ.
+ */
+augend : [10..100] := 25;
+addend : [5..15] := 7;
+Assert: augend + addend = 32;</div>
+</div>
+<p>
+It would be counterintuitive if the above code sample did not work as expected, because obviously any of the integers from 10 to 100 may meaningfully be added to any of the integers from 5 to 15. The restricted integral types <code>{10, 11, 12, …, 99, 100}ᵀ</code> and <code>{5, 6, 7, …, 14, 15}ᵀ</code> are <strong>type compatible</strong> with <code>{…, −1, 0, 1, …}ᵀ</code> because they are <a href="./type-relations.html">subtypes</a> of it.
+</p>
+<p>
+Generally speaking, wherever a type is expected, any subtype may be used instead. If an operation is meaningful for a particular value <code>V</code>, then it hardly matters what types <code>V</code> is construed to instantiate. Furthermore, if an operation is meaningful over some set of values, then it is because it is meaningful for each member of that set; it must therefore be meaningful over any subset of that set. Returning to the code sample above, the assignment to <code>augend</code> is acceptable because <code>25’s type</code> — the type inferred for the literal phrase <code>25</code> — is compatible with <code>[10..100]</code>.
+</p>
+<tr class="book-nav">
+	<div class="book-nav">
+		<li class="book-nav-back"><a class="book-nav-back" href="./type-relations.html">‹ Type Relations</a></li>
+		<li class="book-nav-spacer">|</li>
+		<li class="book-nav-up"><a class="book-nav-up" href="../type-system.html">Return to Type System</a></li>
+		<li class="book-nav-spacer">|</li>
+		<li class="book-nav-forward"><a class="book-nav-forward" href="./type-parameterization.html">Type Parameterization ›</a></li>
+	</div>
+</tr>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>
