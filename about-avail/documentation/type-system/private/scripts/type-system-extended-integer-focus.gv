@@ -30,22 +30,32 @@ strict graph "Type lattice: focus on extended integer."
 	"nonpositive integer"
 	[
 		label="nonpositive integer = (-∞..0]",
-		href="/about-avail/documentation/type-system/types-extended-integer#types-nonpositive-integer.html"
+		href="/about-avail/documentation/type-system/types-extended-integer.html#types-nonpositive-integer"
 	];
 	"negative integer"
 	[
 		label="negative integer = (-∞..-1]",
-		href="/about-avail/documentation/type-system/types-extended-integer#types-negative-integer.html"
+		href="/about-avail/documentation/type-system/types-extended-integer.html#types-negative-integer"
 	];
 	"whole number"
 	[
 		label="whole number = [0..∞)",
-		href="/about-avail/documentation/type-system/types-extended-integer#types-whole-number.html"
+		href="/about-avail/documentation/type-system/types-extended-integer.html#types-whole-number"
 	];
 	"natural number"
 	[
 		label="natural number = [1..∞)",
-		href="/about-avail/documentation/type-system/types-extended-integer#types-natural-number.html"
+		href="/about-avail/documentation/type-system/types-extended-integer.html#types-natural-number"
+	];
+	"code point"
+	[
+		label="code point = [0..1114111]",
+		href="/about-avail/documentation/type-system/types-extended-integer.html#types-code-point"
+	];
+	byte
+	[
+		label="byte = [0..255]",
+		href="/about-avail/documentation/type-system/types-extended-integer.html#types-byte"
 	];
 	"…[1..6]" [label=""];
 	"[42..49]…" [label=""];
@@ -63,10 +73,12 @@ strict graph "Type lattice: focus on extended integer."
 	"nonpositive integer" -- "whole number" [color="#707070", style="dotted"];
 	"nonpositive integer" -- "negative integer";
 	"whole number" -- "natural number";
-	{rank="same"; "negative integer" "natural number"};
-	"negative integer" -- "natural number" [color="#707070", style="dotted"];
-	"natural number" -- {"[1..6]" "[2..11]" "[42..49]"}
+	"whole number" -- {"code point" "byte"} [color="#d0d0d0", style="dashed"];
+	{rank="same"; "negative integer" "natural number" "code point"};
+	"negative integer" -- "natural number" -- "code point" [color="#707070", style="dotted"];
+	{"natural number" "byte"} -- {"[1..6]" "[2..11]" "[42..49]"}
 		[color="#d0d0d0", style="dashed"];
+	"code point" -- byte;
 	{rank="same"; "…[1..6]" "[1..6]" "[2..11]" "[42..49]" "[42..49]…"};
 	"…[1..6]" -- "[1..6]" -- "[2..11]" -- "[42..49]" -- "[42..49]…"
 		[color="#707070", style="dotted"];

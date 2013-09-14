@@ -22,7 +22,148 @@
 <div class="scrolling">
 <iframe src="/_images/type-system/type-system-map-focus.svg" seamless></iframe>
 </div>
-<p class="text-highlight">Work in progress…</p>
+
+<p>
+Simply put, a map is a relation between keys and values. More formally, a <strong>map</strong> is an immutable, finite, unordered, indexable, directed, one-to-one function from a <strong>domain</strong> of distinct, homogeneous <strong>keys</strong> to a <strong>codomain</strong> of homogeneous <strong>values</strong>. Each association from key to value is a <strong>binding</strong>. The number of bindings is the <strong>cardinality</strong> of the map. A map is therefore a discrete mathematical function. Breaking this down:
+</p>
+<ul>
+<li>
+<strong>Immutable</strong> means that the composition of a map is not subject to change. No operations are, or can be, defined to modify a map in any way; only operations that derive new maps from existing maps are expressible.
+</li>
+<li>
+<strong>Finite</strong> means that the cardinality of a map is never the value <code>∞</code>. To store a map in memory requires space proportional to its cardinality, and memory is clearly always finite. Additional limits to the practical cardinality of maps may be imposed by the implementation. Given that <code>m</code> is a map, then <code>|m|</code> is the size of <code>m</code>. The method for sizing is <code>"`|_`|"</code>.
+</li>
+<li>
+<strong>Unordered</strong> means that the bindings of a map do not occur in any particular order. Any two maps with the same bindings are therefore equal.
+</li>
+<li>
+<strong>Indexable</strong> means that a value of the codomain can be accessed by supplying a key that is associated with that value by some binding. Given that <code>m</code> is a map and <code>k</code> is a key of the map's domain, then <code>m[k]</code> denotes the value of the codomain that is bound to <code>k</code>. The method for subscripting is <code>"_[_]"</code>.
+</li>
+<li>
+<strong>Directed</strong> means that obtaining a value of the codomain given a corresponding key efficiently supplies a unique answer. But many keys may be bound to the same value, and determining which keys are bound to a particular value is not necessarily efficient.
+</li>
+<li>
+<strong>One-to-one</strong> means that each key of the domain is associated with exactly one value of the codomain.
+</li>
+<li>
+<strong>Distinct</strong> means that a key uniquely identifies a binding of a map. Any particular value is either a key of a map or it is not.
+</li>
+<li>
+<strong>Homogeneous</strong> means that the keys of the domain conform to a single most general type and the values of the codomain conform to a single most general type. These types need not be equal.
+</li>
+</ul>
+<p>
+A literal map is expressed as a <em>left curly bracket</em> <code>{</code> (<code>U+007B</code>), then a comma-separated list of bindings, and finally a <em>right curly bracket</em> <code>}</code> (<code>U+007D</code>). A literal binding is expressed as a key, then a <em>rightwards arrow</em> <code>→</code> (<code>U+2192</code>), and finally a value. Examples of maps include <code>{"United States"→"Washington, D.C.", "Mongolia"→"Ulaanbaatar", "Tanzania"→"Dodoma"}</code>, <code>{1→&lt;1&gt;, 2→&lt;1, 4&gt;, 3→&lt;1, 4, 9&gt;}</code>, and <code>{4→"四", 5→"五", 6→"六", 7→"七"}</code>. The empty map is written as <code>{}</code>.
+</p>
+<p>
+The elements of a map need not be known statically. Map are constructed with the method <code>"{«_→_‡,»}"</code>; there is no special built-in syntax for constructing maps. When the compiler can <a href="./type-inference.html">infer</a> an instance type for each argument expression of a particular send of this message, then the semantic restriction is able to strengthen the result to an instance type, thereby according it the same force as a literal understood primitively by the compiler.
+</p>
+<p>
+The map type specifies three <a href="./type-parameterization.html">parameters</a> for completion:
+</p>
+<ul>
+<li>
+The <strong>key type</strong> specifies a type that includes every key of the domain. For example, a map type whose key type is <code><a href="./types-string.html">string</a></code> has as instances the map <code>{"Billy"→5}</code>, <code>{"Jane"→"enaJ", "Kylie"→"eilyK"}</code>, and <code>{}</code>. The method <code>"_'s⁇key type"</code> answers the key type of a map type.
+</li>
+<li>
+The <strong>value type</strong> specifies a type that includes every value of the codomain. For example, a map type whose value type is <code><a href="./types-function.html">function</a></code> has as instances the map <code>{"="→[a : integer, b : integer | a=b], "≥"→[a : integer, b : integer | a ≥ b]}</code> and <code>{"Avail"→[Print: "Just shut up and use it.\n";]}</code>. The method <code>"_'s⁇value type"</code> answers the value type of a map type.
+</li>
+<li>
+The <strong>cardinality restriction</strong> is an integral type that specifies the range of sizes that describe instances. If the cardinality restriction is <code>[0..2]</code>, then only a map whose cardinality is <code>0</code>, <code>1</code>, or <code>2</code> is an instance. The method <code>"`|`|_`|`|"</code>, read as <em>sizes of</em>, answers the cardinality restriction of a map type. The floor operation, <code>⎣_⎦</code>, answers the lower bound of a map type's cardinality restriction. The ceiling operation, <code>⎡_⎤</code>, answers the upper bound of a map type's cardinality restriction.
+</li>
+</ul>
+<p>
+The primitive map type constructor is <code>"{_→_|_}"</code>. It accepts the key type, value type, and cardinality restriction, respectively. This method supports the most general type construction scenario, that of three statically unknown type completion arguments. Most type construction is done by the compiler during execution of <a href="./type-annotations.html">type annotations</a>, however, so typically most or all of the map type completion arguments will be known at compile-time. For these more common situations, the system library provides the following convenience methods:
+</p>
+<ul>
+<li>
+The method <code>"{_→_|_.._}"</code> accepts the key type, value type, the lower bound of the cardinality restriction, and the upper bound of the cardinality restriction, respectively. To determine the cardinality restriction, take the specified lower and upper bounds — <code>lower</code> and <code>upper</code>, respectively, in the following expression — and compute the type <code>[lower..upper+1)</code>. <a href="./types-extended-integer.html#types-extended-integer-canonization">Canonization of integral ranges</a> causes the specified upper bound to be considered inclusive if it is finite and exclusive if it is infinite.
+<div class="restricted-width-container">
+<div class="good-code code-block">/* Here's a map type with an inclusive upper bound on its cardinality
+ * restriction.
+ */
+mapType ::= {integer→double|2..4};
+Assert: mapType's key type = integer;
+Assert: mapType's value type = double;
+Assert: ||mapType|| = [2..4];
+
+/* And here's one with an exclusive upper bound. */
+Assert: ||{string→string|13..∞}|| = [13..∞);
+
+/* Here are some example instances of "mapType". */
+Assert: {2→2.0, 503→503.0} ∈ mapType;
+Assert: {-1→1.0, -4→16.0, -7→49.0} ∈ mapType;
+Assert: {3→-3.0, 5→-5.0, 8→-8.0, 13→-13.0} ∈ mapType;
+
+/* And here is an example non-instance (because it's too large). */
+Assert: {0→0.0, 1→1.0, 2→2.0, 3→3.0, 4→4.0, 5→5.0} ∉ mapType;</div>
+</div>
+</li>
+<li>
+The method <code>"{_→_|_..}"</code> accepts the key type, the value type, and the lower bound of the cardinality restriction, respectively. To determine the cardinality restriction, take the specified lower bound, <code>lower</code>, and compute the type <code>[lower..∞)</code>.
+<div class="restricted-width-container">
+<div class="good-code code-block">mapType ::= {string→string|1..};
+Assert: mapType's key type = string;
+Assert: mapType's value type = string;
+Assert: ||mapType|| = [1..∞);
+
+/* Here are some example instances of "mapType". */
+Assert: {"dengue"→"kidingapopo"} ∈ mapType;
+Assert: {"Borr"→"Bestla", "Thor"→"Sif", "Njörðr"→"Skaði", "Óðinn"→"Frigg"} ∈ mapType;
+</div>
+</div>
+</li>
+<li>
+The method <code>"{_→_|.._}"</code> accepts the key type, value type, and the upper bound of the cardinality restriction, respectively. To determine the cardinality restriction, take the specified upper bound, <code>upper</code>, and compute the type <code>[0..upper+1)</code>.
+<div class="restricted-width-container">
+<div class="good-code code-block">mapType ::= {set→integer|..2};
+Assert: mapType's key type = set;
+Assert: mapType's value type = integer;
+Assert: ||mapType|| = [0..2];
+
+/* Here are some example instances of "mapType". */
+Assert: {} ∈ mapType;
+Assert: {{1, "fish", 2}→3} ∈ mapType;
+Assert: {∅→0, {"megaphone"}→1} ∈ mapType;
+</div>
+</div>
+</li>
+<li>
+The method <code>"{_→_|_}"</code> is overridden to accept, respectively, the key type, the value type, and a <a href="./types-extended-integer.html#types-whole-number">whole number</a> that specifies the exact size of instances. To determine the cardinality restriction, take the argument, <code>exact</code>, and compute the type <code>[exact..exact]</code>.
+<div class="restricted-width-container">
+<div class="good-code code-block">mapType ::= {[0..1]→[0..1]|1};
+Assert: mapType's key type = [0..1];
+Assert: mapType's value type = [0..1];
+Assert: ||mapType|| = [1..1];
+
+/* Here are the four instances of "mapType". */
+Assert: {0→0} ∈ mapType;
+Assert: {0→1} ∈ mapType;
+Assert: {1→0} ∈ mapType;
+Assert: {1→0} ∈ mapType;
+</div>
+</div>
+</li>
+<li>
+The method <code>"{_→_|}"</code> accepts the key type and value type, respectively. The cardinality restriction is <code>[0..∞)</code>.
+<div class="restricted-width-container">
+<div class="good-code code-block">mapType ::= {character→code point|};
+Assert: mapType's key type = character;
+Assert: mapType's value type = character;
+Assert: ||mapType|| = [0..∞);
+
+/* Here are some example instances of "mapType". */
+Assert: {¢a→97, ¢b→98, ¢c→99} ∈ mapType;
+Assert: {¢∪→8746, ¢∩→8745} ∈ mapType;
+Assert: {¢1→49, ¢2→50, ¢3→51, ¢4→52, ¢5→53} ∈ mapType;
+</div>
+</div>
+</li>
+</ul>
+<p>
+A map type is <a href="./type-parameterization.html">covariant</a> by key type, value type, and cardinality restriction.
+</p>
+
 <tr class="book-nav">
 	<div class="book-nav">
 		<li class="book-nav-back"><a class="book-nav-back" href="./types-set.html">‹ <code>set</code></a></li>
