@@ -1,0 +1,205 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Avail - Type System</title>
+	
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+
+		<h2 class="content-title"><code>tuple ≝ &lt;any…|&gt;</code></h2>
+<div class="scrolling">
+<iframe src="/_images/type-system/type-system-tuple-focus.svg" seamless></iframe>
+</div>
+<p>
+A <strong>tuple</strong> is an immutable, finite, ordered list of indexable, heterogeneous values, called <strong>elements</strong>, each of which is accessible by a <a href="./types-extended-integer.html#types-natural-number">natural number</a> <strong>subscript</strong>. The number of elements is the <strong>size</strong> of the tuple. Taking this apart:
+</p>
+<ul>
+<li>
+<strong>Immutable</strong> means that neither the composition nor the ordering of a tuple is subject to change. No operations are, or can be, provided to modify a tuple in any way; only operations that derive new tuples from existing tuples are possible.
+</li>
+<li>
+<strong>Finite</strong> means that the size of a tuple is never the value <code>∞</code>. To store a tuple in memory requires space proportional to the size of the tuple, and memory is clearly always finite. Additional limits to the practical size of tuples may be imposed by the implementation.
+</li>
+<li>
+<strong>Ordered</strong> means that the elements of a tuple occur in a particular order, and that two orderings are distinguishable so long as the transposed elements are not equal. A tuple comprising the values <code>1</code>, <code>2</code>, and <code>3</code> is distinct from one comprising the values <code>3</code>, <code>2</code>, and <code>1</code>.
+</li>
+<li>
+<strong>Indexable</strong> means that an element can be accessed using a numeric key that describes its position within the tuple. For a tuple, this key, called the subscript, is a natural number ranging from <code>1</code> to the size of the tuple. Given that <code>t</code> is a tuple and <code>i</code> is a natural number, then <code>|t|</code> is the size of <code>t</code>, and <code>t[i]</code> is the <code>i</code>-th element of <code>t</code>. If a tuple <code>t</code> has <code>n</code> elements, that is, <code>|t| = n</code>, then the elements of <code>t</code> are <code>t[1]</code>, <code>t[2]</code>, …, and <code>t[n]</code>. The methods for sizing and subscripting are <code>"`|_`|"</code> and <code>"_[_]"</code>, respectively.
+</li>
+<li>
+<strong>Heterogeneous</strong> means that the elements do not universally conform to a single most general type. Type conformance of elements, when considered relative to a tuple type, is by position within a tuple. More will be said on this <a href="#types-tuple-leading-types">below</a>.
+</li>
+</ul>
+<p>
+A literal tuple is expressed as a <em>less-than sign</em> <code>&lt;</code> (<code>U+003C</code>), then a comma-separated list of elements, and finally a <em>greater-than sign</em> <code>&gt;</code> (<code>U+003E</code>). Examples of tuples include <code>&lt;1&gt;</code>, <code>&lt;"Moe", "Larry", "Shemp", "Curly", "Joe", "Joe"&gt;</code>, <code>&lt;[1 + 3], [x : integer | x + 3]&gt;</code>, and <code>&lt;2, "radish", ¢=, &lt;"hey", "nonny", "nonny"&gt;&gt;</code>. The empty tuple is written as <code>&lt;&gt;</code>.
+</p>
+<p>
+The elements of a tuple need not be statically well-known as they are in the above examples. Tuples are built with the method <code>"&lt;«_‡,»&gt;"</code>, and not through special syntax hardwired into the compiler. When the compiler is able to <a href="./type-inference.html">infer</a> an instance type for each argument expression of a particular send of this message, then the semantic restriction is able to strengthen the result to an instance type, thereby giving it the same force as a literal understood primitively by the compiler.
+</p>
+<p>
+The tuple type specifies three <a href="./type-parameterization.html">parameters</a> for completion:
+</p>
+<ul>
+<li>
+The <strong><a id="types-tuple-leading-types">leading types</a></strong> associate some of the prefix positions — that is, the lefthand side — of a tuple with types to which the elements at those positions must conform. To demystify this, consider a tuple type whose leading types are <code><a href="./types-number.html">number</a></code>, <code><a href="./types-any.html">any</a></code>, and <code>[10..20]</code>. Every instance of this type is a tuple (<code>t</code>) whose first element (<code>t[1]</code>) is a number, whose second element (<code>t[2]</code>) is any value whatsoever, and whose third element (<code>t[3]</code>) is an integer from <code>10</code> to <code>20</code>. The leading types comprise a tuple of types, <code>&lt;type…|&gt;</code>; more on reading this notation below. The method <code>"_'s⁇leading types"</code> answers the leading types of a tuple type.
+</li>
+<li>
+The <strong>default type</strong> specifies the type of every element residing at a suffix position — that is, a position to the right of the last position governed by a leading type. Assume that a tuple type's leading types are <code><a href="./types-string.html">string</a></code> and <code><a href="./types-function.html">function</a></code>. Further assume that its default type is <a href="./types-extended-integer.html#types-integer">integer</a>. Then every instance of this type is a tuple (<code>t</code>) such that <code>t[1]</code> is a string, <code>t[2]</code> is a function, and <code>t[3]</code>, <code>t[4]</code>, …, and <code>t[|t|]</code> are integers. The method <code>"_'s⁇default type"</code> answers the default type of a tuple type.
+</li>
+<li>
+The <strong>cardinality restriction</strong> is an integral type that specifies the range of sizes that describe instances. If the cardinality restriction is <code>[2..4]</code>, then only a tuple whose size is <code>2</code>, <code>3</code>, or <code>4</code> is an instance. The method <code>"`|`|_`|`|"</code>, read as <em>sizes of</em>, answers the cardinality restriction of a tuple type. The floor operation, <code>⎣_⎦</code>, answers the lower bound of a tuple type's cardinality restriction. The ceiling operation, <code>⎡_⎤</code>, answers the upper bound of a tuple type's cardinality restriction.
+</li>
+</ul>
+<p>
+When applied to a tuple type instead of a tuple, the method <code>"_[_]"</code> answers the element type at the specified subscript. Given a tuple type <code>U</code> and a subscript <code>i</code>, if <code>i ≤ |U's leading types|</code>, then the answer is <code>U's leading types[i]</code>, the <em>i</em>-th leading type;  if <code>|U's leading types| &lt; i ≤ ⎡U⎤</code>, then the answer is <code>U's default type</code>; but if <code>i &gt; ⎡U⎤</code>, then the answer is <code>⊥</code>.
+</p>
+<p>
+The primitive tuple type constructor is <code>"&lt;_,_`…`|_&gt;"</code>. It accepts the leading types, default type, and cardinality restriction, respectively. This method supports the most general type construction case, that of three statically unknown type completion arguments. Most type construction is done by the compiler during execution of <a href="./type-annotations.html">type annotations</a>, however, so typically most or all of the tuple type completion arguments will be known at compile-time. For these cases, the system library provides the following convenience methods:
+</p>
+<ul>
+<li>
+The method <code>"&lt;«_‡,»`…|_.._&gt;"</code> accepts a nonempty lexical tuple of types, the lower bound of the cardinality restriction, and the upper bound of the cardinality restriction, respectively. The first argument comprises both the leading types and the default type; the default type is simply the last type named before the horizontal ellipsis (<code>…</code>). Just to be explicit, if only one type is specified, then the leading types are <code>&lt;&gt;</code> and the type named is the default type. To determine the cardinality restriction, take the specified lower and upper bounds — <code>lower</code> and <code>upper</code>, respectively, in the following expression — and compute the type <code>[lower..upper+1)</code>. <a href="./types-extended-integer.html#types-extended-integer-canonization">Canonization of integral ranges</a> causes the specified upper bound to be considered inclusive if it is finite and exclusive if it is infinite.
+<div class="restricted-width-container">
+<div class="good-code code-block">/* Here's a tuple type with an inclusive upper bound on its cardinality
+ * restriction.
+ */
+tupleType ::= &lt;integer, float, double…|1..3&gt;;
+Assert: tupleType's leading types = &lt;integer, float&gt;;
+Assert: tupleType's default type = double;
+Assert: ||tupleType|| = [1..3];
+
+/* And here's one with an exclusive upper bound. */
+Assert: ||&lt;integer, float, double…|1..∞&gt;|| = [1..∞);
+
+/* Here are some example instances of "tupleType". */
+Assert: &lt;41&gt; ∈ tupleType;
+Assert: &lt;55, 7.0→float&gt; ∈ tupleType;
+Assert: &lt;69, 3.5→float, π&gt; ∈ tupleType;
+
+/* And here is an example non-instance (because it's too big). */
+Assert: &lt;69, 3.5→float, π, Euler's number&gt; ∉ tupleType;</div>
+</div>
+</li>
+<li>
+The method <code>"&lt;«_‡,»`…|_..&gt;"</code> accepts a nonempty lexical tuple of types and the lower bound of the cardinality restriction, respectively. The first argument comprises both the leading types and the default type. To determine the cardinality restriction, take the specified lower bound, <code>lower</code>, and compute the type <code>[lower..∞)</code>.
+<div class="restricted-width-container">
+<div class="good-code code-block">tupleType ::= &lt;string…|2..&gt;;
+Assert: tupleType's leading types = &lt;&gt;;
+Assert: tupleType's default type = string;
+Assert: ||tupleType|| = [2..∞);
+
+/* Here are some example instances of "tupleType". */
+Assert: &lt;"Batman", "Robin"&gt; ∈ tupleType;
+Assert: &lt;"Candide", "Cunégonde", "Pangloss"&gt; ∈ tupleType;
+
+/* And here is an example non-instance (because it's too small). */
+Assert: &lt;"lonely"&gt; ∉ tupleType;</div>
+</div>
+</li>
+<li>
+The method <code>"&lt;«_‡,»`…|.._&gt;"</code> accepts a nonempty lexical tuple of types and the upper bound of the cardinality restriction, respectively. The first argument comprises both the leading types and the default type. To determine the cardinality restriction, take the specified upper bound, <code>upper</code>, and compute the type <code>[0..upper+1)</code>.
+<div class="restricted-width-container">
+<div class="good-code code-block">tupleType ::= &lt;string, string, integer…|..3&gt;;
+Assert: tupleType's leading types = &lt;string, string&gt;;
+Assert: tupleType's default type = integer;
+Assert: ||tupleType|| = [0..3];
+
+/* Here are some example instances of "tupleType". */
+Assert: &lt;&gt; ∈ tupleType; 
+Assert: &lt;"picturesque"&gt; ∈ tupleType; 
+Assert: &lt;"Phil", "Harmonic"&gt; ∈ tupleType;
+Assert: &lt;"A", "K", 47&gt; ∈ tupleType;</div>
+</div>
+</li>
+<li>
+The method <code>"&lt;«_‡,»`…|_&gt;"</code> accepts a nonempty lexical tuple of types and a <a href="./types-extended-integer.html#types-whole-number">whole number</a> representing the exact size of instances, respectively. The first argument comprises both the leading types and the default type. To determine the cardinality restriction, take the argument, <code>exact</code>, and compute the type <code>[exact..exact]</code>.
+<div class="restricted-width-container">
+<div class="good-code code-block">tupleType ::= &lt;1's type, [1..3]…|3&gt;;
+Assert: tupleType's leading types = &lt;1's type&gt;;
+Assert: tupleType's default type = [1..3];
+Assert: ||tupleType|| = [3..3];
+
+/* Here are all the instances of "tupleType". */
+Assert: &lt;1, 1, 1&gt; ∈ tupleType;
+Assert: &lt;1, 1, 2&gt; ∈ tupleType;
+Assert: &lt;1, 1, 3&gt; ∈ tupleType;
+Assert: &lt;1, 2, 1&gt; ∈ tupleType;
+Assert: &lt;1, 2, 2&gt; ∈ tupleType;
+Assert: &lt;1, 2, 3&gt; ∈ tupleType;
+Assert: &lt;1, 3, 1&gt; ∈ tupleType;
+Assert: &lt;1, 3, 2&gt; ∈ tupleType;
+Assert: &lt;1, 3, 3&gt; ∈ tupleType;</div>
+</div>
+</li>
+<li>
+The method <code>"&lt;«_‡,»`…|&gt;"</code> accepts a nonempty lexical tuple of types. The argument comprises both the leading types and the default type. The cardinality restriction is <code>[0..∞)</code>.
+<div class="restricted-width-container">
+<div class="good-code code-block">tupleType ::= &lt;integer, string…|&gt;;
+Assert: tupleType's leading types = &lt;integer&gt;;
+Assert: tupleType's default type = string;
+Assert: ||tupleType|| = [0..∞);
+
+/* Here are some example instances of "tupleType". */
+Assert: &lt;&gt; ∈ tupleType;
+Assert: &lt;0&gt; ∈ tupleType;
+Assert: &lt;1, "fish"&gt; ∈ tupleType;
+Assert: &lt;2, "fish"&gt; ∈ tupleType;
+Assert: &lt;7, "I", "don", "'", "t", "like", "spam", "!"&gt; ∈ tupleType;</div>
+</div>
+</li>
+</ul>
+<p>
+A tuple type is <a href="./type-parameterization.html">covariant</a> by positional element type and cardinality restriction. Given two tuple types <code>U</code> and <code>V</code>, <code>U</code> is a subtype of <code>V</code> if and only if <code>||U||</code> is a subtype of <code>||V||</code> and every element type of <code>U</code> is a subtype of the corresponding element type of <code>V</code>. In symbols, <code>∀<sub>U, V ⊆ tuple, i : 1 ≤ i ≤ min ⎡U⎤, ⎡V⎤</sub>: (||U|| ⊆ ||V|| ∧ U[i] ⊆ V[i]) ↔ U ⊆ V</code>.
+</p>
+<p>
+Here are some examples of tuple type relations:
+</p>
+<div class="restricted-width-container">
+<div class="good-code code-block">U ::= &lt;any…|5..10&gt;;
+V ::= &lt;any…|&gt;;
+
+Assert: U[1] = V[1] = any;
+Assert: ||U|| ⊆ ||V||;
+Assert: U[1] ⊆ V[1];
+Assert: U ⊆ V;</div>
+</div>
+<div class="restricted-width-container">
+<div class="good-code code-block">U ::= &lt;string, whole number, π's type…|1..3&gt;;
+V ::= &lt;any, number, double…|0..5&gt;;
+
+/* "_[_.._]" extracts a tuple or tuple type slice. So U[1..5] is the same as
+ * &lt;U[1], U[2], U[3], U[4], U[5]&gt;.
+ */
+Assert: U[1..5] = &lt;string, integer, π's type, ⊥, ⊥&gt;;
+Assert: V[1..5] = &lt;any, number, double, double, double&gt;;
+Assert: ||U|| ⊆ ||V||;
+Assert: each of 1 to 5 satisfies [i : [1..5] | U[i] ⊆ V[i]];
+Assert: U ⊆ V;</div>
+</div>
+<tr class="book-nav">
+	<div class="book-nav">
+		<li class="book-nav-back"><a class="book-nav-back" href="./types-extended-integer.html">‹ <code>extended integer</code></a></li>
+		<li class="book-nav-spacer">|</li>
+		<li class="book-nav-up"><a class="book-nav-up" href="../type-system.html">Return to Type System</a></li>
+		<li class="book-nav-spacer">|</li>
+		<li class="book-nav-forward"><a class="book-nav-forward" href="./types-string.html"><code>string</code> ›</a></li>
+	</div>
+</tr>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>

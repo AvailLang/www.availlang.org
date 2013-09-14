@@ -1,0 +1,132 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Avail - Type System</title>
+	
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+
+		<h2 class="content-title"><code>⊥ (bottom) ≝ ∅ᵀ</code></h2>
+<p>
+<code>⊥</code> is the most specific type of the Avail type lattice. It is pronounced "bottom" and written as the <em>up tack</em> (<code>U+22A5</code>) character. In Avail, no value is an instance of <code>⊥</code>, and every type is a <a href="./type-relations.html">supertype</a> of <code>⊥</code>.
+</p>
+<p>
+Consider why there are no instances of <code>⊥</code>. Given that values are instances of a type because of similarity, and <code>⊥</code> is a <a href="./type-relations.html">subtype</a> of every type, the hypothetical and counterfactual instances of <code>⊥</code> would have to be <a href="/about-avail/documentation/type-system/type-compatibility">compatible</a> with every type. So an instance of <code>⊥</code> would be eligible for arithmetic, because numbers are; subscripting, because tuples are; application, because functions are; resumption, because continuations are; and so forth. Moreover, an instance of <code>⊥</code> would be valid at every argument position of every message send. This is clearly absurd. Ergo, the most specific type then is the one that cannot, for coherency, have any instances.
+</p>
+<p>
+As a brief aside, most imperative programming languages do implicitly have an instance of a type equivalent to <code>⊥</code> in their own type systems, even though this type itself is usually not expressible. This pseudo-value is hardwired into the syntax with a name like <code>null</code>, <code>nil</code>, <code>none</code>, <code>undef</code>, or the like, and represents the absence of a value. But the mere existence of such a value is inconsistent with any coherent type theory. Though usage of such a value is often convenient in the short-term, its long-term consequences are devastating:
+</p>
+<blockquote cite="http://qconlondon.com/london-2009/presentation/Null+References:+The+Billion+Dollar+Mistake">
+<p align="justify">
+I call it my billion-dollar mistake. It was the invention of the null reference in 1965. At that time, I was designing the first comprehensive type system for references in an object oriented language (ALGOL W). My goal was to ensure that all use of references should be absolutely safe, with checking performed automatically by the compiler. But I couldn't resist the temptation to put in a null reference, simply because it was so easy to implement. This has led to innumerable errors, vulnerabilities, and system crashes, which have probably caused a billion dollars of pain and damage in the last forty years.
+</p>
+<br/>
+<p align="right">
+Hoare, Tony. <cite><a href="http://qconlondon.com/london-2009/presentation/Null+References:+The+Billion+Dollar+Mistake">"Null References: The Billion Dollar Mistake."</a></cite> QCon. The Queen Elizabeth II Conference Centre, London, UK. 13 March 2009. Conference Presentation.
+</p>
+</blockquote>
+<p>
+To be explicit, Avail does not have such a value. The type <code>⊥</code> truly does not have any instances. The type itself does have many other uses, however, as in the following contexts:
+</p>
+<ul>
+<li>
+As the return type of a function definition or <a href="./types-function.html">function type</a>. In this context, it signifies that the function does not return. Instead, it must apply another function or call a method whose return type is also <code>⊥</code>. Primitive methods with a return type of <code>⊥</code> either raise an exception, switch to another continuation, terminate the current fiber, or exit the entire program. Ordinary methods combine these primitives in creative ways to cause the current fiber to loop forever, wait permanently for a synchronization event, and so on.
+</li>
+<li>
+As the <a href="./type-annotations.html">type annotation</a> of a label declaration.
+</li>
+<li>
+As the canonical default type of a <a href="./types-tuple.html">tuple type</a> whose cardinality restriction is a subtype of <code>[0..0]</code>. The only instance of such a type is the empty tuple (<code>&lt;&gt;</code>).
+</li>
+<li>
+As the canonical element type of a <a href="./types-set.html">set type</a> whose cardinality restriction is a subtype of <code>[0..0]</code>. The only instance of such a type is the empty set (<code>∅</code>).
+</li>
+<li>
+As the canonical key type and value type of a <a href="./types-map.html">map type</a> whose cardinality restriction is a subtype of <code>[0..0]</code>. The only instance of such a type is the empty map (<code>{}</code>).
+</li>
+<li>
+As the attribute value type of an uninstantiable <a href="./types-object.html">object type</a>.
+</li>
+<li>
+As a contravariant type parameter: the write type of a <a href="./types-variable.html">variable type</a>, a parameter type of a <a href="./types-function.html">function type</a> or <a href="./types-continuation.html">continuation type</a>, or the return type of a continuation type. As the write type of a variable type, it signifies that no value may be written to the variable; the variable is read-only.
+</li>
+<li>
+As the idempotent initial value of an accumulator variable whose intermediate and final results represent a chain of type unions. (Remember the identity law that states that the type union of <code>⊥</code> with some type <code>A</code> is always <code>A</code>).
+</li>
+<li>
+As the <a href="./type-relations.html">type intersection</a> of disjoint types.
+</li>
+<li>
+As the result of a semantic restriction. In this context, it indicates that a particular invocation of the restricted method does not return.
+</li>
+<li>
+As the result type of a <a href="./types-send-phrase.html">send phrase</a> type, to indicate that the represented message send does not return.
+</li>
+</ul>
+<p>
+<code>⊥</code> is expressly forbidden from occurring in the following contexts:
+</p>
+<ul>
+<li>
+As a <a href="./type-annotations.html">type annotation</a> in a variable declaration, function parameter declaration, or primitive failure variable declaration.
+</li>
+<li>
+As the <a href="./type-inference.html">inferred type</a> of a constant definition, initialization expression, assignment expression, or message argument expression.
+</li>
+<li>
+As the inferred type of a module-level statement or a non-last statement of a function definition.
+</li>
+</ul>
+<p>
+To illustrate a practical, concrete use of <code>⊥</code>, here is a plausible implementation of <code>"Repeat_"</code>, a control structure that continually repeats application of its argument, a <code>⊤</code>-valued function. Following is another example of a <code>⊥</code>-valued method that is slightly absurd, but demonstrative nonetheless.
+</p>
+<div class="restricted-width-container">
+<div class="good-code code-block">Method "Repeat_" is
+[
+	action : []→⊤
+|
+	$loop;
+	action();
+	/* "Restart_" is a primitive method. It causes the specified continuation
+	 * to resume (with the same arguments). Its return type is ⊥, so that is
+	 * the return type inferred for the enclosing function definition.
+	 */
+	Restart loop
+] : ⊥;
+
+/* I think that we can agree that this should never complete… */
+Method "Print every natural number" is
+[
+	aNumber : natural number := 1;
+	Repeat
+	[
+		Print: “aNumber” ++ "\n";
+		↑aNumber++;
+	]
+] : ⊥;</div>
+</div>
+<tr class="book-nav">
+	<div class="book-nav">
+		<li class="book-nav-back"><a class="book-nav-back" href="./types-module.html">‹ <code>module</code></a></li>
+		<li class="book-nav-spacer">|</li>
+		<li class="book-nav-up"><a class="book-nav-up" href="../type-system.html">Return to Type System</a></li>
+	</div>
+</tr>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>

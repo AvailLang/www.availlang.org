@@ -1,0 +1,31 @@
+strict graph "Type lattice: focus on token."
+{
+        ranksep="0.25";
+        node
+        [
+                shape="plaintext",
+                fontname="Consolas",
+                fontsize="10",
+                fontcolor="#0000A0",
+                target="_top"
+        ];
+
+	/* Labels for the nodes. */
+        ⊤ [href="/about-avail/documentation/type-system/types-top.html"];
+        any [href="/about-avail/documentation/type-system/types-any.html"];
+        nontype [href="/about-avail/documentation/type-system/types-nontype.html"];
+        token
+        [
+                label="token",
+                href="/about-avail/documentation/type-system/types-token.html",
+                shape="ellipse",
+                style="filled",
+                fillcolor="#E2E8FF",
+                peripheries="0"
+        ];
+	"literal token" [href="/about-avail/documentation/type-system/types-literal-token.html"];
+	⊥ [href="/about-avail/documentation/type-system/types-bottom.html"];
+
+	⊤ -- any -- nontype -- token -- "literal token";
+	"literal token" -- ⊥ [color="#d0d0d0", style="dashed"];
+}

@@ -1,0 +1,57 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Avail - Type System</title>
+	
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+
+		<h2 class="content-title">Type Relations</h2>
+<p>
+Types do not exist in isolation, but rather are related one to another by an algebra of binary operations that manipulate membership set theoretically in order to derive another type.
+</p>
+<p>
+Consider the types <code>A = {1, 2}ᵀ</code> and <code>B = {1, 2, 3}ᵀ</code>. Every instance of <code>A</code> is also an instance of <code>B</code>; in other words, the membership of <code>A</code> is a subset of the membership of <code>B</code>. When this condition holds for two types <code>A</code> and <code>B</code>, then <code>A</code> is a <strong>subtype</strong> of <code>B</code> (<code>A ⊆ B</code>) and <code>B</code> is a <strong>supertype</strong> of <code>A</code> (<code>B ⊇ A</code>). If the membership sets differ, then <code>A</code> is a <strong>strict subtype</strong> of <code>B</code> (<code>A ⊂ B</code>) and <code>B</code> is a <strong>strict supertype</strong> of <code>A</code> (<code>B ⊃ A</code>). In the case that A ⊂ B, A is <strong>more specific</strong> than B, and similarly, B is <strong>more general</strong> than A; alternatively, A is <strong>stronger</strong> than B, and B is <strong>weaker</strong> than A. Every type is trivially a subtype and supertype of itself, but never strictly.
+</p>
+<p>
+Avail’s types are organized into a singular <strong>type lattice</strong>. That is, given any two types, there exists <em>1)</em> a unique type that is the most specific type more general than both and <em>2)</em> a unique type that is the most general type more specific than both. The most specific type more general than two types <code>A</code> and <code>B</code> is the <strong>type union</strong> of <code>A</code> and <code>B</code>: <code>A ∪ B</code>. The membership of the type union is the set union of the memberships of the two input types. For example, <code>{1, 3, 5}ᵀ ∪ {2, 4}ᵀ = {1, 2, 3, 4, 5}ᵀ</code>. The type union operation is idempotent, <code>A ∪ A = A</code>; commutative, <code>A ∪ B = B ∪ A</code>; and associative, <code>A ∪ (B ∪ C) = (A ∪ B) ∪ C</code>.
+</p>
+<p>
+The most general type more specific than two types <code>A</code> and <code>B</code> is the <strong>type intersection</strong> of <code>A</code> and <code>B</code>: <code>A ∩ B</code>. The membership of the type intersection is the set intersection of the memberships of the two input types. For example, <code>{3, 4, 5}ᵀ ∩ {4, 5, 6}ᵀ = {4, 5}ᵀ</code>. The type intersection operation is idempotent (<code>A ∩ A = A</code>), commutative (<code>A ∩ B = B ∩ A</code>), and associative (<code>A ∩ (B ∩ C) = (A ∩ B) ∩ C</code>). The type union and type intersection operations are connected by the absorption law <code>A ∪ (A ∩ B) = A ∩ (A ∪ B) = A</code>.
+</p>
+<p>
+The type lattice is bounded by a globally most general type and a globally most specific type. The former is <code><a href="./types-top.html">⊤</a></code>, and is pronounced <strong>top</strong>; the latter is <code>⊥</code>, and is pronounced <strong>bottom</strong>. The membership of <code>⊤</code> includes every value, whereas the membership of <code>⊥</code> is the empty set; roughly then, <code>⊤ = {…}ᵀ</code> and <code>⊥ = ∅ᵀ</code>. These bounding types establish the basis for several identity laws that hold for every type <code>A</code>: <code>A ∪ ⊥ = A</code>; <code>A ∩ ⊥ = ⊥</code>; <code>A ∪ ⊤ = ⊤</code>; and <code>A ∩ ⊤ = A</code>.
+</p>
+<p>
+Two types are <strong>disjoint</strong> when no instance of one is an instance of the other. The type intersection of disjoint types is always <code>⊥</code>. For example, there does not exist a value which is both a negative integer and a positive integer, so the intersection of these types is <code>⊥</code>: <code>{…, -3, -2, -1}ᵀ ∩ {1, 2, 3, …}ᵀ = ∅ᵀ = ⊥</code>.
+</p>
+<p>
+A near subtype of <code>⊤</code> called <code><a href="./types-any.html">any</a></code> is treated as the most general type by many operations, but some important distinctions between the two types will be made later. Every value available to an Avail programmer is an instance of <code>any</code>. This type will be used frequently hereinafter, and so is introduced here.
+</p>
+<tr class="book-nav">
+	<div class="book-nav">
+		<li class="book-nav-back"><a class="book-nav-back" href="./types.html">‹ Types</a></li>
+		<li class="book-nav-spacer">|</li>
+		<li class="book-nav-up"><a class="book-nav-up" href="../type-system.html">Return to Type System</a></li>
+		<li class="book-nav-spacer">|</li>
+		<li class="book-nav-forward"><a class="book-nav-forward" href="./type-compatibility.html">Type Compatibility ›</a></li>
+	</div>
+</tr>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>

@@ -11,13 +11,13 @@
 <polygon fill="white" stroke="white" points="-4,5 -4,-310 219,-310 219,5 -4,5"/>
 <!-- ⊤ -->
 <g id="node1" class="node"><title>⊤</title>
-<a xlink:href="/content/types-top" xlink:title="⊤" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-top.html" xlink:title="⊤" target="_top">
 <text text-anchor="middle" x="107" y="-283" font-family="Consolas" font-size="10.00" fill="#0000a0">⊤</text>
 </a>
 </g>
 <!-- any -->
 <g id="node2" class="node"><title>any</title>
-<a xlink:href="/content/types-any" xlink:title="any" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-any.html" xlink:title="any" target="_top">
 <text text-anchor="middle" x="107" y="-229.854" font-family="Consolas" font-size="10.00" fill="#0000a0">any</text>
 </a>
 </g>
@@ -27,7 +27,7 @@
 </g>
 <!-- nontype -->
 <g id="node3" class="node"><title>nontype</title>
-<a xlink:href="/content/types-nontype" xlink:title="nontype" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-nontype.html" xlink:title="nontype" target="_top">
 <text text-anchor="middle" x="107" y="-175.854" font-family="Consolas" font-size="10.00" fill="#0000a0">nontype</text>
 </a>
 </g>
@@ -37,7 +37,7 @@
 </g>
 <!-- number -->
 <g id="node4" class="node"><title>number</title>
-<a xlink:href="/content/types-number" xlink:title="number" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-number.html" xlink:title="number" target="_top">
 <ellipse fill="#e2e8ff" stroke="#e2e8ff" cx="107" cy="-126" rx="28.9084" ry="18"/>
 <text text-anchor="middle" x="107" y="-121.854" font-family="Consolas" font-size="10.00" fill="#0000a0">number</text>
 </a>
@@ -48,7 +48,7 @@
 </g>
 <!-- double -->
 <g id="node5" class="node"><title>double</title>
-<a xlink:href="/content/types-double" xlink:title="double" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-double.html" xlink:title="double" target="_top">
 <text text-anchor="middle" x="27" y="-67.8545" font-family="Consolas" font-size="10.00" fill="#0000a0">double</text>
 </a>
 </g>
@@ -58,7 +58,7 @@
 </g>
 <!-- extended integer -->
 <g id="node6" class="node"><title>extended integer</title>
-<a xlink:href="/content/types-extended-integer" xlink:title="extended integer" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-extended-integer.html" xlink:title="extended integer" target="_top">
 <text text-anchor="middle" x="107" y="-67.8545" font-family="Consolas" font-size="10.00" fill="#0000a0">extended integer</text>
 </a>
 </g>
@@ -68,7 +68,7 @@
 </g>
 <!-- float -->
 <g id="node7" class="node"><title>float</title>
-<a xlink:href="/content/types-float" xlink:title="float" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-float.html" xlink:title="float" target="_top">
 <text text-anchor="middle" x="187" y="-67.8545" font-family="Consolas" font-size="10.00" fill="#0000a0">float</text>
 </a>
 </g>
@@ -78,7 +78,7 @@
 </g>
 <!-- ⊥ -->
 <g id="node8" class="node"><title>⊥</title>
-<a xlink:href="/content/types-bottom" xlink:title="⊥" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-bottom.html" xlink:title="⊥" target="_top">
 <text text-anchor="middle" x="107" y="-13" font-family="Consolas" font-size="10.00" fill="#0000a0">⊥</text>
 </a>
 </g>

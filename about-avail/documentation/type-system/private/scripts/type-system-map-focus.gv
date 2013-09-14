@@ -1,0 +1,66 @@
+strict graph "Type lattice: focus on map."
+{
+	ranksep="0.25";
+	node
+	[
+		shape="plaintext",
+		fontname="Consolas",
+		fontsize="10",
+		fontcolor="#0000A0",
+		target="_top"
+	];
+
+	/* Labels for the nodes. */
+        ⊤ [href="/about-avail/documentation/type-system/types-top.html"];
+        any [href="/about-avail/documentation/type-system/types-any.html"];
+        nontype [href="/about-avail/documentation/type-system/types-nontype.html"];
+	map
+	[
+		label="map = {any→any|}",
+		href="/about-avail/documentation/type-system/types-map.html",
+		shape="ellipse",
+		style="filled",
+		fillcolor="#E2E8FF",
+		peripheries="0"
+	];
+	"…number2number" [label=""];
+	number2number [label="{number→number|}"];
+	"number2number…" [label=""];
+	"…integer2double" [label=""];
+	integer2double [label="{integer→double|0..5}"];
+	double2integer [label="{double→integer|0..3}"];
+	"double2integer…" [label=""];
+	one2three [label="{{1→3.0}, {}}ᵀ"];
+	index2roots [label="{{0→1.4142, 1→1.7321, 2→2.0}}ᵀ"];
+	double2squares [label="{{1.0→1, 2.0→4, 3.0→9}}ᵀ"];
+	emptymap [label="{⊥→⊥|0}"];
+	empty [label="{{}}ᵀ"];
+	⊥ [href="/about-avail/documentation/type-system/types-bottom.html"];
+
+	/* Connectivity. */
+	⊤ -- any -- nontype -- map;
+	map -- number2number [color="#d0d0d0", style="dashed"];
+	{rank="same"; "…number2number" number2number "number2number…"};
+	"…number2number" -- number2number -- "number2number…"
+		[color="#707070", style="dotted"];
+	number2number -- {integer2double double2integer}
+		[color="#d0d0d0", style="dashed"];
+	{rank="same";
+		"…integer2double"
+		integer2double
+		double2integer
+	 	"double2integer…"};
+	"…integer2double" -- integer2double
+		-- double2integer -- "double2integer…"
+		[color="#707070", style="dotted"];
+	integer2double -- {rank="same"; one2three index2roots}
+		[color="#d0d0d0", style="dashed"];
+	double2integer -- double2squares [color="#d0d0d0", style="dashed"];
+	{integer2double double2integer} -- emptymap
+		[color="#d0d0d0", style="dashed"];
+	{rank="same"; index2roots one2three double2squares} -- emptymap
+		[style="invis"];
+	{one2three emptymap} -- empty;
+	{index2roots double2squares} -- ⊥ [color="#d0d0d0", style="dashed"];
+	empty -- ⊥;
+}

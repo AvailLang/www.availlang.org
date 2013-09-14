@@ -1,0 +1,163 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Avail - Type System</title>
+	
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+
+		<h2 class="content-title"><code>set ≝ {any|}</code></h2>
+<div class="scrolling">
+<iframe src="/_images/type-system/type-system-set-focus.svg" seamless></iframe>
+</div>
+<p>
+A <strong>set</strong> is an immutable, finite, unordered collection of distinct, homogeneous values, called <strong>members</strong> or <strong>elements</strong>. The number of elements is the <strong>cardinality</strong> of the set. Breaking this down:
+</p>
+<ul>
+<li>
+<strong>Immutable</strong> means that the composition of a set is not subject to change. No operations are, or can be, defined to modify a set in any way; only operations that derive new sets from existing sets are expressible.
+</li>
+<li>
+<strong>Finite</strong> means that the cardinality of a set is never the value <code>∞</code>. To store a set in memory requires space proportional to its cardinality, and memory is clearly always finite. Additional limits to the practical cardinality of sets may be imposed by the implementation.
+</li>
+<li>
+<strong>Unordered</strong> means that the members of a set do not occur in any particular order. Any two sets with the same membership are therefore equal.
+</li>
+<li>
+<strong>Distinct</strong> means that a member occurs only once in the membership of a set. Thus a value is either a member of a set or it is not.
+</li>
+<li>
+<strong>Homogeneous</strong> means that the members of a set universally conform to a single most general type.
+</li>
+</ul>
+<p>
+A literal set is expressed as a <em>left curly bracket</em> <code>{</code> (<code>U+007B</code>), then a comma-separated list of members, and finally a <em>right curly bracket</em> <code>}</code> (<code>U+007D</code>). Examples of sets include <code>{7}</code>, <code>{"Pompeius Magnus", "Julius Caesar", "Marcus Licinius Crassus"}</code>, and <code>{"Leaping", ¢a, 10, "Lords"}</code>. The members are ordered atypically to emphasize the unordered nature of sets. The empty set is written as <code>∅</code> (<code>U+2205</code>).
+</p>
+<p>
+The elements of a set need not be known statically. Sets are constructed with the method <code>"{«_‡,»}"</code>; there is no special built-in syntax for constructing sets. When the compiler can <a href="./type-inference.html">infer</a> an instance type for each argument expression of a particular send of this message, then the semantic restriction is able to strengthen the result to an instance type, thereby according it the same force as a literal understood primitively by the compiler.
+</p>
+<p>
+The set type specifies two <a href="./type-parameterization.html">parameters</a> for completion:
+</p>
+<ul>
+<li>
+The <strong>member type</strong> (or <strong>element type</strong>) specifies a type that includes every member. For example, a set type whose member type is <code><a href="./types-double.html">double</a></code> has as instances the sets <code>{1.0}</code>, <code>{2.0, 4.0, 8.0}</code>, and <code>{π, Euler's number}</code>. The method <code>"_'s⁇element|member type"</code> answers the member type of a set type.
+</li>
+<li>
+The <strong>cardinality restriction</strong> is an integral type that specifies the range of sizes that describe instances. If the cardinality restriction is <code>[1..3]</code>, then only a set whose cardinality is <code>1</code>, <code>2</code>, or <code>3</code> is an instance. The method <code>"`|`|_`|`|"</code>, read as <em>sizes of</em>, answers the cardinality restriction of a set type. The floor operation, <code>⎣_⎦</code>, answers the lower bound of a set type's cardinality restriction. The ceiling operation, <code>⎡_⎤</code>, answers the upper bound of a set type's cardinality restriction.
+</li>
+</ul>
+<p>
+The primitive set type constructor is <code>"{_|_}"</code>. It accepts the member type and cardinality restriction, respectively. This method supports the most general type construction scenario, that of two statically unknown type completion arguments. Most type construction is done by the compiler during execution of <a href="./type-annotations.html">type annotations</a>, however, so typically most or all of the set type completion arguments will be known at compile-time. For these more common situations, the system library provides the following convenience methods:
+</p>
+<ul>
+<li>
+The method <code>"{_|_.._}"</code> accepts the member type, the lower bound of the cardinality restriction, and the upper bound of the cardinality restriction, respectively. To determine the cardinality restriction, take the specified lower and upper bounds — <code>lower</code> and <code>upper</code>, respectively, in the following expression — and compute the type <code>[lower..upper+1)</code>. <a href="./types-extended-integer.html#types-extended-integer-canonization">Canonization of integral ranges</a> causes the specified upper bound to be considered inclusive if it is finite and exclusive if it is infinite.
+<div class="restricted-width-container">
+<div class="good-code code-block">/* Here's a set type with an inclusive upper bound on its cardinality
+ * restriction.
+ */
+setType ::= {integer|2..4};
+Assert: setType's member type = integer;
+Assert: ||setType|| = [2..4];
+
+/* And here's one with an exclusive upper bound. */
+Assert: ||{string|13..∞}|| = [13..∞);
+
+/* Here are some example instances of "setType". */
+Assert: {2, 9001} ∈ setType;
+Assert: {-1, -4, -7} ∈ setType;
+Assert: {3, 5, 8, 13} ∈ setType;
+
+/* And here is an example non-instance (because it's too small). */
+Assert: {0} ∉ setType;</div>
+</div>
+</li>
+<li>
+The method <code>"{_|_..}"</code> accepts the member type and the lower bound of the cardinality restriction, respectively. To determine the cardinality restriction, take the specified lower bound, <code>lower</code>, and compute the type <code>[lower..∞)</code>.
+<div class="restricted-width-container">
+<div class="good-code code-block">setType ::= {string|1..};
+Assert: setType's element type = string;
+Assert: ||setType|| = [1..∞);
+
+/* Here are some example instances of "setType". */
+Assert: {"loneliness"} ∈ setType;
+Assert: {"Sargon", "Hammurabi", "Ashurbanipal", "Gilgamesh"} ∈ setType;
+</div>
+</div>
+</li>
+<li>
+The method <code>"{_|.._}"</code> accepts the member type and the upper bound of the cardinality restriction, respectively. To determine the cardinality restriction, take the specified upper bound, <code>upper</code>, and compute the type <code>[0..upper+1)</code>.
+<div class="restricted-width-container">
+<div class="good-code code-block">setType ::= {tuple|..2};
+Assert: setType's member type = tuple;
+Assert: ||setType|| = [0..2];
+
+/* Here are some example instances of "setType". */
+Assert: ∅ ∈ setType;
+Assert: {&lt;1, "fish", 2, "fish"&gt;} ∈ setType;
+Assert: {&lt;&gt;, &lt;"megaphone"&gt;} ∈ setType;
+</div>
+</div>
+</li>
+<li>
+The method <code>"{_|_}"</code> is overridden to accept, respectively, the member type and a <a href="./types-extended-integer.html#types-whole-number">whole number</a> that specifies the exact size of instances. To determine the cardinality restriction, take the argument, <code>exact</code>, and compute the type <code>[exact..exact]</code>.
+<div class="restricted-width-container">
+<div class="good-code code-block">setType ::= {[2..4]|3};
+Assert: setType's element type = [2..4];
+Assert: ||setType|| = [3..3];
+
+/* Here is the sole instance of "setType". */
+Assert: {2, 3, 4} ∈ setType;
+
+/* And here is the proof that it's the only instance. */
+Assert: {2, 3, 4} = {2, 4, 3} = {3, 2, 4} = {3, 4, 2} = {4, 2, 3} = {4, 3, 2};
+</div>
+</div>
+</li>
+<li>
+The method <code>"{_|}"</code> accepts the member type. The cardinality restriction is <code>[0..∞)</code>.
+<div class="restricted-width-container">
+<div class="good-code code-block">setType ::= {character|};
+Assert: setType's member type = character;
+Assert: ||setType|| = [0..∞);
+
+/* Here are some example instances of "setType". */
+Assert: {¢a, ¢b, ¢c} ∈ setType;
+Assert: {¢∪, ¢∩} ∈ setType;
+Assert: {¢1, ¢2, ¢3, ¢4, ¢5} ∈ setType;
+Assert: {¢{, ¢,, ¢¢, ¢}} ∈ setType;
+</div>
+</div>
+</li>
+</ul>
+<p>
+A set type is <a href="./type-parameterization.html">covariant</a> by member type and cardinality restriction.
+</p>
+<tr class="book-nav">
+	<div class="book-nav">
+		<li class="book-nav-back"><a class="book-nav-back" href="./types-string.html">‹ <code>string</code></a></li>
+		<li class="book-nav-spacer">|</li>
+		<li class="book-nav-up"><a class="book-nav-up" href="../type-system.html">Return to Type System</a></li>
+		<li class="book-nav-spacer">|</li>
+		<li class="book-nav-forward"><a class="book-nav-forward" href="./types-map.html"><code>map</code> ›</a></li>
+	</div>
+</tr>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>

@@ -1,0 +1,173 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Avail - Type System</title>
+	
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+
+		<h2 class="content-title"><code>⊤ (top)</code></h2>
+<p>
+<code>⊤</code> is the most general type of the Avail type lattice. It is pronounced "top" and written as the <em>down tack</em> (<code>U+22A4</code>) character. In Avail, every value is an instance of <code>⊤</code>, and every type is a <a href="./type-relations.html">subtype</a> of <code>⊤</code>.
+</p>
+<p>
+<code>⊤</code> is distinct from <code><a href="./types-any.html">any</a></code> in that it includes exactly one additional value: the special value <code>nil</code>. This value does not satisfy any public protocol and is not available to an Avail programmer. It is, however, implicitly returned from every <strong>procedure</strong>, that is, function whose return type is <code>⊤</code>. Thus <code>nil</code> is the value produced if and only if no exposed value is produced. The virtual machine uses <code>nil</code> to simplify several core algorithms, but exposure of this special value to an Avail programmer would not yield a net good.
+</p>
+<p>
+<code>⊤</code> typically appears in Avail code in only a few select contexts:
+</p>
+<ul>
+<li>
+As the return type of a function definition or <a href="./types-function.html">function type</a>. In this context, it signifies that the function does not produce a value when applied, i.e., it produces the unexposed value <code>nil</code>.
+</li>
+<li>As the return type of a <a href="./types-continuation.html">continuation type</a>. In this context, it signifies that the continuation will not produce a value when exited, i.e., it produces the unexposed value <code>nil</code>.
+</li>
+<li>
+As the read type of a <a href="./types-variable.html">variable type</a>. In this context, it signifies that no value may be read from the variable; the variable is write-only.
+</li>
+<li>
+As the idempotent initial value of an accumulator variable whose intermediate and final results represent a chain of type intersections. (Remember the identity law that states that the type intersection of <code>⊤</code> with some type <code>A</code> is always <code>A</code>.)
+</li>
+<li>
+As the result of a semantic restriction that serves only to reject parses based on the types of the arguments (but does not strengthen the return type).
+</li>
+<li>
+As the result type of a phrase type. In this context, it signifies that the phrase serves as a <strong>statement</strong>, an expression that does not produce a value.
+</li>
+</ul>
+<p>
+A function whose declared return type is <code>⊤</code> is still permitted to answer an exposed — non-<code>nil</code> — value. This is consistent with the type lattice, since every value is an instance of <code>⊤</code>. It is useful, moreover, because a semantic restriction may strengthen the return type of a <code>⊤</code>-valued function at a particular call site to a subtype of <code>⊤</code>. As an example, <code>"If|if_then_else_"</code> may be used either as a statement or a value-producing expression:
+</p>
+<div class="restricted-width-container">
+<div class="good-code code-block">/* Allow "If|if_then_else_" to be used either as a statement or as an expression.
+ * It is ⊤-valued, so before this semantic restriction can be enforced, it can
+ * only be used as a statement.
+ */
+Semantic restriction "If|if_then_else_" is
+[
+	predicate : boolean's type,
+	then : []→⊤'s type,
+	else : []→⊤'s type
+|
+	/* Capture the return types of "then" and "else". We will need them. */
+	thenReturnType ::= then's return type;
+	elseReturnType ::= else's return type;
+	/* The return type of one (or both) of the functions will be used to
+	 * determine the return type of an "If|if_then_else_" expression.
+	 *
+	 * If the exact type of the precidate is not known, i.e., if the type
+	 * does not indicate that the predicate is necessarily true or
+	 * necessarily false, then answer the type union of the return types of
+	 * the two functions.
+	 *
+	 * If the predicate is necessarily true, then answer the first function's
+	 * return type; otherwise, answer the second function's return type.
+	 *
+	 * Wait, this is weird, isn't it? The semantic restriction uses the very
+	 * method that it's trying to restrict! This is okay, it just means that
+	 * only the semantic restrictions previously defined will be applied by
+	 * the compiler here. Since we are trying to define the very capability
+	 * of using "If|if_then_else_" as an expression, we can't use that trick
+	 * here. Instead we have to treat it as a statement.
+	 */
+	returnType : type;
+	If predicate = boolean
+	then
+	[
+		returnType := thenReturnType ∪ elseReturnType;
+	]
+	else
+	[
+		If predicate = true's type
+		then [returnType := thenReturnType;]
+		else
+		[
+			Assert: predicate = false's type;
+			returnType := elseReturnType;
+		];
+	];
+	returnType
+];
+
+/* Read a natural number from the console. Store the smaller of "x" and 100
+ * into "maxOf100". Use "If|if_then_else" as an expression.
+ */
+x : natural number := next natural number from console;
+maxOf100 : natural number := if x &gt; 100 then [100] else [x];
+
+/* Read a natural number from the console. Store the larger of "y" and 100 into
+ * "minOf100". Use "If|if_then_else" as a statement.
+ */
+y : natural number := next natural number from console;
+minOf100 : natural number;
+If y &gt; 100 then
+[
+	minOf100 := y;
+]
+else
+[
+	minOf100 := 100;
+];</div>
+</div>
+<p>
+ <code>⊤</code> is expressly forbidden from occurring in most contexts, including the following:
+</p>
+<ul>
+<li>
+As a parameter type of a function definition or <a href="./types-function.html">function type</a>.
+</li>
+<li>
+As a parameter type of a <a href="./types-continuation.html">continuation type</a>.
+</li>
+<li>
+As the write type of a <a href="./types-variable.html">variable type</a>. This also correctly implies that it cannot be the type of an actual variable.
+</li>
+<li>
+As a leading type or the default type of a <a href="./types-tuple.html">tuple type</a>.
+</li>
+<li>
+As the element type of a <a href="./types-set.html">set type</a>.
+</li>
+<li>
+As the key type or value type of a <a href="./types-map.html">map type</a>.
+</li>
+<li>
+As the attribute value type of an <a href="./types-object.html">object type</a>.
+</li>
+<li>
+As the type parameter of a <a href="./types-pojo.html">POJO type</a>.
+</li>
+</ul>
+<p>
+Note that these prohibitions, when considered in aggregate, negate any possible value that could be gleaned from exposing the special value <code>nil</code> to an Avail program. They conspire together to ensure that <code>nil</code> could never be retained by an Avail value. It may therefore only exist as a temporary within a continuation, that is, an item on the local stack of a function call. A reflective query of a continuation's temporaries that would answer <code>nil</code> will instead produce an uninitialized variable whose read type is <code>⊥</code>.
+</p>
+<p>
+Please do not confuse <code>nil</code> with the <a href="./types-bottom.html">null reference</a> present in other imperative programming languages.
+</p>
+<tr class="book-nav">
+	<div class="book-nav">
+		<li class="book-nav-back"><a class="book-nav-back" href="./type-lattice.html">‹ Type Lattice</a></li>
+		<li class="book-nav-spacer">|</li>
+		<li class="book-nav-up"><a class="book-nav-up" href="../type-system.html">Return to Type System</a></li>
+		<li class="book-nav-spacer">|</li>
+		<li class="book-nav-forward"><a class="book-nav-forward" href="./types-any.html"><code>any</code> ›</a></li>
+	</div>
+</tr>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>

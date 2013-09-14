@@ -1,0 +1,68 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Avail - Type System</title>
+	
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+
+		<h2 class="content-title"><code>any</code></h2>
+<p>
+<code>any</code> is the practical abstract root of the Avail type lattice. It is the second most senior type, inferior only to <code><a href="./types-top.html">⊤</a></code>. It includes every value available to an Avail program. The only value that is not an instance of <code>any</code> is the unexposed special value <code>nil</code>.
+</p>
+<p>
+<code>any</code> is made extremely useful by <a href="./semantic-restrictions.html">semantic restrictions</a>. Many algorithms can be codified once in terms of <code>any</code>, or some type parameterized by <code>any</code>, and then strengthened via a semantic restriction that extrapolates a stronger result type from the argument types.
+</p>
+<p>
+<code>any</code> is the most general type that may appear in the following contexts:
+</p>
+<ul>
+<li>
+As a parameter type of a function definition or <a href="./types-function.html">function type</a>.
+</li>
+<li>
+As the read type of a <a href="./types-variable.html">variable type</a>.
+</li>
+<li>
+As a leading type or the default type of a <a href="./types-tuple.html">tuple type</a>.
+</li>
+<li>
+As the element type of a <a href="./types-set.html">set type</a>.
+</li>
+<li>
+As the key type or value type of a <a href="./types-map.html">map type</a>.
+</li>
+<li>
+As the attribute value type of an <a href="./types-object.html">object type</a>.
+</li>
+<li>
+As the type parameter of a <a href="./types-pojo.html">POJO type</a>.
+</li>
+</ul>
+<tr class="book-nav">
+	<div class="book-nav">
+		<li class="book-nav-back"><a class="book-nav-back" href="./types-top.html">‹ <code>⊤</code> (top)</a></li>
+		<li class="book-nav-spacer">|</li>
+		<li class="book-nav-up"><a class="book-nav-up" href="../type-system.html">Return to Type System</a></li>
+		<li class="book-nav-spacer">|</li>
+		<li class="book-nav-forward"><a class="book-nav-forward" href="./types-type.html"><code>type</code> ›</a></li>
+	</div>
+</tr>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>
