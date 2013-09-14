@@ -11,18 +11,18 @@ strict graph "Type lattice: focus on string."
 	];
 
 	/* Labels for the nodes. */
-        ⊤ [href="/about-avail/documentation/type-system/types-top"];
-        any [href="/about-avail/documentation/type-system/types-any"];
-        nontype [href="/about-avail/documentation/type-system/types-nontype"];
+        ⊤ [href="/about-avail/documentation/type-system/types-top.html"];
+        any [href="/about-avail/documentation/type-system/types-any.html"];
+        nontype [href="/about-avail/documentation/type-system/types-nontype.html"];
 	tuple
 	[
 		label="tuple = <any…|>",
-		href="/about-avail/documentation/type-system/types-tuple"
+		href="/about-avail/documentation/type-system/types-tuple.html"
 	];
 	string
 	[
 		label="string = <character…|>"
-		href="/about-avail/documentation/type-system/types-string",
+		href="/about-avail/documentation/type-system/types-string.html",
 		shape="ellipse",
 		style="filled",
 		fillcolor="#E2E8FF",
@@ -32,11 +32,11 @@ strict graph "Type lattice: focus on string."
 	"nonempty string"
 	[
 		label="nonempty string = <character…|1..>",
-		href="/about-avail/documentation/type-system/types-nonempty-string"
+		href="/about-avail/documentation/type-system/types-nonempty-string.html"
 	];
 	"nonempty string…" [label=""];
 	empty [label="{\"\"}ᵀ = {<>}ᵀ"];
-	⊥ [href="/about-avail/documentation/type-system/types-bottom"];
+	⊥ [href="/about-avail/documentation/type-system/types-bottom.html"];
 
 	/* Connectivity. */
 	⊤ -- any -- nontype -- tuple -- string;

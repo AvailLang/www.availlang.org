@@ -11,13 +11,13 @@ strict graph "Type lattice: focus on set."
 	];
 
 	/* Labels for the nodes. */
-        ⊤ [href="/about-avail/documentation/type-system/types-top"];
-        any [href="/about-avail/documentation/type-system/types-any"];
-        nontype [href="/about-avail/documentation/type-system/types-nontype"];
+        ⊤ [href="/about-avail/documentation/type-system/types-top.html"];
+        any [href="/about-avail/documentation/type-system/types-any.html"];
+        nontype [href="/about-avail/documentation/type-system/types-nontype.html"];
 	set
 	[
 		label="set = {any|}",
-		href="/about-avail/documentation/type-system/types-set",
+		href="/about-avail/documentation/type-system/types-set.html",
 		shape="ellipse",
 		style="filled",
 		fillcolor="#E2E8FF",
@@ -31,7 +31,7 @@ strict graph "Type lattice: focus on set."
 	integers [label="{integer|1..}"];
 	"…integers" [label=""];
 	"integers…" [label=""];
-	⊥ [href="/about-avail/documentation/type-system/types-bottom"];
+	⊥ [href="/about-avail/documentation/type-system/types-bottom.html"];
 
 	/* Connectivity. */
 	⊤ -- any -- nontype -- set;

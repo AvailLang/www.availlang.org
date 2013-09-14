@@ -11,13 +11,13 @@ strict graph "Type lattice: focus on map."
 	];
 
 	/* Labels for the nodes. */
-        ⊤ [href="/about-avail/documentation/type-system/types-top"];
-        any [href="/about-avail/documentation/type-system/types-any"];
-        nontype [href="/about-avail/documentation/type-system/types-nontype"];
+        ⊤ [href="/about-avail/documentation/type-system/types-top.html"];
+        any [href="/about-avail/documentation/type-system/types-any.html"];
+        nontype [href="/about-avail/documentation/type-system/types-nontype.html"];
 	map
 	[
 		label="map = {any→any|}",
-		href="/about-avail/documentation/type-system/types-map",
+		href="/about-avail/documentation/type-system/types-map.html",
 		shape="ellipse",
 		style="filled",
 		fillcolor="#E2E8FF",
@@ -35,7 +35,7 @@ strict graph "Type lattice: focus on map."
 	double2squares [label="{{1.0→1, 2.0→4, 3.0→9}}ᵀ"];
 	emptymap [label="{⊥→⊥|0}"];
 	empty [label="{{}}ᵀ"];
-	⊥ [href="/about-avail/documentation/type-system/types-bottom"];
+	⊥ [href="/about-avail/documentation/type-system/types-bottom.html"];
 
 	/* Connectivity. */
 	⊤ -- any -- nontype -- map;

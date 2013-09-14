@@ -11,13 +11,13 @@
 <polygon fill="white" stroke="white" points="-4,5 -4,-328 1047.45,-328 1047.45,5 -4,5"/>
 <!-- ⊤ -->
 <g id="node1" class="node"><title>⊤</title>
-<a xlink:href="/about-avail/documentation/type-system/types-top" xlink:title="⊤" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-top.html" xlink:title="⊤" target="_top">
 <text text-anchor="middle" x="699" y="-302" font-family="Consolas" font-size="8.00" fill="#0000a0">⊤</text>
 </a>
 </g>
 <!-- any -->
 <g id="node2" class="node"><title>any</title>
-<a xlink:href="/about-avail/documentation/type-system/types-any" xlink:title="any" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-any.html" xlink:title="any" target="_top">
 <text text-anchor="middle" x="699" y="-230.684" font-family="Consolas" font-size="8.00" fill="#0000a0">any</text>
 </a>
 </g>
@@ -27,7 +27,7 @@
 </g>
 <!-- nontype -->
 <g id="node3" class="node"><title>nontype</title>
-<a xlink:href="/about-avail/documentation/type-system/types-nontype" xlink:title="nontype" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-nontype.html" xlink:title="nontype" target="_top">
 <text text-anchor="middle" x="568" y="-158.684" font-family="Consolas" font-size="8.00" fill="#0000a0">nontype</text>
 </a>
 </g>
@@ -37,7 +37,7 @@
 </g>
 <!-- type -->
 <g id="node4" class="node"><title>type</title>
-<a xlink:href="/about-avail/documentation/type-system/types-type" xlink:title="type" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-type.html" xlink:title="type" target="_top">
 <text text-anchor="middle" x="830" y="-158.684" font-family="Consolas" font-size="8.00" fill="#0000a0">type</text>
 </a>
 </g>
@@ -47,7 +47,7 @@
 </g>
 <!-- atom -->
 <g id="node5" class="node"><title>atom</title>
-<a xlink:href="/about-avail/documentation/type-system/types-atom" xlink:title="atom" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-atom.html" xlink:title="atom" target="_top">
 <text text-anchor="middle" x="27" y="-86.6836" font-family="Consolas" font-size="8.00" fill="#0000a0">atom</text>
 </a>
 </g>
@@ -57,7 +57,7 @@
 </g>
 <!-- character -->
 <g id="node6" class="node"><title>character</title>
-<a xlink:href="/about-avail/documentation/type-system/types-character" xlink:title="character" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-character.html" xlink:title="character" target="_top">
 <text text-anchor="middle" x="83" y="-86.6836" font-family="Consolas" font-size="8.00" fill="#0000a0">character</text>
 </a>
 </g>
@@ -67,7 +67,7 @@
 </g>
 <!-- continuation -->
 <g id="node7" class="node"><title>continuation</title>
-<a xlink:href="/about-avail/documentation/type-system/types-continuation" xlink:title="continuation" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-continuation.html" xlink:title="continuation" target="_top">
 <text text-anchor="middle" x="146" y="-86.6836" font-family="Consolas" font-size="8.00" fill="#0000a0">continuation</text>
 </a>
 </g>
@@ -77,7 +77,7 @@
 </g>
 <!-- fiber -->
 <g id="node8" class="node"><title>fiber</title>
-<a xlink:href="/about-avail/documentation/type-system/types-fiber" xlink:title="fiber" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-fiber.html" xlink:title="fiber" target="_top">
 <text text-anchor="middle" x="208" y="-86.6836" font-family="Consolas" font-size="8.00" fill="#0000a0">fiber</text>
 </a>
 </g>
@@ -87,7 +87,7 @@
 </g>
 <!-- function -->
 <g id="node9" class="node"><title>function</title>
-<a xlink:href="/about-avail/documentation/type-system/types-function" xlink:title="function" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-function.html" xlink:title="function" target="_top">
 <text text-anchor="middle" x="263" y="-86.6836" font-family="Consolas" font-size="8.00" fill="#0000a0">function</text>
 </a>
 </g>
@@ -97,7 +97,7 @@
 </g>
 <!-- function implementation -->
 <g id="node10" class="node"><title>function implementation</title>
-<a xlink:href="/about-avail/documentation/type-system/types-function-implementation" xlink:title="function\nimplementation" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-function-implementation.html" xlink:title="function\nimplementation" target="_top">
 <text text-anchor="middle" x="330" y="-91.3672" font-family="Consolas" font-size="8.00" fill="#0000a0">function</text>
 <text text-anchor="middle" x="330" y="-82" font-family="Consolas" font-size="8.00" fill="#0000a0">implementation</text>
 </a>
@@ -108,7 +108,7 @@
 </g>
 <!-- map -->
 <g id="node11" class="node"><title>map</title>
-<a xlink:href="/about-avail/documentation/type-system/types-map" xlink:title="map" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-map.html" xlink:title="map" target="_top">
 <text text-anchor="middle" x="397" y="-86.6836" font-family="Consolas" font-size="8.00" fill="#0000a0">map</text>
 </a>
 </g>
@@ -118,7 +118,7 @@
 </g>
 <!-- method -->
 <g id="node12" class="node"><title>method</title>
-<a xlink:href="/about-avail/documentation/type-system/types-method" xlink:title="method" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-method.html" xlink:title="method" target="_top">
 <text text-anchor="middle" x="452" y="-86.6836" font-family="Consolas" font-size="8.00" fill="#0000a0">method</text>
 </a>
 </g>
@@ -128,7 +128,7 @@
 </g>
 <!-- method definition -->
 <g id="node13" class="node"><title>method definition</title>
-<a xlink:href="/about-avail/documentation/type-system/types-method-definition" xlink:title="method\ndefinition" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-method-definition.html" xlink:title="method\ndefinition" target="_top">
 <text text-anchor="middle" x="510" y="-91.3672" font-family="Consolas" font-size="8.00" fill="#0000a0">method</text>
 <text text-anchor="middle" x="510" y="-82" font-family="Consolas" font-size="8.00" fill="#0000a0">definition</text>
 </a>
@@ -139,7 +139,7 @@
 </g>
 <!-- module -->
 <g id="node14" class="node"><title>module</title>
-<a xlink:href="/about-avail/documentation/type-system/types-module" xlink:title="module" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-module.html" xlink:title="module" target="_top">
 <text text-anchor="middle" x="568" y="-86.6836" font-family="Consolas" font-size="8.00" fill="#0000a0">module</text>
 </a>
 </g>
@@ -149,7 +149,7 @@
 </g>
 <!-- number -->
 <g id="node15" class="node"><title>number</title>
-<a xlink:href="/about-avail/documentation/type-system/types-number" xlink:title="number" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-number.html" xlink:title="number" target="_top">
 <text text-anchor="middle" x="623" y="-86.6836" font-family="Consolas" font-size="8.00" fill="#0000a0">number</text>
 </a>
 </g>
@@ -159,7 +159,7 @@
 </g>
 <!-- object -->
 <g id="node16" class="node"><title>object</title>
-<a xlink:href="/about-avail/documentation/type-system/types-object" xlink:title="object" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-object.html" xlink:title="object" target="_top">
 <text text-anchor="middle" x="678" y="-86.6836" font-family="Consolas" font-size="8.00" fill="#0000a0">object</text>
 </a>
 </g>
@@ -169,7 +169,7 @@
 </g>
 <!-- phrase -->
 <g id="node17" class="node"><title>phrase</title>
-<a xlink:href="/about-avail/documentation/type-system/types-phrase" xlink:title="phrase" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-phrase.html" xlink:title="phrase" target="_top">
 <text text-anchor="middle" x="733" y="-86.6836" font-family="Consolas" font-size="8.00" fill="#0000a0">phrase</text>
 </a>
 </g>
@@ -179,7 +179,7 @@
 </g>
 <!-- pojo -->
 <g id="node18" class="node"><title>pojo</title>
-<a xlink:href="/about-avail/documentation/type-system/types-pojo" xlink:title="pojo" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-pojo.html" xlink:title="pojo" target="_top">
 <text text-anchor="middle" x="788" y="-86.6836" font-family="Consolas" font-size="8.00" fill="#0000a0">pojo</text>
 </a>
 </g>
@@ -189,7 +189,7 @@
 </g>
 <!-- token -->
 <g id="node19" class="node"><title>token</title>
-<a xlink:href="/about-avail/documentation/type-system/types-token" xlink:title="token" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-token.html" xlink:title="token" target="_top">
 <text text-anchor="middle" x="843" y="-86.6836" font-family="Consolas" font-size="8.00" fill="#0000a0">token</text>
 </a>
 </g>
@@ -199,7 +199,7 @@
 </g>
 <!-- tuple -->
 <g id="node20" class="node"><title>tuple</title>
-<a xlink:href="/about-avail/documentation/type-system/types-tuple" xlink:title="tuple" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-tuple.html" xlink:title="tuple" target="_top">
 <text text-anchor="middle" x="898" y="-86.6836" font-family="Consolas" font-size="8.00" fill="#0000a0">tuple</text>
 </a>
 </g>
@@ -209,7 +209,7 @@
 </g>
 <!-- set -->
 <g id="node21" class="node"><title>set</title>
-<a xlink:href="/about-avail/documentation/type-system/types-set" xlink:title="set" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-set.html" xlink:title="set" target="_top">
 <text text-anchor="middle" x="953" y="-86.6836" font-family="Consolas" font-size="8.00" fill="#0000a0">set</text>
 </a>
 </g>
@@ -219,7 +219,7 @@
 </g>
 <!-- variable -->
 <g id="node22" class="node"><title>variable</title>
-<a xlink:href="/about-avail/documentation/type-system/types-variable" xlink:title="variable" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-variable.html" xlink:title="variable" target="_top">
 <text text-anchor="middle" x="1008" y="-86.6836" font-family="Consolas" font-size="8.00" fill="#0000a0">variable</text>
 </a>
 </g>
@@ -229,7 +229,7 @@
 </g>
 <!-- ⊥ -->
 <g id="node23" class="node"><title>⊥</title>
-<a xlink:href="/about-avail/documentation/type-system/types-bottom" xlink:title="⊥" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-bottom.html" xlink:title="⊥" target="_top">
 <text text-anchor="middle" x="568" y="-14" font-family="Consolas" font-size="8.00" fill="#0000a0">⊥</text>
 </a>
 </g>

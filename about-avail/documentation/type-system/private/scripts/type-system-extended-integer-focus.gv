@@ -11,14 +11,14 @@ strict graph "Type lattice: focus on extended integer."
 	];
 
 	/* Labels for the nodes. */
-        ⊤ [href="/about-avail/documentation/type-system/types-top"];
-        any [href="/about-avail/documentation/type-system/types-any"];
-        nontype [href="/about-avail/documentation/type-system/types-nontype"];
-	number [href="/about-avail/documentation/type-system/types-number"];
+        ⊤ [href="/about-avail/documentation/type-system/types-top.html"];
+        any [href="/about-avail/documentation/type-system/types-any.html"];
+        nontype [href="/about-avail/documentation/type-system/types-nontype.html"];
+	number [href="/about-avail/documentation/type-system/types-number.html"];
 	"extended integer"
 	[
 		label="extended integer = [-∞..∞]",
-		href="/about-avail/documentation/type-system/types-extended-integer",
+		href="/about-avail/documentation/type-system/types-extended-integer.html",
 		shape="ellipse",
 		style="filled",
 		fillcolor="#E2E8FF",
@@ -30,28 +30,28 @@ strict graph "Type lattice: focus on extended integer."
 	"nonpositive integer"
 	[
 		label="nonpositive integer = (-∞..0]",
-		href="/about-avail/documentation/type-system/types-extended-integer#types-nonpositive-integer"
+		href="/about-avail/documentation/type-system/types-extended-integer#types-nonpositive-integer.html"
 	];
 	"negative integer"
 	[
 		label="negative integer = (-∞..-1]",
-		href="/about-avail/documentation/type-system/types-extended-integer#types-negative-integer"
+		href="/about-avail/documentation/type-system/types-extended-integer#types-negative-integer.html"
 	];
 	"whole number"
 	[
 		label="whole number = [0..∞)",
-		href="/about-avail/documentation/type-system/types-extended-integer#types-whole-number"
+		href="/about-avail/documentation/type-system/types-extended-integer#types-whole-number.html"
 	];
 	"natural number"
 	[
 		label="natural number = [1..∞)",
-		href="/about-avail/documentation/type-system/types-extended-integer#types-natural-number"
+		href="/about-avail/documentation/type-system/types-extended-integer#types-natural-number.html"
 	];
 	"…[1..6]" [label=""];
 	"[42..49]…" [label=""];
 	"…[2..5]" [label=""];
 	"[7..9]…" [label=""];
-	⊥ [href="/about-avail/documentation/type-system/types-bottom"];
+	⊥ [href="/about-avail/documentation/type-system/types-bottom.html"];
 
 	/* Connectivity. */
 	⊤ -- any -- nontype -- number -- "extended integer";

@@ -11,13 +11,13 @@
 <polygon fill="white" stroke="white" points="-4,5 -4,-634 485,-634 485,5 -4,5"/>
 <!-- ⊤ -->
 <g id="node1" class="node"><title>⊤</title>
-<a xlink:href="/about-avail/documentation/type-system/types-top" xlink:title="⊤" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-top.html" xlink:title="⊤" target="_top">
 <text text-anchor="middle" x="172" y="-607" font-family="Consolas" font-size="10.00" fill="#0000a0">⊤</text>
 </a>
 </g>
 <!-- any -->
 <g id="node2" class="node"><title>any</title>
-<a xlink:href="/about-avail/documentation/type-system/types-any" xlink:title="any" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-any.html" xlink:title="any" target="_top">
 <text text-anchor="middle" x="172" y="-553.854" font-family="Consolas" font-size="10.00" fill="#0000a0">any</text>
 </a>
 </g>
@@ -27,7 +27,7 @@
 </g>
 <!-- nontype -->
 <g id="node3" class="node"><title>nontype</title>
-<a xlink:href="/about-avail/documentation/type-system/types-nontype" xlink:title="nontype" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-nontype.html" xlink:title="nontype" target="_top">
 <text text-anchor="middle" x="172" y="-499.854" font-family="Consolas" font-size="10.00" fill="#0000a0">nontype</text>
 </a>
 </g>
@@ -37,7 +37,7 @@
 </g>
 <!-- number -->
 <g id="node4" class="node"><title>number</title>
-<a xlink:href="/about-avail/documentation/type-system/types-number" xlink:title="number" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-number.html" xlink:title="number" target="_top">
 <text text-anchor="middle" x="172" y="-445.854" font-family="Consolas" font-size="10.00" fill="#0000a0">number</text>
 </a>
 </g>
@@ -47,7 +47,7 @@
 </g>
 <!-- extended integer -->
 <g id="node5" class="node"><title>extended integer</title>
-<a xlink:href="/about-avail/documentation/type-system/types-extended-integer" xlink:title="extended integer = [&#45;∞..∞]" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-extended-integer.html" xlink:title="extended integer = [&#45;∞..∞]" target="_top">
 <ellipse fill="#e2e8ff" stroke="#e2e8ff" cx="172" cy="-396" rx="94.4577" ry="18"/>
 <text text-anchor="middle" x="172" y="-391.854" font-family="Consolas" font-size="10.00" fill="#0000a0">extended integer = [&#45;∞..∞]</text>
 </a>
@@ -86,7 +86,7 @@
 </g>
 <!-- ⊥ -->
 <g id="node17" class="node"><title>⊥</title>
-<a xlink:href="/about-avail/documentation/type-system/types-bottom" xlink:title="⊥" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-bottom.html" xlink:title="⊥" target="_top">
 <text text-anchor="middle" x="213" y="-13" font-family="Consolas" font-size="10.00" fill="#0000a0">⊥</text>
 </a>
 </g>
@@ -100,7 +100,7 @@
 </g>
 <!-- nonpositive integer -->
 <g id="node9" class="node"><title>nonpositive integer</title>
-<a xlink:href="/about-avail/documentation/type-system/types-extended-integer#types-nonpositive-integer" xlink:title="nonpositive integer = (&#45;∞..0]" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-extended-integer#types-nonpositive-integer.html" xlink:title="nonpositive integer = (&#45;∞..0]" target="_top">
 <text text-anchor="middle" x="116" y="-283.854" font-family="Consolas" font-size="10.00" fill="#0000a0">nonpositive integer = (&#45;∞..0]</text>
 </a>
 </g>
@@ -110,7 +110,7 @@
 </g>
 <!-- whole number -->
 <g id="node11" class="node"><title>whole number</title>
-<a xlink:href="/about-avail/documentation/type-system/types-extended-integer#types-whole-number" xlink:title="whole number = [0..∞)" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-extended-integer#types-whole-number.html" xlink:title="whole number = [0..∞)" target="_top">
 <text text-anchor="middle" x="287" y="-283.854" font-family="Consolas" font-size="10.00" fill="#0000a0">whole number = [0..∞)</text>
 </a>
 </g>
@@ -124,7 +124,7 @@
 </g>
 <!-- negative integer -->
 <g id="node10" class="node"><title>negative integer</title>
-<a xlink:href="/about-avail/documentation/type-system/types-extended-integer#types-negative-integer" xlink:title="negative integer = (&#45;∞..&#45;1]" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-extended-integer#types-negative-integer.html" xlink:title="negative integer = (&#45;∞..&#45;1]" target="_top">
 <text text-anchor="middle" x="111" y="-229.854" font-family="Consolas" font-size="10.00" fill="#0000a0">negative integer = (&#45;∞..&#45;1]</text>
 </a>
 </g>
@@ -138,7 +138,7 @@
 </g>
 <!-- natural number -->
 <g id="node12" class="node"><title>natural number</title>
-<a xlink:href="/about-avail/documentation/type-system/types-extended-integer#types-natural-number" xlink:title="natural number = [1..∞)" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-extended-integer#types-natural-number.html" xlink:title="natural number = [1..∞)" target="_top">
 <text text-anchor="middle" x="285" y="-229.854" font-family="Consolas" font-size="10.00" fill="#0000a0">natural number = [1..∞)</text>
 </a>
 </g>

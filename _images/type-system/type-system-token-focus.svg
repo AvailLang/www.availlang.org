@@ -11,13 +11,13 @@
 <polygon fill="white" stroke="white" points="-4,5 -4,-310 91,-310 91,5 -4,5"/>
 <!-- ⊤ -->
 <g id="node1" class="node"><title>⊤</title>
-<a xlink:href="/about-avail/documentation/type-system/types-top" xlink:title="⊤" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-top.html" xlink:title="⊤" target="_top">
 <text text-anchor="middle" x="43" y="-283" font-family="Consolas" font-size="10.00" fill="#0000a0">⊤</text>
 </a>
 </g>
 <!-- any -->
 <g id="node2" class="node"><title>any</title>
-<a xlink:href="/about-avail/documentation/type-system/types-any" xlink:title="any" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-any.html" xlink:title="any" target="_top">
 <text text-anchor="middle" x="43" y="-229.854" font-family="Consolas" font-size="10.00" fill="#0000a0">any</text>
 </a>
 </g>
@@ -27,7 +27,7 @@
 </g>
 <!-- nontype -->
 <g id="node3" class="node"><title>nontype</title>
-<a xlink:href="/about-avail/documentation/type-system/types-nontype" xlink:title="nontype" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-nontype.html" xlink:title="nontype" target="_top">
 <text text-anchor="middle" x="43" y="-175.854" font-family="Consolas" font-size="10.00" fill="#0000a0">nontype</text>
 </a>
 </g>
@@ -37,7 +37,7 @@
 </g>
 <!-- token -->
 <g id="node4" class="node"><title>token</title>
-<a xlink:href="/about-avail/documentation/type-system/types-token" xlink:title="token" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-token.html" xlink:title="token" target="_top">
 <ellipse fill="#e2e8ff" stroke="#e2e8ff" cx="43" cy="-126" rx="27" ry="18"/>
 <text text-anchor="middle" x="43" y="-121.854" font-family="Consolas" font-size="10.00" fill="#0000a0">token</text>
 </a>
@@ -48,7 +48,7 @@
 </g>
 <!-- literal token -->
 <g id="node5" class="node"><title>literal token</title>
-<a xlink:href="/about-avail/documentation/type-system/types-literal-token" xlink:title="literal token" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-literal-token.html" xlink:title="literal token" target="_top">
 <text text-anchor="middle" x="43" y="-67.8545" font-family="Consolas" font-size="10.00" fill="#0000a0">literal token</text>
 </a>
 </g>
@@ -58,7 +58,7 @@
 </g>
 <!-- ⊥ -->
 <g id="node6" class="node"><title>⊥</title>
-<a xlink:href="/about-avail/documentation/type-system/types-bottom" xlink:title="⊥" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-bottom.html" xlink:title="⊥" target="_top">
 <text text-anchor="middle" x="43" y="-13" font-family="Consolas" font-size="10.00" fill="#0000a0">⊥</text>
 </a>
 </g>

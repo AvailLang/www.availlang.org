@@ -12,95 +12,95 @@ strict graph "Avail type system"
         ];
 
 	/* Labels for the nodes. */
-        ⊤ [href="/about-avail/documentation/type-system/types-top"];
-        any [href="/about-avail/documentation/type-system/types-any"];
-        nontype [href="/about-avail/documentation/type-system/types-nontype"];
+        ⊤ [href="/about-avail/documentation/type-system/types-top.html"];
+        any [href="/about-avail/documentation/type-system/types-any.html"];
+        nontype [href="/about-avail/documentation/type-system/types-nontype.html"];
         phrase
         [
                 label="phrase = phrase⇒⊤",
-                href="/about-avail/documentation/type-system/types-phrase",
+                href="/about-avail/documentation/type-system/types-phrase.html",
                 shape="ellipse",
                 style="filled",
                 fillcolor="#E2E8FF",
                 peripheries="0"
         ];
 	"declaration phrase"
-		[href="/about-avail/documentation/type-system/types-declaration-phrase"];
+		[href="/about-avail/documentation/type-system/types-declaration-phrase.html"];
 	"expression phrase"
-		[href="/about-avail/documentation/type-system/types-expression-phrase"];
+		[href="/about-avail/documentation/type-system/types-expression-phrase.html"];
 	"sequence phrase"
-		[href="/about-avail/documentation/type-system/types-sequence-phrase"];
+		[href="/about-avail/documentation/type-system/types-sequence-phrase.html"];
 	"argument phrase"
 	[
 		label="argument\nphrase",
-		href="/about-avail/documentation/type-system/types-argument-phrase"
+		href="/about-avail/documentation/type-system/types-argument-phrase.html"
 	];
 	"label phrase"
 	[
 		label="label\nphrase",
-		href="/about-avail/documentation/type-system/types-label-phrase"
+		href="/about-avail/documentation/type-system/types-label-phrase.html"
 	];
 	"local constant phrase"
 	[
 		label="local constant\nphrase",
-		href="/about-avail/documentation/type-system/types-local-constant-phrase"
+		href="/about-avail/documentation/type-system/types-local-constant-phrase.html"
 	];
 	"local variable phrase"
 	[
 		label="local variable\nphrase",
-		href="/about-avail/documentation/type-system/types-local-variable-phrase"
+		href="/about-avail/documentation/type-system/types-local-variable-phrase.html"
 	];
 	"module constant phrase"
 	[
 		label="module constant\nphrase",
-		href="/about-avail/documentation/type-system/types-module-constant-phrase"
+		href="/about-avail/documentation/type-system/types-module-constant-phrase.html"
 	];
 	"module variable phrase"
 	[
 		label="module variable\nphrase",
-		href="/about-avail/documentation/type-system/types-module-variable-phrase"
+		href="/about-avail/documentation/type-system/types-module-variable-phrase.html"
 	];
 	"primitive failure reason phrase"
 	[
 		label="primitive failure reason\nphrase",
-		href="/about-avail/documentation/type-system/types-primitive-failure-reason-phrase"
+		href="/about-avail/documentation/type-system/types-primitive-failure-reason-phrase.html"
 	];
 	"assignment phrase"
 	[
 		label="assignment\nphrase",
-		href="/about-avail/documentation/type-system/types-assignment-phrase"
+		href="/about-avail/documentation/type-system/types-assignment-phrase.html"
 	];
 	"block phrase"
 	[
 		label="block\nphrase",
-		href="/about-avail/documentation/type-system/types-block-phrase"
+		href="/about-avail/documentation/type-system/types-block-phrase.html"
 	];
 	"list phrase"
 	[
 		label="list\nphrase",
-		href="/about-avail/documentation/type-system/types-list-phrase"
+		href="/about-avail/documentation/type-system/types-list-phrase.html"
 	];
 	"literal phrase"
 	[
 		label="literal\nphrase",
-		href="/about-avail/documentation/type-system/types-literal-phrase"
+		href="/about-avail/documentation/type-system/types-literal-phrase.html"
 	];
 	"send phrase"
 	[
 		label="send\nphrase",
-		href="/about-avail/documentation/type-system/types-send-phrase"
+		href="/about-avail/documentation/type-system/types-send-phrase.html"
 	];
 	"variable reference phrase"
 	[
 		label="variable reference\nphrase",
-		href="/about-avail/documentation/type-system/types-variable-reference-phrase"
+		href="/about-avail/documentation/type-system/types-variable-reference-phrase.html"
 	];
 	"variable use phrase"
 	[
 		label="variable use\nphrase",
-		href="/about-avail/documentation/type-system/types-variable-use-phrase"
+		href="/about-avail/documentation/type-system/types-variable-use-phrase.html"
 	];
-       ⊥ [href="/about-avail/documentation/type-system/types-bottom"];
+       ⊥ [href="/about-avail/documentation/type-system/types-bottom.html"];
 
 	/* Connections. */
 	⊤ -- any -- nontype -- phrase;

@@ -12,14 +12,14 @@ strict graph "Type lattice: focus on boolean."
 	];
 
 	/* Labels for the nodes. */
-	⊤ [href="/about-avail/documentation/type-system/types-top"];
-	any [href="/about-avail/documentation/type-system/types-any"];
-	nontype [href="/about-avail/documentation/type-system/types-nontype"];
-	atom [href="/about-avail/documentation/type-system/types-atom"];
+	⊤ [href="/about-avail/documentation/type-system/types-top.html"];
+	any [href="/about-avail/documentation/type-system/types-any.html"];
+	nontype [href="/about-avail/documentation/type-system/types-nontype.html"];
+	atom [href="/about-avail/documentation/type-system/types-atom.html"];
 	boolean
 	[
 		label="boolean = {true, false}ᵀ",
-		href="/about-avail/documentation/type-system/types-boolean",
+		href="/about-avail/documentation/type-system/types-boolean.html",
 		shape="ellipse",
 		style="filled",
 		fillcolor="#E2E8FF",
@@ -27,7 +27,7 @@ strict graph "Type lattice: focus on boolean."
 	];
 	"true type" [label="{true}ᵀ"];
 	"false type" [label="{false}ᵀ"];
-	⊥ [href="/about-avail/documentation/type-system/types-bottom"];
+	⊥ [href="/about-avail/documentation/type-system/types-bottom.html"];
 
 	/* Connectivity. */
 	⊤ -- any -- nontype -- atom -- boolean

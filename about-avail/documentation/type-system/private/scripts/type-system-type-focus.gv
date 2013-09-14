@@ -11,13 +11,13 @@ strict graph "An overview of the Avail's metatypes."
 	];
 
 	/* Labels for the nodes. */
-        ⊤ [href="/about-avail/documentation/type-system/types-top"];
-        any [href="/about-avail/documentation/type-system/types-any"];
-        nontype [href="/about-avail/documentation/type-system/types-nontype"];
+        ⊤ [href="/about-avail/documentation/type-system/types-top.html"];
+        any [href="/about-avail/documentation/type-system/types-any.html"];
+        nontype [href="/about-avail/documentation/type-system/types-nontype.html"];
 	type
 	[
 		label="type = {⊤}ᵀ",
-		href="/about-avail/documentation/type-system/types-type",
+		href="/about-avail/documentation/type-system/types-type.html",
 		shape="ellipse",
 		style="filled",
 		fillcolor="#E2E8FF",
@@ -45,7 +45,7 @@ strict graph "An overview of the Avail's metatypes."
 	"set meta" [label="{set}ᵀ"];
 	"variable meta" [label="{variable}ᵀ"];
 	"⊥ meta" [label="{⊥}ᵀ"];
-	⊥ [href="/about-avail/documentation/type-system/types-bottom"];
+	⊥ [href="/about-avail/documentation/type-system/types-bottom.html"];
 
 	/* Connectivity. */
 	⊤ -- any -- {nontype type};

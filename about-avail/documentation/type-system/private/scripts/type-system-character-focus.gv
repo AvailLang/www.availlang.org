@@ -11,12 +11,12 @@ strict graph "Type lattice: focus on character."
 	];
 
 	/* Labels for the nodes. */
-        ⊤ [href="/about-avail/documentation/type-system/types-top"];
-        any [href="/about-avail/documentation/type-system/types-any"];
-        nontype [href="/about-avail/documentation/type-system/types-nontype"];
+        ⊤ [href="/about-avail/documentation/type-system/types-top.html"];
+        any [href="/about-avail/documentation/type-system/types-any.html"];
+        nontype [href="/about-avail/documentation/type-system/types-nontype.html"];
 	character
 	[
-		href="/about-avail/documentation/type-system/types-character",
+		href="/about-avail/documentation/type-system/types-character.html",
 		shape="ellipse",
 		style="filled",
 		fillcolor="#E2E8FF",
@@ -28,7 +28,7 @@ strict graph "Type lattice: focus on character."
 	"¢a type" [label="{¢a}ᵀ"];
 	"¢A type" [label="{¢A}ᵀ"];
 	"…2" [label=""];
-       ⊥ [href="/about-avail/documentation/type-system/types-bottom"];
+       ⊥ [href="/about-avail/documentation/type-system/types-bottom.html"];
 
 	/* Coneectivity. */
 	⊤ -- any -- nontype -- character;

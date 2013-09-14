@@ -11,13 +11,13 @@
 <polygon fill="white" stroke="white" points="-4,5 -4,-688 497.584,-688 497.584,5 -4,5"/>
 <!-- ⊤ -->
 <g id="node1" class="node"><title>⊤</title>
-<a xlink:href="/about-avail/documentation/type-system/types-top" xlink:title="⊤" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-top.html" xlink:title="⊤" target="_top">
 <text text-anchor="middle" x="178" y="-661" font-family="Consolas" font-size="10.00" fill="#0000a0">⊤</text>
 </a>
 </g>
 <!-- any -->
 <g id="node2" class="node"><title>any</title>
-<a xlink:href="/about-avail/documentation/type-system/types-any" xlink:title="any" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-any.html" xlink:title="any" target="_top">
 <text text-anchor="middle" x="178" y="-607.854" font-family="Consolas" font-size="10.00" fill="#0000a0">any</text>
 </a>
 </g>
@@ -27,7 +27,7 @@
 </g>
 <!-- nontype -->
 <g id="node3" class="node"><title>nontype</title>
-<a xlink:href="/about-avail/documentation/type-system/types-nontype" xlink:title="nontype" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-nontype.html" xlink:title="nontype" target="_top">
 <text text-anchor="middle" x="178" y="-553.854" font-family="Consolas" font-size="10.00" fill="#0000a0">nontype</text>
 </a>
 </g>
@@ -37,7 +37,7 @@
 </g>
 <!-- phrase -->
 <g id="node4" class="node"><title>phrase</title>
-<a xlink:href="/about-avail/documentation/type-system/types-phrase" xlink:title="phrase = phrase⇒⊤" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-phrase.html" xlink:title="phrase = phrase⇒⊤" target="_top">
 <ellipse fill="#e2e8ff" stroke="#e2e8ff" cx="178" cy="-504" rx="78.3339" ry="18"/>
 <text text-anchor="middle" x="178" y="-502.187" font-family="Consolas" font-size="10.00" fill="#0000a0">phrase = phrase⇒⊤</text>
 </a>
@@ -48,7 +48,7 @@
 </g>
 <!-- declaration phrase -->
 <g id="node5" class="node"><title>declaration phrase</title>
-<a xlink:href="/about-avail/documentation/type-system/types-declaration-phrase" xlink:title="declaration phrase" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-declaration-phrase.html" xlink:title="declaration phrase" target="_top">
 <text text-anchor="middle" x="178" y="-445.854" font-family="Consolas" font-size="10.00" fill="#0000a0">declaration phrase</text>
 </a>
 </g>
@@ -58,7 +58,7 @@
 </g>
 <!-- expression phrase -->
 <g id="node6" class="node"><title>expression phrase</title>
-<a xlink:href="/about-avail/documentation/type-system/types-expression-phrase" xlink:title="expression phrase" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-expression-phrase.html" xlink:title="expression phrase" target="_top">
 <text text-anchor="middle" x="377" y="-445.854" font-family="Consolas" font-size="10.00" fill="#0000a0">expression phrase</text>
 </a>
 </g>
@@ -68,7 +68,7 @@
 </g>
 <!-- sequence phrase -->
 <g id="node7" class="node"><title>sequence phrase</title>
-<a xlink:href="/about-avail/documentation/type-system/types-sequence-phrase" xlink:title="sequence phrase" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-sequence-phrase.html" xlink:title="sequence phrase" target="_top">
 <text text-anchor="middle" x="49" y="-445.854" font-family="Consolas" font-size="10.00" fill="#0000a0">sequence phrase</text>
 </a>
 </g>
@@ -78,7 +78,7 @@
 </g>
 <!-- argument phrase -->
 <g id="node8" class="node"><title>argument phrase</title>
-<a xlink:href="/about-avail/documentation/type-system/types-argument-phrase" xlink:title="argument\nphrase" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-argument-phrase.html" xlink:title="argument\nphrase" target="_top">
 <text text-anchor="middle" x="107" y="-397.709" font-family="Consolas" font-size="10.00" fill="#0000a0">argument</text>
 <text text-anchor="middle" x="107" y="-386" font-family="Consolas" font-size="10.00" fill="#0000a0">phrase</text>
 </a>
@@ -89,7 +89,7 @@
 </g>
 <!-- label phrase -->
 <g id="node9" class="node"><title>label phrase</title>
-<a xlink:href="/about-avail/documentation/type-system/types-label-phrase" xlink:title="label\nphrase" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-label-phrase.html" xlink:title="label\nphrase" target="_top">
 <text text-anchor="middle" x="114" y="-343.709" font-family="Consolas" font-size="10.00" fill="#0000a0">label</text>
 <text text-anchor="middle" x="114" y="-332" font-family="Consolas" font-size="10.00" fill="#0000a0">phrase</text>
 </a>
@@ -100,7 +100,7 @@
 </g>
 <!-- local constant phrase -->
 <g id="node10" class="node"><title>local constant phrase</title>
-<a xlink:href="/about-avail/documentation/type-system/types-local-constant-phrase" xlink:title="local constant\nphrase" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-local-constant-phrase.html" xlink:title="local constant\nphrase" target="_top">
 <text text-anchor="middle" x="121" y="-289.709" font-family="Consolas" font-size="10.00" fill="#0000a0">local constant</text>
 <text text-anchor="middle" x="121" y="-278" font-family="Consolas" font-size="10.00" fill="#0000a0">phrase</text>
 </a>
@@ -111,7 +111,7 @@
 </g>
 <!-- local variable phrase -->
 <g id="node11" class="node"><title>local variable phrase</title>
-<a xlink:href="/about-avail/documentation/type-system/types-local-variable-phrase" xlink:title="local variable\nphrase" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-local-variable-phrase.html" xlink:title="local variable\nphrase" target="_top">
 <text text-anchor="middle" x="136" y="-235.709" font-family="Consolas" font-size="10.00" fill="#0000a0">local variable</text>
 <text text-anchor="middle" x="136" y="-224" font-family="Consolas" font-size="10.00" fill="#0000a0">phrase</text>
 </a>
@@ -122,7 +122,7 @@
 </g>
 <!-- module constant phrase -->
 <g id="node12" class="node"><title>module constant phrase</title>
-<a xlink:href="/about-avail/documentation/type-system/types-module-constant-phrase" xlink:title="module constant\nphrase" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-module-constant-phrase.html" xlink:title="module constant\nphrase" target="_top">
 <text text-anchor="middle" x="154" y="-181.709" font-family="Consolas" font-size="10.00" fill="#0000a0">module constant</text>
 <text text-anchor="middle" x="154" y="-170" font-family="Consolas" font-size="10.00" fill="#0000a0">phrase</text>
 </a>
@@ -133,7 +133,7 @@
 </g>
 <!-- module variable phrase -->
 <g id="node13" class="node"><title>module variable phrase</title>
-<a xlink:href="/about-avail/documentation/type-system/types-module-variable-phrase" xlink:title="module variable\nphrase" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-module-variable-phrase.html" xlink:title="module variable\nphrase" target="_top">
 <text text-anchor="middle" x="169" y="-127.709" font-family="Consolas" font-size="10.00" fill="#0000a0">module variable</text>
 <text text-anchor="middle" x="169" y="-116" font-family="Consolas" font-size="10.00" fill="#0000a0">phrase</text>
 </a>
@@ -144,7 +144,7 @@
 </g>
 <!-- primitive failure reason phrase -->
 <g id="node14" class="node"><title>primitive failure reason phrase</title>
-<a xlink:href="/about-avail/documentation/type-system/types-primitive-failure-reason-phrase" xlink:title="primitive failure reason\nphrase" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-primitive-failure-reason-phrase.html" xlink:title="primitive failure reason\nphrase" target="_top">
 <text text-anchor="middle" x="209" y="-73.709" font-family="Consolas" font-size="10.00" fill="#0000a0">primitive failure reason</text>
 <text text-anchor="middle" x="209" y="-62" font-family="Consolas" font-size="10.00" fill="#0000a0">phrase</text>
 </a>
@@ -155,7 +155,7 @@
 </g>
 <!-- assignment phrase -->
 <g id="node15" class="node"><title>assignment phrase</title>
-<a xlink:href="/about-avail/documentation/type-system/types-assignment-phrase" xlink:title="assignment\nphrase" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-assignment-phrase.html" xlink:title="assignment\nphrase" target="_top">
 <text text-anchor="middle" x="309" y="-397.709" font-family="Consolas" font-size="10.00" fill="#0000a0">assignment</text>
 <text text-anchor="middle" x="309" y="-386" font-family="Consolas" font-size="10.00" fill="#0000a0">phrase</text>
 </a>
@@ -166,7 +166,7 @@
 </g>
 <!-- block phrase -->
 <g id="node16" class="node"><title>block phrase</title>
-<a xlink:href="/about-avail/documentation/type-system/types-block-phrase" xlink:title="block\nphrase" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-block-phrase.html" xlink:title="block\nphrase" target="_top">
 <text text-anchor="middle" x="332" y="-343.709" font-family="Consolas" font-size="10.00" fill="#0000a0">block</text>
 <text text-anchor="middle" x="332" y="-332" font-family="Consolas" font-size="10.00" fill="#0000a0">phrase</text>
 </a>
@@ -177,7 +177,7 @@
 </g>
 <!-- list phrase -->
 <g id="node17" class="node"><title>list phrase</title>
-<a xlink:href="/about-avail/documentation/type-system/types-list-phrase" xlink:title="list\nphrase" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-list-phrase.html" xlink:title="list\nphrase" target="_top">
 <text text-anchor="middle" x="347" y="-289.709" font-family="Consolas" font-size="10.00" fill="#0000a0">list</text>
 <text text-anchor="middle" x="347" y="-278" font-family="Consolas" font-size="10.00" fill="#0000a0">phrase</text>
 </a>
@@ -188,7 +188,7 @@
 </g>
 <!-- literal phrase -->
 <g id="node18" class="node"><title>literal phrase</title>
-<a xlink:href="/about-avail/documentation/type-system/types-literal-phrase" xlink:title="literal\nphrase" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-literal-phrase.html" xlink:title="literal\nphrase" target="_top">
 <text text-anchor="middle" x="362" y="-235.709" font-family="Consolas" font-size="10.00" fill="#0000a0">literal</text>
 <text text-anchor="middle" x="362" y="-224" font-family="Consolas" font-size="10.00" fill="#0000a0">phrase</text>
 </a>
@@ -199,7 +199,7 @@
 </g>
 <!-- send phrase -->
 <g id="node19" class="node"><title>send phrase</title>
-<a xlink:href="/about-avail/documentation/type-system/types-send-phrase" xlink:title="send\nphrase" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-send-phrase.html" xlink:title="send\nphrase" target="_top">
 <text text-anchor="middle" x="379" y="-181.709" font-family="Consolas" font-size="10.00" fill="#0000a0">send</text>
 <text text-anchor="middle" x="379" y="-170" font-family="Consolas" font-size="10.00" fill="#0000a0">phrase</text>
 </a>
@@ -210,7 +210,7 @@
 </g>
 <!-- variable reference phrase -->
 <g id="node20" class="node"><title>variable reference phrase</title>
-<a xlink:href="/about-avail/documentation/type-system/types-variable-reference-phrase" xlink:title="variable reference\nphrase" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-variable-reference-phrase.html" xlink:title="variable reference\nphrase" target="_top">
 <text text-anchor="middle" x="422" y="-127.709" font-family="Consolas" font-size="10.00" fill="#0000a0">variable reference</text>
 <text text-anchor="middle" x="422" y="-116" font-family="Consolas" font-size="10.00" fill="#0000a0">phrase</text>
 </a>
@@ -221,7 +221,7 @@
 </g>
 <!-- variable use phrase -->
 <g id="node21" class="node"><title>variable use phrase</title>
-<a xlink:href="/about-avail/documentation/type-system/types-variable-use-phrase" xlink:title="variable use\nphrase" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-variable-use-phrase.html" xlink:title="variable use\nphrase" target="_top">
 <text text-anchor="middle" x="422" y="-73.709" font-family="Consolas" font-size="10.00" fill="#0000a0">variable use</text>
 <text text-anchor="middle" x="422" y="-62" font-family="Consolas" font-size="10.00" fill="#0000a0">phrase</text>
 </a>
@@ -232,7 +232,7 @@
 </g>
 <!-- ⊥ -->
 <g id="node22" class="node"><title>⊥</title>
-<a xlink:href="/about-avail/documentation/type-system/types-bottom" xlink:title="⊥" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-bottom.html" xlink:title="⊥" target="_top">
 <text text-anchor="middle" x="209" y="-13" font-family="Consolas" font-size="10.00" fill="#0000a0">⊥</text>
 </a>
 </g>

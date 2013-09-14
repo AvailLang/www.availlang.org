@@ -11,37 +11,37 @@ strict graph "An overview of the Avail type system."
 	];
 
 	/* Node descriptions. */
-        ⊤ [href="/about-avail/documentation/type-system/types-top"];
-        any [href="/about-avail/documentation/type-system/types-any"];
-        nontype [href="/about-avail/documentation/type-system/types-nontype"];
-	type [href="/about-avail/documentation/type-system/types-type"];
-	atom [href="/about-avail/documentation/type-system/types-atom"];
-	character [href="/about-avail/documentation/type-system/types-character"];
-	continuation [href="/about-avail/documentation/type-system/types-continuation"];
-	fiber [href="/about-avail/documentation/type-system/types-fiber"];
-	function [href="/about-avail/documentation/type-system/types-function"];
+        ⊤ [href="/about-avail/documentation/type-system/types-top.html"];
+        any [href="/about-avail/documentation/type-system/types-any.html"];
+        nontype [href="/about-avail/documentation/type-system/types-nontype.html"];
+	type [href="/about-avail/documentation/type-system/types-type.html"];
+	atom [href="/about-avail/documentation/type-system/types-atom.html"];
+	character [href="/about-avail/documentation/type-system/types-character.html"];
+	continuation [href="/about-avail/documentation/type-system/types-continuation.html"];
+	fiber [href="/about-avail/documentation/type-system/types-fiber.html"];
+	function [href="/about-avail/documentation/type-system/types-function.html"];
 	"function implementation"
 	[
 		label="function\nimplementation",
-		href="/about-avail/documentation/type-system/types-function-implementation"
+		href="/about-avail/documentation/type-system/types-function-implementation.html"
 	];
-	map [href="/about-avail/documentation/type-system/types-map"];
-	method [href="/about-avail/documentation/type-system/types-method"];
+	map [href="/about-avail/documentation/type-system/types-map.html"];
+	method [href="/about-avail/documentation/type-system/types-method.html"];
 	"method definition"
 	[
 		label="method\ndefinition",
-		href="/about-avail/documentation/type-system/types-method-definition"
+		href="/about-avail/documentation/type-system/types-method-definition.html"
 	];
-	module [href="/about-avail/documentation/type-system/types-module"];
-	number [href="/about-avail/documentation/type-system/types-number"];
-	object [href="/about-avail/documentation/type-system/types-object"];
-	phrase [href="/about-avail/documentation/type-system/types-phrase"];
-	pojo [href="/about-avail/documentation/type-system/types-pojo"];
-	token [href="/about-avail/documentation/type-system/types-token"];
-	tuple [href="/about-avail/documentation/type-system/types-tuple"];
-	set [href="/about-avail/documentation/type-system/types-set"];
-	variable [href="/about-avail/documentation/type-system/types-variable"];
-	⊥ [href="/about-avail/documentation/type-system/types-bottom"];
+	module [href="/about-avail/documentation/type-system/types-module.html"];
+	number [href="/about-avail/documentation/type-system/types-number.html"];
+	object [href="/about-avail/documentation/type-system/types-object.html"];
+	phrase [href="/about-avail/documentation/type-system/types-phrase.html"];
+	pojo [href="/about-avail/documentation/type-system/types-pojo.html"];
+	token [href="/about-avail/documentation/type-system/types-token.html"];
+	tuple [href="/about-avail/documentation/type-system/types-tuple.html"];
+	set [href="/about-avail/documentation/type-system/types-set.html"];
+	variable [href="/about-avail/documentation/type-system/types-variable.html"];
+	⊥ [href="/about-avail/documentation/type-system/types-bottom.html"];
 
 	⊤ -- any -- {nontype type};
 	nontype --

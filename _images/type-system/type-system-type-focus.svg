@@ -11,13 +11,13 @@
 <polygon fill="white" stroke="white" points="-4,5 -4,-544 1224,-544 1224,5 -4,5"/>
 <!-- ⊤ -->
 <g id="node1" class="node"><title>⊤</title>
-<a xlink:href="/about-avail/documentation/type-system/types-top" xlink:title="⊤" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-top.html" xlink:title="⊤" target="_top">
 <text text-anchor="middle" x="54" y="-518" font-family="Consolas" font-size="8.00" fill="#0000a0">⊤</text>
 </a>
 </g>
 <!-- any -->
 <g id="node2" class="node"><title>any</title>
-<a xlink:href="/about-avail/documentation/type-system/types-any" xlink:title="any" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-any.html" xlink:title="any" target="_top">
 <text text-anchor="middle" x="54" y="-446.684" font-family="Consolas" font-size="8.00" fill="#0000a0">any</text>
 </a>
 </g>
@@ -27,7 +27,7 @@
 </g>
 <!-- nontype -->
 <g id="node3" class="node"><title>nontype</title>
-<a xlink:href="/about-avail/documentation/type-system/types-nontype" xlink:title="nontype" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-nontype.html" xlink:title="nontype" target="_top">
 <text text-anchor="middle" x="27" y="-302.684" font-family="Consolas" font-size="8.00" fill="#0000a0">nontype</text>
 </a>
 </g>
@@ -37,7 +37,7 @@
 </g>
 <!-- type -->
 <g id="node4" class="node"><title>type</title>
-<a xlink:href="/about-avail/documentation/type-system/types-type" xlink:title="type = {⊤}ᵀ" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-type.html" xlink:title="type = {⊤}ᵀ" target="_top">
 <ellipse fill="#e2e8ff" stroke="#e2e8ff" cx="78" cy="-378" rx="37.5" ry="18"/>
 <text text-anchor="middle" x="78" y="-374.684" font-family="Consolas" font-size="8.00" fill="#0000a0">type = {⊤}ᵀ</text>
 </a>
@@ -48,7 +48,7 @@
 </g>
 <!-- ⊥ -->
 <g id="node27" class="node"><title>⊥</title>
-<a xlink:href="/about-avail/documentation/type-system/types-bottom" xlink:title="⊥" target="_top">
+<a xlink:href="/about-avail/documentation/type-system/types-bottom.html" xlink:title="⊥" target="_top">
 <text text-anchor="middle" x="286" y="-14" font-family="Consolas" font-size="8.00" fill="#0000a0">⊥</text>
 </a>
 </g>
