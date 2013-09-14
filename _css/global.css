@@ -38,13 +38,11 @@ body {
 }
 
 body, button, input, select, textarea { 
-	font-family: 'Lato', sans-serif; 
 	font-weight: 300; 
 	color: #222;
 }
 
 h1, h2, h3, h4, h5 {
-	font-family: 'Raleway', sans-serif;
 	color: green;
 }
 h2 {
@@ -121,7 +119,6 @@ body.gradient-logo {
 
 .header-text {
 	color: rgb(0,60,0); /* dark x 3 green - considerably darker than darkgreen */
-	font-family: 'Raleway', sans-serif;
 }
 
 
@@ -157,7 +154,6 @@ body.gradient-logo {
 	padding-bottom: 0px;
 
 	color: rgb(0,90,0);  /* dark x 2 green - darker than darkgreen */
-	font-family: 'Raleway', sans-serif;
 	font-size: 20px;
 }
 
@@ -218,7 +214,6 @@ body.gradient-logo {
 .content-title {
 	margin-top: 0px;
 	padding-top: 0px;
-	font-family: 'Raleway', sans-serif;
 	color: rgb(0,90,0);
 }
 
@@ -240,7 +235,6 @@ body.gradient-logo {
 	display: inline;
 	white-space: nowrap;
 	color: green;
-	font-family: 'Raleway', sans-serif;
 	font-size: 12px;
 	position: relative;
 	bottom: 0;
@@ -267,7 +261,6 @@ body.gradient-logo {
 
 code {
 	color: rgb(0, 0, 160); /* dark blue */
-	font-family: 'DejaVu Sans Mono', Consolas, 'Lucida Console', Menlo, Monaco, monospace, sans-serif;
 }
 
 .restricted-width-container {
@@ -280,8 +273,6 @@ code {
 	margin-bottom: 15px;
 	padding: 15px;	
 	border-radius: 15px;
-
-	font-family: 'DejaVu Sans Mono', Consolas, 'Lucida Console', Menlo, Monaco, monospace, sans-serif;
 	font-size: 13px;
 	display: block;
 	line-height: 13px;
