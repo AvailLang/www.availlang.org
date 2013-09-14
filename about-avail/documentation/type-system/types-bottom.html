@@ -20,10 +20,10 @@
 
 		<h2 class="content-title"><code>⊥ (bottom) ≝ ∅ᵀ</code></h2>
 <p>
-<code>⊥</code> is the most specific type of the Avail type lattice. It is pronounced "bottom" and written as the <em>up tack</em> (<code>U+22A5</code>) character. In Avail, no value is an instance of <code>⊥</code>, and every type is a <a href="./type-system/$1ype-relations.html">supertype</a> of <code>⊥</code>.
+<code>⊥</code> is the most specific type of the Avail type lattice. It is pronounced "bottom" and written as the <em>up tack</em> (<code>U+22A5</code>) character. In Avail, no value is an instance of <code>⊥</code>, and every type is a <a href="./type-relations.html">supertype</a> of <code>⊥</code>.
 </p>
 <p>
-Consider why there are no instances of <code>⊥</code>. Given that values are instances of a type because of similarity, and <code>⊥</code> is a <a href="./type-system/$1ype-relations.html">subtype</a> of every type, the hypothetical and counterfactual instances of <code>⊥</code> would have to be <a href="/about-avail/documentation/type-system/type-compatibility">compatible</a> with every type. So an instance of <code>⊥</code> would be eligible for arithmetic, because numbers are; subscripting, because tuples are; application, because functions are; resumption, because continuations are; and so forth. Moreover, an instance of <code>⊥</code> would be valid at every argument position of every message send. This is clearly absurd. Ergo, the most specific type then is the one that cannot, for coherency, have any instances.
+Consider why there are no instances of <code>⊥</code>. Given that values are instances of a type because of similarity, and <code>⊥</code> is a <a href="./type-relations.html">subtype</a> of every type, the hypothetical and counterfactual instances of <code>⊥</code> would have to be <a href="/about-avail/documentation/type-system/type-compatibility">compatible</a> with every type. So an instance of <code>⊥</code> would be eligible for arithmetic, because numbers are; subscripting, because tuples are; application, because functions are; resumption, because continuations are; and so forth. Moreover, an instance of <code>⊥</code> would be valid at every argument position of every message send. This is clearly absurd. Ergo, the most specific type then is the one that cannot, for coherency, have any instances.
 </p>
 <p>
 As a brief aside, most imperative programming languages do implicitly have an instance of a type equivalent to <code>⊥</code> in their own type systems, even though this type itself is usually not expressible. This pseudo-value is hardwired into the syntax with a name like <code>null</code>, <code>nil</code>, <code>none</code>, <code>undef</code>, or the like, and represents the absence of a value. But the mere existence of such a value is inconsistent with any coherent type theory. Though usage of such a value is often convenient in the short-term, its long-term consequences are devastating:
@@ -42,37 +42,37 @@ To be explicit, Avail does not have such a value. The type <code>⊥</code> trul
 </p>
 <ul>
 <li>
-As the return type of a function definition or <a href="./type-system/$1ypes-function.html">function type</a>. In this context, it signifies that the function does not return. Instead, it must apply another function or call a method whose return type is also <code>⊥</code>. Primitive methods with a return type of <code>⊥</code> either raise an exception, switch to another continuation, terminate the current fiber, or exit the entire program. Ordinary methods combine these primitives in creative ways to cause the current fiber to loop forever, wait permanently for a synchronization event, and so on.
+As the return type of a function definition or <a href="./types-function.html">function type</a>. In this context, it signifies that the function does not return. Instead, it must apply another function or call a method whose return type is also <code>⊥</code>. Primitive methods with a return type of <code>⊥</code> either raise an exception, switch to another continuation, terminate the current fiber, or exit the entire program. Ordinary methods combine these primitives in creative ways to cause the current fiber to loop forever, wait permanently for a synchronization event, and so on.
 </li>
 <li>
-As the <a href="./type-system/$1ype-annotations.html">type annotation</a> of a label declaration.
+As the <a href="./type-annotations.html">type annotation</a> of a label declaration.
 </li>
 <li>
-As the canonical default type of a <a href="./type-system/$1ypes-tuple.html">tuple type</a> whose cardinality restriction is a subtype of <code>[0..0]</code>. The only instance of such a type is the empty tuple (<code>&lt;&gt;</code>).
+As the canonical default type of a <a href="./types-tuple.html">tuple type</a> whose cardinality restriction is a subtype of <code>[0..0]</code>. The only instance of such a type is the empty tuple (<code>&lt;&gt;</code>).
 </li>
 <li>
-As the canonical element type of a <a href="./type-system/$1ypes-set.html">set type</a> whose cardinality restriction is a subtype of <code>[0..0]</code>. The only instance of such a type is the empty set (<code>∅</code>).
+As the canonical element type of a <a href="./types-set.html">set type</a> whose cardinality restriction is a subtype of <code>[0..0]</code>. The only instance of such a type is the empty set (<code>∅</code>).
 </li>
 <li>
-As the canonical key type and value type of a <a href="./type-system/$1ypes-map.html">map type</a> whose cardinality restriction is a subtype of <code>[0..0]</code>. The only instance of such a type is the empty map (<code>{}</code>).
+As the canonical key type and value type of a <a href="./types-map.html">map type</a> whose cardinality restriction is a subtype of <code>[0..0]</code>. The only instance of such a type is the empty map (<code>{}</code>).
 </li>
 <li>
-As the attribute value type of an uninstantiable <a href="./type-system/$1ypes-object.html">object type</a>.
+As the attribute value type of an uninstantiable <a href="./types-object.html">object type</a>.
 </li>
 <li>
-As a contravariant type parameter: the write type of a <a href="./type-system/$1ypes-variable.html">variable type</a>, a parameter type of a <a href="./type-system/$1ypes-function.html">function type</a> or <a href="./type-system/$1ypes-continuation.html">continuation type</a>, or the return type of a continuation type. As the write type of a variable type, it signifies that no value may be written to the variable; the variable is read-only.
+As a contravariant type parameter: the write type of a <a href="./types-variable.html">variable type</a>, a parameter type of a <a href="./types-function.html">function type</a> or <a href="./types-continuation.html">continuation type</a>, or the return type of a continuation type. As the write type of a variable type, it signifies that no value may be written to the variable; the variable is read-only.
 </li>
 <li>
 As the idempotent initial value of an accumulator variable whose intermediate and final results represent a chain of type unions. (Remember the identity law that states that the type union of <code>⊥</code> with some type <code>A</code> is always <code>A</code>).
 </li>
 <li>
-As the <a href="./type-system/$1ype-relations.html">type intersection</a> of disjoint types.
+As the <a href="./type-relations.html">type intersection</a> of disjoint types.
 </li>
 <li>
 As the result of a semantic restriction. In this context, it indicates that a particular invocation of the restricted method does not return.
 </li>
 <li>
-As the result type of a <a href="./type-system/$1ypes-send-phrase.html">send phrase</a> type, to indicate that the represented message send does not return.
+As the result type of a <a href="./types-send-phrase.html">send phrase</a> type, to indicate that the represented message send does not return.
 </li>
 </ul>
 <p>
@@ -80,10 +80,10 @@ As the result type of a <a href="./type-system/$1ypes-send-phrase.html">send phr
 </p>
 <ul>
 <li>
-As a <a href="./type-system/$1ype-annotations.html">type annotation</a> in a variable declaration, function parameter declaration, or primitive failure variable declaration.
+As a <a href="./type-annotations.html">type annotation</a> in a variable declaration, function parameter declaration, or primitive failure variable declaration.
 </li>
 <li>
-As the <a href="./type-system/$1ype-inference.html">inferred type</a> of a constant definition, initialization expression, assignment expression, or message argument expression.
+As the <a href="./type-inference.html">inferred type</a> of a constant definition, initialization expression, assignment expression, or message argument expression.
 </li>
 <li>
 As the inferred type of a module-level statement or a non-last statement of a function definition.

@@ -23,7 +23,7 @@
 <iframe src="/_images/type-system/type-system-type-focus.svg" seamless></iframe>
 </div>
 <p>
-Since <code><a href="./types-top.html">⊤</a></code> is the most general type, then, by the <a href=".metatypes.html">law of metacovariance</a>, <code>{⊤}ᵀ</code> is the most general metatype. This type is usually referred to as <code>type</code> in Avail code. Every type is an instance of <code>type</code> and every metatype is a subtype of <code>type</code>. It is a sibling of <code><a href="./types-nontype.html">nontype</a></code>, and every value is either an instance of <code>nontype</code> or <code>type</code>.
+Since <code><a href="./types-top.html">⊤</a></code> is the most general type, then, by the <a href="./metatypes.html">law of metacovariance</a>, <code>{⊤}ᵀ</code> is the most general metatype. This type is usually referred to as <code>type</code> in Avail code. Every type is an instance of <code>type</code> and every metatype is a subtype of <code>type</code>. It is a sibling of <code><a href="./types-nontype.html">nontype</a></code>, and every value is either an instance of <code>nontype</code> or <code>type</code>.
 </p>
 <p>
 Consider <code>⊤</code>, <code>any</code>, and <code>nontype</code>. None of these are subtypes of <code>type</code>. In fact, the first two are supertypes of <code>type</code> and the third is a sibling. Yet these are types, and therefore instances of <code>type</code>. Every type is a value, so <code>type</code> must be an instance of both <code>⊤</code> and <code>any</code>. These facts taken together imply that <code>any</code> and <code>type</code> are mutually instances of each other! This is natural enough, given the criteria for membership in each, but it does not necessarily sit well with intuition.
