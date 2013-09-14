@@ -124,18 +124,23 @@ blue[wavelength]   := [450..494] nm;
 indigo[wavelength] := [420..449] nm;
 violet[wavelength] := [380..419] nm;
 
-/* Because the atom type is not parametric on its property key or value types,
- * a type cast is necessary to get a property value back out. This helper
- * method hides the gory details so that they don't show up in general usage.
- */
+/* A helper method to read the wavelength. */
 Method "_'s⁇wavelength" is
 [
 	color : rainbow color
 |
-	/* "_[_]" only knows that the result is "any", so use a type cast to
-	 * strengthen it to a dimensioned integral type.
-	 */
-	cast color[wavelength] into [w : [380..750] nm's type | w]
+	color[wavelength]
+] : any;
+
+/* Because the atom type is not parametric on its property key or value types,
+ * a semantic restriction is necessary to get a property value back out without
+ * loss of strength.
+ */
+Semantic restriction "_'s⁇wavelength" is
+[
+	color : rainbow color's type
+|
+	[380..750] nm's type
 ];
 
 /* This method looks up a color by its wavelength. (Note that Greek minuscule
