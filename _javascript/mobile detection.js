@@ -20,7 +20,6 @@ var isMobile = {
 };
 
 var onMobileDevice = isMobile.any();
-if( !onMobileDevice ) {
 	function addStyleSheet(csshref)
 	{
 		var $ = document; // shortcut
@@ -31,6 +30,10 @@ if( !onMobileDevice ) {
 	    link.type = "text/css";
 	    head.appendChild(link);
 	}
+
+if( !onMobileDevice ) {
 	addStyleSheet("http://fonts.googleapis.com/css?family=Raleway:700|Lato:300,400");
 	addStyleSheet("http://avail.local/_css/fontfamily.css");			    
+} else {
+	addStyleSheet("http://avail.local/_css/webfontkit-20130914-190724/mobileFont.css");			    
 }
