@@ -1,0 +1,119 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+<!--#include virtual="/_include/sh-head.ssi" -->
+	
+		<title>Avail - Tutorials - Hello, world!</title>
+	
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+
+<h2 class="content-title">Hello, world!</h2>
+
+<h3><a id="Summar">Summary</a></h3>
+<p>In the fine tradition of programming, we are going to display a friendly, optimistic greeting message. This message is written to the standard output stream, so if you are running Avail from a console, then the greeting will be displayed on the console.</p>
+
+<p>Building and running the program should look something like this:</p>
+
+<div class="restricted-width-container">
+<div class="console code-block">localhost:~/avail$ availc "Hello World"
+localhost:~/avail$ avail "Greet"
+Hello, world!
+localhost:~/avail$ </div>
+</div>
+
+<p>Just feel the optimism effervescing from those happy pixels!</p>
+
+		
+<h3><a id="Prerequisites">Prerequisites</a></h3>
+<p>There are no prerequisites for appreciating this tutorial. You don't need to know anything about programming in Avail, so this is an excellent place to begin.</p>
+
+<h3><a id="Goals">Goals</a></h3>
+<ul>
+<li>Learn the basic anatomy of an Avail source module.</li>
+<li>Learn how to import the Avail standard library, <code>"Avail"</code>, which includes the standard grammar and vocabulary of an Avail program.</li>
+<li>Learn how to create a simple method.</li>
+<li>Learn how to define an entry point.</li>
+<li>Learn how to print a <code><a href="/about-avail/documentation/type-system/types-string.html">string</a></code> to standard output.</li>
+</ul>
+
+<h3><a id="Complete Sources">Complete Sources</a></h3>
+<ul>
+<li><code><a href="/_examples/Hello%20World.avail">Hello World.avail</a></code></li>
+</ul>
+
+<h3><a id="Walkthrough">Walkthrough</a></h3>
+<p>An Avail program is described by a collection of source modules. A source module is just a plain-text file that encodes some part of an Avail program. Over the course of many tutorials, you will glean what exactly goes into a source module. For now, let's concentrate on the two major parts of every source module: the <strong>module header</strong> and the <strong>module body</strong>.</p>
+
+<p>Let's start by looking at the header.</p>
+
+<script type="syntaxhighlighter" class="brush: plain; first-line: 33"><![CDATA[
+Module "Hello"
+Uses "Avail"
+Entries	"Greet"
+Body]]>
+</script>
+
+<p>The purpose of the header is to describe the module in very broad strokes. To that effect, it includes metadata that says what the module is named, upon which modules it depends, what syntax it introduces, and so forth. Let's break this header down.</p>
+
+<p><strong>Line 33.</strong> Every module header (and thus source module) begins with the <code>Module</code> keyword and its name. In this case, the module is named <code>"Hello World"</code>. This <code><a href="/about-avail/documentation/type-system/types-string.html">string</a></code> is arbitrary and may include any Unicode character, but must match the name of the file (sans the <code>.avail</code> extension). If the module name recorded here does not match the file name, then the compiler issues an error message. This is an important crosscheck that you are working on the right module!</p>
+
+<p><strong>Line 34.</strong> Remember how I said that an Avail program is described by a collection of source modules? <code>Hello World.avail</code> is not our entire program. It is merely the tip of an enormous iceberg. That iceberg is the Avail standard library, which is helpfully called <code>"Avail"</code>. The <code>Uses</code> keyword introduces the list of modules that our module needs to import in order to gain access to features that it wants to use. In this case, the standard library contains everything that we need to deliver a boisterous greeting to planet Earth, so it is the only module that we need to import.</p>
+
+<p>(It is worth mentioning that the Avail standard library has a deeper obligation than the standard libraries of other programming languages. Without the Avail standard library, there is literally no syntax other than the rigid syntax of module headers. If you didn't <code>Use "Avail"</code>, then you wouldn't be able to declare types, perform arithmetic, use control structures, etc. Some of these restrictions might be okay if you were working with a domain-specific language, but not so for general purpose programming.)</p>
+
+<p><strong>Line 35.</strong> Most programming languages require that each complete program implement a privileged <strong>main</strong> operation that specifies where execution should begin. While this uniformity is simple, it is also somewhat simpleminded. It is often the case that a corpus of code could reasonably have many viable <strong>entry points</strong>, each of which serves as the starting place for some useful application. The keyword <code>Entries</code> precedes a list of operations that should be considered viable outermost operations that can be invoked from outside the program. Our module defines a single entry point, <code>"Greet"</code>.</p>
+
+<p><strong>Line 36.</strong> The keyword <code>Body</code> marks the end of the module header, and consequently the beginning of the module body. So let's turn our attention to the module body now.</p>
+
+<script type="syntaxhighlighter" class="brush: plain; first-line: 38"><![CDATA[
+Method "Greet" is [ Print: "Hello, world!\n"; ];]]>
+</script>
+
+<p><strong>Line 38</strong> defines an operation named <code>"Greet"</code>. In Avail, a named operation is called a <strong>method</strong>. Much will be said about methods at a later time, but right now what's important is that this method's name matches the name given after the keyword <code>Entries</code> on <strong>line 35</strong>. If the compiler doesn't find a method named <code>"Greet"</code> while parsing the source module, then it will issue an error message to the effect that a declared entry point doesn't exist.</p>
+
+<p>The standard library exports a method named <code>"Method_is_"</code> — pronounced <em>method blank is blank</em> — whose purpose is to define new methods. The blanks, formally called underscores, indicate argument positions in the grammar specified by the method name. <code>"Method_is_"</code> accepts two arguments. The first is a <code>string</code> that represents the name of the new method. The second is a <code><a href="/about-avail/documentation/type-system/types-function.html">function</a></code> that supplies code to implement the method. The number of arguments permitted by the function — its <strong>arity</strong> — must agree with the number of argument positions present in the method name. <code>"Greet"</code> has no blanks, so the associated function must not accept any arguments.</p>
+
+<p>A place in the source code where a method is used is termed a <strong>call site</strong>. At the call site of <code>"Method_is_"</code> on <strong>line 38</strong>, the actual arguments are <code>"Greet"</code> and <code>[Print: "Hello, world!\n";]</code>. So the new method will be called <code>"Greet"</code>, which is what we expect.</p>
+
+<p>But what will the new method do? You've probably already figured this out, even if you haven't worked out the details: the new <code>"Greet"</code> method will print <code>"Hello, world!\n"</code>. The square brackets — <code>[</code> and <code>]</code> — delimit a <code>function</code>. The contents of the square brackets are the <strong>function body</strong> — this is the code that the function executes when it is <strong>applied</strong>. In this case, the code comprises a single <strong>statement</strong>: <code>Print: "Hello, world!\n";</code>. Every statement ends with a semicolon, and must produce a <strong>side effect</strong> like defining a new method or printing something.</p>
+
+<p>The standard library exports a method named <code>"Print:_"</code> — pronounced <em>print blank</em> — which accepts a <code>string</code> that should be printed immediately to the standard output stream. At our call site, this argument is <code>"Hello, world!\n"</code>. Harking back to a tradition of many other programming languages, the <strong>escape sequence</strong> <code>\n</code> represents a line feed.</p>
+
+<p>And that's it! Whew! That was a whole lot more explanation than code, but we covered a lot of basic ground together.</p>
+
+<h3><a id="Further Reading">Further Reading</a></h3>
+<p>Throughout the tutorials, we will be seeing many more string literals. Learning more about these <a href="/about-avail/documentation/type-system/types-string.html">here</a>.</p>
+
+<p>The intractably curious might be interested in learning more about the history of the <a href="http://en.wikipedia.org/wiki/Hello_world_program">"Hello world" program</a>.</p>
+
+<h3><a id="Exercises">Exercises</a></h3>
+<p>Here are two ideas for starting easy.</p>
+<ol>
+<li>Change the name of the <code>"Greet"</code> method to something else, like <code>"Hello"</code> or <code>"Display global greeting"</code>.</li>
+<li>Change the text that is displayed. You might also want to change the name of the <code>"Greet"</code> so that it remains appropriate for your new text.</li>
+</ol>
+
+<tr class="book-nav">
+	<div class="book-nav">
+		<li class="book-nav-up"><a class="book-nav-up" href="../index.html">Return to Learn</a></li>
+	</div>
+</tr>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+<!--#include virtual="/_include/sh-bottom.ssi" -->
+
+	</body>
+
+</html>
