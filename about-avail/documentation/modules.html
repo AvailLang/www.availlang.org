@@ -27,7 +27,7 @@ In Avail, programming in the large is accomplished by building and organizing a 
 <h3>Composition of a Module</h3>
 A module comprises a <a href="#Header">header</a> and a <a href="#Body">body</a>. Currently the header is a hard-wired syntactical construct which introduces the source text to the Avail compiler. (NB: In the future this construct may be provided by means of a special bootstrap macro that may be replaced or augmented by an Avail developer). A body consists of zero or more program elements. While some of these may be arbitrary statements, most are expected to define constants, variables, and methods.
 </p>
-<a name="Header"></a><h4>Header</h4>
+<a id="Header"></a><h4>Header</h4>
 <p>
 A <em>header</em> has the following syntax:
 </p>
@@ -66,7 +66,7 @@ A filtered import list is a parenthesized list of zero or more string literals (
 </p><p>
 The <code>Uses</code> section is syntactically identical to the <code>Extends</code> section. It also checks version compatibility of imported modules, filters foreign names, and makes foreign names available for use. It differs in that messages imported from modules in this section have visibility private to the importing module; they will not be re-exported to a client that extends or uses the importing module. 
 </p>
-<a name="Body"></a><h4>Body</h4>
+<a id="Body"></a><h4>Body</h4>
 <p>
 The <em>body</em>, i.e. the text following the <code>Body</code> keyword, will be understood by the compiler as a series of statements that should be evaluated in lexical order. These may be arbitrary statements with arbitrary side effects. Pragmatically, most of these statements should define new constants, variables, and messages, though module-level statements may also implement useful unit tests. By convention, a module's newly defined messages should either <code>1)</code> introduce new messages or <code>2)</code> override imported messages to specialize locally defined types.
 </p>
@@ -103,7 +103,7 @@ Here are several sample canonical names:
 </p><p>
 A canonical name serves to locate a module <em>logically</em> to an Avail runtime as well as <em>physically</em> to an Avail compiler hunting for source text or an Avail linker hunting for compiled objects.
 </p>
-<a name="ModuleNameResolution"></a><h3>Module Name Resolution</h3>
+<a id="ModuleNameResolution"></a><h3>Module Name Resolution</h3>
 <p>
 As mentioned above, a module is permitted to reference other modules in its header via local names only. The Avail runtime follows a standard procedure to resolve a local name to a canonical name and then ultimately to an absolute file reference:
 <ul>
@@ -116,7 +116,7 @@ As mentioned above, a module is permitted to reference other modules in its head
 	<li>If <code>C:\Avail\Third Parties\Sensational\A.avail\M.avail</code> is a directory, then redirect the file reference to the package representative: <code>C:\Avail\Third Parties\Sensational\A.avail\M.avail\M.avail</code>. If this file reference is a regular file, then resolution has completed; this is the file reference that the resolver should answer. Otherwise resolution has failed.</li>
 </ul>
 </p>
-<a name="ModuleRenaming"></a><h4>Module Renaming</h4>
+<a id="ModuleRenaming"></a><h4>Module Renaming</h4>
 <p>
 Note that modules other than representatives residing within packages that are siblings of the referrer are generally unnameable and therefore inaccessible. This is a design feature of the Avail module system. It effectively seals a package against access by modules that reside above it (i.e. closer to a root). This allows a package to hide modules private to its implementation while still permitting a package to designate a single module, the package representative, as a public interface usable by modules within the enclosing package only. Modules are permitted to "reach up" arbitrarily far and import any modules directly above them. This allows, for instance, two subsystems of an application, such as UI and logging, to interact with one another.
 </p><p>
