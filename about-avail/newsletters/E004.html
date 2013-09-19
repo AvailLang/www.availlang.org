@@ -1,0 +1,45 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Avail Newsletters, Edition #3: Victim of Success</title>
+	
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+
+<a href="./index.html"><h3 class="content-supertitle">Victim of Success</h3></a>
+<h2 class="content-title">Edition #4 - September 18, 2013</h2>
+		
+<h3>Tutorials</h3>
+<p>Cast a gander at the sidebar. See that <a href="/about-avail/learn/index.html">Learn</a> link? Here can now be found a small but growing collection of resources for learning Avail. Right now there are only two tutorials. One is the obligatory <code><a href="/about-avail/learn/tutorials/hello-world.html">"Hello, world!"</a></code> tutorial, which elaborates on the infamous archetypal introductory program at lengths which can only be considered Olympian. The other is a much more interesting walkthrough of building a <a href="/about-avail/learn/tutorials/rpn.html">Reverse Polish Notation</a> expression language. It shows how to build a fully-fledged, if minimal, RPN domain-specific language (DSL) using only four method renames and a single method with two trivial statements. Building DSLs is where Avail really shines!</p>
+
+<h3>New unit tests</h3>
+<p>As we near our alpha release, we are switching focus to improving the quality of our existing codebase. Last week saw the introduction of over fifty new unit tests. There are currently 285 unit tests defined in the Avail standard library, testing a wide range of basic operations and control structures, as well as more esoteric features like computational backtracking, generators, write reactors, and so forth. The volume of test cases is going to swell in the coming days.</p>
+
+<h3>Inlined method dispatch</h3>
+<p>Avail supports multiple dispatch on all method arguments. In order to implement this efficiently, we use a decision tree and an algorithm that supports argument-at-a-time type analysis, starting with the arguments that prune the decision tree most effectively. In order to further optimize method dispatch, the dynamic translator now inlines this decision tree directly into the generated L2 code whenever it deems it profitable to do so. For correctness, logic also exists to deoptimize the generated L2 code whenever the contingent decision trees are updated. We expect a significant performance boost when we begin actually inlining ordinary method definitions also.</p>
+
+<tr class="book-nav">
+	<div class="book-nav">
+		<li class="book-nav-back"><a class="book-nav-back" href="./E003.html">‹ Previous</a></li>
+		<li class="book-nav-spacer">|</li>
+		<li class="book-nav-up"><a class="book-nav-up" href="./index.html">Return to Newsletters</a></li>
+	</div>
+</tr>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>

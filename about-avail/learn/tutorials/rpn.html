@@ -1,0 +1,169 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+<!--#include virtual="/_include/sh-head.ssi" -->
+	
+		<title>Avail - Tutorials - Reverse Polish Notation</title>
+	
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+
+<h2 class="content-title">Reverse Polish Notation</h2>
+
+<h3><a id="Summary">Summary</a></h3>
+<p><a href="http://en.wikipedia.org/wiki/Reverse_Polish_notation">Reverse Polish Notation</a> (RPN) is an arithmetic notation in which the operators follow their operands. Assuming operators with fixed arities, this postfix operator scheme obviates the need for parentheses. There are also several studies that indicate that users of RPN calculators make fewer mistakes than users of formula calculators.</p>
+
+<p>At some point during formal education, many computer science students are tasked with creating an RPN calculator. There are several different approaches to this project, depending on the pedagogical emphasis, but perhaps the most common involves building a parser that accepts an RPN formula and uses a stack-based interpreter to produce a result.</p>
+
+<p>In this tutorial, we remove all possible educational opportunities from the task of building an RPN calculator by presenting a technique that allows a programmer to bypass all that tedious mucking about with parsers, stacks, and interpreters.</p>
+
+<p>As a bonus, our RPN domain-specific language (DSL) interoperates directly with regular Avail code. Securing the same bonus in a traditional programming language involves rebuilding its parser, thereby causing it to no longer be the original language. Avail, on the other hand, is designed to sail the <a href="http://en.wikipedia.org/wiki/Ship_of_theseus">ship of Theseus</a> all the way home.</p>
+
+<p>Building and running the program should look something like this:</p>
+
+<div class="restricted-width-container">
+<div class="console code-block">localhost:~/avail$ availc "RPN"
+localhost:~/avail$ avail "RPN 5 5 3 × +"
+20
+localhost:~/avail$ avail "RPN 2 6 - 4 +"
+0
+localhost:~/avail$ avail "RPN 144 8 8 8 × + ÷"
+2
+localhost:~/avail$ </div>
+</div>
+
+<h3><a id="Prerequisites">Prerequisites</a></h3>
+<ul>
+<li>Understand the material presented in the <a href="./hello-world.html"><code>"Hello, world!"</code> tutorial</a>.</li>
+</ul>
+
+<h3><a id="Goals">Goals</a></h3>
+<ul>
+<li>Learn how to use an import filter.</li>
+<li>Learn how to rename an imported method name.</li>
+<li>Learn how to use horizontal ellipsis (<code>U+2026</code>) in an import filter.</li>
+<li>Learn how to export method names for use by other modules.</li>
+<li>Learn the four basic arithmetic methods, <code>"_+_"</code>, <code>"_-_"</code>, <code>"_×_"</code>, and <code>"_÷_"</code>.</li>
+<li>Learn how to "stringify" an arbitrary value (using <code>"“_”"</code>).</li>
+</ul>
+
+<h3><a id="Complete Sources">Complete Sources</a></h3>
+<ul>
+<li><code><a href="/_examples/RPN%20Language.avail">RPN Language.avail</a></code></li>
+<li><code><a href="/_examples/RPN.avail">RPN.avail</a></code></li>
+</ul>
+
+<h3><a id="Walkthrough">Walkthrough</a></h3>
+<p>This project comprises two small source modules. Let's turn our attention first to <strong>"RPN Language.avail"</strong>, which defines the RPN DSL.</p>
+
+<script type="syntaxhighlighter" class="brush: plain; first-line: 34">
+<![CDATA[
+Uses
+	"Avail" =
+	(
+		"_+_" → "__+",
+		"_-_" → "__-",
+		"_×_" → "__×",
+		"_÷_" → "__÷",
+		…
+	)
+]]>
+</script>
+
+<p>Essentially, <strong>lines 35-42</strong> just import the standard library, but there are a few new twists here. First notice the equals and the parentheses. This syntax establishes an <strong>import filter</strong>. An import filter allows you to cherry pick the method names that you want to access. The only names available for cherry picking are those which the target module exports. More about exporting method names below.</p>
+
+<p>Note the structural similarities of <strong>lines 37-40</strong>. Each line comprises a pair of string literals separated by a rightwards arrow (<code>U+2192</code>). The first string is the name of a method exported by the Avail standard library. The second string is the name by which that method should be known locally. So the pairing expresses the programmer's desire to rename a method locally.</p>
+
+<p>Taking <strong>line 39</strong> as a concrete example, the standard library exports a method <code>"_×_"</code> which we would like to call <code>"__×"</code> in the body of this module. Note that this is two blanks, each of which represents an argument position, followed by a multiplication sign (<code>U+00D7</code>). As you probably guessed, this method multiplies two <code><a href="/about-avail/documentation/type-system/types-number.html">number</a></code>s — the multiplicand and the multiplier — together to obtain their product. But in this module, these operations use postfix notation rather than infix notation. Through the alchemy of method renaming, <strong>lines 37-40</strong> conjure our RPN DSL into existence virtually <em>ex nihilo</em>. We didn't need to build a single method in order to write the RPN DSL!</p>
+
+<p>(Note that, as a consequence of these method renames, <em>the arithmetic methods are not available in this module under their original names</em>. This is just fine for our purposes here, but if we needed to use the original names alongside the new ones, for the moment just rest assured that this is both possible and easy.)</p>
+
+<p>Turning our attention to <strong>line 41</strong>, we see a lone ellipsis hanging out. Read this as <em>and the rest</em>. It indicates that any exported methods not named previously within the import filter should be imported with their expected names. An ellipsis in an import filter can only occur as the last item.</p>
+
+<script type="syntaxhighlighter" class="brush: plain; first-line: 43">
+<![CDATA[
+Names
+		"__+",
+		"__-",
+		"__×",
+		"__÷",
+		"RPN_"
+]]>
+</script>
+
+<p>Let's move on to <strong>lines 43-48</strong>. On <strong>line 43</strong>, we encounter the keyword <code>Names</code>. Within a module header, this begins the eponymous <strong>names section</strong>. The names section enumerates those method names which <em>1)</em> are introduced in this module and <em>2)</em> are available for import by another module. On <strong>lines 44-47</strong>, we recognize the righthand sides of the renaming pairs from <strong>lines 37-40</strong>. Each renaming pair introduced its righthand side as a new method name, so these names are eligible for export. <strong>Line 49</strong> names the lone method, <code>"RPN_"</code> that we need to implement in order to build the RPN calculator.</p>
+
+<script type="syntaxhighlighter" class="brush: plain; first-line: 51">
+<![CDATA[
+Method "RPN_" is
+[
+	expression : number
+|
+	Print: “expression”;
+	Print: "\n";
+];
+]]>
+</script>
+
+<p><strong>Lines 51-57</strong> define the method <code>"RPN_"</code>. On <strong>line 53</strong>, <code>expression : number</code> is a <strong>parameter declaration</strong> which introduces a parameter named <code>expression</code> of type <code>number</code>. The parameters of a <code><a href="/about-avail/documentation/type-system/types-function.html">function</a></code> are supplied in the same order as the argument positions specified by the method name. <code>"RPN_"</code> has a single argument position, the blank, which corresponds to the only parameter declaration of the function. The vertical line on <strong>line 54</strong> visually separates the parameter declarations from the function body.</p>
+
+<p><strong>Line 55.</strong> Here we see another call site of <code>"Print:_"</code>. But something interesting is happening here. Recall that <code>"Print:_"</code> requires a <code><a href="/about-avail/documentation/type-system/types-string.html">string</a></code>, and <code>expression</code> is a <code>number</code>. See those "smart quotes" — left (<code>U+201C</code>) and right double quotation mark (<code>U+201D</code>), respectively — around <code>expression</code>? This is a call site of the method <code>"“_”"</code>, the stringification method. It accepts an arbitrary value — an instance of <code><a href="/about-avail/documentation/type-system/types-any.html">any</a></code> — and produces a <code>string</code> that represents that value textually. In the case of a <code>number</code>, it will produce a suitable numeral. The compiler arranges for the two methods <code>"Print:_"</code> and <code>"“_”"</code> to compose in the only way that is semantically valid, so at runtime <code>"“_”"</code> will run first and <code>"Print:_"</code> will run second.</p>
+
+<p>Now let's move on to <strong>"RPN.avail"</strong>.</p>
+
+<script type="syntaxhighlighter" class="brush: plain; first-line: 33">
+<![CDATA[
+Module "RPN"
+Uses "RPN Language"
+Entries "RPN_"
+Body
+]]>
+</script>
+
+<p>Yep, that's the whole module. Notice that we don't import <code>"Avail"</code> this time. Instead, we import <code>"RPN Language"</code>, whose only exports were the four postfix arithmetic operators and <code>"RPN_"</code>. <em>These five methods constitute the entire grammar accessible in module <code>"RPN"</code>.</em> <small>(Well… this is <em>nearly</em> true. At the time of publication, 2013.09.18, some fundamental lexical constructs, like Arabic numerals, are also available automatically. In the future, there will be no automatic syntax other than module header syntax. Were that the case, <code>"RPN Language"</code> would also have to export the ability to construct numeric literals from lexical information in order to complete the RPN DSL.)</small></p>
+
+<p>Since <strong>line 35</strong> names the imported method <code>"RPN_"</code> as an entry point, the Avail runner uses the grammar available to the module <code>"RPN"</code> <em>rather than the grammar available to the module <code>"RPN Language"</code></em> in deciding how to parse external call sites to <code>"RPN_"</code>. Recall the following excerpt from the sample transcript in the <a href="#Summary">Summary</a>:</p>
+
+<div class="restricted-width-container">
+<div class="console code-block">localhost:~/avail$ avail "RPN 144 8 8 8 × + ÷"
+2</div>
+</div>
+
+<p>This RPN formula constitutes an <strong>external call site</strong> to the method <code>"RPN_"</code>, because it is compiled and executed external to any source module. The only outermost syntax available here is <code>"RPN_"</code>, and the only subordinate syntaxes that are both grammatically and semantically valid as input at the external call site are <code>"__+"</code>, <code>"__-"</code>, <code>"__×"</code>, and <code>"__÷"</code>. No other expressions are legal here, so our program really is a complete RPN DSL. It has exactly those facilities which we explicitly provided, and no others.</p>
+
+<h3><a id="Further Reading">Further Reading</a></h3>
+<p>For those who wish to learn more about calculator input methods, try starting <a href="http://en.wikipedia.org/wiki/Calculator_input_methods">here</a>.</p>
+
+<p>If you have an interest in Greek mythology, then you may wish to read more about the founder-hero <a href="http://en.wikipedia.org/wiki/Theseus">Theseus</a>. His legendary voyage from Crete to Athens inspired philosophers like <a href="http://en.wikipedia.org/wiki/Plutarch">Plutarch</a>, <a href="http://en.wikipedia.org/wiki/Thomas_Hobbes">Thomas Hobbes</a>, and <a href="http://en.wikipedia.org/wiki/John_Locke">John Locke</a> to wonder about the nature of identity, a topic that is not only intriguing in its own right but also central to the Avail programming language.</p>
+
+<h3><a id="Exercises">Exercises</a></h3>
+<ul>
+<li>Add missing functionality to the RPN DSL. Start with exponentiation (<code>"_^_"</code>) and factorial (<code>"_`!"</code>), then go wild.</li>
+<li>Implement arity-2 versions of <a href="http://en.wikipedia.org/wiki/Scheme_(programming_language)">Scheme</a>'s arithmetic operators using the method renaming strategy.</li>
+</ul>
+
+<tr class="book-nav">
+	<div class="book-nav">
+		<li class="book-nav-back"><a class="book-nav-back" href="./hello-world.html">‹ Hello, world!</a></li>
+		<li class="book-nav-spacer">|</li>
+		<li class="book-nav-up"><a class="book-nav-up" href="../index.html">Return to Learn</a></li>
+	</div>
+</tr>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+<!--#include virtual="/_include/sh-bottom.ssi" -->
+
+	</body>
+
+</html>

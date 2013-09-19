@@ -68,7 +68,7 @@ The <code>Uses</code> section is syntactically identical to the <code>Extends</c
 </p>
 <a id="Body"></a><h4>Body</h4>
 <p>
-The <em>body</em>, i.e. the text following the <code>Body</code> keyword, will be understood by the compiler as a series of statements that should be evaluated in lexical order. These may be arbitrary statements with arbitrary side effects. Pragmatically, most of these statements should define new constants, variables, and messages, though module-level statements may also implement useful unit tests. By convention, a module's newly defined messages should either <code>1)</code> introduce new messages or <code>2)</code> override imported messages to specialize locally defined types.
+The <em>body</em>, i.e. the text following the <code>Body</code> keyword, will be understood by the compiler as a series of statements that should be evaluated in lexical order. These may be arbitrary statements with arbitrary side effects. Pragmatically, most of these statements should either <em>1)</em> define new constants, variables, messages, grammatical restrictions, semantic restrictions, and unit tests, or <em>2)</em> extend the methods denoted by imported messages with new behavior.
 </p>
 <h3>Organization of Modules</h3>
 <p>

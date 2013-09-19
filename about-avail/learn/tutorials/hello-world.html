@@ -43,9 +43,9 @@ localhost:~/avail$ </div>
 <ul>
 <li>Learn the basic anatomy of an Avail source module.</li>
 <li>Learn how to import the Avail standard library, <code>"Avail"</code>, which includes the standard grammar and vocabulary of an Avail program.</li>
-<li>Learn how to create a simple method.</li>
 <li>Learn how to define an entry point.</li>
-<li>Learn how to print a <code><a href="/about-avail/documentation/type-system/types-string.html">string</a></code> to standard output.</li>
+<li>Learn how to create a simple method (using <code>"Method_is_"</code>).</li>
+<li>Learn how to print a <code><a href="/about-avail/documentation/type-system/types-string.html">string</a></code> to standard output (using <code>"Print:_"</code>).</li>
 </ul>
 
 <h3><a id="Complete Sources">Complete Sources</a></h3>
@@ -58,11 +58,13 @@ localhost:~/avail$ </div>
 
 <p>Let's start by looking at the header.</p>
 
-<script type="syntaxhighlighter" class="brush: plain; first-line: 33"><![CDATA[
+<script type="syntaxhighlighter" class="brush: plain; first-line: 33">
+<![CDATA[
 Module "Hello"
 Uses "Avail"
 Entries	"Greet"
-Body]]>
+Body
+]]>
 </script>
 
 <p>The purpose of the header is to describe the module in very broad strokes. To that effect, it includes metadata that says what the module is named, upon which modules it depends, what syntax it introduces, and so forth. Let's break this header down.</p>
@@ -77,8 +79,10 @@ Body]]>
 
 <p><strong>Line 36.</strong> The keyword <code>Body</code> marks the end of the module header, and consequently the beginning of the module body. So let's turn our attention to the module body now.</p>
 
-<script type="syntaxhighlighter" class="brush: plain; first-line: 38"><![CDATA[
-Method "Greet" is [ Print: "Hello, world!\n"; ];]]>
+<script type="syntaxhighlighter" class="brush: plain; first-line: 38">
+<![CDATA[
+Method "Greet" is [ Print: "Hello, world!\n"; ];
+]]>
 </script>
 
 <p><strong>Line 38</strong> defines an operation named <code>"Greet"</code>. In Avail, a named operation is called a <strong>method</strong>. Much will be said about methods at a later time, but right now what's important is that this method's name matches the name given after the keyword <code>Entries</code> on <strong>line 35</strong>. If the compiler doesn't find a method named <code>"Greet"</code> while parsing the source module, then it will issue an error message to the effect that a declared entry point doesn't exist.</p>
@@ -108,6 +112,8 @@ Method "Greet" is [ Print: "Hello, world!\n"; ];]]>
 <tr class="book-nav">
 	<div class="book-nav">
 		<li class="book-nav-up"><a class="book-nav-up" href="../index.html">Return to Learn</a></li>
+		<li class="book-nav-spacer">|</li>
+		<li class="book-nav-forward"><a class="book-nav-forward" href="./rpn.html">Reverse Polish Notation ›</a></li>
 	</div>
 </tr>
 
