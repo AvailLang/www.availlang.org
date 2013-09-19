@@ -30,7 +30,7 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-Module "Hello"
+Module "Hello World"
 Uses "Avail"
 Entries	"Greet"
 Body
