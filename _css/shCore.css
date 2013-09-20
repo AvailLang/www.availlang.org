@@ -33,10 +33,10 @@
   height: auto !important;
   left: auto !important;
   line-height: 1.1em !important;
-  margin: 0 !important;
+  margin: 0px !important;
   outline: 0 !important;
   overflow: visible !important;
-  padding: 0 !important;
+  padding: 0px !important;
   position: static !important;
   right: auto !important;
   text-align: left !important;
@@ -44,7 +44,7 @@
   vertical-align: baseline !important;
   width: auto !important;
   box-sizing: content-box !important;
-  font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !important;
+/*  font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !important; */  /* Because of mobile font stuff */
   font-weight: normal !important;
   font-style: normal !important;
   font-size: 1em !important;
@@ -54,7 +54,7 @@
 
 .syntaxhighlighter {
   width: 100% !important;
-  margin: 1em 0 1em 0 !important;
+ /* margin: 1em 0 1em 0 !important; */
   position: relative !important;
   overflow: auto !important;
   font-size: 1em !important;
@@ -92,14 +92,15 @@
   width: 100% !important;
   height: 100% !important;
   border: none !important;
-  background: white !important;
+/*  background: white !important; */
   padding-left: 1em !important;
   overflow: hidden !important;
   white-space: pre !important;
 }
 .syntaxhighlighter table td.gutter .line {
   text-align: right !important;
-  padding: 0 0.5em 0 1em !important;
+/*  padding: 0 0.5em 0 1em !important; */
+  padding: 0 0.5em 0 0 !important;      /* AVAIL add */
 }
 .syntaxhighlighter table td.code .line {
   padding: 0 1em !important;

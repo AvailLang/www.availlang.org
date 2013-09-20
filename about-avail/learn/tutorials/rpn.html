@@ -67,7 +67,8 @@ localhost:~/avail$ </div>
 <h3><a id="Walkthrough">Walkthrough</a></h3>
 <p>This project comprises two small source modules. Let's turn our attention first to <strong>"RPN Language.avail"</strong>, which defines the RPN DSL.</p>
 
-<script type="syntaxhighlighter" class="brush: plain; first-line: 34">
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 34">
 <![CDATA[
 Uses
 	"Avail" =
@@ -79,7 +80,7 @@ Uses
 		…
 	)
 ]]>
-</script>
+</script></div></div>
 
 <p>Essentially, <strong>lines 35-42</strong> just import the standard library, but there are a few new twists here. First notice the equals and the parentheses. This syntax establishes an <strong>import filter</strong>. An import filter allows you to cherry pick the method names that you want to access. The only names available for cherry picking are those which the target module exports. More about exporting method names below.</p>
 
@@ -91,7 +92,8 @@ Uses
 
 <p>Turning our attention to <strong>line 41</strong>, we see a lone ellipsis hanging out. Read this as <em>and the rest</em>. It indicates that any exported methods not named previously within the import filter should be imported with their expected names. An ellipsis in an import filter can only occur as the last item.</p>
 
-<script type="syntaxhighlighter" class="brush: plain; first-line: 43">
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 43">
 <![CDATA[
 Names
 		"__+",
@@ -100,11 +102,12 @@ Names
 		"__÷",
 		"RPN_"
 ]]>
-</script>
+</script></div></div>
 
 <p>Let's move on to <strong>lines 43-48</strong>. On <strong>line 43</strong>, we encounter the keyword <code>Names</code>. Within a module header, this begins the eponymous <strong>names section</strong>. The names section enumerates those method names which <em>1)</em> are introduced in this module and <em>2)</em> are available for import by another module. On <strong>lines 44-47</strong>, we recognize the righthand sides of the renaming pairs from <strong>lines 37-40</strong>. Each renaming pair introduced its righthand side as a new method name, so these names are eligible for export. <strong>Line 48</strong> names the lone method, <code>"RPN_"</code> that we need to implement in order to build the RPN calculator.</p>
 
-<script type="syntaxhighlighter" class="brush: plain; first-line: 51">
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 51">
 <![CDATA[
 Method "RPN_" is
 [
@@ -114,7 +117,7 @@ Method "RPN_" is
 	Print: "\n";
 ];
 ]]>
-</script>
+</script></div></div>
 
 <p><strong>Lines 51-57</strong> define the method <code>"RPN_"</code>. On <strong>line 53</strong>, <code>expression : number</code> is a <strong>parameter declaration</strong> which introduces a parameter named <code>expression</code> of type <code>number</code>. The parameters of a <code><a href="/about-avail/documentation/type-system/types-function.html">function</a></code> are supplied in the same order as the argument positions specified by the method name. <code>"RPN_"</code> has a single argument position, the blank, which corresponds to the only parameter declaration of the function. The vertical line on <strong>line 54</strong> visually separates the parameter declarations from the function body.</p>
 
@@ -122,14 +125,15 @@ Method "RPN_" is
 
 <p>Now let's move on to <strong>"RPN.avail"</strong>.</p>
 
-<script type="syntaxhighlighter" class="brush: plain; first-line: 33">
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 33">
 <![CDATA[
 Module "RPN"
 Uses "RPN Language"
 Entries "RPN_"
 Body
 ]]>
-</script>
+</script></div></div>
 
 <p>Yep, that's the whole module. Notice that we don't import <code>"Avail"</code> this time. Instead, we import <code>"RPN Language"</code>, whose only exports were the four postfix arithmetic operators and <code>"RPN_"</code>. <em>These five methods constitute the entire grammar accessible in module <code>"RPN"</code>.</em> <small>(Well… this is <em>nearly</em> true. At the time of publication, 2013.09.18, some fundamental lexical constructs, like Arabic numerals, are also available automatically. In the future, there will be no automatic syntax other than module header syntax. Were that the case, <code>"RPN Language"</code> would also have to export the ability to construct numeric literals from lexical information in order to complete the RPN DSL.)</small></p>
 

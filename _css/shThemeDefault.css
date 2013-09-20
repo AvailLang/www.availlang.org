@@ -15,13 +15,15 @@
  * Dual licensed under the MIT and GPL licenses.
  */
 .syntaxhighlighter {
-  background-color: white !important;
+/*  background-color: white !important; */
 }
 .syntaxhighlighter .line.alt1 {
-  background-color: white !important;
+/*  background-color: white !important; */
+  color: inherit !important;      /* AVAIL add */
 }
 .syntaxhighlighter .line.alt2 {
-  background-color: white !important;
+/*  background-color: white !important; */
+  color: inherit !important;     /* AVAIL add */
 }
 .syntaxhighlighter .line.highlighted.alt1, .syntaxhighlighter .line.highlighted.alt2 {
   background-color: #e0e0e0 !important;
@@ -36,10 +38,12 @@
   color: #afafaf !important;
 }
 .syntaxhighlighter .gutter .line {
-  border-right: 3px solid #6ce26c !important;
+/*  border-right: 3px solid #6ce26c !important; */
+  border-right: 2px solid #bbbbbb !important;       /* AVAIL add */
 }
 .syntaxhighlighter .gutter .line.highlighted {
-  background-color: #6ce26c !important;
+/*  background-color: #6ce26c !important; */
+  background-color: #bbbbbb !important;           /* AVAIL add */
   color: white !important;
 }
 .syntaxhighlighter.printing .line .content {
@@ -61,7 +65,7 @@
 }
 .syntaxhighlighter .toolbar {
   color: white !important;
-  background: #6ce26c !important;
+  background: #6ce26c !important; 
   border: none !important;
 }
 .syntaxhighlighter .toolbar a {
@@ -71,7 +75,8 @@
   color: black !important;
 }
 .syntaxhighlighter .plain, .syntaxhighlighter .plain a {
-  color: black !important;
+  /*color: black !important;*/
+  color: inherit !important;           /* AVAIL add */
 }
 .syntaxhighlighter .comments, .syntaxhighlighter .comments a {
   color: #008200 !important;
