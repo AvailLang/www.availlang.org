@@ -13,7 +13,7 @@ img, object, embed, video {
 /********** Overrides of default HTML styling **********/
 a {
 	color: green;
-	font-weight: 400;
+	font-weight: 500;
 	text-decoration: inherit; /* no underline */
 }
 
@@ -44,6 +44,7 @@ body, button, input, select, textarea {
 
 h1, h2, h3, h4, h5 {
 	color: green;
+	font-family: 'Raleway', sans-serif;
 }
 h2 {
 	font-size: 22px;
@@ -68,6 +69,17 @@ h5 {
 
 
 /********** Custom visual styles **********/
+
+/* Style for a warning about missing characters for mobile viewers on pages that contain <code> */
+.mobile-only {
+	text-align: center;
+	font-style: italic;
+	font-weight: bold;
+	color: #bb0000;
+	margin-bottom: 15px;
+	
+	display: none; 	/* This gets overridden by mobile-detection.js when it adds mobile-font.css file */
+}
 
 body.gradient-logo {
 	background-image: url(/_images/GreenBackground2.png);
@@ -119,6 +131,7 @@ body.gradient-logo {
 
 .header-text {
 	color: rgb(0,60,0); /* dark x 3 green - considerably darker than darkgreen */
+	font-family: 'Raleway', sans-serif;
 }
 
 
@@ -155,6 +168,7 @@ body.gradient-logo {
 
 	color: rgb(0,90,0);  /* dark x 2 green - darker than darkgreen */
 	font-size: 20px;
+	font-family: 'Raleway', sans-serif;
 }
 
 .nav-links {
@@ -185,8 +199,10 @@ body.gradient-logo {
 	background-color: white;
 	
 	/* Set down from inline navigation menu, and inset a small amount for small screens */
-	margin-top: 14px;
+	margin-top: 20px;
+	margin-bottom: 30px;
 	padding: 20px;
+	padding-bottom: 30px;
 	
 	overflow-y: auto;
 }
@@ -215,6 +231,7 @@ body.gradient-logo {
 	margin-top: 0px;
 	padding-top: 0px;
 	color: rgb(0,90,0);
+	font-family: 'Raleway', sans-serif;
 }
 
 .content-meta-info {
@@ -238,6 +255,7 @@ body.gradient-logo {
 	font-size: 12px;
 	position: relative;
 	bottom: 0;
+	font-family: 'Raleway', sans-serif;
 }
 
 .book-nav-back {
@@ -262,6 +280,7 @@ body.gradient-logo {
 code {
 	color: rgb(0, 0, 160); /* dark blue */
 	font-size: .85em;
+	font-family: 'DejaVu Sans Mono', Consolas, 'Lucida Console', Menlo, Monaco, monospace, sans-serif;
 }
 
 .restricted-width-container {
@@ -284,6 +303,7 @@ code {
 	text-align: left;
 	white-space: pre;
 	word-wrap: normal;
+	font-family: 'DejaVu Sans Mono', Consolas, 'Lucida Console', Menlo, Monaco, monospace, sans-serif;
 
 	/* Slight inset for small screen */
 	margin-left: 20px;
@@ -325,19 +345,28 @@ code {
 .footer-wrapper {
 	width: 100%;
 	text-align: center;
+	padding-bottom: 30px;
 }
 
 .footer{
-	margin-left: 10px;
-	margin-right: 10px;
-	margin-bottom: 20px;
-	padding-top: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
 	color: gray;
-	display: inline-block;
 	font-weight: 300;
+	display: inline-block;
 
 	/* Center align on small screen */
 	text-align: center;
+}
+
+.footer-line{
+	/* Prevent fellow lines from displaying on the same line in narrow windows */
+	clear: both;
+}
+
+.footer-line-separator{
+	/* Don't display when footer-lines are wrapping */
+	display: none; 	
 }
 
 a.footer{
@@ -380,14 +409,25 @@ a.footer{
 	.content {
 		/* Set the white content pane in from the sides of the page, and have a minimum height that is no shorter than the navigation menu*/
 		margin: 20px;
-		min-height: 150px;
-
+		margin-bottom: 30px;
 	}
 	
 	.code-block {
 		/* Set in farther since the page is larger */
 		margin-left: 35px;
 		margin-right: 35px;
+	}
+	
+	.footer-line {
+		/* Inline when the screen is wide enough */
+		clear: none;
+		display: inline-block;
+	}
+
+	.footer-line-separator{
+		/* Display when footer-lines are not wrapping. */
+		clear: none;
+		display: inline-block; 	
 	}
 }
 
@@ -405,6 +445,7 @@ a.footer{
 	.content {
 		/* Increased padding when the screen width is a reasonable size */
 		padding: 40px;
+		padding-bottom: 30px;
 	}
 	
 	.code-block {

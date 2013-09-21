@@ -29,3 +29,4 @@
 				<div class="content shadow">
 					<section>
 						<div class="no-margin no-padding">
+							<div class="mobile-only">Mobile Users: <a href="/about-us/mobile.html">Click here</a> to view our text rendering warning.</div> 

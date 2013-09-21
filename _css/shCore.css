@@ -44,7 +44,7 @@
   vertical-align: baseline !important;
   width: auto !important;
   box-sizing: content-box !important;
-/*  font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !important; */  /* Because of mobile font stuff */
+  font-family: 'DejaVu Sans Mono', Consolas, 'Lucida Console', Menlo, Monaco, monospace, sans-serif;
   font-weight: normal !important;
   font-style: normal !important;
   font-size: 1em !important;

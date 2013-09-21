@@ -1,0 +1,5 @@
+@charset "UTF-8";
+
+.mobile-only {
+	display:inherit !important;	/* Override "none" for mobile users */
+}

@@ -66,6 +66,10 @@ blockquote {
 	margin: 1em 40px;
 }
 
+body, button, input, select, textarea { 
+	font-family: 'Lato', sans-serif; 
+}
+
 dfn { 
 	font-style: italic;
 }
@@ -97,6 +101,7 @@ pre, code, kbd, samp {
 	monospace; 
 	font-size: .9em; 
 	letter-spacing: 1.05px;
+	font-family: 'DejaVu Sans Mono', Consolas, 'Lucida Console', Menlo, Monaco, monospace, sans-serif;
 }
 
 /* Improve readability of pre-formatted text in all browsers */

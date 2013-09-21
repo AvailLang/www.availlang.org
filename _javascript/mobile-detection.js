@@ -31,7 +31,6 @@ var onMobileDevice = isMobile.any();
 	    head.appendChild(link);
 	}
 
-if( !onMobileDevice ) {
-	addStyleSheet("http://fonts.googleapis.com/css?family=Raleway:700|Lato:300,400");
-	addStyleSheet("/_css/fontfamily.css");			    
+if( onMobileDevice ) {
+	addStyleSheet("/_css/mobile.css");			    
 }
