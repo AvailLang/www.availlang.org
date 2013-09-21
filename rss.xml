@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+	<channel>
+		<title>The Avail Programming Language</title>
+		<description>Fresh posts on the site, including newsletters, tutorials, documentation, etc.</description>
+		<link>http://www.availlang.org</link>
+		<item>
+			<title>Newsletter #4 - Victim of Success</title>
+			<pubDate>Wed, 18 Sep 2013 13:00:00 GMT</pubDate>
+			<description>I thought about calling this newsletter "So-so Things Come To Those Who Wait for a Few Days", but figured that the necrohippoflagellation had to stop somewhere. Since the release of the new website, there has been a dramatic upswing in site visits and new visitors. Hello, world! Thank you for visiting our humble site! Unfortunately our site is just that, humble, even though the Avail team isn't terribly humble about what it's doing. Speaking of all-encompassing greetings…</description>
+			<link>http://www.availlang.org/about-avail/newsletters/E004.html</link>
+			<guid>http://www.availlang.org/about-avail/newsletters/E004.html</guid>
+  		</item>
+		<item>
+			<title>Tutorial - Reverse Polish Notation</title>
+			<pubDate>Wed, 18 Sep 2013 13:00:00 GMT</pubDate>
+			<description>Discover how to build a Reverse Polish notation expression language without writing a parser, expression nodes, operand stack, or interpreter. This is a great computer science classic, except for the part where you're done coding it in three minutes.</description>
+			<link>http://www.availlang.org/about-avail/learn/tutorials/hello-world.html</link>
+			<guid>http://www.availlang.org/about-avail/learn/tutorials/hello-world.html</guid>
+  		</item>
+		<item>
+			<title>Tutorial - Hello world!</title>
+			<pubDate>Wed, 18 Sep 2013 13:00:00 GMT</pubDate>
+			<description>Inspired by the many such programs that have been written since the 1967 BCPL progenitor, this archetypal and obligatory introduction demonstrates how a bright-eyed programmer can greet the entire world with just a few lines of code. (N.B.: This does not actually greet the entire world, which would be quite spooky and odd. Do not fear.)</description>
+			<link>http://www.availlang.org/about-avail/learn/tutorials/rpn.html</link>
+			<guid>http://www.availlang.org/about-avail/learn/tutorials/rpn.html</guid>
+  		</item>
+	</channel>
+</rss>
