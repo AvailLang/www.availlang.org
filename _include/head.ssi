@@ -2,6 +2,7 @@
 		<link href="//fonts.googleapis.com/css?family=Raleway:700|Lato:300,400" rel="stylesheet" type="text/css">
 		<link href="/_css/boilerplate.css" rel="stylesheet" type="text/css">
 		<link href="/_css/global.css" rel="stylesheet" type="text/css">
+		<link rel="icon" type="image/ico" href="/_images/favicon.ico" />
 		<link href="rss.xml" rel="alternate" type="application/rss+xml" title="The Avail Programming Language" />
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
