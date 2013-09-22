@@ -1,0 +1,63 @@
+<p>It has been about a week since my last blog mostly because I've been a bit under the weather and haven't been able to do too much with Avail (other than research and editing of Todd's paper on semantic restrictions).</p>
+
+<p>I promised Leslie that I'd look over some notes from a lecture series Todd did back in late 2011 early 2012.  This basement lecture series was when Avail was really coming together, but certain syntax had not yet been defined (for example, some things relating to tuples).  Well these are the notes from the first lecture (Leslie wants to make them public).  I didn't get far into them...I worked on Stacks instead.</p>
+
+<p>Learned a few things of note tonight.  If you are creating classes in a separate module and you export the class for use in other modules (the class is public), then you have to also export each field that you want to be allowed to be set when instantiating an object of that type in an external module.  Take for example my stacks token class defined in the module, "Stacks Lexer":</p>
+
+<div class="restricted-width-container">
+<div class="good-code-block">Public class "stacks token" extends object
+   with fields
+      public lexeme : string,
+      public line : natural number,
+      public position : whole number,
+      public isSpecial : boolean;</div></div>
+
+<p>In order to be able to instantiate a stacks token in another module, for example something like:</p>
+
+<div class="restricted-width-container">
+<div class="good-code-block">generalToken : stacks token := a stacks token with
+	lexeme := "@general",
+	line := 1,
+	position := 0,
+	isSpecial := true</div></div>
+
+ <p>In the module that I define the class I must have the following in my code:</p>
+
+<div class="restricted-width-container">
+<div class="good-code-block">Names
+...
+	"isSpecial",
+	"lexeme",
+	"line",
+	"position",
+	"special stacks token",
+	"stacks token",
+	"tokenize_",
+	"_'s⁇lexeme",
+	"_'s⁇line",
+	"_'s⁇position",
+	"_'s⁇isSpecial"
+
+Body
+
+"lexeme" is a new field atom;	 /*string representation of token*/
+"line" is a new field atom;		 /*line in which token appears*/
+"position" is a new field atom;  /*column position token begins*/
+"isSpecial" is a new field atom; /* is the token special */
+...</div></div>
+<ol>
+<li>I need to declare each field as a new field atom
+<li>I must export each field name in the names section
+</ol>
+<p>Another thing to note in the Names section, I also export the field lexeme's accessor, <code>"_'s⁇lexeme"</code> </p>
+<p>Note, this allows me to access the field in the class, for the example above, I can get at the field lexeme in generalToken by:</p>
+<div class="restricted-width-container">
+<div class="good-code-block">generalToken's lexeme</div></div>
+
+<p>I'm able to do this because I have included <code>"_'s⁇lexeme"</code> in the Names section of the module.  If I want to keep a field private, I would simply not export that field's accessor in the Names section.</p>
+
+<p>So the night overall was productive.  I made good headway into Stacks.  Though I apparently am not tokenizing the keyword @public in the comments.  It is coming out as two generic tokens, "@publ" and "c".  I'm losing the "i" somehow.  I'll look into it next time I sit down to work on this.</p>
+
+<p>Well, that is all for tonight.  I don't think this blog was overly entertaining, but I hope it at least was informative.  In the not so distant future, I hope to have instructions up explaining how you can make your Avail code parsable by Stacks.
+
+<p>As they say often in the movie, Dark City, <em>Sleep now</em>.</p>

@@ -1,0 +1,87 @@
+<p>Today was a very long Saturday devoted to all things Avail...with a few other things sprinkled in between.  I got to work at about 9:40 am where I sat out front because I brought the wrong keys.  Todd showed up about 10 minutes later with the right keys (I can depend on Todd not making this kind of mistake).  We started the morning with Dunkin Donuts coffee...well at least I did.  By the end of the day, I had not one, not two, but three receipts from Dunkin Donuts.  I think that might have something to do with the excess energy I had, which ultimately was partially spent rearranging furniture.</p>
+
+<p>But the day wasn't about the little asides mentioned above.  No it was not full of constant runs to DD for coffee; I actually did work on Avail.  I started the day by checking in with the progress on Todd's paper (the one we are submitting for PLDI 2013).  I put my editor's hat on.  I quickly took off that hat and went into learning mode.  I read up on some important concepts such as multiple and dynamic dispatch, reflection, multiple inheritance, and other programming concepts.  I wanted to give a better, more rounded critique of Todd's paper.  Plus, being apart of this team, I feel that I should push myself to learn as much as possible before we go off to spread the word on Avail.  I don't want to ever put Avail in a position of looking stupid due to my lack of knowledge and experience.  I have no trouble saying I don't know, but I'd still like to be able to discuss programming concepts more coherently and confidently.</p>
+
+<p>Speaking of programming, did I already mention that I actually did some today?  I fixed the little issue with the @public tag I mentioned from my previous <a href="https://www.availlang.org/content/stacks-avail-night">blog</a>.  It was really a symptom of an issue in which I was not properly handling the end of line condition when tokenizing words that included special characters (such as the escape character, Grave accent (`), and special @ keywords).  I'm going to revisit all that code once more to see about cleaning it up.</p>
+
+<p>A great success was that I was once again able to parse the entirety of the module, <em>Core</em>, in the dimensional analysis package, and associate them with their keywords.  I've done this before in a prior iteration.  In this iteration I was able to tokenize all the comments...well mostly.  I'm still trying to decide how I'm going to handle the case when a comment contains a specific link to another method or type.  Take the following example of the comment for the method <code>"dimensioned_"</code> in <em>Core</em>:</p>
+
+<div class="restricted-width-container">
+<div class="good-code-block">/**
+* Construct and answer a {@type "dimensioned quantity"} type with the specified
+* {@type "number" extent} type.
+*
+* @method "dimensioned_"
+* @param "magnitudeType" "number's type"
+*        The magnitude type.
+* @returns "dimensioned quantity"
+*          The requested {@type "dimensioned quantity"} type.
+*/</div></div>
+
+<p>You'll notice throughout the comment portions contained in curly braces with @ keywords.  These will act as links to pages that have information on the types and methods mentioned.  For example <code>{@type "dimensioned quantity"}</code> will create a link to the type, <code>dimensioned quantity</code>.   I believe I want to tokenize this entire string into one special token.  I'll probably need a new special token class for this.</p>
+
+<p>The day...well actually the night, brought about the start of another Stacks reboot.  I discussed with Mark in great detail building a lexical scanner in Avail to mirror the Avail scanner used to actually parse Avail code.  To this end, I have begun a generic framework on which avail files can be parsed.  The module, <em>Avail Lexical Scanner</em>, contains the abstract class, <code>Avail scanner</code>.  The <code>Avail scanner</code> will be passed to functions stored in a dispatch table keyed by character code points.  Each function accepts an <code>Avail scanner</code> as its input and performs the appropriate operation for the given character.  For example, a forward slash may start the opening of a comment, so a special function is stored at the forward slash code point location in the dispatch table.  There are a finite number of characters that appear in Avail files that the Avail parser that Mark built must handle specially.  My generic implementation of <code>Avail scanner</code> mirrors this process.  I will ultimately create another module that implements the subclass, <code>Stacks scanner</code> of the class, <code>Avail scanner</code>.  I'll use this to identify comments in Avail files and handle double quotes.</p>
+
+<p>Here is an excerpt of the code for the <code>Avail Scanner</code>.</p>
+
+<div class="restricted-width-container">
+<div class="good-code-block">/* Definition of atoms for fields in class, Avail scanner */
+"source" is a new field atom;
+"line number" is a new field atom;
+"column number" is a new field atom;
+
+/**
+ * A class that defines an Avail lexical scanner.  This is an abstract class.
+ * 
+ * @type "Avail scanner"
+ * @supertype {@type "object" object}
+ * @category Avail Lexical Scanner
+ * @field "source" "iterator of character"
+ * 	an iterator over the .avail input file
+ * @field "line number" "natural number"
+ * 	line number of current element of the iterator 
+ * @field "column number" "natural number"
+ * 	column position on line of current element of the iterator
+ * @author Richard Arriaga
+ */
+
+Public class "Avail scanner" extends object
+	with fields
+		public source : iterator of character,
+		line number : ↑natural number,
+		column number : ↑natural number;
+
+/**
+ * Public constructor of Avail scanner.
+ *
+ * @method "construct Avail Scanner with_"
+ * @categories "Avail Lexical Scanner"
+ * @param "iter" "iterator of character" 
+ *		and iterator of characters
+ * @returnType "Avail scanner"
+ *		an Avail scanner object
+ * @author "Richard Arriaga"
+ */
+Private method "construct Avail Scanner with_" is
+[
+ iter : iterator of character
+ |
+ 	line : natural number := 1;
+	column : natural number := 1;
+ 	an Avail scanner with
+ 		source := iter,
+ 		line number := ↑line,
+ 		column number := ↑column
+ ]:Avail scanner;
+
+/* Methods on handling character types from the scanner */
+Public abstract method "_process digit" is [Avail scanner]→⊤;
+Public abstract method "_process identifier starter" is [Avail scanner]→⊤;
+Public abstract method "_process white space" is [Avail scanner]→⊤;
+Public abstract method "_process operator" is [Avail scanner]→⊤;
+Public abstract method "_process forward slash" is [Avail scanner]→⊤;
+Public abstract method "_process double quote" is [Avail scanner]→⊤;
+Public abstract method "_process zero width whitespace" is [Avail scanner]→⊤;</div></div>
+
+<p>This code represents the bulk of the generic framework I discussed above.  I will create a new module, <em>Stacks Lexical Scanner</em>, in which I will create the class, <code>Stacks scanner</code> by extending the class <code> Avail scanner</code>.  I will update the appropriate abstract methods listed with overriding methods that accept <code>Stacks scanner</code> and perform the operations pertinent to the Stacks functionality.  For example, the method, <code>"_process forward slash"</code> will scan ahead to determine if the next two characters are *'s.  If they are, this indicates that this is an Avail comment that defines either a method (semantic restrictions, etc) or a class.  The only other thing will be to check that this comment is not nested in another comment (Avail allows nested comments).</p>
+<p>Well it is now that time in which I head off to sleep and hope that I retain a good majority of what I learned today.  I probably should be a good little programmer and go back at some point and provide proper method comments for all those abstract methods I defined.  But I think I can easily fall asleep leaving that bit undone for now.  Good night all.</p>

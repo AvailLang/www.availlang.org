@@ -1,0 +1,116 @@
+<p>In my previous blog post, <a href="https://www.availlang.org/content/module-constants">Module Constants</a>, I indicated that I had three bugs to resolve in Stacks before the Stacks lexer would be complete.  I also indicated that I would, when finished with the Stacks lexer, write an extensive blog about it.  Well on Christmas Eve and Christmas I was able to steal away a few hours here and there to get those three issues resolved.  But between the recent holidays and a wedding I had the honor of being in this past week (as a groomsman, not the one getting hitched), I really haven't had the opportunity to sit down and work on Avail until today.  Yes, those bugs are fixed, but then, I wasn't completely forthright about what needed to be done to the lexer before I could claim victory.  There is still one more thing that I need to resolve; not so much a bug, but a condition that is not yet handled.  In order to complete this final task, I needed to add functionality to the standard library: the ability to search strings for instances of substrings.  And that is what I'm going to talk about in this blog.</p>
+
+<p>In Avail strings are just tuples of characters, so instead of creating a specific implementation that is only applicable to strings, I built my implementation at the tuple level, enabling the search for tuples within tuples.  Before I dive headlong into that let us review one important thing:</p>
+
+     <p ALIGN=Center><b>Rich = new programmer without formal computer science education</b></p>
+
+<p>Now that we have reviewed something I pointed out in my first blog, let us review what I knew about searching for substrings inside of strings prior to the start of creating this functionality in the Avail library:</p> 
+      <p ALIGN=Center><i>nothing</i></p>
+<p>After reviewing what I knew when I set out (a very short endeavor indeed), I then headed to the source of all knowledge everywhere and anywhere, the internet.  Google plus the source of all knowledge quickly narrowed down my options from everything to a more manageable list of Wikipedia pages and links to forums discussing the subject in varying levels of detail.  Given the density with which some Wikipedia articles are written, I quickly looked to the links to questions asking efficient ways to search strings for substrings.  That is where I first ran into the <a href="http://en.wikipedia.org/wiki/Knuth-Morris-Pratt_algorithm">Knuth-Morris-Pratt (KMP)</a> string matching algorithm.  Thank you internet people who go forth and do useful things with the internet (like answer other people's posted questions), for it was by your collective selflessness that I learned of <a href="http://en.wikipedia.org/wiki/Knuth-Morris-Pratt_algorithm">KMP</a>.  
+</p>
+
+<p>Discovery of efficient algorithm?  <i>Check!</i>  Next up?  Understand algorithm.  Again Wikipedia is kind of dense so back to Google I went.  I found (in my opinion) a great treatment on KMP in the <a href="http://www.ics.uci.edu/~eppstein/161/960227.html">February 27, 1996 lecture notes</a> of <a href="http://www.ics.uci.edu/~eppstein/">Dr. David Eppstein</a> at the University of California, Irvine.  Thank you Dr. Eppstein for leaving those notes up for over a decade as it did a great deal in helping me understand this algorithm!</p>
+
+<p>Seeing as <a href="http://www.ics.uci.edu/~eppstein/">Dr. Eppstein's treatment of KMP</a> is what I used to understand KMP, I'll not rehash what you can read for yourself in his notes (I don't think they're going anywhere anytime soon).   I will however point out a few things about the algorithm so that my subsequent explanation of my work is accompanied by some degree of context on the subject. </p>
+
+<p>First and most importantly, the KMP algorithm is an efficient way for locating substrings in linear time, O(n), where n is the length of the tuple (string) being searched.  If there wasn't an efficiency improvement here, I'd not be talking about KMP, but as it so happens there is a vast improvement over the double loop naive approach which has a time complexity of O(mn), where m is the length of the subtuple (substring) being searched for in n-length tuple (string).  (From this point, I'll just refer to the substring as the <i>"subtuple"</i> and the string being searched as the <i>"target tuple"</i>.)</p>
+
+<p>The long and short of KMP is that it eliminates redundant comparisons in both the target tuple and the subtuple.  It does this by "remembering" how far it has gotten in obtaining a match of the subtuple in the target tuple and knowing if there are any redundancies in the pattern of the subtuple.  For example, the character tuple <code>"back bar bank"</code> has the prefix redundancy of the characters, <code>"ba"</code>.  This redundancy occurs starting in the first position, the sixth position, and the tenth position of this tuple (henceforth referred to as subtuple).  If you are searching for this subtuple in the target tuple, <code>"c back back bar bank fish sticks"</code>, you begin your partial match with the subtuple starting at the third position of the target tuple.  By the tenth position in the target tuple, you have ended your partial match with a mismatch.  Instead of resuming your search at the fourth position of the target tuple (<code>"c ba"</code>) and the first position of subtuple (<code>"b"</code>), you begin your search starting at the tenth position of the target tuple (<code>"c back bac"</code>) and the third position of subtuple (<code>"bac"</code>).  There is no need to reinvestigate the target tuple for positions four through nine as they've already been inspected.  You also know that positions eight and nine of the target tuple contain characters that are a redundancy in the prefix of your subtuple (<code>"ba"</code>). So you already know that positions eight and nine of the target tuple are the first two positions in your subtuple.  From there, you continue the match comparisons until you've successfully reached the end of your subtuple in the target tuple.</p>
+
+<p> Ok, so now onto my code....well, I did kind of promise a historical tidbit in the title of the blog and it is important to my implementation of the algorithm versus the pseudocode most prevalent on the internet.  So maybe I should talk about zero-based indexing first, then my Avail code.  Why talk about that?  Well, a good majority of the pseudocode I came across on the KMP algorithm was written up using zero-based numbering for their arrays (actually I think it was all of the pseudocode I came across, but I can't be certain and I try not to talk in absolutes so we'll go with "most").  Because of the prevalence of zero-based indexing in pseudocode, I think it is important to point out a difference in Avail's indexing from many other languages.  So on to that historical tidbit...</p> 
+
+<p>Anyone who knows anything about  the language C likely knows more than me.  But back at the turn of the millenium, Todd did endeavor to teach me some C.  And from those lessons mostly long forgotten (see no absolute there), I do recall pointers.  In C you have much more control (hence responsibility) when it comes to memory management.  Pointers in C are actual memory addresses where data is stored.  You allocate some memory to your C array and store elements in each of the contiguous memory slots from that initial position of the pointer (the head of the array).  The array is indexed using zero-based numbering as each index indicates the offset from the memory position of the pointer that started the array.  Hence the first element in your array is actually the zeroth element as it has an offset of zero from the place in memory where the array starts.  Thus the "second" element in a zero-base indexed array is actually the third element stored in the array, which is two offset from the head element of the array.  So to bring it all together, the practice of zero-based indexing was in part made popular through pointers in C where you actually have direct control of memory allocation and deallocation (the practice actually originated with Assembly).   Playing with memory as you can in C isn't something you get to do in higher level languages.  Avail, unlike many other languages, utilizes a one-based numbering system for its numerical indexing purposes.  It does not utilize an offset count from the start so the "first" element in a tuple is just that, the first element.  So that historical nugget is what ultimately resulted in my having to translate the pseudocode from zero-based indexing to one-based indexing so that I could make KMP work correctly in Avail.</p>
+
+<p>So without further delay, here's the goods.  I created two publicly available methods from the module on Tuples in the general Avail library.  The first method, <code>"first index of_in_"</code>, locates the index of the start of the first occurrence of a subtuple in a target tuple (if the subtuple is not present, the method returns a 0).  The second method is <code>"all indices of_in_"</code>.  This method returns a tuple of starting positions for all the subtuples to be found in a target tuple (it returns the empty tuple if there are no instances of the subtuple).  I began by creating abstract versions of both of these methods:</p>
+
+<div class="restricted-width-container">
+<div class="good-code-block">Public stable abstract method "first index of_in_" is [tuple,tuple]→whole number;
+<br>
+Public stable abstract method "all indices of_in_" is [tuple,tuple]→&lt;natural number…|>;
+</div></div>
+
+<p>Both of these methods have four implementations to cover all cases.  Three of the of the four cases have the same behaviors across both methods.  In these cases the answer is trivial as either the subtuple or target tuple is an empty tuple or they are both empty.  For these cases in <code>"first index of_in_"</code>, the method automatically returns 0.  For each of these cases in <code>"all indices of_in_"</code>, the method returns the empty tuple.</p>  Because the fourth case of <code>"all indices of_in_"</code> doesn't directly implement KMP because it is just a continuous call to <code>"first index of_in_"</code> until the entire target tuple has been searched, I'll only discuss the method in which KMP is implemented, <code>"first index of_in_"</code>.
+
+<p>Before I could implement <code>"first index of_in_"</code>, I had to implement a method that calculates all of the overlaps within the subtuple (see the "ba" example above).  To do this, I created the private method, <code>"self overlap_"</code> (it is only usable within the Tuple module).  In the pseudocode, this is represented as an integer array with a place holder for each index in the subtuple. The values stored in this array are the offset of the subtuple you would restart from if you reached this position in the subtuple when you have a mismatch (this is where the zero-based indexing comes in).  As the set of "strict sub-tuples" of the tuple input for the method, <code>"self overlap_"</code>, are constructed during this process, instead of using an array like construct from the pseudocode, I used a map that was keyed by each of the strict sub-tuples of the input tuple.  In my implementation, the value at the keyed location is the absolute index value where a restart of comparison in the subtuple would resume from in the event of a mismatch.  For example, the string <code>"nanamo"</code>, when passed to <code>"self overlap_"</code> would return the map:
+<code>{"na"→1, "nan"→2, "nana"→3, "nanam"→1}</code>
+Because it is getting late and I have been working on this blog post almost as long as I worked on these algorithms, here is the actual avail implementation of the overlap method:</p>
+
+<div class="restricted-width-container">
+<div class="good-code-block">Private method "self overlap_" is
+[
+	aTuple : &lt;any…|1..>
+ |
+	overlap : {tuple→natural number|} := {};
+	position : natural number := 2;
+	current : natural number := 1;
+	While
+	[
+		|aTuple| > position
+	]
+	do
+	[
+		If aTuple[current] = aTuple[position] then
+		[
+		 	↑current++;
+
+		] 
+		else
+		[
+			current := 1;
+		];
+		overlap := overlap + aTuple[..position]→current;
+		↑position++;
+	];
+	overlap
+]:{tuple→natural number|};
+</div></div>
+
+<p>Now on to the non-trivial portion of the fourth implementation of <code>"first index of_in_"</code>, where KMP is actually implemented.  That would be the instance where the following were not true:  
+<code>|subtuple| > |aTuple| 
+[|subtuple| = 1</code>
+The remaning code indicated here is the KMP implementation in Avail.  This portion should mirror the <a href="http://en.wikipedia.org/wiki/Knuth-Morris-Pratt_algorithm">pseudocode on Wikipedia</a> except for the one-based indexing used in Avail.  Because of this being fairly straightforward, I'm once again being lazy and just displaying the exact Avail code of this implementation.</p>
+
+<div class="restricted-width-container">
+<div class="good-code-block">Method "first index of_in_" is
+[
+	subtuple : &lt;any…|1..>,
+	aTuple : &lt;any…|1..>
+|
+	...
+		found : boolean := false;
+		subtupleStart : whole number := 0;
+		tupleIndex : natural number := 1;
+		subtupleIndex : natural number := 1;
+		overlapTable : {tuple→natural number|} := self overlap subtuple;
+		Until 
+		[
+			found ∨ [tupleIndex + |subtuple| - subtupleIndex > |aTuple|]
+		]
+		do
+		[
+			If aTuple[tupleIndex] = subtuple[subtupleIndex] then
+			[
+				If subtupleIndex = |subtuple| then 
+				[
+					found := true;
+					subtupleStart := cast tupleIndex - subtupleIndex + 1 into 
+						[w : whole number | w];
+				]
+				else [↑subtupleIndex++;];
+				
+			]
+			else
+			[
+			 	subtupleIndex := overlapTable[subtuple[..subtupleIndex]] 
+			 		else [1];
+			];
+			↑tupleIndex++;
+		];
+		subtupleStart
+	...
+]:whole number;
+</div></div>
+
+<p>So there you have it, the newest addition to the Avail general library.  You know, given the appearance that at least some programming languages out there are lacking this function from their general libraries, I think it is important to know why I went through the trouble of locating an efficient way to locate subtuples and then implement it for all tuples in the general library.  At the Avail Foundation it is our goal to make programming more accessible and more attainable for all levels of programmers.  We want to provide the best tools possible so that programmers do not have to reinvent the wheel every time they sit down to program.  We are passionate about this so we are taking the time on the backend to try and make it as good as possible on the front end.  Simply put, we just want to do programming right.</p>
+
+<p>OK, that's enough Avail propaganda.  I promise not to make a habit of spewing forth that sort of stuff in my future blogs, I just thought it was important to give some insight into some of our motivations regarding Avail.  It is now much later than when I set out to start this post (don't let the timestamp fool you, it is now past midnight, and I still need to do my half asleep attempt at a proofread before going to bed).  So there isn't enough time to wrap up the Stacks lexer tonight (work in the morning followed by New Year's Eve...I might be able to sneak in a nap between work and the start of the festivities, but then, I've never been much of a napper).  BTW, this is my 10th blog post.  I'm very much aware of the fact that confetti did not fall from my ceiling when I clicked save.  le sigh...  Oh well, off to sleep then back to it...</p>
