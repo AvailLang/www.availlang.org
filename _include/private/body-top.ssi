@@ -1,0 +1,40 @@
+		<div class="header-wrapper">
+			<a class="header-text" href="/index.html">The Avail Programming Language</a>
+		</div>
+		<div class="main-wrapper">
+			<div class="nav-wrapper">
+				<div class="navigation">
+					<div class="nav-section">
+						<div class="nav-section-header">About Avail</div>
+						<div class="nav-links">
+							<div><a class="nav-link" href="/about-avail/introduction/index.html">Introduction</a></div>
+							<div><a class="nav-link" href="/about-avail/history/index.html">History</a></div>
+							<div><a class="nav-link" href="/about-avail/newsletters/index.html">Newsletters</a></div>
+							<div><a class="nav-link" href="/about-avail/learn/index.html">Learn</a></div>
+							<div><a class="nav-link" href="/about-avail/documentation/index.html">Documentation</a></div>
+							<div><a class="nav-link" href="/about-avail/glossary/index.html">Glossary</a></div>
+							<div><a class="nav-link" href="https://trac.availlang.org">Trac</a></div>
+						</div>
+					</div>
+					<div class="nav-section">
+						<div class="nav-section-header">About Us</div>
+						<div class="nav-links">
+							<div><a class="nav-link" href="/about-us/team/index.html">Team</a></div>
+							<div><a class="nav-link" href="/about-us/acknowledgments/index.html">Acknowledgments</a></div>
+						</div>
+					</div>
+					<div class="nav-section">
+						<div class="private nav-section-header">Members Only</div>
+						<div class="nav-links">
+							<div><a class="private nav-link" href="/private/index.html">Team Homepage</a></div>
+							<div><a class="private nav-link" href="/private/avail-team/style-guide.html">Style Guide</a></div>
+							<div><a class="private nav-link" href="/private/avail-team/setting-up-avail/index.html">Setting Up Avail</a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="content-wrapper">
+				<div class="content shadow">
+					<section>
+						<div class="no-margin no-padding">
+							<div class="mobile-only">Mobile Users: <a href="/about-us/mobile.html">Click here</a> to view our text rendering warning.</div> 

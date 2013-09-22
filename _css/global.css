@@ -80,6 +80,10 @@ h5 {
 	display: none; 	/* This gets overridden by mobile-detection.js when it adds mobile-font.css file */
 }
 
+.private {
+	color: rgb(160,64,1) !important;
+}
+
 body.gradient-logo {
 	background-image: url(/_images/GreenBackground2.png);
 	background-repeat: no-repeat;
