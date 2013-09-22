@@ -1,0 +1,131 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+<!--#include virtual="/_include/sh-head.ssi" -->
+	
+		<title>Avail - Website Style Guide</title>
+	
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+
+		<h2 class="content-title">Website Style Guide for AvailLang.org</h2>
+		
+<p>
+Below are some examples of how to use the HTML tags and CSS styles in keeping with the style of our site. To copy these examples for use as code templates in a page you are making, view the html source of this page. Alternatively, view the source of a page whose style matches your new page.
+</p>
+<h2 class="content-title">Title for a Normal Content Page</h2>
+<p>
+The title for a page that is not editioned or time-sensitive appears alone at the top of the page in an h2 tag with style "content-title". Remember to open your paragraph tag (p) *after* the h2 to ensure proper spacing with page content.
+</p>
+<h2 class="content-title">Title for a Content Page that is Time-Sensitive and/or Serialized</h2>
+<div class="content-meta-info">Edition # - MonthName d, YYYY</div>
+
+<p>Note the extra line between the metadata div and the text below, and that the open paragraph tag comes after the metadata. A page whose creation date is important should have just the date, while a revision date should say "Revised " first.
+</p>
+<p>
+<h3>Section Heading within the Page</h3>
+Heading h3 is for use to mark major topics within the content. Opening paragraph tags may come either before or after h3s.
+</p>
+<p>
+<h4>Section Subheading</h4>
+Heading h4 is for marking topics within an existing section marked by an h3. Anything smaller than h4 (h5+) is strongly discouraged. Consider the use of a list, as below.
+</p>
+<p>
+List Title for an Unordered (Bulleted) List:
+<ul>
+	<li>Item 1</li>
+	Items between closed li tags appear at the same indent level.
+	<li>Item 2 heads a nested list:
+		<ul>
+			<li>Items in nested lists will be indented an additional level and will feature a distinct item marker.</li>
+		</ul>
+	</li>
+	<li>Item 3</li>
+</ul>
+</p>
+<p>
+List title for an Ordered (Numbered) List:
+<ol>
+	<li>One
+	<ol>
+		<li>one point one</li>
+		<li>one point two</li>
+	</ol>
+	</li>
+	<li>Two</li>
+	<ul>
+		<li>You can also mix list types</li>
+	</ul>
+	<li>Three</li>
+</ol>
+</p>
+<p>
+Text that you wish to draw attention to may either be made <strong>bold</strong> by use of the strong tag, or <em>italicized</em> by use of the em (for empasis) tag. In tutorials, use <strong>strong</strong> to indicate a button, menu name, menu item, text field, radio button, etc. that the user should be looking at or using. Use <em>em</em> for text they should type in a text field.
+</p>
+<p class="text-highlight">
+When it is absolutely essential that a user see a section of text and understand it, use the paragraph style "text-highlight".
+</p>
+<p>
+Utilize relative linking whenever you can, to minimize refactoring required if we move stuff around. For example, a link to <a href="./sibling.html">a document in the same folder as the current page</a> features a url that starts with "./". A link to <a href="../auntie-uncle.html">a document in the parent folder</a> starts with "../". For access to <a href="/something.html">a file</a> in <a href="/whos/eatin/this/chicken.html">another location</a> but on the same domain as the current page should start with "/".
+</p>
+<p>
+In text where you want to make an inline reference to Avail or other code elements like <code>type name</code>, <code>variable name</code>, or some other <code>expression</code>, use the code tag.
+</p>
+<p>
+When linking to a page whose title is something normally in a code tag, <code><a href="/blah.html">use both</a></code>. The order of their use does matter here. The code tag on the outside applies a font and a text color; the a tag overwrites the color with the site-wide link color.
+</p>
+<p>
+<div class="restricted-width-container">
+<div class="neutral-code code-block">For code snippets that are a statement or longer,
+use two nested divs with "restricted-width-container" as the outer style,
+and "code-block" as one of the style elements on the inner style.
+This code block is of "neutral" code so its internal div class is "neutral-code code-block".</div>
+</div>
+</p>
+<p>
+<div class="restricted-width-container">
+<div class="good-code code-block">When you want to call attention to good programming style or code that works well,
+use "good-code code block" as the inner style.</div></div>
+</p>
+<p>
+<div class="restricted-width-container">
+<div class="bad-code code-block">When calling attention to bad programming style or code that doesn't work as intended,
+use "bad-code code block" as the inner style.</div></div>
+</p>
+<p>
+<div class="restricted-width-container">
+<div class="console code-block">When simulating a command-line screen,
+use "console code-block" as the inner style.</div></div>
+</p>
+<p>
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 42">
+<![CDATA[
+Excerpts from actual files with lines you want to reference by number are nested 
+within a "neutral-code code-block" and the syntaxhighlighter javascript syntax.
+It's kinda hard to describe in words, so just check out the source.
+
+Note that you *must* add the sh-head.ssi includes link above the title element of the page,
+and you must add the sh-bottom.ssi includes link just before the closing body tag.
+]]>
+</script></div></div>
+</p>
+
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+<!--#include virtual="/_include/sh-bottom.ssi" -->
+
+	</body>
+
+</html>

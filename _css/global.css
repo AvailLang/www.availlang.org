@@ -279,7 +279,7 @@ body.gradient-logo {
 
 code {
 	color: rgb(0, 0, 160); /* dark blue */
-	font-size: .85em;
+	font-size: .9em;
 	font-family: 'DejaVu Sans Mono', Consolas, 'Lucida Console', Menlo, Monaco, monospace, sans-serif;
 }
 
@@ -293,7 +293,7 @@ code {
 	margin-bottom: 15px;
 	padding: 15px;	
 	border-radius: 15px;
-	font-size: .85em;
+	font-size: .9em; 
 	line-height: 1.25em;
 	display: block;
 	overflow: auto;
@@ -354,8 +354,6 @@ code {
 	color: gray;
 	font-weight: 300;
 	display: inline-block;
-
-	/* Center align on small screen */
 	text-align: center;
 }
 
@@ -364,12 +362,12 @@ code {
 	clear: both;
 }
 
-.footer-line-separator{
+.footer-line-separator {
 	/* Don't display when footer-lines are wrapping */
 	display: none; 	
 }
 
-a.footer{
+a.footer {
 	margin: 0px;
 	padding: 0px;
 	color: gray;
@@ -389,7 +387,6 @@ a.footer{
 		line-height: 23px;
 	}
 
-
 	.nav-wrapper {
 		/* Float to the left of the content */
 		float: left;
@@ -399,7 +396,6 @@ a.footer{
 		/* Readjust for left float */
 		margin-top: 0px;
 	}
-	
 	
 	.content-wrapper {	
 		/* To allow for floated navigation pane */
@@ -424,18 +420,16 @@ a.footer{
 		display: inline-block;
 	}
 
-	.footer-line-separator{
+	.footer-line-separator {
 		/* Display when footer-lines are not wrapping. */
 		clear: none;
 		display: inline-block; 	
 	}
 }
 
-/* Smaller-monitor Desktop Layout: 1000px and up.  Inherits styles from: Mobile Layout and Tablet Layout. */
+/* Desktop Layout: 1000px and up.  Inherits styles from: Mobile Layout and Tablet Layout. */
 
 @media only screen and (min-width: 1000px) {
-	.nav-link {
-	}
 
 	.content-wrapper {	
 		/* Larger space induces a right margin */
