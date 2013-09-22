@@ -73,7 +73,6 @@ h5 {
 /* Style for a warning about missing characters for mobile viewers on pages that contain <code> */
 .mobile-only {
 	text-align: center;
-	font-style: italic;
 	font-weight: bold;
 	color: #bb0000;
 	margin-bottom: 15px;
