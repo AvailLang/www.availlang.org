@@ -24,6 +24,9 @@
 						</div>
 					</div>
 					<div class="nav-section">
+						<div class="nav-section-header"><a class="nav-section-header" href="/search/index.html">Search</a></div>
+					</div>
+					<div class="nav-section">
 						<div class="private nav-section-header">Members Only</div>
 						<div class="nav-links">
 							<div><a class="private nav-link" href="/private/index.html">Team Homepage</a></div>
