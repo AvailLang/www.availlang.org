@@ -1,0 +1,158 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Avail - Rich's Blog</title>
+	
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+<h2 class="content-title">Method to my madness</h2>
+
+<div class="content-meta-info">October 5, 2013</div>
+<p><em>Again another previously written blog.  This one starts us down the path of actually doing things with Avail.  Behold, methods blog circa February 2013.</em></p>
+<h5>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</h5>
+
+<p>I find that some of the best knowledge is <em>actionable knowledge</em>.  It's great to know things, but I personally find that I'm better at holding onto a tidbit if I can do something with it.  A few posts ago I realized I had been writing about my experience with Avail as if every person reading my posts understood both Avail as well as computer programming in general.  So I took a step back and started talking about some important concepts in computer programming as a whole, that, as it so happens, are also particularly important to Avail.  Now we can sit around and talk about <a href="./BERA002.html">types</a> and <a href="./BERA003.html">type systems</a> at each other all day long.  I guess it's cool to stop there, if just knowing stuff is really your thing.  But, I think I'd be remiss if I didn't take it one step further and actually talk about doing something in Avail.  In programming, the doing and the knowing generally go hand in hand, so lets get on with the doing.</p>
+
+<p>As of right now it isn't going to be easy for you to go about the doing as Avail isn't available for download yet.  There are a few <em>i</em>'s we have to dot and a couple of <em>t</em>'s to be crossed.  Aka, licensing needs to be resolved (believe me, we'd much rather be programming) and we need to touch up the programming environment in order to make the Avail programming experience rival the experience of a dog fight in outer space.  So what I'm saying about the doing is, just for the moment, <em>you'll have to take my word for it</em>.  I know <a href="http://en.wikipedia.org/wiki/LeVar_Burton">Levar Burton</a> would.  Ok, lets get going with this episode of <a href="http://en.wikipedia.org/wiki/LeVar_Burton#Reading_Rainbow">Reading Rainbow</a>.</p>
+
+<p>I may have said it before, but I'll say it again, Avail is an operation-oriented language.  You do things by doing things.  That is, you make things go through the use of an operation (<a href="./BERA002.html">think back to riding a bike or eating a scone</a>).  In Avail you perform operations through the use of <b>methods</b>.  A <b>method</b> is an instruction that has been defined in Avail that indicates how some action should be performed.  Once a method is defined, it can be referred to in an Avail program in order to do the thing you designed it to do.</p>  
+
+<p>A method has four components: 1) <em>the name</em>, 2) <em>the parameters</em>, 3) <em>the return type</em>, and 4) <em>the function body</em>.  The first three components combined are referred to as the <b>method signature</b>.  The method signature gives you all of the descriptive information pertaining to the method.  The function body gives you the implementation of the method.</p>  
+
+<p>The <b>name</b> is simply what the method is called.  For example, <code>"_÷_"</code> is the method name for division (the part inside the quotes constitutes the name).  The name is the alias for the steps that make up the definition of the method.  When you refer to that alias, the Avail virtual machine (the thing that makes avail go, hence forward referred to as <em>vm</em>) knows you mean the instructions contained within the method definition. This keeps you from having to fill your program with lines upon lines of instruction steps contained in the method (program instructions, the syntax, will henceforth be referred to as <em>code</em>).  This is a universal feature in programming languages.  If this wasn't done, it would make programming a horrible endeavor as you would have to rebuild everything every time you set out to do something.</p>
+
+<p>The <b>parameters</b> of a method are the types of the inputs.  They are represented by the underscore, <b>_</b>, in the method name (the underscores of the division method, <code>"<b>_</b>÷<b>_</b>"</code>, are replaced with inputs when actually using the operation: <code>"<b>10</b> ÷ <b>5</b>"</code>).  Not all methods have inputs, but the general expectation is that the inputs will be used in the calculation of the method in some way. If you were to add two numbers using the addition method, <code>"_+_"</code>, your two inputs would both be of type <a href="/about-avail/documentation/type-system//types-number.html">number</a>.</p>  
+
+<p>Of course, it is important to point out that the addition operation will ultimately be performed on two <a href="/about-avail/documentation/type-system/values.html">values</a>, not the parameter types of the input indicated in the method signature.  Now I don't want you to draw the conclusion that types are not values, because they are.  Just about everything in Avail is a value.  You know you are dealing with a value because it is something you can do something with, operate on, or pass to a method.  In fact, everything in Avail that you'll work with as an Avail programmer is a value.  As you'll see in future posts, you <em>can</em> do things with types.  To bring it back to parameters, the parameters of a method indicate which types are accepted by the method, and thus every value that can ultimately be operated on by that method (type instances are the values represented by that type).</p>
+
+<p>The actual output of a method that has been run is known as the <b>return value</b>.  The definition of a method contains a type that indicates the expected type of that return value.  This is the <b>return type</b>.  In the same way the method parameters tell you what types of input the method will accept, the return type indicates what type of output the method will provide.  For the addition of two numbers, we'd expect the output of the addition to be another number, thus we would define the return type for the addition method to be of type <a href="/about-avail/documentation/type-system/types-number.html">number</a>.  It is important to note that not all methods actually return usable values.  The purpose of the method maybe to achieve some sort of <em>side effect</em>.  An example of this would be to print something to the screen.  No usable value is returned, but as a side effect of the method, something is printed to the screen. There is a lot more going on here than I've indicated so far, but I will talk about that in depth another time.</p>  
+
+<p>The final component, the <b>function body</b>, is the code (set of instructions or steps) that tells you what the method actually does.  That is, how do you do what is being asked.  For example, if I asked you to make me a peanut butter and jelly sandwich, you would accomplish this by following these steps:</p>
+
+<p><code>Go to the kitchen and get the bread, the jar of peanut butter, the jar of jelly, a butter knife, and a plate.  Open the bread bag and retrieve two slices of bread, put them on the plate.  Open the peanut butter jar and open the jelly jar.  Dip the butter knife into the peanut butter jar and retrieve peanut butter.  Spread peanut butter on one of the slices of bread.  Dip the butter knife in the jelly jar and retrieve jelly.  Spread jelly on the other slice of bread.  Adjoin the two slices of breads together with the peanut butter and jelly facing in toward each other.</code></p>
+
+<p>With those steps, we have defined the method, <code>"make me a_and_sandwich"</code>.  The inputs of this method are <em>peanut butter</em> and <em>jelly</em> and the output is a tasty sandwich for me to eat! The steps to make the sandwich are the function body.  In fact, all those steps we used to define the making of my sandwich are, themselves, other methods (ones already defined).  Hence methods are built using other methods. In fact, methods are generally brought together to interact in such a way that they perform a task that is more complex than they can perform alone.  And thus software is born.</p>
+
+<p>Moving forward, when I discuss methods, I will introduce them using their method signature.  The way I present the signature will tell you 1) <em>what the method is called</em>, 2) <em>what types it takes as input</em>, and 3) <em>the expected type of the output</em>.  I'll do this when showing the entire function body of the code is unnecessary for the purpose of the discussion.  Using the division method, <code>"_÷_"</code>, as an example, I present the signature of this method as:</p>
+
+<p><code>"_÷_" : [number, number]→number</code></p> 
+
+<p>The way to read this is: <em>blank divides blank takes two numbers as inputs and produces a number</em>.  As I indicated before, the underscores represent the inputs of the method.  The types in the brackets following the colon represents the types of the inputs.  Note that there are as many input types as there are underscores in the method name as we need to provide a type for each input.  The order of the listed input types should match the order of their underscore's position in the method name.  Unlike addition, division operation does not have the <a href="http://en.wikipedia.org/wiki/Commutative_property" title="changing the order of the inputs does not change the outcome of the calculation; this is not the case for division">commutative property</a>, so the order of the inputs does matter.  We cannot assume the input types are interchangeable.  This is more evident in the operation, <code>"The_eats the_"</code>.  <em>The <u>dog</u> eats the <u>treat</u></em> has a <b>very</b> different implication if you reverse the order of the inputs.</p> 
+
+<p>And now for the moment you've been waiting for, let's actually take a look at the construction of a method as it would appear in an Avail program.  For our first method, we'll use the division method.  I'm going to avoid showing the guts of the method (the function body) as they aren't really important for this first demonstration.  Also note any green text to be found bound by <code><span  style="color: green;">/*…*/</span></code> are called comments.  This is documentation that the Avail vm ignores as if it were not present.  Comments are used to help the programmer remember what something does as well as convey to anyone else the purpose of that bit of code.  Comments can be placed just about anywhere.</p>
+
+<div class="restricted-width-container">
+<div class="good-code code-block">Public method "_÷_" is
+[
+	<span  style="color: green;">/*The method starts with the ordered listing of the input types and the variable name associated with that 
+	  input type.  We refer to the inputs using these variable names.  The input variable name is separated 
+	  from the input type using a colon.  The list of inputs are separated using commas.  The final input 
+	  listed does not have a comma after it.*/</span>
+
+	<span  style="color: green;">/*the first input corresponding to the first underscore of the method name.  The number being divided into; 
+	  the numerator*/</span>
+	dividend : number, 
+	<span  style="color: green;">/*the second input corresponding to the second underscore of the method name.  The number partitioning the 
+	  other; the denominator*/</span>
+	divisor : number 
+
+	<span  style="color: green;">/*The list of inputs is separated from the instructions using a pipe, |. */</span>
+ |
+	<span  style="color: green;">/*Here is where all the code that defines the method should go*/</span>
+	…instructions…
+]: number; <span  style="color: green;">/*the return type; the type of the quotient*/</span>
+</div></div>
+
+<p>Here is that method again but with all the comments stripped out so you can see it more clearly:</p>
+
+<div class="restricted-width-container">
+<div class="good-code code-block">Public method "_÷_" is
+[
+	dividend : number, 
+	divisor : number 
+ |
+	…instructions…
+]: number;
+</div></div>
+
+<p>Ok, to close out this post, we'll write a simple method that adds two numbers and returns the answer.  But before the answer is returned out of the method, we want to let the world know the answer by printing it to our screen.</p>
+
+<div class="restricted-width-container">
+<div class="good-code code-block">Public method "tell the world what you get when you add_and_" is
+[
+	<span  style="color: green;">/*the inputs; the numbers being added*/</span>
+	input1 : number,
+	input2 : number
+ |
+	<span  style="color: green;">/*Let's add those numbers and store them in a variable.  I am declaring a new variable here, sum.  As you 
+	  can see, I have indicated that the type of this variable is number.  I do this by placing a colon after 
+	  the variable name then indicating the variable type.  The ":=" tells the vm that we will be storing 
+	  the result of the following method call into our new variable, sum.  We conclude this expression
+	  with a semicolon*/</span>
+	sum : number := input1 + input2;
+
+	<span  style="color: green;">/*Tell the world the answer with your print statement!*/</span>
+	Print: "Hello world!  When you add “①” to “②” you get “③”.  Just thought you should know!"
+		with input1, input2, sum;
+	
+	<span  style="color: green;">/*The contents of the variables, input1, input2, and sum will replace the “①”, “②”, “③” in the actual 
+	  print statement on screen*/ </span>
+
+	<span  style="color: green;">/*Finally, we return the result of our addition.  Note how there is no semicolon after the variable sum.  
+	  This indicates to the vm that this is the value that should be returned from this method once this 
+	  method is complete*/</span>
+	sum
+]: number;  <span  style="color: green;">/*To conclude, we tell the Avail vm that it can expect a number as output from from this method*/</span></div></div>
+
+<p>That method will actually work in Avail as it follows actual Avail syntax.  Making a call to this method with the numbers 10 and 20, and storing it into the variable, <code>answer</code>, looks like:</p>
+
+<code>answer : number := tell the world what you get when you add 10 and 20;</code>
+
+<p>The outcome of this call is that we store the number 30 into the variable, <code>answer</code>.  The method triggers another action through the side effect, the print statement.  As a consequence of this call, the monitor shows the sentence:</p> 
+<p><b><em>Hello world!  When you add 10 to 20 you get 30.  Just thought you should know.</em></b></p>
+
+<p>That about sums up our introduction to methods.  Now you should be able to go off and construct simple methods on your own.  Share your new methods with your family! Show them to your neighbors!  Go off and write methods and be merry!</p>
+
+<p>In my future conversations, the complexity of the method definitions will undoubtedly increase as they will aim at doing more complex and interesting things.  For now, I'll leave you with our add/ print method without the comments so you can see the flow of the Avail code.</p>
+
+<div class="restricted-width-container">
+<div class="good-code code-block">Public method "tell the world what you get when you add_and_" is
+[
+	input1 : number,
+	input2 : number
+ |
+	sum : number := input1 + input2;
+
+	Print: "Hello world!  When you add “①” to “②” you get “③”.  Just thought you should know."
+		with input1, input2, sum;
+	
+	sum
+]: number;</div></div>
+ 
+<p><em><strong>NOTE:<strong> The input types as well as the return type indicated are the least specific thing expected in the respective location of the method.  More specific types can be input as well as occur as a result of the operation, however less specific types cannot.  Given your knowledge of types and type systems, think about why this is the case.  Don't worry if you're not sure what the consequence of this might be as I will be treating this very thing in detail in yet another post.</em></p>
+
+<tr class="book-nav">
+	<div class="book-nav">
+			<li class="book-nav-back"><a class="book-nav-back" href="./BERA002.html">‹ Previous</a></li>
+		<li class="book-nav-spacer">|</li>
+		<li class="book-nav-up"><a class="book-nav-up" href="./index.html">Return to Rich's Blog</a></li>
+	</div>
+</tr>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>
