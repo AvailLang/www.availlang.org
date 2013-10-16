@@ -328,6 +328,10 @@ code {
 	color: rgb(0, 0, 160); /* dark blue */
 }
 
+.code-comment {
+	color: green;
+}
+
 
 .console {
 	background-color: #000000; /* black */
