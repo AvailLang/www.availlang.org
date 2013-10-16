@@ -51,34 +51,41 @@
 
 <p>The way to read this is: <em>blank divides blank takes two numbers as inputs and produces a number</em>.  As I indicated before, the underscores represent the inputs of the method.  The types in the brackets following the colon represents the types of the inputs.  Note that there are as many input types as there are underscores in the method name as we need to provide a type for each input.  The order of the listed input types should match the order of their underscore's position in the method name.  Unlike addition, division operation does not have the <a href="http://en.wikipedia.org/wiki/Commutative_property" title="changing the order of the inputs does not change the outcome of the calculation; this is not the case for division">commutative property</a>, so the order of the inputs does matter.  We cannot assume the input types are interchangeable.  This is more evident in the operation, <code>"The_eats the_"</code>.  <em>The <u>dog</u> eats the <u>treat</u></em> has a <b>very</b> different implication if you reverse the order of the inputs.</p> 
 
-<p>And now for the moment you've been waiting for, let's actually take a look at the construction of a method as it would appear in an Avail program.  For our first method, we'll use the division method.  I'm going to avoid showing the guts of the method (the function body) as they aren't really important for this first demonstration.  Also note any green text to be found bound by <code><span  style="color: green;">/*…*/</span></code> are called comments.  This is documentation that the Avail vm ignores as if it were not present.  Comments are used to help the programmer remember what something does as well as convey to anyone else the purpose of that bit of code.  Comments can be placed just about anywhere.</p>
+<p>And now for the moment you've been waiting for, let's actually take a look at the construction of a method as it would appear in an Avail program.  For our first method, we'll use the division method.  I'm going to avoid showing the guts of the method (the function body) as they aren't really important for this first demonstration.  Also note any green text to be found bound by <code><span  class="code-comment">/*…*/</span></code> are called comments.  This is documentation that the Avail vm ignores as if it were not present.  Comments are used to help the programmer remember what something does as well as convey to anyone else the purpose of that bit of code.  Comments can be placed just about anywhere.</p>
 
 <div class="restricted-width-container">
-<div class="good-code code-block">Public method "_÷_" is
+<div class="neutral-code code-block">Public method "_÷_" is
 [
-	<span  style="color: green;">/*The method starts with the ordered listing of the input types and the variable name associated with that 
-	  input type.  We refer to the inputs using these variable names.  The input variable name is separated 
-	  from the input type using a colon.  The list of inputs are separated using commas.  The final input 
-	  listed does not have a comma after it.*/</span>
+	<span  class="code-comment">/*The method starts with the ordered listing of the input
+	  types and the variable name associated with that input
+	  type.  We refer to the inputs using these variable names.
+	  The input variable name is separated from the input type
+	  using a colon.  The list of inputs are separated using
+	  commas.  The final input listed does not have a comma
+	  after it.*/</span>
 
-	<span  style="color: green;">/*the first input corresponding to the first underscore of the method name.  The number being divided into; 
+	<span  class="code-comment">/*the first input corresponding to the first underscore 
+	  of the method name.  The number being divided into; 
 	  the numerator*/</span>
 	dividend : number, 
-	<span  style="color: green;">/*the second input corresponding to the second underscore of the method name.  The number partitioning the 
+	<span  class="code-comment">/*the second input corresponding to the second underscore 
+	of the method name.  The number partitioning the 
 	  other; the denominator*/</span>
 	divisor : number 
 
-	<span  style="color: green;">/*The list of inputs is separated from the instructions using a pipe, |. */</span>
+	<span  class="code-comment">/*The list of inputs is separated from the instructions 
+	  using a pipe, |. */</span>
  |
-	<span  style="color: green;">/*Here is where all the code that defines the method should go*/</span>
+	<span  class="code-comment">/*Here is where all the code that defines the method 
+	  should go*/</span>
 	…instructions…
-]: number; <span  style="color: green;">/*the return type; the type of the quotient*/</span>
+]: number; <span  class="code-comment">/*the return type; the type of the quotient*/</span>
 </div></div>
 
 <p>Here is that method again but with all the comments stripped out so you can see it more clearly:</p>
 
 <div class="restricted-width-container">
-<div class="good-code code-block">Public method "_÷_" is
+<div class="neutral-code code-block">Public method "_÷_" is
 [
 	dividend : number, 
 	divisor : number 
@@ -90,31 +97,47 @@
 <p>Ok, to close out this post, we'll write a simple method that adds two numbers and returns the answer.  But before the answer is returned out of the method, we want to let the world know the answer by printing it to our screen.</p>
 
 <div class="restricted-width-container">
-<div class="good-code code-block">Public method "tell the world what you get when you add_and_" is
+<div class="neutral-code code-block">Public method "tell the world what you get when you add_and_" is
 [
-	<span  style="color: green;">/*the inputs; the numbers being added*/</span>
+	<span  class="code-comment">/*the inputs; the numbers being added*/</span>
 	input1 : number,
 	input2 : number
  |
-	<span  style="color: green;">/*Let's add those numbers and store them in a variable.  I am declaring a new variable here, sum.  As you 
-	  can see, I have indicated that the type of this variable is number.  I do this by placing a colon after 
-	  the variable name then indicating the variable type.  The ":=" tells the vm that we will be storing 
-	  the result of the following method call into our new variable, sum.  We conclude this expression
-	  with a semicolon*/</span>
+	<span  class="code-comment">/*Let's add those numbers and store them in 
+	  a variable.  I am declaring a new variable here, sum.
+	  As you can see, I have indicated that the type of this
+	  variable is number.  I do this by placing a colon after 
+	  the variable name then indicating the variable type.
+	  The ":=" tells the vm that we will be storing 
+	  the result of the following method call into our new
+	  variable, sum.  We conclude this expression with a 
+	  semicolon*/</span>
 	sum : number := input1 + input2;
 
-	<span  style="color: green;">/*Tell the world the answer with your print statement!*/</span>
-	Print: "Hello world!  When you add “①” to “②” you get “③”.  Just thought you should know!"
+	<span  class="code-comment">/*Tell the world the answer with your print 
+	  statement!*/</span>
+	Print: "Hello world!  When you add “①” to “②” you get “③”.\
+		\|  Just thought you should know!"
 		with input1, input2, sum;
 	
-	<span  style="color: green;">/*The contents of the variables, input1, input2, and sum will replace the “①”, “②”, “③” in the actual 
-	  print statement on screen*/ </span>
+	<span  class="code-comment">/*The contents of the variables, input1,
+	  input2, and sum will replace the “①”, “②”, 
+	  “③” in the actual print statement on screen.
+	  The end of the first line, "\", and the start
+	  of the next line, "\|" is how you break up
+	  strings over multiple lines ignoring 
+	  whitespace between "\" and "\|", so the
+	  string won't have line breaks.*/ </span>
 
-	<span  style="color: green;">/*Finally, we return the result of our addition.  Note how there is no semicolon after the variable sum.  
-	  This indicates to the vm that this is the value that should be returned from this method once this 
-	  method is complete*/</span>
+	<span  class="code-comment">/*Finally, we return the result of our 
+	  addition.  Note how there is no semicolon after the 
+	  variable sum.  This indicates to the vm that this 
+	  is the value that should be returned from this
+	  method once this method is complete*/</span>
 	sum
-]: number;  <span  style="color: green;">/*To conclude, we tell the Avail vm that it can expect a number as output from from this method*/</span></div></div>
+]: number;  <span  class="code-comment">/*To conclude, we tell the Avail vm 
+	  that it can expect a number as output from from 
+	  this method*/</span></div></div>
 
 <p>That method will actually work in Avail as it follows actual Avail syntax.  Making a call to this method with the numbers 10 and 20, and storing it into the variable, <code>answer</code>, looks like:</p>
 
@@ -128,14 +151,15 @@
 <p>In my future conversations, the complexity of the method definitions will undoubtedly increase as they will aim at doing more complex and interesting things.  For now, I'll leave you with our add/ print method without the comments so you can see the flow of the Avail code.</p>
 
 <div class="restricted-width-container">
-<div class="good-code code-block">Public method "tell the world what you get when you add_and_" is
+<div class="neutral-code code-block">Public method "tell the world what you get when you add_and_" is
 [
 	input1 : number,
 	input2 : number
  |
 	sum : number := input1 + input2;
 
-	Print: "Hello world!  When you add “①” to “②” you get “③”.  Just thought you should know."
+	Print: "Hello world!  When you add “①” to “②” you get “③”.\
+		\|  Just thought you should know."
 		with input1, input2, sum;
 	
 	sum
