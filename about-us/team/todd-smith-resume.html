@@ -39,9 +39,13 @@
 		ztable {border: 2px solid #666666}
 		ztr {border: 2px solid #666666}
 		ztd {border: 2px solid #666666}
-		table.alternate {width: 100%}
+		table.alternate {width: 100%; margin-bottom: 8px}
 		table.alternate tr:nth-child(odd) {background-color: #eee}
 		table.alternate tr:nth-child(even) {background-color: #fff}
+		table.techprofile {border-collapse: collapse; border-spacing: 0px}
+		table.techprofile td, table.techprofile th {padding-right: 10px}
+		table.workhistory {border-collapse: collapse; border-spacing: 0px}
+		table.workhistory td, table.workhistory th {padding: 3px}
 	</style>
 
 </head>
@@ -90,11 +94,11 @@
 
 <h1 id="technical">Technical Profile</h1>
 
-<table cellpadding="5">
+<table class="techprofile">
 <tr style="vertical-align:top">
 <td>Hardware:</td>
 
-<td colspan="2">
+<td>
 <table class="alternate">
 <tr><td>Mac (x86)</td></tr>
 <tr><td>x86 PCs</td></tr>
@@ -106,7 +110,7 @@
 <tr style="vertical-align:top">
 <td>Operating<br/>Systems:</td>
 
-<td colspan="2">
+<td>
 <table class="alternate">
 <tr><td>UNIX (Linux, FreeBSD, Mac OS X, Solaris, HPUX, AIX)</td></tr>
 <tr><td>DOS, Windows 3.11 / NT4.0 / 2000 / XP / Server 2003 / Vista / Windows 7 / Windows 8</td></tr>
@@ -119,26 +123,26 @@
 <tr style="vertical-align:top">
 <td>Languages:</td>
 
-<td colspan="2">
+<td>
 <table class="alternate">
-<tr><td colspan="2">Assembler (x86)</td></tr>
-<tr><td colspan="2">Avail</td></tr>
-<tr><td colspan="2">C, C++</td></tr>
-<tr><td colspan="2">D</td></tr>
-<tr><td colspan="2">ColdFusion</td></tr>
-<tr><td colspan="2">FORTRAN</td></tr>
-<tr><td colspan="2">Haskell</td></tr>
-<tr><td colspan="2">Java</td></tr>
-<tr><td colspan="2">JavaScript</td></tr>
-<tr><td colspan="2">Lisp</td></tr>
-<tr><td colspan="2">Lua</td></tr>
-<tr><td colspan="2">Perl</td></tr>
-<tr><td colspan="2">PHP</td></tr>
-<tr><td colspan="2">Python</td></tr>
-<tr><td colspan="2">Scala</td></tr>
-<tr><td colspan="2">Tcl/Tk</td></tr>
-<tr><td colspan="2">Visual Basic</td></tr>
-<tr><td colspan="2">VisualWorks&reg; Smalltalk</td></tr>
+<tr><td>Assembler (x86)</td></tr>
+<tr><td>Avail</td></tr>
+<tr><td>C, C++</td></tr>
+<tr><td>D</td></tr>
+<tr><td>ColdFusion</td></tr>
+<tr><td>FORTRAN</td></tr>
+<tr><td>Haskell</td></tr>
+<tr><td>Java</td></tr>
+<tr><td>JavaScript</td></tr>
+<tr><td>Lisp</td></tr>
+<tr><td>Lua</td></tr>
+<tr><td>Perl</td></tr>
+<tr><td>PHP</td></tr>
+<tr><td>Python</td></tr>
+<tr><td>Scala</td></tr>
+<tr><td>Tcl/Tk</td></tr>
+<tr><td>Visual Basic</td></tr>
+<tr><td>VisualWorks&reg; Smalltalk</td></tr>
 </table>
 </td>
 </tr>
@@ -146,7 +150,7 @@
 <tr style="vertical-align:top">
 <td>Databases:</td>
 
-<td colspan="2">
+<td>
 <table class="alternate">
 <tr><td>DB2</td></tr>
 <tr><td>MioEdge</td></tr>
@@ -163,7 +167,7 @@
 
 <h1 id="work">Work History</h1>
 
-<table cellpadding="3">
+<table class="workhistory">
 
 <tr>
 <td colspan="2" class="job">The Avail Foundation</td>
@@ -172,7 +176,7 @@
 </tr>
 
 <tr>
-<td class="leftGap" rowspan="3"/>
+<td class="leftGap" rowspan="3"></td>
 
 <td style="vertical-align:top">Role:</td>
 <td><strong>Co-Founder / Chief Executive Officer</strong></td>
@@ -200,7 +204,7 @@ Provide vision for the Avail programming language and leadership for the Avail t
 </tr>
 
 <tr>
-<td class="leftGap" rowspan="3"/>
+<td class="leftGap" rowspan="3"></td>
 
 <td style="vertical-align:top">Role:</td>
 
@@ -257,7 +261,7 @@ Author philosophical, technical, and pedagogical content for the official <a hre
 </tr>
 
 <tr>
-<td class="leftGap" rowspan="3"/>
+<td class="leftGap" rowspan="3"></td>
 <td style="vertical-align:top">Role:</td>
 <td><strong>Senior Software Engineer</strong></td>
 </tr>
@@ -309,7 +313,7 @@ Designed, implemented, and maintained numerous other subsystems of MioEdge, e.g.
 
 
 <tr>
-<td class="leftGap" rowspan="3"/>
+<td class="leftGap" rowspan="3"></td>
 
 <td style="vertical-align:top">Role:</td>
 <td><strong>Software Engineer</strong></td>
@@ -352,7 +356,7 @@ Developed an extremely fast implementation of the pseudorandom number generator 
 </tr>
 
 <tr>
-<td class="leftGap" rowspan="3"/>
+<td class="leftGap" rowspan="3"></td>
 
 <td style="vertical-align:top">Role:</td>
 <td><strong>Senior Software Developer</strong></td>
@@ -395,7 +399,7 @@ Designed, developed, tested, and benchmarked high-performance genetic algorithms
 </tr>
 
 <tr>
-<td class="leftGap" rowspan="3"/>
+<td class="leftGap" rowspan="3"></td>
 
 <td style="vertical-align:top">Role:</td>
 <td><strong>Director of Information Technologies</strong></td>
@@ -442,7 +446,7 @@ Developed MapClick, an NMEA-0183 compliant GPS-based fleet management system and
 </tr>
 
 <tr>
-<td class="leftGap" rowspan="3"/>
+<td class="leftGap" rowspan="3"></td>
 
 <td style="vertical-align:top">Role:</td>
 <td><strong>Systems Engineer</strong></td>
@@ -485,7 +489,7 @@ Performed operating system and application software upgrades and migrations for 
 </tr>
 
 <tr>
-<td class="leftGap" rowspan="3"/>
+<td class="leftGap" rowspan="3"></td>
 
 <td style="vertical-align:top">Role:</td>
 <td><strong>Senior Software Developer</strong></td>
@@ -528,7 +532,7 @@ Acted as a subject matter expert to a team of data analysts responsible for test
 </tr>
 
 <tr>
-<td class="leftGap" rowspan="3"/>
+<td class="leftGap" rowspan="3"></td>
 
 <td style="vertical-align:top">Role:</td>
 <td><strong>Test Developer</strong></td>
@@ -554,7 +558,7 @@ Developed a skill certification test for C programming. Worked from a committee 
 </tr>
 
 <tr>
-<td class="leftGap" rowspan="3"/>
+<td class="leftGap" rowspan="3"></td>
 
 <td style="vertical-align:top">Role:</td>
 <td><strong>Senior Software Developer</strong></td>
@@ -605,7 +609,7 @@ Maintained a suite of Visual Basic utilities designed to generate and manipulate
 </tr>
 
 <tr>
-<td class="leftGap" rowspan="3"/>
+<td class="leftGap" rowspan="3"></td>
 
 <td style="vertical-align:top">Role:</td>
 <td><strong>Software Developer</strong></td>
@@ -636,7 +640,7 @@ Assisted professors in the development of distance learning tools for Florida St
 </tr>
 
 <tr>
-<td class="leftGap" rowspan="3"/>
+<td class="leftGap" rowspan="3"></td>
 
 <td style="vertical-align:top">Role:</td>
 <td><strong>Software Developer</strong></td>
