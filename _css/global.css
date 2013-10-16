@@ -91,17 +91,16 @@ body.gradient-logo {
 }
 
 .no-margin {
-	margin: 0, 0, 0, 0;
+	margin: 0;
 }
 
 .no-padding {
-	padding: 0, 0, 0, 0;
+	padding: 0;
 }
 
 .text-highlight {
 	margin: 25px;	
 	border-radius: 15px;
-/*	background-color: rgb(240,240,240); */
 
 	font-weight: 400;
 	font-style: italic;
@@ -191,6 +190,13 @@ body.gradient-logo {
 	line-height: 16px;
 }
 
+/* Overrides of Google Search styling because they ... are strange. */
+.gsc-table-cell-snippet-close {
+	padding-left: 8px !important;
+}
+.gsc-control-cse {
+	padding: 0 !important;
+}
 
      /*** Main Content ***/
 
@@ -242,6 +248,18 @@ body.gradient-logo {
 	margin-top: -10px;
 	padding-top: -10px;
 	font-size: 14px;
+}
+
+img.download-inline-icon {
+	height: 16px;
+	padding-bottom: 6px;
+	padding-right: 2px;
+}
+
+img.download-list-icon {
+	height: 24px;
+	padding-bottom: 12px;
+	padding-right: 4px;
 }
 
 .book-nav {

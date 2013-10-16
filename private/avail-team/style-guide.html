@@ -86,6 +86,16 @@ In text where you want to make an inline reference to Avail or other code elemen
 When linking to a page whose title is something normally in a code tag, <code><a href="/blah.html">use both</a></code>. The order of their use does matter here. The code tag on the outside applies a font and a text color; the a tag overwrites the color with the site-wide link color.
 </p>
 <p>
+When listing a file download inline with text, use the download-inline-icon class on the icon that corresponds to its filetype. See <a href="/nothing/something.pdf"><img src="/_images/download-icons/pdf.png" class="download-inline-icon">something.pdf</a></code> or <a href="/nothing/somethingelse.xls"><img src="/_images/download-icons/xls.png" class="download-inline-icon">somethingelse.xls</a></code> to see that these example links don't go anywhere.
+</p>
+<p>
+When you are listing file downloads in an itemized list, use the download-list-icon style.
+<ul>
+<li><code><a href="/_examples/RPN.avail"><img src="/_images/download-icons/_blank.png" class="download-list-icon">RPN.avail</a></code></li>
+<li><code><a href="/nothing/yomama.doc"><img src="/_images/download-icons/doc.png" class="download-list-icon">yomama.doc</a></code></li>
+</ul>
+</p>
+<p>
 <div class="restricted-width-container">
 <div class="neutral-code code-block">For code snippets that are a statement or longer,
 use two nested divs with "restricted-width-container" as the outer style,
