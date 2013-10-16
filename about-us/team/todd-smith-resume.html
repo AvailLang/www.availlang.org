@@ -39,9 +39,13 @@
 		ztable {border: 2px solid #666666}
 		ztr {border: 2px solid #666666}
 		ztd {border: 2px solid #666666}
-		table.alternate {width: 100%}
+		table.alternate {width: 100%; margin-bottom: 8px}
 		table.alternate tr:nth-child(odd) {background-color: #eee}
 		table.alternate tr:nth-child(even) {background-color: #fff}
+		table.techprofile {border-collapse: collapse; border-spacing: 0px}
+		table.techprofile td, table.techprofile th {padding-right: 10px}
+		table.workhistory {border-collapse: collapse; border-spacing: 0px}
+		table.workhistory td, table.workhistory th {padding: 3px}
 	</style>
 
 </head>
@@ -55,7 +59,7 @@
 <br/>
 <a id="Todd" title="Email Todd" href="http://www.google.com/recaptcha/mailhide/d?k=01IT59ZkPZX99ysi-dguGUNQ==&amp;c=Tpw6WTmaZV3EwOCBBzNnMBZ3ozHIumYtmhmtb7HD34c=" onclick="window.open('http://www.google.com/recaptcha/mailhide/d?k\07501IT59ZkPZX99ysi-dguGUNQ\75\75\46c\75Tpw6WTmaZV3EwOCBBzNnMBZ3ozHIumYtmhmtb7HD34c\075', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;"><span style="font-size:200%; color:black; font-weight:bold">Todd L. Smith</span></a>
 <br/>
-<span>Copyright © 2009 Todd L. Smith.</span>
+<span>Copyright © 2013 Todd L. Smith.</span>
 <hr/>
 </div>
 
@@ -90,11 +94,11 @@
 
 <h1 id="technical">Technical Profile</h1>
 
-<table cellpadding="5">
+<table class="techprofile">
 <tr style="vertical-align:top">
 <td>Hardware:</td>
 
-<td colspan="2">
+<td>
 <table class="alternate">
 <tr><td>Mac (x86)</td></tr>
 <tr><td>x86 PCs</td></tr>
@@ -106,7 +110,7 @@
 <tr style="vertical-align:top">
 <td>Operating<br/>Systems:</td>
 
-<td colspan="2">
+<td>
 <table class="alternate">
 <tr><td>UNIX (Linux, FreeBSD, Mac OS X, Solaris, HPUX, AIX)</td></tr>
 <tr><td>DOS, Windows 3.11 / NT4.0 / 2000 / XP / Server 2003 / Vista / Windows 7 / Windows 8</td></tr>
@@ -119,25 +123,26 @@
 <tr style="vertical-align:top">
 <td>Languages:</td>
 
-<td colspan="2">
+<td>
 <table class="alternate">
-<tr><td colspan="2">Assembler (x86)</td></tr>
-<tr><td colspan="2">Avail</td></tr>
-<tr><td colspan="2">C, C++</td></tr>
-<tr><td colspan="2">ColdFusion</td></tr>
-<tr><td colspan="2">FORTRAN</td></tr>
-<tr><td colspan="2">Haskell</td></tr>
-<tr><td colspan="2">Java</td></tr>
-<tr><td colspan="2">JavaScript</td></tr>
-<tr><td colspan="2">Lisp</td></tr>
-<tr><td colspan="2">Lua</td></tr>
-<tr><td colspan="2">Perl</td></tr>
-<tr><td colspan="2">PHP</td></tr>
-<tr><td colspan="2">Python</td></tr>
-<tr><td colspan="2">Scala</td></tr>
-<tr><td colspan="2">Tcl/Tk</td></tr>
-<tr><td colspan="2">Visual Basic</td></tr>
-<tr><td colspan="2">VisualWorks&reg; Smalltalk</td></tr>
+<tr><td>Assembler (x86)</td></tr>
+<tr><td>Avail</td></tr>
+<tr><td>C, C++</td></tr>
+<tr><td>D</td></tr>
+<tr><td>ColdFusion</td></tr>
+<tr><td>FORTRAN</td></tr>
+<tr><td>Haskell</td></tr>
+<tr><td>Java</td></tr>
+<tr><td>JavaScript</td></tr>
+<tr><td>Lisp</td></tr>
+<tr><td>Lua</td></tr>
+<tr><td>Perl</td></tr>
+<tr><td>PHP</td></tr>
+<tr><td>Python</td></tr>
+<tr><td>Scala</td></tr>
+<tr><td>Tcl/Tk</td></tr>
+<tr><td>Visual Basic</td></tr>
+<tr><td>VisualWorks&reg; Smalltalk</td></tr>
 </table>
 </td>
 </tr>
@@ -145,7 +150,7 @@
 <tr style="vertical-align:top">
 <td>Databases:</td>
 
-<td colspan="2">
+<td>
 <table class="alternate">
 <tr><td>DB2</td></tr>
 <tr><td>MioEdge</td></tr>
@@ -162,16 +167,17 @@
 
 <h1 id="work">Work History</h1>
 
-<table cellpadding="3">
+<table class="workhistory">
+
 
 <tr>
 <td colspan="2" class="job">The Avail Foundation</td>
 <td class="where" colspan="1">Madison, Wisconsin</td>
-<td colspan="2" rowspan="3" class="when">2012 to&nbsp;present</td>
+<td colspan="2" rowspan="2" class="when">2012 to&nbsp;present</td>
 </tr>
 
 <tr>
-<td class="leftGap" rowspan="3"/>
+<td class="leftGap" rowspan="2"></td>
 
 <td style="vertical-align:top">Role:</td>
 <td><strong>Co-Founder / Chief Executive Officer</strong></td>
@@ -185,37 +191,29 @@ Provide vision for the Avail programming language and leadership for the Avail t
 <hr/>
 </td>
 
-</tr>
-
-<td class="rightGap"/>
+<td class="rightGap"></td>
 </tr>
 
 <tr>
 <td colspan="2" class="job">The Avail Foundation</td>
-
 <td class="where" colspan="1">Madison,&nbsp;Wisconsin</td>
-
 <td colspan="2" rowspan="3" class="when">2008 to&nbsp;present</td>
 </tr>
 
 <tr>
-<td class="leftGap" rowspan="3"/>
-
+<td class="leftGap" rowspan="3"></td>
 <td style="vertical-align:top">Role:</td>
-
 <td><strong>Software Engineer</strong></td>
 </tr>
 
 <tr>
-
 <td style="vertical-align:top">Environment:</td>
-
 <td>Windows XP / Windows 7 / Windows 8, Mac OS 10.5 / 10.6 / 10.7, Linux. Java, Avail. Git. Eclipse Galileo / Helios / Indigo / Juno / Kepler.</td>
 </tr>
 
 <tr>
 <td class="what" colspan="3">
-Collaborate on the design and implementation of the Avail programming language. <small>(Note that the Avail Foundation formally came into existence in 2012, but I began working on Avail in 2008.)</small>
+Collaborate on the design and implementation of the Avail programming language. <small>(<em>N.B.</em> The Avail Foundation formally came into existence in 2012, but I began working on Avail in 2008.)</small>
 
 <ul>
 <li>
@@ -235,18 +233,18 @@ Designed and implemented numerous other subsystems of Avail, e.g., parallel comp
 </li>
 
 <li>
-Author philosophical, technical, and pedagogical content for the official <a href="http://www.availlang.org">Avail website</a>.
+Developed and presented a ten-part lecture series aimed at teaching the philosophy, concepts, and usage of the Avail programming language.
 </li>
 
 <li>
-Developed and presented a ten-part lecture series aimed at teaching the philosophy, concepts, and usage of the Avail programming language.
+Author philosophical, technical, and pedagogical content for the official <a href="http://www.availlang.org">Avail website</a>.
 </li>
 </ul>
 
 <hr/>
 </td>
 
-<td class="rightGap"/>
+<td class="rightGap"></td>
 </tr>
 
 <tr>
@@ -256,7 +254,7 @@ Developed and presented a ten-part lecture series aimed at teaching the philosop
 </tr>
 
 <tr>
-<td class="leftGap" rowspan="3"/>
+<td class="leftGap" rowspan="3"></td>
 <td style="vertical-align:top">Role:</td>
 <td><strong>Senior Software Engineer</strong></td>
 </tr>
@@ -270,7 +268,7 @@ Developed and presented a ten-part lecture series aimed at teaching the philosop
 
 <tr>
 <td class="what" colspan="3">
-Designed, implemented, maintained, and supported commercial products.
+Design, implement, maintain, and support commercial products.
 
 <ul>
 <li>
@@ -297,7 +295,7 @@ Designed, implemented, and maintained numerous other subsystems of MioEdge, e.g.
 <hr/>
 </td>
 
-<td class="rightGap"/>
+<td class="rightGap"></td>
 </tr>
 
 <tr>
@@ -308,7 +306,7 @@ Designed, implemented, and maintained numerous other subsystems of MioEdge, e.g.
 
 
 <tr>
-<td class="leftGap" rowspan="3"/>
+<td class="leftGap" rowspan="3"></td>
 
 <td style="vertical-align:top">Role:</td>
 <td><strong>Software Engineer</strong></td>
@@ -341,7 +339,7 @@ Developed an extremely fast implementation of the pseudorandom number generator 
 <hr/>
 </td>
 
-<td class="rightGap"/>
+<td class="rightGap"></td>
 </tr>
 
 <tr>
@@ -351,7 +349,7 @@ Developed an extremely fast implementation of the pseudorandom number generator 
 </tr>
 
 <tr>
-<td class="leftGap" rowspan="3"/>
+<td class="leftGap" rowspan="3"></td>
 
 <td style="vertical-align:top">Role:</td>
 <td><strong>Senior Software Developer</strong></td>
@@ -384,7 +382,7 @@ Designed, developed, tested, and benchmarked high-performance genetic algorithms
 <hr/>
 </td>
 
-<td class="rightGap"/>
+<td class="rightGap"></td>
 </tr>
 
 <tr>
@@ -394,7 +392,7 @@ Designed, developed, tested, and benchmarked high-performance genetic algorithms
 </tr>
 
 <tr>
-<td class="leftGap" rowspan="3"/>
+<td class="leftGap" rowspan="3"></td>
 
 <td style="vertical-align:top">Role:</td>
 <td><strong>Director of Information Technologies</strong></td>
@@ -431,7 +429,7 @@ Developed MapClick, an NMEA-0183 compliant GPS-based fleet management system and
 <hr/>
 </td>
 
-<td class="rightGap"/>
+<td class="rightGap"></td>
 </tr>
 
 <tr>
@@ -441,7 +439,7 @@ Developed MapClick, an NMEA-0183 compliant GPS-based fleet management system and
 </tr>
 
 <tr>
-<td class="leftGap" rowspan="3"/>
+<td class="leftGap" rowspan="3"></td>
 
 <td style="vertical-align:top">Role:</td>
 <td><strong>Systems Engineer</strong></td>
@@ -474,7 +472,7 @@ Performed operating system and application software upgrades and migrations for 
 <hr/>
 </td>
 
-<td class="rightGap"/>
+<td class="rightGap"></td>
 </tr>
 
 <tr>
@@ -484,7 +482,7 @@ Performed operating system and application software upgrades and migrations for 
 </tr>
 
 <tr>
-<td class="leftGap" rowspan="3"/>
+<td class="leftGap" rowspan="3"></td>
 
 <td style="vertical-align:top">Role:</td>
 <td><strong>Senior Software Developer</strong></td>
@@ -517,17 +515,17 @@ Acted as a subject matter expert to a team of data analysts responsible for test
 <hr/>
 </td>
 
-<td class="rightGap"/>
+<td class="rightGap"></td>
 </tr>
 
 <tr>
 <td colspan="2" class="job">BrainBench</td>
 <td class="where" colspan="1">Raleigh, North Carolina</td>
-<td colspan="2" rowspan="3" class="when">2000</td>
+<td colspan="2" rowspan="2" class="when">2000</td>
 </tr>
 
 <tr>
-<td class="leftGap" rowspan="3"/>
+<td class="leftGap" rowspan="2"></td>
 
 <td style="vertical-align:top">Role:</td>
 <td><strong>Test Developer</strong></td>
@@ -541,9 +539,7 @@ Developed a skill certification test for C programming. Worked from a committee 
 <hr/>
 </td>
 
-</tr>
-
-<td class="rightGap"/>
+<td class="rightGap"></td>
 </tr>
 
 <tr>
@@ -553,7 +549,7 @@ Developed a skill certification test for C programming. Worked from a committee 
 </tr>
 
 <tr>
-<td class="leftGap" rowspan="3"/>
+<td class="leftGap" rowspan="3"></td>
 
 <td style="vertical-align:top">Role:</td>
 <td><strong>Senior Software Developer</strong></td>
@@ -594,7 +590,7 @@ Maintained a suite of Visual Basic utilities designed to generate and manipulate
 <hr/>
 </td>
 
-<td class="rightGap"/>
+<td class="rightGap"></td>
 </tr>
 
 <tr>
@@ -604,7 +600,7 @@ Maintained a suite of Visual Basic utilities designed to generate and manipulate
 </tr>
 
 <tr>
-<td class="leftGap" rowspan="3"/>
+<td class="leftGap" rowspan="3"></td>
 
 <td style="vertical-align:top">Role:</td>
 <td><strong>Software Developer</strong></td>
@@ -623,9 +619,7 @@ Assisted professors in the development of distance learning tools for Florida St
 <hr/>
 </td>
 
-</tr>
-
-<td class="rightGap"/>
+<td class="rightGap"></td>
 </tr>
 
 <tr>
@@ -635,7 +629,7 @@ Assisted professors in the development of distance learning tools for Florida St
 </tr>
 
 <tr>
-<td class="leftGap" rowspan="3"/>
+<td class="leftGap" rowspan="3"></td>
 
 <td style="vertical-align:top">Role:</td>
 <td><strong>Software Developer</strong></td>
@@ -652,14 +646,10 @@ Assisted professors in the development of distance learning tools for Florida St
 Assisted professors in the analysis of data produced by experiments with Florida State University's low-energy nuclear accelerator. Produced a lambda particle decomposition analyzer. Enabled professors to perform high-quantity data analysis of reaction-induced particle four-vectors.
 </td>
 
-</tr>
-
-<td class="rightGap"/>
+<td class="rightGap"></td>
 </tr>
 
 </table>
-
-<p><br/></p>
 
 <hr/>
 
@@ -668,10 +658,8 @@ Assisted professors in the analysis of data produced by experiments with Florida
 <p>Patents pending:</p>
 <ul>
 <li>US 2013-0191434 A1 - Concurrent Process Execution</li>
-<li>US ??? - Distributed Database Management</li>
+<li>US [Awaiting Application #] - Distributed Database Management</li>
 </ul>
-
-<p><br/></p>
 
 <hr/>
 
