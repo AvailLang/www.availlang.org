@@ -18,7 +18,7 @@ a {
 }
 
 a:hover {
-	color: rgb(160,64,1); /* dark orange */
+	color: rgb(160,64,1) !important; /* dark orange */
 	text-shadow: 0 0 0.2em #F87};
 }
 
