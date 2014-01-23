@@ -1,6 +1,9 @@
 		<div class="header-wrapper">
 			<a class="header-text" href="/index.html">The Avail Programming Language</a>
 		</div>
+		<div class="search-bar">
+			<gcse:searchbox-only resultsUrl="/search/index.html"></gcse:searchbox-only>
+		</div>
 		<div class="main-wrapper">
 			<div class="nav-wrapper">
 				<div class="navigation">

@@ -35,6 +35,7 @@ body {
 	font-size: 15px; 
 	line-height: 1.4; 
 	-webkit-font-smoothing: subpixel-antialiased;
+	min-width: 350px;
 }
 
 body, button, input, select, textarea { 
@@ -118,14 +119,13 @@ body.gradient-logo {
 
 .header-wrapper {
 	height: 89px;
-	width: 100%;
 	display: table-cell;
 	vertical-align: middle;
-
-	/* Right-align the text and adjust for a small screen */
-	padding-left: 180px;
+	padding-left: 187px;
 	padding-right: 10px;
 	padding-bottom: 5px;
+
+	/* Right-align the text and reduce size for a small screen */
 	text-align: right;
 	font-size: 20px;
 	line-height: 20px;
@@ -136,6 +136,13 @@ body.gradient-logo {
 	font-family: 'Raleway', sans-serif;
 }
 
+.search-bar {
+	padding-left: 14px;
+	padding-right: 14px;
+
+	/* Lower padding because it is not in the header bar. */
+	padding-top: 10px;
+}
 
   /*** Page Content ***/
 
@@ -373,7 +380,7 @@ code {
 	padding-bottom: 30px;
 }
 
-.footer{
+.footer {
 	padding-left: 10px;
 	padding-right: 10px;
 	color: gray;
@@ -382,7 +389,7 @@ code {
 	text-align: center;
 }
 
-.footer-line{
+.footer-line {
 	/* Prevent fellow lines from displaying on the same line in narrow windows */
 	clear: both;
 }
@@ -406,15 +413,20 @@ a.footer {
 
 	.header-wrapper {
 		/* Left-align text against the logo */
-		padding-left: 184px; 
 		text-align: left;
-		font-size: 24px;	
-		line-height: 23px;
 	}
 
+	.search-bar {
+		padding-top: 28px;
+		width: 220px;
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+	
 	.nav-wrapper {
 		/* Float to the left of the content */
-		float: left;
+		float: left; 
 	}
 	
 	.navigation {
@@ -425,6 +437,7 @@ a.footer {
 	.content-wrapper {	
 		/* To allow for floated navigation pane */
 		margin-left: 160px;
+/*		display: table-row;*/
 	}
 		
 	.content {
@@ -452,9 +465,22 @@ a.footer {
 	}
 }
 
+@media only screen and (min-width: 900px) {
+
+	.header-wrapper {
+		/* Increase text size to the preferred size now that clearance is available */
+		font-size: 24px;	
+		line-height: 23px;
+	}
+}
+
 /* Desktop Layout: 1000px and up.  Inherits styles from: Mobile Layout and Tablet Layout. */
 
 @media only screen and (min-width: 1000px) {
+
+	.search-bar {
+		width: 300px;
+	}
 
 	.content-wrapper {	
 		/* Larger space induces a right margin */
