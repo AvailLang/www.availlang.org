@@ -30,13 +30,15 @@
 <h3>Inlined method dispatch</h3>
 <p>Avail supports multiple dispatch on all method arguments. In order to implement this efficiently, we use a decision tree and an algorithm that supports argument-at-a-time type analysis, starting with the arguments that prune the decision tree most effectively. In order to further optimize method dispatch, the dynamic translator now inlines this decision tree directly into the generated L2 code whenever it deems it profitable to do so. For correctness, logic also exists to deoptimize the generated L2 code whenever the contingent decision trees are updated. We expect a significant performance boost when we begin actually inlining ordinary method definitions also.</p>
 
-<tr class="book-nav">
-	<div class="book-nav">
-		<li class="book-nav-back"><a class="book-nav-back" href="./E003.html">‹ Previous</a></li>
-		<li class="book-nav-spacer">|</li>
-		<li class="book-nav-up"><a class="book-nav-up" href="./index.html">Return to Newsletters</a></li>
-	</div>
-</tr>
+<table class="book-nav">
+	<tr>
+		<td class="book-nav-back"><a class="book-nav-back" href="./E003.html">‹ Previous</a></td>
+		<td class="book-nav-spacer">|</td>
+		<td class="book-nav-up"><a class="book-nav-up" href="./index.html">Return to Newsletters</a></td>
+		<td class="book-nav-spacer">|</td>
+		<td class="book-nav-forward"><a class="book-nav-forward" href="./E005.html">Next ›</a></td>
+	</tr>
+</table>
 
 <!--#include virtual="/_include/body-bottom.ssi" -->
 
