@@ -1,0 +1,101 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Avail Newsletters, Edition #5: The Builder</title>
+	
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+
+<h2 class="content-title">The Builder</h2>
+
+<div class="content-meta-info">Edition #5 - February 5, 2014</div>
+<h3>How We Use Avail</h3>
+
+<p>You probably don't know it, but Avail development is currently done with a custom "Builder" tool, launched as an application from Eclipse.  In the last few months this tool has undergone a serious overhaul in preparation for consumption by you, dear reader.</p>
+
+<p>We've had the Builder tool around for quite some time, in one form or another.  The basic idea has always been to present some modules in a list (or a graph in older incarnations).  You select one of the modules and tell it to build, and it recursively traces the dependencies by examining the <a href="/about-avail/documentation/modules.html">Uses and Extends</a> declarations in the module headers.  It then loads the modules in dependency order.  What could be simpler?</p>
+
+<p>Over the years, as we've filled in more and more of the missing pieces of Avail, we've tapped into a stream of wonderful opportunities for expanding the scope and capabilities of the Builder:</p>
+<ul>
+	<li>When we introduced module binaries we could avoid costly recompilations by storing serialized versions of the modules into repositories, retrieving them when needed.</li>
+	<li>Avail has fibers – lightweight threads scheduled preemptively by a pool of OS threads.  Their introduction enabled a significant performance improvement to the Builder by using multiple cores to load unrelated modules.  But the Avail compiler is written in such a way that it also makes effective use of multiple cores even when compiling a single module.</li>
+	<li>Asynchronous I/O (using Java's NIO2 CompletionHandlers) keeps the OS thread pool from stalling &mdash; there are no Avail primitives that cause the underlying Java threads to block.</li>
+</ul>
+
+
+<h3>The New Builder</h3>
+
+<p>We've been working for a few months on a rewrite of the Builder to take advantage of these features, and more.  The main change is to keep modules loaded between builds.  It used to be the case that double-clicking a module in the Builder would start with an empty runtime environment (no modules loaded), then trace and load all ancestors.  Although this this gave us an <em>enormous</em> performance boost when module binaries showed up, it still was costing tens of seconds to load everything.  The new Builder keeps modules loaded in the runtime environment to skip the loading time for modules that haven't changed since the previous build.  If a module changed, it will be unloaded and recompiled/reloaded as necessary during a build.</p>
+
+<p>Repository files now have a slightly different goal as well.  They used to hold the latest compilation of each module, but now they hold multiple compilations associated with different source code versions or different compilation environments due to ancestor modules having changed.  A version key is a file's name and a digest of its content.  Associated with each version key in a repository is a "Version".  That version contains a list of local (unresolved) predecessor module names as an optimization for tracing.  The version also holds a map from compilation keys to compilations.  The compilation key consists of the list of <em>compilation</em> times of the immediate predecessor modules.  The corresponding compilation contains the compilation time of that module and a reference to the serialized module.  This particular scheme has some awesome performance benefits, which I'll address in a bit.</p>
+
+<p>This change to the structure of a repository file makes it impossible to ship Avail object code directly with one &mdash; which module versions should be loaded?  We intend to create a format dedicated to that purpose in the near future.  By the way, did I mention that repository files have efficient transactional safety built in?</p>
+
+<h3>The Phases of Building</h3>
+<p>There are three phases to a build with the new Builder:
+<ol>
+<li>The first phase is to identify which loaded modules have source code that no longer agrees with what's loaded.  This is done in parallel.  For each loaded module, a cryptographic digest is computed for that module's source file.  The associated repository speeds this up by keeping a persistent cache from &lt;file name, file modification timestamp&gt; pairs to the associated source digest, to avoid having to actually recompute the digest if the file has not been modified since the last check.  After ascertaining which modules are invalid (disagree with their current source), those modules and all their descendants are unloaded from the runtime environment, in reverse-dependency order.</li>
+<li>The second phase recursively traces the selected module, resolving local module names mentioned in Uses/Extends clauses to fully qualified names.  This phase produces a graph of modules that are either currently loaded or need to be. 
+<li>The third phase actually loads or compiles all missing modules, in dependency order.  Loading is only possible if the predecessors of a module have compilation times that agree with a compilation key in the repository; otherwise the Avail source code must be compiled, writing the module's compiled form into the repository when complete.</li>
+</ol>
+
+<p>It should be noted that the file read operations are performed fully asynchronously via I/O completion handlers.  Processor core counts are very much on the rise, and I'd hate to squander resources by stalling threads on I/O needlessly.</p>
+
+<h3>The Next Challenge: Entry Points</h3>
+
+<p>The next piece of the reworking puzzle is to fully implement module entry points.  A module's header can define entry points, which are method names that define the external syntax available to the Avail application runner &mdash; which we have not yet built.</p>
+
+<p>Avail modules are partitioned along two design axes. The traditional axis is software construction. This is what we've built already: an encapsulated DAG of modules presented as nested surfaces. A module existing at one layer can only import modules at the same layer or an outer layer. A module can never reach inside another module. Also, a module can only use local names to reference other modules. A module therefore never knows its true place, or any other module's true place, in the DAG of modules.</p>
+
+<p>External use of Avail modules requires a different topology. The end user wants to "do things", not "understand software construction". Entry points represent the things that the end user wants to do, and so should be presented as a single surface. The collection of entry points presented by an Avail library or application comprise an interaction language. This interaction language replaces the traditional console command-line interface. By learning this interaction language, the end user acquires the ability to run the Avail programs provided by a particular source. The interface language can be arbitrarily broad, e.g., a library that includes the functionality of all Unix userland programs, or extremely narrow, e.g., "Play a game of Wump the Wumpus". An interface language statement is a send of an entry point by an end user, and its arguments are other Avail expressions (see below).</p>
+
+<p>To define an entry point:</p>
+<ol>
+<li>Select a suitable module somewhere in the module DAG. It does not have to be an outermost module, i.e., one that resides directly within an Avail root.</li>
+<li>Define a ⊤-valued method E that implements the functionality that should be directly available to an end user.</li>
+<li>Export E by placing it into the Entries section of the module header. It does not need to appear in the Names section unless another module should be permitted to import it. This should be allowed by the compiler, but Avail programmers should generally shy away from doing this. As a general rule, it is poor design to overlap the import and entry point surfaces, because of the "design torque" that they exert on module construction.  Note that the name E must be an atom defined directly in this module; it cannot be imported from another module.</li>
+<li>Include in the Extends section any modules (and/or specific imported names or renames) needed to provide supporting grammar for interface language statements based on E.</li>
+<li>Include in the Names section any new methods that provide supporting grammar for interface language statements based on E.</li>
+</ol>
+
+<p>Given an interface language statement S supplied by an end user, to parse this statement, the system must:</p>
+<ol>
+<li>Determine the comprehensive set of all entry points that are available given a particular configuration of Avail roots, i.e., a fully-loaded Avail system.</li>
+<li>Construct a transient artificial module M₀ that Uses every entry point provider, i.e., a module that contains an entry point, and includes S as its body. This module represents a context within which every entry point is meaningful, and in which every method available in each entry point provider is also available. Note that such a module need not necessarily be constructible by an Avail programmer, since it is permitted to arbitrarily crosscut the module DAG, and also import entry points which were not exported by Names sections.</li>
+<li>Attempt to compile M₀, which forces a parse of S.</li>
+<li>If S is not understandable at all, e.g., it represents a method that does not exist or is not recognizable as an invocation of an entry point, then reject the expression and issue an appropriate error message.</li>
+<li>Otherwise, S is understandable of an entry point invocation in at least one way, but the argument expressions for that entry point might involve syntax from otherwise unrelated modules.  We don't wish to mix grammars that way, so…</li>
+<li>Collect the set of modules {M₁, M₂,...} that defined entry points that were the outermost method send nodes of the possible parses above.</li>
+<li>For each module M₁, M₂,..., attempt to parse S again in the scope of <em>just</em> that module.  Collect all such locally valid parses.</li>
+<li>If there is not exactly one such parse, report either that there was no way to parse the expression (when limited to any single module's syntax), or that there were multiple conflicting ways.</li>
+<li>If there is exactly one locally valid parse, generate a function from the parse tree and invoke it after discarding the scratch module M₀.</li>
+</ol>
+
+
+<table>
+	<tr class="book-nav">
+		<div class="book-nav">
+			<li class="book-nav-back"><a class="book-nav-back" href="./E004.html">‹ Previous</a></li>
+			<li class="book-nav-spacer">|</li>
+			<li class="book-nav-up"><a class="book-nav-up" href="./index.html">Return to Newsletters</a></li>
+		</div>
+	</tr>
+</table>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>
