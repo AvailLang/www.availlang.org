@@ -9,6 +9,7 @@
 <head>
 	
 <!--#include virtual="/_include/head.ssi" -->
+<!--#include virtual="/_include/sh-head.ssi" -->
 	
 		<title>Avail - Rich's Blog</title>
 	
@@ -17,66 +18,72 @@
 	<body class="gradient-logo">
 	
 <!--#include virtual="/_include/body-top.ssi" -->
-<h2 class="content-title">Method Overloading</h2>
+<h2 class="content-title">Method Overloading and Method Overriding</h2>
+<p><em>If you haven't yet had an introduction to methods, I highly recommend reading my <a href="./BERA004.html">previous blog post</a> for a basic introduction before proceeding.</em></p>
+<p>A good way to describe Avail is that it is an <em>operation-oriented language</em> (operations take precedence in Avail).  Avail supports objects, however, unlike in object oriented-programming, method definitions are independent of any object.  Methods can take objects as input, but they are not subordinate to any object in their definition.  This is important as it allows for much greater flexibility when using methods.  Two key method features supported by Avail are <a href="">method overloading</a> as well as <a href="">method overriding</a>.</p>  
 
-<p>A good way to describe Avail is that it is an <em>operation-oriented language</em> (operations take precedence in Avail).  In my experience, a lot of programming in Avail is done through the creation of methods.  The parameters' types of any given method defines the behavior dispatched at runtime for any method call (Avail supports <a href="http://en.wikipedia.org/wiki/Multiple_dispatch">multiple dispatch</a>).  Though Avail has objects, method definitions are independent of any object.  With respect to methods, objects are treated like any other parameter (like whole number or 5's type).  So overloading methods in Avail is simply taking a method and defining different functions based upon the provided parameters' types.</p>  
+
+<p>At compile time, The parameters' types of any given method defines the behavior dispatched at runtime for any method call (Avail supports <a href="http://en.wikipedia.org/wiki/Multiple_dispatch">multiple dispatch</a>).  Though Avail has objects,   With respect to methods, objects are treated like any other parameter (like whole number or 5's type).  So overloading methods in Avail is simply taking a method and defining different functions based upon the provided parameters' types.</p>  
 
 <p>For example, take the method <code>"_fires the_"</code> in the two following calls:
-<code>Grandma fires the plumber</code> and <code>The submarine fires the torpedos</code>. The meaning of the word <em>fires</em> implied in a statement is usually based upon the context within which it is used.  Grandma is not picking up the plumber and using him as a projectile weapon, nor is the submarine sending the torpedos to the unemployment line.  Though the functionality of <code>"_fires the_"</code> implied for each call here is very different, the implementations of these methods can exist side by side in Avail without ambiguity because of the context in which they are used.   That context in the case of Avail are the types of the method's input parameters.  In the two examples of our method, <code>"_fires the_"</code>, we have the input types <code>[employer, employee]</code> for grandma and the plumber and <code>[weaponized vehicle,projectile]</code> for the submarine and the torpedos(these different parameter types of the inputs determines the implementation of the method used at runtime).</p>
+<code>Grandma fires the plumber</code> and <code>The submarine fires the torpedoes</code>. The meaning of the word <em>fires</em> implied in a statement is usually based upon the context within which it is used.  Grandma is not picking up the plumber and using him as a projectile weapon, nor is the submarine sending the torpedoes to the unemployment line.  Though the functionality of <code>"_fires the_"</code> implied for each call here is very different, the implementations of these methods can exist side by side in Avail without ambiguity because of the context in which they are used.   That context in the case of Avail are the types of the method's input parameters.  In the two examples of our method, <code>"_fires the_"</code>, we have the input types <code>[employer, employee]</code> for grandma and the plumber and <code>[weaponized vehicle,projectile]</code> for the submarine and the torpedoes(these different parameter types of the inputs determines the implementation of the method used at runtime).</p>
 
-<p>Another use for overloading in Avail is defining how a method reaches the desired result based upon the parameter inputs.  For example, some sorting algorithms are more efficient at sorting smaller tuples and less efficient at sorting larger tuples.  A sorting method can have different implementations for different ranges of tuple sizes using the most efficient sorting algorithms for the given range (you can read more about Avail's <a href="http://www.availlang.org/about-avail/glossary/tuple.html">tuple types here</a>).  I have done this with my implementation of the <a href="http://en.wikipedia.org/wiki/Merge_sort">merge sort algorithm</a> in the Avail library.</p>
+<p>Overrriding in Avail is defining how a method reaches the desired result based upon the parameter inputs.  For example, some sorting algorithms are more efficient at sorting smaller tuples and less efficient at sorting larger tuples.  A sorting method can have different implementations for different ranges of tuple sizes using the most efficient sorting algorithms for the given range (you can read more about Avail's <a href="http://www.availlang.org/about-avail/glossary/tuple.html">tuple types here</a>).  I have done this with my implementation of the <a href="http://en.wikipedia.org/wiki/Merge_sort">merge sort algorithm</a> in the Avail library.</p>
 
 <p>At much smaller tuple sizes, it is more efficient to use <a href="http://en.wikipedia.org/wiki/Insertion_sort">insertion sort</a> than merge sort due to the overhead of merge sort (here is a nice <a href="https://www.khanacademy.org/science/computer-science/v/insertion-sort-algorithm">video on insertion sort</a> put together by the Khan Academy).  Because of this, I have created multiple implementations of merge sort as a public method in the Tuples <a href="http://www.availlang.org/about-avail/documentation/modules.html">module</a> of the library (a public method is exported for use outside the module).  In the implementation of merge sort for tuples with 2 to 10 elements, I have made a call to the private implementation of insertion sort to do the sorting (a private method is not exported and can only be used inside the module it is defined in).  My implementation of insertion sort only operates on tuples ranging in size from 2 to 10 elements (the merge sort algorithm is implemented for merge sort calls on tuples of 11 elements or more).</p>
 
 <p>The following is the method definition of insertion sort.  As it is only used in cases of tuples of 2 to 10 elements when calls are made to the library's merge sort or <a href="http://en.wikipedia.org/wiki/Quicksort">quicksort</a> methods, I've only defined it for use of the tuple type of the size range [2..10].  The implementation is fairly simple, so I'll let the inline comments provide the necessary explanations.
 <div class="restricted-width-container">
-<div class="neutral-code code-block">Private method "insertion sort_with_" is
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 1">
+<![CDATA[
+Private method "insertion sort_with_" is
 [
-	aTuple : &lt;any…|2..10>, <font color="green">/*a tuple type of size [2..10] */
+	aTuple : &lt;any…|2..10>, /* a tuple type of size [2..10] */
 	
 	/* a function type that takes two inputs and returns a boolean. * 
 	 * This function serves as the comparison criteria to assert    *
-	 * the sorting rules of the tuple.                              */</font>
+	 * the sorting rules of the tuple.                              */
 	comparator : [⊥, ⊥]→boolean  
  |
- 	<font color="green">/* The tuple to sort in place */</font>
+ 	/* The tuple to sort in place */
 	output : &lt;any…|2..> := aTuple;
 	From 2 to |aTuple| do  
 	[
-		i : [2..10]  <font color="green">/* Type of the numeric range from 2 to 10 */</font>
+		i : [2..10]  /* Type of the numeric range from 2 to 10 */
 	 |
-		<font color="green">/* counter of primary element being inspected; *
-		 * will be reduced as the element moves left   */</font>
+		/* counter of primary element being inspected; *
+		 * will be reduced as the element moves left   */
 		k : [2..10] := i; 
 		
-		<font color="green">/* counter of element to the left of the *
-		 * primary element being compared        */</font>
+		/* counter of element to the left of the *
+		 * primary element being compared        */
 		j : [1..9] := i - 1; 
 		
-		<font color="green">/* the sorting condition criteria function call */</font>
+		/* the sorting condition criteria function call */
 		While [j > 1 ∧ [comparator(output[k],output[j])]]  
 		do
 		[
-			<font color="green">/* swap the element at the k<sup>th</sup> index with *
-			 * the element at the j<sup>th</sup> index           */</font>
+			/* swap the element at the k<sup>th</sup> index with *
+			 * the element at the j<sup>th</sup> index           */
 		 	output := output[k↔j]; 
-			↑j--;  <font color="green">/* decrement j */</font>
-			↑k--;  <font color="green">/* decrement k */</font>
+			↑j--;  /* decrement j */
+			↑k--;  /* decrement k */
 		];
-	   <font color="green">/* When the head of the tuple is reached, the final comparison *
-	    * has to be completed outside of the loop.  If this final     *
-		* comparison were to be completed in the loop, it would       *
-		* execute the block which would reduce the value of j post    *
-		* comparison to 0.  This is outside of the range of [1..9].   *
-		* We cannot reduce the range to [0..9] because that is        *
-		* outside the bounds of the natural number type requirement   *
-		* for indices                								  */</font>
+		/* When the head of the tuple is reached, the final comparison *
+	     * has to be completed outside of the loop.  If this final     *
+		 * comparison were to be completed in the loop, it would       *
+		 * execute the block which would reduce the value of j post    *
+		 * comparison to 0.  This is outside of the range of [1..9].   *
+		 * We cannot reduce the range to [0..9] because that is        *
+		 * outside the bounds of the natural number type requirement   *
+		 * for indices                								   */
 		output := if j = 1 ∧ [comparator(output[k],output[j])] then 
 			[output[k↔j]] else [output];  
 	];
-	output     <font color="green">/* The return value */</font>
-]:&lt;any…|2..>;  <font color="green">/* The return type of the method */</font>
-</div></div>
+	output     /* The return value */
+]:&lt;any…|2..>;  /* The return type of the method */
+]]>
+</script></div></div>
 For maximal utility of the definition of insertion sort as well as for merge sort, I employed the <a href="http://en.wikipedia.org/wiki/Strategy_pattern">strategy pattern</a> in order to permit the user of the method call to define the criteria of the sorting order.  For example, if I wanted to sort the tuple, <code>&lt;8,7,4,6,3,5,1,2></code> so that the tuple is sorted first in ascending odd numbers followed by descending even numbers, <code>&lt;1, 3, 5, 7, 8, 6, 4, 2></code>, then print it to screen, I would use the following call to insertion sort:
 <div class="restricted-width-container">
 <div class="neutral-code code-block">
@@ -120,6 +127,7 @@ Print: “sorted”; </div></div>
 </tr>
 
 <!--#include virtual="/_include/body-bottom.ssi" -->
+<!--#include virtual="/_include/sh-bottom.ssi" -->
 
 	</body>
 
