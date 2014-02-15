@@ -56,17 +56,17 @@ Simply put, a map is a relation between keys and values. More formally, a <stron
 A literal map is expressed as a <em>left curly bracket</em> <code>{</code> (<code>U+007B</code>), then a comma-separated list of bindings, and finally a <em>right curly bracket</em> <code>}</code> (<code>U+007D</code>). A literal binding is expressed as a key, then a <em>rightwards arrow</em> <code>→</code> (<code>U+2192</code>), and finally a value. Examples of maps include <code>{"United States"→"Washington, D.C.", "Mongolia"→"Ulaanbaatar", "Tanzania"→"Dodoma"}</code>, <code>{1→&lt;1&gt;, 2→&lt;1, 4&gt;, 3→&lt;1, 4, 9&gt;}</code>, and <code>{4→"四", 5→"五", 6→"六", 7→"七"}</code>. The empty map is written as <code>{}</code>.
 </p>
 <p>
-The elements of a map need not be known statically. Map are constructed with the method <code>"{«_→_‡,»}"</code>; there is no special built-in syntax for constructing maps. When the compiler can <a href="./type-inference.html">infer</a> an instance type for each argument expression of a particular send of this message, then the semantic restriction is able to strengthen the result to an instance type, thereby according it the same force as a literal understood primitively by the compiler.
+The elements of a map need not be known statically. Maps are constructed with the method <code>"{«_→_‡,»}"</code>; there is no special built-in syntax for constructing maps. When the compiler can <a href="./type-inference.html">infer</a> an instance type for each argument expression of a particular send of this message, then the semantic restriction is able to strengthen the result to an instance type, thereby according it the same force as a literal understood primitively by the compiler.
 </p>
 <p>
 The map type specifies three <a href="./type-parameterization.html">parameters</a> for completion:
 </p>
 <ul>
 <li>
-The <strong>key type</strong> specifies a type that includes every key of the domain. For example, a map type whose key type is <code><a href="./types-string.html">string</a></code> has as instances the map <code>{"Billy"→5}</code>, <code>{"Jane"→"enaJ", "Kylie"→"eilyK"}</code>, and <code>{}</code>. The method <code>"_'s⁇key type"</code> answers the key type of a map type.
+The <strong>key type</strong> specifies a type that includes every key of the domain. For example, a map type whose key type is <code><a href="./types-string.html">string</a></code> has as instances the maps <code>{"Billy"→5}</code>, <code>{"Jane"→"enaJ", "Kylie"→"eilyK"}</code>, and <code>{}</code>. The method <code>"_'s⁇key type"</code> answers the key type of a map type.
 </li>
 <li>
-The <strong>value type</strong> specifies a type that includes every value of the codomain. For example, a map type whose value type is <code><a href="./types-function.html">function</a></code> has as instances the map <code>{"="→[a : integer, b : integer | a=b], "≥"→[a : integer, b : integer | a ≥ b]}</code> and <code>{"Avail"→[Print: "Just shut up and use it.\n";]}</code>. The method <code>"_'s⁇value type"</code> answers the value type of a map type.
+The <strong>value type</strong> specifies a type that includes every value of the codomain. For example, a map type whose value type is <code><a href="./types-function.html">function</a></code> has as instances the maps <code>{"="→[a : integer, b : integer | a=b], "≥"→[a : integer, b : integer | a ≥ b]}</code> and <code>{"Avail"→[Print: "Just shut up and use it.\n";]}</code>. The method <code>"_'s⁇value type"</code> answers the value type of a map type.
 </li>
 <li>
 The <strong>cardinality restriction</strong> is an integral type that specifies the range of sizes that describe instances. If the cardinality restriction is <code>[0..2]</code>, then only a map whose cardinality is <code>0</code>, <code>1</code>, or <code>2</code> is an instance. The method <code>"`|`|_`|`|"</code>, read as <em>sizes of</em>, answers the cardinality restriction of a map type. The floor operation, <code>⎣_⎦</code>, answers the lower bound of a map type's cardinality restriction. The ceiling operation, <code>⎡_⎤</code>, answers the upper bound of a map type's cardinality restriction.
@@ -164,15 +164,15 @@ Assert: {¢1→49, ¢2→50, ¢3→51, ¢4→52, ¢5→53} ∈ mapType;
 A map type is <a href="./type-parameterization.html">covariant</a> by key type, value type, and cardinality restriction.
 </p>
 
-<tr class="book-nav">
-	<div class="book-nav">
-		<li class="book-nav-back"><a class="book-nav-back" href="./types-set.html">‹ <code>set</code></a></li>
-		<li class="book-nav-spacer">|</li>
-		<li class="book-nav-up"><a class="book-nav-up" href="../type-system.html">Return to Type System</a></li>
-		<li class="book-nav-spacer">|</li>
-		<li class="book-nav-forward"><a class="book-nav-forward" href="./types-function.html"><code>function</code> ›</a></li>
-	</div>
-</tr>
+<table class="book-nav">
+	<tr>
+		<td class="book-nav-back"><a class="book-nav-back" href="./types-set.html">‹ <code>set</code></a></td>
+		<td class="book-nav-spacer">|</td>
+		<td class="book-nav-up"><a class="book-nav-up" href="../type-system.html">Return to Type System</a></td>
+		<td class="book-nav-spacer">|</td>
+		<td class="book-nav-forward"><a class="book-nav-forward" href="./types-function.html"><code>function</code> ›</a></td>
+	</tr>
+</table>
 
 <!--#include virtual="/_include/body-bottom.ssi" -->
 
