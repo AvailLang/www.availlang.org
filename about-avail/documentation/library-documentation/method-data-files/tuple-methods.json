@@ -806,5 +806,96 @@
 				"return" : {"type" : "tuple", "description" : "The requested element."}
 			}
 		]
+	},
+		{
+		"name" : "_-_",
+		"implementations" : [
+			{
+				"methodDescription" : "Construct and answer a tuple like 'aTuple', but with the leftmost occurrence of 'doomed' removed.",
+				"category" : "Tuples",
+				"module" : "Tuples.avail",
+				"parameters" : [
+					{"param" : "aTuple", "type" : "tuple", "description" : "A tuple."},
+					{"param" : "doomed", "type" : "any", "description" : "A value."}
+				],
+				"return" : {"type" : "tuple", "description" : "The requested tuple, which will be 'aTuple' if there were no occurrences of 'doomed'."}
+			}
+		]
+	},
+	{
+		"name" : "_starts with_",
+		"implementations" : [
+			{
+				"methodDescription" : "Does `aTuple` start with the subsequence `prefix`?",
+				"category" : "Tuples",
+				"module" : "Tuples.avail",
+				"parameters" : [
+					{"param" : "aTuple", "type" : "tuple", "description" : "The tuple whose prefix should be checked against `prefix`."},
+					{"param" : "prefix", "type" : "tuple", "description" : "The search tuple."}
+				],
+				"return" : {"type" : "boolean", "description" : "`true` if `aTuple` starts with the subsequence `prefix`, `false` otherwise."}
+			}
+		]
+	},
+	 {
+ 		"name" : "_⊇_",
+		"implementations" : [
+			{
+				"methodDescription" : "Is `subtuple` a subsequence of `aTuple`?",
+				"category" : "Tuples",
+				"module" : "Tuples.avail",
+				"parameters" : [
+					{"param" : "aTuple", "type" : "tuple", "description" : "The tuple which should be searched for `subtuple`."},
+					{"param" : "subtuple", "type" : "tuple", "description" : "The search tuple."}
+				],
+				"return" : {"type" : "boolean", "description" : "`true` if some subsequence of `aTuple` equals `subtuple`, `false` otherwise."}
+			}
+		]
+	},
+	{
+ 		"name" : "_⊆_",
+		"implementations" : [
+			{
+				"methodDescription" : "Is `subtuple` a subsequence of `aTuple`?",
+				"category" : "Tuples",
+				"module" : "Tuples.avail",
+				"parameters" : [
+					{"param" : "subtuple", "type" : "tuple", "description" : "The search tuple."},
+					{"param" : "aTuple", "type" : "tuple", "description" : "The tuple which should be searched for `subtuple`."}
+				],
+				"return" : {"type" : "boolean", "description" : "`true` if some subsequence of `aTuple` equals `subtuple`, `false` otherwise."}
+			}
+		]
+	},
+ 	{
+ 		"name" : "_∈_",
+		"implementations" : [
+			{
+				"methodDescription" : "Is `value` an element of `aTuple`?",
+				"category" : "Tuples",
+				"module" : "Tuples.avail",
+				"parameters" : [
+					{"param" : "value", "type" : "any", "description" : "An arbitrary value."},
+					{"param" : "aTuple", "type" : "tuple", "description" : "A tuple"}
+			],
+				"return" : {"type" : "boolean", "description" : "`true` if `value` is an element of `aTuple`, `false` otherwise."}
+			}
+		]
+	},
+	{
+		"name" : "_to_by_",
+ 		"implementations" : [
+			{
+				"methodDescription" : "Construct and answer an integer interval tuple.Construct and answer an integer interval tuple.",
+				"category" : "Tuples",
+				"module" : "Fallible Primitives.avail",
+				"parameters" : [
+					{"param" : "start", "type" : "integer", "description" : "The first value of the resulting tuple."},
+					{"param" : "end", "type" : "integer", "description" : "The last allowed value in the tuple. This value will only be the last value in the tuple if the difference between the first and last values is a multiple of the step size. last value of the resulting tuple."},
+					{"param" : "delta", "type" : "integer", "description" : "The step size of the interval."}
+				],
+				"return" : {"type" : "<integer…|>", "description" : "The requested tuple."}
+			}
+		]
 	}
 ]
