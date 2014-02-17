@@ -1,0 +1,17 @@
+[
+	{
+		"name" : "_[_]",
+ 		"implementations" : [
+			{
+				"methodDescription" : "Answer the value bound to `aMap` in `key`.",
+				"category" : "Maps",
+				"module" : "Fallible Primitives.avail",
+				"parameters" : [
+					{"param" : "aMap", "type" : "map", "description" : "A map"},
+					{"param" : "key", "type" : "any", "description" : "The key of the location being looked up."}
+				],
+				"return" : {"type" : "any", "description" : "The requested value."}
+			}
+		]
+	}
+]

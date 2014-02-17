@@ -8,7 +8,7 @@
 <head>
 <!--#include virtual="/_include/head.ssi" -->
   <meta charset="utf-8">
-  <title>Library - Tuples</title>
+  <title>Library - Maps</title>
   <link href="/_css/methodDescriptions.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="/_javascript/angular.min.js"></script>
   <script>
@@ -19,7 +19,7 @@
 var methodListApp = angular.module('methodListApp', []);
 
 methodListApp.controller('MethodListCtrl', function($scope, $http) {
-  $http.get('method-data-files/tuple-methods.json').success(function(data) {
+  $http.get('method-data-files/map-methods.json').success(function(data) {
     $scope.methods = data;
   });
   $scope.orderProp = 'name';
@@ -29,7 +29,7 @@ methodListApp.controller('MethodListCtrl', function($scope, $http) {
 </head>
 <body class="gradient-logo" ng-controller="MethodListCtrl">
 <!--#include virtual="/_include/body-top.ssi" -->
-<h2 class="content-title">The Avail Library - Tuples</h2>
+<h2 class="content-title">The Avail Library - Maps</h2>
 
   <div class="container-fluid">
     <div class="row-fluid">
