@@ -1,0 +1,163 @@
+[
+	{
+		"name" : "|_|",
+ 		"implementations" : [
+			{
+				"methodDescription" : "Answer the cardinality of the specified set.",
+				"category" : "Sets",
+				"module" : "Infallible Primitives.avail",
+				"parameters" : [
+					{"param" : "aSet", "type" : "set", "description" : "A set"}
+				],
+				"return" : {"type" : "whole number", "description" : "The argument's cardinality."}
+			}
+		]
+	},
+	{
+		"name" : "_∈_",
+ 		"implementations" : [
+			{
+				"methodDescription" : "Is `element` an element of `aSet`? ",
+				"category" : "Sets",
+				"module" : "Infallible Primitives.avail",
+				"parameters" : [
+					{"param" : "element", "type" : "any", "description" : "An arbitrary value."},
+					{"param" : "aSet", "type" : "set", "description" : "A set"}
+				],
+				"return" : {"type" : "boolean", "description" : "`true` if `element` is an element of `aSet`, `false` otherwise."}
+			}
+		]
+	},
+	{
+		"name" : "_∪_",
+ 		"implementations" : [
+			{
+				"methodDescription" : "Compute and answer the set union of the arguments. This is a set that contains the elements of both sets. ",
+				"category" : "Sets",
+				"module" : "Infallible Primitives.avail",
+				"parameters" : [
+					{"param" : "arg1", "type" : "set", "description" : "A set"},
+					{"param" : "arg1", "type" : "set", "description" : "A set"}
+				],
+				"return" : {"type" : "set", "description" : "The set union of the arguments."}
+			}
+		]
+	},
+	{
+		"name" : "_∩_",
+ 		"implementations" : [
+			{
+				"methodDescription" : "Compute and answer the set intersection of the arguments. This is a set that contains only those elements present in each set. ",
+				"category" : "Sets",
+				"module" : "Infallible Primitives.avail",
+				"parameters" : [
+					{"param" : "arg1", "type" : "set", "description" : "A set"},
+					{"param" : "arg1", "type" : "set", "description" : "A set"}
+				],
+				"return" : {"type" : "set", "description" : "The set intersection of the arguments."}
+			}
+		]
+	},
+	{
+		"name" : "_\\_",
+ 		"implementations" : [
+			{
+				"methodDescription" : "Compute and answer the asymmetric set difference of `minuend` and `subtrahend` (also the relative complement of `subtrahend` in `minuend`). This is a set that contains only those elements present in `minuend` but not in `subtrahend`. ",
+				"category" : "Sets",
+				"module" : "Infallible Primitives.avail",
+				"parameters" : [
+					{"param" : "minuend", "type" : "set", "description" : "The minuend."},
+					{"param" : "subtrahend", "type" : "set", "description" : "The subtrahend."}
+				],
+				"return" : {"type" : "set", "description" : "The asymmetric set difference of `minuend` and `subtrahend`."}
+			}
+		]
+	},
+	{
+		"name" : "_+_",
+ 		"implementations" : [
+			{
+				"methodDescription" : "Compute and answer the set union of the specified set and a set containing the supplied element. ",
+				"category" : "Sets",
+				"module" : "Infallible Primitives.avail",
+				"parameters" : [
+					{"param" : "aSet", "type" : "set", "description" : "A set"},
+					{"param" : "newElement", "type" : "any", "description" : "The element that must be present in the resultant set."}
+				],
+				"return" : {"type" : "non-empty set", "description" : "A set that contains the same elements as `aSet` but also contains"}
+			}
+		]
+	},
+	{
+		"name" : "_-_",
+ 		"implementations" : [
+			{
+				"methodDescription" : "Compute and answer the asymmetric set difference of the specified set and a set containing the supplied element. ",
+				"category" : "Sets",
+				"module" : "Infallible Primitives.avail",
+				"parameters" : [
+					{"param" : "aSet", "type" : "set", "description" : "A set"},
+					{"param" : "oldElement", "type" : "any", "description" : "The element that must not be present in the resultant set."}
+				],
+				"return" : {"type" : "set", "description" : "A set that contains the same elements as `aSet` except that it does not contain `oldElement`."}
+			}
+		]
+	},
+	{
+		"name" : "_⊆_",
+ 		"implementations" : [
+			{
+				"methodDescription" : "Is `arg1` a subset of or equal to `arg2`? ",
+				"category" : "Sets",
+				"module" : "Infallible Primitives.avail",
+				"parameters" : [
+					{"param" : "arg1", "type" : "set", "description" : "A set"},
+					{"param" : "arg1", "type" : "set", "description" : "A set"}
+				],
+				"return" : {"type" : "boolean", "description" : "`true` if `arg1` is a subset of or equal to `arg2`, `false` otherwise."}
+			}
+		]
+	},
+	{
+		"name" : "_→tuple",
+ 		"implementations" : [
+			{
+				"methodDescription" : "Construct and answer a tuple that arbitrarily orders the elements of the specified set. The conversion is unstable, and thus different calls given the same argument may produce different orderings." ,
+				"category" : "Sets",
+				"module" : "Infallible Primitives.avail",
+				"parameters" : [
+					{"param" : "aSet", "type" : "set", "description" : "A set"}
+				],
+				"return" : {"type" : "tuple", "description" : "The requested tuple."}
+			}
+		]
+	},
+	{
+		"name" : "||_||",
+ 		"implementations" : [
+			{
+				"methodDescription" : "Answer the acceptable range of cardinalities for instances of the specified set type. ",
+				"category" : "Sets",
+				"module" : "Infallible Primitives.avail",
+				"parameters" : [
+					{"param" : "aSetType", "type" : "set meta", "description" : "A set type"}
+				],
+				"return" : {"type" : "whole number meta", "description" : "The argument's cardinality requirement."}
+			}
+		]
+	},
+ 	{
+		"name" : "_'s⁇element|member type",
+ 		"implementations" : [
+			{
+				"methodDescription" : "Answer the element type of the specified set type. This is the most specific type to which all elements of instances must conform. ",
+				"category" : "Sets",
+				"module" : "Infallible Primitives.avail",
+				"parameters" : [
+					{"param" : "aSetType", "type" : "set meta", "description" : "A set type"}
+				],
+				"return" : {"type" : "any meta", "description" : "The argument's element type."}
+			}
+		]
+	}
+]
