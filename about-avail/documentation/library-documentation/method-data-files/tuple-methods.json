@@ -897,5 +897,95 @@
 				"return" : {"type" : "<integer…|>", "description" : "The requested tuple."}
 			}
 		]
+	},
+	{
+		"name" : "_[_]→_",
+ 		"implementations" : [
+			{
+				"methodDescription" : "Construct and answer a tuple based on the one provided but such that its `index`-th element is `value`.",
+				"category" : "Tuples",
+				"module" : "Fallible Primitives.avail",
+				"parameters" : [
+					{"param" : "aTuple", "type" : "tuple", "description" : "A tuple"},
+					{"param" : "index", "type" : "natural number", "description" : "The one-based index of the element that should (potentially) differ in the resultant tuple."},
+					{"param" : "value", "type" : "any", "description" : "The 'replacement' value."}
+				],
+				"return" : {"type" : "any", "description" : "The requested element."}
+			}
+		]
+	},
+	{
+		"name" : "_[_.._]",
+ 		"implementations" : [
+			{
+				"methodDescription" : "Construct and answer a slice (i.e. subtuple) of the specified tuple.",
+				"category" : "Tuples",
+				"module" : "Fallible Primitives.avail",
+				"parameters" : [
+					{"param" : "aTuple", "type" : "tuple", "description" : "A tuple"},
+					{"param" : "sliceStart", "type" : "natural number", "description" : "The one-based start index (inclusive) of the desired slice."},
+					{"param" : "sliceEnd", "type" : "whole number", "description" : "The one-based end index (inclusive) of the desired slice."}
+				],
+				"return" : {"type" : "tuple", "description" : "The requested tuple."}
+			}
+		]
+	},
+	{
+		"name" : "_«[_]»→_",
+ 		"implementations" : [
+			{
+				"methodDescription" : "Replace the value with a new value in the tuple at the location indicated by the path tuple.",
+				"category" : "Tuples",
+				"module" : "Fallible Primitives.avail",
+				"parameters" : [
+					{"param" : "aTuple", "type" : "tuple", "description" : "A tuple"},
+					{"param" : "pathTuple", "type" : "two or more tuple", "description" : "The tuple providing the path to follow to reach the location to be updated."},
+					{"param" : "newValue", "type" : "any", "description" : "The replacement value."}
+				],
+				"return" : {"type" : "tuple", "description" : "a new tuple with the new value installed at the proposed location."}
+			}
+		]
+	},
+	{
+		"name" : "_«[_]»→_",
+ 		"implementations" : [
+			{
+				"methodDescription" : "Construct and answer a set that uniquely (by definition) contains the same elements as the specified tuple.",
+				"category" : "Tuples",
+				"module" : "Infallible Primitives.avail",
+				"parameters" : [
+					{"param" : "aTuple", "type" : "tuple", "description" : "A tuple"}
+				],
+				"return" : {"type" : "set", "description" : "The requested set."}
+			}
+		]
+	},
+	{
+		"name" : "|_|",
+ 		"implementations" : [
+			{
+				"methodDescription" : "Answer the cardinality of the specified tuple.",
+				"category" : "Tuples",
+				"module" : "Infallible Primitives.avail",
+				"parameters" : [
+					{"param" : "aTuple", "type" : "tuple", "description" : "A tuple"}
+				],
+				"return" : {"type" : "whole number", "description" : "The argument's cardinality."}
+			}
+		]
+	},
+	{
+		"name" : "_reversed",
+ 		"implementations" : [
+			{
+				"methodDescription" : "Reverses the order of the given tuple.",
+				"category" : "Tuples",
+				"module" : "Infallible Primitives.avail",
+				"parameters" : [
+					{"param" : "aTuple", "type" : "tuple", "description" : "A tuple"}
+				],
+				"return" : {"type" : "tuple", "description" : "A tuple that is the reverse of the original tuple"}
+			}
+		]
 	}
 ]
