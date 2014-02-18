@@ -1,6 +1,7 @@
 [
 	{
 		"name" : "|_|",
+		"category" : "Sets",
  		"implementations" : [
 			{
 				"methodDescription" : "Answer the cardinality of the specified set.",
@@ -15,6 +16,7 @@
 	},
 	{
 		"name" : "_∈_",
+		"category" : "Sets",
  		"implementations" : [
 			{
 				"methodDescription" : "Is `element` an element of `aSet`? ",
@@ -30,6 +32,7 @@
 	},
 	{
 		"name" : "_∪_",
+		"category" : "Sets",
  		"implementations" : [
 			{
 				"methodDescription" : "Compute and answer the set union of the arguments. This is a set that contains the elements of both sets. ",
@@ -45,6 +48,7 @@
 	},
 	{
 		"name" : "_∩_",
+		"category" : "Sets",
  		"implementations" : [
 			{
 				"methodDescription" : "Compute and answer the set intersection of the arguments. This is a set that contains only those elements present in each set. ",
@@ -60,6 +64,7 @@
 	},
 	{
 		"name" : "_\\_",
+		"category" : "Sets",
  		"implementations" : [
 			{
 				"methodDescription" : "Compute and answer the asymmetric set difference of `minuend` and `subtrahend` (also the relative complement of `subtrahend` in `minuend`). This is a set that contains only those elements present in `minuend` but not in `subtrahend`. ",
@@ -75,6 +80,7 @@
 	},
 	{
 		"name" : "_+_",
+		"category" : "Sets",
  		"implementations" : [
 			{
 				"methodDescription" : "Compute and answer the set union of the specified set and a set containing the supplied element. ",
@@ -90,6 +96,7 @@
 	},
 	{
 		"name" : "_-_",
+		"category" : "Sets",
  		"implementations" : [
 			{
 				"methodDescription" : "Compute and answer the asymmetric set difference of the specified set and a set containing the supplied element. ",
@@ -105,6 +112,7 @@
 	},
 	{
 		"name" : "_⊆_",
+		"category" : "Sets",
  		"implementations" : [
 			{
 				"methodDescription" : "Is `arg1` a subset of or equal to `arg2`? ",
@@ -120,6 +128,7 @@
 	},
 	{
 		"name" : "_→tuple",
+		"category" : "Sets",
  		"implementations" : [
 			{
 				"methodDescription" : "Construct and answer a tuple that arbitrarily orders the elements of the specified set. The conversion is unstable, and thus different calls given the same argument may produce different orderings." ,
@@ -134,6 +143,7 @@
 	},
 	{
 		"name" : "||_||",
+		"category" : "Sets",
  		"implementations" : [
 			{
 				"methodDescription" : "Answer the acceptable range of cardinalities for instances of the specified set type. ",
@@ -148,6 +158,7 @@
 	},
  	{
 		"name" : "_'s⁇element|member type",
+		"category" : "Sets",
  		"implementations" : [
 			{
 				"methodDescription" : "Answer the element type of the specified set type. This is the most specific type to which all elements of instances must conform. ",

@@ -1,0 +1,215 @@
+
+/************************** Content structure *************************/
+
+h2.PaneHeading 
+{
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	color: white;
+	background-color:#2B5545;
+}
+
+.PaneContent 
+{
+	padding: 5px;
+}
+
+.MethodLinks
+{
+	font-family: "Lucida Sans Typewriter", Courier, "Courier New", monospace;
+	font-size: 12px;
+}
+
+/***** Details pane *****/
+
+h2.MethodHeading 
+{
+	font-size: 15px;
+	font-family: "Lucida Sans Typewriter", Courier, "Courier New", monospace;
+	text-align: center;
+	color: white;
+	background-color: #4d9a7c;
+}
+
+.MethodBodyIndent 
+{
+	padding-left: 15px; 
+}
+
+.MethodSectionHeader 
+{
+	font-size: 12px;
+	font-weight: bold;
+	color: #2B5545;
+	margin-bottom: 15px;
+	margin-left: 15px;
+}
+
+.MethodSectionContent 
+{
+	margin-left: 30px;
+	margin-right: 30px;
+	margin-bottom: 30px;
+}
+
+.SignatureHeading 
+{
+	/*font-family: "Lucida Sans Typewriter", Courier, "Courier New", monospace;*/
+	font-size: 12px;
+	text-align: left;
+	margin-bottom: 10px;
+}
+
+.SignatureDescription
+{
+	text-align: left;
+	margin-left: 20px;
+	margin-bottom: 20px;
+	font-weight: normal;
+}
+
+.SignatureDescriptionNoMargin
+{
+	text-align: left;
+	margin-bottom: 20px;
+	font-weight: normal;
+}
+
+
+/* Method implementation and restriction table styling */
+
+table 
+{
+	vertical-align: top;
+	margin-bottom: 30px;
+}
+
+.Transparent
+{
+	color: inherit;
+	background-color: inherit;
+}
+
+th /** Table heading cells **/
+{
+	font-size: 12px;
+	color: white;
+	text-align: left;
+
+	padding-left: 3px;
+	padding-right: 3px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+th.GColLabelNarrow 
+{
+	background-color: #C0C0C0;
+	width: auto;
+}
+
+th.GColLabelWide 
+{
+	background-color: #C0C0C0;
+	width: 100%;
+}
+
+th.GRowLabel 
+{
+	background-color: #C0C0C0;
+	white-space: nowrap;
+}
+
+th.IColLabelNarrow 
+{
+	background-color: #AED6C6;
+	width: auto;
+}
+
+th.IColLabelWide 
+{
+	background-color: #AED6C6;
+	width: 100%;
+}
+
+th.IRowLabel 
+{
+	background-color: #AED6C6;
+	white-space: nowrap;
+}
+
+th.SColLabelNarrow 
+{
+	background-color: #C0C0C0;
+	width: auto;
+}
+
+th.SColLabelWide 
+{
+	background-color: #C0C0C0;
+	width: 100%;
+}
+
+th.SRowLabel 
+{
+	background-color: #C0C0C0;
+	white-space: nowrap;
+}
+
+td /** Table data cells **/
+{
+	font-size: 13px;
+	text-align: left;
+
+	padding-left: 3px;
+	padding-right: 3px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+td.GCode 
+{
+	background-color: #EEEEEE;
+	font-family: "Lucida Sans Typewriter", Courier, "Courier New", monospace;
+	font-size: 12px;
+	white-space: nowrap;
+}
+
+td.GDesc 
+{
+	background-color: #EEEEEE;
+	width: 100%;
+}
+
+td.ICode 
+{
+	background-color: #E2F0EB;
+	font-family: "Lucida Sans Typewriter", Courier, "Courier New", monospace;
+	font-size: 12px;
+	white-space: nowrap;
+}
+
+td.IDesc 
+{
+	background-color: #E2F0EB;
+	width: 100%;
+}
+
+td.SCode 
+{
+	background-color: #EEEEEE;
+	font-family: "Lucida Sans Typewriter", Courier, "Courier New", monospace;
+	font-size: 12px;
+	white-space: nowrap;
+}
+
+td.SDesc 
+{
+	background-color: #EEEEEE;
+	width: 100%;
+}
+
+
+
+

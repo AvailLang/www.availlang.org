@@ -46,9 +46,9 @@ methodListApp.controller('MethodListCtrl', function($scope, $http) {
         <div class="methods">
           <div ng-repeat="method in methods | filter:query | orderBy:orderProp">
             <a ng-model="collapsed" ng-click="collapsed=!collapsed">{{method.name}}</a>
+            <br><span class="methodBody" ng-show="collapsed"><b>Category:</b> {{method.category}}</span>
             <div class="methodBody" ng-show="collapsed" ng-repeat="implementation in method.implementations">
 	          <div class="methodBody" ng-show="collapsed">{{implementation.methodDescription}}<br>
-	            <div class="methodSubSections"><b>Category:</b> {{implementation.category}}</div>
 	            <div class="methodSubSections"><b>Module:</b> {{implementation.module}}</div>
 	            <div ng-show="collapsed" class="methodSubSections"><b>Parameters:</b></div>
 					<div class="methodParameters" ng-repeat="parameter in implementation.parameters" ng-model="collapsed">

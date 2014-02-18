@@ -1,10 +1,10 @@
 [
 	{
 		"name" : "_[_]",
+		"category" : "Maps",
  		"implementations" : [
 			{
 				"methodDescription" : "Answer the value bound to `aMap` in `key`.",
-				"category" : "Maps",
 				"module" : "Fallible Primitives.avail",
 				"parameters" : [
 					{"param" : "aMap", "type" : "map", "description" : "A map"},
