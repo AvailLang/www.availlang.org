@@ -4,6 +4,7 @@
 		"category" : "Tuples",
 		"implementations" : [
 			{
+				"signature" : "tuple, [⊥]→boolean",
 				"methodDescription" : "Compute and answer the indices of all the elements of `aTuple` that satisfies the specified predicate.",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -19,6 +20,7 @@
 		"category" : "Tuples",
 		"implementations" : [
 			{
+				"signature" : "tuple, <natural number…|>",
 				"methodDescription" : "Compute and answer the indices of all the elements of `aTuple` that satisfies the specified predicate.",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -34,6 +36,7 @@
 		"category" : "Tuples",
 		"implementations" : [
 			{
+				"signature" : "tuple",
 				"methodDescription" : "Compute and answer the distinct elements of `aTuple`, preserving order.",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -48,6 +51,7 @@
 		"category" : "Tuples",
 		"implementations" : [
 			{
+				"signature" : "tuple, [⊥]→boolean",
 				"methodDescription" : "Compute and answer the suffix of `aTuple` that begins with the element that answers `true` to `predicate`.",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -63,6 +67,7 @@
 		"category" : "Tuples",
 		"implementations" : [
 			{
+				"signature" : "tuple, [⊥]→boolean",
 				"methodDescription" : "Compute and answer the suffix of `aTuple` that begins with the element that answers `false` to `predicate`.",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -78,6 +83,7 @@
 		"category" : "Tuples",
 		"implementations" : [
 			{
+				"signature" : "whole number, tuple",
 				"methodDescription" : "Answer a tuple containing every element of `aTuple` except for the first `count` elements.",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -93,11 +99,12 @@
 		"category" : "Tuples",
 		"implementations" : [
 			{
+				"signature" : "tuple, tuple",
 				"methodDescription" : "Obtain the location of the start of the first occuring subtuple in a tuple (a substring of a string).  This is the abstract implementation.",
 				"module" : "Tuples.avail",
 				"parameters" : [
 					{"param" : "aTuple", "type" : "tuple", "description" : "The tuple within which to search for the subtuple."},
-					{"param" : "subtuple", "tuple" : "tuple", "description" : "The subtuple to locate in aTuple."}
+					{"param" : "subtuple", "type" : "tuple", "description" : "The subtuple to locate in aTuple."}
 				],
 				"return" : {"type" : "whole number", "description" : "The index of the start of the first subtuple, 0 if none."}
 			}
@@ -108,6 +115,7 @@
 		"category" : "Tuples",
 		"implementations" : [
 			{
+				"signature" : "tuple, tuple, tuple",
 				"methodDescription" : "Locate of the first instance of a nonempty subtuple occuring in a nonempty tuple and replace it with the new replacement tuple (replace a substring with a new substring).",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -124,6 +132,7 @@
 		"category" : "Tuples",
 		"implementations" : [
 			{
+				"signature" : "tuple, [⊥, ⊥]→boolean",
 				"methodDescription" : "Construct and answer a sorted variant of aTuple using the merge sort algorithm and specified comparison function.",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -139,6 +148,7 @@
 		"category" : "Tuples",
 		"implementations" : [
 			{
+				"signature" : "<number…|>",
 				"methodDescription" : "Construct and answer a sorted variant of aTuple of numbers using the merge sort algorithm, where n ≤ m.",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -154,6 +164,7 @@
 		"implementations" : 
 		[
 			{
+				"signature" : "tuple, integer, integer, []→any",
 				"methodDescription" : "If start and end are valid subscripts representing a valid range for aTuple, then answer the corresponding element. Otherwise, answer the result obtained by applying else.",
 				"module" : "Tuples.avail",
 				"parameters" : 
@@ -172,6 +183,7 @@
 		"category" : "Collections",
 		"implementations" : [
 			{
+				"signature" : "tuple, [⊥]→⊤",
 				"methodDescription" : "Iteratively apply `action` to each consecutive element of `aTuple`.",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -181,11 +193,12 @@
 				"return" : {"type" : "⊤", "description" : "none"}
 			},
 			{
+				"signature" : "tuple, [⊥, ⊥]→⊤",
 				"methodDescription" : "Iteratively apply `action` to each consecutive element of `aTuple`.",
 				"module" : "Tuples.avail",
 				"parameters" : [
 					{"param" : "aTuple", "type" : "tuple", "description" : "A tuple"},
-					{"param" : "action", "type" : "⊥, ⊥]→⊤", "description" : "A function that accepts 1) an element of the tuple and 2) the index of that element."}
+					{"param" : "action", "type" : "[⊥, ⊥]→⊤", "description" : "A function that accepts 1) an element of the tuple and 2) the index of that element."}
 				],
 				"return" : {"type" : "⊤", "description" : "none"}
 			}
@@ -196,6 +209,7 @@
  		"category" : "Tuples",
 		"implementations" : [
 			{
+				"signature" : "tuple, [⊥]→boolean",
 				"methodDescription" : "Compute and answer the index of the first element of `aTuple` that satisfies the specified predicate.",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -211,6 +225,7 @@
  		"category" : "Tuples",
 		"implementations" : [
 			{
+				"signature" : "tuple, [⊥]→boolean",
 				"methodDescription" : "Compute and answer the index of the last element of `aTuple` that satisfies the specified predicate.",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -226,6 +241,7 @@
  		"category" : "Tuples",
 		"implementations" : [
 			{
+				"signature" : "<any…|1..>, [⊥, ⊥]→any",
 				"methodDescription" : "Reduce `aTuple` via the binary function, traversing the tuple from left to right. Answer the result of the reduction.",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -241,6 +257,7 @@
  		"category" : "Tuples",
 		"implementations" : [
 			{
+				"signature" : "<number…|>",
 				"methodDescription" : "Construct and answer a sorted variant of numbers using the quicksort algorithm. When overriding 'quicksort_', only target tuple types that contain at least two elements. Not only do the trivial cases of 0 and 1 elements have a simple universal implementation, the 0-element (i.e., empty tuple) case causes ambiguous resolution if multiple overrides exist that will accept it.",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -255,6 +272,7 @@
  		"category" : "Tuples",
 		"implementations" : [
 			{
+				"signature" : "tuple, [⊥, ⊥]→boolean",
 				"methodDescription" : "Construct and answer a sorted variant of aTuple using the quicksort algorithm and specified comparison function.",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -270,6 +288,7 @@
  		"category" : "Tuples",
 		"implementations" : [
 			{
+				"signature" : "<any…|1..>, [⊥, ⊥]→any",
 				"methodDescription" : "Reduce `aTuple` via the binary function, traversing the tuple from right to left. Answer the result of the reduction.",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -285,6 +304,7 @@
  		"category" : "Tuples",
 		"implementations" : [
 			{
+				"signature" : "tuple, whole number",
 				"methodDescription" : "Split a `aTuple` into two tuples between `pivot` and `pivot + 1` and answer a 2-tuple containing the results.",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -300,6 +320,7 @@
  		"category" : "Tuples",
 		"implementations" : [
 			{
+				"signature" : "tuple, whole number",
 				"methodDescription" : "Split a `aTuple` into two tuples between `pivot` and `pivot + 1` and answer a 2-tuple containing the results.",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -309,6 +330,7 @@
 				"return" : {"type" : "<tuple…|2>", "description" : "A 2-tuple. The first tuple contains the first `pivot` elements of `aTuple`. The second tuple contains the remaining elements of `aTuple`."}
 			},
 			{
+				"signature" : "tuple, [⊥]→boolean",
 				"methodDescription" : "Split a `aTuple` into two tuples",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -324,6 +346,7 @@
  		"category" : "Tuples",
 		"implementations" : [
 			{
+				"signature" : "<<any…|1..>…|>, natural number",
 				"methodDescription" : "Compute and answer the specified stripe of `aTuple`.",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -339,6 +362,7 @@
  		"category" : "Tuples",
 		"implementations" : [
 			{
+				"signature" : "tuple, [⊥]→boolean",
 				"methodDescription" : "Answer a tuple containing the prefix of `aTuple` that answered `false` to `predicate`.",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -354,6 +378,7 @@
  		"category" : "Tuples",
 		"implementations" : [
 			{
+				"signature" : "tuple, [⊥]→boolean",
 				"methodDescription" : "Answer a tuple containing the prefix of `aTuple` that answered `true` to `predicate`.",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -369,6 +394,7 @@
  		"category" : "Tuples",
 		"implementations" : [
 			{
+				"signature" : "whole number, tuple",
 				"methodDescription" : "Answer a tuple containing the first `count` elements of `aTuple`.",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -384,6 +410,7 @@
  		"category" : "Tuples",
 		"implementations" : [
 			{
+				"signature" : "<tuple…|1..>",
 				"methodDescription" : "Compute and answer the zip of the specified tuples. Given N input tuples, the output is the tuple whose i-th element contains the i-th element from each consecutive input tuple. The size of the output equals to the smallest size of the inputs. Each of the output's tuples has length equal to the number of inputs.",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -398,6 +425,7 @@
  		"category" : "Tuples",
 		"implementations" : [
 			{
+				"signature" : "<tuple…|1..>",
 				"methodDescription" : "Compute and answer the zip of the specified tuples. Given N input tuples, the output is the tuple whose i-th element contains the i-th element from each consecutive input tuple. The size of the output equals to the smallest size of the inputs. Each of the output's tuples has length equal to the number of inputs.",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -412,6 +440,7 @@
  		"category" : "Tuples",
 		"implementations" : [
 			{
+				"signature" : "<extended integer…|1..>",
 				"methodDescription" : "Sum the elements of the specified tuple of integers.",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -426,6 +455,7 @@
  		"category" : "Tuples",
 		"implementations" : [
 			{
+				"signature" : "<extended integer…|1..>",
 				"methodDescription" : "Take the product of the elements of a tuple of integers.",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -440,10 +470,11 @@
  		"category" : "Tuples",
 		"implementations" : [
 			{
+				"signature" : "tuple, tuple",
 				"methodDescription" : "Does `aTuple` end with the subsequence `suffix`?",
 				"module" : "Tuples.avail",
 				"parameters" : [
-					{"param" : "aTuple", "type" : "Tuple", "description" : "The tuple whose suffix should be checked against `suffix`."},
+					{"param" : "aTuple", "type" : "tuple", "description" : "The tuple whose suffix should be checked against `suffix`."},
 					{"param" : "suffix", "type" : "tuple", "description" : "The search tuple."}
 				],
 				"return" : {"type" : "boolean", "description" : "`true` if `aTuple` ends with the subsequence `suffix`, `false` otherwise."}
@@ -455,6 +486,7 @@
  		"category" : "Tuples",
 		"implementations" : [
 			{
+				"signature" : "tuple meta",
 				"methodDescription" : "Produce a description of the argument. The default implementation uses `primitive description of_` to obtain a mechanically constructed description from the Avail virtual machine. Overrides should provide semantic information that is appropriately localized for the default locale.",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -469,6 +501,7 @@
  		"category" : "Tuples",
 		"implementations" : [
 			{
+				"signature" : "whole number, any",
 				"methodDescription" : "Construct and answer a tuple whose elements are each `value`.",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -484,6 +517,7 @@
  		"category" : "Tuples",
 		"implementations" : [
 			{
+				"signature" : "integer, integer",
 				"methodDescription" : "Construct and answer a tuple that contains the consecutive integers from `start` (inclusive) up to `end` (inclusive), counting up by 1. If `end < start`, then answer the empty tuple.",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -493,11 +527,12 @@
 				"return" : {"type" : "<integer…|>", "description" : "The interval from `start` (inclusive) up to `end` (inclusive)."}
 			},
 			{
+				"signature" : "character, character",
 				"methodDescription" : "Construct and answer a string that contains the consecutive characters from `start` (inclusive) to `end` (inclusive). If `start's code point ≤ end's code point`, then `result[i]'s code point < result[i+1]'s code point`; otherwise, `result[i]'s code point > result[i+1]'s code point`.",
 				"module" : "Tuples.avail",
 				"parameters" : [
-					{"param" : "start", "type" : "integer", "description" : "The first value of the resulting tuple."},
-					{"param" : "end", "type" : "integer", "description" : "The last value of the resulting tuple."}
+					{"param" : "start", "type" : "character", "description" : "The first value of the resulting tuple."},
+					{"param" : "end", "type" : "character", "description" : "The last value of the resulting tuple."}
 				],
 				"return" : {"type" : "<character…|>", "description" : "The interval from `start` (inclusive) up to `end` (inclusive)."}
 			}
@@ -508,6 +543,7 @@
  		"category" : "Collections",
 		"implementations" : [
 			{
+				"signature" : "tuple, [⊥]→boolean",
 				"methodDescription" : "Compute and answer the count of elements of `aTuple` that satisfy the given predicate.",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -517,6 +553,7 @@
 				"return" : {"type" : "whole number", "description" : "Compute and answer the count of elements (and indices) of `aTuple` that satisfy the given predicate."}
 			},
 			{
+				"signature" : "tuple, [⊥, ⊥]→boolean",
 				"methodDescription" : "Construct and answer a string that contains the consecutive characters from `start` (inclusive) to `end` (inclusive). If `start's code point ≤ end's code point`, then `result[i]'s code point < result[i+1]'s code point`; otherwise, `result[i]'s code point > result[i+1]'s code point`.",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -532,6 +569,7 @@
  		"category" : "Collections",
 		"implementations" : [
 			{
+				"signature" : "tuple, [⊥]→boolean",
 				"methodDescription" : "Compute and answer whether each of the elements of `aTuple` satisfies the specified function. Do not examine more elements than necessary.",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -541,6 +579,7 @@
 				"return" : {"type" : "boolean", "description" : "`true` if `predicate` answers `true` for each element of `aTuple`, `false` otherwise."}
 			},
 			{
+				"signature" : "tuple, [⊥, ⊥]→boolean",
 				"methodDescription" : "Compute and answer whether each of the elements (and indices) of `aTuple` satisfy the specified function. Do not examine more elements than necessary.",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -556,6 +595,7 @@
  		"category" : "Collections",
 		"implementations" : [
 			{
+				"signature" : "tuple, [⊥]→boolean",
 				"methodDescription" : "Compute and answer whether any of the elements of `aTuple` satisfies the specified function. Do not examine more elements than necessary.",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -565,6 +605,7 @@
 				"return" : {"type" : "boolean", "description" : "`true` if `predicate` answers `true` for any element of `aTuple`, `false` otherwise."}
 			},
 			{
+				"signature" : "tuple, [⊥, ⊥]→boolean",
 				"methodDescription" : "Compute and answer whether any of the elements (and indices) of `aTuple` satisfy the specified function. Do not examine more elements than necessary.",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -580,15 +621,7 @@
  		"category" : "Collections",
 		"implementations" : [
 			{
-				"methodDescription" : "Iteratively apply `accumulator` to the consecutive elements and indices of `aTuple` in order to transform and filter its elements into a new tuple. When `accumulator` is invoked, it is passed a 'keeper' function. The keeper function may be invoked to 'save' a particular value, i.e., a value that will be copied into the output tuple. The keeper function will save at most one value per element of `aTuple`, i.e., each time that `accumulator` is invoked, it may invoke the keeper function at most one time. Answer the new tuple.",
-				"module" : "Tuples.avail",
-				"parameters" : [
-					{"param" : "aTuple", "type" : "tuple", "description" : "A tuple"},
-					{"param" : "accumulator", "type" : "[⊥, ⊥, ⊥]→⊤", "description" : "A function that accepts 1) an element from `aTuple`, 2) the index of that element, and 3) a keeper function. The keeper function accepts an argument of the type that should be saved."}
-				],
-				"return" : {"type" : "tuple", "description" : "A tuple whose elements are those saved by the `accumulator`."}
-			},
-			{
+				"signature" : "tuple, [⊥, ⊥]→⊤",
 				"methodDescription" : "Iteratively apply `accumulator` to the consecutive elements of `aTuple` in order to transform and filter its elements into a new tuple. When `accumulator` is invoked, it is passed a 'keeper' function. The keeper function may be invoked to 'save' a particular value, i.e., a value that will be copied into the output tuple. The keeper function will save at most one value per element of `aTuple`, i.e., each time that `accumulator` is invoked, it may invoke the keeper function at most one time. Answer the new tuple.",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -596,6 +629,16 @@
 					{"param" : "accumulator", "type" : "[⊥, ⊥]→⊤", "description" : "A function that accepts 1) an element from `aTuple` and 2) a keeper function. The keeper function accepts an argument of the type that should be saved."}
 				],
 				"return" : {"type" : "boolean", "description" : "A tuple whose elements are those saved by the `accumulator`."}
+			},
+			{
+				"signature" : "tuple, [⊥, ⊥, ⊥]→⊤",
+				"methodDescription" : "Iteratively apply `accumulator` to the consecutive elements and indices of `aTuple` in order to transform and filter its elements into a new tuple. When `accumulator` is invoked, it is passed a 'keeper' function. The keeper function may be invoked to 'save' a particular value, i.e., a value that will be copied into the output tuple. The keeper function will save at most one value per element of `aTuple`, i.e., each time that `accumulator` is invoked, it may invoke the keeper function at most one time. Answer the new tuple.",
+				"module" : "Tuples.avail",
+				"parameters" : [
+					{"param" : "aTuple", "type" : "tuple", "description" : "A tuple"},
+					{"param" : "accumulator", "type" : "[⊥, ⊥, ⊥]→⊤", "description" : "A function that accepts 1) an element from `aTuple`, 2) the index of that element, and 3) a keeper function. The keeper function accepts an argument of the type that should be saved."}
+				],
+				"return" : {"type" : "tuple", "description" : "A tuple whose elements are those saved by the `accumulator`."}
 			}
 		]
 	},
@@ -604,6 +647,7 @@
  		"category" : "Collections",
 		"implementations" : [
 			{
+				"signature" : "tuple, [⊥]→boolean",
 				"methodDescription" : "Iteratively apply `predicate` to each consecutive element of `aTuple`, collecting those elements for which `predicate` answers `true` into a new tuple (and preserving ordering). Answer the new tuple.",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -613,6 +657,7 @@
 				"return" : {"type" : "tuple", "description" : "A tuple containing exactly those elements of `aTuple` for which `predicate` answered `true`."}
 			},
 			{
+				"signature" : "tuple, [⊥, ⊥]→boolean",
 				"methodDescription" : "Iteratively apply `predicate` to each consecutive element and index of `aTuple`, collecting those elements for which `predicate` answers `true` into a new tuple (and preserving ordering). Answer the new tuple.",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -628,6 +673,7 @@
  		"category" : "Collections",
 		"implementations" : [
 			{
+				"signature" : "tuple, [⊥]→any",
 				"methodDescription" : "Iteratively apply `transformer` to each consecutive element of `aTuple`, collecting the results into a new tuple (and preserving ordering of the transformed elements). Answer this tuple.",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -637,6 +683,7 @@
 				"return" : {"type" : "tuple", "description" : "A tuple of results of applications of `transformer` to the elements of `aTuple`."}
 			},
 			{
+				"signature" : "tuple, [⊥, ⊥]→any",
 				"methodDescription" : "Iteratively apply `transformer` to each consecutive element of `aTuple`, collecting the results into a new tuple (and preserving ordering of the transformed elements). Answer this tuple.",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -652,6 +699,7 @@
  		"category" : "Collections",
 		"implementations" : [
 			{
+				"signature" : "function meta, tuple meta",
 				"methodDescription" : "Helper method for semantic restrictions: If `action` does not accept the type union of all element types of `tupleType` and their indices, then reject the current parse.",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -667,6 +715,7 @@
  		"category" : "Collections",
 		"implementations" : [
 			{
+				"signature" : "tuple",
 				"methodDescription" : "Is the specified tuple empty?",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -681,6 +730,7 @@
  		"category" : "Tuples",
 		"implementations" : [
 			{
+				"signature" : "<any…|1..>",
 				"methodDescription" : "Obtain the first element of the specified tuple.",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -695,6 +745,7 @@
  		"category" : "Tuples",
 		"implementations" : [
 			{
+				"signature" : "<any…|1..>",
 				"methodDescription" : "Construct and answer a tuple slice that contains all but the first element of the specified tuple. If the argument contains only one element, then answer an empty tuple.",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -709,6 +760,7 @@
  		"category" : "Tuples",
 		"implementations" : [
 			{
+				"signature" : "<any…|1..>",
 				"methodDescription" : "Obtain the last element of the specified tuple.",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -723,6 +775,7 @@
  		"category" : "Tuples",
 		"implementations" : [
 			{
+				"signature" : "tuple, integer, []→any",
 				"methodDescription" : "If 'end' is a valid subscript representing the end of a valid range for'aTuple', then answer the corresponding element. Otherwise, answer the result obtained by applying 'else'.",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -739,6 +792,7 @@
  		"category" : "Tuples",
 		"implementations" : [
 			{
+				"signature" : "tuple, integer, []→any",
 				"methodDescription" : "If 'start' is a valid subscripts representing a valid range for 'aTuple', then answer the corresponding element. Otherwise, answer the result obtained by applying 'else'.",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -755,6 +809,7 @@
  		"category" : "Tuples",
 		"implementations" : [
 			{
+				"signature" : "tuple, natural number, whole number, tuple",
 				"methodDescription" : "Compute and answer a tuple that is the result of replacing the specified slice of `aTuple` with `replacement`.",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -772,6 +827,7 @@
  		"category" : "Tuples",
 		"implementations" : [
 			{
+				"signature" : "tuple, natural number, natural number",
 				"methodDescription" : "Compute and answer that is the result of swapping the elements of 'aTuple' at 'index1' and 'index2'.",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -788,6 +844,7 @@
  		"category" : "Tuples",
 		"implementations" : [
 			{
+				"signature" : "tuple, natural number",
 				"methodDescription" : "Answer the `index`-th element of `aTuple`.",
 				"module" : "Fallible Primitives.avail",
 				"parameters" : [
@@ -803,6 +860,7 @@
 		"category" : "Tuples",
 		"implementations" : [
 			{
+				"signature" : "tuple, any",
 				"methodDescription" : "Construct and answer a tuple like 'aTuple', but with the leftmost occurrence of 'doomed' removed.",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -818,6 +876,7 @@
 		"category" : "Tuples",
 		"implementations" : [
 			{
+				"signature" : "tuple, tuple",
 				"methodDescription" : "Does `aTuple` start with the subsequence `prefix`?",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -833,6 +892,7 @@
 		"category" : "Tuples",
 		"implementations" : [
 			{
+				"signature" : "tuple, tuple",
 				"methodDescription" : "Is `subtuple` a subsequence of `aTuple`?",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -848,6 +908,7 @@
 		"category" : "Tuples",
 		"implementations" : [
 			{
+				"signature" : "tuple, tuple",
 				"methodDescription" : "Is `subtuple` a subsequence of `aTuple`?",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -863,6 +924,8 @@
 		"category" : "Tuples",
 		"implementations" : [
 			{
+				"signature" : "any, tuple",
+				"signature" : "any, tuple",
 				"methodDescription" : "Is `value` an element of `aTuple`?",
 				"module" : "Tuples.avail",
 				"parameters" : [
@@ -878,7 +941,8 @@
  		"category" : "Tuples",
 		"implementations" : [
 			{
-				"methodDescription" : "Construct and answer an integer interval tuple.Construct and answer an integer interval tuple.",
+				"signature" : "integer, integer, integer",
+				"methodDescription" : "Construct and answer an integer interval tuple.",
 				"module" : "Fallible Primitives.avail",
 				"parameters" : [
 					{"param" : "start", "type" : "integer", "description" : "The first value of the resulting tuple."},
@@ -894,6 +958,7 @@
  		"category" : "Tuples",
 		"implementations" : [
 			{
+				"signature" : "tuple, natural number, any",
 				"methodDescription" : "Construct and answer a tuple based on the one provided but such that its `index`-th element is `value`.",
 				"module" : "Fallible Primitives.avail",
 				"parameters" : [
@@ -910,6 +975,7 @@
  		"category" : "Tuples",
 		"implementations" : [
 			{
+				"signature" : "tuple, natural number, whole number",
 				"methodDescription" : "Construct and answer a slice (i.e. subtuple) of the specified tuple.",
 				"module" : "Fallible Primitives.avail",
 				"parameters" : [
@@ -926,6 +992,7 @@
  		"category" : "Tuples",
 		"implementations" : [
 			{
+				"signature" : "tuple, two or more tuple, any",
 				"methodDescription" : "Replace the value with a new value in the tuple at the location indicated by the path tuple.",
 				"module" : "Fallible Primitives.avail",
 				"parameters" : [
@@ -938,10 +1005,11 @@
 		]
 	},
 	{
-		"name" : "_«[_]»→_",
+		"name" : "_→set",
  		"category" : "Tuples",
 		"implementations" : [
 			{
+				"signature" : "tuple",
 				"methodDescription" : "Construct and answer a set that uniquely (by definition) contains the same elements as the specified tuple.",
 				"module" : "Infallible Primitives.avail",
 				"parameters" : [
@@ -956,6 +1024,7 @@
  		"category" : "Tuples",
 		"implementations" : [
 			{
+				"signature" : "tuple",
 				"methodDescription" : "Answer the cardinality of the specified tuple.",
 				"module" : "Infallible Primitives.avail",
 				"parameters" : [
@@ -970,6 +1039,7 @@
  		"category" : "Tuples",
 		"implementations" : [
 			{
+				"signature" : "tuple",
 				"methodDescription" : "Reverses the order of the given tuple.",
 				"module" : "Infallible Primitives.avail",
 				"parameters" : [

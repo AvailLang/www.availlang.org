@@ -46,12 +46,12 @@ methodListApp.controller('MethodListCtrl', function($scope, $http) {
 
         <div class="methods">
 	  		<div ng-repeat="method in methods | filter:query | orderBy:orderProp">
-            	<a ng-model="collapsed" ng-click="collapsed=!collapsed">{{method.name}}</a>
-            	<div class="MethodSectionHeader" ng-show="collapsed">Category: <span class="SignatureDescriptionNoMargin">{{method.category}}</span> <br>Implementation(s):
-            	<div class="MethodSectionHeader" ng-repeat="implementation in method.implementations" ng-show="collapsed">
-					Module: <span class="SignatureDescriptionNoMargin">{{implementation.module}}</span><br>
-            	Description:<br>
-	            	<div class="SignatureDescription">{{implementation.methodDescription}}
+            	<a ng-click="collapsed=!collapsed">{{method.name}}</a>
+            	<div ng-show="collapsed">
+            		<a ng-click="collapsed=!collapsed"><h2 class="MethodHeading">{{method.name}}</h2></a><br>
+             		<div class="MethodSectionContent" ng-repeat="implementation in method.implementations">
+ 						<div class="SignatureHeading">{{implementation.signature}}</div>
+ 						<div class="SignatureDescription">{{implementation.methodDescription}} <em>{{implementation.module}}</em></div>
 			            <table>
 			                <thead>
 			                    <tr>
@@ -65,7 +65,7 @@ methodListApp.controller('MethodListCtrl', function($scope, $http) {
 			                	<tr>
 			                		<th class="IRowLabel" rowspan="{{implementation.parameters.length + 1}}">Parameters</th>
 			                	</tr>
-			                    <tr class="methodParameters" ng-repeat="parameter in implementation.parameters" ng-model="collapsed">
+			                    <tr class="methodParameters" ng-repeat="parameter in implementation.parameters">
 			                        <td class="ICode">{{parameter.param}}</td>
 			                        <td class="ICode">{{parameter.type}}</td>
 			                        <td class="IDesc">{{parameter.description}}</td>
@@ -79,10 +79,9 @@ methodListApp.controller('MethodListCtrl', function($scope, $http) {
 			            </table>
 	            	</div>
             	</div>
-            	</div>
 	  		</div>
         </div>
 
-
+<!--#include virtual="/_include/body-bottom.ssi" -->
 </body>
 </html>

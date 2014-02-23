@@ -29,7 +29,13 @@ h2.MethodHeading
 	font-family: "Lucida Sans Typewriter", Courier, "Courier New", monospace;
 	text-align: center;
 	color: white;
-	background-color: #4d9a7c;
+	font-weight: normal;
+/*	background-color: rgb(0,90,0); */
+	background-color: rgb(128,173,128);
+	padding-top: 0;
+	margin-bottom: 0;
+	margin-left: 30px;
+	margin-right: 30px;
 }
 
 .MethodBodyIndent 
@@ -41,8 +47,8 @@ h2.MethodHeading
 {
 	font-size: 12px;
 	font-weight: bold;
-	color: #2B5545;
-	margin-bottom: 15px;
+/*	color: #2B5545;
+	margin-bottom: 15px; */
 	margin-left: 15px;
 }
 
@@ -50,23 +56,26 @@ h2.MethodHeading
 {
 	margin-left: 30px;
 	margin-right: 30px;
-	margin-bottom: 30px;
 }
 
 .SignatureHeading 
 {
-	/*font-family: "Lucida Sans Typewriter", Courier, "Courier New", monospace;*/
-	font-size: 12px;
+	font-family: "Lucida Sans Typewriter", Courier, "Courier New", monospace;
+	font-size: 18px;
+	font-weight: normal;
 	text-align: left;
 	margin-bottom: 10px;
+	color: black;
 }
 
 .SignatureDescription
 {
-	text-align: left;
-	margin-left: 20px;
-	margin-bottom: 20px;
-	font-weight: normal;
+/*	text-align: left;
+/*	margin-left: 20px; 
+	margin-top: 10px; */
+	margin-bottom: 15px;
+	font-size: 13px;
+/*	font-weight: normal; */
 }
 
 .SignatureDescriptionNoMargin
@@ -81,8 +90,10 @@ h2.MethodHeading
 
 table 
 {
-	vertical-align: top;
 	margin-bottom: 30px;
+	-webkit-border-horizontal-spacing: 2px;
+	-webkit-border-vertical-spacing: 2px;
+	border-collapse: inherit;
 }
 
 .Transparent
@@ -123,19 +134,22 @@ th.GRowLabel
 
 th.IColLabelNarrow 
 {
-	background-color: #AED6C6;
+/*	background-color: rgb(192,211,192); */
+	background-color: #CCCCCC;
 	width: auto;
 }
 
 th.IColLabelWide 
 {
-	background-color: #AED6C6;
+/*	background-color: rgb(192,211,192); */
+	background-color: #CCCCCC;
 	width: 100%;
 }
 
 th.IRowLabel 
 {
-	background-color: #AED6C6;
+/*	background-color: rgb(192,211,192); */
+	background-color: #CCCCCC;
 	white-space: nowrap;
 }
 
@@ -184,7 +198,9 @@ td.GDesc
 
 td.ICode 
 {
-	background-color: #E2F0EB;
+/*	background-color: #F6FAED; */
+/*	background-color: #E2F0EB; */
+	background-color: #EEEEEE;
 	font-family: "Lucida Sans Typewriter", Courier, "Courier New", monospace;
 	font-size: 12px;
 	white-space: nowrap;
@@ -192,7 +208,9 @@ td.ICode
 
 td.IDesc 
 {
-	background-color: #E2F0EB;
+/*	background-color: #ECF2E1;
+	background-color: #F6FAED; */
+	background-color: #EEEEEE;
 	width: 100%;
 }
 
