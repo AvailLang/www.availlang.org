@@ -1,0 +1,69 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="methodListApp">
+<!--<![endif]-->
+<head>
+<!--#include virtual="/_include/head.ssi" -->
+  <meta charset="utf-8">
+  <title>Library - Sets</title>
+  <link href="/_css/methodDescriptions.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+  <script>
+  'use strict';
+
+/* Controllers */
+
+var methodListApp = angular.module('methodListApp', []);
+
+methodListApp.controller('MethodListCtrl', function($scope, $http) {
+  $http.get('method-data-files/set-methods.json').success(function(data) {
+    $scope.methods = data;
+  });
+  $scope.orderProp = 'name';
+  $scope.queryBy='name';
+});
+  </script>
+</head>
+<body class="gradient-logo" ng-controller="MethodListCtrl">
+<!--#include virtual="/_include/body-top.ssi" -->
+<h2 class="content-title">The Avail Library - Sets</h2>
+
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span2">
+        <!--Sidebar content-->
+
+        <b>Search:</b> <input ng-model="query">
+
+      </div>
+      <br>
+      <div class="span10">
+        <!--Body content-->
+
+        <div class="methods">
+          <div ng-repeat="method in methods | filter:query | orderBy:orderProp">
+            <a ng-model="collapsed" ng-click="collapsed=!collapsed">{{method.name}}</a>
+            <div class="methodBody" ng-show="collapsed"><b>Category:</b> {{method.category}}</div>
+            <div class="methodBody" ng-show="collapsed" ng-repeat="implementation in method.implementations">
+	          <div class="methodBody" ng-show="collapsed">{{implementation.methodDescription}}<br>
+	            <div class="methodSubSections"><b>Module:</b> {{implementation.module}}</div>
+	            <div ng-show="collapsed" class="methodSubSections"><b>Parameters:</b></div>
+					<div class="methodParameters" ng-repeat="parameter in implementation.parameters" ng-model="collapsed">
+					<em>{{$index+1}}. {{parameter.type}}</em><br>
+					<div class="methodSubSectionDescriptions">({{parameter.param}}) {{parameter.description}}</div></div>
+				<div ng-show="collapsed" class="methodSubSections"><b>Returns:</b> <em>{{implementation.return.type}}</em></div>
+				<div class="methodSubSectionDescriptions">{{implementation.return.description}}</div>
+				            <hr/>
+			</div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
