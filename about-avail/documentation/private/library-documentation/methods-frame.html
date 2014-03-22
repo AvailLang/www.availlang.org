@@ -1,0 +1,67 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html ng-app="methodListApp">
+<!--<![endif]-->
+
+<head>
+	
+	<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
+	<!--#include virtual="/_include/head.ssi" -->
+	<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+	<script type="text/javascript">
+	    targetPage = "" + window.location.search;
+		if (targetPage != "" && targetPage != "undefined")
+		targetPage = targetPage.substring(1);
+		window.onload = function()
+		{
+    	    if (targetPage != "" && targetPage != "undefined")
+    	         top.detail.location = top.targetPage;
+		};
+	</script> 
+
+	<script>
+		'use strict';
+
+		var methodListApp = angular.module('methodListApp', []);
+
+		methodListApp.controller(
+			'MethodListCtrl', 
+			function($scope, $http) 
+			{
+				$http.get('method-data-files/methods.json').success(
+					function(data) 
+					{
+						$scope.methods = data;
+					}
+				);
+				$scope.orderProp = 'name';
+				$scope.queryBy='name';
+			}
+		);
+	</script>
+</head>
+<body class="frame" ng-controller="MethodListCtrl">
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="frameHeading">
+    			Methods
+    		</div>
+    		<div class="frameContents">
+	    		<div class="filterBox">
+	    			<b>Filter:</b> <input ng-model="query">
+				</div>
+				<div class="methods">
+					<div ng-repeat="method in methods | filter:query | orderBy:orderProp">
+						<a href={{method.url}} target="detail">{{method.name}}</a>
+					</div>
+				</div>
+    		</div>
+		</div>
+	</div>
+        
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+body
+{
+}
+
+body.frame
+{
+	min-width: 0 !important;
+	width: auto !important;
+}
+
+body.detail
+{
+	padding: 5px !important;
+}
+
+.filterBox
+{
+	padding-bottom: 5px;
+}
+
+.frameHeading
+{
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	color: white;
+	background-color:#2B5545;
+}
+
+.frameContents
+{
+	padding: 5px !important;
+}
+
+.methodBody
+{
+	margin: 5px;
+	font-size: 13px;
+}
+
+.methodDescriptionBody 
+{
+	padding-left: 10px;
+	margin: 0px;	
+}
+
+.methodSubSections 
+{
+	padding-left: 15px;
+	margin: 0px;
+}
+
+.methodParameters, .methodReturns 
+{
+	padding-left: 25px;
+	margin: 0px;
+}
+
+.methodParamType 
+{
+	padding-left: 30px;
+	margin: 0px;
+}
+
+.methodSubSectionDescriptions 
+{
+	padding-left: 30px;
+	margin: 0px;
+}

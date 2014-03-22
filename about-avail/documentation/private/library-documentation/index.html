@@ -8,68 +8,27 @@
 
 <head>
 	
-<!--#include virtual="/_include/head.ssi" -->
-<script type="text/javascript" src="/_javascript/angular.min.js"></script>
-<style>li {
-	padding: 3px;
-	margin: 0px;}
-	h4 {
-	padding: 0px;
-	margin: 0px;}</style>
-	
-		<title>Library Documentation</title>
-	
-	</head>
-
-	<body class="gradient-logo" ng-app id="ng-app">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
-		
-<h2 class="content-title">Library Documentation</h2>
-
-<p>
-A list of Avail method categories.  Each links to a page with a list of methods and their descriptions.</p>
-
-<p><em>This section is a work in progress.  All items with an *, are not reachable pages as of yet.  A process is currently in development that will transform Method/Class comments in Avail source files into navigable pages on this site.</em></p>
-
-<p>
-<ul>
-<li><h4><a href="#">Assertions</a>*</h4>
-<li><h4><a href="#">Atoms</a>*</h4></li>
-<li><h4><a href="#">Backtracking</a>*</h4></li>
-<li><h4><a href="#">Casts</a>*</h4></li>
-<li><h4><a href="#">Characters</a>*</h4></li>
-<li><h4><a ng-model="collapsed" ng-click="collapsed=!collapsed">Collections</a></h4></li>
-<div ng-show="collapsed" ><a href="library-tuples.html">Tuples</a><br>
-<a ng-show="collapsed" href="library-sets.html">Sets</a><br>
-<a ng-show="collapsed" href="library-maps.html">Maps</a></div>
-
-<li><h4><a href="#">Concurrency</a>*</h4></li>
-<li><h4><a href="#">Control Structures</a>*</h4></li>
-<li><h4><a href="#">Definers</a>*</h4></li>
-<li><h4><a href="#">Early Error Codes</a>*</h4></li>
-<li><h4><a href="#">Enumeration Support</a>*</h4></li>
-<li><h4><a href="#">Exceptions</a>*</h4></li>
-<li><h4><a href="#">Functions</a>*</h4></li>
-<li><h4><a href="#">Restrictions</a>*</h4></li>
-<li><h4><a href="#">Literals</a>*</h4></li>
-<li><h4><a href="#">Logic</a>*</h4></li>
-<li><h4><a href="#">Math</a>*</h4></li>
-<li><h4><a href="#">Methods</a>*</h4></li>
-<li><h4><a href="#">Objects</a>*</h4></li>
-<li><h4><a href="#">Observing</a>*</h4></li>
-<li><h4><a href="#">Phrases</a>*</h4></li>
-<li><h4><a href="#">Pojos</a>*</h4></li>
-<li><h4><a href="#">Security</a>*</h4></li>
-<li><h4><a href="#">Strings</a>*</h4></li>
-<li><h4><a href="#">Synchronization</a>*</h4></li>
-<li><h4><a href="#">Types</a>*</h4></li>
-<li><h4><a href="#">Variables</a>*</h4></li>
-</ul></p>
-
-<!--#include virtual="/_include/body-bottom.ssi" -->
-
-	</body>
+	<!--#include virtual="/_include/head.ssi" -->
+	<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+	<script type="text/javascript">
+	    targetPage = "" + window.location.search;
+		if (targetPage != "" && targetPage != "undefined")
+		targetPage = targetPage.substring(1);
+		window.onload = function()
+		{
+    	    if (targetPage != "" && targetPage != "undefined")
+    	         top.detail.location = top.targetPage;
+		}
+	</script>
+	<title>Stacks - Avail library documentation</title>
+</head>
+<frameset cols="20%,80%">
+	<frameset rows="50%,50%">
+		<frame src="categories-frame.html" name="categories">
+		<frame src="methods-frame.html" name="methods">
+	</frameset>
+	<frame src="landing-detail.html" name="detail">
+</frameset>
 
 </html>
-
