@@ -313,6 +313,18 @@ code {
 	font-family: 'DejaVu Sans Mono', Consolas, 'Lucida Console', Menlo, Monaco, monospace, sans-serif;
 }
 
+code.command {
+	color: magenta;
+}
+
+code.module {
+	color: black;
+}
+
+code.unicode {
+	color: rgb(207, 83, 0); /* burnt orange */
+}
+
 .restricted-width-container {
 	display: block;
 	white-space: nowrap;

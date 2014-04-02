@@ -20,7 +20,7 @@
 
 		<h2 class="content-title"><code>⊤ (top)</code></h2>
 <p>
-<code>⊤</code> is the most general type of the Avail type lattice. It is pronounced "top" and written as the <em>down tack</em> (<code>U+22A4</code>) character. In Avail, every value is an instance of <code>⊤</code>, and every type is a <a href="./type-relations.html">subtype</a> of <code>⊤</code>.
+<code>⊤</code> is the most general type of the Avail type lattice. It is pronounced "top" and written as the <em>down tack</em> <code class="unicode">(U+22A4)</code> character. In Avail, every value is an instance of <code>⊤</code>, and every type is a <a href="./type-relations.html">subtype</a> of <code>⊤</code>.
 </p>
 <p>
 <code>⊤</code> is distinct from <code><a href="./types-any.html">any</a></code> in that it includes exactly one additional value: the special value <code>nil</code>. This value does not satisfy any public protocol and is not available to an Avail programmer. It is, however, implicitly returned from every <strong>procedure</strong>, that is, function whose return type is <code>⊤</code>. Thus <code>nil</code> is the value produced if and only if no exposed value is produced. The virtual machine uses <code>nil</code> to simplify several core algorithms, but exposure of this special value to an Avail programmer would not yield a net good.

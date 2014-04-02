@@ -22,16 +22,11 @@
 <h2 class="content-title">Hello, world!</h2>
 
 <h3><a id="Summary">Summary</a></h3>
-<p>In the fine tradition of programming, we are going to display a friendly, optimistic greeting message. This message is written to the standard output stream, so if you are running Avail from a console, then the greeting will be displayed on the console.</p>
+<p>In the fine tradition of programming, we are going to display a friendly, optimistic greeting message. This message is written to the standard output stream, so if you are running Avail from the workbench, then the greeting will be written into the transcript.</p>
 
-<p>Building and running the program should look something like this:</p>
+<p>Running the program should look something like this:</p>
 
-<div class="restricted-width-container">
-<div class="console code-block">localhost:~/avail$ availc "Hello World"
-localhost:~/avail$ avail "Greet"
-Hello, world!
-localhost:~/avail$ </div>
-</div>
+<img src="/_images/examples/hello-world/transcript.png" alt="A sample transcript of using &quot;Greet&quot;."/>
 
 <p>Just feel the optimism effervescing from those happy pixels!</p>
 
@@ -42,15 +37,15 @@ localhost:~/avail$ </div>
 <h3><a id="Goals">Goals</a></h3>
 <ul>
 <li>Learn the basic anatomy of an Avail source module.</li>
-<li>Learn how to import the Avail standard library, <code>"Avail"</code>, which includes the standard grammar and vocabulary of an Avail program.</li>
+<li>Learn how to import the Avail standard library, <code class="module">Avail</code>, which includes the standard grammar and vocabulary of an Avail program.</li>
 <li>Learn how to define an entry point.</li>
-<li>Learn how to create a simple method (using <code>"Method_is_"</code>).</li>
-<li>Learn how to print a <code><a href="/about-avail/documentation/type-system/types-string.html">string</a></code> to standard output (using <code>"Print:_"</code>).</li>
+<li>Learn how to create a simple method using <code>"Method_is_"</code>.</li>
+<li>Learn how to print a <code><a href="/about-avail/documentation/type-system/types-string.html">string</a></code> to standard output using <code>"Print:_"</code>.</li>
 </ul>
 
 <h3><a id="Complete Sources">Complete Sources</a></h3>
 <ul>
-<li><code><a href="/_examples/Hello%20World.avail"><img src="/_images/download-icons/avail.png" height="24px" style="padding-bottom:14px;padding-right:4px;">Hello World.avail</a></code></li>
+<li><code><a href="/_examples/hello-world/Hello%20World.avail"><img src="/_images/download-icons/avail.png" height="24px" style="padding-bottom:14px;padding-right:4px;">Hello World.avail</a></code></li>
 </ul>
    
 <h3><a id="Walkthrough">Walkthrough</a></h3>
@@ -70,13 +65,13 @@ Body
 
 <p>The purpose of the header is to describe the module in very broad strokes. To that effect, it includes metadata that says what the module is named, upon which modules it depends, what syntax it introduces, and so forth. Let's break this header down.</p>
 
-<p><strong>Line 33.</strong> Every module header (and thus source module) begins with the <code>Module</code> keyword and its name. In this case, the module is named <code>"Hello World"</code>. This <code><a href="/about-avail/documentation/type-system/types-string.html">string</a></code> is arbitrary and may include any Unicode character, but must match the name of the file (sans the <code>.avail</code> extension). If the module name recorded here does not match the file name, then the compiler issues an error message. This is an important crosscheck that you are working on the right module!</p>
+<p><strong>Line 33.</strong> Every module header (and thus source module) begins with the <code>Module</code> keyword and its name. In this case, the module is named <code class="module">Hello World</code>. This <code><a href="/about-avail/documentation/type-system/types-string.html">string</a></code> is arbitrary and may include any Unicode character, but must match the name of the file (sans the <code>.avail</code> extension). If the module name recorded here does not match the file name, then the compiler issues an error message. This is an important crosscheck that you are working on the right module!</p>
 
-<p><strong>Line 34.</strong> Remember how I said that an Avail program is described by a collection of source modules? <code>Hello World.avail</code> is not our entire program. It is merely the tip of an enormous iceberg. That iceberg is the Avail standard library, which is helpfully called <code>"Avail"</code>. The <code>Uses</code> keyword introduces the list of modules that our module needs to import in order to gain access to features that it wants to use. In this case, the standard library contains everything that we need to deliver a boisterous greeting to planet Earth, so it is the only module that we need to import.</p>
+<p><strong>Line 34.</strong> Remember how I said that an Avail program is described by a collection of source modules? <code>Hello World.avail</code> is not our entire program. It is merely the tip of an enormous iceberg. That iceberg is the Avail standard library, which is helpfully called <code class="module">Avail</code>. The <code>Uses</code> keyword introduces the list of modules that our module needs to import in order to gain access to features that it wants to use. In this case, the standard library contains everything that we need to deliver a boisterous greeting to planet Earth, so it is the only module that we need to import.</p>
 
 <p>(It is worth mentioning that the Avail standard library has a deeper obligation than the standard libraries of other programming languages. Without the Avail standard library, there is literally no syntax other than the rigid syntax of module headers. If you didn't <code>Use "Avail"</code>, then you wouldn't be able to declare types, perform arithmetic, use control structures, etc. Some of these restrictions might be okay if you were working with a domain-specific language, but not so for general purpose programming.)</p>
 
-<p><strong>Line 35.</strong> Most programming languages require that each complete program implement a privileged <strong>main</strong> operation that specifies where execution should begin. While this uniformity is simple, it is also somewhat simpleminded. It is often the case that a corpus of code could reasonably have many viable <strong>entry points</strong>, each of which serves as the starting place for some useful application. The keyword <code>Entries</code> precedes a list of operations that should be considered viable outermost operations that can be invoked from outside the program. Our module defines a single entry point, <code>"Greet"</code>.</p>
+<p><strong>Line 35.</strong> Most programming languages require that each complete program implement a privileged <strong>main</strong> operation that specifies where execution should begin. While this uniformity is simple, it is also simpleminded. It is often the case that a corpus of code could reasonably have many viable <strong>entry points</strong>, each of which serves as the starting place for some useful application. The keyword <code>Entries</code> precedes a list of operations that should be considered viable outermost operations that can be invoked from outside the program. Our module defines a single entry point, <code class="command">"Greet"</code>.</p>
 
 <p><strong>Line 36.</strong> The keyword <code>Body</code> marks the end of the module header, and consequently the beginning of the module body. So let's turn our attention to the module body now.</p>
 
@@ -88,13 +83,13 @@ Method "Greet" is [ Print: "Hello, world!\n"; ];
 ]]>
 </script></div></div>
 
-<p><strong>Line 38</strong> defines an operation named <code>"Greet"</code>. In Avail, a named operation is called a <strong>method</strong>. Much will be said about methods at a later time, but right now what's important is that this method's name matches the name given after the keyword <code>Entries</code> on <strong>line 35</strong>. If the compiler doesn't find a method named <code>"Greet"</code> while parsing the source module, then it will issue an error message to the effect that a declared entry point doesn't exist.</p>
+<p><strong>Line 38</strong> defines an operation named <code class="command">"Greet"</code>. In Avail, a named operation is called a <strong>method</strong>. Much will be said about methods at a later time, but right now what's important is that this method's name matches the name given after the keyword <code>Entries</code> on <strong>line 35</strong>. If the compiler doesn't find a method named <code>"Greet"</code> while parsing the source module, then it will issue an error message to the effect that a declared entry point doesn't exist.</p>
 
-<p>The standard library exports a method named <code>"Method_is_"</code> — pronounced <em>method blank is blank</em> — whose purpose is to define new methods. The blanks, formally called underscores, indicate argument positions in the grammar specified by the method name. <code>"Method_is_"</code> accepts two arguments. The first is a <code>string</code> that represents the name of the new method. The second is a <code><a href="/about-avail/documentation/type-system/types-function.html">function</a></code> that supplies code to implement the method. The number of arguments permitted by the function — its <strong>arity</strong> — must agree with the number of argument positions present in the method name. <code>"Greet"</code> has no blanks, so the associated function must not accept any arguments.</p>
+<p>The standard library exports a method named <code>"Method_is_"</code> &mdash; pronounced <em>method blank is blank</em> &mdash; whose purpose is to define new methods. The blanks, formally called underscores, indicate argument positions in the grammar specified by the method name. <code>"Method_is_"</code> accepts two arguments. The first is a <code>string</code> that represents the name of the new method. The second is a <code><a href="/about-avail/documentation/type-system/types-function.html">function</a></code> that supplies code to implement the method. The number of arguments permitted by the function &mdash; its <strong>arity</strong> &mdash; must agree with the number of argument positions present in the method name. <code class="command">"Greet"</code> has no blanks, so the associated function must not accept any arguments.</p>
 
-<p>A place in the source code where a method is used is termed a <strong>call site</strong>. At the call site of <code>"Method_is_"</code> on <strong>line 38</strong>, the actual arguments are <code>"Greet"</code> and <code>[Print: "Hello, world!\n";]</code>. So the new method will be called <code>"Greet"</code>, which is what we expect.</p>
+<p>A place in the source code where a method is used is termed a <strong>call site</strong>. At the call site of <code>"Method_is_"</code> on <strong>line 38</strong>, the actual arguments are <code>"Greet"</code> and <code>[Print: "Hello, world!\n";]</code>. So the new method will be called <code class="command">"Greet"</code>, which is what we expect.</p>
 
-<p>But what will the new method do? You've probably already figured this out, even if you haven't worked out the details: the new <code>"Greet"</code> method will print <code>"Hello, world!\n"</code>. The square brackets — <code>[</code> and <code>]</code> — delimit a <code>function</code>. The contents of the square brackets are the <strong>function body</strong> — this is the code that the function executes when it is <strong>applied</strong>. In this case, the code comprises a single <strong>statement</strong>: <code>Print: "Hello, world!\n";</code>. Every statement ends with a semicolon, and must produce a <strong>side effect</strong> like defining a new method or printing something.</p>
+<p>But what will the new method do? You've probably already figured this out, even if you haven't worked out the details: the new <code class="command">"Greet"</code> method will print <code>"Hello, world!\n"</code>. The square brackets &mdash; <code>[</code> <code class="unicode">(U+005B)</code> and <code>]</code> <code class="unicode">(U+005D)</code> &mdash; delimit a <code>function</code>. The contents of the square brackets are the <strong>function body</strong>, i.e., the code that the function executes when it is <strong>applied</strong> (or <strong>called</strong> or <strong>invoked</strong>). In this case, the code comprises a single <strong>statement</strong>: <code>Print: "Hello, world!\n";</code>. Every statement ends with a semicolon <code>;</code> <code class="unicode">(U+003B)</code>, and must produce a <strong>side effect</strong> like defining a new method or printing something.</p>
 
 <p>The standard library exports a method named <code>"Print:_"</code> — pronounced <em>print blank</em> — which accepts a <code>string</code> that should be printed immediately to the standard output stream. At our call site, this argument is <code>"Hello, world!\n"</code>. Harking back to a tradition of many other programming languages, the <strong>escape sequence</strong> <code>\n</code> represents a line feed.</p>
 
@@ -108,17 +103,17 @@ Method "Greet" is [ Print: "Hello, world!\n"; ];
 <h3><a id="Exercises">Exercises</a></h3>
 <p>Here are two ideas for starting easy.</p>
 <ol>
-<li>Change the name of the <code>"Greet"</code> method to something else, like <code>"Hello"</code> or <code>"Display global greeting"</code>.</li>
-<li>Change the text that is displayed. You might also want to change the name of the <code>"Greet"</code> so that it remains appropriate for your new text.</li>
+<li>Change the name of the <code class="command">"Greet"</code> method to something else, like <code class="command">"Hello"</code> or <code class="command">"Display global greeting"</code>.</li>
+<li>Change the text that is displayed. You might also want to change the name of the <code class="command">"Greet"</code> so that it remains appropriate for your new text.</li>
 </ol>
 
-<tr class="book-nav">
-	<div class="book-nav">
-		<li class="book-nav-up"><a class="book-nav-up" href="../index.html">Return to Learn</a></li>
-		<li class="book-nav-spacer">|</li>
-		<li class="book-nav-forward"><a class="book-nav-forward" href="./rpn.html">Reverse Polish Notation ›</a></li>
-	</div>
-</tr>
+<table class="book-nav">
+	<tr>
+		<td class="book-nav-up"><a class="book-nav-up" href="../type-system.html">Return to Learn</a></td>
+		<td class="book-nav-spacer">|</td>
+		<td class="book-nav-forward"><a class="book-nav-forward" href="./rpn.html">Reverse Polish Notation ›</a></td>
+	</tr>
+</table>
 
 <!--#include virtual="/_include/body-bottom.ssi" -->
 <!--#include virtual="/_include/sh-bottom.ssi" -->
