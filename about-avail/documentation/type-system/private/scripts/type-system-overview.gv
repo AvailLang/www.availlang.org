@@ -37,9 +37,9 @@ strict graph "An overview of the Avail type system."
 	object [href="/about-avail/documentation/type-system/types-object.html"];
 	phrase [href="/about-avail/documentation/type-system/types-phrase.html"];
 	pojo [href="/about-avail/documentation/type-system/types-pojo.html"];
+	set [href="/about-avail/documentation/type-system/types-set.html"];
 	token [href="/about-avail/documentation/type-system/types-token.html"];
 	tuple [href="/about-avail/documentation/type-system/types-tuple.html"];
-	set [href="/about-avail/documentation/type-system/types-set.html"];
 	variable [href="/about-avail/documentation/type-system/types-variable.html"];
 	⊥ [href="/about-avail/documentation/type-system/types-bottom.html"];
 
