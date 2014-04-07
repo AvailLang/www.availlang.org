@@ -28,7 +28,7 @@
 
 <p>The previous tutorials focused on <a href="./hello-world.html">trivialities</a> and <a href="./rpn.html">sweet Avail-centric gimmicks</a>. In this tutorial we are finally going to do some <span style="font-variant: small-caps">Real Programming</span>&trade;, as you will doubtless infer from the laundry list of <a href="#Goals">goals</a> below.</p>
 
-<p>Playing the game should like something like this:</p>
+<p>Playing the game should look something like this:</p>
 
 <img src="/_images/examples/guess-the-number/transcript.png" alt="A sample transcript of &quot;Play guess a number between_and_&quot;."/>
 
@@ -75,7 +75,7 @@
 
 <p>I can hear you already. "Bucko, aren't we, uh, <em>skipping</em> a whole lot of stuff if we do that?" First of all, my name isn't Bucko, but I'll forgive you the quaint appellation&hellip; this time. Otherwise, yes, we are skipping rather a lot of the code. Why? If you glanced through the source module already, like a good reader, then you probably saw some method names that were pretty wild by the standards of traditional programming languages. There is a single primary reason why identifiers are so tame in traditional programming languages: they are very easy to scan from the source text.</p>
 
-<p>But in Avail, methods do not merely have names; they have <em>grammar</em>. The compiler has no idea how to parse an expression unless it has been forewarned about all of the different grammars that combine to form the expression. So before a name can be used, it must either be <strong>defined</strong>, using something like <code>"Method_is_"</code>, or <strong>forward declared</strong>. Thinking back to the <a href="#Goals">goals</a> for this tutorial, I am already asking a lot from you, so I figured that we should save forward declaration for another time and just put define the methods in any order that makes the compiler happy.</p>
+<p>But in Avail, methods do not merely have names; they have <em>grammar</em>. The compiler has no idea how to parse an expression unless it has been forewarned about all of the different grammars that combine to form the expression. So before a name can be used, it must either be <strong>defined</strong>, using something like <code>"Method_is_"</code>, or <strong>forward declared</strong>. Thinking back to the <a href="#Goals">goals</a> for this tutorial, I am already asking a lot from you, so I figured that we should save forward declaration for another time and just define the methods in an order that makes the compiler happy.</p>
 
 <p>In short, we are starting all the way down at <strong>line 100</strong> because we needed space to define everything that we are going to use <em>before</em> we actually use it. Capiche? Right! Now stop procrastinating and join me on <strong>line 100</strong>.</p>
 
@@ -102,7 +102,7 @@ Private method "Play guess a number between_and_" is
 
 <p>"Guess the number" is hardly riveting entertainment, but its dullness would be excruciating without some randomness. <strong>Line 105</strong> introduces a <strong>local constant</strong> named <code>rng</code> and <strong>binds</strong> it to the return value of the method <code>"a pRNG"</code>, which is a pseudo-random number generator (pRNG). A local constant is one that is defined inside a function definition. Its type is the <a href="/about-avail/documentation/type-system/type-inference.html">type inferred</a> for the <strong>binding expression</strong>, i.e., the stuff between <code>::=</code> and <code>;</code>, by the compiler, <em>not</em> the type of the value at runtime (because this value isn't available until runtime). Once bound, a local constant cannot be rebound; that's why it's called a constant. <small>(Duh.)</small></p>
 
-<p>We're not doing anything with our pRNG yet; it just has a name. <strong>Line 106</strong> introduces another local constant, <code>theRange</code>, and binds it the result of <strong>sending</strong> <code>"[_.._]"</code> to <code>minimum</code> and <code>maximum</code>. The method <code>"[_.._]"</code> constructs an <a href="/about-avail/documentation/type-system/types-extended-integer.html">integral type</a> whose arguments establish its inclusive bounds. This notation is chosen to resemble the mathematical notation for <a href="http://en.wikipedia.org/wiki/Interval_(mathematics)">intervals</a>, but replaces the (ambiguous and overused) comma with a pair of full stops. This operation might seem a little strange, since you are probably used to dealing with types only at compile time, but in Avail types are first-class values that have great utility.</p>
+<p>We're not doing anything with our pRNG yet; it just has a name. <strong>Line 106</strong> introduces another local constant, <code>theRange</code>, and binds it to the result of <strong>sending</strong> <code>"[_.._]"</code> to <code>minimum</code> and <code>maximum</code>. The method <code>"[_.._]"</code> constructs an <a href="/about-avail/documentation/type-system/types-extended-integer.html">integral type</a> whose arguments establish its inclusive bounds. This notation is chosen to resemble the mathematical notation for <a href="http://en.wikipedia.org/wiki/Interval_(mathematics)">intervals</a>, but replaces the (ambiguous and overused) comma with a pair of full stops. This operation might seem a little strange, since you are probably used to dealing with types only at compile time, but in Avail types are first-class values that have great utility.</p>
 
 <p>In <strong>Line 107</strong>, the electronic proctor finally decides on his target number. The method <code>"_'s&#8263;next&laquo;value in&raquo;&#8263;_"</code> takes a pRNG and a finite integral type and answers, pseudo-randomly, a value that is an instance of the integral type, i.e., a value in the specified range. Without delving too deeply into the funny characters in the method name, it suffices to say that the <code>&laquo;&hellip;&raquo;</code> construct serves to group parts of the method name and <code>&#8263;</code> makes the previous part optional for the programmer to type at a call site. Without any difference in meaning we could have written this call site instead as</p>
 
@@ -152,7 +152,7 @@ Private method "tries to guess_from range_" is
 ];]]>
 </script></div></div>
 
-<p>On <strong>line 59</strong> we see our very first variable. Its name is <code>count</code>, it can store a <code>natural number</code>, and its initial value is <code>1</code>. It represents the current guess number, so before the player's first guess is it set to <code>1</code>.</p>
+<p>On <strong>line 59</strong> we see our very first variable. Its name is <code>count</code>, it can store a <code>natural number</code>, and its initial value is <code>1</code>. It represents the current guess number, so before the player's first guess it is set to <code>1</code>.</p>
 
 <p>On <strong>line 60</strong> we see our (very?) second variable. Its name is <code>guess</code>, its can store an <code>extended integer</code>, and it doesn't have a value yet; it is <strong>unassigned</strong>. Reading from <code>guess</code> at this point would be very bad, so let's not do it.</p>
 
@@ -179,7 +179,7 @@ Private method "tries to guess_from range_" is
 " style="float: left" seamless></iframe>
 </div>
 
-<p>The body is on <strong>line 61</strong>. It uses <code>:=</code> to <strong>assign</strong> to <code>guess</code> the result of sending <code>"player's next try for a number in_"</code> to <code>theRange</code>. An assignment is a temporary binding between a variable and a value. This binding lasts until (and unless) another assignment replaces it later. Only variables can be assigned. We will see what the helper method does in a bit.</p>
+<p>The body is on <strong>line 61</strong>. It uses <code>:=</code> to <strong>assign</strong> to <code>guess</code> the result of sending <code>"player's next try for a number in_"</code> to <code>theRange</code>. An assignment is a temporary binding between a variable and a value. This binding lasts until and unless another assignment replaces it later. Only variables can be assigned. We will see what the helper method does in a bit.</p>
 
 <p>The predicate is on <strong>line 62</strong>. It compares <code>guess</code> to <code>theNumber</code> using the method <code>"_=_"</code>. I trust that you guessed that <code>"_=_"</code> compares two values and answers <code>true</code> if and only if they are the same value? Good. The bond of trust between a faceless instructor and an Internet reader is very important.</p>
 
@@ -336,7 +336,7 @@ Semantic restriction "Play guess a number between_and_" is
 ]]>
 </script></div></div>
 
-<p>A <strong><a href="/about-avail/documentation/type-system/semantic-restrictions.html">semantic restriction</a></strong> is a function that is applied by the compiler to the inferred types of the arguments of the named method. It operates not on values but on <a href="/about-avail/documentation/type-system/types-type.html">types</a>. To be precise, a semantic restriction operates on the types inferred by the compiler at the call site of the method. During compilation of a call site, the compiler itself invokes, in parallel, every semantic restriction that is applicable to the inferred types of the supplied arguments. A semantic restrictions uses the type information available at a call site to perform two general activities:</p>
+<p>A <strong><a href="/about-avail/documentation/type-system/semantic-restrictions.html">semantic restriction</a></strong> is a function that is applied by the compiler to the inferred types of the arguments of the named method. It operates not on values but on <a href="/about-avail/documentation/type-system/types-type.html">types</a>. To be precise, a semantic restriction operates on the types inferred by the compiler at the call site of the method. During compilation of a call site, the compiler itself invokes, in parallel, every semantic restriction that is applicable to the inferred types of the supplied arguments. A semantic restriction uses the type information available at a call site to perform two general activities:</p>
 
 <ol>
 <li>Deciding whether to permit or reject a parse.</li>
