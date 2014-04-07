@@ -1,0 +1,65 @@
+strict digraph "Do_until_alternate with_"
+{
+	label="\"Do_until_alternate with_\"";
+	labelloc="top";
+	labeljust="center";
+	fontname="Consolas";
+	fontsize="10";
+	fontcolor="#0000A0";
+	node
+	[
+		shape="plaintext",
+		fontname="Consolas",
+		fontsize="10",
+		fontcolor="#0000A0",
+		target="_top"
+	];
+	edge
+	[
+		fontname="Helvetica",
+		fontsize="9",
+		fontcolor="#808080"
+	];
+
+	/* Nodes. */
+	start
+	[
+		label="",
+		width="0.0",
+		height="0.0",
+		fixedsize="true"
+	];
+	body
+	[
+		label="body()",
+		shape="ellipse"
+	];
+	predicate
+	[
+		label="predicate()",
+		shape="diamond"
+	];
+	interstice
+	[
+		label="interstice()",
+		shape="ellipse"
+	];
+	exit
+	[
+		label="exit",
+		shape="ellipse",
+		style="filled",
+		fillcolor="#dda0dd"
+	];
+
+	/* Connectivity. */
+	start -> body [label="&nbsp;start"];
+	body -> predicate;
+	predicate -> interstice [label="false"];
+	predicate -> exit [label="&nbsp;true"];
+	interstice -> body;
+	{rank="min"; start}
+	{rank="same"; predicate interstice}
+	{rank="max"; exit}
+}
+

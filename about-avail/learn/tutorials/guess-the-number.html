@@ -1,0 +1,385 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+<!--#include virtual="/_include/sh-head.ssi" -->
+	
+		<title>Avail - Tutorials - Guess the Number</title>
+	
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+
+<h2 class="content-title">Guess the Number</h2>
+
+<h3><a id="Summary">Summary</a></h3>
+<p>In the game of "guess the number", the proctor arbitrarily selects a number from within a predetermined range and keeps it secret. The player then repeatedly attempts to guess this number. Lest the player should have to rely only on her psychic prowess, the proctor provides hints after each guess about whether the guess was too high or too low. These hints allow a player to direct her search, hopefully using an optimal search strategy like <a href="http://en.wikipedia.org/wiki/Binary_search_algorithm#Number_guessing_game">binary search</a>.</p>
+
+<p>In our variant, the part of the proctor will be played by an Avail program, and the part of the player by some poor human who has yet to discover better games.</p>
+
+<p>The previous tutorials focused on <a href="./hello-world.html">trivialities</a> and <a href="./rpn.html">sweet Avail-centric gimmicks</a>. In this tutorial we are finally going to do some <span style="font-variant: small-caps">Real Programming</span>&trade;, as you will doubtless infer from the laundry list of <a href="#Goals">goals</a> below.</p>
+
+<p>Playing the game should like something like this:</p>
+
+<img src="/_images/examples/guess-the-number/transcript.png" alt="A sample transcript of &quot;Play guess a number between_and_&quot;."/>
+
+<p><small>(N.B.: <span style="font-variant: small-caps">Real Programming</span> is not really a trade mark. At least&hellip; it had better not be!)</small></p>
+
+<h3><a id="Prerequisites">Prerequisites</a></h3>
+<ul>
+<li>Understand the material presented in the previous tutorials.</li>
+</ul>
+
+<h3><a id="Goals">Goals</a></h3>
+<ul>
+<li>Learn how to use comments.</li>
+<li>Learn how to define module and local constants.</li>
+<li>Learn how to declare, initialize, and assign local variables.</li>
+<li>Learn how to use a few basic control structures:
+	<ul>
+	<li>Conditional branching (using <code>"If|if_then_&laquo;else if_then_&raquo;&laquo;else_&raquo;"</code>).</li>
+	<li>Looping (using <code>"Do_until_alternate with_"</code>).</li>
+	<li>Exception handling (using <code>"try_else_"</code>).</li>
+	</ul>
+</li>
+<li>Learn how to read from standard input (using <code>"next line&laquo;from standard input&raquo;&#8263;"</code>).</li>
+<li>Learn how to produce formatted text from templates and values (using <code>"format_with&laquo;&hellip;::=_&ddagger;,&raquo;"</code>).</li>
+<li>Learn how to parse <code><a href="/about-avail/documentation/type-system/types-extended-integer.html">integer</a></code>s from <code><a href="/about-avail/documentation/type-system/types-string.html">string</a></code>s (using <code>"_&rarr;_"</code>).</li>
+<li>Learn how to compare <code><a href="/about-avail/documentation/type-system/types-number.html">number</a></code>s (using <code>"_=_"</code>, <code>"_&ne;_"</code>, <code>"_&ge;_"</code>, <code>"_&gt;_"</code>, <code>"_&le;_"</code>, and <code>"_&lt;_"</code>).</li>
+<li>Learn how to construct an <a href="/about-avail/documentation/type-system/types-extended-integer.html">integral type</a> (using <code>"[_.._]"</code>).</li>
+<li>Learn how to extract the bounds of an <a href="/about-avail/documentation/type-system/types-extended-integer.html">integral type</a> (using <code>"&#9123;_&#9126;"</code> and <code>"&#9121;_&#9124;"</code>).</li>
+<li>Learn how to find the maximum element of a list (using <code>"&laquo;_&ddagger;max&raquo;"</code>).</li>
+<li>Learn how to obtain pseudorandom values (using <code>"a pRNG"</code> and <code>"_'s&#8263;next&laquo;value in&raquo;&#8263;_"</code>).</li>
+<li>Learn how to build private methods (using <code>"Private method_is_"</code>).</li>
+<li>Learn how to reject a specific method call site based on the types of the argument expressions (using <code>"Semantic restriction_is_"</code> and <code>"Reject parse,expected:_"</code>).</li>
+</ul>
+
+<h3><a id="Complete Sources">Complete Sources</a></h3>
+<ul>
+<li><code><a href="/_examples/guess-the-number/Guess%20the%20Number.avail"><img src="/_images/download-icons/avail.png" class="download-list-icon">Guess the Number.avail</a></code></li>
+</ul>
+
+<h3><a id="Walkthrough">Walkthrough</a></h3>
+<p>Once again, we are working with just one source module. Go ahead and peruse it now. Stop when your eyes start bleeding. Actually, try to stop <em>before</em> your eyes start bleeding. You're still going to need them for the walkthrough. And you'll probably still <em>want</em> them afterward, even if you don't strictly need them.</p>
+
+<p>Note that this source module has some real heft to it. It isn't just a giant copyright notice with a tiny code snippet dangling helplessly off the bottom. This time there is actually more code than legalese. Let's start by going to <strong>line 100</strong>.</p>
+
+<p>I can hear you already. "Bucko, aren't we, uh, <em>skipping</em> a whole lot of stuff if we do that?" First of all, my name isn't Bucko, but I'll forgive you the quaint appellation&hellip; this time. Otherwise, yes, we are skipping rather a lot of the code. Why? If you glanced through the source module already, like a good reader, then you probably saw some method names that were pretty wild by the standards of traditional programming languages. There is a single primary reason why identifiers are so tame in traditional programming languages: they are very easy to scan from the source text.</p>
+
+<p>But in Avail, methods do not merely have names; they have <em>grammar</em>. The compiler has no idea how to parse an expression unless it has been forewarned about all of the different grammars that combine to form the expression. So before a name can be used, it must either be <strong>defined</strong>, using something like <code>"Method_is_"</code>, or <strong>forward declared</strong>. Thinking back to the <a href="#Goals">goals</a> for this tutorial, I am already asking a lot from you, so I figured that we should save forward declaration for another time and just put define the methods in any order that makes the compiler happy.</p>
+
+<p>In short, we are starting all the way down at <strong>line 100</strong> because we needed space to define everything that we are going to use <em>before</em> we actually use it. Capiche? Right! Now stop procrastinating and join me on <strong>line 100</strong>.</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 100">
+<![CDATA[
+Private method "Play guess a number between_and_" is
+[
+	minimum : integer,
+	maximum : integer
+|
+	rng ::= a pRNG;
+	theRange ::= [minimum..maximum];
+	theNumber ::= rng's next value in theRange;
+	guessCount ::= tries to guess theNumber from range theRange;
+	comment ::= comment for guessCount tries given a range of theRange;
+	Print: comment;
+];]]>
+</script></div></div>
+
+<p>Here we are defined the entry point that allows us to play a game of "guess the number". The method is named <code>"Play guess a number between_and_"</code> and each accepts two arguments. The arguments are <code>minimum</code> and <code>maximum</code>, the lower and upper bounds of the range, respectively, and both are <code><a href="/about-avail/documentation/type-system/types-extended-integer.html">integer</a></code>s.</p>
+
+<p>There is only one new thing happening here: the use of <code>"Private method_is_"</code> to define a method. This method behaves the same as good old <code>"Method_is_"</code>, but imposes the restriction that the new method must not be exported from the module. You don't even know how to export methods yet &mdash; well, <strong>I</strong> didn't tell you how, anyway &mdash; so this restriction shouldn't faze you much yet.</p>
+
+<p>"Guess the number" is hardly riveting entertainment, but its dullness would be excruciating without some randomness. <strong>Line 105</strong> introduces a <strong>local constant</strong> named <code>rng</code> and <strong>binds</strong> it to the return value of the method <code>"a pRNG"</code>, which is a pseudo-random number generator (pRNG). A local constant is one that is defined inside a function definition. Its type is the <a href="/about-avail/documentation/type-system/type-inference.html">type inferred</a> for the <strong>binding expression</strong>, i.e., the stuff between <code>::=</code> and <code>;</code>, by the compiler, <em>not</em> the type of the value at runtime (because this value isn't available until runtime). Once bound, a local constant cannot be rebound; that's why it's called a constant. <small>(Duh.)</small></p>
+
+<p>We're not doing anything with our pRNG yet; it just has a name. <strong>Line 106</strong> introduces another local constant, <code>theRange</code>, and binds it the result of <strong>sending</strong> <code>"[_.._]"</code> to <code>minimum</code> and <code>maximum</code>. The method <code>"[_.._]"</code> constructs an <a href="/about-avail/documentation/type-system/types-extended-integer.html">integral type</a> that whose arguments establish its (inclusive) bounds. This notation is chosen to resemble the mathematical notation for intervals, but replaces the (ambiguous and overused) comma with a pair of full stops. This operation might seem a little strange, since you are probably used to dealing with types only at compile time, but in Avail types are first-class values that have great utility.</p>
+
+<p>In <strong>Line 107</strong>, the electronic proctor finally decides on his target number. The method <code>"_'s&#8263;next&laquo;value in&raquo;&#8263;_"</code> takes a pRNG and a finite integral type and answers, pseudo-randomly, a value that is an instance of the integral type, i.e., a value in the specified range. Without delving too deeply into the funny characters in the method name, it suffices to say that the <code>&laquo;&hellip;&raquo;</code> construct serves to group parts of the method name and <code>&#8263;</code> makes the previous part optional for the programmer to type at a call site. Without any difference in meaning we could have written this call site instead as</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block">theNumber ::= rng' next theRange;</div>
+</div>
+
+<p>but it would have been much less intelligible. Why have multiple ways to call the method at all then? Because some other call sites might read better with different optional parts plugged in or left out. For example,</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block">someNumber ::= randomNumbers' next [10..20];</div>
+</div>
+
+<p>leverages the English rules for constructing plural possessives and thus produces a perfectly fine reading. <span style="text-decoration: underline">Remember that source code is a literary artifact, and, like all literary artifacts, it is written for humans &mdash; not computers.</span> It is very easy to fall into the trap of believing that source code is written for computers, but let's try to leave that pitfall for programmers of traditional programming languages.</p>
+
+<p>Anyway, we can now refer to the target as <code>theNumber</code>. <strong>Line 108</strong> uses a helper method defined in this module to determine how many tries it took the player to guess <code>theNumber</code>. <strong>Line 109</strong> chooses a suitable (snarky) comment based on the player's guessing prowess, again using a helper method defined nearby. And <strong>line 110</strong> prints that comment to standard output. Control falls off the end of the method after this, so the entry point returns and the program exits (but of course leaves the workbench running).</p>
+
+<p>Now that you (hopefully!) understand the program in broad strokes, let's bust out our scalpels and explore the gris(t)ly innards.</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 54">
+<![CDATA[
+Private method "tries to guess_from range_" is
+[
+	theNumber : integer,
+	theRange : integer's type
+|
+	count : natural number := 1;
+	guess : extended integer;
+	Do [guess := player's next try for a number in theRange;]
+	until [guess = theNumber]
+	alternate with
+	[
+		If guess = sentinel then [/* Don't do anything special. */]
+		else if [guess > theNumber] then
+		[
+			Print: "Too high.\n";
+			count := count + 1;
+		]
+		else
+		[
+			Print: "Too low.\n";
+			count := count + 1;
+		];
+	];
+	count
+];]]>
+</script></div></div>
+
+<p>On <strong>line 59</strong> we see our very first variable. Its name is <code>count</code>, it can store an <code>integer</code>, and its initial value is <code>1</code>. It represents the current guess number, so before the player's first guess is it set to <code>1</code>.</p>
+
+<p>On <strong>line 60</strong> we see our (very?) second variable. Its name is <code>guess</code>, its can store an <code>extended integer</code>, and it doesn't have a value yet; it is <strong>unassigned</strong>. Reading from <code>guess</code> at this point would be very bad, so let's not do it.</p>
+
+<p>So what's the difference between <code>integer</code> and <code>extended integer</code>? <code>extended integer</code> includes <code>&infin;</code> and <code>-&infin;</code> as values, and <code>integer</code> doesn't. As for why we are leveraging this distinction here, we will see that shortly.</p>
+
+<p><strong>Lines 61-76</strong> constitute our first control structure. The method <code>"Do_until_alternate with_"</code> implements a loop. Each of its arguments are <code><a href="/about-avail/documentation/type-system/types-function.html">function</a></code>s. The first argument is a function is the <strong>body</strong> of the loop, that is, the central part that is intended to be repeated. The second argument is the <strong>predicate</strong>, the condition that controls whether to evaluate the body again. The third argument is the <strong>interstice</strong>, and is only evaluated between two evaluations of the body. This kind of loop works like this:</p>
+
+<div class="scrolling" style="margin: auto">
+<iframe src="/_images/examples/guess-the-number/do-until-alternate_with.svg" style="float: left" seamless></iframe>
+<iframe srcdoc="
+<small>
+<ol>
+<li>Evaluate the body.</li>
+<li>Evaluate the predicate:
+	<ul>
+	<li>If the predicate answers <code>true</code>, then goto <strong>4</strong>.</li>
+	<li>If the predicate answers <code>false</code>, then goto <strong>3</strong>.</li>
+	</ul>
+</li>
+<li>Evaluate the interstice, then goto <strong>1</strong></li>
+<li>Exit the loop.</li>
+</ol>
+</small>
+" style="float: left" seamless></iframe>
+</div>
+
+<p>The body is on <strong>line 61</strong>. It uses <code>:=</code> to <strong>assign</strong> to <code>guess</code> the result of sending <code>"player's next try for a number in_"</code> to <code>theRange</code>. An assignment is a temporary binding between a variable and a value. This binding lasts until (and unless) another assignment replaces it later. Only variables can be assigned. We will see what the helper method does in a bit.</p>
+
+<p>The predicate is on <strong>line 62</strong>. It compares <code>guess</code> to <code>theNumber</code> using the method <code>"_=_"</code>. I trust that you guessed that <code>"_=_"</code> compares two values and answers <code>true</code> if and only if they are the same value? Good. The bond of trust between a faceless instructor and an Internet reader is very important.</p>
+
+<p><strong>Lines 64-77</strong> are the interstice, the thing done between two runs of the body. Here we have the logic for responding to an incorrect guess. How do I know that the guess is incorrect? Because the interstice only runs after the predicate answers <code>false</code>; if the predicate had answered <code>true</code>, then the loop would have exited without running the interstice. When the interstice runs, there are three possible situations:</p>
+
+<ol>
+<li>The player provided nonsense instead of a real answer. She may have banged wildly on the keyboard or simply made a typo, who can tell? She might even be trying to crash our program!</li>
+<li>The player provided a valid guess, i.e., one within <code>theRange</code>, but it was higher than <code>theNumber</code>.</li>
+<li>The player provided a valid guess, but it was lower than <code>theNumber</code>.</li>
+</ol>
+
+<p>Collectively, <strong>lines 65-75</strong> handle these three cases. The method <code>"If|if_then_&laquo;else if_then_&raquo;&laquo;else_&raquo;"</code> is the all-terrain conditional control structure. Forget about the weird metacharacters in the name and just focus on how we are using this method in the code; we will introduce the concepts associated with these metacharacters in a later tutorial. Suffice to say, you can have one <code>If &hellip; then [&hellip;]</code> fragment, zero or more <code>else if [&hellip;] then [&hellip;]</code> fragments, and zero or one <code>else [&hellip;]</code> fragment. Before we break down this specific usage, let's look up at <strong>line 42</strong>:</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 42">
+<![CDATA[
+sentinel ::= ∞;
+]]>
+</script></div></div>
+
+<p><small>(Ah, how apropos to see <code>42</code> and <code>&infin;</code> so close together&hellip; but I digress.)</small></p>
+
+<p>This looks just like the many local constant definitions that we have seen so far, but this one doesn't occur inside a function definition. That makes it a <strong>module constant</strong>. Module constants are visible to all lexically subsequent expressions, i.e., expressions occurring after the module constant definition in the source module. <code>&infin;</code> is positive infinity. Since we require a finite range for our game, we know that the <code>&infin;</code> is never a valid target number. We give it the name <code>sentinel</code> here to reflect its purpose: in computer science parlance, a <strong>sentinel</strong> is a value that is out-of-band, i.e., never valid, for a particular class of usage.</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 65">
+<![CDATA[
+		If guess = sentinel then [/* Don't do anything special. */]
+]]>
+</script></div></div>
+
+<p>Back to <strong>line 65</strong>. <code>"player's next try for a number in_"</code> answers <code>sentinel</code> when the player furnishes silly input, and here we check for that case. If <code>guess</code> equals <code>sentinel</code>, then we perform the function after <code>then</code>&hellip; which doesn't do anything. This is because it only contains a <strong>comment</strong>. Comments occur within <code>/* &hellip; */</code> and serve to inform about the programmer's intent. Comments also nest; you can put one comment completely within another. This makes it easy to <strong>comment out</strong>, i.e., hide from the compiler, large sections of code while you are testing and debugging &mdash; even when those sections already contain comments.</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 66">
+<![CDATA[
+		else if [guess > theNumber] then
+		[
+			Print: "Too high.\n";
+			count := count + 1;
+		]
+]]>
+</script></div></div>
+
+<p><strong>Lines 66-70</strong> handle the second case: the player gave a valid response, but it was too high. On <strong>line 66</strong> we effect the comparison between <code>guess</code> and <code>theNumber</code> using the method <code>"_&gt;_"</code>, which, as you rightly suspect, answers <code>true</code> only when the left argument is greater than the right. There is a very good reason why this predicate is enclosed in square brackets, but, respectfully, I'm not going to tell it to you right now. For the moment, just remember that every predicate in a conditional except for the first must be enclosed in square brackets. <small>(But for the irately curious &mdash; those of you who demanded to hear all about double integrals when you first encountered formulae for volume; you know who you are! &mdash; make a mental note that I mumbled something about "deferred evaluation of functions" while I was waving my hands about.)</small> <strong>Line 69</strong> increments <code>count</code> by <code>1</code>, since we are about to give the player a chance to guess again. Note that we deliberately didn't adjust <code>count</code> in the first case, because we generously decided not to punish the player for feeding us garbage.</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 71">
+<![CDATA[
+		else
+		[
+			Print: "Too low.\n";
+			count := count + 1;
+		];
+]]>
+</script></div></div>
+
+<p><strong>Lines 71-75</strong> handle the third case: the player's response is valid, but too low. We print a hint and update <code>count</code>.</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 77">
+<![CDATA[
+	count
+]]>
+</script></div></div>
+
+<p>We see a lonely <code>count</code> hanging out on <strong>line 77</strong>. It doesn't even have a semicolon to keep it company. Now that, ladies and gentlemen, is true loneliness. What's going on here? Semicolons are only permitted after statements. Recall that a statement must produce a side effect, like assigning to a variable or printing to standard output. This is actually the <strong>return expression</strong>, which gives the enclosing function its value. Think of it as the main effect of the method; the <em>raison d'être</em> of <code>"tries to guess_from range_"</code> is to determine how many guesses it took the player to unmask <code>theNumber</code>. <code>count</code> is pregnant with our method's <em>magnum opus</em>, so we mention it as the last expression of the function to make it available to the caller (<code>"Play guess a number between_and_"</code>). The actual value produced by a return expression is called the <strong>return value</strong>.</p>
+
+<p>Okay, so&hellip; how did we actually interact with the player in the first place? So far all we've seen is the processing of that interaction as a <em>fait accompli</em>. <small>(This ends the multilingual section of this tutorial, promise!)</small> Let's go investigate that helper method, <code>"player's next try for a number in_"</code>.</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 44">
+<![CDATA[
+Private method "player's next try for a number in_" is
+[
+	theRange : integer's type
+|
+	Print: format "Guess a number between “minimum” and “maximum”: " with
+		minimum ::= ⎣theRange⎦,
+		maximum ::= ⎡theRange⎤;
+	try [next line from standard input→theRange] else [sentinel]
+];
+]]>
+</script></div></div>
+
+<p><strong>Lines 48-50</strong> are really just a glorified <code>"Print:_"</code>, but something cool is happening here. The argument is a formatted <code><a href="/about-avail/documentation/type-system/types-string.html">string</a></code>. The method <code>"format_with&laquo;&hellip;::=_&ddagger;,&raquo;"</code> takes a pattern <code>string</code> followed by a comma-separated list of <strong>format bindings</strong>. A pattern contains zero or more <strong>format sites</strong>, each of which is a quoted <strong>format parameter</strong>. When the quotes are <em>left</em> <code>&ldquo;</code> <code class="unicode">(U+201C)</code> and <em>right double quotation mark</em> <code>&rdquo;</code> <code class="unicode">(U+201D)</code>, then the value bound to the format parameter is stringified first using <code>"&ldquo;_&rdquo;"</code> When the quotes are <em>left</em> <code>&lsquo;</code> <code class="unicode">(U+2018)</code> and <em>right single quotation mark</em> <code>&rsquo;</code> <code class="unicode">(U+2019)</code>, then the value bound to the format parameter is expected to already be a string (and will not be stringified). A format binding looks just like a constant definition, to remind you that a format parameter can only assume one value during an interpolation of a pattern, much like a function parameter can only assume one value during an application of a function. The compiler will protest if any of the format parameters are not bound by a format binding, or if a non-<code>string</code> has been supplied as a format value where a <code>string</code> is expected.</p>
+
+<p>In this case, the format parameters are <code>minimum</code> and <code>maximum</code>, and represent the lower and upper bounds of <code>theRange</code>, respectively. The method <code>"&#9123;_&#9126;"</code> &mdash; pronounced <em>floor</em> &mdash; answers the lower bound of an integral type. Conversely, the method <code>"&#9121;_&#9124;"</code> &mdash; pronounced <em>ceiling</em> &mdash; answers the upper bound of an integral type. The net result is really straightforward: we are plugging the bounds of <code>theRange</code> into the corresponding format parameters of the pattern so that we end up with a message like:</p>
+
+<blockquote>Guess a number between 50 and 100:&nbsp;</blockquote>
+
+<p><strong>Line 51</strong> packs a lot in. Let's pick it apart from the outside moving inward. The method <code>"try_else_"</code> accepts two arguments, both of which are <code>function</code>s. It attempts to evaluate its first argument, called the <strong>protected function</strong>, producing its return value if it runs successfully to completion. But if anything goes wrong, then it evaluates its second argument and produces its return value instead. The technical elaboration of "anything goes wrong" is "an <code><a href="/about-avail/documentation/type-system/types-exception.html">exception</a></code> is raised", but that's wading into deeper waters than this tutorial is prepared to plumb.</p>
+
+<p>The protected function does two things. First, it asks <code>"next line&laquo;from standard input&raquo;&#8263;"</code> to obtain a line of text from standard input, i.e., the user. This method reads until it discovers a line feed, then answers everything up to, but not including, the line feed as a <code>string</code>. There are many things in theory and practice that can go wrong with reading from standard input, so this operation can definitely "raise an <code>exception</code>", whatever that means. Assuming that it managed to read a line, which is a very good assumption, it then attempts to convert that line into a value in <code>theRange</code>. Clearly this will only work if the user entered a (decimal) numeral like <code>"75"</code> rather than, say, a historical misquote like <code>"I see no ships!"</code>. So this too can "raise an <code>exception</code>". Good thing we put these problematic expressions in a protected function!</p>
+
+<p>If the protected function does fail, whether or not it was because of outrage at historical inaccuracy, then <code>"try_else_"</code> answers <code>sentinel</code> to let the caller know that the user flubbed.</p>
+
+<p><small>(Note that there are much more sophisticated techniques for dealing with <code>exception</code>s, but we don't require anything grander than <code>"try_else_"</code> for this example.)</small></p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 80">
+<![CDATA[
+Private method "comment for_tries given a range of_" is
+[
+	guesses : natural number,
+	range : integer's type
+|
+	/* This is the maximum number of tries using a binary search strategy. */
+	expected ::= ⎡log 2 of (2 max (⎡range⎤-⎣range⎦))⎤+1;
+	if guesses = 1 then ["Your clairvoyance is superb!\n"]
+	else if [guesses ≤ expected] then
+	[
+		format "“count” guesses? Your clairvoyance is adequate.\n"
+		with count ::= guesses
+	]
+	else
+	[
+		format "“count” guesses?? Wow. Maybe try a binary search next time…\n"
+		with count ::= guesses
+	]
+];
+]]>
+</script></div></div>
+
+<p>You're so good at this now that I'm only going to cover one line of <code>"comment for_tries given a range of_"</code>. <strong>Line 86</strong> has a whole lot of dense mathematical junk, but only a couple of new things. The method <code>"&laquo;_&ddagger;max&raquo;"</code> accepts an arbitrarily long lexical list of <code>extended integer</code>s and answers the maximum value that occurs among them. The method <code>"log_of_"</code> accepts two arguments, a base and a target, and computes a <a href="http://en.wikipedia.org/wiki/Logarithm">logarithm</a> to find the target's exponent. In this case, we are computing the logarithm base <code>2</code> of the larger of <code>2</code> and the number of <code>integer</code>s within <code>range</code>. Can you guess what this whole line is about? It computes the approximate number of guesses that are required to find the proctor's number using a binary search strategy, fudging in the user's favor. Do you know how I know? It says so in the comment on <strong>line 85</strong>, and comments never lie&hellip; Liars do comment though, but fortunately they aren't doing so here.</p>
+
+<p>That just about wraps things up. We are pseudo-randomly choosing a target number, plying the user in a loop to guess it, giving the user helpful feedback about their guesses, and displaying a modestly pithy message when she finally does guess the right answer. We even handle out-of-range numbers and famous misquotations. What more could a program possibly want out of life?</p>
+
+<p>Well&hellip; What happens if the user supplies perverse values to <code>"Play guess a number between_and_"</code>? It says that it requires its arguments to be <code>integer</code>s, so we don't expect to be able to build a command with totally inappropriate arguments. Let's see what happens if we try.</p>
+
+<img src="/_images/examples/guess-the-number/bad-arguments.png" alt="Attempting to &quot;Play guess a number between_and_&quot;. with Flintstones."/>
+
+<p>See? The compiler handily defeated our puerile attempt at flippancy. So we'll just have to try harder to break the program. How about we run the command with a <code>minimum</code> that is larger than the <code>maximum</code>? The parameter declarations just say that the arguments have to be integers, not that the first one has to be smaller than the second one. In fact, there isn't any way to define the parameter types to express this idea short of resorting to explicit ranges like <code>[50..100]</code> and <code>[200..300]</code>. But we can see that a command like <code class="command">Play guess a number between 20 and 10</code> is stupid, so what can we do about it?</p>
+
+<p>There are many approaches to dealing with this issue, but I've chosen to showcase one that is unique to Avail. Let's make the compiler itself reject a command whose minimum and maximum are reversed.</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 113">
+<![CDATA[
+Semantic restriction "Play guess a number between_and_" is
+[
+	minimumType : integer's type,
+	maximumType : integer's type
+|
+	If ⎣minimumType⎦ ≥ ⎡maximumType⎤ then
+	[
+		Reject parse, expected:
+			"the minimum value to be smaller than the maximum value"
+	];
+	⊤
+];
+]]>
+</script></div></div>
+
+<p>A <strong><a href="/about-avail/documentation/type-system/semantic-restrictions.html">semantic restriction</a></strong> is a function that is applied by the compiler to the inferred types of the arguments of the named method. It operates not on values but on <a href="/about-avail/documentation/type-system/types-type.html">types</a>. To be precise, a semantic restriction operates on the types inferred by the compiler at the call site of the method. During compilation of a call site, the compiler itself invokes, in parallel, every semantic restriction that is applicable to the inferred types of the supplied arguments. A semantic restrictions uses the type information available at a call site to perform two general activities:</p>
+
+<ol>
+<li>Deciding whether to permit or reject a parse.</li>
+<li>Deciding what type to infer for the call site.</li>
+</ol>
+
+<p>In this example, we will only consider the first activity.</p>
+
+<p>The parameter declarations of <strong>lines 115-116</strong> resemble those of <strong>lines 102-103</strong> but they are shifted up one level; they are <strong><a href="/about-avail/documentation/type-system/metatypes.html">metatypes</a></strong> rather than types. A metatype is a type whose instances are themselves types. It's more than a little bit wiggy, and just a tad bit whack, but it's very powerful &mdash; and it does become easier with time and practice. In fact, we've already seen these metatypes in several of our helper methods already.</p>
+
+<p>Now that we've demystified semantic restrictions a little bit, let's take a good look at the code. It's really pretty simple. There's a conditional (<strong>lines 118-122</strong>) and a return expression (<strong>line 123</strong>). The return expression answers <code><a href="/about-avail/documentation/type-system/types-top.html">&#8868;</a></code>, pronounced <em>top</em>, the root of the Avail type lattice. When used as the return expression in a semantic restriction, this is an Avail idiom that means "do not strengthen the inferred type of this call site", and we can ignore it. (We will worry about why it means this in a later tutorial.)</p>
+
+<p>So let's concentrate on the conditional. <strong>Line 118</strong> asks if the lower bound of <code>minimumType</code> is greater than the upper bound of <code>maximumType</code>. If so, then there is no instance of <code>minimumType</code> that is smaller than any instance of <code>maximumType</code>. When that is the case, then it is guaranteed that the user is trying to supply the arguments in the wrong order. <strong>Lines 120-121</strong> use <code>"Reject parse,expected:_"</code> to instruct the compiler to reject the parse of this call site. The compiler records the supplied message to report if and only if it should later decide to terminate the exploration of a top-level statement's meaning because every possible parse was invalid in some way. If the compiler does decide to abandon the parse, then this message will be issued when the compiler's error report is printed. Since this semantic restriction will only run on commands that represent external call sites of <code>"Play guess a number between_and_"</code>, our custom parse rejection is pretty much guaranteed to show up. If that was a whole lot of technobabble, then hopefully a screenshot will clear things up:</p>
+
+<img src="/_images/examples/guess-the-number/parse-rejected.png" alt="Attempting to &quot;Play guess a number between_and_&quot; with the arguments reversed."/>
+
+<p>See? A picture really is worth a thousand words. Well, a thousand of <em>my</em> words, anyway&hellip;</p>
+
+<h3><a id="Further Reading">Further Reading</a></h3>
+<p>If you have the superlatively good fortune to be an etymology nerd, then you might want to learn more about the <a href="http://www.etymonline.com/index.php?term=bucko">quaint appellation</a> that you used earlier when you were sassing me.</p>
+
+<p>If you would like the learn the difference between random number generation and pseudo-random number generation, then read up on the topic <a href="http://en.wikipedia.org/wiki/Random_number_generation#.22True.22_random_numbers_vs._pseudo-random_numbers">here</a>.</p>
+
+<p>If you are interested in what <a href="http://en.wikipedia.org/wiki/Horatio_Nelson,_1st_Viscount_Nelson">Horatio Nelson</a> really said at the Battle of Copenhagen, then go read about it <a href="http://en.wikipedia.org/wiki/Battle_of_Copenhagen">here</a>.</p>
+
+<p>If you want to read about why it is, or is not, a good reason to cite <a href="http://www.wikipedia.org">Wikipedia</a> so very much, then read about it <a href="http://en.wikipedia.org/wiki/Reliability_of_Wikipedia">here</a> while suppressing a smirk of irony.</p>
+
+<p>Oh, I suppose that you might also want to read more about Avail. In that case, see what the manual has to say about <a href="/about-avail/documentation/type-system/semantic-restrictions.html">semantic restrictions</a>.</p>
+
+<h3><a id="Exercises">Exercises</a></h3>
+<ul>
+<li>It's time to put what you've learned about Avail and number guessing games to good use: implement a variation of <a href="http://en.wikipedia.org/wiki/Mastermind_(board_game)">Mastermind</a> that uses four pegs and six colors. You can represent the different pegs with variables and the different colors with <code>integer</code>s. (Or you can get fancier and use <code><a href="/about-avail/documentation/type-system/types-tuple.html">tuple</a></code>s instead of variables to represent the different peg positions.)</li>
+</ul>
+
+<table class="book-nav">
+	<tr>
+		<td class="book-nav-back"><a class="book-nav-back" href="./rpn.html">‹ Reverse Polish Notation</a></td>
+		<td class="book-nav-spacer">|</td>
+		<td class="book-nav-up"><a class="book-nav-up" href="../index.html">Return to Learn</a></td>
+	</tr>
+</table>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+<!--#include virtual="/_include/sh-bottom.ssi" -->
+
+	</body>
+
+</html>
