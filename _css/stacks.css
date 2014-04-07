@@ -88,9 +88,43 @@ h2.pane-heading
 	margin: 0px !important;
 }
 
+
+h2.pane-heading-right
+{
+	height: 35;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: right;
+	color: white;
+	background-color:#2B5545; 
+	padding: 8px;
+	margin: 0px !important;
+}
+
+a.pane-heading-link
+{
+	font-size: 14px;
+	font-weight: bold;
+	color: white;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+a.method-link
+{
+	background-color:#2B5545; 
+	cursor: pointer;
+}
+
+.pane-filter {
+	padding: 4px;
+	height: 25;
+}
+
+
 .pane-contents {
 	padding: 4px;
-	height: calc(100% - 35px - 8px);
+	height: calc(100% - 35px - 8px - 25px - 4px);
 	overflow: scroll;
 }
 
