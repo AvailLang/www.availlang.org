@@ -23,28 +23,25 @@
 <iframe src="/_images/type-system/type-system-boolean-focus.svg" seamless></iframe>
 </div>
 <p>
-Rather than being a specialized type, <code>boolean</code> is simply the name given to the enumeration of the special <a href="./types-atom.html">atoms</a> <code>true</code> and <code>false</code>: <code>{true, false}ᵀ</code>. These atoms are defined and exported by the virtual machine for use by programmers. Every primitive interrogative method, such as <code>"_=_"</code> or <code>"_≤_"</code>, uses classical (Boolean) bivalence and obeys the three classical (Aristotelian) laws of thought.
+Rather than being a specialized type, <code>boolean</code> is simply the name given to the enumeration of the special <a href="./types-atom.html">atoms</a> <code>true</code> and <code>false</code>: <code>{true, false}ᵀ</code>. These atoms are defined and exported by the virtual machine for use by programmers. Every primitive interrogative method, such as <code>"_=_"</code> or <code>"_≤_"</code>, uses classical (Boolean) bivalence, and every stable primitive interrogative obeys the three classical (Aristotelian) laws of thought.
 </p>
 <p>
-Bivalent logic assigns either <code>true</code> or <code>false</code> as the unique truth value of every proposition. Every primitive interrogative method answers either <code>true</code> or <code>false</code> for a given set of arguments. Moreover, this answer is stable; invocation with the same arguments must always yield the same answer.
+Bivalent logic assigns either <code>true</code> or <code>false</code> as the unique truth value of every proposition. A primitive interrogative method is stable iff it reliably answers either <code>true</code> or <code>false</code> for a given set of arguments.
 </p>
 <p>
 The classical laws of thought are:
 </p>
 <ul>
 <li>
-The <strong>law of identity</strong>, that every proposition <code>P</code> implies itself: <code>P → P</code>. For every primitive interrogative method <code>"prim_,_"</code>, then <code>∀A,B : (prim A, B = prim A, B) = true</code>.
+The <strong>law of identity</strong>, that every proposition <code>P</code> implies itself: <code>P → P</code>. For every stable primitive interrogative method <code>"prim_,_"</code>, then <code>∀A,B : (prim A, B = prim A, B) = true</code>.
 </li>
 <li>
-The <strong>law of noncontradiction</strong>, that both a proposition <code>P</code> and its negation <code>¬P</code> are not mutually true: <code>¬(P ∧ ¬P)</code>. For every primitive interrogative method <code>"prim_,_"</code>, then <code>∀A,B : (prim A, B ∧ ¬prim A, B) = false</code>.
+The <strong>law of noncontradiction</strong>, that both a proposition <code>P</code> and its negation <code>¬P</code> are not mutually true: <code>¬(P ∧ ¬P)</code>. For every stable primitive interrogative method <code>"prim_,_"</code>, then <code>∀A,B : (prim A, B ∧ ¬prim A, B) = false</code>.
 </li>
 <li>
 The <strong>law of excluded middle</strong>, that either a proposition <code>P</code> or its negation <code>¬P</code> is uniquely true: <code>P ∨ ¬P</code>. For every primitive interrogative method <code>"prim_,_"</code>, then <code>∀A,B : ((prim A, B = true) ∨ (prim A, B = false)) = true</code>.
 </li>
 </ul>
-<p>
-Therefore the primitive interrogative methods satisfy classical logic.
-</p>
 <p>
 Remember that values may be instances of many types. This means that Avail directly supports other logical systems, such as Kleene's three-valued logic of indeterminacy, whose truth values are <code>true</code>, <code>false</code>, and <code>unknown</code>. Assuming the introduction of an atom to represent <code>unknown</code>, then <code>kleenean ≝ {true, false, unknown}ᵀ</code>. Clearly <code>kleenean</code> is a supertype of <code>boolean</code>, since <code>{true, false, unknown}ᵀ ⊇ {true, false}ᵀ</code>. New logical operations could be written in terms of <code>kleenean</code>, and preexisting logical operations defined to accept <code>boolean</code>s would automatically become specializations of these more general operations defined to accept <code>kleenean</code>s.
 </p>
