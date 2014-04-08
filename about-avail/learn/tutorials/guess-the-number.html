@@ -36,7 +36,7 @@
 
 <h3><a id="Prerequisites">Prerequisites</a></h3>
 <ul>
-<li>Understand the material presented in the previous tutorials.</li>
+<li>Understand the material presented in the previous <a href="../index.html">tutorials</a>.</li>
 </ul>
 
 <h3><a id="Goals">Goals</a></h3>
@@ -57,7 +57,6 @@
 <li>Learn how to compare <code><a href="/about-avail/documentation/type-system/types-number.html">number</a></code>s (using <code>"_=_"</code>, <code>"_&ne;_"</code>, <code>"_&ge;_"</code>, <code>"_&gt;_"</code>, <code>"_&le;_"</code>, and <code>"_&lt;_"</code>).</li>
 <li>Learn how to construct an <a href="/about-avail/documentation/type-system/types-extended-integer.html">integral type</a> (using <code>"[_.._]"</code>).</li>
 <li>Learn how to extract the bounds of an <a href="/about-avail/documentation/type-system/types-extended-integer.html">integral type</a> (using <code>"&#9123;_&#9126;"</code> and <code>"&#9121;_&#9124;"</code>).</li>
-<li>Learn how to find the maximum element of a list (using <code>"&laquo;_&ddagger;max&raquo;"</code>).</li>
 <li>Learn how to obtain pseudo-random values (using <code>"a pRNG"</code> and <code>"_'s&#8263;next&laquo;value in&raquo;&#8263;_"</code>).</li>
 <li>Learn how to build private methods (using <code>"Private method_is_"</code>).</li>
 <li>Learn how to reject a specific method call site based on the types of the argument expressions (using <code>"Semantic restriction_is_"</code> and <code>"Reject parse,expected:_"</code>).</li>
@@ -183,7 +182,7 @@ Private method "tries to guess_from range_" is
 
 <p>The predicate is on <strong>line 62</strong>. It compares <code>guess</code> to <code>theNumber</code> using the method <code>"_=_"</code>. I trust that you guessed that <code>"_=_"</code> compares two values and answers <code>true</code> if and only if they are the same value? Good. The bond of trust between a faceless instructor and an Internet reader is very important.</p>
 
-<p><strong>Lines 64-77</strong> are the interstice, the thing done between two runs of the body. Here we have the logic for responding to an incorrect guess. How do I know that the guess is incorrect? Because the interstice only runs after the predicate answers <code>false</code>; if the predicate had answered <code>true</code>, then the loop would have exited without running the interstice. When the interstice runs, there are three possible situations:</p>
+<p><strong>Lines 64-76</strong> are the interstice, the thing done between two runs of the body. Here we have the logic for responding to an incorrect guess. How do I know that the guess is incorrect? Because the interstice only runs after the predicate answers <code>false</code>; if the predicate had answered <code>true</code>, then the loop would have exited without running the interstice. When the interstice runs, there are three possible situations:</p>
 
 <ol>
 <li>The player provided nonsense instead of a real answer. She may have banged wildly on the keyboard or simply made a typo, who can tell? She might even be trying to crash our program!</li>
@@ -288,7 +287,7 @@ Private method "comment for_tries given a range of_" is
 	range : integer's type
 |
 	/* This is the maximum number of tries using a binary search strategy. */
-	expected ::= ⎡log 2 of (2 max (⎡range⎤-⎣range⎦))⎤+1;
+	expected ::= ⎡log 2 of (⎡range⎤-⎣range⎦ + 2)⎤;
 	if guesses = 1 then ["Your clairvoyance is superb!\n"]
 	else if [guesses ≤ expected] then
 	[
@@ -304,7 +303,7 @@ Private method "comment for_tries given a range of_" is
 ]]>
 </script></div></div>
 
-<p>You're so good at this now that I'm only going to cover one line of <code>"comment for_tries given a range of_"</code>. <strong>Line 86</strong> has a whole lot of dense mathematical junk, but only a couple of new things. The method <code>"&laquo;_&ddagger;max&raquo;"</code> accepts an arbitrarily long lexical list of <code>extended integer</code>s and answers the maximum value that occurs among them. The method <code>"log_of_"</code> accepts two arguments, a base and a target, and computes a <a href="http://en.wikipedia.org/wiki/Logarithm">logarithm</a> to find the target's exponent. In this case, we are computing the logarithm base <code>2</code> of the larger of <code>2</code> and the number of <code>integer</code>s within <code>range</code>. Can you guess what this whole line is about? It computes the approximate number of guesses that are required to find the proctor's number using a binary search strategy, fudging in the user's favor. Do you know how I know? It says so in the comment on <strong>line 85</strong>, and comments never lie&hellip; Liars do comment though, but fortunately they aren't doing so here.</p>
+<p>You're so good at this now that I'm only going to cover one line of <code>"comment for_tries given a range of_"</code>. <strong>Line 86</strong> has a whole lot of dense mathematical junk, but only a couple of new things.The method <code>"log_of_"</code> accepts two arguments, a base and a target, and computes a <a href="http://en.wikipedia.org/wiki/Logarithm">logarithm</a> to find the target's exponent. In this case, we are computing the logarithm base <code>2</code> of the larger of <code>2</code> and the number of <code>integer</code>s within <code>range</code>. Can you guess what this whole line is about? It computes the approximate number of guesses that are required to find the proctor's number using a binary search strategy, fudging in the user's favor. Do you know how I know? It says so in the comment on <strong>line 85</strong>, and comments never lie&hellip; Liars do comment though, but fortunately they aren't doing so here.</p>
 
 <p>Well&hellip; I guess that there's one more thing that I ought to cover, since you insist. Notice that <code>if</code> starts with a lowercase letter this time instead of an uppercase one? And that there are no semicolons in sight on <strong>lines 87-97</strong>? Each <code>[&hellip;]</code> expression is a separate function definition. So the contents of the square brackets on <strong>line 87</strong>, <strong>lines 90-91</strong>, and <strong>lines 95-96</strong> are each return expressions; each answers a formatted <code>string</code>. And, in turn, the entire conditional is a return expression. The fancy way that <code>"If|if_then_&laquo;else if_then_&raquo;&laquo;else_&raquo;"</code> is named permits the initial keyword to be specified as either <code>If</code> or <code>if</code>. Whenever an Avail programmer is given such a choice, by convention she chooses the keyword beginning with an uppercase letter when using a method as a statement and the lowercase option when using the method as an expression. Here we are using the conditional as an expression that produces one of three different values. Because each function answers a <code>string</code>, the compiler infers that the entire conditional will produce a <code>string</code>. And since the conditional is the method's return expression, this entire method will produce a <code>string</code>. <a href="http://en.wikipedia.org/wiki/Q.E.D.">Q.E.D.</a></p>
 
@@ -347,7 +346,7 @@ Semantic restriction "Play guess a number between_and_" is
 
 <p>The parameter declarations of <strong>lines 115-116</strong> resemble those of <strong>lines 102-103</strong> but they are shifted up one level; they are <strong><a href="/about-avail/documentation/type-system/metatypes.html">metatypes</a></strong> rather than types. A metatype is a type whose instances are themselves types. It's more than a little bit wiggy, and just a tad bit whack, but it's very powerful &mdash; and it does become easier with time and practice. In fact, we've already seen these metatypes in several of our helper methods already.</p>
 
-<p>Now that we've demystified semantic restrictions a little bit, let's take a good look at the code. It's really pretty simple. There's a conditional (<strong>lines 118-122</strong>) and a return expression (<strong>line 123</strong>). The return expression answers <code><a href="/about-avail/documentation/type-system/types-top.html">&#8868;</a></code>, pronounced <em>top</em>, the root of the Avail type lattice. When used as the return expression in a semantic restriction, this is an Avail idiom that means "do not strengthen the inferred type of this call site", and we can ignore it. (We will worry about why it means this in a later tutorial.)</p>
+<p>Now that we've demystified semantic restrictions a little bit, let's take a good look at the code. It's really pretty simple. There's a conditional (<strong>lines 118-122</strong>) and a return expression (<strong>line 123</strong>). The return expression answers <code><a href="/about-avail/documentation/type-system/types-top.html">&#8868;</a></code> <code class="unicode">(U+22A4)</code>, pronounced <em>top</em>, the root of the Avail type lattice. When used as the return expression in a semantic restriction, this is an Avail idiom that means "do not strengthen the inferred type of this call site", and we can ignore it. (We will worry about why it means this in a later tutorial.)</p>
 
 <p>So let's concentrate on the conditional. <strong>Line 118</strong> asks if the lower bound of <code>minimumType</code> is greater than the upper bound of <code>maximumType</code>. If so, then there is no instance of <code>minimumType</code> that is smaller than any instance of <code>maximumType</code>. When that is the case, then it is guaranteed that the user is trying to supply the arguments in the wrong order. <strong>Lines 120-121</strong> use <code>"Reject parse,expected:_"</code> to instruct the compiler to reject the parse of this call site. The compiler records the supplied message to report if and only if it should later decide to terminate the exploration of a top-level statement's meaning because every possible parse was invalid in some way. If the compiler does decide to abandon the parse, then this message will be issued when the compiler's error report is printed. Since this semantic restriction will only run on commands that represent external call sites of <code>"Play guess a number between_and_"</code>, our custom parse rejection is pretty much guaranteed to show up. If that was a whole lot of technobabble, then hopefully a screenshot will clear things up:</p>
 
