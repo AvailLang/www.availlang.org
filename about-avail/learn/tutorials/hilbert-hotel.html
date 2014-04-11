@@ -122,9 +122,9 @@
 <li><code>guests</code> (<strong>line 60</strong>): Records every guest booked by <code class="command">"Assign_to room_"</code>. (But it <em>does not</em> record the conference goers.)</li>
 </ul>
 
-<p>Note that a <strong>module variable</strong> is just a variable that is defined at the top level of a module, outside of any function definition. It can be referenced from by any function defined subsequently in the source module.</p>
+<p>Note that a <strong>module variable</strong> is just a variable that is defined at the top level of a module, outside of any function definition. It can be referenced by any function defined subsequently in the source module.</p>
 
-<p>Before diving into the code in detail, we need to introduce a couple abstractions and our rationale for using them. In particular, we are going to introduce the abstractions of <code>room number</code> and <code>guest</code>, so that we can use the right language for the scenario.</p>
+<p>Before diving into the code in detail, we need to introduce a couple of abstractions and our rationale for using them. In particular, we are going to introduce the abstractions of <code>room number</code> and <code>guest</code> so that we can use the right language for the scenario.</p>
 
 <h4>Type names</h4>
 
@@ -263,7 +263,7 @@ Private method "What's all this`?" is
 
 <p>The body of this method (<strong>lines 102-111</strong>) is a send of this module's chief helper method, <code>"Concierge says,_"</code>. As a quick refresher on <a href="/about-avail/documentation/type-system/types-string.html">string literals</a>, the backslashes at the ends of <strong>lines 103-110</strong> cause the line feeds to be excluded from the text. And the <code>\|</code> at the beginning of each line causes the leading whitespace to be excluded.</p>
 
-<p>If we mine the <a href="http://en.wikipedia.org/wiki/Flavor_text">flavor text</a> carefully, we will find two occurrences of <code>&lsquo;you&rsquo;</code>. Recall from the previous tutorial that these are metacharacters used by <code>"format_with&laquo;&hellip;::=_&ddagger;,&raquo;"</code> to indicate that a format variable must be bound to a string. But where's the send of <code>"format_with&laquo;&hellip;::=_&ddagger;,&raquo;"</code>? It isn't here, so it must be inside <code>"Concierge says,_"</code>. We'll study this method piecemeal throughout the tutorial.</p>
+<p>If we mine the <a href="http://en.wikipedia.org/wiki/Flavor_text">flavor text</a> carefully, we will find two occurrences of <code>&lsquo;you&rsquo;</code>. Recall from the previous tutorial that these single quotation marks are metacharacters used by <code>"format_with&laquo;&hellip;::=_&ddagger;,&raquo;"</code> to indicate that a format variable must be bound to a string. But where's the send of <code>"format_with&laquo;&hellip;::=_&ddagger;,&raquo;"</code>? It isn't here, so it must be inside <code>"Concierge says,_"</code>. We'll study this method piecemeal throughout the tutorial.</p>
 
 <h4>Hey, what do you mean "miss"?</h4>
 
@@ -287,7 +287,7 @@ titleIndex : [1..2] := a pRNG's next value in [1..2];
 ]]>
 </script></div></div>
 
-<p>On <strong>line 80</strong>, <code>pattern</code> is the parameter of <code>"Concierge says,_"</code>. When <code>"What's all this`?"</code> sends <code>"Concierge says,_"</code>, <code>pattern</code> will be bound to the large block of flavor text on <strong>lines 103-111</strong>. The method <code>"&laquo;_&ddagger;++&raquo;"</code> &mdash; the <strong>concatenation operator</strong> &mdash; chains together a lexical sequence of tuples into a single tuple. The concatenation operator works on all tuples, and a <code>string</code> is just a <code>tuple</code> whose default element type is <code><a href="/about-avail/documentation/type-system/types-character.html">character</a></code>. In this instance, we are ensuring that the formatted text ends with a line feed.</p>
+<p>On <strong>line 80</strong>, <code>pattern</code> is the parameter of <code>"Concierge says,_"</code>. When <code>"What's all this`?"</code> sends <code>"Concierge says,_"</code>, <code>pattern</code> will be bound to the large block of flavor text on <strong>lines 103-111</strong>. The method <code>"&laquo;_&ddagger;++&raquo;"</code> &mdash; the <strong>concatenation operator</strong> &mdash; chains together a lexical sequence of tuples into a single tuple. The concatenation operator works on all tuples, and a <code>string</code> is just a <code>tuple</code> whose default element type is <code><a href="/about-avail/documentation/type-system/types-character.html">character</a></code>. In this instance, we are appending a line feed to the formatted text.</p>
 
 <p><strong>Line 81</strong> binds the format variable <code>you</code> to the result of sending <code>"_[_]"</code> to <code>allTitles</code> and <code>titleIndex</code>. The method <code>"_[_]"</code>, called the <strong>subscript operator</strong>, answers the element of its left argument at the subscript given by its right argument. So when <code>titleIndex</code> is <code>1</code> it answers <code>"sir"</code>, and when it's <code>2</code> it answers <code>"miss"</code>.</p>
 
@@ -325,7 +325,7 @@ inquiry : room number := 1;
 ]]>
 </script></div></div>
 
-<p>The module variable <code>inquiry</code> is the <code>room number</code> of the current room of interest. Before calling <code>"Concierge says,_"</code>, <code>inquiry</code> should be bound appropriately. Its initialization to <code>1</code> is arbitrary; <code>inquiry</code> must assigned the correct room number before consulting the concierge, so we could have chosen any valid <code>room number</code> here.</p>
+<p>The module variable <code>inquiry</code> is the <code>room number</code> of the current room of interest. Before calling <code>"Concierge says,_"</code>, <code>inquiry</code> should be bound appropriately. Its initialization to <code>1</code> is arbitrary; <code>inquiry</code> must be assigned the correct room number before consulting the concierge, so we could have chosen any valid <code>room number</code> here.</p>
 
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 130">
@@ -341,14 +341,14 @@ Private method "Who is in room_`?" is
 ]]>
 </script></div></div>
 
-<p>To find about a particular room assignment, you can ask the concierge <code class="command">"Who is in room_`?"</code> This method is deceptively simple. It merely sets <code>inquiry</code> to the specified <code>room number</code> (<strong>line 150</strong>) and then bids the concierge to respond (<strong>line 151</strong>). Note that we have two new format variables here: <code>room inquiry</code> and <code>guest inquiry</code>. When <code>"Concierge says,_"</code> is sent, the former is bound to <code>inquiry</code> and the latter is bound to the appropriate guest. But how is this guest selected? Aren't there an infinite number of <code>guest</code>s staying at the Hilbert Hotel? Somehow?</p>
+<p>To find out about a particular room assignment, you can ask the concierge <code class="command">"Who is in room_`?"</code> This method is deceptively simple. It merely sets <code>inquiry</code> to the specified <code>room number</code> (<strong>line 150</strong>) and then bids the concierge to respond (<strong>line 151</strong>). Note that we have two new format variables here: <code>room inquiry</code> and <code>guest inquiry</code>. When <code>"Concierge says,_"</code> is sent, the former is bound to <code>inquiry</code> and the latter is bound to the appropriate guest. But how is this guest selected? Aren't there an infinite number of <code>guest</code>s staying at the Hilbert Hotel? Somehow?</p>
 
 <p>Let's peer into <code>"Concierge says,_"</code> again:</p>
 
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 68">
 <![CDATA[
-	guest ::= guests[inquiry] else …
+	guest ::= guests[inquiry] else
 ]]>
 </script></div></div>
 
@@ -360,7 +360,7 @@ Private method "Who is in room_`?" is
 ]]>
 </script></div></div>
 
-<p><strong>Lines 83-84</strong> bind values to the format variables <code>room inquiry</code> and <code>guest inquiry</code>. Notice that the format variables are provided as string literals rather than bare tokens. You are always allowed to quote a format variable in a binding expression, but only required to do so when the format variable contains non-alphanumeric characters. I will explain why in a future tutorial. <small>(But it's related to <code>"format_with&laquo;&hellip;::=_&ddagger;,&raquo;"</code> expecting its binding expressions to supply their format variables as <code><a href="/about-avail/documentation/type-system/types-token.html">token</a></code>s.)</small></p>
+<p><strong>Lines 83-84</strong> bind values to the format variables <code>room inquiry</code> and <code>guest inquiry</code>. Notice that the format variables are provided as string literals rather than bare tokens. You are always allowed to quote a format variable in a binding expression, but only required to do so when the format variable contains non-alphanumeric characters, such as the space character here. I will explain why in a future tutorial. <small>(But it's related to <code>"format_with&laquo;&hellip;::=_&ddagger;,&raquo;"</code> expecting its binding expressions to supply their format variables as <code><a href="/about-avail/documentation/type-system/types-token.html">token</a></code>s.)</small></p>
 
 <p><strong>Line 83</strong> simply binds the format variable <code>room inquiry</code> to the current value of the module variable <code>inquiry</code>. There's nothing new here.</p>
 
@@ -370,7 +370,7 @@ Private method "Who is in room_`?" is
 
 <p>But wait! Isn't there a method named <code>"guest"</code>? In fact, didn't I spend five paragraphs talking about it? How can there be a local constant that is also named <code>guest</code>? How does the compiler know which one we are talking about on <strong>line 84</strong>? Does it prefer the original definition? Or perhaps it prefers the newest definition? Does it just flip a coin? Or consult a <a href="http://en.wikipedia.org/wiki/Magic_8-Ball">Magic 8-Ball</a>?</p>
 
-<p>I am pleased to say that the compiler uses neither arbitrary rules nor divination to resolve this dilemma. The compiler understands the expression the way that you would understand an ambiguous expression: it examines the surrounding context to see if it can infer a meaningful interpretation. Because natural language is often loose and sloppy, you would probably be content in most circumstances with discovering a <em>likely</em> interpretation. But the compiler refuses to proceed unless it can find an <em>unambiguous</em> interpretation. The last thing that you would want is for it to merrily compile errant code based on an electronic hunch. Compilation demands exactitude.</p>
+<p>I am pleased to say that the compiler uses neither arbitrary rules nor divination to resolve this dilemma. The compiler understands the expression the way that <em>you</em> would understand an ambiguous expression: it examines the surrounding context to see if it can infer a meaningful interpretation. Because natural language is often loose and sloppy, you would probably be content in most circumstances with discovering a <em>likely</em> interpretation. But the compiler refuses to proceed unless it can find an <em>unambiguous</em> interpretation. The last thing that you would want is for it to merrily compile errant code based on an electronic hunch. Compilation demands exactitude.</p>
 
 <p>So how does the compiler disambiguate <strong>line 84</strong>? It embarks on an odyssey, in parallel, to search every syntactically permissible interpretation for exactly one that is meaningful. An interpretation is <strong>meaningful</strong> if and only if:</p>
 
@@ -381,7 +381,7 @@ Private method "Who is in room_`?" is
 <li>It satisfies every visible and applicable <a href="/about-avail/documentation/type-system/semantic-restrictions.html">semantic restriction</a> defined by the messages it sends, i.e., no semantic restriction invokes <code>"Reject parse,expected:_"</code> to reject it.</li>
 </ul>
 
-<p>This sounds like rather a lot of work for the compiler to do when it encounters an expression, but in practice the ambiguity of any given call site is very low, and the parsing techniques employed by the compiler are extremely efficient and parallel. Let's walk through how the compile parses the concatenation expression on <strong>line 84</strong>.</p>
+<p>This sounds like rather a lot of work for the compiler to do when it encounters an expression, but in practice the ambiguity of any given call site is very low, and the parsing techniques employed by the compiler are extremely efficient and parallel. Let's walk through how the compiler parses the concatenation expression on <strong>line 84</strong>.</p>
 
 <div class="restricted-width-container">
 <div class="neutral-code code-block">guest[2] ++ " " ++ guest[1]</div>
@@ -409,7 +409,7 @@ Private method "Who is in room_`?" is
 ]]>
 </script></div></div>
 
-<p>We saw this snippet of code earlier, but I abbreviated it to show only <strong>line 68</strong>. The method <code>"_[_]else_"</code> is a "safe" version of the subscript operator. When you use the subscript operator with a valid subscript, it answers the requested element. But if the subscript is out of bounds, it becomes very cross. <small>(*mumble* *mumble* raise an exception *mumble* *mumble*)</small> When you use <code>"_[_]else_"</code> with a valid subscript, it answers the requested element, just like the subscript operator. But if the subscript is out of bounds, it answer the value returned by the function that follows <code>else</code>.</p>
+<p>We saw this snippet of code earlier, but I abbreviated it to show only <strong>line 68</strong>. The method <code>"_[_]else_"</code> is a "safe" version of the subscript operator. When you use the subscript operator with a valid subscript, it answers the requested element. But if the subscript is out of bounds, it becomes very cross. <small>(*mumble mumble* raise an exception *mumble mumble*)</small> When you use <code>"_[_]else_"</code> with a valid subscript, it answers the requested element, just like the subscript operator. But if the subscript is out of bounds, it answer the value returned by the function that follows <code>else</code>.</p>
 
 <p>Recall that the module variable <code>guests</code> contains only the guests booked by <code class="command">"Assign_to room_"</code>. So if <code>1 &le; inquiry &le; |guests|</code>, then it just answers <code>guests[inquiry]</code>. But if <code>inquiry > |guests|</code>, then we use a little Boolean logic to deduce the right answer. The method <code>"_&oplus;_"</code> computes the <a href="http://en.wikipedia.org/wiki/Exclusive_or">exclusive disjunction</a>, i.e., xor, of its arguments: it answers <code>true</code> if and only if its arguments have different truth values. In other words, it is <code>true</code> iff only one of its arguments is <code>true</code>. The method <code>"_is odd"</code> does what it says on the tin: it says whether its integral argument is odd. So we compute the xor of the odd parities of <em>1)</em> the cardinality of <code>guests</code> and <em>2)</em> <code>inquiry</code> in order to identify the conference goer. I will let you convince yourself that the choice of John and Jane Doe is always correct.</p>
 
@@ -420,7 +420,7 @@ Private method "Who is in room_`?" is
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 144">
 <![CDATA[
-	If assignedNumber ≤ first available room then …
+	If assignedNumber ≤ last available room then
 ]]>
 </script></div></div>
 
@@ -433,7 +433,7 @@ Private method "Who is in room_`?" is
 ]]>
 </script></div></div>
 
-<p><code>"last available room"</code> gives a descriptive role to a simple calculation. The method <code>"`|_`|"</code> answers the cardinality of the specified <code>tuple</code>. The module variable <code>guests</code> tracks every guest except for the infinitely many conference goers, and we will see shortly that the concierge refuses to break up the block of rooms assigned to conference goers, so this calculation tells us the room number of the last room available for newcomers. We are quite willing to break up the block of newcomers, since upsetting them has no effect on our bottom line!</p>
+<p><code>"last available room"</code> gives a descriptive role to a simple calculation. The method <code>"`|_`|"</code> answers the cardinality of the specified <code>tuple</code>. The module variable <code>guests</code> tracks every guest except for the infinitely many conference goers, and we will see shortly that the concierge refuses to break up the block of rooms assigned to the conference goers, so this calculation tells us the room number of the last room available for newcomers. We are quite willing to break up the block of newcomers, since upsetting them has no effect on our bottom line!</p>
 
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 60">
@@ -442,7 +442,7 @@ guests : <guest…|> := <>;
 ]]>
 </script></div></div>
 
-<p>In particular, note that <code>guests</code> begins life as <code>&lt;&gt;</code>, the empty tuple. Before any newcomers have been assigned rooms, <code>"last available room"</code> will answer <code>1</code>. This is correct; at the outset of the scenario, every room is occupied by a conference goer, so the only room that can be booked without breaking them up is room number #1.</p>
+<p>In particular, note that <code>guests</code> begins life as <code>&lt;&gt;</code>, the empty tuple. Before any newcomers have been assigned rooms, <code>"last available room"</code> will answer <code>1</code>. This is correct; at the outset of the scenario, every room is occupied by a conference goer, so the only room that can be booked without breaking them up is room #1.</p>
 
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 146">
@@ -460,7 +460,7 @@ guests : <guest…|> := <>;
 ]]>
 </script></div></div>
 
-<p>Back to <code class="command">"Assign_to_"</code>. <strong>Lines 146 and 148</strong> compute slices of the tuple currently in <code>guests</code>. A <strong>slice</strong> is a contiguous range of elements within a tuple. The method <code>"_[_.._]"</code> accepts an inclusive start subscript and an inclusive end subscript. These subscripts specify the bounds of the range of elements that you'd like to obtain as a new tuple. For a given tuple <em>t</em>, the start index <em>s</em> must be a value between <code>1</code> and <code>|<em>t</em>|</code>. The end index <em>e</em> must be a value between <em>s - 1</em> and <code>|<em>t</em>|</code>. If <code>e = s - 1</code>, then the resultant tuple is <code>&lt;&gt;</code>. The method <code>"_[_..]"</code> is a convenient form of <code>"_[_.._]"</code> that implicitly uses the cardinality of the target tuple as the end index.</p>
+<p>Back to <code class="command">"Assign_to_"</code>. <strong>Lines 146 and 148</strong> compute slices of the tuple currently in <code>guests</code>. A <strong>slice</strong> is a contiguous range of elements within a tuple. The method <code>"_[_.._]"</code> accepts an inclusive start subscript and an inclusive end subscript. These subscripts specify the bounds of the range of elements that you'd like to obtain as a new tuple. For a given tuple <em>t</em>, the start index <em>s</em> must be a value between <code>1</code> and <code>|<em>t</em>|</code>. The end index <em>e</em> must be a value between <em>s - 1</em> and <code>|<em>t</em>|</code>. If <code><em>e</em> = <em>s</em> - 1</code>, then the resultant tuple is <code>&lt;&gt;</code>. The method <code>"_[_..]"</code> is a convenient form of <code>"_[_.._]"</code> that implicitly uses the cardinality of the target tuple as the end index.</p>
 
 <p><strong>Lines 146-148</strong> rebind <code>guests</code> to a tuple that includes <code>aGuest</code> at the subscript <code>assignedNumber</code>. These lines split <code>guests</code> into two parts &mdash; those guests before <code>assignedNumber</code> and those guests at <code>assignedNumber</code> and beyond &mdash; and splice <code>aGuest</code> between the parts. Why is <code>aGuest</code> wrapped inside another tuple first? Isn't it already a tuple? Because we want to end up with something like:</p>
 
@@ -534,7 +534,7 @@ Instead of something like:
 ]]>
 </script></div></div>
 
-<p><strong>Line 78</strong> constructs an interval using <code>"_to_"</code>. An <strong>interval</strong> is just a tuple whose values happen to be consecutive integers. In this case, the resulting tuple will contain the integers <code>1</code> through <code>last available room</code>, inclusive. Interval is extremely efficient in both time and storage. No matter how large the interval, only a constant amount of time is required to compute it and only a constant amount of space is required to store it. Just be careful not to stringify an enormous interval!</p>
+<p><strong>Line 78</strong> constructs an interval using <code>"_to_"</code>. An <strong>interval</strong> is just a tuple whose values happen to be consecutive integers. In this case, the resulting tuple will contain the integers <code>1</code> through <code>last available room</code>, inclusive. Intervals are extremely efficient in both time and storage. No matter how large the interval, only a constant amount of time is required to compute it and only a constant amount of space is required to store it. Just be careful not to stringify an enormous interval!</p>
 
 <p><strong>Lines 85-87</strong> bind the format variable <code>available rooms</code>. The conditional on <strong>line 86</strong> produces either <code>"room "</code> or <code>"rooms "</code>, depending on whether room availability is singular or plural. <strong>Line 87</strong> uses a special stringification method, <code>"&ldquo;_&rdquo;&laquo;else_&raquo;(as&laquo;conjunctive|disjunctive&rdquo;!list with serial|Oxford|Harvard comma)"</code>, to produce a savvy English rendering of <code>availableRooms</code>. The "disjunctive list" part means that the last element of the tuple will be preceded by <code>"or"</code> when it is rendered to text. Finally the concatenation operator splices the result of the conditional and the textual list together.</p>
 
@@ -574,7 +574,7 @@ Private method "Evict the guest in room_" is
 ]]>
 </script></div></div>
 
-<p>See? Just another glorified conditional. The predicate (<strong>line 172</strong>) checks to see if <code>roomNumber</code> is a valid subscript of <code>guests</code>. If so, then we fiddle with <code>inquiry</code> so that the concierge will provide the correct responses (<strong>lines 174-181</strong>), and then use slicing and concatenation to ditch the unwanted guest (<strong>line 182</strong>). If the predicate evaluates to <code>false</code>, then we just issue a rebuttal (<strong>lines 186-190</strong>). The rebuttal mentions the last new format variable, <code>evictable rooms</code>), so we need to examine <code>"Concierge says,_"</code> one last time.</p>
+<p>See? Just another glorified conditional. The predicate (<strong>line 172</strong>) checks to see if <code>roomNumber</code> is a valid subscript of <code>guests</code>. If so, then we fiddle with <code>inquiry</code> so that the concierge will provide the correct responses (<strong>lines 174-181</strong>), and then use slicing and concatenation to ditch the unwanted guest (<strong>line 182</strong>). If the predicate evaluates to <code>false</code>, then we just issue a rebuttal (<strong>lines 186-190</strong>). The rebuttal mentions the last new format variable, <code>evictable rooms</code>, so we need to examine <code>"Concierge says,_"</code> one last time.</p>
 
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 79">
@@ -599,7 +599,7 @@ Private method "Evict the guest in room_" is
 ]]>
 </script></div></div>
 
-<p><strong>Line 79</strong> defines a local constant named <code>evictableRooms</code> and binds it to an interval that covers every valid subscript of <code>guests</code>. <strong>Lines 88-97</strong> bind a value to the format variable <code>evictable rooms</code>. You should be able to figure out what's going on here &mdash; even though it's a little noisy &mdash; because there is absolutely nothing new here. Don't be afraid to look back at how <code>available rooms</code> gets bound on <strong>lines 85-87</strong> if you need some help.</p>
+<p><strong>Line 79</strong> defines a local constant named <code>evictableRooms</code> and binds it to an interval that covers every valid subscript of <code>guests</code>. <strong>Lines 88-97</strong> bind a value to the format variable <code>evictable rooms</code>. You should be able to figure out what's going on here &mdash; even though it's a little noisy &mdash; because there is absolutely nothing new. Don't be afraid to look back at how <code>available rooms</code> gets bound on <strong>lines 85-87</strong> if you need some help.</p>
 
 <h4>That's all, folks!</h4>
 
