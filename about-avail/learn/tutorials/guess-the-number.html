@@ -92,7 +92,8 @@ Private method "Play guess a number between_and_" is
 	guessCount ::= tries to guess theNumber from range theRange;
 	comment ::= comment for guessCount tries given a range of theRange;
 	Print: comment;
-];]]>
+];
+]]>
 </script></div></div>
 
 <p>Here we are defining the entry point that allows us to play a game of "guess the number". The method is named <code>"Play guess a number between_and_"</code> and accepts two arguments. The arguments are <code>minimum</code> and <code>maximum</code>, the lower and upper bounds of the range, respectively; both are <code><a href="/about-avail/documentation/type-system/types-extended-integer.html">integer</a></code>s.</p>
@@ -148,7 +149,8 @@ Private method "tries to guess_from range_" is
 		];
 	];
 	count
-];]]>
+];
+]]>
 </script></div></div>
 
 <p>On <strong>line 59</strong> we see our very first variable. Its name is <code>count</code>, it can store a <code>natural number</code>, and its initial value is <code>1</code>. It represents the current guess number, so before the player's first guess it is set to <code>1</code>.</p>
@@ -201,7 +203,7 @@ sentinel ::= ∞;
 
 <p><small>(Ah, how apropos to see <code>42</code> and <code>&infin;</code> so close together&hellip; but I digress.)</small></p>
 
-<p>This looks just like the many local constant definitions that we have seen so far, but this one doesn't occur inside a function definition. That makes it a <strong>module constant</strong>. Module constants are visible to all lexically subsequent expressions, i.e., expressions occurring after the module constant definition in the source module. <code>&infin;</code> is positive infinity. Since we require a finite range for our game, we know that the <code>&infin;</code> is never a valid target number. We give it the name <code>sentinel</code> here to reflect its purpose: in computer science parlance, a <strong>sentinel</strong> is a value that is out-of-band, i.e., never valid, for a particular class of usage.</p>
+<p>This looks just like the many local constant definitions that we have seen so far, but this one doesn't occur inside a function definition. That makes it a <strong>module constant</strong>. Module constants are visible to all lexically subsequent expressions, i.e., expressions occurring after the module constant definition in the source module. <code>&infin;</code> is positive infinity. Since we require a finite range for our game, we know that the <code>&infin;</code> is never a valid target number. We give it the name <code>sentinel</code> here to reflect its purpose: in computer science parlance, a <strong>sentinel</strong> is a value that is never valid for a particular class of usage.</p>
 
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 65">
@@ -363,6 +365,8 @@ Semantic restriction "Play guess a number between_and_" is
 
 <p>If you want to read about why it is, or is not, a good reason to cite <a href="http://www.wikipedia.org">Wikipedia</a> so very much, then read about it <a href="http://en.wikipedia.org/wiki/Reliability_of_Wikipedia">here</a> while suppressing a smirk of irony.</p>
 
+<p>If you didn't understand why 42 were &infin; juxtaposed above, then I highly recommend that you read <a href="http://www.douglasadams.com/">Douglas Adams'</a> <a href="http://en.wikipedia.org/wiki/The_Hitchhiker's_Guide_to_the_Galaxy">The Hitchhiker's Guide to the Galaxy</a>. It's true comedy gold for the modern age.</p> 
+
 <p>Oh, I suppose that you might also want to read more about Avail. In that case, see what the manual has to say about <a href="/about-avail/documentation/type-system/semantic-restrictions.html">semantic restrictions</a>.</p>
 
 <h3><a id="Exercises">Exercises</a></h3>
@@ -375,6 +379,8 @@ Semantic restriction "Play guess a number between_and_" is
 		<td class="book-nav-back"><a class="book-nav-back" href="./rpn.html">‹ Reverse Polish Notation</a></td>
 		<td class="book-nav-spacer">|</td>
 		<td class="book-nav-up"><a class="book-nav-up" href="../index.html">Return to Learn</a></td>
+		<td class="book-nav-spacer">|</td>
+		<td class="book-nav-forward"><a class="book-nav-forward" href="./hilbert-hotel.html">The Hilbert Hotel ›</a></td></tr>
 	</tr>
 </table>
 
