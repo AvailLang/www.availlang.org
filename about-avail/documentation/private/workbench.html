@@ -1,0 +1,59 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>The Avail Workbench</title>
+	
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+
+		<h2 class="content-title">The Avail Workbench</h2>
+
+<p>		
+Now that you've <a href="something">downloaded, installed, configured, and opened</a> the Avail workbench, let's take a tour!
+</p>
+<img src="/_images/documentation/workbench/fresh-workbench.png">
+<p>
+The workbench window has four main components:
+<ol>
+	<li>The modules pane</li>
+	<li>The entry points pane</li>
+	<li>The transcript pane</li>
+	<li>The text input field</li>
+</ol>
+</p><p>
+<h3>1. The modules pane</h3>
+Recall from the <a href="something">installation <code class="module">README</code></a> that the Avail Workbench depends on the <code>AVAIL_ROOTS</code> environment variable for the <strong>root</strong> directories where Avail libraries may be found. If this variable is not explicitly set before the Workbench is opened, the default roots <code>avail</code> and <code>examples</code> will be used. <code>avail</code> is the root of the standard library, which contains all of the functionality needed to program in Avail. Accordingly, this root must always be present. <code>examples</code> contains smallish programs that demonstrate various uses of Avail. This includes the source modules for all of the <a href="/about-avail/learn/index.html">tutorials</a> featured on the site.
+</p><p>
+Regardless of how they are specified, roots show up in the Workbench modules pane as top-level, collapsible entities, and are arranged in the order that they were specified. As top-level entities of hierarchical structures, they are left-justified within the pane. Each root name is bolded, and the display visibility of each root's contents can be toggled by clicking on the triangle to the left of the root name.
+</p><p>
+Every time it starts up, the Workbench determines the contents of each root by recursively exploring its corresponding directory. Within a root directory, all file names that end with ".avail" are considered, regardless of their actual content, to be Avail <strong>modules</strong> named by whatever precedes this extension. Files without this extension are ignored. Similarly, all directory names that end with ".avail" are considered to be Avail module <strong>packages</strong>, and all other directories and their contents are ignored. Within each root and package, there may be any number of modules and packages. They are displayed in the modules pane in lexicographic order. Module names appear to the right of a ".avail" file icon (<img src="/_images/download-icons/avail.png" alt="module" width="24" height="24">), and packages appear to the right of a the Avail package icon, which looks like a folder (<img src="/_images/documentation/workbench/package.png" alt="package" width="24" height="24">).
+</p><p>
+The Avail compiler requires that each package directory contain an identically-named file, just inside, to function as the package representative module. Realistically, this representative <em>is</em> the package, because it encapsulates the component modules and provides a common interface for their public functionality. But to preserve hierarchical structuring in the filesystem, we must use directories. Since the Workbench is focused on Avail's structure, and not the filesystem's structure, it provides access to the package through the package name, and the representative module is not listed as a subordinate. In fact, the package representative is ignored during the file scan mentioned above. So, beware! A directory that doesn't actually include a representative module will display as a package, but the package will fail to compile. We'll get to compilation after we're done with the tour.
+</p><p>
+<h3>2. The entry points pane</h3>
+
+</p><p>
+<h3>3. The transcript pane</h3>
+
+</p><p>
+<h3>4. The text input field</h3>
+
+</p>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>
