@@ -45,7 +45,7 @@
 <li>Jane Doe, the conference-going gestalt being who suffuses all even-numbered rooms at the opening of the scenario.</li>
 </ul>
 
-<p>To introduce tuples, we will stroll hand-in-hand together through the building of a booking system for the Grand Hotel. When are finished, the result should look something like this:</p>
+<p>To introduce tuples, we will stroll hand-in-hand together through the building of a booking system for the Grand Hotel. When we are finished, the result should look something like this:</p>
 
 <img src="/_images/examples/hilbert-hotel/transcript.png" alt="A sample transcript of managing the Grand Hotel."/>
 
@@ -63,24 +63,24 @@
 <li>Learn about <code><a href="/about-avail/documentation/type-system/types-tuple.html">tuple</a></code>s and <a href="/about-avail/documentation/type-system/types-tuple.html"><code>tuple</code> types</a>.
 	<ul>
 	<li>Constructing a fixed-size tuple type (using <code>"&lt;_`&hellip;|_&gt;"</code>).</li>
-	<li>Constructing a <code>tuple</code> (using <code>"&lt;&laquo;_&ddagger;,&raquo;&gt;"</code> and <code>"_to_"</code>).</li>
+	<li>Constructing a <code>tuple</code> (using <code>"&lt;&laquo;_&Dagger;,&raquo;&gt;"</code> and <code>"_to_"</code>).</li>
 	<li>Determining the cardinality of a <code>tuple</code> (using <code>"`|_`|"</code>).</li>
 	<li>Subscripting a <code>tuple</code> in order to obtain an element (using <code>"_[_]"</code> and <code>"_[_]else_"</code>).</li>
 	<li><a href="http://en.wikipedia.org/wiki/Array_slicing">Slicing</a> a <code>tuple</code> (using <code>"_[_.._]"</code>, <code>"_[_..]"</code>, and <code>"_[.._]"</code>).</li>
-	<li>Concatenating <code>tuple</code>s (using <code>"&laquo;_&ddagger;++&raquo;"</code>).</li>
+	<li>Concatenating <code>tuple</code>s (using <code>"&laquo;_&Dagger;++&raquo;"</code>).</li>
 	</ul>
 </li>
 <li>Learn about message metacharacters:
 	<ul>
 	<li><em>Grave accent</em> <code>`</code> <code class="unicode">(U+0060)</code> (<em>backtick</em>).</li>
 	<li><em>Left-</em> <code>&laquo;</code> <code class="unicode">(U+00AB)</code> and <em>right-pointing double angle quotation marks</em> <code>&raquo;</code> <code class="unicode">(U+00BB)</code> (<em>guillemets</em>).</li>
-	<li><em>Double dagger</em> <code>&ddagger;</code> <code class="unicode">(U+2021)</code>.</li>
+	<li><em>Double dagger</em> <code>&Dagger;</code> <code class="unicode">(U+2021)</code>.</li>
 	</ul>
 </li>
 <li>Learn more about formatting text:
 	<ul>
-	<li>Using multiple-word format variables (using <code>"format_with&laquo;&hellip;::=_&ddagger;,&raquo;"</code>).</li>
-	<li>Producing an English description of a <code>tuple</code> (using <code>"&ldquo;_&rdquo;&laquo;else_&raquo;(as&laquo;conjunctive|disjunctive&rdquo;!list with serial|Oxford|Harvard comma)"</code>).</li>
+	<li>Using multiple-word format variables (using <code>"format_with&laquo;&hellip;::=_&Dagger;,&raquo;"</code>).</li>
+	<li>Producing an English description of a <code>tuple</code> (using <code>"&ldquo;_&rdquo;&laquo;else_&raquo;(as&laquo;conjunctive|disjunctive&raquo;!list with serial|Oxford|Harvard comma)"</code>).</li>
 	</ul>
 </li>
 <li>Learn how to determine the <a href="http://en.wikipedia.org/wiki/Parity_(mathematics)">parity</a> of an <code><a href="/about-avail/documentation/type-system/types-extended-integer.html">integer</a></code> (using <code>"_is odd"</code> and <code>"_is even"</code>).</li>
@@ -102,7 +102,7 @@
 
 <ul>
 <li><code class="command">"What's all this`?"</code> (<strong>lines 100-112</strong>): Learn about the Hilbert Hotel. This method is provided for flavor only.</li>
-<li><code class="command">"Hey,what do you mean_`?"</code> (<strong>lines 114-128</strong>): With equal probability, when the module is loaded the concierge randomly decides whether to refer to the user as "sir" or "miss". This allows the user change this form of address.</li>
+<li><code class="command">"Hey,what do you mean_`?"</code> (<strong>lines 114-128</strong>): With equal probability, when the module is loaded the concierge randomly decides whether to refer to the user as "sir" or "miss". This allows the user to change this form of address.</li>
 <li><code class="command">"Who is in room_`?"</code> (<strong>lines 146-153</strong>): Find out who's currently in a particular room.</li>
 <li><code class="command">"Assign_to room_"</code> (<strong>lines 155-181</strong>): Assign a guest to a room, but only if the assignment wouldn't break up the infinitude of conference goers.</li>
 <li><code class="command">"Evict the guest in room_"</code> (<strong>lines 155-181</strong>): Evict a guest, but not a conference goer.</li>
@@ -158,7 +158,7 @@ Private method "guest" is [<string…|2>];
 
 <p>Before I can sensibly explain what a tuple type is, I should tell you what a <a href="/about-avail/documentation/type-system/types-tuple.html">tuple</a> is. A tuple is a finite, ordered collection of arbitrary values called <strong>elements</strong>. Like the rooms of a hotel, each position of a tuple is uniquely identified by a <code>natural number</code>, its <strong>subscript</strong> (or <strong>index</strong>). The valid subscripts of a tuple range from <code>1</code> to its <strong>cardinality</strong>, i.e., size; all other subscripts are <strong>out of bounds</strong>. Since a tuple expresses the concept of certain, specific values appearing in a predetermined order, a tuple is <strong>immutable</strong> &mdash; like the integer 10, its value can never change. You can, however, very conveniently derive new tuples from old ones via a multitude of handy library methods. This is akin to deriving new numbers from old ones using arithmetic, like adding 5 and 12 to make 17. Nothing <em>happens</em> to the old values as a consequence of deriving new values. They continue to exist quite happily. Nor are the "new" values really new. 17 didn't spring into existence as a consequence of summing 5 and 12. Think of the operation as having <em>discovered</em> 17 instead of having created it.</p>
 
-<p>So far in this tutorial series, I have been using the term "type" very loosely and intuitively. I don't want to treat the subject here with full rigor &mdash; that's what the <a href="/about-avail/documentation/type-system.html">type system treatise</a> is for &mdash; but I should at least define the term before I use it again. A <strong><a href="/about-avail/documentation/type-system/types.html">type</a></strong> is a class of values that have similar <em>1)</em> representation and <em>2)</em> operational capabilities. For example, the integers 5, 10, and 81 can each <em>1)</em> be described by an ordered sequence of numerals and <em>2)</em> participate in arithmetic. This implies that there is at least one type that unifies them all as <strong>instances</strong>. In fact, in Avail, every value is an instance of infinitely many types. <code>natural number</code> is merely one type that includes 5, 10, and 81. <code><a href="/about-avail/documentation/type-system/types-extended-integer.html">integer</a></code> is another, as is <code><a href="/about-avail/documentation/type-system/types-extended-integer.html">extended integer</a></code>, as is <code><a href="/about-avail/documentation/type-system/types-number.html">number</a></code>, as is <code>[4..82]</code>, and so on <em>ad infinitum</em>. Types come in all granularities so that they can be coarse enough or fine enough to suit any particular need.</p>
+<p>So far in this tutorial series, I have been using the term "type" very loosely and intuitively. I don't want to treat the subject here with full rigor &mdash; that's what the <a href="/about-avail/documentation/type-system.html">type system treatise</a> is for &mdash; but I should at least define the term before I use it again. A <strong><a href="/about-avail/documentation/type-system/types.html">type</a></strong> is a class of values that have similar <em>1)</em> representation and <em>2)</em> operational capabilities. For example, the integers 5, 10, and 81 can each <em>1)</em> be described by an ordered sequence of numerals and <em>2)</em> participate in arithmetic. This suggests that there is at least one type that unifies them all as <strong>instances</strong>. In fact, in Avail, every value is an instance of infinitely many types. <code>natural number</code> is merely one type that includes 5, 10, and 81. <code><a href="/about-avail/documentation/type-system/types-extended-integer.html">integer</a></code> is another, as is <code><a href="/about-avail/documentation/type-system/types-extended-integer.html">extended integer</a></code>, as is <code><a href="/about-avail/documentation/type-system/types-number.html">number</a></code>, as is <code>[4..82]</code>, and so on <em>ad infinitum</em>. Types come in all granularities so that they can be coarse enough or fine enough to suit any particular need.</p>
 
 <p>Now let's put tuples and types together. The type <code>tuple</code> encompasses every possible tuple. That's a very broad type, so broad that it's useless as a role. In building a booking system for the Hilbert Hotel, we only want to talk about a couple different <strong>subtype</strong>s of <code>tuple</code>. On <strong>line 47</strong> we introduce the role <code>guest</code> as a subtype that describes every tuple such that:</p>
 
@@ -167,7 +167,7 @@ Private method "guest" is [<string…|2>];
 <li>The tuple's elements are <code><a href="/about-avail/documentation/type-system/types-string.html">string</a></code>s.</li>
 </ul>
 
-<p>The method <code>"&lt;_`&hellip;|_&gt;"</code> constructs a tuple type from <em>1)</em> a type, called the <strong>default element type</strong>, and <em>2)</em> a <code>natural number</code> specifying the cardinalities of its instances. The default element type specifies a type to which each element of a tuple must belong. "Why call it the <em>default</em> element type", I hear you ask. "Why not just call it the element type?" An excellent question! A tuple type is permitted to specify a collection of heterogenous <strong>leading element types</strong> that constrain the types of the leading elements of its instances. The default element type then constrains any element whose subscript is not covered by the leading element types. For example, the tuple type <code>&lt;string, integer, double&hellip;|6&gt;</code> includes every tuple such that:</p>
+<p>The method <code>"&lt;_`&hellip;|_&gt;"</code> constructs a tuple type from <em>1)</em> a type, called the <strong>default element type</strong>, and <em>2)</em> a <code>natural number</code> specifying the cardinalities of its instances. The default element type specifies a type to which each element of a tuple must belong. "Why call it the <em>default</em> element type?", I hear you ask. "Why not just call it the element type?" An excellent question! A tuple type is permitted to specify a collection of heterogenous <strong>leading element types</strong> that constrain the types of the leading elements of its instances. The default element type then constrains any element whose subscript is not covered by the leading element types. For example, the tuple type <code>&lt;string, integer, double&hellip;|6&gt;</code> includes every tuple such that:</p>
 
 <ul>
 <li>The tuple's cardinality is 6.</li>
@@ -201,21 +201,21 @@ Public method "a guest named_,_" is
 ]]>
 </script></div></div>
 
-<p>You know how people who wear suits and stand at desks often want your last name first and your first name last? Well, the concierge of the Hilbert Hotel is just such a fellow, and <strong>Lines 49-55</strong> were written to make people like him happy. Focus your attention on <strong>line 54</strong>. The method <code>"&lt;&laquo;_&ddagger;,&raquo;&gt;"</code> constructs a tuple from a lexical list of values. So, here we are building a tuple whose first element is <code>lastName</code> and whose second element is <code>firstName</code>. This semantic ordering of two strings is what we are calling a <code>guest</code>.</p>
+<p>You know how people who wear suits and stand at desks often want your last name first and your first name last? Well, the concierge of the Hilbert Hotel is just such a fellow, and <strong>Lines 49-55</strong> were written to make people like him happy. Focus your attention on <strong>line 54</strong>. The method <code>"&lt;&laquo;_&Dagger;,&raquo;&gt;"</code> constructs a tuple from a lexical list of values. So, here we are building a tuple whose first element is <code>lastName</code> and whose second element is <code>firstName</code>. This semantic ordering of two strings is what we are calling a <code>guest</code>.</p>
 
 <p>Several times now I've glossed over the <em>left-</em> <code>&laquo;</code> <code class="unicode">(U+00AB)</code> and <em>right-pointing double angle quotation marks</em> <code>&raquo;</code> <code class="unicode">(U+00BB)</code> in method names, and I'm afraid that if I do it again then you're going to hurt me. (You'll probably also hurt me if I don't tell you that these characters can simply be called <em>guillemets</em>.) Just remember, when your eyes are bleeding in a few paragraphs, that you made me explain this now. I didn't want to; it was your fault.</p>
 
-<p>In a <strong>message</strong>, i.e., a method name, <code>&laquo;</code> and <code>&raquo;</code> delimit a group of message parts. If you'll pardon my recursive definition, a <strong>message part</strong> is either a token or a group of message parts. A <strong><a href="/about-avail/documentation/type-system/types-token.html">token</a></strong> is a discrete unit of source text; think of tokens as the words of Avail. The rules for dividing a method name into tokens are rather complex, but as a rule of thumb each word (in the linguistic sense) is a separate token, and so is each punctuation character.</p>
+<p>In a <strong>message</strong>, i.e., a method name, <code>&laquo;</code> and <code>&raquo;</code> delimit a group of message parts. If you'll pardon my recursive definition, a <strong>message part</strong> is either a token or a group of message parts. A <strong><a href="/about-avail/documentation/type-system/types-token.html">token</a></strong> is a discrete unit of source text; think of tokens as words in the vocabulary of Avail. The rules for dividing a method name into tokens are rather complex, but as a rule of thumb each word (in the linguistic sense) is a separate token, and so is each punctuation character.</p>
 
 <p>The guillemets do more than merely group message parts. They actually allow the enclosed <strong>group</strong> of message parts to be repeated at a call site. When the compiler parses a message send that contains guillemets, it arranges to accumulate the result of each repeated expression into a tuple that is passed to the method as a single argument. So a group of message parts delimited by <code>&laquo;</code> and <code>&raquo;</code> constitutes a single argument position.</p>
 
-<p>A group of message parts that contain a <em>double dagger</em> <code>&ddagger;</code> <code class="unicode">(U+2021)</code> is partitioned into a left side, called the <strong>content</strong>, and a right side, called the <strong>interstice</strong>. After the first occurrence of the content, each subsequent occurrence of the content must be preceded by the interstice. That is to say, the interstice must only occur between two content expressions. This is analogous to the interstice of <code>"Do_until_alternate with_"</code>, which only runs between two invocations of the body.</p>
+<p>A group of message parts that contain a <em>double dagger</em> <code>&Dagger;</code> <code class="unicode">(U+2021)</code> is partitioned into a left side, called the <strong>content</strong>, and a right side, called the <strong>interstice</strong>. After the first occurrence of the content, each subsequent occurrence of the content must be preceded by the interstice. That is to say, the interstice must only occur between two content expressions. This is analogous to the interstice of <code>"Do_until_alternate with_"</code>, which only runs between two invocations of the body.</p>
 
-<p>Now that we are properly armed, let's break down the tuple constructor, <code>"&lt;&laquo;_&ddagger;,&raquo;&gt;"</code>. It comprises a <em>less-than sign</em> <code>&lt;</code> <code class="unicode">(U+003C)</code>, followed by a group, followed by a <em>greater-than sign</em> <code>&gt;</code> <code class="unicode">(U+003E)</code>. The content of the group is <em>underscore</em> <code>_</code> <code class="unicode">(U+005F)</code> and the interstice is <em>comma</em> <code>,</code> <code class="unicode">(U+002C)</code>. The following <a href="http://en.wikipedia.org/wiki/Syntax_diagram">syntax diagram</a> illustrates how the compiler parses a send of this message:</p>
+<p>Now that we are properly armed, let's break down the tuple constructor, <code>"&lt;&laquo;_&Dagger;,&raquo;&gt;"</code>. It comprises a <em>less-than sign</em> <code>&lt;</code> <code class="unicode">(U+003C)</code>, followed by a group, followed by a <em>greater-than sign</em> <code>&gt;</code> <code class="unicode">(U+003E)</code>. The content of the group is <em>underscore</em> <code>_</code> <code class="unicode">(U+005F)</code> and the interstice is <em>comma</em> <code>,</code> <code class="unicode">(U+002C)</code>. The following <a href="http://en.wikipedia.org/wiki/Syntax_diagram">syntax diagram</a> illustrates how the compiler parses a send of this message:</p>
 
 <iframe src="/_images/examples/hilbert-hotel/tuple-constructor.svg" style="margin: auto" seamless></iframe>
 
-<p>In this diagram, <code>element</code> corresponds to the underscore in <code>"&lt;&laquo;_&ddagger;,&raquo;&gt;"</code>. Ordinarily, an underscore in a message indicates an argument position, but this underscore occurs inside the content of a group. In a context such as this, the underscore indicates a position within the repeated group at which an arbitrary expression may be parsed.</p>
+<p>In this diagram, <code>element</code> corresponds to the underscore in <code>"&lt;&laquo;_&Dagger;,&raquo;&gt;"</code>. Ordinarily, an underscore in a message indicates an argument position, but this underscore occurs inside the content of a group. In a context such as this, the underscore indicates a position within the repeated group at which an arbitrary expression may be parsed.</p>
 
 <p>Now let's revisit <strong>line 54</strong>.</p>
 
@@ -226,7 +226,7 @@ Public method "a guest named_,_" is
 ]]>
 </script></div></div>
 
-<p>In this expression, <code>lastName</code> and <code>firstName</code> take turns filling in the underscore of <code>"&lt;&laquo;_&ddagger;,&raquo;&gt;"</code>. Recall that a group behaves as a single argument position, so we expect that a function associated with the method definition accepts only a single argument. Let's verify that by looking at the actual tuple constructor as it's defined by <code class="module">Avail</code>:</p>
+<p>In this expression, <code>lastName</code> and <code>firstName</code> take turns filling in the underscore of <code>"&lt;&laquo;_&Dagger;,&raquo;&gt;"</code>. Recall that a group behaves as a single argument position, so we expect that a function associated with the method definition accepts only a single argument. Let's verify that by looking at the actual tuple constructor as it's defined by <code class="module">Avail</code>:</p>
 
 <div class="restricted-width-container">
 <div class="neutral-code code-block">Method "<«_‡,»>" is
@@ -236,12 +236,12 @@ Public method "a guest named_,_" is
 	elements
 ] : tuple;</div></div>
 
-<p>Yep, it takes one argument, and that argument is a tuple. Ironically, it is not the tuple constructor itself that constructs a tuple &mdash; it is the compiler, during a parse of a send of <code>"&lt;&laquo;_&ddagger;,&raquo;&gt;"</code>. The constructor essentially just says, "Hey, let's recognize comma-separated lists that occur inside angle brackets as tuples!"</p>
+<p>Yep, it takes one argument, and that argument is a tuple. Ironically, it is not the tuple constructor itself that constructs a tuple &mdash; it is the compiler, during a parse of a send of <code>"&lt;&laquo;_&Dagger;,&raquo;&gt;"</code>. The constructor essentially just says, "Hey, let's recognize comma-separated lists that occur inside angle brackets as tuples!"</p>
 
 <h4>What's all this?</h4>
 
 <div class="restricted-width-container">
-<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 101">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 100">
 <![CDATA[
 Private method "What's all this`?" is
 [
@@ -259,11 +259,11 @@ Private method "What's all this`?" is
 ]]>
 </script></div></div>
 
-<p>The method <code class="command">"What's all this`?"</code> is a gentle introduction to the premise of the module. It's where we expect a user to begin experimenting with the Hilbert Hotel. The <em>grave accent</em> <code>`</code> <code class="unicode">(U+0060)</code>, or <em>backtick</em>, is a message metacharacter. It is the <strong>escape character</strong>, and disables the special meaning of the following metacharacter, in this case <em>question mark</em> <code>?</code> <code class="unicode">(U+003F)</code>. I'm not going to cover the question mark metacharacter right now; just take my word that it usually has a special meaning, but not here because of the backtick. Believe me, you've suffered through enough message metacharacters for one lesson.</p>
+<p>The method <code class="command">"What's all this`?"</code> is a gentle introduction to the premise of the module. It's where we expect a user to begin experimenting with the Hilbert Hotel. The <em>grave accent</em> <code>`</code> <code class="unicode">(U+0060)</code>, or <em>backtick</em>, is a message metacharacter. It is the <strong>escape character</strong>, and disables the special meaning of the following metacharacter, in this case <em>question mark</em> <code>?</code> <code class="unicode">(U+003F)</code>. I'm not going to cover the question mark metacharacter right now; just take my word that it usually has a special meaning in a method name, but not here because of the backtick. Believe me, you've learned enough message metacharacters for one lesson.</p>
 
 <p>The body of this method (<strong>lines 102-111</strong>) is a send of this module's chief helper method, <code>"Concierge says,_"</code>. As a quick refresher on <a href="/about-avail/documentation/type-system/types-string.html">string literals</a>, the backslashes at the ends of <strong>lines 103-110</strong> cause the line feeds to be excluded from the text. And the <code>\|</code> at the beginning of each line causes the leading whitespace to be excluded.</p>
 
-<p>If we mine the <a href="http://en.wikipedia.org/wiki/Flavor_text">flavor text</a> carefully, we will find two occurrences of <code>&lsquo;you&rsquo;</code>. Recall from the previous tutorial that these single quotation marks are metacharacters used by <code>"format_with&laquo;&hellip;::=_&ddagger;,&raquo;"</code> to indicate that a format variable must be bound to a string. But where's the send of <code>"format_with&laquo;&hellip;::=_&ddagger;,&raquo;"</code>? It isn't here, so it must be inside <code>"Concierge says,_"</code>. We'll study this method piecemeal throughout the tutorial.</p>
+<p>If we mine the <a href="http://en.wikipedia.org/wiki/Flavor_text">flavor text</a> carefully, we will find two occurrences of <code>&lsquo;you&rsquo;</code>. Recall from the previous tutorial that these single quotation marks are metacharacters used by <code>"format_with&laquo;&hellip;::=_&Dagger;,&raquo;"</code> to indicate that a format variable must be bound to a string. But where's the send of <code>"format_with&laquo;&hellip;::=_&Dagger;,&raquo;"</code>? It isn't here, so it must be inside <code>"Concierge says,_"</code>. We'll study this method piecemeal throughout the tutorial.</p>
 
 <h4>Hey, what do you mean "miss"?</h4>
 
@@ -287,7 +287,7 @@ titleIndex : [1..2] := a pRNG's next value in [1..2];
 ]]>
 </script></div></div>
 
-<p>On <strong>line 80</strong>, <code>pattern</code> is the parameter of <code>"Concierge says,_"</code>. When <code>"What's all this`?"</code> sends <code>"Concierge says,_"</code>, <code>pattern</code> will be bound to the large block of flavor text on <strong>lines 103-111</strong>. The method <code>"&laquo;_&ddagger;++&raquo;"</code> &mdash; the <strong>concatenation operator</strong> &mdash; chains together a lexical sequence of tuples into a single tuple. The concatenation operator works on all tuples, and a <code>string</code> is just a <code>tuple</code> whose default element type is <code><a href="/about-avail/documentation/type-system/types-character.html">character</a></code>. In this instance, we are appending a line feed to the formatted text.</p>
+<p>On <strong>line 80</strong>, <code>pattern</code> is the parameter of <code>"Concierge says,_"</code>. When <code>"What's all this`?"</code> sends <code>"Concierge says,_"</code>, <code>pattern</code> will be bound to the large block of flavor text on <strong>lines 103-111</strong>. The method <code>"&laquo;_&Dagger;++&raquo;"</code> &mdash; the <strong>concatenation operator</strong> &mdash; chains together a lexical sequence of tuples into a single tuple. The concatenation operator works on all tuples, and a <code>string</code> is just a <code>tuple</code> whose default element type is <code><a href="/about-avail/documentation/type-system/types-character.html">character</a></code>. In this instance, we are appending a line feed to the formatted text.</p>
 
 <p><strong>Line 81</strong> binds the format variable <code>you</code> to the result of sending <code>"_[_]"</code> to <code>allTitles</code> and <code>titleIndex</code>. The method <code>"_[_]"</code>, called the <strong>subscript operator</strong>, answers the element of its left argument at the subscript given by its right argument. So when <code>titleIndex</code> is <code>1</code> it answers <code>"sir"</code>, and when it's <code>2</code> it answers <code>"miss"</code>.</p>
 
@@ -341,7 +341,7 @@ Private method "Who is in room_`?" is
 ]]>
 </script></div></div>
 
-<p>To find out about a particular room assignment, you can ask the concierge <code class="command">"Who is in room_`?"</code> This method is deceptively simple. It merely sets <code>inquiry</code> to the specified <code>room number</code> (<strong>line 150</strong>) and then bids the concierge to respond (<strong>line 151</strong>). Note that we have two new format variables here: <code>room inquiry</code> and <code>guest inquiry</code>. When <code>"Concierge says,_"</code> is sent, the former is bound to <code>inquiry</code> and the latter is bound to the appropriate guest. But how is this guest selected? Aren't there an infinite number of <code>guest</code>s staying at the Hilbert Hotel? Somehow?</p>
+<p>To find out about a particular room assignment, you can ask the concierge <code class="command">"Who is in room_`?"</code> This method is deceptively simple. It merely sets <code>inquiry</code> to the specified <code>room number</code> (<strong>line 150</strong>) and then bids the concierge to respond (<strong>line 151</strong>). Note that we have two new format variables here: <code>room inquiry</code> and <code>guest inquiry</code>. When <code>"Concierge says,_"</code> is sent, the former is bound to <code>inquiry</code> and the latter is bound to the appropriate guest. But how is this guest selected? Aren't there an infinite number of guests staying at the Hilbert Hotel? Somehow?</p>
 
 <p>Let's peer into <code>"Concierge says,_"</code> again:</p>
 
@@ -360,7 +360,7 @@ Private method "Who is in room_`?" is
 ]]>
 </script></div></div>
 
-<p><strong>Lines 83-84</strong> bind values to the format variables <code>room inquiry</code> and <code>guest inquiry</code>. Notice that the format variables are provided as string literals rather than bare tokens. You are always allowed to quote a format variable in a binding expression, but only required to do so when the format variable contains non-alphanumeric characters, such as the space character here. I will explain why in a future tutorial. <small>(But it's related to <code>"format_with&laquo;&hellip;::=_&ddagger;,&raquo;"</code> expecting its binding expressions to supply their format variables as <code><a href="/about-avail/documentation/type-system/types-token.html">token</a></code>s.)</small></p>
+<p><strong>Lines 83-84</strong> bind values to the format variables <code>room inquiry</code> and <code>guest inquiry</code>. Notice that the format variables are provided as string literals rather than bare tokens. You are always allowed to quote a format variable in a binding expression, but only required to do so when the format variable contains non-alphanumeric characters, such as the space character here. I will explain why in a future tutorial. <small>(But it's related to <code>"format_with&laquo;&hellip;::=_&Dagger;,&raquo;"</code> expecting its binding expressions to supply their format variables as <code><a href="/about-avail/documentation/type-system/types-token.html">token</a></code>s.)</small></p>
 
 <p><strong>Line 83</strong> simply binds the format variable <code>room inquiry</code> to the current value of the module variable <code>inquiry</code>. There's nothing new here.</p>
 
@@ -387,7 +387,7 @@ Private method "Who is in room_`?" is
 <div class="neutral-code code-block">guest[2] ++ " " ++ guest[1]</div>
 </div>
 
-<p>There are two possible interpretations of <code>guest</code>: the method defined on <strong>line 47</strong> and the local constant defined on <strong>line 68</strong>. The former is a tuple type and the latter is a tuple. There are three messages sent by this expression, but only two methods are involved: <code>"_[_]"</code> and <code>"&laquo;_&ddagger;++&raquo;"</code>. The former is defined for both tuples and tuple types. For tuples, it answers the element associated with the supplied subscript; for tuple types, it answers the element type associated with the supplied subscript. Phooey. That doesn't help at all; given only this much information, both interpretations are quite reasonable. But the concatenation operator is only defined for tuples, not tuple types. This is enough to convince the compiler that <code>guest</code> can only refer to the local constant.</p>
+<p>There are two possible interpretations of <code>guest</code>: the method defined on <strong>line 47</strong> and the local constant defined on <strong>line 68</strong>. The former is a tuple type and the latter is a tuple. There are three messages sent by this expression, but only two distinct methods are involved: <code>"_[_]"</code> and <code>"&laquo;_&Dagger;++&raquo;"</code>. The former is defined for both tuples and tuple types. For tuples, it answers the element associated with the supplied subscript; for tuple types, it answers the element type associated with the supplied subscript. Phooey. That doesn't help at all; given only this much information, both interpretations are quite reasonable. But the concatenation operator is only defined for tuples, not tuple types. This is enough to convince the compiler that <code>guest</code> can only refer to the local constant.</p>
 
 <h4>Seriously, who is in room 1?</h4>
 
@@ -411,7 +411,7 @@ Private method "Who is in room_`?" is
 
 <p>We saw this snippet of code earlier, but I abbreviated it to show only <strong>line 68</strong>. The method <code>"_[_]else_"</code> is a "safe" version of the subscript operator. When you use the subscript operator with a valid subscript, it answers the requested element. But if the subscript is out of bounds, it becomes very cross. <small>(*mumble mumble* raise an exception *mumble mumble*)</small> When you use <code>"_[_]else_"</code> with a valid subscript, it answers the requested element, just like the subscript operator. But if the subscript is out of bounds, it answers the value returned by the function that follows <code>else</code>.</p>
 
-<p>Recall that the module variable <code>guests</code> contains only the guests booked by <code class="command">"Assign_to room_"</code>. So if <code>1 &le; inquiry &le; |guests|</code>, then it just answers <code>guests[inquiry]</code>. But if <code>inquiry > |guests|</code>, then we use a little Boolean logic to deduce the right answer. The method <code>"_&oplus;_"</code> computes the <a href="http://en.wikipedia.org/wiki/Exclusive_or">exclusive disjunction</a>, i.e., xor, of its arguments: it answers <code>true</code> if and only if its arguments have different truth values. In other words, it is <code>true</code> if only one of its arguments is <code>true</code>. The method <code>"_is odd"</code> does what it says on the tin: it says whether its integral argument is odd. So we compute the xor of the odd parities of <em>1)</em> the cardinality of <code>guests</code> and <em>2)</em> <code>inquiry</code> in order to identify the conference goer. I will let you convince yourself that the choice of John and Jane Doe is always correct.</p>
+<p>Recall that the module variable <code>guests</code> contains only the guests booked by <code class="command">"Assign_to room_"</code>. So if <code>1 &le; inquiry &le; |guests|</code>, then it just answers <code>guests[inquiry]</code>. But if <code>inquiry > |guests|</code>, then we use a little Boolean logic to deduce the right answer. The method <code>"_&oplus;_"</code> computes the <a href="http://en.wikipedia.org/wiki/Exclusive_or">exclusive disjunction</a>, i.e., xor, of its arguments: it answers <code>true</code> if exactly one of its arguments is <code>true</code>. The method <code>"_is odd"</code> does what it says on the tin: it says whether its integral argument is odd. So we compute the xor of the odd parities of <em>1)</em> the cardinality of <code>guests</code> and <em>2)</em> <code>inquiry</code> in order to identify the conference goer. I will let you convince yourself that the choice of John and Jane Doe is always correct.</p>
 
 <h4>Booking a guest</h4>
 
@@ -435,6 +435,8 @@ Private method "Who is in room_`?" is
 
 <p><code>"last available room"</code> gives a descriptive role to a simple calculation. The method <code>"`|_`|"</code> answers the cardinality of the specified <code>tuple</code>. The module variable <code>guests</code> tracks every guest except for the infinitely many conference goers, and we will see shortly that the concierge refuses to break up the block of rooms assigned to the conference goers, so this calculation tells us the room number of the last room available for newcomers. We are quite willing to break up the block of newcomers, since upsetting them has no effect on our bottom line!</p>
 
+<p>Now let's make sure that we have the <strong><a href="http://en.wikipedia.org/wiki/Boundary_case">boundary case</a></strong> correct. Note that <code>guests</code> begins life as <code>&lt;&gt;</code>, the empty tuple:</p>
+
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 60">
 <![CDATA[
@@ -442,7 +444,7 @@ guests : <guest…|> := <>;
 ]]>
 </script></div></div>
 
-<p>In particular, note that <code>guests</code> begins life as <code>&lt;&gt;</code>, the empty tuple. Before any newcomers have been assigned rooms, <code>"last available room"</code> will answer <code>1</code>. This is correct; at the outset of the scenario, every room is occupied by a conference goer, so the only room that can be booked without breaking them up is room #1.</p>
+<p>Before any newcomers have been assigned rooms, <code>"last available room"</code> will answer <code>1</code>. This is correct; at the outset of the scenario, every room is occupied by a conference goer, so the only room that can be booked without breaking them up is room #1.</p>
 
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 146">
@@ -460,7 +462,7 @@ guests : <guest…|> := <>;
 ]]>
 </script></div></div>
 
-<p>Back to <code class="command">"Assign_to_"</code>. <strong>Lines 146 and 148</strong> compute slices of the tuple currently in <code>guests</code>. A <strong>slice</strong> is a contiguous range of elements within a tuple. The method <code>"_[_.._]"</code> accepts an inclusive start subscript and an inclusive end subscript. These subscripts specify the bounds of the range of elements that you'd like to obtain as a new tuple. For a given tuple <em>t</em>, the start index <em>s</em> must be a value between <code>1</code> and <code>|<em>t</em>|</code>. The end index <em>e</em> must be a value between <em>s - 1</em> and <code>|<em>t</em>|</code>. If <code><em>e</em> = <em>s</em> - 1</code>, then the resultant tuple is <code>&lt;&gt;</code>. The method <code>"_[_..]"</code> is a convenient form of <code>"_[_.._]"</code> that implicitly uses the cardinality of the target tuple as the end index.</p>
+<p>Back to <code class="command">"Assign_to_"</code>. <strong>Lines 146 and 148</strong> compute slices of the tuple currently in <code>guests</code>. A <strong>slice</strong> is a contiguous range of elements within a tuple. The method <code>"_[_.._]"</code> accepts an inclusive start subscript and an inclusive end subscript. These subscripts specify the bounds of the range of elements that you'd like to obtain as a new tuple. For a given tuple <em>t</em>, the start index <em>s</em> must be a value between <code>1</code> and <code>|<em>t</em>|+1</code>. The <code>+1</code> allows an empty range to be specified at the end of the tuple, e.g., <code>&lt;&gt;[1..0]</code>. The end index <em>e</em> must be a value between <em>s - 1</em> and <code>|<em>t</em>|</code>. If <code><em>e</em> = <em>s</em> - 1</code>, then the resultant tuple is <code>&lt;&gt;</code>. The method <code>"_[_..]"</code> is a convenient form of <code>"_[_.._]"</code> that implicitly uses the cardinality of the target tuple as the end index.</p>
 
 <p><strong>Lines 146-148</strong> rebind <code>guests</code> to a tuple that includes <code>aGuest</code> at the subscript <code>assignedNumber</code>. These lines split <code>guests</code> into two parts &mdash; those guests before <code>assignedNumber</code> and those guests at <code>assignedNumber</code> and beyond &mdash; and splice <code>aGuest</code> between the parts. Why is <code>aGuest</code> wrapped inside another tuple first? Isn't it already a tuple? Because we want to end up with something like:</p>
 
@@ -536,7 +538,7 @@ Instead of something like:
 
 <p><strong>Line 78</strong> constructs an interval using <code>"_to_"</code>. An <strong>interval</strong> is just a tuple whose values happen to be consecutive integers. In this case, the resulting tuple will contain the integers <code>1</code> through <code>last available room</code>, inclusive. Intervals are extremely efficient in both time and storage. No matter how large the interval, only a constant amount of time is required to compute it and only a constant amount of space is required to store it. Just be careful not to stringify an enormous interval!</p>
 
-<p><strong>Lines 85-87</strong> bind the format variable <code>available rooms</code>. The conditional on <strong>line 86</strong> produces either <code>"room "</code> or <code>"rooms "</code>, depending on whether room availability is singular or plural. <strong>Line 87</strong> uses a special stringification method, <code>"&ldquo;_&rdquo;&laquo;else_&raquo;(as&laquo;conjunctive|disjunctive&rdquo;!list with serial|Oxford|Harvard comma)"</code>, to produce a savvy English rendering of <code>availableRooms</code>. The "disjunctive list" part means that the last element of the tuple will be preceded by <code>"or"</code> when it is rendered to text. Finally the concatenation operator splices the result of the conditional and the textual list together.</p>
+<p><strong>Lines 85-87</strong> bind the format variable <code>available rooms</code>. The conditional on <strong>line 86</strong> produces either <code>"room "</code> or <code>"rooms "</code>, depending on whether room availability is singular or plural. <strong>Line 87</strong> uses a special stringification method, <code>"&ldquo;_&rdquo;&laquo;else_&raquo;(as&laquo;conjunctive|disjunctive&raquo;!list with serial|Oxford|Harvard comma)"</code>, to produce a savvy English rendering of <code>availableRooms</code>. The "disjunctive list" part means that the last element of the tuple will be preceded by <code>"or"</code> when it is rendered to text. Finally the concatenation operator splices the result of the conditional and the textual list together.</p>
 
 <h4>Evicting David Hilbert</h4>
 

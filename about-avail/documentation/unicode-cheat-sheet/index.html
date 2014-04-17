@@ -1,0 +1,96 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="" ng-app="cheatSheetApp">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Unicode Cheat Sheet</title>
+		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="./cheat-sheet-app.js"></script>
+		<style>
+			table.codePoints
+			{
+				background: linear-gradient(to right, rgb(242, 242, 242), rgb(252, 252, 252));
+				width: 100%;
+			}
+			tr.header
+			{
+				background: white;
+				color: black;
+				vertical-align: baseline;
+			}
+			tr.codePoints:nth-child(odd)
+			{
+				color: black;
+				vertical-align: baseline;
+			}
+			tr.codePoints:nth-child(even)
+			{
+				background: white;
+				color: black;
+				vertical-align: baseline;
+			}
+			td.character
+			{
+				font-size: 16pt;
+				padding-left: 5px;
+			}
+			td.unicodeName
+			{
+				font-size: 14pt;
+				font-variant: small-caps;
+				text-transform: lowercase;
+			}
+		</style>
+	</head>
+
+	<body class="gradient-logo" ng-controller="CheatSheetController">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+
+		<h2 class="content-title">Unicode Cheat Sheet</h2>
+		
+<p>Please find below the comprehensive collection of non-ASCII, non-alphanumeric Unicode code points that are used by the Avail virtual machine, standard library, or standard test suites as of <code>1.0.0 DEV 2014-04-28</code>.</p>
+
+<p>If you do not have an editor that supports template expansion, you are strongly encouraged to obtain one, as it will make your programming experience much nicer. But you can also copy-and-paste the Unicode characters from this page into your code.</p>
+
+<table class="codePoints">
+<thead>
+<tr class="header" style="text-align: left">
+<th></th>
+<th>Unicode Name</th>
+<th>Dec.</th>
+<th>Hex.</th>
+<th>Entity</th>
+</tr>
+</thead>
+<tbody>
+<tr class="codePoints" ng-repeat="info in symbolicCharacterInfo">
+	<td class="character">{{info[1]}}</td>
+	<td class="unicodeName">{{info[2]}}</td>
+	<td><code class="unicode">{{info[3]}}</code></td>
+	<td><code class="unicode">{{info[4]}}</code></td>
+	<td><code class="unicode">{{info[5]}}</code></td>
+</tr>
+</tbody>
+</table>
+
+<table class="book-nav">
+	<tr>
+		<td class="book-nav-back"><a class="book-nav-back" href="../modules.html">‹ Modules</a></td>
+		<td class="book-nav-spacer">|</td>
+		<td class="book-nav-up"><a class="book-nav-up" href="../index.html">Return to Documentation</a></td>
+	</tr>
+</table>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>
