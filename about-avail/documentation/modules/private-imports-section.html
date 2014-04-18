@@ -1,0 +1,72 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Modules - Private Imports Section</title>
+
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+		
+<h2 class="content-title">Private Imports Section</h2>
+
+<p>The <code>Uses</code> keyword begins the <strong>private imports section</strong>. The contents of this section are zero or more import specifications separated by <em>commas</em> <code>,</code> <code class="unicode">(U+002C)</code>. An <strong>import specification</strong> is a declared dependency on a module, and it satisfies the <code style="color: black">ImportSpecification</code> <a href="http://en.wikipedia.org/wiki/Syntax_diagram">syntax diagram</a>:</p>
+
+<div class="scrolling">
+<p style="text-align: center"><code style="color: black">ImportSpecification</code></p>
+<iframe src="/_images/modules/import-specification.svg" style="margin: auto" seamless></iframe>
+</div>
+
+<p>Where the <a href="http://en.wikipedia.org/wiki/Terminal_and_nonterminal_symbols">terminal</a> <code>module</code> is a <a href="/about-avail/documentation/type-system/types-string.html">string literal</a> that names the <strong>import target</strong>. The import target is an upstream module by virtue of appearing in an import specification.</p>
+
+<p><code style="color: black">VersionList</code> specifies a list of version requirements for the import target. It is a <a href="http://en.wikipedia.org/wiki/Terminal_and_nonterminal_symbols">nonterminal</a> that corresponds to the following syntax diagram:</p>
+
+<div class="scrolling">
+<p style="text-align: center"><code style="color: black">VersionList</code></p>
+<iframe src="/_images/modules/version-list.svg" style="margin: auto" seamless></iframe>
+</div>
+
+<p>Where <code>version</code> is a string literal that denotes an acceptable <a href="./active-versions-section.html">API version</a> of the import target. If the import target advertises no versions in common with the list of version requirements, then the compiler aborts compilation of the <strong>dependent module</strong>, i.e., the module whose header contains the import specification.</p>
+
+<p><code style="color: black">FilteredImportList</code> specifies a cherry-picked list of exported names from the import target. It is a nonterminal that corresponds to the following syntax diagram:</p>
+
+<div class="scrolling">
+<p style="text-align: center"><code style="color: black">FilteredImportList</code></p>
+<iframe src="/_images/modules/filtered-import-list.svg" style="margin: auto" seamless></iframe>
+</div>
+
+<p>Where the three terminals embedded in the syntax diagram are:</p>
+
+<ul>
+<li><code>name</code>: A string literal that specifies an <a href="/about-avail/documentation/type-system/types-atom.html">atom</a> that should be imported into the dependent module. Though it is sometimes useful to import an atom for its own sake, it is generally the case that the module wishes to gain access to a method named by the atom.</li>
+<li><code>rename</code>: A string literal that introduces a new atom that refers to the same method as the original atom.</li>
+<li><code>excludedName</code>: A string literal that denotes a name that is exported by the import target, but which should not be imported into the dependent module.</li>
+</ul>
+
+<p>CONTINUE HERE</p>
+
+<table class="book-nav">
+	<tr>
+		<td class="book-nav-back"><a class="book-nav-back" href="./active-versions-section.html">‹ Active Versions Section</a></td>
+		<td class="book-nav-spacer">|</td>
+		<td class="book-nav-up"><a class="book-nav-up" href="./index.html">Return to Modules</a></td>
+		<td class="book-nav-spacer">|</td>
+		<td class="book-nav-forward"><a class="book-nav-forward" href="./extended-imports-section.html">Extended Imports Section ›</a></td>
+	</tr>
+</table>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>

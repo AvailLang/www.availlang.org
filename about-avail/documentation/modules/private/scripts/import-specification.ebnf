@@ -1,0 +1,3 @@
+ImportSpecification ::= module VersionList? ('=' FilteredImportList )?
+VersionList ::= ('(' version (',' version)* ')')
+FilteredImportList ::= '(' (((name ('→' rename)? | '-' excludedName) (',' (name ('→' rename)? | '-' excludedName))*)  (','? '…')? | '…'?) ')'
