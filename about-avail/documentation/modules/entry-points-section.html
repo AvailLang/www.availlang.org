@@ -1,0 +1,79 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Modules - Entry Points Section</title>
+
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+		
+<h2 class="content-title">Entry Points Section</h2>
+
+<p>The <code>Entries</code> keyword begins the <strong>entry points section</strong>. The contents of this section are zero or more <a href="/about-avail/documentation/type-system/types-string.html">string literal</a>s separated by <em>commas</em> <code>,</code> <code class="unicode">(U+002C)</code>. Each string literal corresponds to an <strong>entry point</strong>, i.e., a message that should be exported for use at an external call site. For example:</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block">Module "Hello World"
+Uses "Avail"
+Entries "Greet"
+Body
+
+Method "Greet" is [ Print: "Hello, world!\n"; ];</div></div>
+
+<p>In this example, <code class="module"><a href="/about-avail/learn/tutorials/hello-world.html">Hello World</a></code> is a module that defines a single entry point, <code class="command">"Greet"</code>. This method may be invoked at an external call site. An <strong>external call site</strong> is a call site that occurs outside of a module, such as the input field of the Avail workbench.</p>
+
+<p>An <a href="http://en.wikipedia.org/wiki/Entry_point">entry point</a> is therefore analogous to the <code>main()</code> of C or <a href="http://docs.oracle.com/javase/specs/jvms/se7/html/jvms-5.html#jvms-5.2">Java</a>, since it provides a mechanism for an end user or external program to run an Avail program.</p>
+
+<p>An entry point is not automatically available for use by downstream modules. To make an entry point available for downstream modules, simply include the name in the appropriate section:</p>
+
+<ul>
+<li>If the entry point is introduced by this module, then it should be included in the <a href="./introduced-names-section.html">introduced names section</a>.</li>
+<li>If the entry point is introduced by an upstream module, then it should be included (implicitly or explicitly) in the <a href="./extended-imports-section.html">extended imports section</a>.</li>
+</ul>
+
+<p>In the example given above, there is only one entry point. The entry points section may contain arbitrarily many entry points, however:</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block">Module "Availuator"
+Versions
+	"dev"
+Extends
+	"Convenient ASCII"
+Entries
+	"`!_",
+	"time_",
+	"Run_"
+Body
+</div></div>
+
+<img src="/_images/modules/external-call-site.png" alt="The Command field of the Avail workbench is an external call site."/>
+
+<p>This example, excerpted from the <code class="module">Availuator</code>, exports three entry points: <code class="command">"`!_"</code>, <code class="command">"Run_"</code>, and <code class="command">"time_"</code>. Any of these messages can be sent at an external call site. A send of an entry point at an external call site is called a <strong>command</strong>.</p>
+
+<p>Unlike the entry points of traditional programming languages, the parameters of entry points are not constrained to be strings. They may be given any types whatsoever. The compiler is responsible for parsing and executing commands, so arbitrarily complex expressions may be parsed. The names available at argument positions of an entry point are limited to those exported by the module that defined the entry point.</p>
+
+<table class="book-nav">
+	<tr>
+		<td class="book-nav-back"><a class="book-nav-back" href="./introduced-names-section.html">‹ Introduced Names Section</a></td>
+		<td class="book-nav-spacer">|</td>
+		<td class="book-nav-up"><a class="book-nav-up" href="./index.html">Return to Modules</a></td>
+		<td class="book-nav-spacer">|</td>
+		<td class="book-nav-forward"><a class="book-nav-forward" href="./active-versions-section.html">Active Versions Section ›</a></td>
+	</tr>
+</table>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>

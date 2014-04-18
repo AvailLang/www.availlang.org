@@ -1,0 +1,142 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Modules - Introduced Names Section</title>
+
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+		
+<h2 class="content-title">Introduced Names Section</h2>
+
+<p>The <code>Names</code> keyword begins the <strong>introduced names section</strong>. The contents of this section are zero or more <a href="/about-avail/documentation/type-system/types-string.html">string literal</a>s separated by <em>commas</em> <code>,</code> <code class="unicode">(U+002C)</code>. Each string literal introduces an <a href="/about-avail/documentation/type-system/types-atom.html">atom</a> and exports it for use by downstream modules. For example:</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block">Module "Dice"
+Uses "Avail"
+Names
+	/* Types. */
+	"dice expression⁇",
+	"dice expression⁇outcome",
+	"dice group",
+	"die",
+
+	/* Definers. */
+	"a|an standard⁇_-sided die",
+	"a dice group with_",
+	"a die showing_",
+	"_d|D_",
+	"_(drop the⁇highest«_»)",
+	"_(drop the⁇lowest«_»)",
+
+	/* Evaluating dice expressions. */
+	"«using_,»roll_",
+	
+	/* Accessors and mutators (dice expression outcome). */
+	"integrate_and_with_",
+	"_'s⁇detailed outcome",
+	"_'s⁇detailed outcome::=_,result::=_",
+	"_'s⁇result",
+	"_'s⁇result::=_",
+
+	/* Accessors (dice). */
+	"_'s⁇faces"
+Body
+</div></div>
+
+<p>In this example, <code class="module">Dice</code> is a module that defines services related to constructing and evaluating arbitrary dice expressions of the kinds prescribed by many <a href="http://en.wikipedia.org/wiki/Role-playing_game_system">role-playing game systems</a>. As such, it provides dice-related services but does not consume them, i.e., it knows how to use dice but does not know why or when to do so. <code class="module">Dice</code> is a service provider, e.g., library, and its introduced names section constitutes the catalog of its available services.</p>
+
+<p>By including a name in the introduced names section, the compiler or executor creates a new atom and associates it with the name. Equivalent names imported from upstream modules are <strong>shadowed</strong> by the new name. This means that an operation that <a href="./name-resolution.html">resolves a name</a> to an atom will always prefer an atom created by a locally introduced name over one imported from an upstream module. Because of this rule, the following scenario is unambiguous despite the fact that <code class="module">Avail</code> and <code class="module">Dimensional Analysis</code> each export <code>"_+_"</code>:</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block">Module "Concatenating Plus"
+Uses
+	"Avail",
+	"Dimensional Analysis"
+Names
+	"_+_"
+Body
+
+/* When the name argument of "Method_is_" is a string, then it resolves
+ * the name to an atom before installing the new definition. In this
+ * case, the new definition is installed for the local "_+_", not one
+ * of the imported ones.
+ */
+Method "_+_" is
+[
+	a : string,
+	b : string
+|
+	a ++ b
+];
+</div></div>
+
+<p>Note that module constants and module variables cannot be exported via the introduced names section. This is because the definition of a module constant or module variable does not create a new atom or participate in name resolution, whereas the definition of a message does.</p>
+
+<div class="restricted-width-container">
+<div class="bad-code code-block">Module "Counter"
+Uses "Avail"
+Names
+	/* This doesn't work, because "counter" is a module variable, and module
+	 * variables cannot be directly exported.
+	 */
+	"counter"
+Body
+
+counter : whole number := 0;
+</div></div>
+
+<p>This is a design point of Avail. While it would have been easy to associate atoms with module constants and module variables, thereby making them available for export, doing so would have increased the scope of module-specific state. This, in turn, would encourage construction of <a href="http://en.wikipedia.org/wiki/Spaghetti_code">spaghetti code</a>.</p>
+
+<p>It is, however, trivial for a programmer to overcome this limitation in exactly those circumstances in which she wishes to do so. First, define methods that reference the module constant or module variable. Then export the associated messages for use by downstream modules.</p>
+
+<div class="restricted-width-container">
+<div class="good-code code-block">Module "Counter"
+Uses "Avail"
+Names
+	"Increment counter",
+	"counter"
+Body
+
+_counter : whole number := 0;
+Method "counter" is [_counter];
+Method "Increment counter" is [atomically read ↑_counter and add 1] : ⊤;
+</div></div>
+
+<p>By forcing the programmer to build an API around module-specific state, programmers are compelled to:</p>
+
+<ul>
+<li>Design features rather than accrete them over time.</li>
+<li>Consider issues of semantic abstraction and data encapsulation.</li>
+<li>Consider issues of the cardinality of software features, i.e., the <a href="http://en.wikipedia.org/wiki/Singleton_pattern">singleton</a> <a href="http://en.wikipedia.org/wiki/Anti-pattern">anti-</a><a href="http://en.wikipedia.org/wiki/Design_pattern_(computer_science)">pattern</a>.</li>
+<li>Consider issues of concurrent access.</li>
+</ul>
+
+<p>In the above example, only the capabilities of reading and incrementing the counter are provided, not the capability of setting it to an arbitrary value. This API guarantees the monotonicity of the (singleton) counter.</p>
+
+<table class="book-nav">
+	<tr>
+		<td class="book-nav-back"><a class="book-nav-back" href="./module-name-section.html">‹ Module Name Section</a></td>
+		<td class="book-nav-spacer">|</td>
+		<td class="book-nav-up"><a class="book-nav-up" href="./index.html">Return to Modules</a></td>
+		<td class="book-nav-spacer">|</td>
+		<td class="book-nav-forward"><a class="book-nav-forward" href="./entry-points-section.html">Entry Points Section ›</a></td>
+	</tr>
+</table>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>

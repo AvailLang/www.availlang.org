@@ -1,0 +1,122 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Modules - Module Headers</title>
+		<style>
+			table
+			{
+				background: linear-gradient(to right, rgb(242, 242, 242), rgb(252, 252, 252));
+				width: 100%;
+			}
+			tr.header
+			{
+				background: white;
+				color: black;
+				text-align: left;
+				vertical-align: bottom;
+			}
+			tr.section:nth-child(odd)
+			{
+				color: black;
+				vertical-align: baseline;
+			}
+			tr.section:nth-child(even)
+			{
+				background: white;
+				color: black;
+				vertical-align: baseline;
+			}
+		</style>
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+		
+<h2 class="content-title">Module Headers</h2>
+
+<p>Every module begins with a module header.<sup><a href="#fn1">[1]</a></sup> A module header specifies linkage information that the compiler or executor uses to resolve names mentioned within the module body. Unlike the bulk of an Avail program, which uses an extremely fluid syntax, a module header has a rigid structure that revolves around a small vocabulary of fixed keywords. This rigidity makes it easy and fast for a human or machine reader to understand a module's relationship to upstream modules.<sup><a href="#fn2">[2]</a></sup></p>
+
+<p>A module header is divided into <strong>module header sections</strong> (hereinafter "sections"). There are several distinct kinds of section, and every section kind is heralded by a specific keyword. These are the available section kinds:</p>
+
+<table>
+<thead>
+<tr class="header">
+	<th>Keyword</th>
+	<th>Kind</th>
+	<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="section">
+	<td><code>Module</code></td>
+	<td><strong><a href="./module-name-section.html">module name section</a></strong></td>
+	<td>Declares the name of the module.</td>
+</tr>
+<tr class="section">
+	<td><code>Names</code></td>
+	<td><strong><a href="./introduced-names-section.html">introduced names section</a></strong></td>
+	<td>Declares all names introduced by the module.</td>
+</tr>
+<tr class="section">
+	<td><code>Entries</code></td>
+	<td><strong><a href="./entry-points-section.html">entry points section</a></strong></td>
+	<td>Declares all entry points of the module.</td>
+</tr>
+<tr class="section">
+	<td><code>Versions</code></td>
+	<td><strong><a href="./active-versions-section.html">active versions section</a></strong></td>
+	<td>Declares the active versions of the module.</td>
+</tr>
+<tr class="section">
+	<td><code>Uses</code></td>
+	<td><strong><a href="./private-imports-section.html">private imports section</a></strong></td>
+	<td>Declares the private imports of the module.</td>
+</tr>
+<tr class="section">
+	<td><code>Extends</code></td>
+	<td><strong><a href="./extended-imports-section.html">extended imports section</a></strong></td>
+	<td>Declares the re-exported imports of the module.</td>
+</tr>
+<tr class="section">
+	<td><code>Pragmas</code></td>
+	<td><strong><a href="./pragmas-section.html">pragmas section</a></strong></td>
+	<td>Gives special directions to the compiler or executor.</td>
+</tr>
+</tbody>
+</table>
+
+<p>With the exception of the module name section, each section kind is optional; it may appear zero or one time. With the exception of the module name section, which must appear first, sections may appear in any order.</p>
+
+<p>A module section ends implicitly at the appearance of another section keyword or the keyword <code>Body</code>. The entire module header ends with the keyword <code>Body</code>, which heralds the beginning of the module body.</p>
+
+<hr/>
+
+<p><small><a name="fn1">[1]</a> A module header may be preceded by whitespace and comments, which are absorbed by the compiler during tokenization. Since tokenization occurs strictly before parsing, it is safe to put comments before the module header. This is nice, because the space before the module header is the best place to put a copyright notice.</small></p>
+
+<p><small><a name="fn2">[2]</a> It also dramatically simplifies bootstrapping. In general, a module body has no fixed syntax. Allowing the module header this same freedom might make it very difficult to distinguish the module header from the module body, in turn making it very difficult to establish linkage.</small></p>
+
+<table class="book-nav">
+	<tr>
+		<td class="book-nav-back"><a class="book-nav-back" href="./introduction.html">‹ Introduction</a></td>
+		<td class="book-nav-spacer">|</td>
+		<td class="book-nav-up"><a class="book-nav-up" href="./index.html">Return to Modules</a></td>
+		<td class="book-nav-spacer">|</td>
+		<td class="book-nav-forward"><a class="book-nav-forward" href="./module-name-section.html">Module Name Section ›</a></td>
+	</tr>
+</table>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>
