@@ -12,7 +12,7 @@
 	
 		<title>Modules - Module Headers</title>
 		<style>
-			table
+			table.keywords
 			{
 				background: linear-gradient(to right, rgb(242, 242, 242), rgb(252, 252, 252));
 				width: 100%;
@@ -24,12 +24,12 @@
 				text-align: left;
 				vertical-align: bottom;
 			}
-			tr.section:nth-child(odd)
+			tr.keywords:nth-child(odd)
 			{
 				color: black;
 				vertical-align: baseline;
 			}
-			tr.section:nth-child(even)
+			tr.keywords:nth-child(even)
 			{
 				background: white;
 				color: black;
@@ -48,7 +48,7 @@
 
 <p>A module header is divided into <strong>module header sections</strong> (hereinafter "sections"). There are several distinct kinds of section, and every section kind is heralded by a specific keyword. These are the available section kinds:</p>
 
-<table>
+<table class="keywords">
 <thead>
 <tr class="header">
 	<th>Keyword</th>
@@ -57,37 +57,37 @@
 </tr>
 </thead>
 <tbody>
-<tr class="section">
+<tr class="keywords">
 	<td><code>Module</code></td>
 	<td><strong><a href="./module-name-section.html">module name section</a></strong></td>
 	<td>Declares the name of the module.</td>
 </tr>
-<tr class="section">
+<tr class="keywords">
 	<td><code>Names</code></td>
 	<td><strong><a href="./introduced-names-section.html">introduced names section</a></strong></td>
 	<td>Declares all names introduced by the module.</td>
 </tr>
-<tr class="section">
+<tr class="keywords">
 	<td><code>Entries</code></td>
 	<td><strong><a href="./entry-points-section.html">entry points section</a></strong></td>
 	<td>Declares all entry points of the module.</td>
 </tr>
-<tr class="section">
+<tr class="keywords">
 	<td><code>Versions</code></td>
 	<td><strong><a href="./active-versions-section.html">active versions section</a></strong></td>
 	<td>Declares the active versions of the module.</td>
 </tr>
-<tr class="section">
+<tr class="keywords">
 	<td><code>Uses</code></td>
 	<td><strong><a href="./private-imports-section.html">private imports section</a></strong></td>
 	<td>Declares the private imports of the module.</td>
 </tr>
-<tr class="section">
+<tr class="keywords">
 	<td><code>Extends</code></td>
 	<td><strong><a href="./extended-imports-section.html">extended imports section</a></strong></td>
 	<td>Declares the re-exported imports of the module.</td>
 </tr>
-<tr class="section">
+<tr class="keywords">
 	<td><code>Pragmas</code></td>
 	<td><strong><a href="./pragmas-section.html">pragmas section</a></strong></td>
 	<td>Gives special directions to the compiler or executor.</td>
