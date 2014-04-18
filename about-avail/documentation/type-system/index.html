@@ -1,0 +1,112 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Avail - Type System</title>
+	
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+
+		<h2 class="content-title">The Avail Type System</h2>
+		
+<p>
+This series provides a comprehensive treatment of the Avail type system. The series begins with pages that describe the underlying type theory. Each of the remaining pages describes one of Avail's many intrinsic types.
+</p>
+
+<p>
+* indicates that the content for this page has not yet been completed.
+</p>
+
+<ul>
+<li><a href="./values.html">Values</a></li>
+<li><a href="./types.html">Types</a></li>
+<li><a href="./type-relations.html">Type Relations</a></li>
+<li><a href="./type-compatibility.html">Type Compatibility</a></li>
+<li><a href="./type-parameterization.html">Type Parameterization</a></li>
+<li><a href="./metatypes.html">Metatypes</a></li>
+<li><a href="./type-names.html">Type Names</a></li>
+<li><a href="./type-annotations.html">Type Annotations</a></li>
+<li><a href="./type-inference.html">Type Inference</a></li>
+<li><a href="./semantic-restrictions.html">Semantic Restrictions</a></li>
+<li>
+	<a href="./type-lattice.html">Type Lattice</a>
+	<ul>
+	<li><a href="./types-top.html"><code>⊤</code> (top)</a></li>
+	<li><a href="./types-any.html"><code>any</code></a></li>
+	<li><a href="./types-type.html"><code>type</code></a></li>
+	<li><a href="./types-nontype.html"><code>nontype</code></a></li>
+	<li><a href="./types-character.html"><code>character</code></a></li>
+	<li><a href="./types-number.html"><code>number</code></a></li>
+	<li><a href="./types-double.html"><code>double</code></a></li>
+	<li><a href="./types-float.html"><code>float</code></a></li>
+	<li><a href="./types-extended-integer.html"><code>extended integer</code></a></li>
+	<li><a href="./types-tuple.html"><code>tuple</code></a></li>
+	<li><a href="./types-string.html"><code>string</code></a></li>
+	<li><a href="./types-set.html"><code>set</code></a></li>
+	<li><a href="./types-map.html"><code>map</code></a></li>
+	<li><a href="./types-function.html"><code>function</code></a> *</li>
+	<li><a href="./types-function-implementation.html"><code>function implementation</code></a> *</li>
+	<li><a href="./types-method.html"><code>method</code></a> *</li>
+	<li><a href="./types-definition.html"><code>definition</code></a> *</li>
+	<li><a href="./types-method-definition.html"><code>method definition</code></a> *</li>
+	<li><a href="./types-abstract-definition.html"><code>abstract definition</code></a> *</li>
+	<li><a href="./types-forward-definition.html"><code>forward definition</code></a> *</li>
+	<li><a href="./types-macro-definition.html"><code>macro definition</code></a> *</li>
+	<li><a href="./types-continuation.html"><code>continuation</code></a> *</li>
+	<li><a href="./types-fiber.html"><code>fiber</code></a> *</li>
+	<li><a href="./types-variable.html"><code>variable</code></a> *</li>
+	<li><a href="./types-atom.html"><code>atom</code></a></li>
+	<li><a href="./types-boolean.html"><code>boolean</code></a></li>
+	<li><a href="./types-object.html"><code>object</code></a> *</li>
+	<li><a href="./types-exception.html"><code>exception</code></a> *</li>
+	<li><a href="./types-pojo.html"><code>pojo</code></a> *</li>
+	<li><a href="./types-token.html"><code>token</code></a> *</li>
+	<li><a href="./types-literal-token.html"><code>literal token</code></a> *</li>
+	<li><a href="./types-phrase.html"><code>phrase</code></a> *</li>
+	<li><a href="./types-declaration-phrase.html"><code>declaration phrase</code></a> *</li>
+	<li><a href="./types-argument-phrase.html"><code>argument phrase</code></a> *</li>
+	<li><a href="./types-module-constant-phrase.html"><code>module constant phrase</code></a> *</li>
+	<li><a href="./types-local-constant-phrase.html"><code>local constant phrase</code></a> *</li>
+	<li><a href="./types-module-variable-phrase.html"><code>module variable phrase</code></a> *</li>
+	<li><a href="./types-local-variable-phrase.html"><code>local variable phrase</code></a> *</li>
+	<li><a href="./types-label-phrase.html"><code>label phrase</code></a> *</li>
+	<li><a href="./types-primitive-failure-reason-phrase.html"><code>primitive failure reason phrase</code></a> *</li>
+	<li><a href="./types-expression-phrase.html"><code>expression phrase</code></a> *</li>
+	<li><a href="./types-literal-phrase.html"><code>literal phrase</code></a> *</li>
+	<li><a href="./types-variable-use-phrase.html"><code>variable use phrase</code></a> *</li>
+	<li><a href="./types-variable-reference-phrase.html"><code>variable reference phrase</code></a> *</li>
+	<li><a href="./types-assignment-phrase.html"><code>assignment phrase</code></a> *</li>
+	<li><a href="./types-list-phrase.html"><code>list phrase</code></a> *</li>
+	<li><a href="./types-send-phrase.html"><code>send phrase</code></a> *</li>
+	<li><a href="./types-block-phrase.html"><code>block phrase</code></a> *</li>
+	<li><a href="./types-sequence-phrase.html"><code>sequence phrase</code></a> *</li>
+	<li><a href="./types-module.html"><code>module</code></a> *</li>
+	<li><a href="./types-bottom.html"><code>⊥</code> (bottom)</a></li>
+	</ul>
+</li>
+</ul>
+
+<table class="book-nav">
+	<tr>
+		<td class="book-nav-up"><a class="book-nav-up" href="../index.html">Return to Documentation</a></td>
+		<td class="book-nav-spacer">|</td>
+		<td class="book-nav-forward"><a class="book-nav-forward" href="../modules/index.html">Modules ›</a></td>
+	</tr>
+</table>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>

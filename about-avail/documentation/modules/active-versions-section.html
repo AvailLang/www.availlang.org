@@ -1,0 +1,95 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Modules - Active Versions Section</title>
+
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+		
+<h2 class="content-title">Active Versions Section</h2>
+
+<p>The <code>Versions</code> keyword begins the <strong>active versions section</strong>. The contents of this section are zero or more <a href="/about-avail/documentation/type-system/types-string.html">string literal</a>s separated by <em>commas</em> <code>,</code> <code class="unicode">(U+002C)</code>. Each string literal corresponds to a version of the API that the module pledges to support. Versions are specified as arbitrary strings to allow developers to adopt different versioning taxonomies for their products.</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block">Module "HTML"
+Versions "3.2", "4.0", "4.01", "5.0"
+Names
+	/* API goes here… */
+Body</div></div>
+
+<p>The appearance of a version within the active versions section constitutes a promise of <a href="http://en.wikipedia.org/wiki/Backward_compatibility">backward compatibility</a> to downstream modules that explicitly request this version in an import specification. In the example above, the hypothetical <code class="module">HTML</code> module promises to support four different versions of its API.<sup><a href="#fn1">[1]</a></sup></p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block">Module "Web Crawler"
+Versions "2.0"
+Uses
+	"HTML" ("2.0", "3.2")
+Names
+	/* API goes here… */
+Body</div></div>
+
+<p>Now consider the hypothetical module <code class="module">Web Crawler</code>. It imports <code class="module">HTML</code> in its <a href="./private-imports-section.html">private imports section</a>, and declares a requirement for either version <code>"2.0"</code> or version <code>"3.2"</code> of the API. <code class="module">HTML</code> declares that it supports version <code>"3.2"</code>, but does not mention version <code>"2.0"</code>. Because there is a version in common between the promise and the requirement, the compiler permits the import and proceeds with compilation.</p>
+
+<p>Because <code class="module">Web Crawler</code> declares a dependency on version <code>"3.2"</code>, it should not discover at compile time that the compiler rejects sends of messages that were present when version <code>"3.2"</code> of <code class="module">HTML</code> was brand new. Nor should it discover, at run time, that the semantics of operations imported from <code class="module">HTML</code> are now different (and incompatible) with those which it expects and requires.</p>
+
+<p>Unfortunately, neither the compiler nor the executor are able to ensure the sincerity of a promise of backward compatibility; it would be extremely difficult, if not impossible, to declare the exact nature of the syntactic and semantic drift between two versions of an API using a generic model that could be mechanically checked. Ensuring that an older version of a module is still well supported by its present implementation is therefore the responsibility of the module's developers.</p>
+
+<p>On the other hand, this mechanism allows the module to declare quite sincerely, by omission, that a version is not supported. Consider version <code>"1.0"</code> of <code class="module">Web Crawler</code>:</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block">Module "Web Crawler"
+Versions "1.0"
+Uses
+	"HTML" ("1.1", "2.0")
+Names
+	/* API goes here… */
+Body</div></div>
+
+<p>When the compiler processes the import of <code class="module">HTML</code>, it discovers that versions <code>"1.1"</code> and <code>"2.0"</code> are not supported. It blocks compilation by issuing an error message like this:</p>
+
+<div class="restricted-width-container">
+<div class="code-block" style="color: red">[PARSE]: module "/website/Modules/Versions/1.0/Web Crawler", line 40:
+>>> 33: Module "Web Crawler"
+>>> 34: Versions "1.0"
+>>> 35: Uses
+>>> 36: 	"HTML" ("1.1", "2.0")
+>>> 37: Names
+>>> 38: 	/* API goes here… */
+>>> 39: Body
+>>>---------------------------------------------------------------------
+>>> Expected...
+>>>	version compatibility; module "HTML" guarantees versions {"3.2", "4.0", "4.01", "5.0"} but the current module requires {"1.1", "2.0"}
+(file="/website/Modules/Versions/1.0/Web Crawler", line=40)
+>>>---------------------------------------------------------------------</div></div>
+
+<hr/>
+
+<p><small><a name="fn1">[1]</a> It is hoped that these versions correspond to published versions of the HTML standard, but of course it is not possible for the Avail compiler to require this!</small></p>
+
+<table class="book-nav">
+	<tr>
+		<td class="book-nav-back"><a class="book-nav-back" href="./entry-points-section.html">‹ Entry Points Section</a></td>
+		<td class="book-nav-spacer">|</td>
+		<td class="book-nav-up"><a class="book-nav-up" href="./index.html">Return to Modules</a></td>
+		<td class="book-nav-spacer">|</td>
+		<td class="book-nav-forward"><a class="book-nav-forward" href="./private-imports-section.html">Private Imports Section ›</a></td>
+	</tr>
+</table>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>

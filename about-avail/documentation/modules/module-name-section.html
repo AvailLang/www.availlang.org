@@ -1,0 +1,55 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Modules - Module Name Section</title>
+
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+		
+<h2 class="content-title">Module Name Section</h2>
+
+<p>The <code>Module</code> keyword begins the <strong>module name section</strong>. The module name section must be the first section of every module header. Following this keyword is a <a href="/about-avail/documentation/type-system/types-string.html">string literal</a> that names the module. This name is the logical name of the module. As such it must match the file name, but must not include the <code>.avail</code> file extension. For example, a module named <code class="module">Foo</code> must reside in a file whose name is <code class="module">Foo.avail</code>, and its module name section should look like this:</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block">Module "Foo"</div></div>
+
+<p>Whitespace within a module header that does not occur within a string literal is deemed <strong>insignificant</strong>; it does not affect the meaning the module header. So <code class="module">Foo</code> could also begin this way:</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block">Module
+	"Foo"</div></div>
+
+<p>But the following is an illegal module name section for a module residing in <code class="module">Foo.avail</code>, because it incorrectly declares the name of the module:</p>
+
+<div class="restricted-width-container">
+<div class="bad-code code-block">Module "     Foo"</div></div>
+
+<p>Module names occurring anywhere within a module header must never include a <code>.avail</code> file extension. A module name is a logical reference, not a file system reference. Under usual circumstances, module names are resolved to file system paths via the standard <a href="./module-resolution.html">module resolution</a> mechanism.</p>
+
+<table class="book-nav">
+	<tr>
+		<td class="book-nav-back"><a class="book-nav-back" href="./module-headers.html">‹ Module Headers</a></td>
+		<td class="book-nav-spacer">|</td>
+		<td class="book-nav-up"><a class="book-nav-up" href="./index.html">Return to Modules</a></td>
+		<td class="book-nav-spacer">|</td>
+		<td class="book-nav-forward"><a class="book-nav-forward" href="./introduced-names-section.html">Introduced Names Section ›</a></td>
+	</tr>
+</table>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>
