@@ -15,7 +15,10 @@ install: compile
 	$(MV) $(SVGS) $(TARGETDIR)
 	$(CP) import-specification.svg $(TARGETDIR)
 	$(CP) version-list.svg $(TARGETDIR)
-	$(CP) filtered-import-list.svg $(TARGETDIR)
+	$(CP) custom-import-rules-list.svg $(TARGETDIR)
+	$(CP) check-pragma.svg $(TARGETDIR)
+	$(CP) method-pragma.svg $(TARGETDIR)
+	$(CP) stringify-pragma.svg $(TARGETDIR)
 
 clean:
 	@rm -f $(SVGS)

@@ -82,7 +82,7 @@ Extends
 ]]>
 </script></div></div>
 
-<p><strong>Lines 36-45</strong> also imports from the standard library, but there are several new twists here. The <code>Extends</code> keyword enumerates modules that should be imported, just like <code>Uses</code>, but it also re-exports any imported features for use by other modules downstream.</p>
+<p><strong>Lines 36-45</strong> also imports from the standard library, but there are several new twists here. The <code>Extends</code> keyword <a href="/about-avail/documentation/modules/extended-imports-section.html">enumerates modules that should be imported</a>, just like <code>Uses</code>, but it also re-exports any imported features for use by other modules downstream.</p>
 
 <p>Now notice the equals and the parentheses. This syntax establishes an <strong>import filter</strong>. An import filter allows you to cherry pick the method names that you want to access. (Obviously, the only names available for cherry picking are those which the target module exports.) In this case, we are importing the methods <code>"_+_"</code>, <code>"_-_"</code>, <code>"_&times;_"</code>, and <code>"_&divide;_"</code>. But we are not importing them under their given names&hellip;</p>
 

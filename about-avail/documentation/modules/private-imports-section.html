@@ -11,7 +11,12 @@
 <!--#include virtual="/_include/head.ssi" -->
 	
 		<title>Modules - Private Imports Section</title>
-
+		<style>
+		.import-rules
+		{
+			margin-top: 20px;
+		}
+		</style>
 	</head>
 
 	<body class="gradient-logo">
@@ -20,40 +25,127 @@
 		
 <h2 class="content-title">Private Imports Section</h2>
 
-<p>The <code>Uses</code> keyword begins the <strong>private imports section</strong>. The contents of this section are zero or more import specifications separated by <em>commas</em> <code>,</code> <code class="unicode">(U+002C)</code>. An <strong>import specification</strong> is a declared dependency on a module, and it satisfies the <code style="color: black">ImportSpecification</code> <a href="http://en.wikipedia.org/wiki/Syntax_diagram">syntax diagram</a>:</p>
+<p>The <code>Uses</code> keyword begins the <strong>private imports section</strong>. The contents of this section are zero or more import specifications separated by <em>commas</em> <code>,</code> <code class="unicode">(U+002C)</code>. An <strong><a name="import-specification">import specification</a></strong> constitutes a request to import the exported names of a given module, called the <strong>import target</strong>. These names are available for private use only; they are not re-exported to downstream modules. An import specification satisfies the <code>ImportSpecification</code> <a href="http://en.wikipedia.org/wiki/Syntax_diagram">syntax diagram</a>,</p>
 
 <div class="scrolling">
-<p style="text-align: center"><code style="color: black">ImportSpecification</code></p>
+<p style="text-align: center"><code>ImportSpecification</code></p>
 <iframe src="/_images/modules/import-specification.svg" style="margin: auto" seamless></iframe>
 </div>
 
-<p>Where the <a href="http://en.wikipedia.org/wiki/Terminal_and_nonterminal_symbols">terminal</a> <code>module</code> is a <a href="/about-avail/documentation/type-system/types-string.html">string literal</a> that names the <strong>import target</strong>. The import target is an upstream module by virtue of appearing in an import specification.</p>
+<p>where the <a href="http://en.wikipedia.org/wiki/Terminal_and_nonterminal_symbols">terminal</a> <code>module</code> is a <a href="/about-avail/documentation/type-system/types-string.html">string literal</a> that names the import target. The import target is, by definition, an upstream module.</p>
 
-<p><code style="color: black">VersionList</code> specifies a list of version requirements for the import target. It is a <a href="http://en.wikipedia.org/wiki/Terminal_and_nonterminal_symbols">nonterminal</a> that corresponds to the following syntax diagram:</p>
+<p>An import specification contains an optional required versions list. A <strong>required versions list</strong> stipulates what <a href="./active-versions-section.html">active versions</a> of the import target are acceptable for linkage. As such, it is a declaration of compatibility with a particular list of versions. A required versions list satisfies the <a href="http://en.wikipedia.org/wiki/Terminal_and_nonterminal_symbols">nonterminal</a> <code>VersionList</code>, and corresponds to the following syntax diagram,</p>
 
 <div class="scrolling">
-<p style="text-align: center"><code style="color: black">VersionList</code></p>
+<p style="text-align: center"><code>VersionList</code></p>
 <iframe src="/_images/modules/version-list.svg" style="margin: auto" seamless></iframe>
 </div>
 
-<p>Where <code>version</code> is a string literal that denotes an acceptable <a href="./active-versions-section.html">API version</a> of the import target. If the import target advertises no versions in common with the list of version requirements, then the compiler aborts compilation of the <strong>dependent module</strong>, i.e., the module whose header contains the import specification.</p>
+<p>where <code>version</code> is a string literal that denotes an acceptable version of the import target. If the import target advertises no versions in common with the required versions list, then the compiler or executor aborts linkage of the dependent module.</p>
 
-<p><code style="color: black">FilteredImportList</code> specifies a cherry-picked list of exported names from the import target. It is a nonterminal that corresponds to the following syntax diagram:</p>
+<p>If a required versions list is not specified, then no compatibility check is performed. Any version of the import target is therefore considered acceptable, at least in the sense that linking to the import target will not be preemptively aborted. It is still possible that the API of the import target may prove incompatible with the API required by the dependent module.</p>
+
+<p>An import specification contains an optional custom import rules list. A <strong>custom import rules list</strong> cherry-picks exported names from the import target in accordance with a small number of predefined rules. It satisfies the <code>CustomImportRulesList</code> nonterminal, and corresponds to the following syntax diagram,</p>
 
 <div class="scrolling">
-<p style="text-align: center"><code style="color: black">FilteredImportList</code></p>
-<iframe src="/_images/modules/filtered-import-list.svg" style="margin: auto" seamless></iframe>
+<p style="text-align: center"><code>CustomImportRulesList</code></p>
+<iframe src="/_images/modules/custom-import-rules-list.svg" style="margin: auto" seamless></iframe>
 </div>
 
-<p>Where the three terminals embedded in the syntax diagram are:</p>
+<p>where each of the terminals <code>name</code>, <code>rename</code>, and <code>excludedName</code> are string literals. The sundry paths through the syntax diagram represent <strong>custom import rules</strong>, which come in four varieties:</p>
 
+<dl>
+<dt><em><a name="rule1">Importing a name as is.</a></em></dt>
+<dd>This rule is invoked when <code>name</code> occurs alone. In this case, <code>name</code> specifies an <a href="/about-avail/documentation/type-system/types-atom.html">atom</a> exported by the imported target. This atom should be imported into the dependent module, and should be available under its original name.<sup><a href="#fn1">[1]</a></sup> <code>name</code> must not be <a href="#rule3">explicitly excluded from import</a>.</dd>
+
+<dt class="import-rules"><em><a name="rule2">Importing a name as a new name.</a></em></dt>
+<dd>This rule is invoked when <code>name &rarr; rename</code> occurs. <code>name</code> denotes an atom exported by the import target. This atom <em>will not</em> be imported into the dependent module. <code>rename</code> introduces a new atom into the dependent module. If <code>name</code> refers to an existing method, then <code>rename</code> will be made to refer to this method. If <code>name</code> does not refer to a method, then an empty method is created and both <code>name</code> and <code>rename</code> will be made to refer to it. <code>name</code> will not be imported into the dependent module even when <a href="#rule4">importing by wildcard</a>, but it must not be <a href="#rule3">explicitly excluded from import</a>. It is still possible to import <code>name</code> by explicitly <a href="#rule1">importing it as is</a>.</dd>
+
+<dt class="import-rules"><em><a name="rule3">Excluding a name from import.</a></em></dt>
+<dd>This rule is invoked when <code>-excludedName</code> occurs. <code>excludedName</code> denotes an atom that is exported by the import target. This atom <em>will not</em> be imported into the dependent module. Furthermore, <code>name</code> must not be explicitly imported, either <a href="#rule1">as is</a> or <a href="#rule2">under a new name</a>. This rule is only available when <a href="#rule4">importing by wildcard</a>.</dd>
+
+<dt class="import-rules"><em><a name="rule4">Importing by wildcard.</a></em></dt>
+<dd>This rule is invoked when <em>horizontal ellipsis</em> <code>&hellip;</code> <code class="unicode">(U+2026)</code> occurs. Every atom that is exported by the import target is imported <a href="#rule1">as is</a> into the dependent module, with the following exceptions:
 <ul>
-<li><code>name</code>: A string literal that specifies an <a href="/about-avail/documentation/type-system/types-atom.html">atom</a> that should be imported into the dependent module. Though it is sometimes useful to import an atom for its own sake, it is generally the case that the module wishes to gain access to a method named by the atom.</li>
-<li><code>rename</code>: A string literal that introduces a new atom that refers to the same method as the original atom.</li>
-<li><code>excludedName</code>: A string literal that denotes a name that is exported by the import target, but which should not be imported into the dependent module.</li>
+<li>Any name <a href="#rule3">explicitly excluded from import</a> is not included.</li>
+<li>Any name <a href="#rule2">imported under a new name</a> is not included, unless elsewhere in the custom import rules list it is <a href="#rule1">explicitly imported as is</a>.</li>
 </ul>
+When not importing by wildcard, only those names exported by the import target that are explicitly imported <a href="#rule1">as is</a> or under <a href="#rule2">new names</a> will be imported; any name not mentioned <em>will not</em> be imported.
+</dd>
+</dl>
 
-<p>CONTINUE HERE</p>
+<p>A custom import rules list is optional. If it is not specified, then every name exported by the import target will be imported into the dependent module <a href="#rule1">as is</a>; this is the same behavior as specifying a custom import rules list which only <a href="#rule4">imports by wildcard</a>. In practice, omitting the custom import rules list is the most common use case.</p>
+
+<p>And now for some examples:</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block">Module "Hello World"
+Uses "Avail"
+Entries "Greet"
+Body</div></div>
+
+<p><code class="module"><a href="/about-avail/learn/tutorials/hello-world.html">Hello World</a></code> imports every name exported by <code class="module">Avail</code>.</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block">Module "Core"
+Versions
+	"dev"
+Uses
+	"Avail" =
+	(
+		"_+_" → "_+_(Avail)",
+		"_-_" → "_-_(Avail)",
+		"_×_" → "_×_(Avail)",
+		"_÷_" → "_÷_(Avail)",
+		"_mod_" → "_mod_(Avail)",
+		"_^_" → "_^_(Avail)",
+		…
+	),
+	"Feature Renames (Inequalities)"
+Names
+	/* Lots of names elided here. */
+Body</div></div>
+
+<p><code class="module">Core</code>, a <a href="./module-packages.html">submodule</a> of <code class="module">Dimensional Analysis</code>, imports two modules for private use: <code class="module">Avail</code> and <code class="module">Feature Renames (Inequalities)</code>. From <code class="module">Avail</code>, it imports <code>"_+_"</code>, <code>"_-_"</code>, <code>"_&times;_"</code>, <code>"_&divide;_"</code>, <code>"_mod_"</code>, and <code>"_^_"</code>, but <a href="#rule2">renames</a> each so that it has the suffix <code>(Avail)</code>. <a href="#rule4">Everything else</a> exported by <code class="Avail">Avail</code> is imported <a href="#rule1">as is</a>. It imports every name that is exported by <code class="module">Feature Renames (Inequalities)</code>.</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block">Module "Concurrency"
+Versions
+	"dev"
+Uses
+	"Assertions",
+	"Atoms",
+	"Bootstrap",
+	"Casts",
+	"Collections",
+	"Control Structures" =
+	(
+		-"Cast|cast_into_else_",
+		-"Cast|cast_into_",
+		-"Cast|cast_into«_‡,»«else_»",
+		…
+	),
+	"Definers",
+	"Enumeration Support",
+	"Exceptions",
+	"Functions",
+	"Literals",
+	"Logic",
+	"Math",
+	"Objects",
+	"Synchronization",
+	"Tuples",
+	"Types",
+	"Variables"
+Names
+	/* Lots of names elided here. */
+Body</div></div>
+
+<p><code class="module">Concurrency</code>, a indirect submodule of <code class="module">Avail</code>, imports many modules for private use. From most of these, it imports all exported names. But from <code class="module">Control Structures</code>, it imports everything <a href="#rule3">except</a> for <code>"Cast|cast_into_else_"</code>, <code>"Cast|cast_into_"</code>, and <code>"Cast|cast_into&laquo;_&Dagger;,&raquo;&laquo;else_&raquo;"</code>.</p>
+
+<hr/>
+
+<p><small><a name="fn1">[1]</a> Though it is sometimes useful to import an atom for its own sake, it is generally the case that the dependent module wishes to gain access to a method named by the atom.</small></p>
 
 <table class="book-nav">
 	<tr>
