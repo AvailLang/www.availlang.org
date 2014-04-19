@@ -1,0 +1,1 @@
+CheckPragma ::= 'check' '=' property '=' value

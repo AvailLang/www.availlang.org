@@ -1,0 +1,60 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Modules - Extended Imports Section</title>
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+		
+<h2 class="content-title">Extended Imports Section</h2>
+
+<p>The <code>Extends</code> keyword begins the <strong>extended imports section</strong>. The contents of this section are zero or more <a href="./private-imports-section.html">import specifications</a> separated by <em>commas</em> <code>,</code> <code class="unicode">(U+002C)</code>. Any name imported through an import specification is made available for local use in the module body. An extended imports section differs from a <a href="./private-imports-section.html">private imports section</a> in but a single way: any name imported through an import specification is also re-exported for use by downstream modules.</p>
+
+<p>Here is an example from the <a href="/about-avail/learn/index.html">tutorial series</a>:</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block">Module "RPN"
+Uses
+	"Avail"
+Extends
+	"Avail" =
+	(
+		"_+_" → "__+",
+		"_-_" → "__-",
+		"_×_" → "__×",
+		"_×_" → "__*",
+		"_÷_" → "__÷",
+		"_÷_" → "__/"
+	)
+Entries
+	"RPN_"
+Body</div></div>
+
+<p>Via the private imports section, <code class="module">RPN</code> imports every name exported from <code class="module">Avail</code> for private use. Via the extended imports section, it re-exports the basic arithmetic operators under six <a href="./private-imports-section.html#rule2">new names</a>. Because the custom import rules list does not end with a <em><a href="./private-imports-section.html#rule4">horizontal ellipsis</a></em> <code>&hellip;</code> <code class="unicode">(U+2026)</code>, no other names are re-exported.</p>
+
+<table class="book-nav">
+	<tr>
+		<td class="book-nav-back"><a class="book-nav-back" href="./private-imports-section.html">‹ Private Imports Section</a></td>
+		<td class="book-nav-spacer">|</td>
+		<td class="book-nav-up"><a class="book-nav-up" href="./index.html">Return to Modules</a></td>
+		<td class="book-nav-spacer">|</td>
+		<td class="book-nav-forward"><a class="book-nav-forward" href="./pragmas-section.html">Pragmas Section ›</a></td>
+	</tr>
+</table>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>

@@ -1,0 +1,109 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Modules - Pragmas Section</title>
+		<style>
+		.pragma-kind
+		{
+			margin-top: 30px;
+		}
+		.check-kind
+		{
+			color: fuchsia;
+		}
+		</style>
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+		
+<h2 class="content-title">Pragmas Section</h2>
+
+<p><strong>Attention:</strong> <em>This section is included for completeness only, and is unlikely to prove valuable except to <strong>1)</strong> those who wish to bootstrap an Avail system</em> ex nihilo <em>or <strong>2)</strong> the incurably curious who wish to <a href="http://www.phrases.org.uk/meanings/70800.html">bone up</a> on Avail trivia for some reason. It is recommended that most readers skip this section. If you are reading the</em> <a href="./index.html">Module</a> <em>series in order, then you should skip ahead to </em><a href="./module-packages.html">Module Packages</a></em><em>.</em></p>
+
+<p>The <code>Pragmas</code> keyword begins the <strong>pragmas section</strong>. The contents of this section are zero or more string literals separated by <em>commas</em> <code>,</code> <code class="unicode">(U+002C)</code>. Each string literal encodes a pragma; the enclosing <em>quotation marks</em> <code>"</code> <code class="unicode">(U+0022)</code> are not part of the syntax of a pragma. A <strong>pragma</strong><sup><a href="#fn1">[1]</a></sup> is a <a href="http://en.wikipedia.org/wiki/Directive_(programming)">special directive</a> to the system. There are three distinct kinds of pragma:</p>
+
+<dl>
+<dt><code>check</code></dt>
+<dd>A <code>check</code> pragma asserts that some quality of the Avail virtual machine is compatible with the module. A <code>check</code> pragma comprises the <code>check</code> keyword, then an <em>equals sign</em> <code>=</code> <code class="unicode">(U+003D)</code>, then a <strong>property</strong>, then an equals sign, then a <strong>value</strong>:
+
+<div class="scrolling">
+<iframe src="/_images/modules/check-pragma.svg" style="margin-top: 15px; margin-bottom: 15px; margin-left: auto; margin-right: auto" seamless></iframe>
+</div>
+
+Where <code>property</code> is the property, and <code>value</code> is the property value. The format and character of the value is determined by the property. The supported properties are:
+
+	<dl>
+	<dt><code class="check-kind">version</code></dt>
+	<dd>The property value is a comma-separated list of <strong>acceptable virtual machine versions</strong>. This is analogous to the required versions list of an <a href="./private-imports-section.html#import-specification">import specification</a>; it is not homologous, however, because the versions of the property value are not enclosed in quotation marks (and thus cannot contain commas). The Avail virtual machine maintains an internal list of <strong>supported virtual machine versions</strong>, analogous to the <a href="./active-versions-section.html">active versions section</a> of a module. When the pragma is processed, if there are no versions are in common between these two lists, then an error message is displayed and the virtual machine halts.</dd>
+	</dl>
+</dd>
+
+<dt class="pragma-kind"><code>method</code></dt>
+<dd>A <code>method</code> pragma introduces a new <a href="/about-avail/documentation/type-system/types-atom.html">atom</a> and associates it with the primitive function designated by the specified primitive number. A <code>method</code> pragma comprises the <code>method</code> keyword, then an equals sign, then a <strong>primitive number</strong>, then an equals sign, then a canonical message.
+
+<div class="scrolling">
+<iframe src="/_images/modules/method-pragma.svg" style="margin-top: 15px; margin-bottom: 15px; margin-left: auto; margin-right: auto" seamless></iframe>
+</div>
+
+Where <code>primitiveNumber</code> is the primitive number and <code>message</code> is the message. The arity of the message must agree with the arity of the primitive function. If a send of the message fails for any reason, then the primitive fails as if by sending <code>"Crash:_"</code> to a 2-<a href="/about-avail/documentation/type-system/types-tuple.html">tuple</a> whose first element is the failure code and whose second element is a tuple of the primitive function's arguments.</dd>
+
+<dt class="pragma-kind"><code>stringify</code></dt>
+<dd>A <code>stringify</code> pragma tells the Avail virtual machine what message it should send in order to stringify an arbitrary value. Whenever the compiler or executor is called upon to render a textual description of a value &mdash; for example, when the compiler emits an error message &mdash; this message is sent to the value. A <code>stringify</code> pragma comprises the <code>stringify</code> keyword, then an equals sign, then a canonical message:
+
+<div class="scrolling">
+<iframe src="/_images/modules/stringify-pragma.svg" style="margin-top: 15px; margin-bottom: 15px; margin-left: auto; margin-right: auto" seamless></iframe>
+</div>
+
+Where <code>message</code> is the stringification message. The stringification message must have an arity of 1. If stringification fails for any reason, then the system falls back on the internal mechanism used by <code>"primitive descriptive of_"</code> to render a textual description of the value, prepending a parenthetical indication that the attempt to stringfy failed.
+</dd>
+</dl>
+
+<p>At the time of writing, the only module that contains a pragmas section is <code class="module">Origin</code>, the indirect <a href="./module-packages.html">submodule</a> of <code class="module">Avail</code> that serves as the root of the entire system. It is presented here in the fullness of its majesty:</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block">Module "Origin"
+Versions
+	"dev"
+Extends
+Uses
+Names
+	"Primitive_is_",
+	"special object_",
+	"“_”"
+Pragma
+	"check=version=1.0.0 DEV 2014-04-28",
+	"method=253=Primitive_is_",
+	"method=240=special object_",
+	"stringify=“_”"
+Body</div></div>
+
+<hr/>
+
+<p><small><a href="#fn1">[1]</a> The term "pragma" is an abbreviation of "pragmatic".</small></p>
+
+<table class="book-nav">
+	<tr>
+		<td class="book-nav-back"><a class="book-nav-back" href="./extended-imports-section.html">‹ Extended Imports Section</a></td>
+		<td class="book-nav-spacer">|</td>
+		<td class="book-nav-up"><a class="book-nav-up" href="./index.html">Return to Modules</a></td>
+		<td class="book-nav-spacer">|</td>
+		<td class="book-nav-forward"><a class="book-nav-forward" href="./module-packages.html">Module Packages ›</a></td>
+	</tr>
+</table>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>
