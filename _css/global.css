@@ -46,6 +46,7 @@ body, button, input, select, textarea {
 h1, h2, h3, h4, h5 {
 	color: green;
 	font-family: 'Raleway', sans-serif;
+	clear: both;
 }
 h2 {
 	font-size: 22px;
@@ -68,6 +69,14 @@ h5 {
 	margin-bottom: 6px;
 }
 
+img.top-right-screenshot {
+	margin-bottom: 15px;
+	margin-left: 15px;
+}
+
+img.full-line-screenshot {
+	clear: both;
+}
 
 /********** Custom visual styles **********/
 
@@ -86,7 +95,7 @@ h5 {
 }
 
 body.gradient-logo {
-	background-image: url(/_images/GreenBackground2.png);
+	background-image: url(/_images/site-background.png);
 	background-repeat: no-repeat;
 	background-color: rgb(248,248,248); 
 }
@@ -208,7 +217,8 @@ body.gradient-logo {
      /*** Main Content ***/
 
 .content-wrapper {	
-	/* Default to no left margin because of vertical inline */
+	/* Default to no left margin because of vertical inline. */
+	
 }
 
 .content {
@@ -495,16 +505,30 @@ a.footer {
 	.search-bar {
 		width: 300px;
 	}
+	
+	.nav-wrapper {
+	
+		/* Add additional margin to compensate for changes due to content width restriciton. */
+		margin-top: 20px;
+	}
 
 	.content-wrapper {	
 		/* Larger space induces a right margin */
 		margin-right: 150px;
+		
+		/* Allow the restricted-width content pane to be centered within the window. */
+		text-align: center;
 	}
 
 	.content {
 		/* Increased padding when the screen width is a reasonable size */
 		padding: 40px;
 		padding-bottom: 30px;
+				
+		/* Restrict the width of the content pane to improve readability on very wide screens. */
+		max-width: 1000px;
+		display: inline-block;
+		text-align: left;
 	}
 	
 	.code-block {
