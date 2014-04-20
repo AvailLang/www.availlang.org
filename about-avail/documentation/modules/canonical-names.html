@@ -1,0 +1,77 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Modules - Canonical Names</title>
+
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+		
+<h2 class="content-title">Canonical Names</h2>
+
+<p>In addition to the <a href="./module-name-section.html">local name</a>, every module also has a canonical name. The <strong>canonical name</strong> is a module root-relative logical name. A module's canonical name comprises a <em>solidus</em> <code>/</code> <code class="unicode">(U+002F)</code>, then a module root name, then zero or many solidus-separated local names of enclosing packages, then a solidus, then the module's local name:</p>
+
+<div class="scrolling">
+<iframe src="/_images/modules/canonical-name.svg" style="margin: auto" seamless></iframe>
+</div>
+
+<p>Consider the following file system structure:</p>
+
+<div class="restricted-width-container">
+<div class="console code-block">/avail
+	Avail.avail/
+		Advanced Math.avail/ 
+		Data Abstractions.avail/
+		Foundation.avail/
+			Bootstrap.avail/
+				Bootstrap.avail
+				Error Codes.avail
+				Fallible Primitives.avail
+				Infallible Primitives.avail
+				Origin.avail
+				Primitives.avail
+				Special Objects.avail
+		IO.avail/
+		Unit Testing.avail/
+		Avail.avail</div></div>
+
+<p>This is an abridged file system snapshot of the <code>avail</code> module root. The local name of the source module <code>Infallible Primitives.avail</code> is <code class="module">Infallible Primitives</code>, and its canonical name is <code class="module">/avail/Avail/Foundation/Bootstrap/Infallible Primitives</code>. A module package representative is treated as having the same canonical name as its enclosing package. Therefore the canonical name of the <code>Bootstrap.avail</code> representative is <code class="module">/avail/Avail/Foundation/Bootstrap</code>.</p>
+
+<p>The canonical names of modules never appear in a <a href="./module-headers.html">module header</a>. Import targets, such as are found in the <a href="./private-imports-section.html">private imports</a> and <a href="./extended-imports-section.html">extended imports</a> sections, must be specified as local names. The programmer is forbidden from using a canonical name to specify an import target. This is a design point of Avail, and is not intended as a limitation, but rather a transfer of responsibility from the programmer to the system.<sup><a href="#fn1">[1]</a></sup> This does not absolve the programmer of all responsibility, however, because the programmer still has the obligations of:</p>
+
+<ol>
+<li>Correctly placing the modules into the file system in the first place so that they can be <a href="./module-discovery.html">discovered</a> at all.</li>
+<li>Understanding how the compiler or executor resolves local names to modules.</li>
+<li>Providing a suitable module renames file in the rare event that the programmer wishes to bypass the usual module resolution mechanism for a few specific cases.</li>
+</ol>
+
+<hr/>
+
+<p><small><a name="fn1">[1]</a> In most traditional programming languages, the burden of locating an import target falls to the programmer, who often has to supply a fully-qualified logical path.</small></p>
+
+<table class="book-nav">
+	<tr>
+		<td class="book-nav-back"><a class="book-nav-back" href="./module-discovery.html">‹ Module Discovery</a></td>
+		<td class="book-nav-spacer">|</td>
+		<td class="book-nav-up"><a class="book-nav-up" href="./index.html">Return to Modules</a></td>
+		<td class="book-nav-spacer">|</td>
+		<td class="book-nav-forward"><a class="book-nav-forward" href="./module-renaming.html">Module Renaming ›</a></td>
+	</tr>
+</table>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>
