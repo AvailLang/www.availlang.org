@@ -1,0 +1,3 @@
+ModuleRootsPath ::= (ModuleRootSpecification (';' ModuleRootSpecification)*)?
+ModuleRootSpecification ::= moduleRootName '=' ModuleRootPath
+ModuleRootPath ::= sourcePath ',' binaryRepositoryPath
