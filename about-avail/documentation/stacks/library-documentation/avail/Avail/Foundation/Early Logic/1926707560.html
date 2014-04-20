@@ -1,0 +1,228 @@
+<!doctype html>
+<!--[if lt IE 7]>
+ 	<html class="ie6 oldie">
+<![endif]-->
+<!--[if IE 7]>
+	<html class="ie7 oldie">
+<![endif]-->
+<!--[if IE 8]>
+	<html class="ie8 oldie">
+<![endif]-->
+	<!--[if gt IE 8]>
+	<!-->
+<html class="">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
+		<!--#include virtual="/_include/head.ssi" -->
+		<title>Avail - Library</title>
+	</head>
+	<body ng-app="stacksApp" ng-controller="CategoriesCntrl">
+		<div class="stacks-wrapper">
+	<h2 class="method-heading">_∨_</h2>
+	<h4 class="method-section-header">Grammatical restrictions:</h4>
+	<div class="method-section-content">
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th style="white-space:nowrap" class="stacks g-col-label-narrow" scope="col">Argument Position</th>
+					<th class="stacks g-col-label-wide" scope="col">Prohibited Expression</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="stacks g-code" rowspan="7">Argument 1</td>
+					<td class="stacks g-code">_∨_</td>
+				</tr>
+				<tr>
+					<td class="stacks g-code">_→_</td>
+				</tr>
+				<tr>
+					<td class="stacks g-code">_↔_</td>
+				</tr>
+				<tr>
+					<td class="stacks g-code">_←_</td>
+				</tr>
+				<tr>
+					<td class="stacks g-code">_⊕_</td>
+				</tr>
+				<tr>
+					<td class="stacks g-code">_↛_</td>
+				</tr>
+				<tr>
+					<td class="stacks g-code">_↚_</td>
+				</tr>
+					<td class="stacks g-code" rowspan="8">Argument 2</td>
+					<td class="stacks g-code">_∧_</td>
+				</tr>
+				<tr>
+					<td class="stacks g-code">_∨_</td>
+				</tr>
+				<tr>
+					<td class="stacks g-code">_⊕_</td>
+				</tr>
+				<tr>
+					<td class="stacks g-code">_→_</td>
+				</tr>
+				<tr>
+					<td class="stacks g-code">_↔_</td>
+				</tr>
+				<tr>
+					<td class="stacks g-code">_←_</td>
+				</tr>
+				<tr>
+					<td class="stacks g-code">_↛_</td>
+				</tr>
+				<tr>
+					<td class="stacks g-code">_↚_</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<h4 class="method-section-header">Implementations:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">boolean, []→boolean</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Early Logic</div>
+		<div class="category-list"><em>Categories:</em> Primitives, Logic</div>
+		<div class="signature-description">
+			Compute and answer the logical disjunction, i.e., OR, of the arguments. Short-circuit the computation, i.e., only evaluate <a href="#b1058580268">b</a> if <a href="#a1058580268">a</a> is <a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html">false</a> .
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="a1058580268" class="stacks i-code">a</td>
+					<td class="stacks i-code">boolean</td>
+					<td class="stacks i-desc">
+						A boolean.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="b1058580268" class="stacks i-code">b</td>
+					<td class="stacks i-code">[]→boolean</td>
+					<td class="stacks i-desc">
+						A boolean function.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code">boolean</td>
+					<td class="stacks i-desc">
+						<a href="#a1058580268">a</a> ∨ <a href="#b1058580268">b</a> .
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<h4 class="method-section-header">Semantic restrictions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">boolean's type, []→boolean's type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Early Logic</div>
+		<div class="signature-description">
+			If the right-hand argument of <a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early Logic/1926707560.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early Logic/1926707560.html">_∨_</a> is known statically to be <a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html">true</a> , then the expression is also known statically to be <a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html">true</a> .
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent"scope="col"></th>
+					<th class="stacks i-col-label-narrow"scope="col">Type</th>
+					<th class="stacks i-col-label-wide"scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label"rowspan="3">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="boolean's type521134880" class="stacks i-code">boolean's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="[]→boolean's type521134880" class="stacks i-code">[]→boolean's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">false's type's type, []→boolean's type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Early Logic</div>
+		<div class="signature-description">
+			If the left-hand argument of <a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early Logic/1926707560.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early Logic/1926707560.html">_∨_</a> is known statically to be <a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html">false</a> , then the static type of the expression is <a href="#b1923117073">b</a> 's return type.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent"scope="col"></th>
+					<th class="stacks i-col-label-narrow"scope="col">Type</th>
+					<th class="stacks i-col-label-wide"scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label"rowspan="3">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="false's type's type1923117073" class="stacks i-code">false's type's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="[]→boolean's type1923117073" class="stacks i-code">[]→boolean's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">true's type's type, []→boolean's type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Early Logic</div>
+		<div class="signature-description">
+			If the left-hand argument of <a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early Logic/1926707560.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early Logic/1926707560.html">_∨_</a> is known statically to be <a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html">true</a> , then the expression is also known statically to be <a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html">true</a> .
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent"scope="col"></th>
+					<th class="stacks i-col-label-narrow"scope="col">Type</th>
+					<th class="stacks i-col-label-wide"scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label"rowspan="3">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="true's type's type-731720936" class="stacks i-code">true's type's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="[]→boolean's type-731720936" class="stacks i-code">[]→boolean's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+		</div>
+	</body>
+</html>
+			

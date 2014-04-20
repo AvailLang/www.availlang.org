@@ -20,7 +20,7 @@
 		
 <h2 class="content-title">Module Name Section</h2>
 
-<p>The <code>Module</code> keyword begins the <strong>module name section</strong>. The module name section must be the first section of every module header. Following this keyword is a <a href="/about-avail/documentation/type-system/types-string.html">string literal</a> that names the module. This name is the logical name of the module. As such it must match the file name, but must not include the <code>.avail</code> file extension. For example, a module named <code class="module">Foo</code> must reside in a file whose name is <code class="module">Foo.avail</code>, and its module name section should look like this:</p>
+<p>The <code>Module</code> keyword begins the <strong>module name section</strong>. The module name section must be the first section of every module header. Following this keyword is a <a href="/about-avail/documentation/type-system/types-string.html">string literal</a> that specifies the <strong>local name</strong> of the module. The local name is a logical name, not a file system reference. As such it must match the file name, but must not include the <code>.avail</code> file extension. For example, a module named <code class="module">Foo</code> must reside in a file whose name is <code class="module">Foo.avail</code>, and its module name section should look like this:</p>
 
 <div class="restricted-width-container">
 <div class="neutral-code code-block">Module "Foo"</div></div>
@@ -36,7 +36,7 @@
 <div class="restricted-width-container">
 <div class="bad-code code-block">Module "     Foo"</div></div>
 
-<p>Module names occurring anywhere within a module header must never include a <code>.avail</code> file extension. A module name is a logical reference, not a file system reference. Under usual circumstances, module names are resolved to file system paths via the standard <a href="./module-resolution.html">module resolution</a> mechanism.</p>
+<p>Local names occurring anywhere within a module header must never include a <code>.avail</code> file extension. Under usual circumstances, local names are resolved to file system paths via the standard <a href="./module-resolution.html">module resolution</a> mechanism.</p>
 
 <table class="book-nav">
 	<tr>

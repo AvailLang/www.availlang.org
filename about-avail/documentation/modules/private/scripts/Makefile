@@ -22,6 +22,8 @@ install: compile
 	$(CP) module-roots-path.svg $(TARGETDIR)
 	$(CP) module-root-specification.svg $(TARGETDIR)
 	$(CP) module-root-path.svg $(TARGETDIR)
+	$(CP) canonical-name.svg $(TARGETDIR)
+	$(CP) module-renames-file.svg $(TARGETDIR)
 
 clean:
 	@rm -f $(SVGS)

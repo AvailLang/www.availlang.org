@@ -1,0 +1,124 @@
+<!doctype html>
+<!--[if lt IE 7]>
+ 	<html class="ie6 oldie">
+<![endif]-->
+<!--[if IE 7]>
+	<html class="ie7 oldie">
+<![endif]-->
+<!--[if IE 8]>
+	<html class="ie8 oldie">
+<![endif]-->
+	<!--[if gt IE 8]>
+	<!-->
+<html class="">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
+		<!--#include virtual="/_include/head.ssi" -->
+		<title>Avail - Library</title>
+	</head>
+	<body ng-app="stacksApp" ng-controller="CategoriesCntrl">
+		<div class="stacks-wrapper">
+	<h2 class="method-heading">«Recursively»?Unlink|unlink_«if necessary»?«,⁇following symlinks»?</h2>
+	<h4 class="method-section-header">Implementations:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">boolean, file name, boolean, boolean</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/IO/Files/File Management</div>
+		<div class="category-list"><em>Categories:</em> Unclassified</div>
+		<div class="signature-description">
+			Unlink <a href="#fn-1121267683">fn</a> . If no links remaining in the file system to the underlying <code>file</code> , then the <code>file</code> is deleted. *
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="5">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="recursive-1121267683" class="stacks i-code">recursive</td>
+					<td class="stacks i-code">boolean</td>
+					<td class="stacks i-desc">
+						Unlink <a href="#fn-1121267683">fn</a> recursively.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="fn-1121267683" class="stacks i-code">fn</td>
+					<td class="stacks i-code">file name</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="dontRequireExistence-1121267683" class="stacks i-code">dontRequireExistence</td>
+					<td class="stacks i-code">boolean</td>
+					<td class="stacks i-desc">
+						<a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html">true</a> if <a href="#fn-1121267683">fn</a> need not name an existing file, <a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html">false</a> if it must.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="followSymlinks-1121267683" class="stacks i-code">followSymlinks</td>
+					<td class="stacks i-code">boolean</td>
+					<td class="stacks i-desc">
+						<a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html">true</a> if symbolic links should be followed during traversal, <a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html">false</a> otherwise. Applies to recursive unlinking only.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code">⊤</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+					<th class="stacks i-row-label" colspan="2" rowspan="7">Raises</th>
+				<tr class="methodParameters">
+					<td class="stacks i-code">invalid-path exception</td>
+					<td class="stacks i-desc">
+						If <a href="#fn-1121267683">fn</a> cannot be understood as a path.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">partial-success exception</td>
+					<td class="stacks i-desc">
+						If <a href="#recursive-1121267683">recursive</a> is <a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html">true</a> and at least one file could not be unlinked for any reason.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">permission-denied exception</td>
+					<td class="stacks i-desc">
+						If permission is denied to use the specified <a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Files/File Names/2413129019.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Files/File Names/2413129019.html">file name</a> .
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">no-file exception</td>
+					<td class="stacks i-desc">
+						If <a href="#dontRequireExistence-1121267683">dontRequireExistence</a> is <a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html">false</a> and <a href="#fn-1121267683">fn</a> does not exist.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">directory-not-empty exception</td>
+					<td class="stacks i-desc">
+						If <a href="#recursive-1121267683">recursive</a> is <a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html">false</a> and <a href="#fn-1121267683">fn</a> names a non-empty directory.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">I/O exception</td>
+					<td class="stacks i-desc">
+						If an I/O error occurs for any reason.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+		</div>
+	</body>
+</html>
+			

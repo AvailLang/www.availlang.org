@@ -1,0 +1,241 @@
+<!doctype html>
+<!--[if lt IE 7]>
+ 	<html class="ie6 oldie">
+<![endif]-->
+<!--[if IE 7]>
+	<html class="ie7 oldie">
+<![endif]-->
+<!--[if IE 8]>
+	<html class="ie8 oldie">
+<![endif]-->
+	<!--[if gt IE 8]>
+	<!-->
+<html class="">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
+		<!--#include virtual="/_include/head.ssi" -->
+		<title>Avail - Library</title>
+	</head>
+	<body ng-app="stacksApp" ng-controller="CategoriesCntrl">
+		<div class="stacks-wrapper">
+	<h2 class="method-heading">Require:_accepts_</h2>
+	<h4 class="method-section-header">Implementations:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">[⊥]→⊤'s type, stream's type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Streams/Abstract Streams</div>
+		<div class="category-list"><em>Categories:</em> Unclassified</div>
+		<div class="signature-description">
+			Helper method for semantic restrictions: If `action` does not accept the element type of `streamType`, then reject the current parse.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="actionType472758345" class="stacks i-code">actionType</td>
+					<td class="stacks i-code">[⊥]→⊤'s type</td>
+					<td class="stacks i-desc">
+						action - A function type whose sole parameter must correspond to the element type of `streamType`.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="streamType472758345" class="stacks i-code">streamType</td>
+					<td class="stacks i-code">stream's type</td>
+					<td class="stacks i-desc">
+						streamType - A stream type.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code">⊤</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">function meta, set meta</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Sets</div>
+		<div class="category-list"><em>Categories:</em> Assertions, Sets, Types</div>
+		<div class="signature-description">
+			Helper method for semantic restrictions: If <a href="#action-1095094970">action</a> does not accept the element types of <a href="#setType-1095094970">setType</a> , then reject the current parse.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="action-1095094970" class="stacks i-code">action</td>
+					<td class="stacks i-code">function meta</td>
+					<td class="stacks i-desc">
+						A function type whose first argument must correspond to the element type of <a href="#setType-1095094970">setType</a> .
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="setType-1095094970" class="stacks i-code">setType</td>
+					<td class="stacks i-code">set meta</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code">⊤</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">[⊥]→⊤'s type, iterator's type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Iterators/Abstract Iterators</div>
+		<div class="category-list"><em>Categories:</em> Data Abstractions</div>
+		<div class="signature-description">
+			Helper method for semantic restrictions: If `action` does not accept the element type of `iteratorType`, then reject the current parse.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="action2085961039" class="stacks i-code">action</td>
+					<td class="stacks i-code">[⊥]→⊤'s type</td>
+					<td class="stacks i-desc">
+						A function type whose sole parameter must correspond to the element type of `iteratorType`.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="iteratorType2085961039" class="stacks i-code">iteratorType</td>
+					<td class="stacks i-code">iterator's type</td>
+					<td class="stacks i-desc">
+						An iterator type.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code">⊤</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">function meta, map meta</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Maps</div>
+		<div class="category-list"><em>Categories:</em> Unclassified</div>
+		<div class="signature-description">
+			Helper method for semantic restrictions: If `action` does not accept the key and value types of `mapType`, then reject the current parse.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="action32670412" class="stacks i-code">action</td>
+					<td class="stacks i-code">function meta</td>
+					<td class="stacks i-desc">
+						A function type whose first two arguments must correspond to the key and value types of <a href="#mapType32670412">mapType</a> .
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="mapType32670412" class="stacks i-code">mapType</td>
+					<td class="stacks i-code">map meta</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code">⊤</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">function's type, tuple's type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Concurrency</div>
+		<div class="category-list"><em>Categories:</em> Unclassified</div>
+		<div class="signature-description">
+			Require that the specified function type is applicable to the specified argument types. If the function type is not sufficiently well known, then no checks are possible. Otherwise, reject a parse if appropriate. *
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="functionType156436838" class="stacks i-code">functionType</td>
+					<td class="stacks i-code">function's type</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="argumentsType156436838" class="stacks i-code">argumentsType</td>
+					<td class="stacks i-code">tuple's type</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code">⊤</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+		</div>
+	</body>
+</html>
+			

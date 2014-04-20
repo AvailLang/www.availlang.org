@@ -1,0 +1,222 @@
+<!doctype html>
+<!--[if lt IE 7]>
+ 	<html class="ie6 oldie">
+<![endif]-->
+<!--[if IE 7]>
+	<html class="ie7 oldie">
+<![endif]-->
+<!--[if IE 8]>
+	<html class="ie8 oldie">
+<![endif]-->
+	<!--[if gt IE 8]>
+	<!-->
+<html class="">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
+		<!--#include virtual="/_include/head.ssi" -->
+		<title>Avail - Library</title>
+	</head>
+	<body ng-app="stacksApp" ng-controller="CategoriesCntrl">
+		<div class="stacks-wrapper">
+	<h2 class="method-heading">_×_</h2>
+	<h4 class="method-section-header">Grammatical restrictions:</h4>
+	<div class="method-section-content">
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th style="white-space:nowrap" class="stacks g-col-label-narrow" scope="col">Argument Position</th>
+					<th class="stacks g-col-label-wide" scope="col">Prohibited Expression</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="stacks g-code" rowspan="2">Argument 1</td>
+					<td class="stacks g-code">_+_</td>
+				</tr>
+				<tr>
+					<td class="stacks g-code">_-_</td>
+				</tr>
+					<td class="stacks g-code" rowspan="5">Argument 2</td>
+					<td class="stacks g-code">_×_</td>
+				</tr>
+				<tr>
+					<td class="stacks g-code">_÷_</td>
+				</tr>
+				<tr>
+					<td class="stacks g-code">_mod_</td>
+				</tr>
+				<tr>
+					<td class="stacks g-code">_+_</td>
+				</tr>
+				<tr>
+					<td class="stacks g-code">_-_</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<h4 class="method-section-header">Implementations:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">extended integer's type, extended integer's type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Math</div>
+		<div class="category-list"><em>Categories:</em> Mathematics, Integers, Types</div>
+		<div class="signature-description">
+			Compute and answer the integer range type of the product of the argument types.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="a1082241166" class="stacks i-code">a</td>
+					<td class="stacks i-code">extended integer's type</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="b1082241166" class="stacks i-code">b</td>
+					<td class="stacks i-code">extended integer's type</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code">extended integer's type</td>
+					<td class="stacks i-desc">
+						The narrowest integer range type general enough to hold all possible products of the arguments' instances.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">number, number</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Fallible Primitives</div>
+		<div class="category-list"><em>Categories:</em> Primitives</div>
+		<div class="signature-description">
+			Compute and answer the product of the arguments. *
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="multiplicand-969282766" class="stacks i-code">multiplicand</td>
+					<td class="stacks i-code">number</td>
+					<td class="stacks i-desc">
+						The multiplicand.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="multiplier-969282766" class="stacks i-code">multiplier</td>
+					<td class="stacks i-code">number</td>
+					<td class="stacks i-desc">
+						The multiplier.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code">number</td>
+					<td class="stacks i-desc">
+						The product of the multiplicand and the multiplier.
+					</td>
+				</tr>
+					<th class="stacks i-row-label" colspan="2" rowspan="2">Raises</th>
+				<tr class="methodParameters">
+					<td class="stacks i-code">cannot-multiply-zero-and-infinity exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<h4 class="method-section-header">Semantic restrictions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">extended integer's type, extended integer's type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Math</div>
+		<div class="signature-description">
+			Compute and answer the integer range type of the product of the argument types.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent"scope="col"></th>
+					<th class="stacks i-col-label-narrow"scope="col">Type</th>
+					<th class="stacks i-col-label-wide"scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label"rowspan="3">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="extended integer's type1082241166" class="stacks i-code">extended integer's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="extended integer's type1082241166" class="stacks i-code">extended integer's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">number, number</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Early Math</div>
+		<div class="signature-description">
+			
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent"scope="col"></th>
+					<th class="stacks i-col-label-narrow"scope="col">Type</th>
+					<th class="stacks i-col-label-wide"scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label"rowspan="3">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="number-969282766" class="stacks i-code">number</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="number-969282766" class="stacks i-code">number</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+		</div>
+	</body>
+</html>
+			

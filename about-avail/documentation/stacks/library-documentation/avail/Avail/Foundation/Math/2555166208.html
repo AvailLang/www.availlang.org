@@ -1,0 +1,195 @@
+<!doctype html>
+<!--[if lt IE 7]>
+ 	<html class="ie6 oldie">
+<![endif]-->
+<!--[if IE 7]>
+	<html class="ie7 oldie">
+<![endif]-->
+<!--[if IE 8]>
+	<html class="ie8 oldie">
+<![endif]-->
+	<!--[if gt IE 8]>
+	<!-->
+<html class="">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
+		<!--#include virtual="/_include/head.ssi" -->
+		<title>Avail - Library</title>
+	</head>
+	<body ng-app="stacksApp" ng-controller="CategoriesCntrl">
+		<div class="stacks-wrapper">
+	<h2 class="method-heading">-_</h2>
+	<h4 class="method-section-header">Grammatical restrictions:</h4>
+	<div class="method-section-content">
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th style="white-space:nowrap" class="stacks g-col-label-narrow" scope="col">Argument Position</th>
+					<th class="stacks g-col-label-wide" scope="col">Prohibited Expression</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="stacks g-code" rowspan="9">Argument 1</td>
+					<td class="stacks g-code">_×_</td>
+				</tr>
+				<tr>
+					<td class="stacks g-code">_÷_</td>
+				</tr>
+				<tr>
+					<td class="stacks g-code">_mod_</td>
+				</tr>
+				<tr>
+					<td class="stacks g-code">_+_</td>
+				</tr>
+				<tr>
+					<td class="stacks g-code">_-_</td>
+				</tr>
+				<tr>
+					<td class="stacks g-code">-_</td>
+				</tr>
+				<tr>
+					<td class="stacks g-code">«_‡max»</td>
+				</tr>
+				<tr>
+					<td class="stacks g-code">«_‡min»</td>
+				</tr>
+				<tr>
+					<td class="stacks g-code">∞</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<h4 class="method-section-header">Implementations:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">number</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Math</div>
+		<div class="category-list"><em>Categories:</em> Mathematics, Numbers</div>
+		<div class="signature-description">
+			Negate the argument. Avail's system dialect has no negative numeric literals, but the associated semantic restriction effectively overcomes this limitation (for literal arguments).
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="2">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="a-610592403" class="stacks i-code">a</td>
+					<td class="stacks i-code">number</td>
+					<td class="stacks i-desc">
+						A number.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code">number</td>
+					<td class="stacks i-desc">
+						The negation of the argument.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">extended integer's type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Math</div>
+		<div class="category-list"><em>Categories:</em> Mathematics, Integers, Types</div>
+		<div class="signature-description">
+			Compute and answer the negation of the specified integral type.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="2">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="a-1134593859" class="stacks i-code">a</td>
+					<td class="stacks i-code">extended integer's type</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code">extended integer's type</td>
+					<td class="stacks i-desc">
+						The negation of the argument, e.g., the negation of <code>[3..5]</code> is <code>[-5..-3]</code> .
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<h4 class="method-section-header">Semantic restrictions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">number's type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Math</div>
+		<div class="signature-description">
+			Compute and answer the strongest possible type of the argument. In particular, an instance type will result in a precise answer that has the same force as a literal.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent"scope="col"></th>
+					<th class="stacks i-col-label-narrow"scope="col">Type</th>
+					<th class="stacks i-col-label-wide"scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label"rowspan="2">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="number's type374811823" class="stacks i-code">number's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">extended integer's type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Math</div>
+		<div class="signature-description">
+			Strengthen negation.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent"scope="col"></th>
+					<th class="stacks i-col-label-narrow"scope="col">Type</th>
+					<th class="stacks i-col-label-wide"scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label"rowspan="2">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="extended integer's type-1134593859" class="stacks i-code">extended integer's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+		</div>
+	</body>
+</html>
+			

@@ -1,0 +1,812 @@
+<!doctype html>
+<!--[if lt IE 7]>
+ 	<html class="ie6 oldie">
+<![endif]-->
+<!--[if IE 7]>
+	<html class="ie7 oldie">
+<![endif]-->
+<!--[if IE 8]>
+	<html class="ie8 oldie">
+<![endif]-->
+	<!--[if gt IE 8]>
+	<!-->
+<html class="">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
+		<!--#include virtual="/_include/head.ssi" -->
+		<title>Avail - Library</title>
+	</head>
+	<body ng-app="stacksApp" ng-controller="CategoriesCntrl">
+		<div class="stacks-wrapper">
+	<h2 class="method-heading">_[_]</h2>
+	<h4 class="method-section-header">Grammatical restrictions:</h4>
+	<div class="method-section-content">
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th style="white-space:nowrap" class="stacks g-col-label-narrow" scope="col">Argument Position</th>
+					<th class="stacks g-col-label-wide" scope="col">Prohibited Expression</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="stacks g-code" rowspan="2">Argument 1</td>
+					<td class="stacks g-code">«_‡++»</td>
+				</tr>
+				<tr>
+					<td class="stacks g-code">current fiber</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<h4 class="method-section-header">Implementations:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">tuple meta, natural number</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Infallible Primitives</div>
+		<div class="category-list"><em>Categories:</em> Primitives</div>
+		<div class="signature-description">
+			Answer the element type of the <a href="#index1606346569">index</a> -th element of instances of the specified type. If <a href="#index1606346569">index</a> is out of bounds, then answer ⊥. *
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="aTupleType1606346569" class="stacks i-code">aTupleType</td>
+					<td class="stacks i-code">tuple meta</td>
+					<td class="stacks i-desc">
+						A tuple type.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="index1606346569" class="stacks i-code">index</td>
+					<td class="stacks i-code">natural number</td>
+					<td class="stacks i-desc">
+						The index of the desired element type.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code">(any)'s type</td>
+					<td class="stacks i-desc">
+						The requested element type, or ⊥ if <a href="#index1606346569">index</a> is out of bounds.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">tuple, natural number</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Fallible Primitives</div>
+		<div class="category-list"><em>Categories:</em> Primitives</div>
+		<div class="signature-description">
+			Answer the <a href="#index320923268">index</a> -th element of <a href="#aTuple320923268">aTuple</a> . *
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="aTuple320923268" class="stacks i-code">aTuple</td>
+					<td class="stacks i-code">tuple</td>
+					<td class="stacks i-desc">
+						A tuple.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="index320923268" class="stacks i-code">index</td>
+					<td class="stacks i-code">natural number</td>
+					<td class="stacks i-desc">
+						The one-based index of the desired element.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code">any</td>
+					<td class="stacks i-desc">
+						The requested element.
+					</td>
+				</tr>
+					<th class="stacks i-row-label" colspan="2" rowspan="2">Raises</th>
+				<tr class="methodParameters">
+					<td class="stacks i-code">subscript-out-of-bounds exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">pojo array, natural number</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Fallible Primitives</div>
+		<div class="category-list"><em>Categories:</em> Primitives</div>
+		<div class="signature-description">
+			Answer the <a href="#index-1034898737">index</a> -th element of the specified pojo array. *
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="anArray-1034898737" class="stacks i-code">anArray</td>
+					<td class="stacks i-code">pojo array</td>
+					<td class="stacks i-desc">
+						A pojo array.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="index-1034898737" class="stacks i-code">index</td>
+					<td class="stacks i-code">natural number</td>
+					<td class="stacks i-desc">
+						A one-based index into the pojo array.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code">any</td>
+					<td class="stacks i-desc">
+						The <a href="#index-1034898737">index</a> -th element of <a href="#anArray-1034898737">anArray</a> .
+					</td>
+				</tr>
+					<th class="stacks i-row-label" colspan="2" rowspan="3">Raises</th>
+				<tr class="methodParameters">
+					<td class="stacks i-code">subscript-out-of-bounds exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">Java-marshaling-failed exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">object, atom</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Fallible Primitives</div>
+		<div class="category-list"><em>Categories:</em> Primitives</div>
+		<div class="signature-description">
+			Extract a field's value from an object. *
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="object-1734786632" class="stacks i-code">object</td>
+					<td class="stacks i-code">object</td>
+					<td class="stacks i-desc">
+						An object.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="field-1734786632" class="stacks i-code">field</td>
+					<td class="stacks i-code">atom</td>
+					<td class="stacks i-desc">
+						The field for which to extract the value.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code">any</td>
+					<td class="stacks i-desc">
+						The field's value.
+					</td>
+				</tr>
+					<th class="stacks i-row-label" colspan="2" rowspan="2">Raises</th>
+				<tr class="methodParameters">
+					<td class="stacks i-code">no-such-field exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">function meta, natural number</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Infallible Primitives</div>
+		<div class="category-list"><em>Categories:</em> Primitives</div>
+		<div class="signature-description">
+			Answer the <a href="#index1733378887">index</a> -th parameter type of the specified function type. *
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="functionType1733378887" class="stacks i-code">functionType</td>
+					<td class="stacks i-code">function meta</td>
+					<td class="stacks i-desc">
+						A function type.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="index1733378887" class="stacks i-code">index</td>
+					<td class="stacks i-code">natural number</td>
+					<td class="stacks i-desc">
+						The one-based index of the desired parameter type.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code">(any)'s type</td>
+					<td class="stacks i-desc">
+						The <a href="#index1733378887">index</a> -th parameter type of the argument.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">any meta, whole number meta</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Infallible Primitives</div>
+		<div class="category-list"><em>Categories:</em> Primitives</div>
+		<div class="signature-description">
+			Construct and answer a pojo array type whose element type is <a href="#elementType890417540">elementType</a> and whose cardinality requirement is <a href="#cardinalityRequirement890417540">cardinalityRequirement</a> . *
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="elementType890417540" class="stacks i-code">elementType</td>
+					<td class="stacks i-code">any meta</td>
+					<td class="stacks i-desc">
+						The type of the elements of instances.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="cardinalityRequirement890417540" class="stacks i-code">cardinalityRequirement</td>
+					<td class="stacks i-code">whole number meta</td>
+					<td class="stacks i-desc">
+						The range of sizes of instances.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code">(any[])'s type</td>
+					<td class="stacks i-desc">
+						The requested pojo array type.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">object meta, atom</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Fallible Primitives</div>
+		<div class="category-list"><em>Categories:</em> Primitives</div>
+		<div class="signature-description">
+			Extract a field's type from an object type. *
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="objectType2095105077" class="stacks i-code">objectType</td>
+					<td class="stacks i-code">object meta</td>
+					<td class="stacks i-desc">
+						An object type.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="field2095105077" class="stacks i-code">field</td>
+					<td class="stacks i-code">atom</td>
+					<td class="stacks i-desc">
+						The field for which to extract the type.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code">(any)'s type</td>
+					<td class="stacks i-desc">
+						The field's constraining type.
+					</td>
+				</tr>
+					<th class="stacks i-row-label" colspan="2" rowspan="2">Raises</th>
+				<tr class="methodParameters">
+					<td class="stacks i-code">no-such-field exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">atom, atom</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Fallible Primitives</div>
+		<div class="category-list"><em>Categories:</em> Primitives</div>
+		<div class="signature-description">
+			Assuming that <a href="#anAtom716387810">anAtom</a> has a property whose key is <a href="#key716387810">key</a> , then answer the property value associated with the <a href="#key716387810">key</a> . *
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="anAtom716387810" class="stacks i-code">anAtom</td>
+					<td class="stacks i-code">atom</td>
+					<td class="stacks i-desc">
+						An atom.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="key716387810" class="stacks i-code">key</td>
+					<td class="stacks i-code">atom</td>
+					<td class="stacks i-desc">
+						The property key.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code">any</td>
+					<td class="stacks i-desc">
+						The property value bound to the key.
+					</td>
+				</tr>
+					<th class="stacks i-row-label" colspan="2" rowspan="3">Raises</th>
+				<tr class="methodParameters">
+					<td class="stacks i-code">key-not-found exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">no-such-field exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">⊥'s type, natural number</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Literals</div>
+		<div class="category-list"><em>Categories:</em> Types, Queries</div>
+		<div class="signature-description">
+			Disambiguate subscript of ⊥. This is a type subscript operation, such as defined for tuple types or function types, and can consistently answer ⊥.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="bottom1964792893" class="stacks i-code">bottom</td>
+					<td class="stacks i-code">⊥'s type</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="index1964792893" class="stacks i-code">index</td>
+					<td class="stacks i-code">natural number</td>
+					<td class="stacks i-desc">
+						The subscript (ignored).
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code">⊥</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">map, any</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Fallible Primitives</div>
+		<div class="category-list"><em>Categories:</em> Primitives</div>
+		<div class="signature-description">
+			Answer the value bound to <a href="#aMap439559482">aMap</a> in <a href="#key439559482">key</a> . *
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="aMap439559482" class="stacks i-code">aMap</td>
+					<td class="stacks i-code">map</td>
+					<td class="stacks i-desc">
+						A map.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="key439559482" class="stacks i-code">key</td>
+					<td class="stacks i-code">any</td>
+					<td class="stacks i-desc">
+						The key whose bound value should be obtained.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code">any</td>
+					<td class="stacks i-desc">
+						The value bound to <a href="#key439559482">key</a> in <a href="#aMap439559482">aMap</a> .
+					</td>
+				</tr>
+					<th class="stacks i-row-label" colspan="2" rowspan="2">Raises</th>
+				<tr class="methodParameters">
+					<td class="stacks i-code">key-not-found exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">sequence, natural number</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Sequences/Abstract Sequences</div>
+		<div class="category-list"><em>Categories:</em> Unclassified</div>
+		<div class="signature-description">
+			Answer the <a href="#index634639865">index</a> -th element of <a href="#aSequence634639865">aSequence</a> . *
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="aSequence634639865" class="stacks i-code">aSequence</td>
+					<td class="stacks i-code">sequence</td>
+					<td class="stacks i-desc">
+						A <code>sequence</code> .
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="index634639865" class="stacks i-code">index</td>
+					<td class="stacks i-code">natural number</td>
+					<td class="stacks i-desc">
+						The one-based index of the desired element.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code">any</td>
+					<td class="stacks i-desc">
+						The requested element.
+					</td>
+				</tr>
+					<th class="stacks i-row-label" colspan="2" rowspan="2">Raises</th>
+				<tr class="methodParameters">
+					<td class="stacks i-code">subscript-out-of-bounds exception</td>
+					<td class="stacks i-desc">
+						If <a href="#index634639865">index</a> exceeds the size of <a href="#aSequence634639865">aSequence</a> .
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">empty sequence, natural number</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Sequences/Abstract Sequences</div>
+		<div class="category-list"><em>Categories:</em> Unclassified</div>
+		<div class="signature-description">
+			Raise a <code>subscript-out-of-bounds exception</code> . *
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="aSequence-63799408" class="stacks i-code">aSequence</td>
+					<td class="stacks i-code">empty sequence</td>
+					<td class="stacks i-desc">
+						An <code>empty sequence</code> .
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="index-63799408" class="stacks i-code">index</td>
+					<td class="stacks i-code">natural number</td>
+					<td class="stacks i-desc">
+						A proposed subscript, guaranteed to be out of range.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code">⊥</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+					<th class="stacks i-row-label" colspan="2" rowspan="2">Raises</th>
+				<tr class="methodParameters">
+					<td class="stacks i-code">subscript-out-of-bounds exception</td>
+					<td class="stacks i-desc">
+						Always.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<h4 class="method-section-header">Semantic restrictions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">map meta, any meta</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Early Maps</div>
+		<div class="signature-description">
+			Answer the map's value type.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent"scope="col"></th>
+					<th class="stacks i-col-label-narrow"scope="col">Type</th>
+					<th class="stacks i-col-label-wide"scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label"rowspan="3">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="map meta-328731972" class="stacks i-code">map meta</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="any meta-328731972" class="stacks i-code">any meta</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">function meta's type, natural number's type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Early Functions</div>
+		<div class="signature-description">
+			
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent"scope="col"></th>
+					<th class="stacks i-col-label-narrow"scope="col">Type</th>
+					<th class="stacks i-col-label-wide"scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label"rowspan="3">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="function meta's type-887376493" class="stacks i-code">function meta's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="natural number's type-887376493" class="stacks i-code">natural number's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">pojo array's type, natural number's type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Pojos</div>
+		<div class="signature-description">
+			
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent"scope="col"></th>
+					<th class="stacks i-col-label-narrow"scope="col">Type</th>
+					<th class="stacks i-col-label-wide"scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label"rowspan="3">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="pojo array's type-381659925" class="stacks i-code">pojo array's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="natural number's type-381659925" class="stacks i-code">natural number's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">tuple meta, natural number's type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Literals</div>
+		<div class="signature-description">
+			Strengthen the tuple subscript operation. The strongest available static type is the type union of the elements within the slice indicated by the range of the subscript. Forbid any access that could never be correct, i.e., the minimum value of the subscript exceeds the maximum cardinality of the tuple. *
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent"scope="col"></th>
+					<th class="stacks i-col-label-narrow"scope="col">Type</th>
+					<th class="stacks i-col-label-wide"scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label"rowspan="3">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="tuple meta-1663221157" class="stacks i-code">tuple meta</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="natural number's type-1663221157" class="stacks i-code">natural number's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">any's type's type, whole number's type's type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Pojos</div>
+		<div class="signature-description">
+			
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent"scope="col"></th>
+					<th class="stacks i-col-label-narrow"scope="col">Type</th>
+					<th class="stacks i-col-label-wide"scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label"rowspan="3">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="any's type's type556298566" class="stacks i-code">any's type's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="whole number's type's type556298566" class="stacks i-code">whole number's type's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">tuple meta's type, natural number's type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Literals</div>
+		<div class="signature-description">
+			Strengthen the tuple type subscript operation. The strongest available static type is the instance type of the type union of the elements within the slice indicated by the range of the subscript. Forbid any access that could never be correct, i.e., the minimum value of the subscript exceeds the maximum cardinality of the tuple. *
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent"scope="col"></th>
+					<th class="stacks i-col-label-narrow"scope="col">Type</th>
+					<th class="stacks i-col-label-wide"scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label"rowspan="3">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="tuple meta's type-2035381915" class="stacks i-code">tuple meta's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="natural number's type-2035381915" class="stacks i-code">natural number's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+		</div>
+	</body>
+</html>
+			

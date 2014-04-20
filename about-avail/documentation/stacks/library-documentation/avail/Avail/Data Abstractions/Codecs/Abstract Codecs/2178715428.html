@@ -1,0 +1,115 @@
+<!doctype html>
+<!--[if lt IE 7]>
+ 	<html class="ie6 oldie">
+<![endif]-->
+<!--[if IE 7]>
+	<html class="ie7 oldie">
+<![endif]-->
+<!--[if IE 8]>
+	<html class="ie8 oldie">
+<![endif]-->
+	<!--[if gt IE 8]>
+	<!-->
+<html class="">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
+		<!--#include virtual="/_include/head.ssi" -->
+		<title>Avail - Library</title>
+	</head>
+	<body ng-app="stacksApp" ng-controller="CategoriesCntrl">
+		<div class="stacks-wrapper">
+	<h2 class="method-heading">encode_using_</h2>
+	<h4 class="method-section-header">Implementations:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">tuple, encoder</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Codecs/Abstract Codecs</div>
+		<div class="category-list"><em>Categories:</em> Codecs</div>
+		<div class="signature-description">
+			An abstract method that encodes a string using the provided encoder.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="input930639342" class="stacks i-code">input</td>
+					<td class="stacks i-code">tuple</td>
+					<td class="stacks i-desc">
+						The tuple to be encoded.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="anEncoder930639342" class="stacks i-code">anEncoder</td>
+					<td class="stacks i-code">encoder</td>
+					<td class="stacks i-desc">
+						The encoder used to encode the tuple. @exception unsupported-character exception Thrown when an encoding does not surrport the character being processed.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code">byte tuple</td>
+					<td class="stacks i-desc">
+						An encoded byte tuple.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">string, utf8 codec</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Codecs/UTF-8 Codec</div>
+		<div class="category-list"><em>Categories:</em> Codecs</div>
+		<div class="signature-description">
+			A method that encodes a string using the provided encoder.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="input1942457284" class="stacks i-code">input</td>
+					<td class="stacks i-code">string</td>
+					<td class="stacks i-desc">
+						The string to be encoded
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="utf81942457284" class="stacks i-code">utf8</td>
+					<td class="stacks i-code">utf8 codec</td>
+					<td class="stacks i-desc">
+						The encoder used to encode the string @exception unsupported-character exception thrown when an encoding does not surrport the character being processed
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code"><[0..255]…|></td>
+					<td class="stacks i-desc">
+						a byte
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+		</div>
+	</body>
+</html>
+			

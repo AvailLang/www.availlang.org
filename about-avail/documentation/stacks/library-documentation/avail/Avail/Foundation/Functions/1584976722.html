@@ -1,0 +1,107 @@
+<!doctype html>
+<!--[if lt IE 7]>
+ 	<html class="ie6 oldie">
+<![endif]-->
+<!--[if IE 7]>
+	<html class="ie7 oldie">
+<![endif]-->
+<!--[if IE 8]>
+	<html class="ie8 oldie">
+<![endif]-->
+	<!--[if gt IE 8]>
+	<!-->
+<html class="">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
+		<!--#include virtual="/_include/head.ssi" -->
+		<title>Avail - Library</title>
+	</head>
+	<body ng-app="stacksApp" ng-controller="CategoriesCntrl">
+		<div class="stacks-wrapper">
+	<h2 class="method-heading">_(««_»«`_»?‡,»)</h2>
+	<h4 class="method-section-header">Implementations:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">function, <<<any…|0..1>, boolean…|2>…|></div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Functions</div>
+		<div class="category-list"><em>Categories:</em> Function Application</div>
+		<div class="signature-description">
+			Convert a function of N arguments into a function of M arguments, where 0 < M < N. The N - M arguments are provided in a function invocation pattern reminiscent of _(«_‡,») , but the unspecified M arguments are literal underscores. For example, g ::= f(_,20,_) produces a two-argument function g from the three-argument function f. When g is subsequently invoked with two arguments such as g(10,30), it will invoke f as though it had been invoked as f(10,20,30). This is a generalization of currying as found in functional languages.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="originalFunction-1519377761" class="stacks i-code">originalFunction</td>
+					<td class="stacks i-code">function</td>
+					<td class="stacks i-desc">
+						The function to ultimately invoke.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="pairs-1519377761" class="stacks i-code">pairs</td>
+					<td class="stacks i-code"><<<any…|0..1>, boolean…|2>…|></td>
+					<td class="stacks i-desc">
+						The arguments and place-holder underscores. Either the first element must be a size one tuple and the second element is false, or the first element is the empty tuple and the second element is true. At least one of the pairs must be the former and at least one must be the latter, otherwise the useless form f(_,_,_) would be allowed, and the form f(5,6,7) would be confused with actual function invocation.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code">function</td>
+					<td class="stacks i-desc">
+						A function that takes some arguments destined for the original function and returns another function that takes the remainder of the arguments and invokes the original function.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<h4 class="method-section-header">Semantic restrictions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">function's type, <<<any…|0..1>, boolean…|2>…|>'s type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Functions</div>
+		<div class="signature-description">
+			
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent"scope="col"></th>
+					<th class="stacks i-col-label-narrow"scope="col">Type</th>
+					<th class="stacks i-col-label-wide"scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label"rowspan="3">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="function's type1659931879" class="stacks i-code">function's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="<<<any…|0..1>, boolean…|2>…|>'s type1659931879" class="stacks i-code"><<<any…|0..1>, boolean…|2>…|>'s type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+		</div>
+	</body>
+</html>
+			

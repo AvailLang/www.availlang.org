@@ -32,7 +32,7 @@
 <iframe src="/_images/modules/import-specification.svg" style="margin: auto" seamless></iframe>
 </div>
 
-<p>where the <a href="http://en.wikipedia.org/wiki/Terminal_and_nonterminal_symbols">terminal</a> <code>module</code> is a <a href="/about-avail/documentation/type-system/types-string.html">string literal</a> that names the import target. The import target is, by definition, an upstream module.</p>
+<p>where the <a href="http://en.wikipedia.org/wiki/Terminal_and_nonterminal_symbols">terminal</a> <code>module</code> is a <a href="/about-avail/documentation/type-system/types-string.html">string literal</a> that specifies the <a href="./module-name-section.html">local name</a> of the import target. The import target is, by definition, an upstream module.</p>
 
 <p>An import specification contains an optional required versions list. A <strong>required versions list</strong> stipulates what <a href="./active-versions-section.html">active versions</a> of the import target are acceptable for linkage. As such, it is a declaration of compatibility with a particular list of versions. A required versions list satisfies the <a href="http://en.wikipedia.org/wiki/Terminal_and_nonterminal_symbols">nonterminal</a> <code>VersionList</code>, and corresponds to the following syntax diagram,</p>
 
@@ -141,7 +141,7 @@ Names
 	/* Lots of names elided here. */
 Body</div></div>
 
-<p><code class="module">Concurrency</code>, a indirect submodule of <code class="module">Avail</code>, imports many modules for private use. From most of these, it imports all exported names. But from <code class="module">Control Structures</code>, it imports everything <a href="#rule3">except</a> for <code>"Cast|cast_into_else_"</code>, <code>"Cast|cast_into_"</code>, and <code>"Cast|cast_into&laquo;_&Dagger;,&raquo;&laquo;else_&raquo;"</code>.</p>
+<p><code class="module">Concurrency</code>, an indirect submodule of <code class="module">Avail</code>, imports many modules for private use. From most of these, it imports all exported names. But from <code class="module">Control Structures</code>, it imports everything <a href="#rule3">except</a> for <code>"Cast|cast_into_else_"</code>, <code>"Cast|cast_into_"</code>, and <code>"Cast|cast_into&laquo;_&Dagger;,&raquo;&laquo;else_&raquo;"</code>.</p>
 
 <hr/>
 

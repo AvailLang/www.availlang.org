@@ -1,0 +1,120 @@
+<!doctype html>
+<!--[if lt IE 7]>
+ 	<html class="ie6 oldie">
+<![endif]-->
+<!--[if IE 7]>
+	<html class="ie7 oldie">
+<![endif]-->
+<!--[if IE 8]>
+	<html class="ie8 oldie">
+<![endif]-->
+	<!--[if gt IE 8]>
+	<!-->
+<html class="">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
+		<!--#include virtual="/_include/head.ssi" -->
+		<title>Avail - Library</title>
+	</head>
+	<body ng-app="stacksApp" ng-controller="CategoriesCntrl">
+		<div class="stacks-wrapper">
+	<h2 class="method-heading">Guard|guard_«intercept_»«ensure_»</h2>
+	<h4 class="method-section-header">Implementations:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">[]→⊤, <[⊥]→⊤…|>, <[]→⊤…|0..1></div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Exceptions</div>
+		<div class="category-list"><em>Categories:</em> Exception Handling, Control Structures</div>
+		<div class="signature-description">
+			Execute <a href="#body1186364158">body</a> . If an <a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3361325705.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3361325705.html">exception</a> is <code>Raise_</code> , the virtual machine will scan the <a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/345620497.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/345620497.html">current fiber</a> 's chain of <a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3713340495.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3713340495.html">continuation</a> s to identify invocations of this primitive. The continuation nearest to the end of the continuation chain, i.e., closest to the raise of the exception, that defines a handler that accepts an argument of the correct type is invoked with the exception. So an exception handler will potentially run if code run (directly or indirectly) by <a href="#body1186364158">body</a> raises an exception of the accepted type. * Whether <a href="#body1186364158">body</a> succeeds or is curtailed by an exception, always apply <a href="#unwind1186364158">unwind</a> . This is a safe place to clean up an algorithm after it runs or fails. If one of the handlers is invoked, then it will run after the handler runs, even if the handler raises its own exception. *
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="4">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="body1186364158" class="stacks i-code">body</td>
+					<td class="stacks i-code">[]→⊤</td>
+					<td class="stacks i-desc">
+						The protected function.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="handlers1186364158" class="stacks i-code">handlers</td>
+					<td class="stacks i-code"><[⊥]→⊤…|></td>
+					<td class="stacks i-desc">
+						A tuple of exception handlers.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="optionalUnwind1186364158" class="stacks i-code">optionalUnwind</td>
+					<td class="stacks i-code"><[]→⊤…|0..1></td>
+					<td class="stacks i-desc">
+						If specified, then a function to apply after either the successful completion of <a href="#body1186364158">body</a> or an unwind through this continuation.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code">⊤</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<h4 class="method-section-header">Semantic restrictions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">[]→⊤'s type, <[⊥]→⊤…|>'s type, <[]→⊤…|0..1>'s type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Exceptions</div>
+		<div class="signature-description">
+			Reject the current parse if 1) any of the exception handlers aren't or 2) any earlier handlers hide later handlers (by having a more general type).
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent"scope="col"></th>
+					<th class="stacks i-col-label-narrow"scope="col">Type</th>
+					<th class="stacks i-col-label-wide"scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label"rowspan="4">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="[]→⊤'s type-1780635560" class="stacks i-code">[]→⊤'s type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="<[⊥]→⊤…|>'s type-1780635560" class="stacks i-code"><[⊥]→⊤…|>'s type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="<[]→⊤…|0..1>'s type-1780635560" class="stacks i-code"><[]→⊤…|0..1>'s type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+		</div>
+	</body>
+</html>
+			
