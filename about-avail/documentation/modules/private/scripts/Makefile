@@ -19,6 +19,9 @@ install: compile
 	$(CP) check-pragma.svg $(TARGETDIR)
 	$(CP) method-pragma.svg $(TARGETDIR)
 	$(CP) stringify-pragma.svg $(TARGETDIR)
+	$(CP) module-roots-path.svg $(TARGETDIR)
+	$(CP) module-root-specification.svg $(TARGETDIR)
+	$(CP) module-root-path.svg $(TARGETDIR)
 
 clean:
 	@rm -f $(SVGS)

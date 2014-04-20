@@ -1,0 +1,62 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Modules - Module Packages</title>
+
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+		
+<h2 class="content-title">Module Packages</h2>
+
+<p>Large products are typically partitioned into many small units that are arranged into layers of abstraction and encapsulation. When well-applied, this style of organization restricts the visibility of program elements so that it is easy to reason about their spheres of influence. For example, if you know that a method <code>"Internal error:_"</code> is private to a particular module, then you know that it can safely be renamed without having to hunt for references beyond that module; only the module that defined it needs to be searched. Restricting the visibility of program elements makes the task of managing a project with many thousands of data types and operations significantly more tractable.</p>
+
+<p>The <a href="./private-imports-section.html">private imports section</a> and <a href="./extended-imports-section.html">extended imports section</a> of a <a href="./module-headers.html">module header</a> permit a programmer to fine-tune the <a href="./name-resolution.html">visibility of names</a>. This, in turn, allows her to control what messages may be sent by downstream modules. By carefully selecting <a href="./private-imports-section.html#import-specification">import specifications</a> across a series of modules, it is possible to tune the visibility of a message to any desired granularity.</p>
+
+<p>It is also possible to tune the visibility of entire modules via a complementary mechanism: module packages. A <strong>module package</strong> &mdash; simply <strong>package</strong> hereinafter &mdash; is a module that contains other modules, called <strong>submodules</strong>. A package is represented on a file system as a <a href="http://en.wikipedia.org/wiki/Directory_(computing)">directory</a> whose file name has a <code>.avail</code> extension. Inside the directory there must be a module whose file name exactly matches the name of the enclosing directory. This module is called the <strong>module package representative</strong> (or just <strong>representative</strong>).</p>
+
+<p>Consider the following file system structure:</p>
+
+<div class="restricted-width-container">
+<div class="console code-block">Avail.avail/
+	Advanced Math.avail/
+		Advanced Math.avail
+		Combinatorics.avail
+	Data Abstractions.avail/
+	Foundation.avail/
+	IO.avail/
+	Unit Testing.avail/
+	Avail.avail</div></div>
+
+<p>This is a high-level snapshot of <code class="module">Avail</code>, the Avail standard library, excerpted for brevity. Each file name that ends with a <em>solidus</em> <code>/</code> <code class="unicode">(U+002F)</code> is a directory that corresponds to a package; all other file names are <a href="http://en.wikipedia.org/wiki/Unix_file_types#Regular_file">regular files</a> that correspond to modules. Only the contents of <code>Avail.avail/</code> and <code>Advanced Math.avail/</code> have been expanded. Inside the <code>Avail.avail/</code> directory is an eponymous file; it is likewise the case with <code>Advanced Math.avail/</code>. These files, <code>Avail.avail</code> and <code>Advanced Math.avail</code>, respectively, are representatives.</p>
+
+<p>A representative is just an ordinary module, but it serves a special role. The contents of a package are only visible to modules recursively contained within the package; they are not visible to modules outside this package. The sole exception to the rule is the representative. Given an import specification that references a package, the compiler or executor <a href="./module-resolution.html">resolves</a> the reference not to the directory itself but to its representative. It is typical for the representative to use its extended imports section to re-export names imported from other modules within the package. In this way, the representative "speaks for" the package.</p>
+
+<p>Because of the module resolution process, a dependent module cannot discern the difference between a package and an ordinary module. This is a deliberate design point of Avail. It permits a large module to be <a href="http://en.wikipedia.org/wiki/Code_refactoring">refactored</a> into a package containing many smaller modules without affecting any downstream modules.</p>
+
+<table class="book-nav">
+	<tr>
+		<td class="book-nav-back"><a class="book-nav-back" href="./pragmas-section.html">‹ Pragmas Section</a></td>
+		<td class="book-nav-spacer">|</td>
+		<td class="book-nav-up"><a class="book-nav-up" href="./index.html">Return to Modules</a></td>
+		<td class="book-nav-spacer">|</td>
+		<td class="book-nav-forward"><a class="book-nav-forward" href="./module-discovery.html">Module Discovery ›</a></td>
+	</tr>
+</table>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>
