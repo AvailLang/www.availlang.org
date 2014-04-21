@@ -1,0 +1,191 @@
+<!doctype html>
+<!--[if lt IE 7]>
+ 	<html class="ie6 oldie">
+<![endif]-->
+<!--[if IE 7]>
+	<html class="ie7 oldie">
+<![endif]-->
+<!--[if IE 8]>
+	<html class="ie8 oldie">
+<![endif]-->
+	<!--[if gt IE 8]>
+	<!-->
+<html class="">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
+		<!--#include virtual="/_include/head.ssi" -->
+		<title>Avail - Library</title>
+	</head>
+	<body ng-app="stacksApp" ng-controller="CategoriesCntrl">
+		<div class="stacks-wrapper">
+	<h2 class="method-heading">take from_while_</h2>
+	<h4 class="method-section-header">Implementations:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">stream, [⊥]→boolean</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Streams/Abstract Streams</div>
+		<div class="category-list"><em>Categories:</em> Unclassified</div>
+		<div class="signature-description">
+			Answer a tuple containing the prefix of `aStream` that answered `true` to `predicate`.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="aStream2124011541" class="stacks i-code">aStream</td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Streams/Abstract Streams/2648206856.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Streams/Abstract Streams/2648206856.html">stream</a></td>
+					<td class="stacks i-desc">
+						aTuple - A tuple.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="predicate2124011541" class="stacks i-code">predicate</td>
+					<td class="stacks i-code">[⊥]→boolean</td>
+					<td class="stacks i-desc">
+						predicate - A function that can accept each element of the specified stream. It should answer `true` to keep the element (and continue scanning) or `false` to abort.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3446388540.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3446388540.html">tuple</a></td>
+					<td class="stacks i-desc">
+						A tuple containing the prefix of `aStream` that satisfied `predicate`.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">tuple, [⊥]→boolean</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Tuples</div>
+		<div class="category-list"><em>Categories:</em> Tuples, Transformers</div>
+		<div class="signature-description">
+			Answer a tuple containing the prefix of <a href="#aTuple-266941635">aTuple</a> that answered <a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html">true</a> to <a href="#predicate-266941635">predicate</a> .
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="aTuple-266941635" class="stacks i-code">aTuple</td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3446388540.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3446388540.html">tuple</a></td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="predicate-266941635" class="stacks i-code">predicate</td>
+					<td class="stacks i-code">[⊥]→boolean</td>
+					<td class="stacks i-desc">
+						A function that can accept each element of the specified tuple. It should answer <a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html">true</a> to keep the element (and continue scanning) or <a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html">false</a> to abort.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3446388540.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3446388540.html">tuple</a></td>
+					<td class="stacks i-desc">
+						A tuple containing the prefix of <a href="#aTuple-266941635">aTuple</a> that satisfied <a href="#predicate-266941635">predicate</a> .
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">iterator, [⊥]→boolean</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Iterators/Abstract Iterators</div>
+		<div class="category-list"><em>Categories:</em> Data Abstractions</div>
+		<div class="signature-description">
+			Answer a tuple containing the prefix of <a href="#anIterator1061728819">anIterator</a> that answered <a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html">true</a> to <a href="#predicate1061728819">predicate</a> .
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="anIterator1061728819" class="stacks i-code">anIterator</td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/4289004446.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/4289004446.html">iterator</a></td>
+					<td class="stacks i-desc">
+						An iterator.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="predicate1061728819" class="stacks i-code">predicate</td>
+					<td class="stacks i-code">[⊥]→boolean</td>
+					<td class="stacks i-desc">
+						A function that can accept each element of the specified iterator. It should answer <code>true</code> to keep the element (and continue scanning) or <code>false</code> to abort.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3446388540.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3446388540.html">tuple</a></td>
+					<td class="stacks i-desc">
+						A tuple containing the prefix of <a href="#anIterator1061728819">anIterator</a> that satisfied <a href="#predicate1061728819">predicate</a> .
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<h4 class="method-section-header">Semantic restrictions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">tuple meta, [⊥]→boolean's type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Tuples</div>
+		<div class="signature-description">
+			
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent"scope="col"></th>
+					<th class="stacks i-col-label-narrow"scope="col">Type</th>
+					<th class="stacks i-col-label-wide"scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label"rowspan="3">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="tuple meta977232584" class="stacks i-code">tuple meta</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="[⊥]→boolean's type977232584" class="stacks i-code">[⊥]→boolean's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+		</div>
+	</body>
+</html>
+			

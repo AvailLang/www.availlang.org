@@ -1,0 +1,109 @@
+<!doctype html>
+<!--[if lt IE 7]>
+ 	<html class="ie6 oldie">
+<![endif]-->
+<!--[if IE 7]>
+	<html class="ie7 oldie">
+<![endif]-->
+<!--[if IE 8]>
+	<html class="ie8 oldie">
+<![endif]-->
+	<!--[if gt IE 8]>
+	<!-->
+<html class="">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
+		<!--#include virtual="/_include/head.ssi" -->
+		<title>Avail - Library</title>
+	</head>
+	<body ng-app="stacksApp" ng-controller="CategoriesCntrl">
+		<div class="stacks-wrapper">
+	<h2 class="method-heading">format_with«_‡,»</h2>
+	<h4 class="method-section-header">Implementations:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">string, &lt;any…|1..50></div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Strings</div>
+		<div class="category-list"><em>Categories:</em> Formatting, Strings</div>
+		<div class="signature-description">
+			Answer the result of fully formatting the specified template using lexically specified format variable bindings. A template intermixes raw character data with format variable interpolation sites. An interpolation site begins with either the ¢‘ or ¢“ metacharacter and ends with the corresponding close metacharacter, either ¢’ or ¢”, respectively. An interpolation site must contain one of the fifty circled number characters (¢①, ¢②, ..., ¢㊿). The circled number character is understood to indicate a subscript within the specified tuple; the value at this subscript is this variable's value. If an interpolation site uses ¢“ (and ¢”), then the value will be converted to a string via `primitive description of_` when it is copied into the result. If an interpolation site uses ¢‘ (and ¢’), then the value must be a string and will be copied directly into the result. To escape a metacharacter, precede it immediately by ¢`. For example: Assert: format ‘①’, ‘②’!
+ with Hello , world = Hello, world!
+ ;
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="template-1694872383" class="stacks i-code">template</td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/972788627.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/972788627.html">string</a></td>
+					<td class="stacks i-desc">
+						A template string.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="vars-1694872383" class="stacks i-code">vars</td>
+					<td class="stacks i-code">&lt;any…|1..50></td>
+					<td class="stacks i-desc">
+						A tuple of format variable bindings. This tuple must include a binding (i.e., subscript) for every variable mentioned within the template.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/972788627.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/972788627.html">string</a></td>
+					<td class="stacks i-desc">
+						The result of formatting the template usings the specified bindings.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<h4 class="method-section-header">Semantic restrictions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">string's type, &lt;any…|1..50>'s type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Strings</div>
+		<div class="signature-description">
+			If the template is statically known, then ensure that 1) each lexical binding references a valid format variable, 2) each format variable is bound, and 3) each format variable that uses the $text interpolation mode is actually bound to a string.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent"scope="col"></th>
+					<th class="stacks i-col-label-narrow"scope="col">Type</th>
+					<th class="stacks i-col-label-wide"scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label"rowspan="3">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="string's type-1403400219" class="stacks i-code">string's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="<any…|1..50>'s type-1403400219" class="stacks i-code">&lt;any…|1..50>'s type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+		</div>
+	</body>
+</html>
+			

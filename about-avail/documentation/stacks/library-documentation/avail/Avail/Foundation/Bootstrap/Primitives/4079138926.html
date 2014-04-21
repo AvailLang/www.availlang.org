@@ -1,0 +1,133 @@
+<!doctype html>
+<!--[if lt IE 7]>
+ 	<html class="ie6 oldie">
+<![endif]-->
+<!--[if IE 7]>
+	<html class="ie7 oldie">
+<![endif]-->
+<!--[if IE 8]>
+	<html class="ie8 oldie">
+<![endif]-->
+	<!--[if gt IE 8]>
+	<!-->
+<html class="">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
+		<!--#include virtual="/_include/head.ssi" -->
+		<title>Avail - Library</title>
+	</head>
+	<body ng-app="stacksApp" ng-controller="CategoriesCntrl">
+		<div class="stacks-wrapper">
+	<h2 class="method-heading">_<<_keeping_bits</h2>
+	<h4 class="method-section-header">Implementations:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">whole number, integer, whole number</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Fallible Primitives</div>
+		<div class="category-list"><em>Categories:</em> Primitives</div>
+		<div class="signature-description">
+			Given a positive integer B, a shift factor S, and a truncation bit count T, shift B to the left by S bits (treating a negative factor as a right shift), then truncate the result to the bottom T bits by zeroing the rest.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="4">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="baseInteger-786909140" class="stacks i-code">baseInteger</td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/939335616.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/939335616.html">whole number</a></td>
+					<td class="stacks i-desc">
+						A non-negative integer to shift and mask.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="shiftFactor-786909140" class="stacks i-code">shiftFactor</td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3781248876.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3781248876.html">integer</a></td>
+					<td class="stacks i-desc">
+						How many bit positions to shift left by (negative for a right shift).
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="truncationBits-786909140" class="stacks i-code">truncationBits</td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/939335616.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/939335616.html">whole number</a></td>
+					<td class="stacks i-desc">
+						The number of low-order bits to preserve after the shift (must be ≥ 0).
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code">[0..∞)</td>
+					<td class="stacks i-desc">
+						⎣_<<_keeping_bits × 2<sup>baseInteger</sup>⎦ mod 2<sup>shiftFactor</sup>
+					</td>
+				</tr>
+					<th class="stacks i-row-label" colspan="2" rowspan="3">Raises</th>
+				<tr class="methodParameters">
+					<td class="stacks i-code">shift-and-truncate-requires-non-negative exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">too-large-to-represent exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<h4 class="method-section-header">Semantic restrictions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">whole number's type, integer's type, whole number's type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Math</div>
+		<div class="signature-description">
+			Strengthen the result type of bounded bitshift, primarily based on the truncation bit count. Given a positive integer B, a shift factor S, and a truncation bit count T, shift B to the left by S bits (treating a negative factor as a right shift), then truncate the result to the bottom T bits by zeroing the rest.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent"scope="col"></th>
+					<th class="stacks i-col-label-narrow"scope="col">Type</th>
+					<th class="stacks i-col-label-wide"scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label"rowspan="4">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="whole number's type-1419087110" class="stacks i-code">whole number's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="integer's type-1419087110" class="stacks i-code">integer's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="whole number's type-1419087110" class="stacks i-code">whole number's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+		</div>
+	</body>
+</html>
+			

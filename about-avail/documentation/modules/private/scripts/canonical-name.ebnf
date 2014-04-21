@@ -1,0 +1,1 @@
+CanonicalName ::= '/' moduleRootName ('/' packageName)* '/' localName

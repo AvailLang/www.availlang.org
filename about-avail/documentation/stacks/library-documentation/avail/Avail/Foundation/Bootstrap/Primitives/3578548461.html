@@ -1,0 +1,146 @@
+<!doctype html>
+<!--[if lt IE 7]>
+ 	<html class="ie6 oldie">
+<![endif]-->
+<!--[if IE 7]>
+	<html class="ie7 oldie">
+<![endif]-->
+<!--[if IE 8]>
+	<html class="ie8 oldie">
+<![endif]-->
+	<!--[if gt IE 8]>
+	<!-->
+<html class="">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
+		<!--#include virtual="/_include/head.ssi" -->
+		<title>Avail - Library</title>
+	</head>
+	<body ng-app="stacksApp" ng-controller="CategoriesCntrl">
+		<div class="stacks-wrapper">
+	<h2 class="method-heading">static method_._<«_‡,»>,⁇on failure do_</h2>
+	<h4 class="method-section-header">Implementations:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">pojo meta, string, tuple of any meta, pojo failure function</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Fallible Primitives</div>
+		<div class="category-list"><em>Categories:</em> Primitives</div>
+		<div class="signature-description">
+			Construct and answer a function that, when applied with arguments corresponding to the specified parameter types, invokes a particular static method. The answered function adapts a reflective invocation of the Java method, if any, that has the specified name and accepts the specified number and types of arguments. To establish type conformance between Avail types and Java types for the purpose of reflective method lookup and invocation, the following marshaling rules are applied: <ul> <li>`[-128..127]` is marshaled to Java byte (java.lang.Byte.TYPE).</li> <li>`[-32768..32767]` is marshaled to Java short (java.lang.Short.TYPE).</li> <li>`[-2^31..2^31-1]` is marshaled to Java int (java.lang.Integer.TYPE).</li> <li>`[-2^63..2^63-1]` is marshaled to Java long (java.lang.Long.TYPE).</li> <li>`boolean` is marshaled to Java boolean (java.lang.Boolean.TYPE).</li> <li>`character` is marshaled to Java char (java.lang.Character.TYPE).</li> <li>`float` is marshaled to Java float (java.lang.Float.TYPE).</li> <li>`double` is marshaled to Java double (java.lang.Double.TYPE).</li> <li>`string` is marshaled to java.lang.String.</li> <li>`_[]` is marshaled to java.lang.reflect.Array.newInstance().getClass().</li> <li>`_<«_‡,»>` is marshaled to the reflected Java class or interface.</li> <li>All other values are marshaled to com.avail.descriptor.AvailObject.</li> </ul>
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="5">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="aPojoType2035868808" class="stacks i-code">aPojoType</td>
+					<td class="stacks i-code">pojo meta</td>
+					<td class="stacks i-desc">
+						A pojo type.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="methodName2035868808" class="stacks i-code">methodName</td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/972788627.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/972788627.html">string</a></td>
+					<td class="stacks i-desc">
+						The name of the desired method.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="parameterTypes2035868808" class="stacks i-code">parameterTypes</td>
+					<td class="stacks i-code">tuple of any meta</td>
+					<td class="stacks i-desc">
+						The parameter types accepted by the desired method.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="failFunction2035868808" class="stacks i-code">failFunction</td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1567549492.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1567549492.html">pojo failure function</a></td>
+					<td class="stacks i-desc">
+						The function to apply if an invocation of the method throws a Java exception.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code">[…]→⊤</td>
+					<td class="stacks i-desc">
+						The requested static method invocation function.
+					</td>
+				</tr>
+					<th class="stacks i-row-label" colspan="2" rowspan="3">Raises</th>
+				<tr class="methodParameters">
+					<td class="stacks i-code">Java-method-not-available exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">Java-method-reference-is-ambiguous exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<h4 class="method-section-header">Semantic restrictions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">pojo's type's type, string's type, &lt;any's type…|>'s type, [pojo exception]→⊤'s type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Pojos</div>
+		<div class="signature-description">
+			
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent"scope="col"></th>
+					<th class="stacks i-col-label-narrow"scope="col">Type</th>
+					<th class="stacks i-col-label-wide"scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label"rowspan="5">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="pojo's type's type996487898" class="stacks i-code">pojo's type's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="string's type996487898" class="stacks i-code">string's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="<any's type…|>'s type996487898" class="stacks i-code">&lt;any's type…|>'s type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="[pojo exception]→⊤'s type996487898" class="stacks i-code">[pojo exception]→⊤'s type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+		</div>
+	</body>
+</html>
+			

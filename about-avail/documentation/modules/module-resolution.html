@@ -1,0 +1,241 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Modules - Module Resolution</title>
+		<style>
+		.resolution-rules
+		{
+			margin-top: 20px;
+		}
+		</style>
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+		
+<h2 class="content-title">Module Resolution</h2>
+
+<p>Recall that <a href="./private-imports-section.html">import targets</a> are specified by their <a href="./module-name-section.html">local names</a> only. It is perfectly legal that there should be many <a href="./module-discovery.html">discoverable</a> modules that share the same local name. Yet it is essential that an import target should be unambiguously understood, lest the wrong module be selected to satisfy an import.</p>
+
+<p><strong>Module resolution</strong> is the process by which import targets are resolved to concrete modules. Intuitively, and in brief, module resolution proceeds as follows:</p>
+
+<ul>
+<li>If the import target is in the same directory as the dependent module, then choose it.</li>
+<li>Otherwise, look in the enclosing directory. If the import target is there, then choose it.</li>
+<li>Keep looking upward through the enclosing directories until reaching a module root. If the import target is discovered along the way, then choose it.</li>
+<li>If the import target is directly inside the same module root as recursively includes the dependent module, then choose it.</li>
+<li>Otherwise, scan through all the module roots in the order that they were provided in the module roots path. Only look directly, not recursively, in each module root. If the import target is found, then choose it.</li>
+<li>If the import target was found, but it refers to a package, then reach inside and choose the representative.</li>
+<li>If the import target couldn't be found, then fail the module resolution process.</li>
+</ul>
+
+<p>Understanding the procedure at the abbreviated level of detail given above is adequate for the vast majority of use cases. Following is a much more detailed description of the module resolution algorithm: <sup><a href="#fn1">[1]</a></sup></p>
+
+<div class="scrolling">
+<iframe src="/_images/modules/module-resolution.svg" style="margin: auto" seamless></iframe>
+</div>
+
+<dl>
+<dt><em><a id="canonize">Canonize the import target.</a></em></dt>
+<dd>Module resolution begins by naively canonizing the import target &mdash; specified by the local name <code class="module">L</code> &mdash; as if it were a sibling of the dependent module. A file is <strong>sibling</strong> to another if they both reside in the same file system <a href="http://en.wikipedia.org/wiki/Directory_(computing)">directory</a>. Let us call this naive canonical name <code class="module">M</code>.</dd>
+
+<dt class="resolution-rules"><em><a id="canRename">Is there an applicable rename rule?</a></em></dt>
+<dd>Does the <a href="./module-renaming.html">module renames file</a> specify a module rename rule that would transform <code class="module">M</code> into the canonical name <code class="module">M&prime;</code>? If so, then <a href="#rename">apply the rename rule</a>. If not, then go ahead with <a href="#translate">translating the canonical name to a file system path</a>.</dd>
+
+<dt class="resolution-rules"><em><a id="rename">Apply the rename rule.</a></em></dt>
+<dd>Apply the module rename rule to transform <code class="module">M</code> into the canonical name <code class="module">M&prime;</code>.</dd>
+
+<dt class="resolution-rules"><em><a id="translate">Translate the canonical name into a file path.</a></em></dt>
+<dd>Consider the expansion of the canonical name <code class="module">M</code> (or <code class="module">M&prime;</code> if a <a href="#rename">module rename rule was applied</a>),
+
+	<blockquote style="font-size: 14pt"><code class="module">M</code> <code>&#8797;</code> <code class="module">/R/P<sub>1</sub>/P<sub>2</sub>/&hellip;/P<sub>n</sub>/L</code>,</blockquote>
+
+where <code class="module">R</code> is a module root name, <code class="module">P<sub>1</sub></code> through <code class="module">P<sub>n</sub></code> are local names of packages, and <code class="module">L</code> is the local name of the import target. To translate <code class="module">M</code> to a file path,
+
+	<ul>
+	<li>Replace <code class="module">R</code> with its source module path, denoted by <code>S</code>.</li>
+	<li>Rewrite <code class="module">P<sub>1</sub></code> as <code>P<sub>1</sub>.avail</code>.</li>
+	<li>Rewrite <code class="module">P<sub>2</sub></code> as <code>P<sub>2</sub>.avail</code>.</li>
+	<li>&hellip;</li>
+	<li>Rewrite <code class="module">P<sub>n</sub></code> as <code>P<sub>n</sub>.avail</code>.</li>
+	<li>Rewrite <code class="module">L</code> as <code>L.avail</code>.</li>
+	<li>Replace each occurrence of <em>solidus</em> <code>/</code> <code class="unicode">(U+002F)</code> with the platform-specific <a href="http://en.wikipedia.org/wiki/Path_(computing)">directory separator</a>. (On Unix this will be solidus; on Windows, <em>reverse solidus</em> <code>\</code> <code class="unicode">(U+005C)</code>.)</li>
+	</ul>
+
+Let us call the result of this translation <code>F</code>, whose expansion is
+
+	<blockquote style="font-size: 14pt"><code>F &#8797; /S/P<sub>1</sub>.avail/P<sub>2</sub>.avail/&hellip;/P<sub>n</sub>.avail/L.avail</code>.</blockquote>
+</dd>
+
+<dt class="resolution-rules"><em><a id="morePackages">Does the file path contain any packages?</a></em></dt>
+<dd><code>F</code> may not include any packages (either because it never included any or because they have all been <a href="#truncate">rejected and removed</a>), so check to see if it does. If so, then see if it <a href="#inPackage">references an existing file</a>. If not, then <code>L.avail</code> <a href="#inRoot">resides directly within a root</a>.</dd>
+
+<dt class="resolution-rules"><em><a id="inPackage">The file path contains packages, but does it exist?</a></em></dt>
+<dd><code>F</code> (or <code>F&prime;</code>, <code>F&Prime;</code>, &hellip;, if <a href="#truncate">some packages have already been dropped</a>) includes at least one package, <code>P<sub>i</sub></code>. Does <code>F</code> denote an existing file? If so, then <a href="#isPackage">determine whether <code>F</code> is a package</a>. If not, then <a href="#truncate">drop <code>P<sub>n</sub></code>.</a></dd>
+
+<dt class="resolution-rules"><em><a id="truncate">Drop the rightmost package from the file path.</a></em></dt>
+<dd>Derive <code>F&prime;</code> from <code>F</code> by dropping the rightmost package, <code>P<sub>n</sub></code>. The expansion of <code>F&prime;</code> is therefore
+
+	<blockquote style="font-size: 14pt"><code>F&prime; &#8797; /S/P<sub>1</sub>.avail/P<sub>2</sub>.avail/&hellip;/P<sub>n-1</sub>.avail/L.avail</code>.</blockquote>
+
+Now see if <code>F&prime;</code> <a href="#inPackage">includes any packages</a>.</dd>
+
+<dt class="resolution-rules"><em><a id="inPackage">The file path contains no packages. Does it exist?</a></em></dt>
+<dd>Since <code>F</code> does not contains any local names that correspond to packages, the expansion of <code>F</code> is given by
+
+	<blockquote style="font-size: 14pt"><code>F &#8797; /S/L.avail</code>.</blockquote>
+
+Does <code>F</code> denote an existing file? If so, then <a href="#isPackage">determine whether <code>F</code> is a package</a>. If not, then <a href="#moreRoots">determine whether there are any unexplored module roots</a>.</dd>
+
+<dt class="resolution-rules"><em><a id="#moreRoots">Are some module roots still unexplored?</a></em></dt>
+<dd>With respect to the resolution of <code>M</code>, are some module roots specified on the module root path still unexplored? If so, then <a href="#nextRoot">replace <code>S</code> with <code>S&prime;</code></a>. If not, then module resolution has failed; the system will emit an appropriate error message and then halt.</dd>
+
+<dt class="resolution-rules"><em><a id="#nextRoot">Try the next unexplored module root.</a></em></dt>
+<dd>Recall that the module roots path is the list of all module roots that participate in module discovery. The module roots are necessarily ordered, because all text is ordered. Derive <code>S&prime;</code> by choosing the leftmost module root from the module roots path that has not already been searched. Then derive <code>F&prime;</code> such that
+
+	<blockquote style="font-size: 14pt"><code>F &#8797; /S&prime;/L.avail</code>.</blockquote>
+
+Now <a href="#inRoot">determine whether <code>F&prime;</code> exists</a>.</dd>
+
+<dt class="resolution-rules"><em><a id="isPackage">Does the file path refer to a package?</a></em></dt>
+<dd>Does <code>F</code> refer to a directory rather than a file? If so, then <code>F</code> refers to a package, so derive <code>F&prime;</code> from <code>F</code> such that
+
+	<blockquote style="font-size: 14pt"><code>F&prime; &#8797; /S/L.avail/L.avail</code>,</blockquote>
+
+and <a href="#isRepresented">verify that its representative exists</a>. If not, then module resolution has succeeded: <code>F</code> is the unambiguous resolution of <code class="module">M</code>.</dd>
+
+<dt class="resolution-rules"><em><a id="isRepresented">The file path refers to a package representative, but does it exist?</a></em></dt>
+<dd><code>F</code> denotes a package representative. Does <code>F</code> exists? If so, then module resolution has succeeded: <code>F</code> is the unambiguous resolution of <code class="module">M</code>. If not, then module resolution has failed; the system will emit an appropriate error message and then halt.</dd>
+</dl>
+
+<p>An extremely important practical consequence of this procedure is that the contents of a package are always impenetrable to a module that resides outside of that package. This ensures that a <a href="./module-packages.html">module representative</a> is the exclusive gateway to services offered by modules located recursively within its package. This is an essential concept of Avail's encapsulation model.</p>
+
+<p>Take <code class="module">Wump the Wumpus</code>, one of the official Avail case studies available in the <code>examples</code> module root, as the scaffolding for some use cases of module resolution:</p>
+
+<div class="restricted-width-container">
+<div class="console code-block">/usr
+	/local
+		/avail
+			/src
+				+avail+
+					Avail.avail/
+						Advanced Math.avail/
+						Data Abstractions.avail/
+						Foundation.avail/
+						IO.avail/
+						Unit Testing.avail/
+						Avail.avail*
+				+examples+
+					Wump the Wumpus.avail/
+						Game.avail/
+							Command.avail/
+								Command.avail*
+								Definers.avail
+								Parser.avail
+								Scanner.avail
+							Common.avail
+							Context.avail
+							Exploration.avail
+							Game.avail*
+							Geography.avail
+							Perception.avail
+							Turn.avail
+						Cave.avail
+						IO.avail
+						Movable Entities.avail
+						RNG.avail
+						Wump the Wumpus.avail*</div></div>
+
+<p>Entries beginning with a solidus denote ordinary directories, and just serve to give context to the module roots. Entries encased in <em>plus signs</em> <code>+</code> <code class="unicode">(U+002B)</code> denote module roots; assume that the two shown here, <code>avail</code> and <code>examples</code>, are the only ones specified by the module roots path, and that the occur in the order given. Entries ending with a solidus denote module packages. Entries ending with an <em>asterisk</em> <code>*</code> <code class="unicode">(U+002A)</code> denote module package representatives. All other entries are ordinary modules. Assume that the module renames file is empty.</p>
+
+<p>Peering into <code class="module">/examples/Wump the Wumpus/Game/Command/Parser</code>, we find this <a href="./module-headers.html">module header</a>:</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block">Module "Parser"
+Versions
+	"1.0.0 DEV 2014-04-28"
+Uses
+	"Avail",
+	"Definers",
+	"IO",
+	"Scanner"
+Names
+	"Read and execute the next command"
+Body</div></div>
+
+<p>Let us consider each of the import targets in turn.</p>
+
+<ol>
+<li>Of course, <em>we</em> already know that <code class="module">Avail</code> is the standard library. But the system doesn't know it immediately when it encounters this import target. It just knows that it should try to resolve the local name <code class="module">Avail</code> to an actual module. It starts by canonizing the name to:
+
+<div class="restricted-width-container"><div class="code-block">/examples/Wump the Wumpus/Game/Command/Avail</div></div>
+
+It then translates this canonical name to the following file path:
+
+<div class="restricted-width-container"><div class="code-block">/usr/local/avail/src/examples/Wump the Wumpus.avail/Game.avail/Command.avail/Avail.avail</div></div>
+
+It then recursively scans the enclosing directories, from the inside out, looking for a file name <code>Avail.avail</code>:
+
+<div class="restricted-width-container"><div class="code-block">/usr/local/avail/src/examples/Wump the Wumpus.avail/Game.avail/Command.avail/Avail.avail
+/usr/local/avail/src/examples/Wump the Wumpus.avail/Game.avail/Avail.avail
+/usr/local/avail/src/examples/Wump the Wumpus.avail/Avail.avail
+/usr/local/avail/src/examples/Avail.avail</div></div>
+
+Having exhausted the <code>examples</code> module root, it next rewrites the file path to be relative to the leftmost unexplored module root, <code>avail</code>:
+
+<div class="restricted-width-container"><div class="code-block">/usr/local/avail/src/avail/Avail.avail</div></div>
+
+This file path refers to a package, so append the name of the package representative, <code>Avail.avail</code>. The local name <code class="module">Avail</code> is ultimately resolved to <code>/usr/local/avail/src/avail/Avail.avail/Avail.avail</code>.</li>
+
+<li class="resolution-rules">The local name <code>Definers</code> is canonized to:
+
+<div class="restricted-width-container"><div class="code-block">/examples/Wump the Wumpus/Game/Command/Definers</div></div>
+
+And then translated to the file path:
+
+<div class="restricted-width-container"><div class="code-block">/usr/local/avail/src/examples/Wump the Wumpus.avail/Game.avail/Command.avail/Definers.avail</div></div>
+
+This file exists &mdash; it is sitting right beside <code>Parser.avail</code> &mdash; so resolution succeeds.</li>
+
+<li class="resolution-rules">To find <code class="module">IO</code>, the system tries the following file paths:
+
+<div class="restricted-width-container"><div class="code-block">/usr/local/avail/src/examples/Wump the Wumpus.avail/Game.avail/Command.avail/IO.avail
+/usr/local/avail/src/examples/Wump the Wumpus.avail/Game.avail/IO.avail
+/usr/local/avail/src/examples/Wump the Wumpus.avail/IO.avail</div></div>
+
+This file exists, so resolution succeeds.</li>
+
+<li class="resolution-rules">Finally, <code class="module">Scanner</code> is trivially resolved to:
+
+<div class="restricted-width-container"><div class="code-block">/usr/local/avail/src/examples/Wump the Wumpus.avail/Game.avail/Command.avail/Scanner.avail</div></div></li>
+</ol>
+
+<hr/>
+
+<p><small><a id="fn1">[1]</a> Technically, the system is only guaranteed to carry out an algorithm that is behaviorally <a href="http://en.wikipedia.org/wiki/Isomorphism">isomorphic</a> to this one: it is guaranteed that module resolution produces only results that are consistent with the description of the algorithm provided here. The implementation may actually use different techniques, generally because they are more efficient.</small></p>
+
+<table class="book-nav">
+	<tr>
+		<td class="book-nav-back"><a class="book-nav-back" href="./module-renaming.html">‹ Module Renaming</a></td>
+		<td class="book-nav-spacer">|</td>
+		<td class="book-nav-up"><a class="book-nav-up" href="./index.html">Return to Modules</a></td>
+		<td class="book-nav-spacer">|</td>
+		<td class="book-nav-forward"><a class="book-nav-forward" href="./module-bodies.html">Module Bodies ›</a></td>
+	</tr>
+</table>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>

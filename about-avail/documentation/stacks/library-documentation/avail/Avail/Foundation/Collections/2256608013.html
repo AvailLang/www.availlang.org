@@ -1,0 +1,379 @@
+<!doctype html>
+<!--[if lt IE 7]>
+ 	<html class="ie6 oldie">
+<![endif]-->
+<!--[if IE 7]>
+	<html class="ie7 oldie">
+<![endif]-->
+<!--[if IE 8]>
+	<html class="ie8 oldie">
+<![endif]-->
+	<!--[if gt IE 8]>
+	<!-->
+<html class="">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
+		<!--#include virtual="/_include/head.ssi" -->
+		<title>Avail - Library</title>
+	</head>
+	<body ng-app="stacksApp" ng-controller="CategoriesCntrl">
+		<div class="stacks-wrapper">
+	<h2 class="method-heading">map_through_</h2>
+	<h4 class="method-section-header">Implementations:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">set, [⊥]→any</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Sets</div>
+		<div class="category-list"><em>Categories:</em> Collections, Sets, Control Structures</div>
+		<div class="signature-description">
+			Iteratively apply <a href="#transformer-1009898413">transformer</a> to each element of <a href="#aSet-1009898413">aSet</a> , collecting the results into a new tuple. The set is traversed in no particular order. Answer the resultant set.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="aSet-1009898413" class="stacks i-code">aSet</td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2811620022.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2811620022.html">set</a></td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="transformer-1009898413" class="stacks i-code">transformer</td>
+					<td class="stacks i-code">[⊥]→any</td>
+					<td class="stacks i-desc">
+						A function that accepts the elements of the set.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2811620022.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2811620022.html">set</a></td>
+					<td class="stacks i-desc">
+						A set of results of applications of <a href="#transformer-1009898413">transformer</a> to the elements of <a href="#aSet-1009898413">aSet</a> .
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">tuple, [⊥, ⊥]→any</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Tuples</div>
+		<div class="category-list"><em>Categories:</em> Tuples, Control Structures, Collections, Transformers</div>
+		<div class="signature-description">
+			Iteratively apply <a href="#transformer-537907076">transformer</a> to each consecutive element of <a href="#aTuple-537907076">aTuple</a> , collecting the results into a new tuple (and preserving ordering of the transformed elements). Answer this tuple.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="aTuple-537907076" class="stacks i-code">aTuple</td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3446388540.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3446388540.html">tuple</a></td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="transformer-537907076" class="stacks i-code">transformer</td>
+					<td class="stacks i-code">[⊥, ⊥]→any</td>
+					<td class="stacks i-desc">
+						A function that accepts 1) an element of the tuple and 2) the index of that element.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3446388540.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3446388540.html">tuple</a></td>
+					<td class="stacks i-desc">
+						A tuple of results of applications of <a href="#transformer-537907076">transformer</a> to the elements and indices of <a href="#aTuple-537907076">aTuple</a> .
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">map, [⊥, ⊥]→any</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Maps</div>
+		<div class="category-list"><em>Categories:</em> Collections, Maps, Control Structures</div>
+		<div class="signature-description">
+			Iteratively apply <a href="#transformer-1730851468">transformer</a> to each binding of <a href="#aMap-1730851468">aMap</a> , in no particular order, collecting the results into a new map. The resultant map has the same keys as the original, but its values have been transformed via <a href="#transformer-1730851468">transformer</a> .
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="aMap-1730851468" class="stacks i-code">aMap</td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3193443892.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3193443892.html">map</a></td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="transformer-1730851468" class="stacks i-code">transformer</td>
+					<td class="stacks i-code">[⊥, ⊥]→any</td>
+					<td class="stacks i-desc">
+						A function that accepts the bindings of the map. The first argument is a key from the map, the second is a value from the map. This function answers a replacement value for the given binding.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3193443892.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3193443892.html">map</a></td>
+					<td class="stacks i-desc">
+						A map of results of applications of `transformer` to the elements of <a href="#aMap-1730851468">aMap</a> .
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">iterator, [⊥]→any</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Iterators/Abstract Iterators</div>
+		<div class="category-list"><em>Categories:</em> Data Abstractions</div>
+		<div class="signature-description">
+			Construct and answer an iterator that applies <a href="#theTransformer-1573305945">theTransformer</a> to the consecutive elements of <a href="#anIterator-1573305945">anIterator</a> . The result is lazy, so <a href="#anIterator-1573305945">anIterator</a> may be infinite.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="anIterator-1573305945" class="stacks i-code">anIterator</td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/4289004446.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/4289004446.html">iterator</a></td>
+					<td class="stacks i-desc">
+						The source <a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/4289004446.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/4289004446.html">iterator</a> .
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="theTransformer-1573305945" class="stacks i-code">theTransformer</td>
+					<td class="stacks i-code">[⊥]→any</td>
+					<td class="stacks i-desc">
+						A function that accepts the elements of <a href="#anIterator-1573305945">anIterator</a> .
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/4289004446.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/4289004446.html">iterator</a></td>
+					<td class="stacks i-desc">
+						An iterator that applies <a href="#theTransformer-1573305945">theTransformer</a> to the current element of <a href="#anIterator-1573305945">anIterator</a> when asked for its own current element.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">stream, [⊥]→any</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Streams/Abstract Streams</div>
+		<div class="category-list"><em>Categories:</em> Unclassified</div>
+		<div class="signature-description">
+			Construct and answer a stream that applies `theTransformer` to the consecutive elements of `aStream`. The result is lazy, so `aStream` may be infinite.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="aStream1173078121" class="stacks i-code">aStream</td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Streams/Abstract Streams/2648206856.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Streams/Abstract Streams/2648206856.html">stream</a></td>
+					<td class="stacks i-desc">
+						aStream - The source stream.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="theTransformer1173078121" class="stacks i-code">theTransformer</td>
+					<td class="stacks i-code">[⊥]→any</td>
+					<td class="stacks i-desc">
+						theTransformer - A function that accepts the elements of `aStream`.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Streams/Abstract Streams/2648206856.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Streams/Abstract Streams/2648206856.html">stream</a></td>
+					<td class="stacks i-desc">
+						A stream that applies `transformer` to the head of `aStream` when asked for its own head.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">tuple, [⊥]→any</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Tuples</div>
+		<div class="category-list"><em>Categories:</em> Tuples, Control Structures, Collections, Transformers</div>
+		<div class="signature-description">
+			Iteratively apply <a href="#transformer461075425">transformer</a> to each consecutive element of <a href="#aTuple461075425">aTuple</a> , collecting the results into a new tuple (and preserving ordering of the transformed elements). Answer this tuple.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="aTuple461075425" class="stacks i-code">aTuple</td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3446388540.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3446388540.html">tuple</a></td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="transformer461075425" class="stacks i-code">transformer</td>
+					<td class="stacks i-code">[⊥]→any</td>
+					<td class="stacks i-desc">
+						A function that accepts the elements of the tuple.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3446388540.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3446388540.html">tuple</a></td>
+					<td class="stacks i-desc">
+						A tuple of results of applications of <a href="#transformer461075425">transformer</a> to the elements of <a href="#aTuple461075425">aTuple</a> .
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<h4 class="method-section-header">Semantic restrictions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">set meta, [⊥]→any's type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Sets</div>
+		<div class="signature-description">
+			Ensure that the function will accept all elements of the set. If the set is certainly nonempty, then the function cannot answer ⊥.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent"scope="col"></th>
+					<th class="stacks i-col-label-narrow"scope="col">Type</th>
+					<th class="stacks i-col-label-wide"scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label"rowspan="3">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="set meta-2071791562" class="stacks i-code">set meta</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="[⊥]→any's type-2071791562" class="stacks i-code">[⊥]→any's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">tuple meta, […]→any's type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Tuples</div>
+		<div class="signature-description">
+			Ensure that the function will accept all elements and indices of the tuple. If the tuple is certainly nonempty, then the function cannot answer ⊥.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent"scope="col"></th>
+					<th class="stacks i-col-label-narrow"scope="col">Type</th>
+					<th class="stacks i-col-label-wide"scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label"rowspan="3">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="tuple meta1162763757" class="stacks i-code">tuple meta</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="[…]→any's type1162763757" class="stacks i-code">[…]→any's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">map meta, [⊥, ⊥]→any's type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Maps</div>
+		<div class="signature-description">
+			Ensure that the function will accept all bindings of the map. If the map is certainly nonempty, then the function cannot answer ⊥.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent"scope="col"></th>
+					<th class="stacks i-col-label-narrow"scope="col">Type</th>
+					<th class="stacks i-col-label-wide"scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label"rowspan="3">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="map meta189016307" class="stacks i-code">map meta</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="[⊥, ⊥]→any's type189016307" class="stacks i-code">[⊥, ⊥]→any's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+		</div>
+	</body>
+</html>
+			

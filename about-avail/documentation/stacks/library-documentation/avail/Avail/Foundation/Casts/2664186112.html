@@ -1,0 +1,145 @@
+<!doctype html>
+<!--[if lt IE 7]>
+ 	<html class="ie6 oldie">
+<![endif]-->
+<!--[if IE 7]>
+	<html class="ie7 oldie">
+<![endif]-->
+<!--[if IE 8]>
+	<html class="ie8 oldie">
+<![endif]-->
+	<!--[if gt IE 8]>
+	<!-->
+<html class="">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
+		<!--#include virtual="/_include/head.ssi" -->
+		<title>Avail - Library</title>
+	</head>
+	<body ng-app="stacksApp" ng-controller="CategoriesCntrl">
+		<div class="stacks-wrapper">
+	<h2 class="method-heading">Cast|cast_into_</h2>
+	<h4 class="method-section-header">Implementations:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">any, [⊥]→⊤</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Casts</div>
+		<div class="category-list"><em>Categories:</em> Casts, Control Structures, Conditionals</div>
+		<div class="signature-description">
+			If the function <a href="#accept1500787431">accept</a> accepts <a href="#value1500787431">value</a> as an argument (based on its runtime type), then invoke <a href="#accept1500787431">accept</a> with <a href="#value1500787431">value</a> . Otherwise, raise a <a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Casts/1370330258.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Casts/1370330258.html">bad-cast exception</a> .
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="value1500787431" class="stacks i-code">value</td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4064851822.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4064851822.html">any</a></td>
+					<td class="stacks i-desc">
+						A value.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="accept1500787431" class="stacks i-code">accept</td>
+					<td class="stacks i-code">[⊥]→⊤</td>
+					<td class="stacks i-desc">
+						The function to invoke if <a href="#value1500787431">value</a> is an instance of the its parameter type.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4064851822.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4064851822.html">any</a></td>
+					<td class="stacks i-desc">
+						The result of <a href="#accept1500787431">accept</a> .
+					</td>
+				</tr>
+					<th class="stacks i-row-label" colspan="2" rowspan="2">Raises</th>
+				<tr class="methodParameters">
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Casts/1370330258.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Casts/1370330258.html">bad-cast exception</a></td>
+					<td class="stacks i-desc">
+						If <a href="#value1500787431">value</a> is not an instance of <a href="#accept1500787431">accept</a> 's parameter type.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<h4 class="method-section-header">Semantic restrictions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">any's type, [⊥]→⊤'s type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Casts</div>
+		<div class="signature-description">
+			Reject the parse if the cast is either unnecessary or disallowed.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent"scope="col"></th>
+					<th class="stacks i-col-label-narrow"scope="col">Type</th>
+					<th class="stacks i-col-label-wide"scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label"rowspan="3">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="any's type2111963263" class="stacks i-code">any's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="[⊥]→⊤'s type2111963263" class="stacks i-code">[⊥]→⊤'s type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">any's type, [⊥]→⊤'s type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Casts</div>
+		<div class="signature-description">
+			Reject the parse if the cast is either unnecessary or disallowed.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent"scope="col"></th>
+					<th class="stacks i-col-label-narrow"scope="col">Type</th>
+					<th class="stacks i-col-label-wide"scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label"rowspan="3">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="any's type2111963263" class="stacks i-code">any's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="[⊥]→⊤'s type2111963263" class="stacks i-code">[⊥]→⊤'s type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+		</div>
+	</body>
+</html>
+			

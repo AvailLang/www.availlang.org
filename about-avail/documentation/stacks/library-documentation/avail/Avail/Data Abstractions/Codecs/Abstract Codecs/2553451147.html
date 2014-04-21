@@ -1,0 +1,108 @@
+<!doctype html>
+<!--[if lt IE 7]>
+ 	<html class="ie6 oldie">
+<![endif]-->
+<!--[if IE 7]>
+	<html class="ie7 oldie">
+<![endif]-->
+<!--[if IE 8]>
+	<html class="ie8 oldie">
+<![endif]-->
+	<!--[if gt IE 8]>
+	<!-->
+<html class="">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
+		<!--#include virtual="/_include/head.ssi" -->
+		<title>Avail - Library</title>
+	</head>
+	<body ng-app="stacksApp" ng-controller="CategoriesCntrl">
+		<div class="stacks-wrapper">
+	<h2 class="method-heading">finish decoding with_</h2>
+	<h4 class="method-section-header">Implementations:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">decoder</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Codecs/Abstract Codecs</div>
+		<div class="category-list"><em>Categories:</em> Codecs</div>
+		<div class="signature-description">
+			The final abstract method call when all the byte data has been read and no further byte data is expected. If the continuation contains data when it is awoken this method will return an exception as the final data is incomplete. If there is no data within the continuation, then the decoding is complete in a correct state.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="2">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="aDecoder457255496" class="stacks i-code">aDecoder</td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Codecs/Abstract Codecs/457255496.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Codecs/Abstract Codecs/457255496.html">decoder</a></td>
+					<td class="stacks i-desc">
+						The codec specification for decoding the byte tuple.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/972788627.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/972788627.html">string</a></td>
+					<td class="stacks i-desc">
+						The decoded string.
+					</td>
+				</tr>
+					<th class="stacks i-row-label" colspan="2" rowspan="2">Raises</th>
+				<tr class="methodParameters">
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Codecs/Abstract Codecs/443672394.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Codecs/Abstract Codecs/443672394.html">malformed-encoding exception</a></td>
+					<td class="stacks i-desc">
+						Thrown when the encoding specification is violated
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">utf8 codec</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Codecs/UTF-8 Codec</div>
+		<div class="category-list"><em>Categories:</em> Codecs</div>
+		<div class="signature-description">
+			The method that accepts a byte tuple and the decoding specificaiton that transforms the byte tuple into a character.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="2">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="utf81851116857" class="stacks i-code">utf8</td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Codecs/UTF-8 Codec/1851116857.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Codecs/UTF-8 Codec/1851116857.html">utf8 codec</a></td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/972788627.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/972788627.html">string</a></td>
+					<td class="stacks i-desc">
+						the decoded string
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+		</div>
+	</body>
+</html>
+			

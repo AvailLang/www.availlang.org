@@ -12,18 +12,25 @@ img, object, embed, video {
 
 /********** Overrides of default HTML styling **********/
 a {
+	background-color: transparent;
 	color: green;
 	font-weight: 500;
 	text-decoration: inherit; /* no underline */
 }
 
 a:hover {
+	background-color: transparent;
 	color: rgb(160,64,1) !important; /* dark orange */
-	text-shadow: 0 0 0.2em #F87};
+	text-shadow: 0 0 0.2em #F87;
 }
 
 a:visited {
+	background-color: transparent;
 	color: inherit;
+}
+
+.offsite {
+	/* Placeholder; should receive actual styling. Should only affect a href= …. */
 }
 
 b, strong { 
@@ -38,12 +45,14 @@ body {
 	min-width: 350px;
 }
 
-body, button, input, select, textarea { 
+body, button, input, select, textarea {
+	background-color: transparent;
 	font-weight: 300; 
 	color: #222;
 }
 
 h1, h2, h3, h4, h5 {
+	background-color: transparent;
 	color: green;
 	font-family: 'Raleway', sans-serif;
 	clear: both;
@@ -82,6 +91,7 @@ img.full-line-screenshot {
 
 /* Style for a warning about missing characters for mobile viewers on pages that contain <code> */
 .mobile-only {
+	background-color: transparent;
 	text-align: center;
 	font-weight: bold;
 	color: #bb0000;
@@ -91,6 +101,7 @@ img.full-line-screenshot {
 }
 
 .private {
+	background-color: transparent;
 	color: rgb(160,64,1) !important;
 }
 
@@ -141,6 +152,7 @@ body.gradient-logo {
 }
 
 .header-text {
+	background-color: transparent;
 	color: rgb(0,60,0); /* dark x 3 green - considerably darker than darkgreen */
 	font-family: 'Raleway', sans-serif;
 }
@@ -183,7 +195,7 @@ body.gradient-logo {
 	margin-bottom: 0px;
 	padding-top: 0px;
 	padding-bottom: 0px;
-
+	background-color: transparent;
 	color: rgb(0,90,0);  /* dark x 2 green - darker than darkgreen */
 	font-size: 20px;
 	font-family: 'Raleway', sans-serif;
@@ -197,10 +209,9 @@ body.gradient-logo {
 .nav-link {
 	padding-top: 5px;
 	padding-bottom: 5px;
-		
+	background-color: transparent;
 	color: rgb(0,60,0);  /* dark x 3 green - considerably darker than darkgreen */
 	text-decoration: none;
-
 	font-size: 16px;
 	font-weight: 300;
 	line-height: 16px;
@@ -227,7 +238,9 @@ body.gradient-logo {
 	/* Set down from inline navigation menu, and inset a small amount for small screens */
 	margin-top: 20px;
 	margin-bottom: 30px;
-	padding: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 20px;
 	padding-bottom: 30px;
 	
 	overflow-y: auto;
@@ -239,8 +252,6 @@ body.gradient-logo {
 	box-shadow: 0 0 10px #888;
 	/* For IE 8 */
 	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=10, Direction=0, Color='#808080')";
-	/* For IE 5.5 - 7 */
-	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=10, Direction=0, Color='#808080');
 }
 
 
@@ -261,14 +272,15 @@ a.external {
 .content-title {
 	margin-top: 0px;
 	padding-top: 0px;
+	background-color: transparent;
 	color: rgb(0,90,0);
 	font-family: 'Raleway', sans-serif;
 }
 
 .content-meta-info {
+	background-color: transparent;
 	color: gray;
 	margin-top: -10px;
-	padding-top: -10px;
 	font-size: 14px;
 }
 
@@ -296,6 +308,7 @@ img.download-list-icon {
 .book-nav-back, .book-nav-up, .book-nav-forward {
 	display: inline;
 	white-space: nowrap;
+	background-color: transparent;
 	color: green;
 	font-size: 12px;
 	position: relative;
@@ -323,6 +336,7 @@ img.download-list-icon {
 	
 
 code {
+	background-color: transparent;
 	color: rgb(0, 0, 160); /* dark blue */
 	font-size: .9em;
 	font-family: 'DejaVu Sans Mono', Consolas, 'Lucida Console', Menlo, Monaco, monospace, sans-serif;
@@ -383,6 +397,7 @@ code.unicode {
 }
 
 .code-comment {
+	background-color: transparent;
 	color: green;
 }
 
@@ -412,6 +427,7 @@ code.unicode {
 .footer {
 	padding-left: 10px;
 	padding-right: 10px;
+	background-color: transparent;
 	color: gray;
 	font-weight: 300;
 	display: inline-block;
@@ -431,9 +447,14 @@ code.unicode {
 a.footer {
 	margin: 0px;
 	padding: 0px;
+	background-color: transparent;
 	color: gray;
 	display: inline-block;
 	font-weight: 300;
+}
+
+.term {
+	/* Placeholder; should receive actual styling. Should probably only affect strong. */
 }
 
 /* Tablet Layout: 481px to 768px. Inherits styles from: Mobile Layout. */
@@ -527,7 +548,9 @@ a.footer {
 
 	.content {
 		/* Increased padding when the screen width is a reasonable size */
-		padding: 40px;
+		padding-left: 40px;
+		padding-right: 40px;
+		padding-top: 40px;
 		padding-bottom: 30px;
 				
 		/* Restrict the width of the content pane to improve readability on very wide screens. */

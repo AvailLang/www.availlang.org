@@ -1,0 +1,138 @@
+strict digraph "Module resolution"
+{
+	label="\nThe module resolution process."
+	labelloc="bottom";
+	labeljust="center";
+	fontname="Helvetica";
+	fontsize="10";
+	fontcolor="#000000";
+	rankdir="TB";
+
+	node
+	[
+		fixedsize="true",
+		width="1.3",
+		height="0.8",
+		fontname="Helvetica",
+		fontsize="10",
+		fontcolor="#0000A0",
+		target="_top"
+	];
+	edge
+	[
+		fontname="Helvetica",
+		fontsize="9",
+		fontcolor="#808080"
+	];
+
+	canonize
+	[
+		label="Canonize Import\nTarget",
+		tooltip="Naively canonize the import target by appending its local name to the canonical name of the dependent module's enclosing container.",
+		shape="record",
+		style="rounded"
+	];
+	canRename
+	[
+		label="Rename Rule\nExists?",
+		tooltip="Does a module rename rule exist for the naively canonized import target?"
+		shape="diamond"
+	];
+	rename
+	[
+		label="Apply Rename\nRule",
+		tooltip="Apply the module rename rule to transform the naively canonized import target.",
+		shape="box"
+	];
+	translate
+	[
+		label="Translate to\nFile Path",
+		tooltip="Translate the naively canonized import target to a file path by 1) substituting the module root name for its source path and 2) appending .avail to each local name.",
+		shape="box"
+	];
+	morePackages
+	[
+		label="More Packages?",
+		tooltip="Are there still components of the file path that refer to packages?",
+		shape="diamond"
+	];
+	inPackage
+	[
+		label="File Exists\nIn Package?",
+		tooltip="Does the file path refer to an existing file?",
+		shape="diamond"
+	];
+	isPackage
+	[
+		label="File is Package?",
+		tooltip="Does the file path refer to a package?",
+		shape="diamond"
+	];
+	isRepresented
+	[
+		label="Representative\nExists?",
+		tooltip="Append the package representative to the file path. Does the representative exist?",
+		shape="diamond"
+	];
+	resolved
+	[
+		label="Resolved",
+		tooltip="Module resolution succeeded. Proceed using the resolved file path.",
+		shape="ellipse",
+		style="filled",
+		fillcolor="#33ff99"
+	];
+	truncate
+	[
+		label="Drop Last\nPackage",
+		tooltip="Drop the rightmost file path component that corresponds to a package. Proceed with the new file path.",
+		shape="box"
+	];
+	inRoot
+	[
+		label="File Exists\nIn Root?",
+		tooltip="Does the file path refer to an existing file?",
+		shape="diamond"
+	];
+	moreRoots
+	[
+		label="More Roots?",
+		tooltip="Are there still module roots that haven't been searched yet?",
+		shape="diamond"
+	];
+	nextRoot
+	[
+		label="Translate to\nNext Root",
+		tooltip="Rewrite the prefix of the file path that corresponds to the module root. It should now refer to a root that hasn't been searched yet. Proceed with the new file path.",
+		shape="box"
+	];
+	unresolvable
+	[
+		label="Unresolvable",
+		tooltip="It is not possible to resolve the import target using the supplied module roots, module renames file, and file system. Report failure.",
+		shape="ellipse",
+		style="filled",
+		fillcolor="#e41e1e",
+		fontcolor="#ffffff"
+	];
+	
+	canonize -> canRename;
+	canRename -> rename [label=" yes"];
+	canRename -> translate [label=" no"];
+	rename -> translate;
+	translate -> morePackages;
+	morePackages -> inPackage [label=" yes"];
+	inPackage -> isPackage [label=" yes"];
+	isPackage -> isRepresented [label=" yes"];
+	isPackage -> resolved [label=" no"];
+	isRepresented -> resolved [label=" yes"];
+	isRepresented -> unresolvable [label=" no"];
+	inPackage -> truncate [label=" no"];
+	truncate -> morePackages;
+	morePackages -> inRoot [label=" no"];
+	inRoot -> isPackage [label=" yes"];
+	inRoot -> moreRoots [label=" no"];
+	moreRoots -> nextRoot [label=" yes"];
+	nextRoot -> inRoot;
+	moreRoots -> unresolvable [label=" no"];
+}

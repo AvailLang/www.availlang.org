@@ -1,0 +1,194 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html>
+<!--<![endif]-->
+
+<head>
+	
+	<!--#include virtual="/_include/head.ssi" -->
+	<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
+	
+	<!--#include virtual="/_include/head.ssi" -->
+
+</head>
+<body>
+	<div class="stacks-wrapper">
+	<p>
+	Welcome to Stacks--the formal documentation of Avail's standard library.
+	</p>
+	<p>
+	Each Avail library method belongs to at least one category. The currently populated categories are listed in the Categories pane on the top left, and the methods in all of the selected categories, if any, are listed in the Methods pane on the bottom left. Categories are defined in the table below.  In the default case, when no categories are selected, no methods are displayed. The visibility of both categories and methods can be filtered by using their respective filter boxes. Filtering categories does <em>not</em> affect whether they are selected.
+	</p>
+	<p>	
+	To view documentation for a method, click its link in the Methods pane. The contents of this pane will be replaced with the method details page, which includes the full method name, a general description of the method (if any), and the details of each grammatical restriction, method implementation, and semantic restriction defined for the method name.
+	</p>
+		<h4 class="method-section-header">Stacks Categories</h4>
+	<div class="method-section-content">
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th style="white-space:nowrap" class="stacks g-col-label-narrow" scope="col">Category</th>
+					<th class="stacks g-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="stacks g-code">Types</td>
+					<td class="stacks i-desc">Methods focused on types. Types and metatypes.</td>
+				</tr>
+					<td class="stacks g-code">Constructors</td>
+					<td class="stacks i-desc">Producing a value from one or more values that specify the (immutable) composition or (mutable) state of the result.</td>
+				</tr>
+					<td class="stacks g-code">Conditionals</td>
+					<td class="stacks i-desc">Conditional control structures.</td>
+				</tr>
+					<td class="stacks g-code">Networking</td>
+					<td class="stacks i-desc">Sockets, IP addresses, network protocols, etc.</td>
+				</tr>
+					<td class="stacks g-code">Control Structures</td>
+					<td class="stacks i-desc">Conditionals, loops, early exits, and other serial constructs that influence a fiber's flow of control.</td>
+				</tr>
+					<td class="stacks g-code">Variables</td>
+					<td class="stacks i-desc">Methods focused on variables. Subtypes of variable.</td>
+				</tr>
+					<td class="stacks g-code">Continuations</td>
+					<td class="stacks i-desc">Methods focused on continuations and labels.</td>
+				</tr>
+					<td class="stacks g-code">Bootstrap</td>
+					<td class="stacks i-desc">Bootstrap functionality. This category should not appear on the website.</td>
+				</tr>
+					<td class="stacks g-code">Assertions</td>
+					<td class="stacks i-desc">An assertion is a sincere, executable comment that documents a program precondition, postcondition, invariant, or other behavioral assumption. Probably only appropriate for program elements in / avail/Avail/Foundation/Assertions.</td>
+				</tr>
+					<td class="stacks g-code">Unicode</td>
+					<td class="stacks i-desc">Unicode support, character classification, conversion between characters and code points, etc.</td>
+				</tr>
+					<td class="stacks g-code">Casts</td>
+					<td class="stacks i-desc">Dynamic type strengthening.</td>
+				</tr>
+					<td class="stacks g-code">Objects</td>
+					<td class="stacks i-desc">Methods focused on objects. Subtypes of object.</td>
+				</tr>
+					<td class="stacks g-code">Methods</td>
+					<td class="stacks i-desc">Methods focused on methods.</td>
+				</tr>
+					<td class="stacks g-code">Synchronization</td>
+					<td class="stacks i-desc">Synchronization devices.</td>
+				</tr>
+					<td class="stacks g-code">Maps</td>
+					<td class="stacks i-desc">Methods focused on maps. Subtypes of map.</td>
+				</tr>
+					<td class="stacks g-code">Mathematics</td>
+					<td class="stacks i-desc">Numeric constants and arithmetic operations.</td>
+				</tr>
+					<td class="stacks g-code">Backtracking</td>
+					<td class="stacks i-desc">Computational backtracking. Probably only appropriate for program elements in / avail/Avail/Foundation/Backtracking.</td>
+				</tr>
+					<td class="stacks g-code">Enumerations</td>
+					<td class="stacks i-desc">Methods focused on enumerations and instance types.</td>
+				</tr>
+					<td class="stacks g-code">Stringification</td>
+					<td class="stacks i-desc">Generating printable representations of values.</td>
+				</tr>
+					<td class="stacks g-code">Observing</td>
+					<td class="stacks i-desc">Automatic observing of assignments to variables within transactional boundaries.</td>
+				</tr>
+					<td class="stacks g-code">POJO</td>
+					<td class="stacks i-desc">Plain old Java objects. interaction with the Java programming language and libraries.</td>
+				</tr>
+					<td class="stacks g-code">Atoms</td>
+					<td class="stacks i-desc">An atom is a discrete unit of identity, and may have mutable, potentially fiber-heritable properties.</td>
+				</tr>
+					<td class="stacks g-code">Queries</td>
+					<td class="stacks i-desc">Interrogating the state of a value.</td>
+				</tr>
+					<td class="stacks g-code">Futures</td>
+					<td class="stacks i-desc">A future is a proxy for an operation that may not have completed yet.</td>
+				</tr>
+					<td class="stacks g-code">Function Implementations</td>
+					<td class="stacks i-desc">Methods focused on function implementations. Subtypes of function implementation.</td>
+				</tr>
+					<td class="stacks g-code">Phrases</td>
+					<td class="stacks i-desc">Methods focused on phrases. Subtypes of phrase.</td>
+				</tr>
+					<td class="stacks g-code">Concurrency</td>
+					<td class="stacks i-desc">Access to the current fiber, Inter-fiber communication, concurrent control structures, and synchronization devices.</td>
+				</tr>
+					<td class="stacks g-code">Exception Handling</td>
+					<td class="stacks i-desc">Raising and handling exceptions.</td>
+				</tr>
+					<td class="stacks g-code">File Systems</td>
+					<td class="stacks i-desc">Interacting with file systems, files, file principals, etc.</td>
+				</tr>
+					<td class="stacks g-code">Synchronous I/O</td>
+					<td class="stacks i-desc">I/O operations that block the calling fiber.</td>
+				</tr>
+					<td class="stacks g-code">Transformers</td>
+					<td class="stacks i-desc">Deriving a value from a similar value and one or more other values. This is essentially the functional equivalent of a mutator (setter).</td>
+				</tr>
+					<td class="stacks g-code">Relations</td>
+					<td class="stacks i-desc">Relational operators.</td>
+				</tr>
+					<td class="stacks g-code">Conversions</td>
+					<td class="stacks i-desc">Converting between similar values of different kinds.</td>
+				</tr>
+					<td class="stacks g-code">Collections</td>
+					<td class="stacks i-desc">Abstract (i.e., type neutral) aggregate data management.</td>
+				</tr>
+					<td class="stacks g-code">Standard I/O</td>
+					<td class="stacks i-desc">Interacting with the virtual machine's standard input, output, and error streams.</td>
+				</tr>
+					<td class="stacks g-code">Asynchronous I/O</td>
+					<td class="stacks i-desc">I/O operations that do not block the calling fiber.</td>
+				</tr>
+					<td class="stacks g-code">Data Abstractions</td>
+					<td class="stacks i-desc">Data structures and abstractions.</td>
+				</tr>
+					<td class="stacks g-code">Function Application</td>
+					<td class="stacks i-desc">Application and partial application of functions.</td>
+				</tr>
+					<td class="stacks g-code">Sets</td>
+					<td class="stacks i-desc">Methods focused on sets. Subtypes of set.</td>
+				</tr>
+					<td class="stacks g-code">Loops</td>
+					<td class="stacks i-desc">Loop control structures.</td>
+				</tr>
+					<td class="stacks g-code">Declarations</td>
+					<td class="stacks i-desc">A declaration causes a program element to become available under a given name.</td>
+				</tr>
+					<td class="stacks g-code">Primitives</td>
+					<td class="stacks i-desc">A primitive is provided by the Avail virtual machine, not the Avail standard library. Applies to any method implementation that has a Primitive statement as the first line following the (optional) argument section. Also applies to any special object.</td>
+				</tr>
+					<td class="stacks g-code">Strings</td>
+					<td class="stacks i-desc">Methods focused on strings. Subtypes of string.</td>
+				</tr>
+					<td class="stacks g-code">Logic</td>
+					<td class="stacks i-desc">Logical operators.</td>
+				</tr>
+					<td class="stacks g-code">Dimensional Analysis</td>
+					<td class="stacks i-desc">Dimensions and units, dimensioned quantities, etc.</td>
+				</tr>
+					<td class="stacks g-code">Integers</td>
+					<td class="stacks i-desc">Methods focused on extended integers and integers. Subtypes of extended integer.</td>
+				</tr>
+					<td class="stacks g-code">Tuples</td>
+					<td class="stacks i-desc">Methods focused on tuples. Subtypes of tuple.</td>
+				</tr>
+					<td class="stacks g-code">Exceptions</td>
+					<td class="stacks i-desc">Named failure conditions that participate in nonlocal recovery and propagation.</td>
+				</tr>
+					<td class="stacks g-code">Unit Testing</td>
+					<td class="stacks i-desc">Declaration of test suites and test cases. Tools for writing test cases. Running test suites.</td>
+				</tr>
+					<td class="stacks g-code">Numbers</td>
+					<td class="stacks i-desc">Methods focused on numbers. Subtypes of number.</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!doctype html>
+<!--[if lt IE 7]>
+ 	<html class="ie6 oldie">
+<![endif]-->
+<!--[if IE 7]>
+	<html class="ie7 oldie">
+<![endif]-->
+<!--[if IE 8]>
+	<html class="ie8 oldie">
+<![endif]-->
+	<!--[if gt IE 8]>
+	<!-->
+<html class="">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
+		<!--#include virtual="/_include/head.ssi" -->
+		<title>Avail - Library</title>
+	</head>
+	<body ng-app="stacksApp" ng-controller="CategoriesCntrl">
+		<div class="stacks-wrapper">
+	<h2 class="method-heading">_[_.._]</h2>
+	<h4 class="method-section-header">Grammatical restrictions:</h4>
+	<div class="method-section-content">
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th style="white-space:nowrap" class="stacks g-col-label-narrow" scope="col">Argument Position</th>
+					<th class="stacks g-col-label-wide" scope="col">Prohibited Expression</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="stacks g-code" rowspan="1">Argument 1</td>
+					<td class="stacks g-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early Tuples/3216719640.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early Tuples/3216719640.html">«_‡++»</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<h4 class="method-section-header">Implementations:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">sequence, natural number, whole number</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Sequences/Abstract Sequences</div>
+		<div class="category-list"><em>Categories:</em> Unclassified</div>
+		<div class="signature-description">
+			Answer the requested <code>sequence</code> of <a href="#aSequence-1557874759">aSequence</a> .
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="4">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="aSequence-1557874759" class="stacks i-code">aSequence</td>
+					<td class="stacks i-code">sequence</td>
+					<td class="stacks i-desc">
+						A <code>sequence</code> .
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="startIndex-1557874759" class="stacks i-code">startIndex</td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4066531304.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4066531304.html">natural number</a></td>
+					<td class="stacks i-desc">
+						The index of the start of the <code>sequence</code> .
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="endIndex-1557874759" class="stacks i-code">endIndex</td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/939335616.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/939335616.html">whole number</a></td>
+					<td class="stacks i-desc">
+						The index of the end of the <code>sequence</code> . May be <code>1</code> less than <a href="#startIndex-1557874759">startIndex</a> (to indicate an empty sequence).
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code">sequence</td>
+					<td class="stacks i-desc">
+						The requested <code>sequence</code> .
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">tuple meta, natural number, whole number</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Fallible Primitives</div>
+		<div class="category-list"><em>Categories:</em> Primitives</div>
+		<div class="signature-description">
+			Compute and answer a tuple containing the requested element types. Indices that are out of bounds report ⊥ as their element type.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="4">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="aTupleType-851120375" class="stacks i-code">aTupleType</td>
+					<td class="stacks i-code">tuple meta</td>
+					<td class="stacks i-desc">
+						A tuple type.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="sliceStart-851120375" class="stacks i-code">sliceStart</td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4066531304.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4066531304.html">natural number</a></td>
+					<td class="stacks i-desc">
+						The one-based index (inclusive) of the start of the slice.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="sliceEnd-851120375" class="stacks i-code">sliceEnd</td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/939335616.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/939335616.html">whole number</a></td>
+					<td class="stacks i-desc">
+						The one-based index (inclusive) of the end of the slice.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code">&lt;(any)'s type…|></td>
+					<td class="stacks i-desc">
+						The requested slice of element types.
+					</td>
+				</tr>
+					<th class="stacks i-row-label" colspan="2" rowspan="3">Raises</th>
+				<tr class="methodParameters">
+					<td class="stacks i-code">subscript-out-of-bounds exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">negative-size exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">tuple, natural number, whole number</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Fallible Primitives</div>
+		<div class="category-list"><em>Categories:</em> Primitives</div>
+		<div class="signature-description">
+			Construct and answer a slice (i.e. subtuple) of the specified tuple.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="4">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="aTuple-2078568124" class="stacks i-code">aTuple</td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3446388540.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3446388540.html">tuple</a></td>
+					<td class="stacks i-desc">
+						A tuple.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="sliceStart-2078568124" class="stacks i-code">sliceStart</td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4066531304.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4066531304.html">natural number</a></td>
+					<td class="stacks i-desc">
+						The one-based start index (inclusive) of the desired slice.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="sliceEnd-2078568124" class="stacks i-code">sliceEnd</td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/939335616.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/939335616.html">whole number</a></td>
+					<td class="stacks i-desc">
+						The one-based end index (inclusive) of the desired slice.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3446388540.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3446388540.html">tuple</a></td>
+					<td class="stacks i-desc">
+						The requested tuple.
+					</td>
+				</tr>
+					<th class="stacks i-row-label" colspan="2" rowspan="2">Raises</th>
+				<tr class="methodParameters">
+					<td class="stacks i-code">subscript-out-of-bounds exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<h4 class="method-section-header">Semantic restrictions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">tuple meta, natural number's type, whole number's type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Early Tuples</div>
+		<div class="signature-description">
+			
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent"scope="col"></th>
+					<th class="stacks i-col-label-narrow"scope="col">Type</th>
+					<th class="stacks i-col-label-wide"scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label"rowspan="4">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="tuple meta-1956836075" class="stacks i-code">tuple meta</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="natural number's type-1956836075" class="stacks i-code">natural number's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="whole number's type-1956836075" class="stacks i-code">whole number's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">tuple meta, natural number's type, whole number's type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Early Tuples</div>
+		<div class="signature-description">
+			
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent"scope="col"></th>
+					<th class="stacks i-col-label-narrow"scope="col">Type</th>
+					<th class="stacks i-col-label-wide"scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label"rowspan="4">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="tuple meta-1956836075" class="stacks i-code">tuple meta</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="natural number's type-1956836075" class="stacks i-code">natural number's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="whole number's type-1956836075" class="stacks i-code">whole number's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+		</div>
+	</body>
+</html>
+			

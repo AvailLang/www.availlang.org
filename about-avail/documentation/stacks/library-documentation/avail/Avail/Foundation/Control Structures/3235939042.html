@@ -1,0 +1,133 @@
+<!doctype html>
+<!--[if lt IE 7]>
+ 	<html class="ie6 oldie">
+<![endif]-->
+<!--[if IE 7]>
+	<html class="ie7 oldie">
+<![endif]-->
+<!--[if IE 8]>
+	<html class="ie8 oldie">
+<![endif]-->
+	<!--[if gt IE 8]>
+	<!-->
+<html class="">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
+		<!--#include virtual="/_include/head.ssi" -->
+		<title>Avail - Library</title>
+	</head>
+	<body ng-app="stacksApp" ng-controller="CategoriesCntrl">
+		<div class="stacks-wrapper">
+	<h2 class="method-heading">Choose|choose_from_where«_is_‡,»«,else_»</h2>
+	<h4 class="method-section-header">Implementations:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">any, type, &lt;&lt;any, []→⊤…|2>…|1..>, &lt;[]→⊤…|0..1></div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Control Structures</div>
+		<div class="category-list"><em>Categories:</em> Control Structures, Conditionals</div>
+		<div class="signature-description">
+			Case statement/expression. <a href="#enum-1334327394">enum</a> is an enumeration. <a href="#value-1334327394">value</a> must be one of the instances of <a href="#enum-1334327394">enum</a> . Choose the case corresponding to <a href="#value-1334327394">value</a> and perform its associated action. If no case corresponds to <a href="#value-1334327394">value</a> , then perform the <a href="#else-1334327394">else</a> action. <a href="#else-1334327394">else</a> must be provided unless <a href="#caseTuple-1334327394">caseTuple</a> specifically represents each value of <a href="#enum-1334327394">enum</a> .
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="5">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="value-1334327394" class="stacks i-code">value</td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4064851822.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4064851822.html">any</a></td>
+					<td class="stacks i-desc">
+						An instance of <a href="#enum-1334327394">enum</a> .
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="enum-1334327394" class="stacks i-code">enum</td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1042829226.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1042829226.html">type</a></td>
+					<td class="stacks i-desc">
+						An enumeration.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="caseTuple-1334327394" class="stacks i-code">caseTuple</td>
+					<td class="stacks i-code">&lt;&lt;any, []→⊤…|2>…|1..></td>
+					<td class="stacks i-desc">
+						A tuple of 2-tuples whose first element is an instance of <a href="#enum-1334327394">enum</a> and whose second element is an arity-0 function. This function will be performed if <a href="#value-1334327394">value</a> equals the first element.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="else-1334327394" class="stacks i-code">else</td>
+					<td class="stacks i-code">&lt;[]→⊤…|0..1></td>
+					<td class="stacks i-desc">
+						A tuple optionally containing the function to invoke if <a href="#value-1334327394">value</a> does not match any of the cases. This represents the default case.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/741866010.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/741866010.html">⊤</a></td>
+					<td class="stacks i-desc">
+						The return value of the chosen function.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<h4 class="method-section-header">Semantic restrictions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">any meta, type's type, &lt;&lt;any, []→⊤…|2>…|1..>'s type, &lt;[]→⊤…|0..1>'s type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Control Structures</div>
+		<div class="signature-description">
+			Reject the current parse unless all of the following are true: - the second parameter's type's sole instance is an enumeration. - the first parameter's type is an instance of meta. - Each case's selector is a statically known value. - Each case's selector is an instance of the enumeration. - Every value of the enumeration is handled by a case, either explicitly or implicitly by the default case. - Each case's selector occurs only once.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent"scope="col"></th>
+					<th class="stacks i-col-label-narrow"scope="col">Type</th>
+					<th class="stacks i-col-label-wide"scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label"rowspan="5">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="any meta1279723101" class="stacks i-code">any meta</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="type's type1279723101" class="stacks i-code">type's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="<<any, []→⊤…|2>…|1..>'s type1279723101" class="stacks i-code">&lt;&lt;any, []→⊤…|2>…|1..>'s type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="<[]→⊤…|0..1>'s type1279723101" class="stacks i-code">&lt;[]→⊤…|0..1>'s type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+		</div>
+	</body>
+</html>
+			

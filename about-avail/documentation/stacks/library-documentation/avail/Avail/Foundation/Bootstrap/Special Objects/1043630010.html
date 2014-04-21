@@ -1,0 +1,39 @@
+<!doctype html>
+<!--[if lt IE 7]>
+ 	<html class="ie6 oldie">
+<![endif]-->
+<!--[if IE 7]>
+	<html class="ie7 oldie">
+<![endif]-->
+<!--[if IE 8]>
+	<html class="ie8 oldie">
+<![endif]-->
+	<!--[if gt IE 8]>
+	<!-->
+<html class="">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
+		<!--#include virtual="/_include/head.ssi" -->
+		<title>Avail - Library</title>
+	</head>
+	<body ng-app="stacksApp" ng-controller="CategoriesCntrl">
+		<div class="stacks-wrapper">
+	<h2 class="method-heading">boolean</h2>
+		<div class="module-location">/avail/Avail/Foundation/Bootstrap/Special Objects: <strong>boolean</strong></div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Special Objects</div>
+		<div class="category-list"><em>Categories:</em> Primitives, Types</div>
+	<div class="method-section-content">
+		<div class="signature-heading">
+			Supertypes: <a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2846126569.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2846126569.html">atom</a>
+		</div>
+		<div class="signature-description">
+			The enumeration of the special atoms <a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html">true</a> and <a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html">false</a> . All primitive interrogatives use classical (Boolean) bivalence and all stable primitive interrogatives obey the three classical (Aristotelian) laws of thought. Bivalent logic assigns either <a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html">true</a> or <a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html">false</a> as the unique truth value of every proposition. A primitive interrogative, i.e. <a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1043630010.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1043630010.html">boolean</a> -valued primitive, is stable iff it reliably answers either <a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html">true</a> or <a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html">false</a> for a given set of arguments. The three classical laws of thought are: <ul> <li><strong>The law of identity: P → P.</strong> For every stable primitive interrogative <code>prim_,_,_</code> , then <code>prim A, B, C = prim A, B, C</code> . </li> <li><strong>The law of noncontradiction: ¬(P ∧ ¬P).</strong> For every stable primitive interrogative <code>prim_,_,_</code> , then <code>(prim A, B, C ∧ ¬prim A, B, C) = false</code> .</li> <li><strong>The law of excluded middle: P ∨ ¬P.</strong> For every primitive interrogative <code>prim_,_,_</code> , then <code>((prim A, B, C = true) ∨ (prim A, B, C = false)) = true</code> .</li> Note that values may be instances of many enumerations. This means that Avail directly supports other logical systems, such as Kleene's three-valued logic of indeterminacy, whose truth values are <code>true</code> , <code>false</code> , and <code>unknown</code> . Implementation of this system would proceed directly from creation of an atom to represent <code>unknown</code> and the formation of a new enumeration that contained the standard <a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html">true</a> and <a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html">false</a> atoms and also the <code>unknown</code> atom. New logical operations could then be written in terms of this new enumeration.
+		</div>
+	</div>
+
+		</div>
+	</body>
+</html>
+			
