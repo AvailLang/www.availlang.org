@@ -124,7 +124,7 @@ a.method-link
 
 .pane-contents {
 	padding: 4px;
-	height: calc(100% - 35px - 8px - 25px - 4px);
+	height: calc(100% - 35px - 8px - 25px - 7px);
 	overflow: scroll;
 }
 
