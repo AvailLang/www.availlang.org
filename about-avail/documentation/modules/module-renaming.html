@@ -20,7 +20,7 @@
 		
 <h2 class="content-title">Module Renaming</h2>
 
-<p>An Avail programmer can short-circuit the <a href="./module-resolution.html">module resolution process</a> for an import target by supplying a module renames file. A <strong>module renames file</strong> is a <a href="http://en.wikipedia.org/wiki/Plain_text">plain text</a> document that contains <a href="http://en.wikipedia.org/wiki/Unicode">Unicode</a> <a href="http://en.wikipedia.org/wiki/Code_point">code points</a> in the <a href="http://en.wikipedia.org/wiki/Utf-8">UTF-8</a> <a href="http://en.wikipedia.org/wiki/Character_encoding">character encoding</a>. Its contents are zero or more module renaming rules:</p>
+<p>An Avail programmer can short-circuit the <a href="./module-resolution.html">module resolution process</a> for an import target by supplying a module renames file. A <strong>module renames file</strong> is a <a class="offsite" href="http://en.wikipedia.org/wiki/Plain_text">plain text</a> document that contains <a class="offsite" href="http://en.wikipedia.org/wiki/Unicode">Unicode</a> <a class="offsite" href="http://en.wikipedia.org/wiki/Code_point">code points</a> in the <a class="offsite" href="http://en.wikipedia.org/wiki/Utf-8">UTF-8</a> <a class="offsite" href="http://en.wikipedia.org/wiki/Character_encoding">character encoding</a>. Its contents are zero or more module renaming rules:</p>
 
 <div class="scrolling">
 <iframe src="/_images/modules/module-renames-file.svg" style="margin: auto" seamless></iframe>
@@ -28,7 +28,7 @@
 
 <p>Where a module renaming rule is expressed by <code>sourceName &rarr; targetName</code>, and <code>sourceName</code> and <code>targetName</code> are canonical names denoted as simple quoted strings. In this context, a simple quoted string comprises a <em>quotation mark</em> <code>"</code> <code class="unicode">(U+0022)</code>, then arbitrarily many characters other than a quotation mark, then a quotation mark. A <strong>module renaming rule</strong> is a directive to the module resolution process to replace each occurrence of <code>sourceName</code> with <code>targetName</code> <em>before</em> attempting to derive a file reference.</p>
 
-<p>All official Avail tools released and supported by The Avail Foundation, LLC, such as the Avail workbench and the command-line Avail compiler, support specification of the module renames file via the <code>AVAIL_RENAMES</code> <a href="http://en.wikipedia.org/wiki/Environment_variable">environment variable</a>.<sup><a href="#fn1">[1]</a></sup></p>
+<p>All official Avail tools released and supported by The Avail Foundation, LLC, such as the Avail workbench and the command-line Avail compiler, support specification of the module renames file via the <code>AVAIL_RENAMES</code> <a class="offsite" href="http://en.wikipedia.org/wiki/Environment_variable">environment variable</a>.<sup><a href="#fn1">[1]</a></sup></p>
 
 <p>The need to augment the usual module resolution process with a module renames file is unusual; the usual use case is for the module renames file to be an empty document.</p>
 

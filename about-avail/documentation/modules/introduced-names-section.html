@@ -55,7 +55,7 @@ Names
 Body
 </div></div>
 
-<p>In this example, <code class="module">Dice</code> is a module that defines services related to constructing and evaluating arbitrary dice expressions of the kinds prescribed by many <a href="http://en.wikipedia.org/wiki/Role-playing_game_system">role-playing game systems</a>. As such, it provides dice-related services but does not consume them, i.e., it knows how to use dice but does not know why or when to do so. <code class="module">Dice</code> is a service provider, e.g., library, and its introduced names section constitutes the catalog of its available services.</p>
+<p>In this example, <code class="module">Dice</code> is a module that defines services related to constructing and evaluating arbitrary dice expressions of the kinds prescribed by many <a class="offsite" href="http://en.wikipedia.org/wiki/Role-playing_game_system">role-playing game systems</a>. As such, it provides dice-related services but does not consume them, i.e., it knows how to use dice but does not know why or when to do so. <code class="module">Dice</code> is a service provider, e.g., library, and its introduced names section constitutes the catalog of its available services.</p>
 
 <p>By including a name in the introduced names section, the compiler or executor creates a new atom and associates it with the name. Equivalent names imported from upstream modules are <strong>shadowed</strong> by the new name. This means that an operation that <a href="./name-resolution.html">resolves a name</a> to an atom will always prefer an atom created by a locally introduced name over one imported from an upstream module. Because of this rule, the following scenario is unambiguous despite the fact that <code class="module">Avail</code> and <code class="module">Dimensional Analysis</code> each export <code>"_+_"</code>:</p>
 
@@ -97,7 +97,7 @@ Body
 counter : whole number := 0;
 </div></div>
 
-<p>This is a design point of Avail. While it would have been easy to associate atoms with module constants and module variables, thereby making them available for export, doing so would have increased the scope of module-specific state. This, in turn, would encourage construction of <a href="http://en.wikipedia.org/wiki/Spaghetti_code">spaghetti code</a>.</p>
+<p>This is a design point of Avail. While it would have been easy to associate atoms with module constants and module variables, thereby making them available for export, doing so would have increased the scope of module-specific state. This, in turn, would encourage construction of <a class="offsite" href="http://en.wikipedia.org/wiki/Spaghetti_code">spaghetti code</a>.</p>
 
 <p>It is, however, trivial for a programmer to overcome this limitation in exactly those circumstances in which she wishes to do so. First, define methods that reference the module constant or module variable. Then export the associated messages for use by downstream modules.</p>
 
@@ -119,7 +119,7 @@ Method "Increment counter" is [atomically read ↑_counter and add 1] : ⊤;
 <ul>
 <li>Design features rather than accrete them over time.</li>
 <li>Consider issues of semantic abstraction and data encapsulation.</li>
-<li>Consider issues of the cardinality of software features, i.e., the <a href="http://en.wikipedia.org/wiki/Singleton_pattern">singleton</a> <a href="http://en.wikipedia.org/wiki/Anti-pattern">anti-</a><a href="http://en.wikipedia.org/wiki/Design_pattern_(computer_science)">pattern</a>.</li>
+<li>Consider issues of the cardinality of software features, i.e., the <a class="offsite" href="http://en.wikipedia.org/wiki/Singleton_pattern">singleton</a> <a class="offsite" href="http://en.wikipedia.org/wiki/Anti-pattern">anti-</a><a class="offsite" href="http://en.wikipedia.org/wiki/Design_pattern_(computer_science)">pattern</a>.</li>
 <li>Consider issues of concurrent access.</li>
 </ul>
 

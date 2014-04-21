@@ -29,8 +29,9 @@ a:visited {
 	color: inherit;
 }
 
-.offsite {
-	/* Placeholder; should receive actual styling. Should only affect a href= …. */
+a.offsite {
+   padding-right: 13px;
+   background: transparent url("/_images/offsite-link.png") no-repeat scroll right center;
 }
 
 b, strong { 
@@ -256,11 +257,6 @@ body.gradient-logo {
 
 
        /*** Content Styles ***/
-
-a.external {
-   padding-right: 13px;
-   background: transparent url("/_images/external.png") no-repeat scroll right center;
-}
 
 .content-supertitle {
 	margin-top: 0px;

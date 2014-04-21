@@ -47,7 +47,7 @@
 
 <dl>
 <dt><em><a id="canonize">Canonize the import target.</a></em></dt>
-<dd>Module resolution begins by naively canonizing the import target &mdash; specified by the local name <code class="module">L</code> &mdash; as if it were a sibling of the dependent module. A file is <strong>sibling</strong> to another if they both reside in the same file system <a href="http://en.wikipedia.org/wiki/Directory_(computing)">directory</a>. Let us call this naive canonical name <code class="module">M</code>.</dd>
+<dd>Module resolution begins by naively canonizing the import target &mdash; specified by the local name <code class="module">L</code> &mdash; as if it were a sibling of the dependent module. A file is <strong>sibling</strong> to another if they both reside in the same file system <a class="offsite" href="http://en.wikipedia.org/wiki/Directory_(computing)">directory</a>. Let us call this naive canonical name <code class="module">M</code>.</dd>
 
 <dt class="resolution-rules"><em><a id="canRename">Is there an applicable rename rule?</a></em></dt>
 <dd>Does the <a href="./module-renaming.html">module renames file</a> specify a module rename rule that would transform <code class="module">M</code> into the canonical name <code class="module">M&prime;</code>? If so, then <a href="#rename">apply the rename rule</a>. If not, then go ahead with <a href="#translate">translating the canonical name to a file system path</a>.</dd>
@@ -69,7 +69,7 @@ where <code class="module">R</code> is a module root name, <code class="module">
 	<li>&hellip;</li>
 	<li>Rewrite <code class="module">P<sub>n</sub></code> as <code>P<sub>n</sub>.avail</code>.</li>
 	<li>Rewrite <code class="module">L</code> as <code>L.avail</code>.</li>
-	<li>Replace each occurrence of <em>solidus</em> <code>/</code> <code class="unicode">(U+002F)</code> with the platform-specific <a href="http://en.wikipedia.org/wiki/Path_(computing)">directory separator</a>. (On Unix this will be solidus; on Windows, <em>reverse solidus</em> <code>\</code> <code class="unicode">(U+005C)</code>.)</li>
+	<li>Replace each occurrence of <em>solidus</em> <code>/</code> <code class="unicode">(U+002F)</code> with the platform-specific <a class="offsite" href="http://en.wikipedia.org/wiki/Path_(computing)">directory separator</a>. (On Unix this will be solidus; on Windows, <em>reverse solidus</em> <code>\</code> <code class="unicode">(U+005C)</code>.)</li>
 	</ul>
 
 Let us call the result of this translation <code>F</code>, whose expansion is
@@ -222,7 +222,7 @@ This file exists, so resolution succeeds.</li>
 
 <hr/>
 
-<p><small><a id="fn1">[1]</a> Technically, the system is only guaranteed to carry out an algorithm that is behaviorally <a href="http://en.wikipedia.org/wiki/Isomorphism">isomorphic</a> to this one: it is guaranteed that module resolution produces only results that are consistent with the description of the algorithm provided here. The implementation may actually use different techniques, generally because they are more efficient.</small></p>
+<p><small><a id="fn1">[1]</a> Technically, the system is only guaranteed to carry out an algorithm that is behaviorally <a class="offsite" href="http://en.wikipedia.org/wiki/Isomorphism">isomorphic</a> to this one: it is guaranteed that module resolution produces only results that are consistent with the description of the algorithm provided here. The implementation may actually use different techniques, generally because they are more efficient.</small></p>
 
 <table class="book-nav">
 	<tr>
