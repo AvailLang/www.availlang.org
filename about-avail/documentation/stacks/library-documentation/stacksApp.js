@@ -78,6 +78,7 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "$…", "link" : "avail/Avail/Foundation/Literals/1874443506.html", "distinct" : "$…/avail/Avail/Foundation/Literals/1874443506.html"},
 			{"methodName" : "{«_→_‡,»}", "link" : "avail/Avail/Foundation/Literals/2606992317.html", "distinct" : "{«_→_‡,»}/avail/Avail/Foundation/Literals/2606992317.html"},
 			{"methodName" : "cascade_", "link" : "avail/Avail/Foundation/Exceptions/1766065615.html", "distinct" : "cascade_/avail/Avail/Foundation/Exceptions/1766065615.html"},
+			{"methodName" : "a|an_«with«_«:»?:=_‡,»»", "link" : "avail/Avail/Foundation/Objects/1212441434.html", "distinct" : "a|an_«with«_«:»?:=_‡,»»/avail/Avail/Foundation/Objects/1212441434.html"},
 			{"methodName" : "(_.._]", "link" : "avail/Avail/Foundation/Early Math/2517657147.html", "distinct" : "(_.._]/avail/Avail/Foundation/Early Math/2517657147.html"},
 			{"methodName" : "a non-reentrant mutex«named_»", "link" : "avail/Avail/Foundation/Synchronization/2125203583.html", "distinct" : "a non-reentrant mutex«named_»/avail/Avail/Foundation/Synchronization/2125203583.html"},
 			{"methodName" : "[_.._)", "link" : "avail/Avail/Foundation/Early Math/1603059582.html", "distinct" : "[_.._)/avail/Avail/Foundation/Early Math/1603059582.html"},
@@ -251,6 +252,7 @@ stacksApp.factory('Categories', function () {
 		"category" : "Objects",
 		"methods" : [
 			{"methodName" : "“_”", "link" : "avail/Avail/Foundation/Bootstrap/Origin/1463730922.html", "distinct" : "“_”/avail/Avail/Foundation/Bootstrap/Origin/1463730922.html"},
+			{"methodName" : "a|an_«with«_«:»?:=_‡,»»", "link" : "avail/Avail/Foundation/Objects/1212441434.html", "distinct" : "a|an_«with«_«:»?:=_‡,»»/avail/Avail/Foundation/Objects/1212441434.html"},
 			{"methodName" : "_as_«with«_::=_‡,»»", "link" : "avail/Avail/Foundation/Objects/3662854860.html", "distinct" : "_as_«with«_::=_‡,»»/avail/Avail/Foundation/Objects/3662854860.html"},
 			{"methodName" : "extend_with«_:_‡,»", "link" : "avail/Avail/Foundation/Objects/995793670.html", "distinct" : "extend_with«_:_‡,»/avail/Avail/Foundation/Objects/995793670.html"},
 			{"methodName" : "«Public»?«Explicit|explicit»?Class|class_extends_«with immutable⁇field|fields««public»?«reconstructible»?_:_‡,»»«with mutable field|fields««public»?«shared»?«referable»?«read-only»?_:_‡,»»«with reconstructor|reconstructors««public»?(«_‡,»)‡,»»", "link" : "avail/Avail/Foundation/Objects/916227276.html", "distinct" : "«Public»?«Explicit|explicit»?Class|class_extends_«with immutable⁇field|fields««public»?«reconstructible»?_:_‡,»»«with mutable field|fields««public»?«shared»?«referable»?«read-only»?_:_‡,»»«with reconstructor|reconstructors««public»?(«_‡,»)‡,»»/avail/Avail/Foundation/Objects/916227276.html"}

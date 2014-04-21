@@ -27,7 +27,7 @@
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Fallible Primitives</div>
 		<div class="category-list"><em>Categories:</em> Primitives</div>
 		<div class="signature-description">
-			Construct and answer a function that, when applied with arguments corresponding to the specified parameter types, constructs a new pojo of the specified type. * The answered function adapts a reflective invocation of the Java constructor, if any, that accepts the specified number and types of arguments. To establish type conformance between Avail types and Java types for the purpose of reflective constructor lookup and invocation, the following marshaling rules are applied: * <ul> <li>`[-128..127]` is marshaled to Java byte (java.lang.Byte.TYPE).</li> <li>`[-32768..32767]` is marshaled to Java short (java.lang.Short.TYPE).</li> <li>`[-2^31..2^31-1]` is marshaled to Java int (java.lang.Integer.TYPE).</li> <li>`[-2^63..2^63-1]` is marshaled to Java long (java.lang.Long.TYPE).</li> <li>`boolean` is marshaled to Java boolean (java.lang.Boolean.TYPE).</li> <li>`character` is marshaled to Java char (java.lang.Character.TYPE).</li> <li>`float` is marshaled to Java float (java.lang.Float.TYPE).</li> <li>`double` is marshaled to Java double (java.lang.Double.TYPE).</li> <li>`string` is marshaled to java.lang.String.</li> <li>`_[]` is marshaled to java.lang.reflect.Array.newInstance().getClass().</li> <li>`_<«_‡,»>` is marshaled to the reflected Java class or interface.</li> <li>All other values are marshaled to com.avail.descriptor.AvailObject.</li> </ul> *
+			Construct and answer a function that, when applied with arguments corresponding to the specified parameter types, constructs a new pojo of the specified type. The answered function adapts a reflective invocation of the Java constructor, if any, that accepts the specified number and types of arguments. To establish type conformance between Avail types and Java types for the purpose of reflective constructor lookup and invocation, the following marshaling rules are applied: <ul> <li>`[-128..127]` is marshaled to Java byte (java.lang.Byte.TYPE).</li> <li>`[-32768..32767]` is marshaled to Java short (java.lang.Short.TYPE).</li> <li>`[-2^31..2^31-1]` is marshaled to Java int (java.lang.Integer.TYPE).</li> <li>`[-2^63..2^63-1]` is marshaled to Java long (java.lang.Long.TYPE).</li> <li>`boolean` is marshaled to Java boolean (java.lang.Boolean.TYPE).</li> <li>`character` is marshaled to Java char (java.lang.Character.TYPE).</li> <li>`float` is marshaled to Java float (java.lang.Float.TYPE).</li> <li>`double` is marshaled to Java double (java.lang.Double.TYPE).</li> <li>`string` is marshaled to java.lang.String.</li> <li>`_[]` is marshaled to java.lang.reflect.Array.newInstance().getClass().</li> <li>`_<«_‡,»>` is marshaled to the reflected Java class or interface.</li> <li>All other values are marshaled to com.avail.descriptor.AvailObject.</li> </ul>
 		</div>
 		<table class="stacks">
 			<thead>
@@ -58,7 +58,7 @@
 				</tr>
 				<tr class="methodParameters">
 					<td id="failFunction1970773201" class="stacks i-code">failFunction</td>
-					<td class="stacks i-code">pojo failure function</td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1567549492.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1567549492.html">pojo failure function</a></td>
 					<td class="stacks i-desc">
 						The function to apply if an invocation of the constructor throws a Java exception.
 					</td>
@@ -88,7 +88,7 @@
 	</div>
 	<h4 class="method-section-header">Semantic restrictions:</h4>
 	<div class="method-section-content">
-		<div class="signature-heading">pojo's type's type, <any's type…|>'s type, [pojo exception]→⊤'s type</div>
+		<div class="signature-heading">pojo's type's type, &lt;any's type…|>'s type, [pojo exception]→⊤'s type</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Pojos</div>
 		<div class="signature-description">
 			
@@ -112,7 +112,7 @@
 					</td>
 				</tr>
 				<tr class="methodParameters">
-<td id="<any's type…|>'s type329388353" class="stacks i-code"><any's type…|>'s type</td>
+<td id="<any's type…|>'s type329388353" class="stacks i-code">&lt;any's type…|>'s type</td>
 					<td class="stacks i-code">
 						
 					</td>

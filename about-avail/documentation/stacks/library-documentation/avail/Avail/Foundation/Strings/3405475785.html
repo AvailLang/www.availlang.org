@@ -27,9 +27,9 @@
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Strings</div>
 		<div class="category-list"><em>Categories:</em> Formatting, Strings</div>
 		<div class="signature-description">
-			Answer the result of fully formatting the specified template using format variable bindings contained in the given tuple. The tuple must contain bindings for all variables embedded within the template. * A template intermixes raw character data with format variable interpolation sites. An interpolation site begins with either the ¢‘ or ¢“ metacharacter and ends with the corresponding close metacharacter, either ¢’ or ¢”, respectively. An interpolation site must contain one of the fifty circled number characters (¢①, ¢②, ..., ¢㊿). The circled number character is understood to indicate a subscript within the specified tuple; the value at this subscript is this variable's value. If an interpolation site uses ¢“ (and ¢”), then the value will be converted to a string via `primitive description of_` when it is copied into the result. If an interpolation site uses ¢‘ (and ¢’), then the value must be a string and will be copied directly into the result. To escape a metacharacter, precede it immediately by ¢`. * For example: Assert: format ‘①’, ‘②’!
+			Answer the result of fully formatting the specified template using format variable bindings contained in the given tuple. The tuple must contain bindings for all variables embedded within the template. A template intermixes raw character data with format variable interpolation sites. An interpolation site begins with either the ¢‘ or ¢“ metacharacter and ends with the corresponding close metacharacter, either ¢’ or ¢”, respectively. An interpolation site must contain one of the fifty circled number characters (¢①, ¢②, ..., ¢㊿). The circled number character is understood to indicate a subscript within the specified tuple; the value at this subscript is this variable's value. If an interpolation site uses ¢“ (and ¢”), then the value will be converted to a string via `primitive description of_` when it is copied into the result. If an interpolation site uses ¢‘ (and ¢’), then the value must be a string and will be copied directly into the result. To escape a metacharacter, precede it immediately by ¢`. For example: Assert: format ‘①’, ‘②’!
  with unchecked <"Hello", world > = Hello, world!
- ; *
+ ;
 		</div>
 		<table class="stacks">
 			<thead>
@@ -46,21 +46,21 @@
 				</tr>
 				<tr class="methodParameters">
 					<td id="template-916482577" class="stacks i-code">template</td>
-					<td class="stacks i-code">string</td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/972788627.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/972788627.html">string</a></td>
 					<td class="stacks i-desc">
 						A template string.
 					</td>
 				</tr>
 				<tr class="methodParameters">
 					<td id="vars-916482577" class="stacks i-code">vars</td>
-					<td class="stacks i-code">tuple</td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3446388540.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3446388540.html">tuple</a></td>
 					<td class="stacks i-desc">
 						A tuple of format variable bindings. This tuple must include a binding (i.e., subscript) for every variable mentioned within the template.
 					</td>
 				</tr>
 				<tr>
 					<th class="stacks i-row-label" colspan="2">Returns</th>
-					<td class="stacks i-code">string</td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/972788627.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/972788627.html">string</a></td>
 					<td class="stacks i-desc">
 						The result of formatting the template usings the specified bindings.
 					</td>
