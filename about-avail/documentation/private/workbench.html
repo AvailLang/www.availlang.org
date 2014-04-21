@@ -126,7 +126,9 @@ when a build is started, get a global progressbar above the transcript window. W
 
 When a module is built, the builder traverses the dependency graph down to its leaf nodes: the modules which have no dependencies. These modules are compiled
 
+looks to find all entry points from loaded modules, builds synthetic module to import contents from  each loaded modules with an entry point and pastes your invocation in as code, then runs it. If only 1 module comes back with a successful interpretation, it runs it. If more than one comes back OK, the compiler rejects the send as ambiguous. If none come back, 
 
+Can’t use entry point at an argument position unless the entry point’s module exports that entry point as a method.
 
 <!--#include virtual="/_include/body-bottom.ssi" -->
 

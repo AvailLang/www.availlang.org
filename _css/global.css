@@ -246,6 +246,11 @@ body.gradient-logo {
 
        /*** Content Styles ***/
 
+a.external {
+   padding-right: 13px;
+   background: transparent url("/_images/external.png") no-repeat scroll right center;
+}
+
 .content-supertitle {
 	margin-top: 0px;
 	padding-top: 0px;
