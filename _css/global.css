@@ -26,7 +26,7 @@ a:hover {
 
 a:visited {
 	background-color: transparent;
-	color: inherit;
+	color: green;
 }
 
 a.offsite {
