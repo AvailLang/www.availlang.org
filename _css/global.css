@@ -26,12 +26,13 @@ a:hover {
 
 a:visited {
 	background-color: transparent;
-	color: green;
+/*	color: inherit; */
 }
 
 a.offsite {
    padding-right: 13px;
    background: transparent url("/_images/offsite-link.png") no-repeat scroll right center;
+   color: green;
 }
 
 b, strong { 
