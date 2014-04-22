@@ -4,7 +4,8 @@
    HTML5 display definitions
    ========================================================================== */
 
-article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, 
+section {
 	display: block; 
 }
 
@@ -27,9 +28,11 @@ audio:not([controls]) {
    ========================================================================== */
 
 /*
- * 1. Correct text resizing oddly in IE6/7 when body font-size is set using em units
+ * 1. Correct text resizing oddly in IE6/7 when body font-size is set using em 
+ 		units
  * 2. Force vertical scrollbar in non-IE
- * 3. Prevent iOS text size adjust on device orientation change, without disabling user zoom: h5bp.com/g
+ * 3. Prevent iOS text size adjust on device orientation change, without 
+ 		disabling user zoom: h5bp.com/g
  */
 
 html {
@@ -45,7 +48,7 @@ html {
    ========================================================================== */
 
 a:focus { 
-	outline: thin dotted; 
+/*	outline: thin dotted; */
 }
 
 /* Improve readability when focused and hovered in all browsers: h5bp.com/h */
@@ -64,10 +67,6 @@ abbr[title] {
 
 blockquote {
 	margin: 1em 40px;
-}
-
-body, button, input, select, textarea { 
-	font-family: 'Lato', sans-serif; 
 }
 
 dfn { 
@@ -100,7 +99,8 @@ mark {
 pre, code, kbd, samp {
 	monospace; 
 	font-size: .9em; 
-	font-family: 'DejaVu Sans Mono', Consolas, 'Lucida Console', Menlo, Monaco, monospace, sans-serif;
+	font-family: 'DejaVu Sans Mono', Consolas, 'Lucida Console', Menlo, Monaco, 
+		monospace, sans-serif;
 }
 
 /* Improve readability of pre-formatted text in all browsers */
@@ -108,12 +108,6 @@ pre {
 	white-space: pre; 
 	white-space: pre-wrap; 
 	word-wrap: break-word;
-}
-
-/* Reduce crowding of inline code because of comparatively narrow spaces in default font */
-code{ 
-	margin-left: 2px; 
-	margin-right: 2px;
 }
 
 q { 
@@ -129,7 +123,8 @@ small {
 	font-size: 85%;
 }
 
-/* Position subscript and superscript content without affecting line-height: h5bp.com/k */
+/* Position subscript and superscript content without affecting line-height: 
+	h5bp.com/k */
 sub, sup { 
 	font-size: 75%;
 	line-height: 0; 
@@ -180,6 +175,15 @@ img {
 	border: 0; 
 	-ms-interpolation-mode: bicubic; 
 	vertical-align: middle;
+}
+
+img, object, embed, video {
+	max-width: 100%;
+}
+
+/* IE 6 does not support max-width so default to width 100% */
+.ie6 img {
+	width:100%;
 }
 
 /*
@@ -242,7 +246,8 @@ button, input, select, textarea {
 }
 
 /*
- * 1. Define line-height as normal to match FF3/4 (set using !important in the UA stylesheet)
+ * 1. Define line-height as normal to match FF3/4 (set using !important in the 
+ 		UA stylesheet)
  * 2. Correct inner spacing displayed oddly in IE6/7
  */
 button, input { 
@@ -251,7 +256,8 @@ button, input {
 }
 
 /*
- * Reintroduce inner spacing in 'table' to avoid overlap and whitespace issues in IE6/7
+ * Reintroduce inner spacing in 'table' to avoid overlap and whitespace issues 
+ 	in IE6/7
  */
 
 table button, table input { 
@@ -364,7 +370,8 @@ td {
 	width: 1px; 
 }
 
-/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
+/* Extends the .visuallyhidden class to allow the element to be focusable when 
+	navigated to via the keyboard: h5bp.com/p */
 .visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { 
 	clip: auto; 
 	height: auto; 
