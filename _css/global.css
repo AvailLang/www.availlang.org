@@ -668,8 +668,9 @@ contain <code> */
 	}
 
 	.content-wrapper {	
-		/* Larger space induces a right margin */
-		margin-right: 150px;
+		/* Larger space induces a right margin. This should match the left 
+		margin from the narrower style. */
+		margin-right: 160px;
 		
 		/* Allow the restricted-width content pane to be centered within the 
 		window. */
@@ -685,6 +686,7 @@ contain <code> */
 				
 		/* Restrict the width of the content pane to improve readability on very 
 		wide screens. */
+		width: 100%;
 		max-width: 1000px;
 		display: inline-block;
 		text-align: left;
