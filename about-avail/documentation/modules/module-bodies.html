@@ -1,0 +1,99 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Modules - Module Bodies</title>
+		<style>
+		.top-level-statement
+		{
+			margin-top: 20px;
+		}
+		</style>
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+		
+<h2 class="content-title">Module Bodies</h2>
+
+<p>Every module includes a module body. A <strong>module body</strong> is a lexical container of Avail source code, and as such comprises a sequence of top-level statements. The body of a module begins immediately after the keyword <code>Body</code>, which must always be the last keyword to occur within a <a href="./module-headers.html">module header</a>.</p>
+
+<p>A statement that occurs directly within a module body, rather than recursively with function definitions, is called a <strong>top-level statement</strong>. Following is an enumeration of the legal top-level statements:</p>
+
+<ul>
+<li>A top-level <strong>variable declaration</strong> introduces a module variable. A <strong>module variable</strong> is a mutable location that is able to store instances of a declared type. A module variable has <strong>module scope</strong>: it is visible to every expression within the module that occurs lexically after its definition (unless <a class="offsite" href="http://en.wikipedia.org/wiki/Variable_shadowing">shadowed</a> by a parameter, local variable, or local constant). The <a class="offsite" href="http://en.wikipedia.org/wiki/Variable_(programming)#Scope_and_extent">extent</a> of a module variable will generally outlast its scope, since a module variable will typically be <a class="offsite" href="http://en.wikipedia.org/wiki/Closure_(computer_science)">closed</a> into a method definition.</li>
+<li class="top-level-statement">A top-level <strong>constant definition</strong> introduces a module constant. A <strong>module constant</strong> is permanently bound to a specific value. A module constant has module scope. The extent of a module constant will generally outlast its scope, since a module constant will typically be closed into a method definition.</li>
+<li class="top-level-statement">An <strong>assignment</strong> of a new value to a module variable.</li>
+<li class="top-level-statement">A <strong>message send</strong> of a <a href="/about-avail/documentation/type-system/types-top.html">⊤</a>-valued method definition. Method definers &mdash; like <code class="method">"Method_is_"</code>, <code class="method">"Semantic restriction_is_"</code>, <code class="method">"Grammatical restriction_is_"</code>, and <code class="method">"Seal method_at_"</code> &mdash; and <a href="/about-avail/documentation/type-system/types-object.html">object type</a> definers are the most common top-level message sends.</li>
+</ul>
+
+<p>Below is a sample module, <code class="module"><a class="offsite" href="http://en.wikipedia.org/wiki/Fibonacci_number">Fibonacci</a></code>. Its body constitutes everything following the <code>Body</code> keyword.</p>
+ 
+<div class="restricted-width-container"><div class="neutral-code code-block">Module "Fibonacci"
+Uses "Avail"
+Entries "Next Fibonacci number"
+Body
+
+/* No module state is visible here. */
+Forward method "Next Fibonacci number" is []→natural number;
+
+/* Now declare a module variable. */
+lastFibonacciNumber : natural number;
+
+/*
+ * lastFibonacciNumber is visible here and below.
+ */
+
+/* Send a message to define a method. */
+Method "a Fibonacci generator" is
+[
+	x : natural number;
+	y : natural number := 1;
+	z : natural number := 1;
+	[
+		x := y;
+		y := z;
+		z := x + y;
+		x
+	]
+];
+
+/* Now define a module constant. */
+generator ::= a Fibonacci generator;
+
+/*
+ * generator is visible here and below.
+ */
+
+/* Send a message to define a method. */
+Method "Next Fibonacci number" is
+[
+	lastFibonacciNumber := generator();
+	lastFibonacciNumber
+];
+</div></div>
+
+<table class="book-nav">
+	<tr>
+		<td class="book-nav-back"><a class="book-nav-back" href="./module-resolution.html">‹ Module Resolution</a></td>
+		<td class="book-nav-spacer">|</td>
+		<td class="book-nav-up"><a class="book-nav-up" href="./index.html">Return to Modules</a></td>
+		<td class="book-nav-spacer">|</td>
+		<td class="book-nav-forward"><a class="book-nav-forward" href="./name-bodies.html">Name Resolution ›</a></td>
+	</tr>
+</table>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>
