@@ -78,6 +78,7 @@
 
 <p>In short, we are starting all the way down at <strong>line 100</strong> because we needed space to define everything that we are going to use <em>before</em> we actually use it. Capiche? Right! Now stop procrastinating and join me on <strong>line 100</strong>.</p>
 
+<a name=local-constant></a>
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 100">
 <![CDATA[
@@ -346,7 +347,7 @@ Semantic restriction "Play guess a number between_and_" is
 
 <p>In this example, we will only consider the first activity.</p>
 
-<p>The parameter declarations of <strong>lines 115-116</strong> resemble those of <strong>lines 102-103</strong> but they are shifted up one level; they are <strong><a href="/about-avail/documentation/type-system/metatypes.html">metatypes</a></strong> rather than types. A metatype is a type whose instances are themselves types. It's more than a little bit wiggy, and just a tad bit whack, but it's very powerful &mdash; and it does become easier with time and practice. In fact, we've already seen these metatypes in several of our helper methods already.</p>
+<p>The parameter declarations of <strong>lines 115-116</strong> resemble those of <strong>lines 102-103</strong> but they are shifted up one level; they are <strong><a id="metatype" href="/about-avail/documentation/type-system/metatypes.html">metatypes</a></strong> rather than types. A metatype is a type whose instances are themselves types. It's more than a little bit wiggy, and just a tad bit whack, but it's very powerful &mdash; and it does become easier with time and practice. In fact, we've already seen these metatypes in several of our helper methods already.</p>
 
 <p>Now that we've demystified semantic restrictions a little bit, let's take a good look at the code. It's really pretty simple. There's a conditional (<strong>lines 118-122</strong>) and a return expression (<strong>line 123</strong>). The return expression answers <code><a href="/about-avail/documentation/type-system/types-top.html">&#8868;</a></code> <code class="unicode">(U+22A4)</code>, pronounced <em>top</em>, the root of the Avail type lattice. When used as the return expression in a semantic restriction, this is an Avail idiom that means "do not strengthen the inferred type of this call site", and we can ignore it. (We will worry about why it means this in a later tutorial.)</p>
 

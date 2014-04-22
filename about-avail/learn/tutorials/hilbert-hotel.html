@@ -367,7 +367,7 @@ Private method "Who is in room_`?" is
 <p>On <strong>line 84</strong>, <code>guest</code> refers to the local constant defined on <strong>line 68</strong>. We use the subscript operator to extract the first name (<code>guest[2]</code>) and the last name (<code>guest[1]</code>). Then we use the concatenation operator to combine the first name, a space, and the last name into a single <code>string</code>. The result of the concatenation is bound to the format variable <code>guest inquiry</code>.</p>
 
 <h4>Compile-time ambiguity</h4>
-
+<a name="local-constant"></a>
 <p>But wait! Isn't there a method named <code>"guest"</code>? In fact, didn't I spend five paragraphs talking about it? How can there be a local constant that is also named <code>guest</code>? How does the compiler know which one we are talking about on <strong>line 84</strong>? Does it prefer the original definition? Or perhaps it prefers the newest definition? Does it just flip a coin? Or consult a <a class="offsite" href="http://en.wikipedia.org/wiki/Magic_8-Ball">Magic 8-Ball</a>?</p>
 
 <p>I am pleased to say that the compiler uses neither arbitrary rules nor divination to resolve this dilemma. The compiler understands the expression the way that <em>you</em> would understand an ambiguous expression: it examines the surrounding context to see if it can infer a meaningful interpretation. Because natural language is often loose and sloppy, you would probably be content in most circumstances with discovering a <em>likely</em> interpretation. But the compiler refuses to proceed unless it can find an <em>unambiguous</em> interpretation. The last thing that you would want is for it to merrily compile errant code based on an electronic hunch. Compilation demands exactitude.</p>
