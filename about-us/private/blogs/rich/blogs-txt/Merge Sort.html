@@ -22,9 +22,9 @@
 
 <h3><a id="Summary">Summary</a></h3>
 
-<p><a href="http://en.wikipedia.org/wiki/Merge_sort">Merge sort</a> is a <a href="http://en.wikipedia.org/wiki/Sorting_algorithm#Classification">stable sorting algorithm</a> that dates back to the 1940's.  It is a <a href="http://en.wikipedia.org/wiki/Divide_and_conquer_algorithm">divide and conquer algorithm</a> that <a href"http://en.wikipedia.org/wiki/Recursion_(computer_science)">recursively</a> splits up the problem into smaller pieces in order to make it easier to solve.  Merge sort recursively divi<a href="http://en.wikipedia.org/wiki/Merge_sort">Wikipedia</a> treatments of algorithms can be a bit dense, if you are unfamiliar with the algorithm, try check out <a href="http://www.personal.kent.edu/~rmuhamma/Algorithms/MyAlgorithms/Sorting/mergeSort.htm">this overview by Rashid Bin Muhammad of Kent University</a> if you are unfamiliar with it.</p>
+<p><a class="offsite" href="http://en.wikipedia.org/wiki/Merge_sort">Merge sort</a> is a <a class="offsite" href="http://en.wikipedia.org/wiki/Sorting_algorithm#Classification">stable sorting algorithm</a> that dates back to the 1940's.  It is a <a class="offsite" href="http://en.wikipedia.org/wiki/Divide_and_conquer_algorithm">divide and conquer algorithm</a> that <a href"http://en.wikipedia.org/wiki/Recursion_(computer_science)">recursively</a> splits up the problem into smaller pieces in order to make it easier to solve.  Merge sort recursively divi<a class="offsite" href="http://en.wikipedia.org/wiki/Merge_sort">Wikipedia</a> treatments of algorithms can be a bit dense, if you are unfamiliar with the algorithm, try check out <a class="offsite" href="http://www.personal.kent.edu/~rmuhamma/Algorithms/MyAlgorithms/Sorting/mergeSort.htm">this overview by Rashid Bin Muhammad of Kent University</a> if you are unfamiliar with it.</p>
 
-<p>Mostly all of the methods I use to create merge sort are listed in my <a href="https://www.availlang.org/content/diversion-sorts#methodsUsed">previous post</a>.  The only two methods used in merge sort not in that list are:
+<p>Mostly all of the methods I use to create merge sort are listed in my <a href="/content/diversion-sorts#methodsUsed">previous post</a>.  The only two methods used in merge sort not in that list are:
 <ul>
 <li><code>"_[_..]"</code> :: <code>[tuple, natural number]→tuple</code> - Answer a subtuple of the input tuple starting from the given index through the end of the tuple.
 <li><code>"_[.._]"</code> :: <code>[tuple, whole number]→tuple of any meta</code> - Answer a subtuple of the input tuple starting from the beginning through to the given index.
@@ -78,7 +78,7 @@
 	else [output[..k-1] ++ splitInput[2][j..]]
 ]: tuple;</div></div></p>
 
-<p>Now onto the method that calls <code>"merge_with_"</code>.  The method, <code>"merge sort_with_"</code>, is a public method that is accessible outside of the Tuples module.  It is an <a href="http://en.wikipedia.org/wiki/Function_overloading">overloaded</a> method that has three separate implementations.  The three implementations handle the following cases:
+<p>Now onto the method that calls <code>"merge_with_"</code>.  The method, <code>"merge sort_with_"</code>, is a public method that is accessible outside of the Tuples module.  It is an <a class="offsite" href="http://en.wikipedia.org/wiki/Function_overloading">overloaded</a> method that has three separate implementations.  The three implementations handle the following cases:
 <ul>
 <li>A tuple of zero or one element</li>
 <li>A tuple containing between 2 and 10 elements</li>
@@ -100,7 +100,7 @@ Implementations are chosen at runtime, so we can safely do this and call the met
 	trivial 
 ] : <any…|0..1>;</div></div>
 
-<p>The implementation of the second case, a tuple of 2 to 10 elements, uses the implementation of the sorting method, insertion sort.  In my <a href="https://www.availlang.org/content/diversion-sorts">previous post on insertion sort</a>, I explained that for small tuples using insertion sort is more efficient than using merge sort.   To increase the overall efficiency of the calls to <code>"merge sort_with_"</code>,  I used a call to <code>"insertion sort_with_"</code> to perform the task of sorting smaller tuples.  This implementation is almost as simple as the implementation of the trivial case above:</p>
+<p>The implementation of the second case, a tuple of 2 to 10 elements, uses the implementation of the sorting method, insertion sort.  In my <a href="/content/diversion-sorts">previous post on insertion sort</a>, I explained that for small tuples using insertion sort is more efficient than using merge sort.   To increase the overall efficiency of the calls to <code>"merge sort_with_"</code>,  I used a call to <code>"insertion sort_with_"</code> to perform the task of sorting smaller tuples.  This implementation is almost as simple as the implementation of the trivial case above:</p>
 <div class="restricted-width-container">
 <div class="good-code-block">Method "merge sort_with_" is
 [
@@ -111,7 +111,7 @@ Implementations are chosen at runtime, so we can safely do this and call the met
 	insertion sort aTuple with comparator 
 ]: tuple;</div></div>
 
-<p>The final case of 11 or more elements is the actual implementation of the <a href="http://en.wikipedia.org/wiki/Merge_sort">merge sort algorithm</a>.  In order to sort the input tuple, it makes a recursive call to itself on each half of the input tuple.  Each successive call splits the tuple into smaller and smaller pieces until the size of the pieces are less than 11 elements.  Once the size of the input tuple is less than 11, the call of <code>"merge sort_with_"</code>, uses the implementation that calls <code>"insertion sort_with_"</code> to complete the sort.  This is then passed back up out of the recursive calls and the sorted pieces are successively merged into larger pieces using <code>"merge_with_"</code>.  This implementation is only slightly longer in length than the prior two implementations:</p>
+<p>The final case of 11 or more elements is the actual implementation of the <a class="offsite" href="http://en.wikipedia.org/wiki/Merge_sort">merge sort algorithm</a>.  In order to sort the input tuple, it makes a recursive call to itself on each half of the input tuple.  Each successive call splits the tuple into smaller and smaller pieces until the size of the pieces are less than 11 elements.  Once the size of the input tuple is less than 11, the call of <code>"merge sort_with_"</code>, uses the implementation that calls <code>"insertion sort_with_"</code> to complete the sort.  This is then passed back up out of the recursive calls and the sorted pieces are successively merged into larger pieces using <code>"merge_with_"</code>.  This implementation is only slightly longer in length than the prior two implementations:</p>
 <div class="restricted-width-container">
 <div class="good-code-block">Public method "merge sort_with_" is
 [
@@ -137,9 +137,9 @@ Implementations are chosen at runtime, so we can safely do this and call the met
 for the tuple of strings implementation and
 <div class="restricted-width-container">
 <div class="good-code-block">[n : number, m : number | n ≤ m]→boolean</div></div>
-for the tuple of numbers implementation.  This is done because this type of comparison is common for these tuple types.  This is also done for the <a href="http://en.wikipedia.org/wiki/Quicksort">quicksort</a> method implementations, <code>"quicksort_with_"</code> and <code>"quicksort_"</code> in the Avail library.</p>
+for the tuple of numbers implementation.  This is done because this type of comparison is common for these tuple types.  This is also done for the <a class="offsite" href="http://en.wikipedia.org/wiki/Quicksort">quicksort</a> method implementations, <code>"quicksort_with_"</code> and <code>"quicksort_"</code> in the Avail library.</p>
 
-<p>The implementations of <code>"merge sort_with_"</code> discussed in this blog is an example of <a href="http://en.wikipedia.org/wiki/Multiple_dispatch">multiple dispatch</a> in Avail.  As calls to <code>"merge sort_with_"</code> will have the input tuple-size appropriate implementation decided at runtime, the burden of an efficient implementation for sorting is lifted from the programmer.  Tack on a <a href="https://www.availlang.org/content/semantic-restrictions">semantic restriction</a>, and now you not only have an efficient, less burdensome way of sorting, you can safely know the stronger type of the output tuple at compile time. So without having to create a new, more input type specific implementation for the sort method, you can be more specific about the tuple type of the variable when assigning the output of the sort to it.  How's that you ask?  Well, that's a bit out of scope for this post, but perhaps I'll discuss semantic restrictions in a future post.</p>
+<p>The implementations of <code>"merge sort_with_"</code> discussed in this blog is an example of <a class="offsite" href="http://en.wikipedia.org/wiki/Multiple_dispatch">multiple dispatch</a> in Avail.  As calls to <code>"merge sort_with_"</code> will have the input tuple-size appropriate implementation decided at runtime, the burden of an efficient implementation for sorting is lifted from the programmer.  Tack on a <a href="/content/semantic-restrictions">semantic restriction</a>, and now you not only have an efficient, less burdensome way of sorting, you can safely know the stronger type of the output tuple at compile time. So without having to create a new, more input type specific implementation for the sort method, you can be more specific about the tuple type of the variable when assigning the output of the sort to it.  How's that you ask?  Well, that's a bit out of scope for this post, but perhaps I'll discuss semantic restrictions in a future post.</p>
 
 <!--#include virtual="/_include/body-bottom.ssi" -->
 

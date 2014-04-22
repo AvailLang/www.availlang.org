@@ -3,15 +3,15 @@
 				<div class="footer footer-line-separator">|</div>
 				<div class="footer-line">
 					<div class="footer">
-						<a href="http://www.availlang.org/rss.xml" 
+						<a href="/rss.xml" 
 							title="Subscribe to our RSS feed"><img alt="RSS" src="/_images/connect-icons/rss-basic.png" height="20"></a>
-						<a href="http://plus.google.com/111604718072889349453" 
+						<a class="unmarked" href="http://plus.google.com/111604718072889349453" 
 							title="View our Google+ page"><img alt="Google+" src="/_images/connect-icons/google-g-logo.png" height="20"></a>
-						<a href="http://www.facebook.com/availlang" 
+						<a class="unmarked" href="http://www.facebook.com/availlang" 
 							title="View our Facebook page"><img alt="Facebook" src="/_images/connect-icons/facebook-logo.png" height="20"></a>
-						<a href="http://www.twitter.com/availlang" 
+						<a class="unmarked" href="http://www.twitter.com/availlang" 
 							title="View our Twitter page"><img alt="Twitter" src="/_images/connect-icons/twitter-bird2.png" height="20"></a>
-						<a href="http://www.google.com/recaptcha/mailhide/d?k=011yoIuisd6JB4mat5s8ieDw==&amp;c=mRxNMeA6tl9LyYMk7uJ9iUPB8hhRl1ueGHKdDh-wUj8=" onclick="window.open('http://www.google.com/recaptcha/mailhide/d?k\075011yoIuisd6JB4mat5s8ieDw\75\75\46c\75mRxNMeA6tl9LyYMk7uJ9iUPB8hhRl1ueGHKdDh-wUj8\075', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;" 
+						<a class="unmarked" href="http://www.google.com/recaptcha/mailhide/d?k=011yoIuisd6JB4mat5s8ieDw==&amp;c=mRxNMeA6tl9LyYMk7uJ9iUPB8hhRl1ueGHKdDh-wUj8=" onclick="window.open('http://www.google.com/recaptcha/mailhide/d?k\075011yoIuisd6JB4mat5s8ieDw\75\75\46c\75mRxNMeA6tl9LyYMk7uJ9iUPB8hhRl1ueGHKdDh-wUj8\075', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;" 
 							title="Email us"><img alt="Email" src="/_images/connect-icons/mail.png" height="20"></a>
 					</div>
 					<div class="footer">|</div>

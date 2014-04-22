@@ -45,34 +45,34 @@
 		
 <h2 class="content-title">Module Discovery</h2>
 
-<p>As <a href="./introduction.html">previously established</a>, modules typically reside in files within a file system. Since a module is essentially just a file with a <code>.avail</code> extension, modules can obviously exist at arbitrary locations within a file system. It goes without saying then that the compiler cannot automatically discover every existing module. For the compiler to behave so conveniently, it would need to recursively explore every <a href="http://en.wikipedia.org/wiki/Mount_(computing)">mounted</a> file system. Given the storage capacity of modern devices and the organizational complexity of modern file systems, this kind of nicety is prohibitively expensive. It is the therefore the responsibility of an Avail programmer to seed the <strong>module discovery process</strong> with reasonable starting points.</p>
+<p>As <a href="./introduction.html">previously established</a>, modules typically reside in files within a file system. Since a module is essentially just a file with a <code>.avail</code> extension, modules can obviously exist at arbitrary locations within a file system. It goes without saying then that the compiler cannot automatically discover every existing module. For the compiler to behave so conveniently, it would need to recursively explore every <a class="offsite" href="http://en.wikipedia.org/wiki/Mount_(computing)">mounted</a> file system. Given the storage capacity of modern devices and the organizational complexity of modern file systems, this kind of nicety is prohibitively expensive. It is the therefore the responsibility of an Avail programmer to seed the <strong>module discovery process</strong> with reasonable starting points.</p>
 
 <p>Every module visible to the compiler resides, directly or indirectly, within a module root. A <strong>module root</strong> is an abstract location supplied to the compiler as a starting point for module discovery. Each module root is given a distinct name &mdash; the <strong>module root name</strong> &mdash; that the system can use to provide diagnostic messages about modules. The compiler can be seeded with arbitrarily many module roots. If a module is not recursively contained by one of these roots, then it cannot be discovered.</p>
 
-<p>The module roots are supplied to the compiler by means of a <strong>module roots path</strong>. A module roots path satisfies the <code>ModuleRootsPath</code> <a href="http://en.wikipedia.org/wiki/Syntax_diagram">syntax diagram</a>:</p>
+<p>The module roots are supplied to the compiler by means of a <strong>module roots path</strong>. A module roots path satisfies the <code>ModuleRootsPath</code> <a class="offsite" href="http://en.wikipedia.org/wiki/Syntax_diagram">syntax diagram</a>:</p>
 
 <div class="scrolling">
 <p style="text-align: center"><code>ModuleRootsPath</code></p>
 <iframe src="/_images/modules/module-roots-path.svg" style="margin: auto" seamless></iframe>
 </div>
 
-<p>A module roots path comprises zero or many module root specifications. A <strong>module root specification</strong> is a binding between a module root name and a module root path. A module root specification satisfies the <a href="http://en.wikipedia.org/wiki/Terminal_and_nonterminal_symbols">nonterminal</a> <code>ModuleRootSpecification</code>, and corresponds to the following syntax diagram,</p>
+<p>A module roots path comprises zero or many module root specifications. A <strong>module root specification</strong> is a binding between a module root name and a module root path. A module root specification satisfies the <a class="offsite" href="http://en.wikipedia.org/wiki/Terminal_and_nonterminal_symbols">nonterminal</a> <code>ModuleRootSpecification</code>, and corresponds to the following syntax diagram,</p>
 
 <div class="scrolling">
 <p style="text-align: center"><code>ModuleRootSpecification</code></p>
 <iframe src="/_images/modules/module-root-specification.svg" style="margin: auto" seamless></iframe>
 </div>
 
-<p>where the <a href="http://en.wikipedia.org/wiki/Terminal_and_nonterminal_symbols">terminal</a> <code>moduleRootName</code> denotes a module root name. A <strong>module root path</strong> conjoins a source module path and a binary repository path. A module root path satisfies the <code>ModuleRootPath</code> nonterminal, and corresponds to the following syntax diagram,</p>
+<p>where the <a class="offsite" href="http://en.wikipedia.org/wiki/Terminal_and_nonterminal_symbols">terminal</a> <code>moduleRootName</code> denotes a module root name. A <strong>module root path</strong> conjoins a binary repository path and a source module path. A module root path satisfies the <code>ModuleRootPath</code> nonterminal, and corresponds to the following syntax diagram,</p>
 
 <div class="scrolling">
 <p style="text-align: center"><code>ModuleRootPath</code></p>
 <iframe src="/_images/modules/module-root-path.svg" style="margin: auto" seamless></iframe>
 </div>
 
-<p>where the terminal <code>sourcePath</code> is a source module path and the terminal <code>binaryRepositoryPath</code> is a binary repository path. A <strong>source module path</strong> specifies a file system <a href="http://en.wikipedia.org/wiki/Directory_(computing)">directory</a> that recursively contains source modules. A <strong>binary repository path</strong> specifies a <a href="http://en.wikipedia.org/wiki/Regular_file#Regular_file">regular file</a> encoded in the binary repository format used by the compiler and executor. If the binary repository path specifies a location that does not correspond to an existing file, then the compiler will create an appropriate file at this location and populate it with the results of compilation.</p>
+<p>where the terminal <code>binaryPath</code> is a binary repository path and the terminal <code>sourcePath</code> is a source module path. A <strong>binary repository path</strong> specifies a <a class="offsite" href="http://en.wikipedia.org/wiki/Regular_file#Regular_file">regular file</a> encoded in the binary repository format used by the compiler and executor. If the binary repository path specifies a location that does not correspond to an existing file, then the compiler will create an appropriate file at this location and populate it with the results of compilation. A <strong>source module path</strong> specifies a file system <a class="offsite" href="http://en.wikipedia.org/wiki/Directory_(computing)">directory</a> that recursively contains source modules.</p>
 
-<p>All official Avail tools released and supported by The Avail Foundation, LLC, such as the Avail workbench and the command-line Avail compiler, support specification of the module roots path via the <code>AVAIL_ROOTS</code> <a href="http://en.wikipedia.org/wiki/Environment_variable">environment variable</a>.<sup><a href="fn1">[1]</a></sup></p>
+<p>All official Avail tools released and supported by The Avail Foundation, LLC, such as the Avail workbench and the command-line Avail compiler, support specification of the module roots path via the <code>AVAIL_ROOTS</code> <a class="offsite" href="http://en.wikipedia.org/wiki/Environment_variable">environment variable</a>.<sup><a href="fn1">[1]</a></sup></p>
 
 <p><span style="text-decoration: underline"><strong>The Avail Foundation, LLC, reserves all single-word module root names for its own usage.</strong></span> At the present time, these are the single-word module root names actually in use:</p>
 
@@ -99,7 +99,7 @@
 </tbody>
 </table>
 
-<p><span style="text-decoration: underline">To avoid collisions between vendors and projects, the Avail Foundation, LLC, <strong><em>strongly recommends</em></strong> that module root names follow the <a href="http://en.wikipedia.org/wiki/Reverse_domain_name_notation">reverse domain name</a> convention.</span> If you have registered <code>sparkling-walrus.com</code> and you sell a product called <code>Virtual Walrus Polisher Plus</code>, then you should choose something like <code>com.sparkling-walrus.polisherplus</code> as the module root name for your product.<sup><a href="#fn2">[2]</a></sup> If you have not registered a domain name, or are developing an Avail project for personal use, then you are encouraged to use a long, hierarchical name in order to reduce the likelihood of collision.</p>
+<p><span style="text-decoration: underline">To avoid collisions between vendors and projects, the Avail Foundation, LLC, <strong><em>strongly recommends</em></strong> that module root names follow the <a class="unmarked" href="http://en.wikipedia.org/wiki/Reverse_domain_name_notation">reverse domain name</a> convention.</span> If you have registered <code>sparkling-walrus.com</code> and you sell a product called <code>Virtual Walrus Polisher Plus</code>, then you should choose something like <code>com.sparkling-walrus.polisherplus</code> as the module root name for your product.<sup><a href="#fn2">[2]</a></sup> If you have not registered a domain name, or are developing an Avail project for personal use, then you are encouraged to use a long, hierarchical name in order to reduce the likelihood of collision.</p>
 
 <hr/>
 

@@ -22,13 +22,13 @@
 <h2 class="content-title">Reverse Polish Notation</h2>
 
 <h3><a id="Summary">Summary</a></h3>
-<p><a href="http://en.wikipedia.org/wiki/Reverse_Polish_notation">Reverse Polish Notation</a> (RPN) is an arithmetic notation in which the operators follow their operands. Assuming operators with fixed arities, this postfix operator scheme obviates the need for parentheses. There are also several studies that indicate that users of RPN calculators make fewer mistakes than users of formula calculators.</p>
+<p><a class="offsite" href="http://en.wikipedia.org/wiki/Reverse_Polish_notation">Reverse Polish Notation</a> (RPN) is an arithmetic notation in which the operators follow their operands. Assuming operators with fixed arities, this postfix operator scheme obviates the need for parentheses. There are also several studies that indicate that users of RPN calculators make fewer mistakes than users of formula calculators.</p>
 
 <p>At some point during formal education, many computer science students are tasked with creating an RPN calculator. There are several different approaches to this project, depending on the pedagogical emphasis, but perhaps the most common involves building a parser that accepts an RPN formula and uses a stack-based interpreter to produce a result.</p>
 
 <p>In this tutorial, we remove all possible educational opportunities from the task of building an RPN calculator by presenting a technique that allows a programmer to bypass all that tedious mucking about with parsers, stacks, and interpreters.</p>
 
-<p>As a bonus, our RPN domain-specific language (DSL) interoperates directly with regular Avail code. Securing the same bonus in a traditional programming language involves rebuilding its parser, thereby causing it to no longer be the original language. Avail, on the other hand, is designed to sail the <a href="http://en.wikipedia.org/wiki/Ship_of_theseus">ship of Theseus</a> all the way home.</p>
+<p>As a bonus, our RPN domain-specific language (DSL) interoperates directly with regular Avail code. Securing the same bonus in a traditional programming language involves rebuilding its parser, thereby causing it to no longer be the original language. Avail, on the other hand, is designed to sail the <a class="offsite" href="http://en.wikipedia.org/wiki/Ship_of_theseus">ship of Theseus</a> all the way home.</p>
 
 <p>Running the program should look something like this:</p>
 
@@ -131,14 +131,14 @@ Method "RPN_" is
 <p>That mess of red text is the compiler's way of informing you that something went wrong. In this case, the <code>Expected... simple expression</code> message means that the compiler was expecting a literal value, like a numeral, rather than an operator like <code>+</code>&hellip; because we took away all of the infix operators! (<code>Expected... end of command</code> means that the compiler would have been happy if the whole command had just been <code class="command">RPN 2</code>.)</p>
 
 <h3><a id="Further Exploration">Further Exploration</a></h3>
-<p>For those who wish to learn more about calculator input methods, try starting <a href="http://en.wikipedia.org/wiki/Calculator_input_methods">here</a>.</p>
+<p>For those who wish to learn more about calculator input methods, try starting <a class="offsite" href="http://en.wikipedia.org/wiki/Calculator_input_methods">here</a>.</p>
 
-<p>If you have an interest in Greek mythology, then you may wish to read more about the founder-hero <a href="http://en.wikipedia.org/wiki/Theseus">Theseus</a>. His legendary voyage from Crete to Athens inspired philosophers like <a href="http://en.wikipedia.org/wiki/Plutarch">Plutarch</a>, <a href="http://en.wikipedia.org/wiki/Thomas_Hobbes">Thomas Hobbes</a>, and <a href="http://en.wikipedia.org/wiki/John_Locke">John Locke</a> to wonder about the nature of identity, a topic that is not only intriguing in its own right but also central to the Avail programming language.</p>
+<p>If you have an interest in Greek mythology, then you may wish to read more about the founder-hero <a class="offsite" href="http://en.wikipedia.org/wiki/Theseus">Theseus</a>. His legendary voyage from Crete to Athens inspired philosophers like <a class="offsite" href="http://en.wikipedia.org/wiki/Plutarch">Plutarch</a>, <a class="offsite" href="http://en.wikipedia.org/wiki/Thomas_Hobbes">Thomas Hobbes</a>, and <a class="offsite" href="http://en.wikipedia.org/wiki/John_Locke">John Locke</a> to wonder about the nature of identity, a topic that is not only intriguing in its own right but also central to the Avail programming language.</p>
 
 <h3><a id="Exercises">Exercises</a></h3>
 <ul>
 <li>Add missing functionality to the RPN DSL. Start with exponentiation (<code>"_^_"</code>) and factorial (<code>"_`!"</code>), then go wild.</li>
-<li>Implement arity-2 versions of <a href="http://en.wikipedia.org/wiki/Scheme_(programming_language)">Scheme</a>'s arithmetic operators using the method renaming strategy.</li>
+<li>Implement arity-2 versions of <a class="offsite" href="http://en.wikipedia.org/wiki/Scheme_(programming_language)">Scheme</a>'s arithmetic operators using the method renaming strategy.</li>
 </ul>
 
 <table class="book-nav">

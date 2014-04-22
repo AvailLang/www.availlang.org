@@ -25,16 +25,16 @@
 		
 <h2 class="content-title">Private Imports Section</h2>
 
-<p>The <code>Uses</code> keyword begins the <strong>private imports section</strong>. The contents of this section are zero or more import specifications separated by <em>commas</em> <code>,</code> <code class="unicode">(U+002C)</code>. An <strong><a id="import-specification">import specification</a></strong> constitutes a request to import the exported names of a given module, called the <strong>import target</strong>. These names are available for private use only; they are not re-exported to downstream modules. An import specification satisfies the <code>ImportSpecification</code> <a href="http://en.wikipedia.org/wiki/Syntax_diagram">syntax diagram</a>,</p>
+<p>The <code>Uses</code> keyword begins the <strong>private imports section</strong>. The contents of this section are zero or more import specifications separated by <em>commas</em> <code>,</code> <code class="unicode">(U+002C)</code>. An <strong><a id="import-specification">import specification</a></strong> constitutes a request to import the exported names of a given module, called the <strong>import target</strong>. These names are available for private use only; they are not re-exported to downstream modules. An import specification satisfies the <code>ImportSpecification</code> <a class="offsite" href="http://en.wikipedia.org/wiki/Syntax_diagram">syntax diagram</a>,</p>
 
 <div class="scrolling">
 <p style="text-align: center"><code>ImportSpecification</code></p>
 <iframe src="/_images/modules/import-specification.svg" style="margin: auto" seamless></iframe>
 </div>
 
-<p>where the <a href="http://en.wikipedia.org/wiki/Terminal_and_nonterminal_symbols">terminal</a> <code>module</code> is a <a href="/about-avail/documentation/type-system/types-string.html">string literal</a> that specifies the <a href="./module-name-section.html">local name</a> of the import target. The import target is, by definition, an upstream module.</p>
+<p>where the <a class="offsite" href="http://en.wikipedia.org/wiki/Terminal_and_nonterminal_symbols">terminal</a> <code>module</code> is a <a href="/about-avail/documentation/type-system/types-string.html">string literal</a> that specifies the <a href="./module-name-section.html">local name</a> of the import target. The import target is, by definition, an upstream module.</p>
 
-<p>An import specification contains an optional required versions list. A <strong>required versions list</strong> stipulates what <a href="./active-versions-section.html">active versions</a> of the import target are acceptable for linkage. As such, it is a declaration of compatibility with a particular list of versions. A required versions list satisfies the <a href="http://en.wikipedia.org/wiki/Terminal_and_nonterminal_symbols">nonterminal</a> <code>VersionList</code>, and corresponds to the following syntax diagram,</p>
+<p>An import specification contains an optional required versions list. A <strong>required versions list</strong> stipulates what <a href="./active-versions-section.html">active versions</a> of the import target are acceptable for linkage. As such, it is a declaration of compatibility with a particular list of versions. A required versions list satisfies the <a class="offsite" href="http://en.wikipedia.org/wiki/Terminal_and_nonterminal_symbols">nonterminal</a> <code>VersionList</code>, and corresponds to the following syntax diagram,</p>
 
 <div class="scrolling">
 <p style="text-align: center"><code>VersionList</code></p>

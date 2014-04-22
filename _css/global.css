@@ -1,81 +1,217 @@
 @charset "UTF-8";
-img, object, embed, video {
-	max-width: 100%;
-}
-/* IE 6 does not support max-width so default to width 100% */
-.ie6 img {
-	width:100%;
-}
 
-/* Mobile Layout: 480px and below. */
+/* =============================================================================
+
+READ ME!
+
+Styles on this sheet are applied in order of appearance. In order to customize 
+display for screens based on the width of the display window, the styles at the 
+top of the page are for small screens. Any style adjustments desired for larger 
+screens are applied later and delimited by the screen's minimum width. 
+
+Keep styling adjustments that are specific to the window size at the BOTTOM of 
+the block, separate from generalized styling, and add preceding comments 
+describing their function.
+
+============================================================================= */
 
 
-/********** Overrides of default HTML styling **********/
+
+/*
+
+external positioning, such as position, float, bottom, etc.
+
+margin
+border stuff
+padding
+
+width and height
+display
+internal/text alignment
+clear
+overflow
+
+font-family
+font-weight
+font-style
+font-size
+line-height
+text decoration and shadow
+whitespace
+other text considerations
+
+color
+background stuff
+
+others
+
+*/
+
+
+/********** HTML tag style overrides **********/
+
 a {
-	background-color: transparent;
-	color: green;
 	font-weight: 500;
 	text-decoration: inherit; /* no underline */
+
+	color: green;
+	background-color: transparent;
 }
 
 a:hover {
-	background-color: transparent;
-	color: rgb(160,64,1) !important; /* dark orange */
 	text-shadow: 0 0 0.2em #F87;
-}
 
-a:visited {
+	color: rgb(160,64,1) !important; /* dark orange */
 	background-color: transparent;
-	color: inherit;
 }
 
-.offsite {
-	/* Placeholder; should receive actual styling. Should only affect a href= …. */
-}
+/*a:visited {
+	background-color: transparent;
+/*	color: inherit; 
+}*/
 
 b, strong { 
-	font-weight: 400;
+	font-weight: 400; /* Must match an imported weight! */
 }
 
 body {
 	margin: 0; 
+
+	min-width: 350px;
+
 	font-size: 15px; 
 	line-height: 1.4; 
+
 	-webkit-font-smoothing: subpixel-antialiased;
-	min-width: 350px;
 }
 
 body, button, input, select, textarea {
-	background-color: transparent;
+	font-family: 'Lato', sans-serif; 
 	font-weight: 300; 
+
 	color: #222;
+	background-color: transparent;
+}
+
+code {
+	/* Reduce crowding of inline code because of comparatively narrow spaces in 
+	default font */
+	margin-left: 2px; 
+	margin-right: 2px;
+
+	font-family: 'DejaVu Sans Mono', Consolas, 'Lucida Console', Menlo, Monaco, 
+		monospace, sans-serif;
+	font-size: .9em;
+
+	color: rgb(0, 0, 160); /* dark blue */
+	background-color: transparent;
 }
 
 h1, h2, h3, h4, h5 {
-	background-color: transparent;
-	color: green;
-	font-family: 'Raleway', sans-serif;
 	clear: both;
+
+	font-family: 'Raleway', sans-serif;
+
+	color: green;
+	background-color: transparent;
 }
 h2 {
-	font-size: 22px;
-	padding-top: 16.5px;
 	margin-bottom: 11px;
+	padding-top: 16.5px;
+
+	font-size: 22px;
 }
 h3 {
-	font-size: 19px;
-	padding-top: 12px;
 	margin-bottom: 9.5px;	
+	padding-top: 12px;
+
+	font-size: 19px;
 }
 h4 {
-	font-size: 15px;
-	padding-top: 10px;
 	margin-bottom: 7.5px;	
+	padding-top: 10px;
+
+	font-size: 15px;
 }
 h5 {
-	font-size: 12px;
-	padding-top: 8px;
 	margin-bottom: 6px;
+	padding-top: 8px;
+
+	font-size: 12px;
+}
+
+
+/********** HTML-tag-specific style classes **********/
+
+a.footer {
+	margin: 0px;
+	padding: 0px;
+
+	display: inline-block;
+
+	font-weight: 300;
+
+	color: gray;
+	background-color: transparent;
+}
+
+a.intentional-full-path {
+	/* Links to pages within www.availlang.org that should not have their link 
+	addressess truncated to the root-relative path. This is a dummy style for 
+	help with automated detection of unclassified links. */
+}
+
+a.offsite {
+	padding-right: 13px;
+
+	color: green;
+	background: transparent url("/_images/offsite-link.png") no-repeat scroll 
+		right center;
+}
+
+a.unmarked {
+	/* Offsite links that are not visually marked with an icon. This is a dummy 
+	style for help with automated detection of unclassified links. */
+}
+
+body.gradient-logo {
+	background-image: url(/_images/site-background.png);
+	background-repeat: no-repeat;
+	background-color: rgb(248,248,248); 
+}
+
+code.command {
+	color: magenta;
+}
+
+code.module {
+	color: black;
+}
+
+code.method {
+	color: rgb(0, 0, 160); /* dark blue */
+}
+
+code.unicode {
+	color: rgb(207, 83, 0); /* burnt orange */
+}
+
+img.download-inline-icon {
+	padding-bottom: 6px;
+	padding-right: 2px;
+
+	height: 16px;
+}
+
+img.download-list-icon {
+	padding-bottom: 12px;
+	padding-right: 4px;
+
+	height: 24px;
+}
+
+img.full-line-screenshot {
+	clear: both;
 }
 
 img.top-right-screenshot {
@@ -83,32 +219,30 @@ img.top-right-screenshot {
 	margin-left: 15px;
 }
 
-img.full-line-screenshot {
-	clear: both;
-}
 
-/********** Custom visual styles **********/
 
-/* Style for a warning about missing characters for mobile viewers on pages that contain <code> */
+/********** Unrestricted style classes **********/
+/* These can be used on almost any tag, so construct them judiciously! */
+
+/* Style for a warning about missing characters for mobile viewers on pages that 
+contain <code> */
 .mobile-only {
-	background-color: transparent;
-	text-align: center;
-	font-weight: bold;
-	color: #bb0000;
 	margin-bottom: 15px;
-	
-	display: none; 	/* This gets overridden by mobile-detection.js when it adds mobile-font.css file */
+
+	display: none; 	/* This gets overridden by mobile-detection.js when it adds 
+	mobile-font.css file */
+	text-align: center;
+
+	font-weight: bold;
+
+	color: #bb0000;
+	background-color: transparent;	
 }
 
+/* Change the color of private content to differentiate it visually. */
 .private {
-	background-color: transparent;
 	color: rgb(160,64,1) !important;
-}
-
-body.gradient-logo {
-	background-image: url(/_images/site-background.png);
-	background-repeat: no-repeat;
-	background-color: rgb(248,248,248); 
+	background-color: transparent;
 }
 
 .no-margin {
@@ -134,34 +268,37 @@ body.gradient-logo {
 
 
 /********** Page structure **********/
+/* NB these classes are in page-logical order, not alphabetic. */
 
   /*** Page Header ***/
 
 .header-wrapper {
-	height: 89px;
-	display: table-cell;
-	vertical-align: middle;
 	padding-left: 187px;
 	padding-right: 10px;
 	padding-bottom: 5px;
 
-	/* Right-align the text and reduce size for a small screen */
+	height: 89px;
+	display: table-cell;
+	vertical-align: middle;
+
+	/* Small screen: right-align the text and reduce font and line size */
 	text-align: right;
 	font-size: 20px;
 	line-height: 20px;
 }
 
 .header-text {
-	background-color: transparent;
-	color: rgb(0,60,0); /* dark x 3 green - considerably darker than darkgreen */
 	font-family: 'Raleway', sans-serif;
+
+	color: rgb(0,60,0); /* dark x 3 green - considerably darker than darkgreen */
+	background-color: transparent;
 }
 
 .search-bar {
 	padding-left: 14px;
 	padding-right: 14px;
 
-	/* Lower padding because it is not in the header bar. */
+	/* Small screen: smaller padding because it is not in the header bar. */
 	padding-top: 10px;
 }
 
@@ -182,7 +319,7 @@ body.gradient-logo {
 	margin-left: 14px;
 	margin-bottom: 14px;
 
-	/* Set down from the title area */
+	/* Small screen: set down from the title area */
 	margin-top: 14px;
 }
 
@@ -195,35 +332,32 @@ body.gradient-logo {
 	margin-bottom: 0px;
 	padding-top: 0px;
 	padding-bottom: 0px;
-	background-color: transparent;
-	color: rgb(0,90,0);  /* dark x 2 green - darker than darkgreen */
-	font-size: 20px;
+
 	font-family: 'Raleway', sans-serif;
+	font-size: 20px;
+
+	color: rgb(0,90,0);  /* dark x 2 green - darker than darkgreen */
+	background-color: transparent;
 }
 
 .nav-links {
-	padding-left: 12px;
 	margin-top: 2px;
+	padding-left: 12px;
 }
 
 .nav-link {
 	padding-top: 5px;
 	padding-bottom: 5px;
-	background-color: transparent;
-	color: rgb(0,60,0);  /* dark x 3 green - considerably darker than darkgreen */
-	text-decoration: none;
+
 	font-size: 16px;
 	font-weight: 300;
 	line-height: 16px;
+	text-decoration: none;
+
+	color: rgb(0,60,0);  /* dark x 3 green - considerably darker than darkgreen */
+	background-color: transparent;
 }
 
-/* Overrides of Google Search styling because they ... are strange. */
-.gsc-table-cell-snippet-close {
-	padding-left: 8px !important;
-}
-.gsc-control-cse {
-	padding: 0 !important;
-}
 
      /*** Main Content ***/
 
@@ -235,7 +369,7 @@ body.gradient-logo {
 .content {
 	background-color: white;
 	
-	/* Set down from inline navigation menu, and inset a small amount for small screens */
+	/* Small screen: set down from inline navigation menu, and inset a small amount. */
 	margin-top: 20px;
 	margin-bottom: 30px;
 	padding-left: 20px;
@@ -259,56 +393,53 @@ body.gradient-logo {
 
 .content-supertitle {
 	margin-top: 0px;
-	padding-top: 0px;
 	margin-bottom: 0px;
+	padding-top: 0px;
 	padding-bottom: 0px;
 }
 
 .content-title {
 	margin-top: 0px;
 	padding-top: 0px;
-	background-color: transparent;
-	color: rgb(0,90,0);
+
 	font-family: 'Raleway', sans-serif;
+
+	color: rgb(0,90,0);
+	background-color: transparent;
 }
 
 .content-meta-info {
-	background-color: transparent;
-	color: gray;
 	margin-top: -10px;
+
 	font-size: 14px;
-}
 
-img.download-inline-icon {
-	height: 16px;
-	padding-bottom: 6px;
-	padding-right: 2px;
-}
-
-img.download-list-icon {
-	height: 24px;
-	padding-bottom: 12px;
-	padding-right: 4px;
+	color: gray;
+	background-color: transparent;
 }
 
 .book-nav {
-	padding-top: 20px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: -10px;
+	padding-top: 20px;
+
 	text-align: center;
+
 	list-style-type: none;
 }
 
 .book-nav-back, .book-nav-up, .book-nav-forward {
-	display: inline;
-	white-space: nowrap;
-	background-color: transparent;
-	color: green;
-	font-size: 12px;
 	position: relative;
 	bottom: 0;
+
+	display: inline;
+
 	font-family: 'Raleway', sans-serif;
+	font-size: 12px;
+	white-space: nowrap;
+
+	color: green;
+	background-color: transparent;
 }
 
 .book-nav-back {
@@ -324,33 +455,15 @@ img.download-list-icon {
 }
 
 .book-nav-spacer {
-	display: inline;
 	padding-left: 10px;
 	padding-right: 10px;
-}
-	
 
-code {
-	background-color: transparent;
-	color: rgb(0, 0, 160); /* dark blue */
-	font-size: .9em;
-	font-family: 'DejaVu Sans Mono', Consolas, 'Lucida Console', Menlo, Monaco, monospace, sans-serif;
-}
-
-code.command {
-	color: magenta;
-}
-
-code.module {
-	color: black;
-}
-
-code.unicode {
-	color: rgb(207, 83, 0); /* burnt orange */
+	display: inline;
 }
 
 .restricted-width-container {
 	display: block;
+
 	white-space: nowrap;
 }
 
@@ -359,74 +472,93 @@ code.unicode {
 	margin-bottom: 15px;
 	padding: 15px;	
 	border-radius: 15px;
-	font-size: .9em; 
-	line-height: 1.25em;
+
 	display: block;
 	overflow: auto;
+
+	font-family: 'DejaVu Sans Mono', Consolas, 'Lucida Console', Menlo, Monaco, monospace, sans-serif;
+	font-size: .9em; 
+	line-height: 1.25em;
 	-moz-tab-size: 4;
     -o-tab-size: 4;
     tab-size: 4;
 	text-align: left;
 	white-space: pre;
 	word-wrap: normal;
-	font-family: 'DejaVu Sans Mono', Consolas, 'Lucida Console', Menlo, Monaco, monospace, sans-serif;
 
-	/* Slight inset for small screen */
+	/* Small screen: slight inset */
 	margin-left: 20px;
 	margin-right: 20px;
 }
 
 .bad-code {
-	background-color: rgb(255, 221, 244); /* reds */
 	color: rgb(112, 32, 32);
+	background-color: rgb(255, 221, 244); /* reds */
 }
 
 .good-code {
-	background-color: rgb(226, 232, 255); /* blues */
 	color: rgb(0, 0, 160);
+	background-color: rgb(226, 232, 255); /* blues */
 }
 
 .neutral-code {
-	background-color: #eeeeee; /* light grey */
 	color: rgb(0, 0, 160); /* dark blue */
+	background-color: #eeeeee; /* light grey */
 }
 
 .code-comment {
-	background-color: transparent;
 	color: green;
+	background-color: transparent;
 }
 
 
 .console {
-	background-color: #000000; /* black */
 	color: #ffffff; /* white */
+	background-color: #000000; /* black */
 }
 
 .book-navigation {
-	display: block;
 	height: 39px;
+	display: block;
 }
 
 .scrolling {
 	overflow: auto;
 }
 
+/* Overrides of Google Search styling because they ... are strange. */
+.gsc-table-cell-snippet-close {
+	padding-left: 8px !important;
+}
+.gsc-control-cse {
+	padding: 0 !important;
+}
+
+.term {
+	/* Placeholder; should receive actual styling. Should probably only affect strong. */
+}
+
+
   /*** Footer ***/
 
 .footer-wrapper {
+	padding-bottom: 30px;
+
 	width: 100%;
 	text-align: center;
-	padding-bottom: 30px;
 }
 
 .footer {
 	padding-left: 10px;
 	padding-right: 10px;
-	background-color: transparent;
-	color: gray;
-	font-weight: 300;
+
 	display: inline-block;
 	text-align: center;
+
+	font-weight: 300;
+
+	color: gray;
+	background-color: transparent;
 }
 
 .footer-line {
@@ -439,20 +571,10 @@ code.unicode {
 	display: none; 	
 }
 
-a.footer {
-	margin: 0px;
-	padding: 0px;
-	background-color: transparent;
-	color: gray;
-	display: inline-block;
-	font-weight: 300;
-}
 
-.term {
-	/* Placeholder; should receive actual styling. Should probably only affect strong. */
-}
-
-/* Tablet Layout: 481px to 768px. Inherits styles from: Mobile Layout. */
+/* =============================================================================
+   Width 768px to 899px
+   ========================================================================== */
 
 @media only screen and (min-width: 768px) {
 
@@ -462,11 +584,13 @@ a.footer {
 	}
 
 	.search-bar {
-		padding-top: 28px;
-		width: 220px;
 		position: absolute;
 		top: 0;
 		right: 0;
+
+		padding-top: 28px;
+
+		width: 220px;
 	}
 	
 	.nav-wrapper {
@@ -486,7 +610,8 @@ a.footer {
 	}
 		
 	.content {
-		/* Set the white content pane in from the sides of the page, and have a minimum height that is no shorter than the navigation menu*/
+		/* Set the white content pane in from the sides of the page, and have a 
+		minimum height that is no shorter than the navigation menu */
 		margin: 20px;
 		margin-bottom: 30px;
 	}
@@ -499,27 +624,35 @@ a.footer {
 	
 	.footer-line {
 		/* Inline when the screen is wide enough */
-		clear: none;
 		display: inline-block;
+		clear: none;
 	}
 
 	.footer-line-separator {
 		/* Display when footer-lines are not wrapping. */
-		clear: none;
 		display: inline-block; 	
+		clear: none;
 	}
 }
+
+
+/* =============================================================================
+   Width 900px to 999px  
+   ========================================================================== */
 
 @media only screen and (min-width: 900px) {
 
 	.header-wrapper {
-		/* Increase text size to the preferred size now that clearance is available */
+		/* Increase text to preferred size now that clearance is available */
 		font-size: 24px;	
 		line-height: 23px;
 	}
 }
 
-/* Desktop Layout: 1000px and up.  Inherits styles from: Mobile Layout and Tablet Layout. */
+
+/* =============================================================================
+   Width 1000px and up
+   ========================================================================== */
 
 @media only screen and (min-width: 1000px) {
 
@@ -529,7 +662,8 @@ a.footer {
 	
 	.nav-wrapper {
 	
-		/* Add additional margin to compensate for changes due to content width restriciton. */
+		/* Add additional margin to compensate for changes due to content width 
+		restriciton. */
 		margin-top: 20px;
 	}
 
@@ -537,7 +671,8 @@ a.footer {
 		/* Larger space induces a right margin */
 		margin-right: 150px;
 		
-		/* Allow the restricted-width content pane to be centered within the window. */
+		/* Allow the restricted-width content pane to be centered within the 
+		window. */
 		text-align: center;
 	}
 
@@ -548,7 +683,8 @@ a.footer {
 		padding-top: 40px;
 		padding-bottom: 30px;
 				
-		/* Restrict the width of the content pane to improve readability on very wide screens. */
+		/* Restrict the width of the content pane to improve readability on very 
+		wide screens. */
 		max-width: 1000px;
 		display: inline-block;
 		text-align: left;
