@@ -9,6 +9,7 @@
 	<head>
 	
 <!--#include virtual="/_include/head.ssi" -->
+<!--#include virtual="/_include/sh-head.ssi" -->
 	
 		<title>Modules - Module Bodies</title>
 		<style>
@@ -36,9 +37,12 @@
 <li class="top-level-statement">A <strong>message send</strong> of a <a href="/about-avail/documentation/type-system/types-top.html">⊤</a>-valued method definition. Method definers &mdash; like <code class="method">"Method_is_"</code>, <code class="method">"Semantic restriction_is_"</code>, <code class="method">"Grammatical restriction_is_"</code>, and <code class="method">"Seal method_at_"</code> &mdash; and <a href="/about-avail/documentation/type-system/types-object.html">object type</a> definers are the most common top-level message sends.</li>
 </ul>
 
-<p>Below is a sample module, <code class="module"><a class="offsite" href="http://en.wikipedia.org/wiki/Fibonacci_number">Fibonacci</a></code>. Its body constitutes everything following the <code>Body</code> keyword.</p>
- 
-<div class="restricted-width-container"><div class="neutral-code code-block">Module "Fibonacci"
+<p>Below is a sample module, <code class="module"><a class="offsite" href="http://en.wikipedia.org/wiki/Fibonacci_number">Fibonacci</a></code>. Its body constitutes everything following the <code>Body</code> keyword, i.e., <strong>lines 5-42</strong>.</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 1">
+<![CDATA[
+Module "Fibonacci"
 Uses "Avail"
 Entries "Next Fibonacci number"
 Body
@@ -80,7 +84,10 @@ Method "Next Fibonacci number" is
 	lastFibonacciNumber := generator();
 	lastFibonacciNumber
 ];
-</div></div>
+]]>
+</script></div></div>
+
+<p>In practice, message sends are the most common top-level statements, followed by module constant definitions. Module variable declarations are rare, occurring in only a few modules of the Avail standard library. Top-level assignments are extremely rare; they never occur in the Avail standard library.</p>
 
 <table class="book-nav">
 	<tr>
@@ -88,11 +95,12 @@ Method "Next Fibonacci number" is
 		<td class="book-nav-spacer">|</td>
 		<td class="book-nav-up"><a class="book-nav-up" href="./index.html">Return to Modules</a></td>
 		<td class="book-nav-spacer">|</td>
-		<td class="book-nav-forward"><a class="book-nav-forward" href="./name-bodies.html">Name Resolution ›</a></td>
+		<td class="book-nav-forward"><a class="book-nav-forward" href="./name-resolution.html">Name Resolution ›</a></td>
 	</tr>
 </table>
 
 <!--#include virtual="/_include/body-bottom.ssi" -->
+<!--#include virtual="/_include/sh-bottom.ssi" -->
 
 	</body>
 
