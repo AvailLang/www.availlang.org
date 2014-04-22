@@ -39,7 +39,9 @@
 <li>If the import target couldn't be found, then fail the module resolution process.</li>
 </ul>
 
-<p>Understanding the procedure at the abbreviated level of detail given above is adequate for the vast majority of use cases. Following is a much more detailed description of the module resolution algorithm: <sup><a href="#fn1">[1]</a></sup></p>
+<p>Understanding the procedure at the abbreviated level of detail given above is adequate for the vast majority of use cases. It should generally prove safe to <a href="#afterDetails">skip ahead</a> to the conclusion and example.</p>
+
+<p>Following is a detailed description of the module resolution algorithm: <sup><a href="#fn1">[1]</a></sup></p>
 
 <div class="scrolling">
 <iframe src="/_images/modules/module-resolution.svg" style="margin: auto" seamless></iframe>
@@ -81,7 +83,11 @@ Let us call the result of this translation <code>F</code>, whose expansion is
 <dd><code>F</code> may not include any packages (either because it never included any or because they have all been <a href="#truncate">rejected and removed</a>), so check to see if it does. If so, then see if it <a href="#inPackage">references an existing file</a>. If not, then <code>L.avail</code> <a href="#inRoot">resides directly within a root</a>.</dd>
 
 <dt class="resolution-rules"><em><a id="inPackage">The file path contains packages, but does it exist?</a></em></dt>
-<dd><code>F</code> (or <code>F&prime;</code>, <code>F&Prime;</code>, &hellip;, if <a href="#truncate">some packages have already been dropped</a>) includes at least one package, <code>P<sub>i</sub></code>. Does <code>F</code> denote an existing file? If so, then <a href="#isPackage">determine whether <code>F</code> is a package</a>. If not, then <a href="#truncate">drop <code>P<sub>n</sub></code>.</a></dd>
+<dd><code>F</code> (or <code>F&prime;</code>, <code>F&Prime;</code>, &hellip;, if <a href="#truncate">some packages have already been dropped</a>) includes at least one package, <code>P<sub>i</sub></code>,
+
+	<blockquote style="font-size: 14pt"><code>F&prime; &#8797; /S/&hellip;/P<sub>i</sub>.avail/L.avail</code>.</blockquote>
+
+Does <code>F</code> denote an existing file? If so, then <a href="#isPackage">determine whether <code>F</code> is a package</a>. If not, then <a href="#truncate">drop <code>P<sub>n</sub></code>.</a></dd>
 
 <dt class="resolution-rules"><em><a id="truncate">Drop the rightmost package from the file path.</a></em></dt>
 <dd>Derive <code>F&prime;</code> from <code>F</code> by dropping the rightmost package, <code>P<sub>n</sub></code>. The expansion of <code>F&prime;</code> is therefore
@@ -90,7 +96,7 @@ Let us call the result of this translation <code>F</code>, whose expansion is
 
 Now see if <code>F&prime;</code> <a href="#inPackage">includes any packages</a>.</dd>
 
-<dt class="resolution-rules"><em><a id="inPackage">The file path contains no packages. Does it exist?</a></em></dt>
+<dt class="resolution-rules"><em><a id="inRoot">The file path contains no packages. Does it exist?</a></em></dt>
 <dd>Since <code>F</code> does not contains any local names that correspond to packages, the expansion of <code>F</code> is given by
 
 	<blockquote style="font-size: 14pt"><code>F &#8797; /S/L.avail</code>.</blockquote>
@@ -110,7 +116,7 @@ Now <a href="#inRoot">determine whether <code>F&prime;</code> exists</a>.</dd>
 <dt class="resolution-rules"><em><a id="isPackage">Does the file path refer to a package?</a></em></dt>
 <dd>Does <code>F</code> refer to a directory rather than a file? If so, then <code>F</code> refers to a package, so derive <code>F&prime;</code> from <code>F</code> such that
 
-	<blockquote style="font-size: 14pt"><code>F&prime; &#8797; /S/L.avail/L.avail</code>,</blockquote>
+	<blockquote style="font-size: 14pt"><code>F&prime; &#8797; /S/P<sub>1</sub>/P<sub>2</sub>/&hellip;/P<sub>n</sub>/L.avail/L.avail</code>,</blockquote>
 
 and <a href="#isRepresented">verify that its representative exists</a>. If not, then module resolution has succeeded: <code>F</code> is the unambiguous resolution of <code class="module">M</code>.</dd>
 
@@ -118,7 +124,7 @@ and <a href="#isRepresented">verify that its representative exists</a>. If not, 
 <dd><code>F</code> denotes a package representative. Does <code>F</code> exists? If so, then module resolution has succeeded: <code>F</code> is the unambiguous resolution of <code class="module">M</code>. If not, then module resolution has failed; the system will emit an appropriate error message and then halt.</dd>
 </dl>
 
-<p>An extremely important practical consequence of this procedure is that the contents of a package are always impenetrable to a module that resides outside of that package. This ensures that a <a href="./module-packages.html">module representative</a> is the exclusive gateway to services offered by modules located recursively within its package. This is an essential concept of Avail's encapsulation model.</p>
+<p id="afterDetails">An extremely important practical consequence of this procedure is that the contents of a package are always impenetrable to a module that resides outside of that package. This ensures that a <a href="./module-packages.html">module representative</a> is the exclusive gateway to services offered by modules located recursively within its package. This is an essential concept of Avail's encapsulation model.</p>
 
 <p>Take <code class="module">Wump the Wumpus</code>, one of the official Avail case studies available in the <code>examples</code> module root, as the scaffolding for some use cases of module resolution:</p>
 

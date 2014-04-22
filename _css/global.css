@@ -347,6 +347,10 @@ code.module {
 	color: black;
 }
 
+code.method {
+	color: rgb(0, 0, 160); /* dark blue */
+}
+
 code.unicode {
 	color: rgb(207, 83, 0); /* burnt orange */
 }
