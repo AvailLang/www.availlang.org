@@ -18,15 +18,21 @@
 	
 <!--#include virtual="/_include/body-top.ssi" -->
 		
-<h2 class="content-title">Literal</h2>
+<h2 class="content-title">Canonical Name</h2>
+
+<p>With reference to a module, the canonical name is the module root-relative logical name.</p>
 
 <p>
-The symbolic representation of a specific value. Acceptable literals are positive integers, floating-point numbers, strings surrounded by double quotes, and <a href="./block.html">blocks</a>.
-</p><p>
-<strong>Examples:</strong> <code>5</code>, <code>-3.14</code>, <code>"frog"</code>, etc.
-</p><p>
-<em>References:</em> In-depth looks at <a href="/about-avail/documentation/type-system/types-literal-phrase.html">literal phrases</a> and <a href="/about-avail/documentation/type-system/types-literal-token.html">literal tokens</a>
+<strong>Grammar:</strong>
+<ol type="disc"><li>A solidus (<code>/</code>) <code class="unicode">(U+002F)</code></li>
+<li>A module root name</li>
+<li>Zero or many solidus-separated local names of enclosing packages</li>
+<li>A solidus</li>
+<li>The module's local name</li>
+</ol>
+<em>References:</em> <a href="/about-avail/documentation/modules/canonical-names.html">An in-depth look at Canonical Names</a>
 </p>
+
 <tr class="book-nav">
 	<div class="book-nav">
 		<li class="book-nav-up"><a class="book-nav-up" href="./index.html">Return to Glossary</a></li>

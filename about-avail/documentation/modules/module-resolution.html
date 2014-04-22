@@ -49,7 +49,7 @@
 
 <dl>
 <dt><em><a id="canonize">Canonize the import target.</a></em></dt>
-<dd>Module resolution begins by naively canonizing the import target &mdash; specified by the local name <code class="module">L</code> &mdash; as if it were a sibling of the dependent module. A file is <strong>sibling</strong> to another if they both reside in the same file system <a class="offsite" href="http://en.wikipedia.org/wiki/Directory_(computing)">directory</a>. Let us call this naive canonical name <code class="module">M</code>.</dd>
+<dd>Module resolution begins by naively canonizing the import target &mdash; specified by the local name <code class="module">L</code> &mdash; as if it were a sibling of the dependent module. A file is <strong>sibling</strong> to another if they both reside in the same file system <a class="offsite" href="http://en.wikipedia.org/wiki/Directory_(computing)">directory</a>. Let us call this naive <a class="glossary" href="../../glossary/canonical-name.html">canonical name</a> <code class="module">M</code>. </dd>
 
 <dt class="resolution-rules"><em><a id="canRename">Is there an applicable rename rule?</a></em></dt>
 <dd>Does the <a href="./module-renaming.html">module renames file</a> specify a module rename rule that would transform <code class="module">M</code> into the canonical name <code class="module">M&prime;</code>? If so, then <a href="#rename">apply the rename rule</a>. If not, then go ahead with <a href="#translate">translating the canonical name to a file system path</a>.</dd>
