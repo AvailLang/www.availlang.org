@@ -17,28 +17,98 @@
 	<body class="gradient-logo">
 	
 <!--#include virtual="/_include/body-top.ssi" -->
-		
+<!--#include virtual="/_include/sh-head.ssi" -->
+
 <h2 class="content-title">Name Resolution</h2>
 
 <img src="/_images/modules/import-export-intersection.png" alt="A Venn diagram showing 'Extends' as the intersection of 'Uses' and 'Names'." style="float: right; width: 33%"/>
 
-<p>Names are the concurrency of modules, freely exchanged across boundaries. Names flow into modules through <a href="./private-imports-section.html">private imports</a> and <a href="./extended-imports-section.html">extend imports</a> sections. Names flow out of modules through <a href="./introduced-names-section.html">introduced names</a> and extended imports sections.</p>
+<p>Names are the concurrency of modules. Names flow into modules through <a href="./private-imports-section.html">private imports</a> and <a href="./extended-imports-section.html">extended imports</a> sections. Names flow out of modules through <a href="./introduced-names-section.html">introduced names</a> and extended imports sections.</p>
 
 <p>Every name is associated with an <a href="/about-avail/documentation/type-system/types-atom.html">atom</a> that is created at the point of the name's original introduction. There are only two ways to introduce a name:</p>
 
 <ol>
 <li>By mentioning the name, as a <a href="/about-avail/documentation/type-system/types-string.html">string literal</a>, in an introduced names section.</li>
-<li>By sending <code class="method">"atom for_"</code> (or a <a class="offsite" href="http://en.wikipedia.org/wiki/Delegation_(programming)">delegate</a> like <code class="method">"$&hellip;"</code>) to a string that represents the name. This only introduces the name if it was not imported or mentioned in the sending module's introduced names section. All names introduced in this fashion are private to the sending module (unless explicitly exported with <code class="method">"Export_as a new name"</code>).</li>
+<li>By resolving a name to an atom when no atom in scope corresponds to that name. All names introduced in this fashion are private to the resolving module (unless dynamically exported with <code class="method">"Export_as a new name"</code>).</li>
 </ol>
-
-<p>Think of an atom as a discrete particle of identity. Most values in Avail are identityless, so atoms are interesting just by dint of having identity. As such, it is occasionally useful to resolve a name to an atom for no other reason than to obtain the atom. It is more often the case, however, that a dependent module imports a name because it wishes to use the associated method in its <a href="./module-bodies.html">body</a>.</p>
 
 <p>There are two ways to reference a name within a module body:</p>
 
 <ol>
-<li>By sending a message that resolves a name to an atom, such as <code class="method">"Method_is_"</code>, to a string that represents a name.</li>
-<li>By using the name to send a message. In this case, the compiler parses the source text to identify the names that correspond to expressions. For example, the compiler discovers as a consequence of parsing that <code>1 + 3</code> corresponds to a send of <code class="method">"_+_"</code>.</li>
+<li>By sending a message that resolves a name to an atom, such as <code class="method">"Method_is_"</code> or <code class="method">"atom for_"</code>, to a <a href="/about-avail/documentation/type-system/types-string.html">string</a> that represents a name.</li>
+<li>By using the name to send a message. In this case, the compiler parses the source text to identify the names that correspond to expressions. For example, the compiler parses <code>1 + 3</code> to discover a send of <code class="method">"_+_"</code>. Once the name has been determined, the compiler uses available type information to resolve it to an atom.</li>
 </ol>
+
+<p>Think of an atom as a discrete particle of identity. Most values in Avail are identityless, so atoms are interesting just by dint of having identity. As such, it is occasionally useful to resolve a name to an atom for no other reason than to obtain the atom. It is more often the case, however, that a dependent module imports a name because it wishes to use the associated method in its <a href="./module-bodies.html">body</a>.</p>
+
+<p>Names are not constrained to be globally unique within a project. This would be a heinous requirement. Even following perfectly reasonable (but not Procrustean) naming conventions, it is extremely likely that unaffiliated vendors would introduce name collisions. Despite having the ability to <a href="./private-imports-section.html#rule2">import a name under a new name</a>, a programmer would find name selection an onerous task.</p>
+
+<p>It is therefore entirely possible for a module to import lexically equals names from multiple import targets. Consider the following case:</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 33">
+<![CDATA[
+Module "Summation"
+Uses
+	"Avail" = ("Method_is_", "number", "_+_"),
+	"Dimensional Analysis" = ("dimensioned quantity", "_+_")
+Extends
+	"Dimensional Analysis" = ("__", "m", "s")
+Entries
+	"sum of_and_"
+Body
+
+Method "sum of_and_" is
+[
+	a : number,
+	b : number
+|
+	a + b
+];
+
+Method "sum of_and_" is
+[
+	a : dimensioned quantity,
+	b : dimensioned quantity
+|
+	a + b
+];
+]]>
+</script></div></div>
+
+<p>The module <code class="module">Summation</code> imports the name <code>"_+_"</code> from each of <code class="module">Avail</code> and <code class="module">Dimensional Analysis</code>. Each of these modules separately defines an atom named <code>"_+_"</code>. This module is nonetheless valid, because the resolution of <code>"_+_"</code> to an atom is never ambiguous. On <strong>line 48</strong>, the arguments of <code>"_+_"</code> are known to be <a href="/about-avail/documentation/type-system/types-number.html">numbers</a>, which unambiguously identifies the method (and therefore the associated atom) to be the <code>"_+_"</code> introduced and exported by <code class="module">Avail</code>. On <strong>line 56</strong>, each argument is a <code>dimensioned quantity</code>, so the correct <code>"_+_"</code> is the one introduced and exported by <code>"Dimensional Analysis"</code>.</p>
+
+<p>Now consider another (contrived) case, where the programmer wants to override <code>"_+_"</code> with new behavior.</p>
+
+<div class="restricted-width-container">
+<div class="bad-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 33">
+<![CDATA[
+Module "Bad String Addition"
+Uses
+	"Avail" = ("Method_is_", "string", "_+_", "«_‡++»"),
+	"Dimensional Analysis" = ("_+_")
+Body
+
+/* This doesn't work, because "_+_" is ambiguous. */
+Method "_+_" is
+[
+	a : string,
+	b : string
+|
+	a ++ b
+];
+]]>
+</script></div></div>
+
+<p>In <code class="module">Bad String Addition</code>, the method <code>"_+_"</code> is overridden with a new definition, one sufficient to concatenate two strings. But <em>which</em> <code>"_+_"</code> should be overridden? There are two in scope: one from <code class="module">Avail</code> and one from <code class="module">Dimensional Analysis</code>. In the previous example, the code was sending <code>"_+_"</code>, so the types of the arguments were available to assist in name resolution. But in this example, no such information is available; the method definer, <code>"Method_is_"</code>, has only the lexical name of the desired atom to guide it, and there are two visible atoms with the same lexical name. Compilation will therefore fail as a direct consequence of name resolution failure.</p>
+
+<p>Having studied a couple of concrete examples, let us now examine the general case of <strong>name resolution</strong>, the process by which names are resolved to atoms.</p>
+
+<div class="scrolling">
+<iframe src="/_images/modules/name-resolution.svg" style="margin: auto" seamless></iframe>
+</div>
+
+<p>CONTINUE HERE</p>
 
 <table class="book-nav">
 	<tr>
@@ -51,6 +121,7 @@
 </table>
 
 <!--#include virtual="/_include/body-bottom.ssi" -->
+<!--#include virtual="/_include/sh-bottom.ssi" -->
 
 	</body>
 

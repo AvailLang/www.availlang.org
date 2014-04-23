@@ -8,6 +8,7 @@ TARGETDIR = ../../../../../_images/modules/
 
 SVGS=\
 module-resolution.svg \
+name-resolution.svg \
 upstream-downstream.svg
 
 all compile: $(SVGS)
