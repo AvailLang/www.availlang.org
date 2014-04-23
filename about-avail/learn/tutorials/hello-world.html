@@ -76,7 +76,7 @@ Body
 
 <p><strong>Line 36.</strong> The keyword <code>Body</code> marks the end of the module header, and consequently the beginning of the module body. So let's turn our attention to the module body now.</p>
 
-
+<a name="method"></a>
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 38">
 <![CDATA[
@@ -85,7 +85,7 @@ Method "Greet" is [ Print: "Hello, world!\n"; ];
 </script></div></div>
 
 <p><strong>Line 38</strong> defines an operation named <code class="command">"Greet"</code>. In Avail, a named operation is called a <strong>method</strong>. Much will be said about methods at a later time, but right now what's important is that this method's name matches the name given after the keyword <code>Entries</code> on <strong>line 35</strong>. If the compiler doesn't find a method named <code>"Greet"</code> while parsing the source module, then it will issue an error message to the effect that a declared entry point doesn't exist.</p>
-
+<a name="argument-position"></a>
 <p>The standard library exports a method named <code>"Method_is_"</code> &mdash; pronounced <em>method blank is blank</em> &mdash; whose purpose is to define new methods. The blanks, formally called underscores, indicate <strong>argument positions</strong> in the grammar specified by the method name. <code>"Method_is_"</code> accepts two arguments. The first is a <code>string</code> that represents the name of the new method. The second is a <code><a href="/about-avail/documentation/type-system/types-function.html">function</a></code> that supplies code to implement the method. The number of arguments permitted by the function &mdash; its <strong>arity</strong> &mdash; must agree with the number of argument positions present in the method name. <code class="command">"Greet"</code> has no blanks, so the associated function must not accept any arguments.</p>
 
 <p>A place in the source code where a method is used is termed a <strong>call site</strong>. At the call site of <code>"Method_is_"</code> on <strong>line 38</strong>, the actual arguments are <code>"Greet"</code> and <code>[Print: "Hello, world!\n";]</code>. So the new method will be called <code class="command">"Greet"</code>, which is what we expect.</p>
