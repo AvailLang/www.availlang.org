@@ -29,7 +29,7 @@
 
 <p>A statement that occurs directly within a module body, rather than recursively with function definitions, is called a <strong>top-level statement</strong>. Following is an enumeration of the legal top-level statements:</p>
 
-<ul>
+<ul><a name="module-constant"></a>
 <li>A top-level <strong>variable declaration</strong> introduces a module variable. A <strong>module variable</strong> is a mutable location that is able to store instances of a declared type. A module variable has <strong>module scope</strong>: it is visible to every expression within the module that occurs lexically after its definition (unless <a class="offsite" href="http://en.wikipedia.org/wiki/Variable_shadowing">shadowed</a> by a parameter, local variable, or local constant). The <a class="offsite" href="http://en.wikipedia.org/wiki/Variable_(programming)#Scope_and_extent">extent</a> of a module variable will generally outlast its scope, since a module variable will typically be <a class="offsite" href="http://en.wikipedia.org/wiki/Closure_(computer_science)">closed</a> into a method definition.</li>
 <li class="top-level-statement">A top-level <strong>constant definition</strong> introduces a module constant. A <strong>module constant</strong> is permanently bound to a specific value. A module constant has module scope. The extent of a module constant will generally outlast its scope, since a module constant will typically be closed into a method definition.</li>
 <li class="top-level-statement">An <strong>assignment</strong> of a new value to a module variable.</li>
