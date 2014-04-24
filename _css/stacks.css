@@ -78,6 +78,7 @@ body {
 
 h2.pane-heading 
 {
+	height: 35;
 	font-size: 14px;
 	font-weight: bold;
 	text-align: center;
@@ -85,12 +86,12 @@ h2.pane-heading
 	background-color:#2B5545; 
 	padding: 8px;
 	margin: 0px !important;
-	z-index:1;
 }
 
 
 h2.pane-heading-right
 {
+	height: 35;
 	font-size: 14px;
 	font-weight: bold;
 	text-align: right;
@@ -117,15 +118,14 @@ a.method-link
 
 .pane-filter {
 	padding: 4px;
-	height: 10%;
+	height: 25;
 }
 
 
 .pane-contents {
 	padding: 4px;
-	height: 77%;
+	height: calc(100% - 35px - 8px - 25px - 7px);
 	overflow: scroll;
-	z-index:-2;
 }
 
 .method-links  /*********************** not used anywhere? */
@@ -343,3 +343,6 @@ td.s-desc
 
 
 
+Todd L Smith
+CEO | The Avail Foundation, LLC
++1 (608) 335-0892 | http://www.availlang.org
