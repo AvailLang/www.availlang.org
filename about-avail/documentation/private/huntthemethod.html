@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="internalLinkningApp" ng-controller="LinkCtrl">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>Hunt the Method</title>
+    		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="/about-avail/documentation/stacks/library-documentation/internalLinking.js"></script>
+  </head>
+
+  <body>
+     <h2>The Great Method Finder, Charlie Brown</h2>
+     
+     <p>Just enter the method being searched for in the text field below.  Copy the output below directly into the html document.  Happy Hunting!
+     <div>
+     <strong>Enter Method:</strong> <input type="text" ng-model="search">
+     <div>
+     <br>
+     <h4>Output:</h4>
+     <span style="color:blue">{{getMethod(search)}}</span>
+     </div>
+  </body>
+
+</html>
