@@ -78,7 +78,6 @@ body {
 
 h2.pane-heading 
 {
-	height: 35;
 	font-size: 14px;
 	font-weight: bold;
 	text-align: center;
@@ -86,12 +85,12 @@ h2.pane-heading
 	background-color:#2B5545; 
 	padding: 8px;
 	margin: 0px !important;
+	z-index:1;
 }
 
 
 h2.pane-heading-right
 {
-	height: 35;
 	font-size: 14px;
 	font-weight: bold;
 	text-align: right;
@@ -118,14 +117,15 @@ a.method-link
 
 .pane-filter {
 	padding: 4px;
-	height: 25;
+	height: 10%;
 }
 
 
 .pane-contents {
 	padding: 4px;
-	height: calc(100% - 35px - 8px - 25px - 7px);
+	height: 77%;
 	overflow: scroll;
+	z-index:-2;
 }
 
 .method-links  /*********************** not used anywhere? */
