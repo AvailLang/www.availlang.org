@@ -47,6 +47,26 @@ strict digraph "Name resolution"
 		style="filled",
 		fillcolor="#87cefa"
 	];
+	create
+	[
+		label="Create a\nNew Atom",
+		tooltip="Create a new atom and associate it with the name.",
+		shape="box"
+	];
+	isNew
+	[
+		label="Created\nLocally?",
+		tooltip="Is the name mentioned in the introduced names section of the resolving module?",
+		shape="diamond"
+	];
+	howMany
+	[
+		label="Count\nAtoms",
+		tooltip="How many atoms are associated with the name?",
+		shape="diamond",
+		style="filled",
+		fillcolor="#87cefa"
+	];
 	typeInfo
 	[
 		label="Types\nAvailable?",
@@ -90,9 +110,13 @@ strict digraph "Name resolution"
 
 	stringProvided -> lookup;
 	parse -> lookup;
-	lookup -> unresolvable [label=" 0"];
-	lookup -> resolved [label=" 1"];
-	lookup -> typeInfo [label=" &ge; 2"];
+	lookup -> create [label=" 0"];
+	lookup -> isNew [label=" &ge; 1"];
+	create -> resolved;
+	isNew -> resolved [label=" yes"];
+	isNew -> howMany [label=" no"];
+	howMany -> resolved [label=" 1"];
+	howMany -> typeInfo [label=" &ge; 2"];
 	typeInfo -> filter [label=" yes"];
 	typeInfo -> ambiguous [label=" no"];
 	filter -> unresolvable [label=" 0"];

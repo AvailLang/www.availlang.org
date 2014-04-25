@@ -10,7 +10,7 @@
 <![endif]-->
 	<!--[if gt IE 8]>
 	<!-->
-<html class="">
+<html ng-app="stacksApp" class="">
 <!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
@@ -18,46 +18,11 @@
 		<!--#include virtual="/_include/head.ssi" -->
 		<title>Avail - Library</title>
 	</head>
-	<body ng-app="stacksApp" ng-controller="CategoriesCntrl">
+	<body ng-controller="CategoriesCntrl">
 		<div class="stacks-wrapper">
 	<h2 class="method-heading">_'s⁇arguments</h2>
 	<h4 class="method-section-header">Implementations:</h4>
 	<div class="method-section-content">
-		<div class="signature-heading">block phrase</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Infallible Primitives</div>
-		<div class="category-list"><em>Categories:</em> Primitives</div>
-		<div class="signature-description">
-			Answer the arguments of the specified block.
-		</div>
-		<table class="stacks">
-			<thead>
-				<tr>
-					<th class="transparent" scope="col"></th>
-					<th class="stacks i-col-label-narrow" scope="col">Name</th>
-					<th class="stacks i-col-label-narrow" scope="col">Type</th>
-					<th class="stacks i-col-label-wide" scope="col">Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th class="stacks i-row-label" rowspan="2">Parameters</th>
-				</tr>
-				<tr class="methodParameters">
-					<td id="aBlock1341970082" class="stacks i-code">aBlock</td>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1341970082.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1341970082.html">block phrase</a></td>
-					<td class="stacks i-desc">
-						A block.
-					</td>
-				</tr>
-				<tr>
-					<th class="stacks i-row-label" colspan="2">Returns</th>
-					<td class="stacks i-code">&lt;argument phrase⇒⊤…|></td>
-					<td class="stacks i-desc">
-						A tuple of argument declarations.
-					</td>
-				</tr>
-			</tbody>
-		</table>
 		<div class="signature-heading">send phrase</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Infallible Primitives</div>
 		<div class="category-list"><em>Categories:</em> Primitives</div>
@@ -89,6 +54,41 @@
 					<td class="stacks i-code">list phrase⇒tuple</td>
 					<td class="stacks i-desc">
 						The requested list of argument expressions.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">block phrase</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Infallible Primitives</div>
+		<div class="category-list"><em>Categories:</em> Primitives</div>
+		<div class="signature-description">
+			Answer the arguments of the specified block.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="2">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="aBlock1341970082" class="stacks i-code">aBlock</td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1341970082.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1341970082.html">block phrase</a></td>
+					<td class="stacks i-desc">
+						A block.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code">&lt;argument phrase⇒⊤…|></td>
+					<td class="stacks i-desc">
+						A tuple of argument declarations.
 					</td>
 				</tr>
 			</tbody>

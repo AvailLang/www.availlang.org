@@ -10,7 +10,7 @@
 <![endif]-->
 	<!--[if gt IE 8]>
 	<!-->
-<html class="">
+<html ng-app="stacksApp" class="">
 <!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
@@ -18,7 +18,7 @@
 		<!--#include virtual="/_include/head.ssi" -->
 		<title>Avail - Library</title>
 	</head>
-	<body ng-app="stacksApp" ng-controller="CategoriesCntrl">
+	<body ng-controller="CategoriesCntrl">
 		<div class="stacks-wrapper">
 	<h2 class="method-heading">_∪_</h2>
 	<h4 class="method-section-header">Grammatical restrictions:</h4>
@@ -40,48 +40,6 @@
 	</div>
 	<h4 class="method-section-header">Implementations:</h4>
 	<div class="method-section-content">
-		<div class="signature-heading">set, set</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Infallible Primitives</div>
-		<div class="category-list"><em>Categories:</em> Primitives</div>
-		<div class="signature-description">
-			Compute and answer the set union of the arguments. This is a set that contains the elements of both sets.
-		</div>
-		<table class="stacks">
-			<thead>
-				<tr>
-					<th class="transparent" scope="col"></th>
-					<th class="stacks i-col-label-narrow" scope="col">Name</th>
-					<th class="stacks i-col-label-narrow" scope="col">Type</th>
-					<th class="stacks i-col-label-wide" scope="col">Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th class="stacks i-row-label" rowspan="3">Parameters</th>
-				</tr>
-				<tr class="methodParameters">
-					<td id="arg11692967588" class="stacks i-code">arg1</td>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2811620022.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2811620022.html">set</a></td>
-					<td class="stacks i-desc">
-						A set.
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td id="arg21692967588" class="stacks i-code">arg2</td>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2811620022.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2811620022.html">set</a></td>
-					<td class="stacks i-desc">
-						A set.
-					</td>
-				</tr>
-				<tr>
-					<th class="stacks i-row-label" colspan="2">Returns</th>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2811620022.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2811620022.html">set</a></td>
-					<td class="stacks i-desc">
-						The set union of the arguments.
-					</td>
-				</tr>
-			</tbody>
-		</table>
 		<div class="signature-heading">type, type</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Infallible Primitives</div>
 		<div class="category-list"><em>Categories:</em> Primitives</div>
@@ -120,6 +78,48 @@
 					<td class="stacks i-code">(⊤)'s type</td>
 					<td class="stacks i-desc">
 						The type union of the arguments.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">set, set</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Infallible Primitives</div>
+		<div class="category-list"><em>Categories:</em> Primitives</div>
+		<div class="signature-description">
+			Compute and answer the set union of the arguments. This is a set that contains the elements of both sets.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="arg11692967588" class="stacks i-code">arg1</td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2811620022.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2811620022.html">set</a></td>
+					<td class="stacks i-desc">
+						A set.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="arg21692967588" class="stacks i-code">arg2</td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2811620022.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2811620022.html">set</a></td>
+					<td class="stacks i-desc">
+						A set.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2811620022.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2811620022.html">set</a></td>
+					<td class="stacks i-desc">
+						The set union of the arguments.
 					</td>
 				</tr>
 			</tbody>
