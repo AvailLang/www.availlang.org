@@ -14,10 +14,10 @@ internalLinkApp.controller(
 		$scope.getMethod = function(aMethod) {
 			if (aMethod in $scope.methodLinkage)
 			{
-				return '<code class="method"><a href="' + $scope.methodLinkage[aMethod] + '">' + aMethod + '</a></code>';
+				return '<code class="method"><a href="' + $scope.methodLinkage[aMethod] + '">"' + aMethod + '"</a></code>';
 			}
 			{
-				return '<code class="method">' + aMethod + '</code>';
+				return '<code class="method">"' + aMethod + '"</code>';
 			}
 		}
 	});
