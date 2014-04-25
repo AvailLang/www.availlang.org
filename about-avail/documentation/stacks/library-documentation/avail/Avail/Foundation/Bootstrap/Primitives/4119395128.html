@@ -10,7 +10,7 @@
 <![endif]-->
 	<!--[if gt IE 8]>
 	<!-->
-<html class="">
+<html ng-app="stacksApp" class="">
 <!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
@@ -18,11 +18,95 @@
 		<!--#include virtual="/_include/head.ssi" -->
 		<title>Avail - Library</title>
 	</head>
-	<body ng-app="stacksApp" ng-controller="CategoriesCntrl">
+	<body ng-controller="CategoriesCntrl">
 		<div class="stacks-wrapper">
 	<h2 class="method-heading">Grammatical restriction_is_</h2>
 	<h4 class="method-section-header">Implementations:</h4>
 	<div class="method-section-content">
+		<div class="signature-heading">string, tuple of set of string</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Early Definers</div>
+		<div class="category-list"><em>Categories:</em> Declarations, Methods</div>
+		<div class="signature-description">
+			Define the indicated grammatical restrictions. Each element <code>e</code> of <a href="#exclusions1477965414">exclusions</a> , itself a set of method names, corresponds to an argument position <code>n</code> of <a href="#methodName1477965414">methodName</a> . The compiler rejects parses of source text that invoke methods named in <code>e</code> when they occur grammatically at argument position <code>n</code> of an invocation of the method named by <a href="#methodName1477965414">methodName</a> . Note that argument position corresponds to a blank, not to a top-level repeating sequence (indicated by guillemet notation).
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="methodsName1477965414" class="stacks i-code">methodsName</td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/972788627.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/972788627.html">string</a></td>
+					<td class="stacks i-desc">
+						The name of the method which should be restricted.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="exclusions1477965414" class="stacks i-code">exclusions</td>
+					<td class="stacks i-code">tuple of set of string</td>
+					<td class="stacks i-desc">
+						A tuple of sets of method names. The method names in the <code>n</code> -th set are restricted from occurring grammatically at the <code>n</code> -th argument position of any invocation of the method named by <a href="#methodName1477965414">methodName</a> .
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/741866010.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/741866010.html">⊤</a></td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">atom, tuple of set of string</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Early Definers</div>
+		<div class="category-list"><em>Categories:</em> Declarations, Methods</div>
+		<div class="signature-description">
+			Define the indicated grammatical restrictions. Each element `e` of `exclusions`, itself a set of method names, corresponds to an argument position `n` of `methodName`. The compiler rejects parses of source text that invoke methods named in `e` when they occur grammatically at argument position `n` of an invocation of the method named by `methodName`. Note that argument position corresponds to a blank, not to a top-level repeating sequence (indicated by guillemet notation).
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="methodsName-2006497532" class="stacks i-code">methodsName</td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2846126569.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2846126569.html">atom</a></td>
+					<td class="stacks i-desc">
+						The name of the method which should be restricted.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="exclusions-2006497532" class="stacks i-code">exclusions</td>
+					<td class="stacks i-code">tuple of set of string</td>
+					<td class="stacks i-desc">
+						A tuple of sets of method names. The method names in the `n`-th set are restricted from occurring grammatically at the `n`-th argument position of any invocation of the method named by `methodName`.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/741866010.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/741866010.html">⊤</a></td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
 		<div class="signature-heading">nonempty set of atom, tuple of set of atom</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Fallible Primitives</div>
 		<div class="category-list"><em>Categories:</em> Primitives</div>
@@ -180,90 +264,6 @@
 				</tr>
 				<tr class="methodParameters">
 					<td class="stacks i-code">loading-is-over exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-			</tbody>
-		</table>
-		<div class="signature-heading">string, tuple of set of string</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Early Definers</div>
-		<div class="category-list"><em>Categories:</em> Declarations, Methods</div>
-		<div class="signature-description">
-			Define the indicated grammatical restrictions. Each element <code>e</code> of <a href="#exclusions1477965414">exclusions</a> , itself a set of method names, corresponds to an argument position <code>n</code> of <a href="#methodName1477965414">methodName</a> . The compiler rejects parses of source text that invoke methods named in <code>e</code> when they occur grammatically at argument position <code>n</code> of an invocation of the method named by <a href="#methodName1477965414">methodName</a> . Note that argument position corresponds to a blank, not to a top-level repeating sequence (indicated by guillemet notation).
-		</div>
-		<table class="stacks">
-			<thead>
-				<tr>
-					<th class="transparent" scope="col"></th>
-					<th class="stacks i-col-label-narrow" scope="col">Name</th>
-					<th class="stacks i-col-label-narrow" scope="col">Type</th>
-					<th class="stacks i-col-label-wide" scope="col">Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th class="stacks i-row-label" rowspan="3">Parameters</th>
-				</tr>
-				<tr class="methodParameters">
-					<td id="methodsName1477965414" class="stacks i-code">methodsName</td>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/972788627.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/972788627.html">string</a></td>
-					<td class="stacks i-desc">
-						The name of the method which should be restricted.
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td id="exclusions1477965414" class="stacks i-code">exclusions</td>
-					<td class="stacks i-code">tuple of set of string</td>
-					<td class="stacks i-desc">
-						A tuple of sets of method names. The method names in the <code>n</code> -th set are restricted from occurring grammatically at the <code>n</code> -th argument position of any invocation of the method named by <a href="#methodName1477965414">methodName</a> .
-					</td>
-				</tr>
-				<tr>
-					<th class="stacks i-row-label" colspan="2">Returns</th>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/741866010.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/741866010.html">⊤</a></td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-			</tbody>
-		</table>
-		<div class="signature-heading">atom, tuple of set of string</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Early Definers</div>
-		<div class="category-list"><em>Categories:</em> Declarations, Methods</div>
-		<div class="signature-description">
-			Define the indicated grammatical restrictions. Each element `e` of `exclusions`, itself a set of method names, corresponds to an argument position `n` of `methodName`. The compiler rejects parses of source text that invoke methods named in `e` when they occur grammatically at argument position `n` of an invocation of the method named by `methodName`. Note that argument position corresponds to a blank, not to a top-level repeating sequence (indicated by guillemet notation).
-		</div>
-		<table class="stacks">
-			<thead>
-				<tr>
-					<th class="transparent" scope="col"></th>
-					<th class="stacks i-col-label-narrow" scope="col">Name</th>
-					<th class="stacks i-col-label-narrow" scope="col">Type</th>
-					<th class="stacks i-col-label-wide" scope="col">Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th class="stacks i-row-label" rowspan="3">Parameters</th>
-				</tr>
-				<tr class="methodParameters">
-					<td id="methodsName-2006497532" class="stacks i-code">methodsName</td>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2846126569.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2846126569.html">atom</a></td>
-					<td class="stacks i-desc">
-						The name of the method which should be restricted.
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td id="exclusions-2006497532" class="stacks i-code">exclusions</td>
-					<td class="stacks i-code">tuple of set of string</td>
-					<td class="stacks i-desc">
-						A tuple of sets of method names. The method names in the `n`-th set are restricted from occurring grammatically at the `n`-th argument position of any invocation of the method named by `methodName`.
-					</td>
-				</tr>
-				<tr>
-					<th class="stacks i-row-label" colspan="2">Returns</th>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/741866010.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/741866010.html">⊤</a></td>
 					<td class="stacks i-desc">
 						
 					</td>

@@ -10,7 +10,7 @@
 <![endif]-->
 	<!--[if gt IE 8]>
 	<!-->
-<html class="">
+<html ng-app="stacksApp" class="">
 <!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
@@ -18,7 +18,7 @@
 		<!--#include virtual="/_include/head.ssi" -->
 		<title>Avail - Library</title>
 	</head>
-	<body ng-app="stacksApp" ng-controller="CategoriesCntrl">
+	<body ng-controller="CategoriesCntrl">
 		<div class="stacks-wrapper">
 	<h2 class="method-heading">_[_]</h2>
 	<h4 class="method-section-header">Grammatical restrictions:</h4>
@@ -43,152 +43,6 @@
 	</div>
 	<h4 class="method-section-header">Implementations:</h4>
 	<div class="method-section-content">
-		<div class="signature-heading">tuple, natural number</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Fallible Primitives</div>
-		<div class="category-list"><em>Categories:</em> Primitives</div>
-		<div class="signature-description">
-			Answer the <a href="#index320923268">index</a> -th element of <a href="#aTuple320923268">aTuple</a> .
-		</div>
-		<table class="stacks">
-			<thead>
-				<tr>
-					<th class="transparent" scope="col"></th>
-					<th class="stacks i-col-label-narrow" scope="col">Name</th>
-					<th class="stacks i-col-label-narrow" scope="col">Type</th>
-					<th class="stacks i-col-label-wide" scope="col">Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th class="stacks i-row-label" rowspan="3">Parameters</th>
-				</tr>
-				<tr class="methodParameters">
-					<td id="aTuple320923268" class="stacks i-code">aTuple</td>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3446388540.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3446388540.html">tuple</a></td>
-					<td class="stacks i-desc">
-						A tuple.
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td id="index320923268" class="stacks i-code">index</td>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4066531304.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4066531304.html">natural number</a></td>
-					<td class="stacks i-desc">
-						The one-based index of the desired element.
-					</td>
-				</tr>
-				<tr>
-					<th class="stacks i-row-label" colspan="2">Returns</th>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4064851822.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4064851822.html">any</a></td>
-					<td class="stacks i-desc">
-						The requested element.
-					</td>
-				</tr>
-					<th class="stacks i-row-label" colspan="2" rowspan="2">Raises</th>
-				<tr class="methodParameters">
-					<td class="stacks i-code">subscript-out-of-bounds exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-			</tbody>
-		</table>
-		<div class="signature-heading">tuple meta, natural number</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Infallible Primitives</div>
-		<div class="category-list"><em>Categories:</em> Primitives</div>
-		<div class="signature-description">
-			Answer the element type of the <a href="#index1606346569">index</a> -th element of instances of the specified type. If <a href="#index1606346569">index</a> is out of bounds, then answer ⊥.
-		</div>
-		<table class="stacks">
-			<thead>
-				<tr>
-					<th class="transparent" scope="col"></th>
-					<th class="stacks i-col-label-narrow" scope="col">Name</th>
-					<th class="stacks i-col-label-narrow" scope="col">Type</th>
-					<th class="stacks i-col-label-wide" scope="col">Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th class="stacks i-row-label" rowspan="3">Parameters</th>
-				</tr>
-				<tr class="methodParameters">
-					<td id="aTupleType1606346569" class="stacks i-code">aTupleType</td>
-					<td class="stacks i-code">tuple meta</td>
-					<td class="stacks i-desc">
-						A tuple type.
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td id="index1606346569" class="stacks i-code">index</td>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4066531304.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4066531304.html">natural number</a></td>
-					<td class="stacks i-desc">
-						The index of the desired element type.
-					</td>
-				</tr>
-				<tr>
-					<th class="stacks i-row-label" colspan="2">Returns</th>
-					<td class="stacks i-code">(any)'s type</td>
-					<td class="stacks i-desc">
-						The requested element type, or ⊥ if <a href="#index1606346569">index</a> is out of bounds.
-					</td>
-				</tr>
-			</tbody>
-		</table>
-		<div class="signature-heading">pojo array, natural number</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Fallible Primitives</div>
-		<div class="category-list"><em>Categories:</em> Primitives</div>
-		<div class="signature-description">
-			Answer the <a href="#index-1034898737">index</a> -th element of the specified pojo array.
-		</div>
-		<table class="stacks">
-			<thead>
-				<tr>
-					<th class="transparent" scope="col"></th>
-					<th class="stacks i-col-label-narrow" scope="col">Name</th>
-					<th class="stacks i-col-label-narrow" scope="col">Type</th>
-					<th class="stacks i-col-label-wide" scope="col">Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th class="stacks i-row-label" rowspan="3">Parameters</th>
-				</tr>
-				<tr class="methodParameters">
-					<td id="anArray-1034898737" class="stacks i-code">anArray</td>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1597523367.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1597523367.html">pojo array</a></td>
-					<td class="stacks i-desc">
-						A pojo array.
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td id="index-1034898737" class="stacks i-code">index</td>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4066531304.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4066531304.html">natural number</a></td>
-					<td class="stacks i-desc">
-						A one-based index into the pojo array.
-					</td>
-				</tr>
-				<tr>
-					<th class="stacks i-row-label" colspan="2">Returns</th>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4064851822.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4064851822.html">any</a></td>
-					<td class="stacks i-desc">
-						The <a href="#index-1034898737">index</a> -th element of <a href="#anArray-1034898737">anArray</a> .
-					</td>
-				</tr>
-					<th class="stacks i-row-label" colspan="2" rowspan="3">Raises</th>
-				<tr class="methodParameters">
-					<td class="stacks i-code">subscript-out-of-bounds exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">Java-marshaling-failed exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-			</tbody>
-		</table>
 		<div class="signature-heading">object, atom</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Fallible Primitives</div>
 		<div class="category-list"><em>Categories:</em> Primitives</div>
@@ -238,11 +92,11 @@
 				</tr>
 			</tbody>
 		</table>
-		<div class="signature-heading">function meta, natural number</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Infallible Primitives</div>
+		<div class="signature-heading">tuple, natural number</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Fallible Primitives</div>
 		<div class="category-list"><em>Categories:</em> Primitives</div>
 		<div class="signature-description">
-			Answer the <a href="#index1733378887">index</a> -th parameter type of the specified function type.
+			Answer the <a href="#index320923268">index</a> -th element of <a href="#aTuple320923268">aTuple</a> .
 		</div>
 		<table class="stacks">
 			<thead>
@@ -258,66 +112,31 @@
 					<th class="stacks i-row-label" rowspan="3">Parameters</th>
 				</tr>
 				<tr class="methodParameters">
-					<td id="functionType1733378887" class="stacks i-code">functionType</td>
-					<td class="stacks i-code">function meta</td>
+					<td id="aTuple320923268" class="stacks i-code">aTuple</td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3446388540.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3446388540.html">tuple</a></td>
 					<td class="stacks i-desc">
-						A function type.
+						A tuple.
 					</td>
 				</tr>
 				<tr class="methodParameters">
-					<td id="index1733378887" class="stacks i-code">index</td>
+					<td id="index320923268" class="stacks i-code">index</td>
 					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4066531304.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4066531304.html">natural number</a></td>
 					<td class="stacks i-desc">
-						The one-based index of the desired parameter type.
+						The one-based index of the desired element.
 					</td>
 				</tr>
 				<tr>
 					<th class="stacks i-row-label" colspan="2">Returns</th>
-					<td class="stacks i-code">(any)'s type</td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4064851822.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4064851822.html">any</a></td>
 					<td class="stacks i-desc">
-						The <a href="#index1733378887">index</a> -th parameter type of the argument.
+						The requested element.
 					</td>
 				</tr>
-			</tbody>
-		</table>
-		<div class="signature-heading">any meta, whole number meta</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Infallible Primitives</div>
-		<div class="category-list"><em>Categories:</em> Primitives</div>
-		<div class="signature-description">
-			Construct and answer a pojo array type whose element type is <a href="#elementType890417540">elementType</a> and whose cardinality requirement is <a href="#cardinalityRequirement890417540">cardinalityRequirement</a> .
-		</div>
-		<table class="stacks">
-			<thead>
-				<tr>
-					<th class="transparent" scope="col"></th>
-					<th class="stacks i-col-label-narrow" scope="col">Name</th>
-					<th class="stacks i-col-label-narrow" scope="col">Type</th>
-					<th class="stacks i-col-label-wide" scope="col">Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th class="stacks i-row-label" rowspan="3">Parameters</th>
-				</tr>
+					<th class="stacks i-row-label" colspan="2" rowspan="2">Raises</th>
 				<tr class="methodParameters">
-					<td id="elementType890417540" class="stacks i-code">elementType</td>
-					<td class="stacks i-code">any meta</td>
+					<td class="stacks i-code">subscript-out-of-bounds exception</td>
 					<td class="stacks i-desc">
-						The type of the elements of instances.
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td id="cardinalityRequirement890417540" class="stacks i-code">cardinalityRequirement</td>
-					<td class="stacks i-code">whole number meta</td>
-					<td class="stacks i-desc">
-						The range of sizes of instances.
-					</td>
-				</tr>
-				<tr>
-					<th class="stacks i-row-label" colspan="2">Returns</th>
-					<td class="stacks i-code">(any[])'s type</td>
-					<td class="stacks i-desc">
-						The requested pojo array type.
+						
 					</td>
 				</tr>
 			</tbody>
@@ -367,6 +186,48 @@
 					<td class="stacks i-code">no-such-field exception</td>
 					<td class="stacks i-desc">
 						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">function meta, natural number</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Infallible Primitives</div>
+		<div class="category-list"><em>Categories:</em> Primitives</div>
+		<div class="signature-description">
+			Answer the <a href="#index1733378887">index</a> -th parameter type of the specified function type.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="functionType1733378887" class="stacks i-code">functionType</td>
+					<td class="stacks i-code">function meta</td>
+					<td class="stacks i-desc">
+						A function type.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="index1733378887" class="stacks i-code">index</td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4066531304.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4066531304.html">natural number</a></td>
+					<td class="stacks i-desc">
+						The one-based index of the desired parameter type.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code">(any)'s type</td>
+					<td class="stacks i-desc">
+						The <a href="#index1733378887">index</a> -th parameter type of the argument.
 					</td>
 				</tr>
 			</tbody>
@@ -426,48 +287,6 @@
 				</tr>
 			</tbody>
 		</table>
-		<div class="signature-heading">⊥'s type, natural number</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Literals</div>
-		<div class="category-list"><em>Categories:</em> Types, Queries</div>
-		<div class="signature-description">
-			Disambiguate subscript of ⊥. This is a type subscript operation, such as defined for tuple types or function types, and can consistently answer ⊥.
-		</div>
-		<table class="stacks">
-			<thead>
-				<tr>
-					<th class="transparent" scope="col"></th>
-					<th class="stacks i-col-label-narrow" scope="col">Name</th>
-					<th class="stacks i-col-label-narrow" scope="col">Type</th>
-					<th class="stacks i-col-label-wide" scope="col">Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th class="stacks i-row-label" rowspan="3">Parameters</th>
-				</tr>
-				<tr class="methodParameters">
-					<td id="bottom1964792893" class="stacks i-code">bottom</td>
-					<td class="stacks i-code">⊥'s type</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td id="index1964792893" class="stacks i-code">index</td>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4066531304.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4066531304.html">natural number</a></td>
-					<td class="stacks i-desc">
-						The subscript (ignored).
-					</td>
-				</tr>
-				<tr>
-					<th class="stacks i-row-label" colspan="2">Returns</th>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3936338731.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3936338731.html">⊥</a></td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-			</tbody>
-		</table>
 		<div class="signature-heading">map, any</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Fallible Primitives</div>
 		<div class="category-list"><em>Categories:</em> Primitives</div>
@@ -513,6 +332,90 @@
 					<td class="stacks i-code">key-not-found exception</td>
 					<td class="stacks i-desc">
 						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">⊥'s type, natural number</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Literals</div>
+		<div class="category-list"><em>Categories:</em> Types, Queries</div>
+		<div class="signature-description">
+			Disambiguate subscript of ⊥. This is a type subscript operation, such as defined for tuple types or function types, and can consistently answer ⊥.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="bottom1964792893" class="stacks i-code">bottom</td>
+					<td class="stacks i-code">⊥'s type</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="index1964792893" class="stacks i-code">index</td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4066531304.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4066531304.html">natural number</a></td>
+					<td class="stacks i-desc">
+						The subscript (ignored).
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3936338731.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3936338731.html">⊥</a></td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">any meta, whole number meta</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Infallible Primitives</div>
+		<div class="category-list"><em>Categories:</em> Primitives</div>
+		<div class="signature-description">
+			Construct and answer a pojo array type whose element type is <a href="#elementType890417540">elementType</a> and whose cardinality requirement is <a href="#cardinalityRequirement890417540">cardinalityRequirement</a> .
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="elementType890417540" class="stacks i-code">elementType</td>
+					<td class="stacks i-code">any meta</td>
+					<td class="stacks i-desc">
+						The type of the elements of instances.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="cardinalityRequirement890417540" class="stacks i-code">cardinalityRequirement</td>
+					<td class="stacks i-code">whole number meta</td>
+					<td class="stacks i-desc">
+						The range of sizes of instances.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code">(any[])'s type</td>
+					<td class="stacks i-desc">
+						The requested pojo array type.
 					</td>
 				</tr>
 			</tbody>
@@ -566,6 +469,61 @@
 				</tr>
 			</tbody>
 		</table>
+		<div class="signature-heading">pojo array, natural number</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Fallible Primitives</div>
+		<div class="category-list"><em>Categories:</em> Primitives</div>
+		<div class="signature-description">
+			Answer the <a href="#index-1034898737">index</a> -th element of the specified pojo array.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="anArray-1034898737" class="stacks i-code">anArray</td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1597523367.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1597523367.html">pojo array</a></td>
+					<td class="stacks i-desc">
+						A pojo array.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="index-1034898737" class="stacks i-code">index</td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4066531304.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4066531304.html">natural number</a></td>
+					<td class="stacks i-desc">
+						A one-based index into the pojo array.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4064851822.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4064851822.html">any</a></td>
+					<td class="stacks i-desc">
+						The <a href="#index-1034898737">index</a> -th element of <a href="#anArray-1034898737">anArray</a> .
+					</td>
+				</tr>
+					<th class="stacks i-row-label" colspan="2" rowspan="3">Raises</th>
+				<tr class="methodParameters">
+					<td class="stacks i-code">subscript-out-of-bounds exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">Java-marshaling-failed exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
 		<div class="signature-heading">empty sequence, natural number</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Sequences/Abstract Sequences</div>
 		<div class="category-list"><em>Categories:</em> Unclassified</div>
@@ -611,6 +569,48 @@
 					<td class="stacks i-code">subscript-out-of-bounds exception</td>
 					<td class="stacks i-desc">
 						Always.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">tuple meta, natural number</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Infallible Primitives</div>
+		<div class="category-list"><em>Categories:</em> Primitives</div>
+		<div class="signature-description">
+			Answer the element type of the <a href="#index1606346569">index</a> -th element of instances of the specified type. If <a href="#index1606346569">index</a> is out of bounds, then answer ⊥.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="aTupleType1606346569" class="stacks i-code">aTupleType</td>
+					<td class="stacks i-code">tuple meta</td>
+					<td class="stacks i-desc">
+						A tuple type.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="index1606346569" class="stacks i-code">index</td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4066531304.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4066531304.html">natural number</a></td>
+					<td class="stacks i-desc">
+						The index of the desired element type.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code">(any)'s type</td>
+					<td class="stacks i-desc">
+						The requested element type, or ⊥ if <a href="#index1606346569">index</a> is out of bounds.
 					</td>
 				</tr>
 			</tbody>

@@ -1,0 +1,125 @@
+strict digraph "Name resolution"
+{
+	label="\nThe name resolution process."
+	labelloc="bottom";
+	labeljust="center";
+	fontname="Helvetica";
+	fontsize="10";
+	fontcolor="#000000";
+	rankdir="TB";
+
+	node
+	[
+		fixedsize="true",
+		width="1.3",
+		height="0.8",
+		fontname="Helvetica",
+		fontsize="10",
+		fontcolor="#0000A0",
+		target="_top"
+	];
+	edge
+	[
+		fontname="Helvetica",
+		fontsize="9",
+		fontcolor="#808080"
+	];
+
+	stringProvided
+	[
+		label="Name Provided\nAs String",
+		tooltip="The name is provided as a string to a method that performs name resolution.",
+		shape="record",
+		style="rounded"
+	];
+	parse
+	[
+		label="Name Sent\nAs Message",
+		tooltip="The compiler parses the name from a lexical expression in the module body.",
+		shape="record",
+		style="rounded"
+	];
+	lookup
+	[
+		label="Look Up Atom",
+		tooltip="Use the name to look up the set of candidate atoms in the module's internal directory of visible names.",
+		shape="diamond",
+		style="filled",
+		fillcolor="#87cefa"
+	];
+	create
+	[
+		label="Create a\nNew Atom",
+		tooltip="Create a new atom and associate it with the name.",
+		shape="box"
+	];
+	isNew
+	[
+		label="Created\nLocally?",
+		tooltip="Is the name mentioned in the introduced names section of the resolving module?",
+		shape="diamond"
+	];
+	howMany
+	[
+		label="Count\nAtoms",
+		tooltip="How many atoms are associated with the name?",
+		shape="diamond",
+		style="filled",
+		fillcolor="#87cefa"
+	];
+	typeInfo
+	[
+		label="Types\nAvailable?",
+		tooltip="Is type information available? This will be true at the call site of a name, or during the reflective lookup of a method definition using \"method definition of_for\".",
+		shape="diamond"
+	];
+	filter
+	[
+		label="Filter by\nArgument Type",
+		tooltip="Filter the candidate atoms by using available argument type information. This is only possible for atoms with attached methods.",
+		shape="diamond",
+		style="filled",
+		fillcolor="#87cefa"
+	];
+	resolved
+	[
+		label="Resolved",
+		tooltip="Name resolution succeeded. Proceed using the resolved atom.",
+		shape="ellipse",
+		style="filled",
+		fillcolor="#33ff99"
+	];
+	unresolvable
+	[
+		label="Unresolvable",
+		tooltip="The name does not occur in the module's internal directory of visible names. Report failure.",
+		shape="ellipse",
+		style="filled",
+		fillcolor="#e41e1e",
+		fontcolor="#ffffff"
+	];
+	ambiguous
+	[
+		label="Ambiguous",
+		tooltip="Even after considering available type information, the name corresponds to more than one visible atom. Report failure.",
+		shape="ellipse",
+		style="filled",
+		fillcolor="#e41e1e",
+		fontcolor="#ffffff"
+	];
+
+	stringProvided -> lookup;
+	parse -> lookup;
+	lookup -> create [label=" 0"];
+	lookup -> isNew [label=" &ge; 1"];
+	create -> resolved;
+	isNew -> resolved [label=" yes"];
+	isNew -> howMany [label=" no"];
+	howMany -> resolved [label=" 1"];
+	howMany -> typeInfo [label=" &ge; 2"];
+	typeInfo -> filter [label=" yes"];
+	typeInfo -> ambiguous [label=" no"];
+	filter -> unresolvable [label=" 0"];
+	filter -> resolved [label=" 1"];
+	filter -> ambiguous [label=" &ge; 2"];
+}

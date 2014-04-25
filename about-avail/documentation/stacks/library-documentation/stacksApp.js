@@ -47,7 +47,7 @@ function CategoriesCntrl($scope,Categories) {
 
 		$scope.methodList = finalList;
 	}
-	$scope.mainPage
+	$scope.mainPage;
 	$scope.linkValue = "landing-detail.html";
 	$scope.changeLinkValue = function(link)
 	{
@@ -119,6 +119,7 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "binary semaphore", "link" : "avail/Avail/Foundation/Synchronization/4018549325.html", "distinct" : "binary semaphore/avail/Avail/Foundation/Synchronization/4018549325.html"},
 			{"methodName" : "byte", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/1215798584.html", "distinct" : "byte/avail/Avail/Foundation/Bootstrap/Special Objects/1215798584.html"},
 			{"methodName" : "pojo", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/3153056452.html", "distinct" : "pojo/avail/Avail/Foundation/Bootstrap/Special Objects/3153056452.html"},
+			{"methodName" : "Require:_is canonical", "link" : "avail/Avail/Foundation/Late Definers/325290188.html", "distinct" : "Require:_is canonical/avail/Avail/Foundation/Late Definers/325290188.html"},
 			{"methodName" : "float", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/1103920896.html", "distinct" : "float/avail/Avail/Foundation/Bootstrap/Special Objects/1103920896.html"},
 			{"methodName" : "whole number", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/939335616.html", "distinct" : "whole number/avail/Avail/Foundation/Bootstrap/Special Objects/939335616.html"},
 			{"methodName" : "continuation", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/3713340495.html", "distinct" : "continuation/avail/Avail/Foundation/Bootstrap/Special Objects/3713340495.html"},
@@ -724,6 +725,7 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "_'s⁇primitive number", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/603125766.html", "distinct" : "_'s⁇primitive number/avail/Avail/Foundation/Bootstrap/Primitives/603125766.html"},
 			{"methodName" : "abstract definition", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/2702880911.html", "distinct" : "abstract definition/avail/Avail/Foundation/Bootstrap/Special Objects/2702880911.html"},
 			{"methodName" : "_'s⁇nybblecodes", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/1488530868.html", "distinct" : "_'s⁇nybblecodes/avail/Avail/Foundation/Bootstrap/Primitives/1488530868.html"},
+			{"methodName" : "Export_as a new name", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/3778693273.html", "distinct" : "Export_as a new name/avail/Avail/Foundation/Bootstrap/Primitives/3778693273.html"},
 			{"methodName" : "primfail`«_:_`»", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/3518808268.html", "distinct" : "primfail`«_:_`»/avail/Avail/Foundation/Bootstrap/Primitives/3518808268.html"},
 			{"methodName" : "Print:_", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/1474264080.html", "distinct" : "Print:_/avail/Avail/Foundation/Bootstrap/Primitives/1474264080.html"},
 			{"methodName" : "_'s⁇priority:=_", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/3663243998.html", "distinct" : "_'s⁇priority:=_/avail/Avail/Foundation/Bootstrap/Primitives/3663243998.html"},
@@ -854,7 +856,6 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "invoke_with_,⁇forked at priority_", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/1170830460.html", "distinct" : "invoke_with_,⁇forked at priority_/avail/Avail/Foundation/Bootstrap/Primitives/1170830460.html"},
 			{"methodName" : "integer", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/3781248876.html", "distinct" : "integer/avail/Avail/Foundation/Bootstrap/Special Objects/3781248876.html"},
 			{"methodName" : "[`…]→_", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/2621153195.html", "distinct" : "[`…]→_/avail/Avail/Foundation/Bootstrap/Primitives/2621153195.html"},
-			{"methodName" : "Publish new name:_", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/1214508683.html", "distinct" : "Publish new name:_/avail/Avail/Foundation/Bootstrap/Primitives/1214508683.html"},
 			{"methodName" : "module variable phrase", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/2206810491.html", "distinct" : "module variable phrase/avail/Avail/Foundation/Bootstrap/Special Objects/2206810491.html"},
 			{"methodName" : "`|_'s⁇local variables`|", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/454320722.html", "distinct" : "`|_'s⁇local variables`|/avail/Avail/Foundation/Bootstrap/Primitives/454320722.html"},
 			{"methodName" : "_⇒_", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/1322251174.html", "distinct" : "_⇒_/avail/Avail/Foundation/Bootstrap/Primitives/1322251174.html"},
@@ -1393,6 +1394,7 @@ stacksApp.factory('Categories', function () {
 		"methods" : [
 			{"methodName" : "Public stable forward method_is_", "link" : "avail/Avail/Foundation/Definers/1234850882.html", "distinct" : "Public stable forward method_is_/avail/Avail/Foundation/Definers/1234850882.html"},
 			{"methodName" : "Public stable method_is_", "link" : "avail/Avail/Foundation/Definers/3662032801.html", "distinct" : "Public stable method_is_/avail/Avail/Foundation/Definers/3662032801.html"},
+			{"methodName" : "Require:_is canonical", "link" : "avail/Avail/Foundation/Late Definers/325290188.html", "distinct" : "Require:_is canonical/avail/Avail/Foundation/Late Definers/325290188.html"},
 			{"methodName" : "Grammatical restriction_is_", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/4119395128.html", "distinct" : "Grammatical restriction_is_/avail/Avail/Foundation/Bootstrap/Primitives/4119395128.html"},
 			{"methodName" : "Stable forward method_is_", "link" : "avail/Avail/Foundation/Definers/1885787533.html", "distinct" : "Stable forward method_is_/avail/Avail/Foundation/Definers/1885787533.html"},
 			{"methodName" : "Private method_is_", "link" : "avail/Avail/Foundation/Early Definers/1587156734.html", "distinct" : "Private method_is_/avail/Avail/Foundation/Early Definers/1587156734.html"},

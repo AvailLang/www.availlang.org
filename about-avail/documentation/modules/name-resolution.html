@@ -1,0 +1,192 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+
+		<title>Modules - Name Resolution</title>
+		<style>
+		.resolution-rules
+		{
+			margin-top: 20px;
+		}
+		</style>
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+<!--#include virtual="/_include/sh-head.ssi" -->
+
+<h2 class="content-title">Name Resolution</h2>
+
+<img src="/_images/modules/import-export-intersection.png" alt="A Venn diagram showing 'Extends' as the intersection of 'Uses' and 'Names'." style="float: right; width: 33%"/>
+
+<p>Names are the concurrency of modules. Names flow into modules through <a href="./private-imports-section.html">private imports</a> and <a href="./extended-imports-section.html">extended imports</a> sections. Names flow out of modules through <a href="./introduced-names-section.html">introduced names</a> and extended imports sections.</p>
+
+<p>Names are not constrained to be globally unique within a project, as this would be a heinous requirement. Even following perfectly reasonable (but not <a class="offsite" href="http://en.wikipedia.org/wiki/Procrustes">Procrustean</a>) naming conventions, it is extremely likely that unaffiliated vendors would introduce name collisions. Despite having the ability to <a href="./private-imports-section.html#rule2">import a name under a new name</a>, a programmer would find name selection an onerous task.</p>
+
+<p>Every name is associated with an <a href="/about-avail/documentation/type-system/types-atom.html">atom</a> that is created at the point of the name's original introduction. There are only two ways to introduce a name:</p>
+
+<ol>
+<li>By mentioning the name, as a <a href="/about-avail/documentation/type-system/types-string.html">string literal</a>, in an introduced names section.</li>
+<li>By resolving a name to an atom when no atom in scope corresponds to that name. All names introduced in this fashion are private to the resolving module (unless dynamically exported with <code class="method">"Export_as a new name"</code>).</li>
+</ol>
+
+<p>There are two ways to reference a name within a module body:</p>
+
+<ol>
+<li>By sending a message that resolves a name to an atom, such as <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Very Early Definers/2215474179.html">"Method_is_"</a></code> or <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2402682501.html">"atom for_"</a></code>, to a <a href="/about-avail/documentation/type-system/types-string.html">string</a> that represents a name.</li>
+<li>By using the name to send a message. In this case, the compiler parses the source text to identify the names that correspond to expressions. For example, the compiler parses <code>1 + 3</code> to discover a send of <code class="method">"_+_"</code>. Once the name has been determined, the compiler uses available type information to resolve it to an atom.</li>
+</ol>
+
+<p>Think of an atom as a discrete particle of identity. Most values in Avail are identityless, so atoms are interesting just by dint of having identity. As such, it is occasionally useful to resolve a name to an atom for no other reason than to obtain the atom. It is more often the case, however, that a dependent module imports a name because it wishes to use the associated method in its <a href="./module-bodies.html">body</a>.</p>
+
+<p><strong>Module resolution</strong> is the process by which names are resolved to atoms.</p>
+
+<div class="scrolling">
+<iframe src="/_images/modules/name-resolution.svg" style="margin: auto" seamless></iframe>
+</div>
+
+<dl>
+<dt><em><a id="stringProvided">The name to resolve is provided as a string to name-resolving method.</a></em></dt>
+<dd>In this case, name resolution begins with a send of a name-resolving method to a string that represents the name to resolve. Let us call this name <code>N</code>. Name resolution proceeds by <a href="#lookup">looking up</a> <code>N</code> in the resolving module.</dd>
+
+<dt class="resolution-rules"><em><a id="parse">The name to resolve is sent as a message.</a></em></dt>
+<dd>In this case, name resolution begins with a send of a message. The compiler determines which message is being sent by parsing the related expression. Let us call this message <code>N</code>. Name resolution proceeds by <a href="#lookup">looking up</a> <code>N</code> in the resolving module.</dd>
+
+<dt class="resolution-rules"><em><a id="lookup">Look up the atoms associated with the name.</a></em></dt>
+<dd>Look up any atoms associated with <code>N</code> in the resolving module. These include any atoms <em>1)</em> created by including a name in the introduced names section, <em>2)</em> imported from an upstream module, or <em>3)</em> created by a previous lookup conducted by the resolving module. Let <code>C</code> denote the <a href="/about-avail/documentation/type-system/types-set.html">set</a> of candidate atoms:
+
+	<blockquote style="font-size: 14pt"><code>C &#8797; {A<sub>0</sub>, A<sub>1</sub>, &hellip;, A<sub>n</sub>}</code>,</blockquote>
+
+where <code>A<sub>0</sub></code> through <code>A<sub>n</sub></code> are the candidate atoms. Decide how to proceed based on the <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/3472557257.html">cardinality</a></code> of <code>C</code>:
+
+	<ul>
+	<li><code>|C| = 0</code>: <a href="#create">Create a new atom</a> that is private to the resolving module.</li>
+	<li class="resolution-rules"><code>|C| &ne; 0</code>: <a href="#isNew">Determine</a> whether any of the candidate atoms was created locally.</li>
+	</ul>
+</dd>
+
+<dt class="resolution-rules"><em><a id="create">Create a new private atom.</a></em></dt>
+<dd><code>N</code> does not refer to an existing atom. Create a new atom, <code>A</code>, and associate it with <code>N</code>. This atom will remain private to the resolving module unless it is dynamically exported by <code>"Export_as a new name"</code>. Name resolution has succeeded: <code>N</code> is resolved to <code>A</code>.</dd>
+
+<dt class="resolution-rules"><em><a id="isNew">Is the name associated with a locally defined atom?</a></em></dt>
+<dd>Does <code>N</code> refer to an atom <code>A<sub>i</sub></code> that was created by the resolving module? If so, then name resolution has succeeded: resolve <code>N</code> to <code>A<sub>i</sub></code>, even if there are other candidate atoms, i.e., <code>C &ne; {A<sub>i</sub>}</code>. If not, then <a href="#howMany">pay closer attention</a> to the cardinality of <code>C</code>.</dd>
+
+<dt class="resolution-rules"><em><a id="howMany">Just how many atoms <strong>are</strong> associated with the name?</a></em></dt>
+<dd>Because none of <code>A<sub>0</sub></code> &hellip; <code>A<sub>n</sub></code> are <a href="#isNew">locally defined atoms</a>, re-examine the cardinality of <code>C</code>:
+
+	<ul>
+	<li><code>|C| = 1</code>: Only one imported atom, <code>A<sub>0</sub></code>, is named <code>N</code>, therefore <code>C</code> is
+		
+		<blockquote style="font-size: 14pt"><code>C &#8797; {A<sub>0</sub>}</code>.</blockquote>
+	
+	Name resolution has succeeded: <code>N</code> is resolved to <code>A<sub>0</sub></code>.</li>
+	<li class="resolution-rules"><code>|C| &ge; 2</code>: <code>N</code> is a viable name for any element of <code>C</code>, so <code>N</code> has <strong>surface ambiguity</strong>. It may be possible <a href="#typeInfo">to use type information</a> to further disambiguate <code>N</code>.</li>
+	</ul>
+</dd>
+
+<dt class="resolution-rules"><em><a id="typeInfo">Is type information available to disambiguate the name?</a></em></dt>
+<dd>Is any argument type information available to assist in the disambiguation of <code>N</code>? Such information is only available when <a href="#parse"><code>N</code> is being sent as a message</a>. If argument type information is available, then <a href="#filter">filter</a> the choice of atom based on the <a href="./feature-visibility.html">visibility</a> of method definitions. If not, then name resolution has failed: <code>N</code> is <strong>semantically ambiguous</strong>.</dd>
+
+<dt class="resolution-rules"><em><a id="filter">Use type information to filter the candidate atoms.</a></em></dt>
+<dd>Method arguments are statically typed. Use this type information to determine which visible method definitions are applicable at the call site of <code>N</code>. Let <code>C&prime;</code> be the set of atoms that correspond to methods with applicable definitions. The expansion of <code>C&prime;</code> is
+
+	<blockquote style="font-size: 14pt"><code>C&prime; &#8797; {A<sub>i</sub>, A<sub>j</sub>, A<sub>k</sub>, &hellip;}</code>,</blockquote>
+
+where <code>A<sub>i</sub></code>, <code>A<sub>j</sub></code>, <code>A<sub>k</sub></code>, etc., are elements of <code>C</code>. Decide how to proceed based on the cardinality of <code>C&prime;</code>:
+
+	<ul>
+	<li><code>|C&prime;| = 0</code>: No visible method definitions accept the supplied argument types. Name resolution has failed: <code>N</code> is unresolvable.</li>
+	<li class="resolution-rules"><code>|C&prime;| = 1</code>: Exactly one visible method definition accepts the supplied argument types, therefore <code>C&prime;</code> is
+
+		<blockquote style="font-size: 14pt"><code>C&prime; &#8797; {A<sub>i</sub>}</code>.</blockquote>
+	
+	Name resolution has succeeded: <code>N</code> is resolved to <code>A<sub>i</sub></code>.</li>
+	<li class="resolution-rules"><code>|C&prime;| = 2</code>: Multiple method definitions accept the supplied argument types, i.e., the available type information was insufficient to uniquely disambiguate <code>N</code>. Name resolution has failed: <code>N</code> is semantically ambiguous.</li>
+	</ul>
+</dd>
+</dl>
+
+<p>Consider the following example:</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 33">
+<![CDATA[
+Module "Summation"
+Uses
+	"Avail" = ("Method_is_", "number", "_+_"),
+	"Dimensional Analysis" = ("dimensioned quantity", "_+_")
+Extends
+	"Dimensional Analysis" = ("__", "m", "s")
+Entries
+	"sum of_and_"
+Body
+
+Method "sum of_and_" is
+[
+	a : number,
+	b : number
+|
+	a + b
+];
+
+Method "sum of_and_" is
+[
+	a : dimensioned quantity,
+	b : dimensioned quantity
+|
+	a + b
+];
+]]>
+</script></div></div>
+
+<p>The module <code class="module">Summation</code> imports the name <code>"_+_"</code> from each of <code class="module">Avail</code> and <code class="module">Dimensional Analysis</code>. Each of these modules separately defines an atom named <code>"_+_"</code>. This module is nonetheless valid, because the resolution of <code>"_+_"</code> to an atom is never ambiguous. On <strong>line 48</strong>, the arguments of <code>"_+_"</code> are known to be <a href="/about-avail/documentation/type-system/types-number.html">numbers</a>, which unambiguously identifies the method (and therefore the associated atom) to be the <code>"_+_"</code> introduced and exported by <code class="module">Avail</code>. On <strong>line 56</strong>, each argument is a <code>dimensioned quantity</code>, so the correct <code>"_+_"</code> is the one introduced and exported by <code>"Dimensional Analysis"</code>.</p>
+
+<p>Now consider another (contrived) case, where the programmer wants to override <code>"_+_"</code> with new behavior.</p>
+
+<div class="restricted-width-container">
+<div class="bad-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 33">
+<![CDATA[
+Module "Bad String Addition"
+Uses
+	"Avail" = ("Method_is_", "string", "_+_", "«_‡++»"),
+	"Dimensional Analysis" = ("_+_")
+Body
+
+/* This doesn't work, because "_+_" is ambiguous. */
+Method "_+_" is
+[
+	a : string,
+	b : string
+|
+	a ++ b
+];
+]]>
+</script></div></div>
+
+<p>In <code class="module">Bad String Addition</code>, the method <code>"_+_"</code> is overridden with a new definition, one sufficient to concatenate two strings. But <em>which</em> <code>"_+_"</code> should be overridden? There are two in scope: one from <code class="module">Avail</code> and one from <code class="module">Dimensional Analysis</code>. In the previous example, the code was sending <code>"_+_"</code>, so the types of the arguments were available to assist in name resolution. But in this example, no such information is available; the method definer, <code>"Method_is_"</code>, has only the lexical name of the desired atom to guide it, and there are two visible atoms with the same lexical name. Compilation will therefore fail as a direct consequence of name resolution failure.</p>
+
+<table class="book-nav">
+	<tr>
+		<td class="book-nav-back"><a class="book-nav-back" href="./module-bodies.html">‹ Module Resolution</a></td>
+		<td class="book-nav-spacer">|</td>
+		<td class="book-nav-up"><a class="book-nav-up" href="./index.html">Return to Modules</a></td>
+		<td class="book-nav-spacer">|</td>
+		<td class="book-nav-forward"><a class="book-nav-forward" href="./feature-visibility.html">Name Resolution ›</a></td>
+	</tr>
+</table>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+<!--#include virtual="/_include/sh-bottom.ssi" -->
+
+	</body>
+
+</html>

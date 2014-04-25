@@ -10,7 +10,7 @@
 <![endif]-->
 	<!--[if gt IE 8]>
 	<!-->
-<html class="">
+<html ng-app="stacksApp" class="">
 <!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
@@ -18,16 +18,16 @@
 		<!--#include virtual="/_include/head.ssi" -->
 		<title>Avail - Library</title>
 	</head>
-	<body ng-app="stacksApp" ng-controller="CategoriesCntrl">
+	<body ng-controller="CategoriesCntrl">
 		<div class="stacks-wrapper">
 	<h2 class="method-heading">_'s⁇function type</h2>
 	<h4 class="method-section-header">Implementations:</h4>
 	<div class="method-section-content">
-		<div class="signature-heading">definition</div>
+		<div class="signature-heading">continuation meta</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Infallible Primitives</div>
 		<div class="category-list"><em>Categories:</em> Primitives</div>
 		<div class="signature-description">
-			Answer the specified definition's function type.
+			Answer the type of the function represented by the specified continuation.
 		</div>
 		<table class="stacks">
 			<thead>
@@ -43,17 +43,17 @@
 					<th class="stacks i-row-label" rowspan="2">Parameters</th>
 				</tr>
 				<tr class="methodParameters">
-					<td id="aDefinition1831807181" class="stacks i-code">aDefinition</td>
-					<td class="stacks i-code">definition</td>
+					<td id="aContinuation-733803096" class="stacks i-code">aContinuation</td>
+					<td class="stacks i-code">continuation meta</td>
 					<td class="stacks i-desc">
-						Any definition (method, macro, abstract, forward).
+						A continuation.
 					</td>
 				</tr>
 				<tr>
 					<th class="stacks i-row-label" colspan="2">Returns</th>
 					<td class="stacks i-code">([…]→⊤)'s type</td>
 					<td class="stacks i-desc">
-						The requested function type.
+						The argument's current function's type.
 					</td>
 				</tr>
 			</tbody>
@@ -93,11 +93,11 @@
 				</tr>
 			</tbody>
 		</table>
-		<div class="signature-heading">continuation meta</div>
+		<div class="signature-heading">definition</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Infallible Primitives</div>
 		<div class="category-list"><em>Categories:</em> Primitives</div>
 		<div class="signature-description">
-			Answer the type of the function represented by the specified continuation.
+			Answer the specified definition's function type.
 		</div>
 		<table class="stacks">
 			<thead>
@@ -113,17 +113,17 @@
 					<th class="stacks i-row-label" rowspan="2">Parameters</th>
 				</tr>
 				<tr class="methodParameters">
-					<td id="aContinuation-733803096" class="stacks i-code">aContinuation</td>
-					<td class="stacks i-code">continuation meta</td>
+					<td id="aDefinition1831807181" class="stacks i-code">aDefinition</td>
+					<td class="stacks i-code">definition</td>
 					<td class="stacks i-desc">
-						A continuation.
+						Any definition (method, macro, abstract, forward).
 					</td>
 				</tr>
 				<tr>
 					<th class="stacks i-row-label" colspan="2">Returns</th>
 					<td class="stacks i-code">([…]→⊤)'s type</td>
 					<td class="stacks i-desc">
-						The argument's current function's type.
+						The requested function type.
 					</td>
 				</tr>
 			</tbody>
