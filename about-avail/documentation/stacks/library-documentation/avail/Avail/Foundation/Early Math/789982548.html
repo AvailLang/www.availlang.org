@@ -10,7 +10,7 @@
 <![endif]-->
 	<!--[if gt IE 8]>
 	<!-->
-<html class="">
+<html ng-app="stacksApp" class="">
 <!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
@@ -18,7 +18,7 @@
 		<!--#include virtual="/_include/head.ssi" -->
 		<title>Avail - Library</title>
 	</head>
-	<body ng-app="stacksApp" ng-controller="CategoriesCntrl">
+	<body ng-controller="CategoriesCntrl">
 		<div class="stacks-wrapper">
 	<h2 class="method-heading">⎣_⎦is inclusive</h2>
 	<h4 class="method-section-header">Implementations:</h4>
@@ -27,7 +27,7 @@
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Early Math</div>
 		<div class="category-list"><em>Categories:</em> Integers, Types, Queries</div>
 		<div class="signature-description">
-			Is the lower bound of the argument inclusive? Note that integer ranges canonize each bound as inclusive unless the bound is <code>±∞</code> . So <code>(3..6)</code> is really <code>[4..5]</code> and will answer <a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html">true</a> if asked whether its lower bound is inclusive. But <code>(-∞..0]</code> will answer <a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html">false</a> if asked whether its lower bound is inclusive.
+			Is the lower bound of the argument inclusive? Note that integer ranges canonize each bound as inclusive unless the bound is <code>±∞</code> . So <code>(3..6)</code> is really <code>[4..5]</code> and will answer <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html">true</a> if asked whether its lower bound is inclusive. But <code>(-∞..0]</code> will answer <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html">false</a> if asked whether its lower bound is inclusive.
 		</div>
 		<table class="stacks">
 			<thead>
@@ -51,9 +51,9 @@
 				</tr>
 				<tr>
 					<th class="stacks i-row-label" colspan="2">Returns</th>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1043630010.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1043630010.html">boolean</a></td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1043630010.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1043630010.html">boolean</a></td>
 					<td class="stacks i-desc">
-						<a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html">false</a> if the lower bound is infinite and exclusive, <a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html">true</a> otherwise.
+						<a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html">false</a> if the lower bound is infinite and exclusive, <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html">true</a> otherwise.
 					</td>
 				</tr>
 			</tbody>

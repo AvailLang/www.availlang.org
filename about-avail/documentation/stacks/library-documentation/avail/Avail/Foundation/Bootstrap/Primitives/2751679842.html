@@ -10,7 +10,7 @@
 <![endif]-->
 	<!--[if gt IE 8]>
 	<!-->
-<html class="">
+<html ng-app="stacksApp" class="">
 <!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
@@ -18,16 +18,16 @@
 		<!--#include virtual="/_include/head.ssi" -->
 		<title>Avail - Library</title>
 	</head>
-	<body ng-app="stacksApp" ng-controller="CategoriesCntrl">
+	<body ng-controller="CategoriesCntrl">
 		<div class="stacks-wrapper">
 	<h2 class="method-heading">_<<_</h2>
 	<h4 class="method-section-header">Implementations:</h4>
 	<div class="method-section-content">
 		<div class="signature-heading">integer, integer</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Fallible Primitives</div>
-		<div class="category-list"><em>Categories:</em> Primitives</div>
+		<div class="category-list"><em>Categories:</em> Primitives, Numbers, Integers, Mathematics, Bits</div>
 		<div class="signature-description">
-			Given any integer B and a shift factor S, shift B to the left S bits. If S is negative then treat it as a right shift of the corresponding positive amount.
+			Shift <a href="#baseInteger-1301733112">baseInteger</a> to the left by <a href="#shiftFactor-1301733112">shiftFactor</a> bits. If <a href="#baseInteger-1301733112">baseInteger</a> is negative then treat it as a right shift of then corresponding positive amount.
 		</div>
 		<table class="stacks">
 			<thead>
@@ -44,14 +44,14 @@
 				</tr>
 				<tr class="methodParameters">
 					<td id="baseInteger-1301733112" class="stacks i-code">baseInteger</td>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3781248876.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3781248876.html">integer</a></td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3781248876.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3781248876.html">integer</a></td>
 					<td class="stacks i-desc">
 						An integer to shift.
 					</td>
 				</tr>
 				<tr class="methodParameters">
 					<td id="shiftFactor-1301733112" class="stacks i-code">shiftFactor</td>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3781248876.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3781248876.html">integer</a></td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3781248876.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3781248876.html">integer</a></td>
 					<td class="stacks i-desc">
 						How many bits to shift left (or right if negative).
 					</td>

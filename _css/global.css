@@ -71,7 +71,7 @@ a:hover {
 }*/
 
 b, strong { 
-	font-weight: 400; /* Must match an imported weight! */
+	font-weight: 400; /* When setting, check this matches an imported weight! */
 }
 
 body {
@@ -417,6 +417,7 @@ contain <code> */
 	background-color: transparent;
 }
 
+/* Book-style navigation footer used at the bottom of contentwritten in series. */
 .book-nav {
 	margin-left: auto;
 	margin-right: auto;
@@ -427,7 +428,6 @@ contain <code> */
 
 	list-style-type: none;
 }
-
 .book-nav-back, .book-nav-up, .book-nav-forward {
 	position: relative;
 	bottom: 0;
@@ -441,19 +441,15 @@ contain <code> */
 	color: green;
 	background-color: transparent;
 }
-
 .book-nav-back {
 	text-align: left;
 }
-
 .book-nav-up {
 	text-align: center;
 }
-
 .book-nav-forward {
 	text-align: right;
 }
-
 .book-nav-spacer {
 	padding-left: 10px;
 	padding-right: 10px;
@@ -534,8 +530,11 @@ contain <code> */
 	padding: 0 !important;
 }
 
-.term {
-	/* Placeholder; should receive actual styling. Should probably only affect strong. */
+
+.term {  /* An Avail term, such as would be defined in the Glossary */
+	font-style: italic;
+
+	color: purple;
 }
 
 

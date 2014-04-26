@@ -11,7 +11,12 @@
 <!--#include virtual="/_include/head.ssi" -->
 	
 		<title>The Avail Programming Language</title>
-	
+		<style>
+		.side-bar-summary
+		{
+			margin-top: 20px;
+		}
+		</style>
 	</head>
 	
 	<body class="gradient-logo">
@@ -19,15 +24,34 @@
 <!--#include virtual="/_include/body-top.ssi" -->
 		
 <h2 class="content-title">Welcome</h2>
-<p><a href="./about-avail/introduction/index.html">Avail</a> is a multi-paradigmatic general purpose programming language whose feature set emphasizes support for articulate programming.</p>
+<p><a href="./about-avail/introduction/index.html">Avail</a> is a multi-paradigmatic general purpose programming language whose feature set emphasizes support for articulate programming. Avail is an <a class="offsite" href="http://en.wikipedia.org/wiki/Open_source">open-source</a> project that comprises a <a class="offsite" href="http://en.wikipedia.org/wiki/Virtual_machine">language virtual machine</a> and a <a class="offsite" href="http://en.wikipedia.org/wiki/Standard_library">standard library</a>. Both are released under the <a class="offsite" href="http://en.wikipedia.org/wiki/BSD_licenses#3-clause_license_.28.22Revised_BSD_License.22.2C_.22New_BSD_License.22.2C_or_.22Modified_BSD_License.22.29">3-clause BSD license</a>.</p>
 
-<p>This site is under very active development, as we are ramping up towards a long-awaited alpha release in the very near future. An Avail distribution will include a packaged binary virtual machine and an open-source standard library (released under the <a class="offsite" href="http://en.wikipedia.org/wiki/BSD_licenses">3-clause BSD license</a>). The complete Avail distribution will be free for all educational or noncommercial use and for commercial use below a particular threshold of scale.</p>
+<p>The current release version of Avail is <code style="text-decoration: underline">1.0.0 DEV 2014-04-28</code>. This is a development release, and while it is believed to be useful, it is not recommended for production use.</p>
 
-<p>Much of the site is unfinished, but some very good information is already available. We hope that you become as excited as we are about the enormous applications and implications of Avail and its impact on the future of computing!</p>
+<table>
+<tr>
+<td><a href="/about-avail/download/index.html"><img src="/_images/AvailHammer.png" alt="Avail workbench icon, a stylized A next to a hammer, in front of a green oval." style="width: 70px"/></a></td>
+<td style="padding-left: 15px; vertical-align: middle"><a style="font-size: 14pt" href="/about-avail/download/index.html">You can download a binary or source distribution of Avail here</a>.</td>
+</tr>
+</table>
 
-<p>If you are interested in Avail, please bookmark the main page and check back intermittently. We have just moved away from a clunky content management system, so we are manually adding back functionality, such as the ability to subscribe to our <a href="./about-avail/newsletters/index.html">Newsletter</a>. If you would like to speak to any of the Avail team members, visit the <a href="./about-us/team/index.html">Avail Team</a> page.</p>
+<hr/>
 
-<p>Thanks for stopping by!</p>
+<p>This site is under active development, and, like Avail itself, it is by no means "complete". It is, nonetheless, home to a significant volume of useful content. This content can be accessed from the side bar to the left.</p>
+
+<ol>
+<li><em><a href="/about-avail/introduction/index.html">Introduction.</a></em> This is a bird's eye view of Avail. It describes the rationale for Avail, some philosophy behind its development and usage, and its goals. It also enumerates the features of Avail at a high level and in a <a class="offsite" href="http://en.wikipedia.org/wiki/Buzzword_bingo">buzzword bingo</a> fashion.</li>
+<li class="side-bar-summary"><em><a href="/about-avail/history/index.html">History.</a></em> This is a synopsis of Avail's history, by <a href="http://avail.local/about-us/team/index.html#Mark">Mark van Gulik</a>, the creator of Avail. It chronicles one programmer's journey through the space of programming languages, and describes the frustrations and revelations that inexorably steered him toward Avail.</li>
+<li class="side-bar-summary"><em><a href="/about-avail/download/index.html">Download.</a></em> Obtain Avail for yourself by downloading an installer or pulling it from our official <a class="offsite" href="http://git-scm.com/">Git</a> repository.</li>
+<li class="side-bar-summary"><em><a href="/about-avail/learn/index.html">Learn.</a></em> Learn how to write programs using Avail. This is the home of the official <a href="/about-avail/learn/index.html">Learning Avail</a> tutorial series.</li>
+<li class="side-bar-summary"><em><a href="/about-avail/documentation/index.html">Documentation.</a></em> This is a catalog of reference material related to Avail. It describes, in great detail, the many facets of Avail. Of greatest importance are the <a href="/about-avail/documentation/stacks/library-documentation/index.html">Stacks</a>, the Avail standard library's machine-generated <a class="offsite" href="http://en.wikipedia.org/wiki/Application_programming_interface">APIs</a>.</li>
+<li class="side-bar-summary"><em><a href="/about-avail/glossary/index.html">Glossary.</a></em> This is a lexicon of Avail's many terms.</li>
+<li class="side-bar-summary"><em><a href="/about-avail/community/index.html">Community.</a></em> Find out how to get involved with the Avail community. Here you can join an Avail mailing list or read through the Avail newsletters.</li>
+<li class="side-bar-summary"><em><a href="https://trac.availlang.org/">Trac.</a></em> This is the official Avail project management site, powered by <a class="offsite" href="http://trac.edgewall.org/">Trac</a>. From here you can view information about upcoming milestones and releases, search the database of known issues and outstanding feature requests, report bugs, and request additional features or feature enhancements.</li>
+<li class="side-bar-summary"><em><a href="/about-us/team/index.html">Team.</a></em> Behold, the arrogant fools whose cynicism about the state of the art and wanton acts of hubris have joined forces to conjure Avail into being! <small>(No, this characterization isn't a defacement by vandals. We actually said this about ourselves. Of course, that's exactly what the vandals would want you to think&hellip;)</small></li>
+<li class="side-bar-summary"><em><a href="/about-us/blogs/index.html">Blogs.</a></em> These are blogs written by members of the Avail team. Sadly, we prefer coding to documenting, so these are infrequently updated.</li>
+<li class="side-bar-summary"><em><a href="/about-us/acknowledgments/index.html">Acknowledgments.</a></em> Though the Avail team is small, Avail is nonetheless the culmination of the labors of many. We rely heavily on many excellent tools. This is our salute to those products and the generous people behind them.</li>
+</ol>
 
 <h2 class="content-title">Recent News</h2>
 <p><strong>2014.02.06:</strong> <a href="/about-avail/newsletters/E005.html">Avail Newsletters, Edition #5: The Builder</a> is now available.</p>

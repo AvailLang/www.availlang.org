@@ -10,7 +10,7 @@
 <![endif]-->
 	<!--[if gt IE 8]>
 	<!-->
-<html class="">
+<html ng-app="stacksApp" class="">
 <!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
@@ -18,7 +18,7 @@
 		<!--#include virtual="/_include/head.ssi" -->
 		<title>Avail - Library</title>
 	</head>
-	<body ng-app="stacksApp" ng-controller="CategoriesCntrl">
+	<body ng-controller="CategoriesCntrl">
 		<div class="stacks-wrapper">
 	<h2 class="method-heading">first try</h2>
 	<h4 class="method-section-header">Implementations:</h4>
@@ -26,7 +26,7 @@
 		<div class="signature-heading">		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Backtracking</div>
 		<div class="category-list"><em>Categories:</em> Backtracking, Control Structures</div>
 		<div class="signature-description">
-			Establish a checkpoint for subsequent backtracking. Must be invoked within the dynamic scope of <a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Backtracking/1190077622.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Backtracking/1190077622.html">Backtracking fence_</a> . Answer <a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html">true</a> . On a subsequent invocation of <a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Backtracking/1715256953.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Backtracking/1715256953.html">Try again</a> occurring within the same dynamic scope, restart the checkpoint but answer <a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html">false</a> .
+			Establish a checkpoint for subsequent backtracking. Must be invoked within the dynamic scope of <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Backtracking/1190077622.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Backtracking/1190077622.html">Backtracking fence_</a> . Answer <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html">true</a> . On a subsequent invocation of <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Backtracking/1715256953.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Backtracking/1715256953.html">Try again</a> occurring within the same dynamic scope, restart the checkpoint but answer <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html">false</a> .
 		</div>
 		<table class="stacks">
 			<thead>
@@ -39,16 +39,16 @@
 			<tbody>
 				<tr>
 					<th class="stacks i-row-label" colspan="1">Returns</th>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1043630010.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1043630010.html">boolean</a></td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1043630010.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1043630010.html">boolean</a></td>
 					<td class="stacks i-desc">
-						<a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html">true</a> on the first invocation, <a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html">false</a> when retried.
+						<a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html">true</a> on the first invocation, <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html">false</a> when retried.
 					</td>
 				</tr>
 					<th class="stacks i-row-label" colspan="1" rowspan="2">Raises</th>
 				<tr class="methodParameters">
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Backtracking/3730899449.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Backtracking/3730899449.html">no-backtracking-fence exception</a></td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Backtracking/3730899449.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Backtracking/3730899449.html">no-backtracking-fence exception</a></td>
 					<td class="stacks i-desc">
-						If <a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Backtracking/722108653.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Backtracking/722108653.html">first try</a> is not invoked from within a function governed by <a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Backtracking/1190077622.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Backtracking/1190077622.html">Backtracking fence_</a> .
+						If <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Backtracking/722108653.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Backtracking/722108653.html">first try</a> is not invoked from within a function governed by <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Backtracking/1190077622.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Backtracking/1190077622.html">Backtracking fence_</a> .
 					</td>
 				</tr>
 			</tbody>

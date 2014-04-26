@@ -10,7 +10,7 @@
 <![endif]-->
 	<!--[if gt IE 8]>
 	<!-->
-<html class="">
+<html ng-app="stacksApp" class="">
 <!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
@@ -18,7 +18,7 @@
 		<!--#include virtual="/_include/head.ssi" -->
 		<title>Avail - Library</title>
 	</head>
-	<body ng-app="stacksApp" ng-controller="CategoriesCntrl">
+	<body ng-controller="CategoriesCntrl">
 		<div class="stacks-wrapper">
 	<h2 class="method-heading">split_before_</h2>
 	<h4 class="method-section-header">Implementations:</h4>
@@ -44,14 +44,14 @@
 				</tr>
 				<tr class="methodParameters">
 					<td id="aTuple320923268" class="stacks i-code">aTuple</td>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3446388540.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3446388540.html">tuple</a></td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3446388540.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3446388540.html">tuple</a></td>
 					<td class="stacks i-desc">
 						
 					</td>
 				</tr>
 				<tr class="methodParameters">
 					<td id="pivot320923268" class="stacks i-code">pivot</td>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4066531304.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4066531304.html">natural number</a></td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4066531304.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4066531304.html">natural number</a></td>
 					<td class="stacks i-desc">
 						The index (exclusive) at which to split <a href="#aTuple320923268">aTuple</a> .
 					</td>
@@ -86,7 +86,7 @@
 				</tr>
 				<tr class="methodParameters">
 					<td id="aTuple-266941635" class="stacks i-code">aTuple</td>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3446388540.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3446388540.html">tuple</a></td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3446388540.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3446388540.html">tuple</a></td>
 					<td class="stacks i-desc">
 						
 					</td>
@@ -95,14 +95,14 @@
 					<td id="predicate-266941635" class="stacks i-code">predicate</td>
 					<td class="stacks i-code">[⊥]→boolean</td>
 					<td class="stacks i-desc">
-						A function that accepts each element of the tuple. It must answer <a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html">true</a> when the pivot position has been reached. The function will not be applied again after it has answered <a href="#true-266941635">true</a> .
+						A function that accepts each element of the tuple. It must answer <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html">true</a> when the pivot position has been reached. The function will not be applied again after it has answered <a href="#true-266941635">true</a> .
 					</td>
 				</tr>
 				<tr>
 					<th class="stacks i-row-label" colspan="2">Returns</th>
 					<td class="stacks i-code">&lt;tuple…|2></td>
 					<td class="stacks i-desc">
-						A 2-tuple. The first tuple contains the elements of <a href="#aTuple-266941635">aTuple</a> to which <a href="#predicate-266941635">predicate</a> was applied without a <a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html">true</a> result. The second tuple contains the element for which a <a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html">true</a> result was obtained along with the remaining, untested, elements of <a href="#aTuple-266941635">aTuple</a> .
+						A 2-tuple. The first tuple contains the elements of <a href="#aTuple-266941635">aTuple</a> to which <a href="#predicate-266941635">predicate</a> was applied without a <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html">true</a> result. The second tuple contains the element for which a <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html">true</a> result was obtained along with the remaining, untested, elements of <a href="#aTuple-266941635">aTuple</a> .
 					</td>
 				</tr>
 			</tbody>
