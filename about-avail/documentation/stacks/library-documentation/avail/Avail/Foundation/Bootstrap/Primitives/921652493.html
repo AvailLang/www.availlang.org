@@ -23,11 +23,11 @@
 	<h2 class="method-heading">Abstract method_is_</h2>
 	<h4 class="method-section-header">Implementations:</h4>
 	<div class="method-section-content">
-		<div class="signature-heading">string, function meta</div>
+		<div class="signature-heading">atom, function meta</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Fallible Primitives</div>
-		<div class="category-list"><em>Categories:</em> Primitives</div>
+		<div class="category-list"><em>Categories:</em> Primitives, Methods, Constructors, Mutators</div>
 		<div class="signature-description">
-			Declare an abstract method with the specified name and signature. A concrete definition is one whose parameter types and return type are strictly more specific than the corresponding types of the abstract signature.
+			Declare an abstract method with the specified name and signature. A concrete definition is one whose parameter types and return type are strictly more specific than the corresponding types of the abstract signature. Only extend the grammar of the current module if the atom was introduced by the current module.
 		</div>
 		<table class="stacks">
 			<thead>
@@ -43,14 +43,14 @@
 					<th class="stacks i-row-label" rowspan="3">Parameters</th>
 				</tr>
 				<tr class="methodParameters">
-					<td id="methodName-1473467430" class="stacks i-code">methodName</td>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/972788627.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/972788627.html">string</a></td>
+					<td id="methodName928900440" class="stacks i-code">methodName</td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2846126569.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2846126569.html">atom</a></td>
 					<td class="stacks i-desc">
-						The name of the abstract method to declare.
+						The atom that uniquely names the abstract method to declare.
 					</td>
 				</tr>
 				<tr class="methodParameters">
-					<td id="aFunctionType-1473467430" class="stacks i-code">aFunctionType</td>
+					<td id="signature928900440" class="stacks i-code">signature</td>
 					<td class="stacks i-code">function meta</td>
 					<td class="stacks i-desc">
 						The signature.
@@ -58,12 +58,12 @@
 				</tr>
 				<tr>
 					<th class="stacks i-row-label" colspan="2">Returns</th>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/741866010.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/741866010.html">⊤</a></td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/741866010.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/741866010.html">⊤</a></td>
 					<td class="stacks i-desc">
 						
 					</td>
 				</tr>
-					<th class="stacks i-row-label" colspan="2" rowspan="25">Raises</th>
+					<th class="stacks i-row-label" colspan="2" rowspan="24">Raises</th>
 				<tr class="methodParameters">
 					<td class="stacks i-code">incorrect-argument-type exception</td>
 					<td class="stacks i-desc">
@@ -72,12 +72,6 @@
 				</tr>
 				<tr class="methodParameters">
 					<td class="stacks i-code">incorrect-type-for-group exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">ambiguous-name exception</td>
 					<td class="stacks i-desc">
 						
 					</td>
@@ -210,11 +204,11 @@
 				</tr>
 			</tbody>
 		</table>
-		<div class="signature-heading">atom, function meta</div>
+		<div class="signature-heading">string, function meta</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Fallible Primitives</div>
-		<div class="category-list"><em>Categories:</em> Primitives</div>
+		<div class="category-list"><em>Categories:</em> Primitives, Name Resolution, Methods, Constructors, Mutators</div>
 		<div class="signature-description">
-			Declare an abstract method with the specified name and signature. A concrete definition is one whose parameter types and return type are strictly more specific than the corresponding types of the abstract signature. Only extend the grammar of the current module if the atom was introduced by the current module.
+			Declare an abstract method with the specified name and signature. A concrete definition is one whose parameter types and return type are strictly more specific than the corresponding types of the abstract signature.
 		</div>
 		<table class="stacks">
 			<thead>
@@ -230,14 +224,14 @@
 					<th class="stacks i-row-label" rowspan="3">Parameters</th>
 				</tr>
 				<tr class="methodParameters">
-					<td id="methodName928900440" class="stacks i-code">methodName</td>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2846126569.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2846126569.html">atom</a></td>
+					<td id="methodName-1473467430" class="stacks i-code">methodName</td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/972788627.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/972788627.html">string</a></td>
 					<td class="stacks i-desc">
-						The atom that uniquely names the abstract method to declare.
+						The name of the abstract method to declare.
 					</td>
 				</tr>
 				<tr class="methodParameters">
-					<td id="signature928900440" class="stacks i-code">signature</td>
+					<td id="aFunctionType-1473467430" class="stacks i-code">aFunctionType</td>
 					<td class="stacks i-code">function meta</td>
 					<td class="stacks i-desc">
 						The signature.
@@ -245,12 +239,12 @@
 				</tr>
 				<tr>
 					<th class="stacks i-row-label" colspan="2">Returns</th>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/741866010.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/741866010.html">⊤</a></td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/741866010.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/741866010.html">⊤</a></td>
 					<td class="stacks i-desc">
 						
 					</td>
 				</tr>
-					<th class="stacks i-row-label" colspan="2" rowspan="24">Raises</th>
+					<th class="stacks i-row-label" colspan="2" rowspan="25">Raises</th>
 				<tr class="methodParameters">
 					<td class="stacks i-code">incorrect-argument-type exception</td>
 					<td class="stacks i-desc">
@@ -259,6 +253,12 @@
 				</tr>
 				<tr class="methodParameters">
 					<td class="stacks i-code">incorrect-type-for-group exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">ambiguous-name exception</td>
 					<td class="stacks i-desc">
 						
 					</td>

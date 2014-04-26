@@ -25,7 +25,7 @@
 	<div class="method-section-content">
 		<div class="signature-heading">map meta</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Infallible Primitives</div>
-		<div class="category-list"><em>Categories:</em> Primitives</div>
+		<div class="category-list"><em>Categories:</em> Primitives, Types, Maps, Queries</div>
 		<div class="signature-description">
 			Answer the acceptable range of cardinalities for instances of the specified map type.
 		</div>
@@ -60,7 +60,7 @@
 		</table>
 		<div class="signature-heading">set meta</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Infallible Primitives</div>
-		<div class="category-list"><em>Categories:</em> Primitives</div>
+		<div class="category-list"><em>Categories:</em> Primitives, Types, Sets, Queries</div>
 		<div class="signature-description">
 			Answer the acceptable range of cardinalities for instances of the specified set type.
 		</div>
@@ -82,6 +82,76 @@
 					<td class="stacks i-code">set meta</td>
 					<td class="stacks i-desc">
 						A set type.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code">([0..∞))'s type</td>
+					<td class="stacks i-desc">
+						The argument's cardinality requirement.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">pojo array meta</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Infallible Primitives</div>
+		<div class="category-list"><em>Categories:</em> Primitives, Types, POJO, Queries</div>
+		<div class="signature-description">
+			Answer the cardinality restriction of the specified pojo array type.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="2">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="pojoArrayType1468775128" class="stacks i-code">pojoArrayType</td>
+					<td class="stacks i-code">pojo array meta</td>
+					<td class="stacks i-desc">
+						A pojo array type.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="2">Returns</th>
+					<td class="stacks i-code">([0..∞))'s type</td>
+					<td class="stacks i-desc">
+						The cardinality restriction of <a href="#pojoArrayType1468775128">pojoArrayType</a> .
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">tuple meta</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Infallible Primitives</div>
+		<div class="category-list"><em>Categories:</em> Primitives, Types, Tuples, Queries</div>
+		<div class="signature-description">
+			Answer the range of allowed cardinalities of instances of the specified type.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="2">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="aTupleType-56198623" class="stacks i-code">aTupleType</td>
+					<td class="stacks i-code">tuple meta</td>
+					<td class="stacks i-desc">
+						A tuple type.
 					</td>
 				</tr>
 				<tr>
@@ -121,79 +191,9 @@
 				</tr>
 				<tr>
 					<th class="stacks i-row-label" colspan="2">Returns</th>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3936338731.html')" href="/about-avail/documentation//Users/todd/Sites/www.availlang.org/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3936338731.html">⊥</a></td>
+					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3936338731.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3936338731.html">⊥</a></td>
 					<td class="stacks i-desc">
 						
-					</td>
-				</tr>
-			</tbody>
-		</table>
-		<div class="signature-heading">tuple meta</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Infallible Primitives</div>
-		<div class="category-list"><em>Categories:</em> Primitives</div>
-		<div class="signature-description">
-			Answer the range of allowed cardinalities of instances of the specified type.
-		</div>
-		<table class="stacks">
-			<thead>
-				<tr>
-					<th class="transparent" scope="col"></th>
-					<th class="stacks i-col-label-narrow" scope="col">Name</th>
-					<th class="stacks i-col-label-narrow" scope="col">Type</th>
-					<th class="stacks i-col-label-wide" scope="col">Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th class="stacks i-row-label" rowspan="2">Parameters</th>
-				</tr>
-				<tr class="methodParameters">
-					<td id="aTupleType-56198623" class="stacks i-code">aTupleType</td>
-					<td class="stacks i-code">tuple meta</td>
-					<td class="stacks i-desc">
-						A tuple type.
-					</td>
-				</tr>
-				<tr>
-					<th class="stacks i-row-label" colspan="2">Returns</th>
-					<td class="stacks i-code">([0..∞))'s type</td>
-					<td class="stacks i-desc">
-						The argument's cardinality requirement.
-					</td>
-				</tr>
-			</tbody>
-		</table>
-		<div class="signature-heading">pojo array meta</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Infallible Primitives</div>
-		<div class="category-list"><em>Categories:</em> Primitives</div>
-		<div class="signature-description">
-			Answer the cardinality restriction of the specified pojo array type.
-		</div>
-		<table class="stacks">
-			<thead>
-				<tr>
-					<th class="transparent" scope="col"></th>
-					<th class="stacks i-col-label-narrow" scope="col">Name</th>
-					<th class="stacks i-col-label-narrow" scope="col">Type</th>
-					<th class="stacks i-col-label-wide" scope="col">Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th class="stacks i-row-label" rowspan="2">Parameters</th>
-				</tr>
-				<tr class="methodParameters">
-					<td id="pojoArrayType1468775128" class="stacks i-code">pojoArrayType</td>
-					<td class="stacks i-code">pojo array meta</td>
-					<td class="stacks i-desc">
-						A pojo array type.
-					</td>
-				</tr>
-				<tr>
-					<th class="stacks i-row-label" colspan="2">Returns</th>
-					<td class="stacks i-code">([0..∞))'s type</td>
-					<td class="stacks i-desc">
-						The cardinality restriction of <a href="#pojoArrayType1468775128">pojoArrayType</a> .
 					</td>
 				</tr>
 			</tbody>
