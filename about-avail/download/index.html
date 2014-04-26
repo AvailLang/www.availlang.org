@@ -53,6 +53,8 @@
 <li>The example modules that support the website's various reference trails.</li>
 </ul>
 
+<p><a href="#installation">Installation instructions</a> are available below.</p>
+
 <h3 id="binary">Binary Distributions</h3>
 
 <p>A binary distribution is currently provided only for <a class="offsite" href="http://windows.microsoft.com/en-us/windows/home">Windows</a> users:</p>
@@ -70,9 +72,15 @@
 
 <p>The installer can be rerun at any time to pull the latest version of Avail from the official Git repository, allowing you to stay current with Avail development.</p>
 
+<p><small>(It is, of course, possible to obtain and use a source distribution of Avail on Windows. It is, however, considerably more of a hassle than just downloading an installer and double-clicking it.)</small></p>
+
 <h3 id="source">Source Distributions</h3>
 
-<p>A source distribution of Avail is available for users of <a class="offsite" href="https://www.apple.com/osx/">Mac OS X</a>, <a class="offsite" href="http://www.linux.org/">Linux</a>, and other Unix systems. A source distribution is obtained by <a class="offsite" href="http://git-scm.com/book/en/Git-Basics-Getting-a-Git-Repository">cloning</a> the official Avail project repository, which is located at:</p>
+<p>A source distribution of Avail is available for users of <a class="offsite" href="https://www.apple.com/osx/">Mac OS X</a>, <a class="offsite" href="http://www.linux.org/">Linux</a>, and other Unix systems. A source distribution is obtained by <a class="offsite" href="http://git-scm.com/book/en/Git-Basics-Getting-a-Git-Repository">cloning</a> the official Avail project repository.</p>
+
+<p>A Git client is required to clone the project repository. If you do not already have one installed, then you can obtain one <a class="offsite" href="http://git-scm.com/">here</a>. We have noticed that the Git binaries for Mac OS X are sometimes mislinked on older versions of the operating system (&lt; 10.9.x); if you encounter this problem, then uninstall the Git client and install <a class="offsite" href="https://itunes.apple.com/us/app/xcode/id497799835?ls=1&amp;mt=12">Xcode</a> to obtain a properly linked build of Git.</p>
+
+<p>The Avail project repository is located at:</p>
 
 <table style="margin: auto">
 <tr>
@@ -112,6 +120,233 @@
 <p>Once you have cloned an Avail project branch, you can stay current with updates to that branch by <a class="offsite" href="http://git-scm.com/book/en/Git-Branching-Remote-Branches">pulling</a> them from the official repository:</p>
 
 <div class="restricted-width-container"><div class="console code-block">$ git pull</div></div>
+
+<h3 id="installation">Installation</h3>
+
+<p>If you obtained a binary distribution of Avail, then run the installer. Afterward, <a href="#configuration">skip ahead to learn about configuration</a>.</p>
+
+<p>If you obtained a source distribution of Avail, the you have more work to do before you can start experimenting with Avail. The official installation instructions are included in the <code>README</code> file of the source distribution:</p>
+
+<div class="restricted-width-container"><div class="console code-block">Avail/
+	Avail/
+		README                <-- This one!
+		avail-templates.xml
+		bin
+		build.xml
+		distro
+		eclipse-luna.epf
+		experimental
+		repositories
+		resources
+		src
+		user dictionary</div></div>
+
+<p><code>README</code> is a <a class="offsite" href="http://en.wikipedia.org/wiki/Plain_text">plain text</a> document that contains <a class="offsite" href="http://en.wikipedia.org/wiki/Unicode">Unicode</a> <a class="offsite" href="http://en.wikipedia.org/wiki/Code_point">code points</a> in the <a class="offsite" href="http://en.wikipedia.org/wiki/Utf-8">UTF-8</a> <a class="offsite" href="http://en.wikipedia.org/wiki/Character_encoding">character encoding</a>, so it can be read by most modern editors. As a courtesy to aging developers and system administrators, such as several of the Avail team members, it is manually line-broken to look good on an 80-column display.</p>
+
+<p>If you encounter problems during installation and you discover that there is disagreement between <code>README</code> and the following instructions, then please treat <code>README</code> as gospel.</p>
+
+<h4 id="prerequisites">Prerequisites</h4>
+
+<p>Before installing Avail, you will need to make sure that you have obtained and installed the prerequisite software:</p>
+
+<ol>
+<li><p><a class="offsite" href="http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html">Java</a>: You will need version 1.7, or later, of the Java Development Kit (JDK). Many modern systems already have some version of the JDK, so you should check your JDK version before obtaining and installing it from Oracle (or some other vendor). You can do so like this:</p>
+
+<div class="restricted-width-container"><div class="console code-block">$ javac -version</div></div>
+
+<p>And hopefully you get back something like this:</p>
+
+<div class="restricted-width-container"><div class="console code-block">javac 1.7.0_55</div></div>
+
+<p>Otherwise, the latest version of the Java SE Development Kit 7 can be obtained at:</p>
+
+<table style="margin: auto; margin-top: 15px; margin-bottom: 15px">
+<tr>
+<td><code><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html">http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html</a></code></td>
+</tr>
+</table>
+
+<p>Please follow any installation directions provided by the Oracle website or included with the JDK.</p>
+
+<p>Please make sure that <code>java</code> and <code>javac</code> are on your <code>PATH</code>.</p>
+
+<p><small>(As of the time of writing, Avail has not yet been tested on Java 1.8. If you try it and it works, then great; otherwise, try running Java 1.7.)</small></p></li>
+
+<li style="margin-top: 20px"><p><a class="offsite" href="https://ant.apache.org/bindownload.cgi">Apache Ant</a>: This is the build software used to compile and install Avail. You will need version 1.8.2 or later. Most modern Unix systems already have some version of Ant installed, but, if you are a Windows user, then you will definitely need to download it yourself if you have not previously done so. You can check to see if Ant is installed and has the correct version like this:</p>
+
+<div class="restricted-width-container"><div class="console code-block">$ ant -version</div></div>
+
+<p>And maybe get back something like this:</p>
+
+<div class="restricted-width-container"><div class="console code-block">Apache Ant(TM) version 1.8.2 compiled on October 14 2011</div></div>
+
+<p>If you want to download a recent binary distribution of Ant, then go here:</p>
+
+<table style="margin: auto; margin-top: 15px; margin-bottom: 15px">
+<tr>
+<td><code><a class="offsite" href="http://ant.apache.org/bindownload.cgi">http://ant.apache.org/bindownload.cgi</a></code></td>
+</tr>
+</table>
+
+<p>Or you can obtain a source distribution here:</p>
+
+<table style="margin: auto; margin-top: 15px; margin-bottom: 15px">
+<tr>
+<td><code><a class="offsite" href="http://ant.apache.org/srcdownload.cgi">http://ant.apache.org/srcdownload.cgi</a></code></td>
+</tr>
+</table>
+
+<p>Please follow any installation directions provided by the Apache Ant website or included with the distribution of your choice.</p>
+
+<p>Please make sure that <code>ant</code> is on your <code>PATH</code>.</p></li>
+</ol>
+
+<h4 id="building">Building</h4>
+
+<p>You will need to compile Avail using the provided build script, <code>build.xml</code>. To build Avail:</p>
+
+<div class="restricted-width-container"><div class="console code-block">$ cd "$PROJ"/Avail
+$ ant</div></div>
+
+<p>Where <code>$PROJ</code> is the location of your local copy of the Avail project repository. You should see output similar to this:</p>
+
+<div class="restricted-width-container"><div class="console code-block">Buildfile: $PROJ/Avail/build.xml
+
+build-sources:
+	[mkdir] Created dir: $PROJ/Avail/bin
+	[javac] Compiling 1022 source files to $PROJ/Avail/bin
+
+generate-build-time:
+
+generate-primitives-list:
+
+avail-vm:
+	[jar] Building jar: $PROJ/Avail/distro/lib/Avail.jar
+
+avail-dev:
+	[jar] Building jar: $PROJ/Avail/distro/lib/AvailDev.jar
+
+BUILD SUCCESSFUL
+Total time: 14 seconds</div></div>
+
+<p>If your transcript includes <code>BUILD SUCCESSFUL</code> near the end, then your build is ready for installation.</p>
+
+<h4 id="installing">Installing</h4>
+
+<p>Once you have successfully built the Avail project, you can then install it for either user-specific or system-wide usage. The installation directory (hereinafter, <code>$INSTALL</code>) is specified by an Ant property, <code>"path.install"</code>. You can set this property by providing the <code>-Dpath.install=&hellip;</code> option to Ant.</p>
+
+<p>You can install Avail into a specific installation directory like this:</p>
+
+<div class="restricted-width-container"><div class="console code-block">$ cd $PROJ/Avail
+$ ant -Dpath.install=$INSTALL install</div></div>
+
+<p>If you do not specify <code>-Dpath.install=&hellip;</code> explicitly, then <code>$INSTALL</code> defaults to <code>/usr/local/avail</code> on Mac OS X, Linux, and Unix; it defaults to <code>C:\Program Files\Avail</code> on Windows. Note that these are system directories, and in order to install to such a location you may need to escalate your privileges by using a tool like <code>sudo</code> or logging in with an administrative account.</p>
+
+<p>Your transcript should look similar to this:</p>
+
+<div class="restricted-width-container"><div class="console code-block">Buildfile: $PROJ/Avail/build.xml
+
+build-sources:
+
+generate-build-time:
+
+generate-primitives-list:
+
+avail-vm:
+	[jar] Building jar: $PROJ/Avail/distro/lib/Avail.jar
+
+avail-dev:
+	[jar] Building jar: $PROJ/Avail/distro/lib/AvailDev.jar
+
+install:
+	[copy] Copying 229 files to $INSTALL
+	[echo] 
+	[echo] ATTENTION =======================================================
+	[echo] Be sure to set AVAIL_HOME to:
+	[echo] 
+	[echo]   $INSTALL
+	[echo] 
+	[echo] And update your path to include:
+	[echo] 
+	[echo]   $INSTALL/bin
+	[echo] 
+	[echo] For example, a user of bash might include something like the
+	[echo] following in the appropriate shell config file:
+	[echo] 
+	[echo]   export AVAIL_HOME=$INSTALL
+	[echo]   export PATH=$PATH:$INSTALL/bin
+	[echo] 
+	[echo] Once your path has been updated, from any directory you can
+	[echo] launch the Avail workbench like this:
+	[echo] 
+	[echo]   avail-dev
+	[echo] 
+	[echo] To develop Avail code, you will also need to set AVAIL_ROOTS to a
+	[echo] valid module root path. If AVAIL_ROOTS is not set, then avail-dev
+	[echo] temporarily sets it to:
+	[echo] 
+	[echo]   avail=$HOME/.avail/repos/avail.repo,$INSTALL/src/avail;\
+	[echo]   examples=$HOME/.avail/repos/examples.repo,$INSTALL/src/examples
+	[echo] 
+	[echo] This is convenient for experimenting with Avail, but must be
+	[echo] extended with custom module roots as you develop your own 
+	[echo] modules.
+	[echo] =================================================================
+	[echo] 
+
+BUILD SUCCESSFUL
+Total time: 3 seconds</div></div>
+
+<p>If your transcript includes <code>BUILD SUCCESSFUL</code> near the end, then the installation has completed. The transcript contains information about how to configure your environment for Avail development. Please be sure to follow these instructions (reiterated in more detail below).</p>
+
+<h4 id="configuring">Configuring</h4>
+
+<p>In order to develop Avail libraries and programs, you will need to configure your environment appropriately. On Unix, this is best accomplished by updating your shell configuration file. On Windows, you can use the Control Panel to adjust the environment variables.</p>
+
+<p>The following steps should be taken to prepare your environment for Avail development:</p>
+
+<ol>
+<li>Set the <code>AVAIL_HOME</code> environment variable to <code>$INSTALL</code>. <small>(You will need to put <code>$INSTALL</code> in <em>quotation marks</em> <code>"</code> <code class="unicode">(U+0022)</code> if it contains <em>spaces</em> <code class="unicode">(U+0020)</code>.)</small> The <a href="/about-avail/documentation/workbench.html">Avail workbench</a>, <code>avail-dev</code>, uses this information to locate Avail, and will not run correctly without <code>AVAIL_HOME</code> being set.</li>
+
+<li style="margin-top: 15px">Update your <code>PATH</code> to include <code>$INSTALL/bin</code>. <small>(Again, on Unix systems you will need to put <code>$INSTALL</code> in quotation marks if it contains spaces.)</small> This is where <code>avail-dev</code> is located. This enables your shell to find the command without the user needing to prefix its exact path or change the working directory.</li>
+
+<li style="margin-top: 15px">Set the <code>AVAIL_ROOTS</code> environment variable to a valid module roots path so that Avail can find its modules.</li>
+</ol>
+
+<p>A <strong>module roots path</strong> is a specification of locations that contain Avail code, in either binary or source form. A module roots path comprises several <strong>module root specifications</strong> separated by <em>semicolons</em> <code>;</code> <code class="unicode">(U+003B)</code>. (On Unix systems,
+you will need to put each semicolon in <em>apostrophes</em> <code>'</code> <code class="unicode">(U+0027)</code>, in order to hide it from the shell's command parser.)</p>
+
+<p>Each module root specification comprises a <strong>module root name</strong>, which is just a unique logical identifier, and a module root path. A module root name usually denotes a vendor or a project, and does not need to have any relationship to the file system. By convention, the module root name of the Avail standard library is <code>avail</code>, and the official collection of examples supported by The Avail
+Foundation is called <code>examples</code>. The Avail Foundation advises Avail developers to follow a <a class="offsite" href="http://en.wikipedia.org/wiki/Reverse_domain_name_notation">reverse DNS name convention</a>, like <code>com.acme.super-neato-project</code>, to prevent collision between module root names among several vendors and projects.</p>
+
+<p>A <strong>module root path</strong> is actually a conjunction of a binary repository path and a source module path, respectively, separated by a <em>comma</em> <code>,</code> <code class="unicode">(U+002C)</code>. A <strong>binary repository path</strong> locates a binary file that contains the compiled forms of Avail source modules. A <strong>source module path</strong> locates a directory containing Avail source modules. The same binary repository path may be used for many source paths. If a binary repository path does not refer to an existing file, then "avail-dev" will create and populate this file as needed. A source path must always refer to an existing directory that is readable by the user running <code>avail-dev</code>.
+
+<p>If <code>AVAIL_ROOTS</code> is not defined, then <code>avail-dev</code> will use the following module 
+roots path by default:</p>
+
+<div class="restricted-width-container"><div class="code-block">avail=$HOME/.avail/repos/avail.repo,$INSTALL/src/avail;examples=$HOME/.avail/repos/examples.repo,$INSTALL/src/examples</div></div>
+
+<p>This default is suitable for interacting with the Avail system as shipped by The Avail Foundation, but not for developing your own Avail modules. To develop your own Avail modules, your <code>AVAIL_ROOTS</code> environment variable must at least include a module root specification for the Avail standard library, and it must also include module root specifications for your own Avail projects.</p>
+
+<p>For more information on this topic, please read about <a href="/about-avail/documentation/modules/module-discovery.html">module discovery</a>.</p>
+
+<h3>After Installation</h3>
+
+<p>Grab yourself a <a class="offsite" href="http://www.reuters.com/article/2006/11/21/us-sodas-idUSN2032394120061121">refreshing beverage</a>, kick back, fire up the <a href="/about-avail/documentation/workbench.html">Avail workbench</a>, and experiment with <a href="/about-avail/documentation/expression-cookbook.html">some Avail expressions</a> using the <a href="/about-avail/documentation/availuator.html">Availuator</a>, because you are done with installation!</p>
+
+<p>If you installed a binary distribution of Avail, then you can launch the Avail workbench by double-clicking on the application's icon.</p>
+
+<p>If you installed a source distribution of Avail, then you can launch the Avail workbench like this:</p>
+
+<div class="restricted-width-container"><div class="console code-block">$ avail-dev</div></div>
+
+<p>If you are launching the Avail workbench from a Windows command prompt, then be aware that the name of the batch script is <code>avail-dev.bat</code>, not <code style="text-decoration: line-through">avail-dev</code>.</p>
+
+<table class="book-nav">
+	<tr>
+		<td class="book-nav-up"><a class="book-nav-up" href="#">Back to the top</a></td>
+	</tr>
+</table>
 
 <!--#include virtual="/_include/body-bottom.ssi" -->
 
