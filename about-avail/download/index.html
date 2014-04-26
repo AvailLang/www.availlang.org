@@ -1,0 +1,120 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Download</title>
+		<style>
+			table.branches
+			{
+				background: linear-gradient(to right, rgb(242, 242, 242), rgb(252, 252, 252));
+				width: 80%;
+			}
+			tr.header
+			{
+				background: white;
+				color: black;
+				text-align: left;
+				vertical-align: bottom;
+			}
+			tr.branches:nth-child(odd)
+			{
+				color: black;
+				vertical-align: baseline;
+			}
+			tr.branches:nth-child(even)
+			{
+				background: white;
+				color: black;
+				vertical-align: baseline;
+			}
+		</style>
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+
+		<h2 class="content-title">Download</h2>
+
+<p>Here you can obtain a <a href="#binary">binary</a> or <a href="#source">source distribution</a> of Avail. An Avail distribution includes:</p>
+
+<ul>
+<li>The Avail <a class="offsite" href="http://en.wikipedia.org/wiki/Virtual_machine">language virtual machine</a>.</li>
+<li>The Avail <a class="offsite" href="http://en.wikipedia.org/wiki/Standard_library">standard library</a>.</li>
+<li>The official example <a href="/about-avail/documentation/modules/index.html">modules</a> from the <a href="/about-avail/learn/index.html">Learning Avail</a> tutorial series.</li>
+<li>The example modules that support the website's various reference trails.</li>
+</ul>
+
+<h3 id="binary">Binary Distributions</h3>
+
+<p>A binary distribution is currently provided only for <a class="offsite" href="http://windows.microsoft.com/en-us/windows/home">Windows</a> users:</p>
+
+<table>
+<tr>
+<td><a href="./windows/Avail%20Setup.exe"><img src="/_images/AvailHammer.png" alt="Avail workbench icon, a stylized A next to a hammer, in front of a green oval." style="width: 70px"/></a></td>
+<td style="padding-left: 15px; vertical-align: middle"><code><a href="./windows/Avail%20Setup.exe">http://www.availlang.org/about-avail/download/windows/Avail Setup.exe</a></code></td>
+</tr>
+</table>
+
+<p>This installer bundles binaries for <a class="offsite" href="http://git-scm.com/">Git</a> and <a class="offsite" href="http://ant.apache.org/">Apache Ant</a>. The installer does not contain an Avail distribution, but instead clones Avail from the main development branch of the official Git repository. It then builds Avail from the sources and installs it onto your system.</p>
+
+<p>The <a class="offsite" href="http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html">Java SE Development Kit 7</a> is necessary to run the Avail virtual machine. The installer will check for an existing installation, and prompt you to take action if a suitable version of Java is not already installed.</p>
+
+<p>The installer can be rerun at any time to pull the latest version of Avail from the official Git repository, allowing you to stay current with Avail development.</p>
+
+<h3 id="source">Source Distributions</h3>
+
+<p>A source distribution of Avail is available for users of <a class="offsite" href="https://www.apple.com/osx/">Mac OS X</a>, <a class="offsite" href="http://www.linux.org/">Linux</a>, and other Unix systems. A source distribution is obtained by <a class="offsite" href="http://git-scm.com/book/en/Git-Basics-Getting-a-Git-Repository">cloning</a> the official Avail project repository, which is located at:</p>
+
+<table style="margin: auto">
+<tr>
+<td style="text-align: center"><code>git://www.availlang.org/Avail</code></td>
+</tr>
+</table>
+
+<p>The <code>master</code> <a class="offsite" href="http://git-scm.com/book/en/Git-Branching-What-a-Branch-Is">branch</a> tracks main-line development. Assuming that <code>git</code> is available on your <a class="offsite" href="http://en.wikipedia.org/wiki/PATH_(variable)">PATH</a>, you can obtain the latest-and-greatest from <code>master</code> using the following command:</p>
+
+<div class="restricted-width-container"><div class="console code-block">$ git clone git://www.availlang.org/Avail</div></div>
+
+<p>This will clone the Avail project repository into the <a class="offsite" href="http://en.wikipedia.org/wiki/Shell_(computing)">shell's</a> <a class="offsite" href="http://en.wikipedia.org/wiki/Working_directory">working directory</a> as a subdirectory named <code class="module">Avail</code>.</p>
+
+<p>The following branches correspond to supported Avail project releases:</p>
+
+<table class="branches" style="margin: auto">
+<thead>
+<tr class="header">
+<th style="text-align: left">Branch Name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="branches">
+<td style="text-align: left"><code>1.0.0 DEV 2014-04-28</code></td>
+</tr>
+</tbody>
+</table>
+
+<p>You can obtain a specific release using the following command:</p>
+
+<div class="restricted-width-container"><div class="neutral-code code-block">$ git clone git://www.availlang.org/Avail --branch "$BRANCH_NAME"</div></div>
+
+<p>Where <code>$BRANCH_NAME</code> stands for one of the branch names given in the table above. For example, to obtain the <code>1.0.0 DEV 2014-04-28</code> branch, you can issue the following command:</p>
+
+<div class="restricted-width-container"><div class="console code-block">$ git clone git://www.availlang.org/Avail --branch "1.0.0 DEV 2014-04-28"</div></div>
+
+<p>Once you have cloned an Avail project branch, you can stay current with updates to that branch by <a class="offsite" href="http://git-scm.com/book/en/Git-Branching-Remote-Branches">pulling</a> them from the official repository:</p>
+
+<div class="restricted-width-container"><div class="console code-block">$ git pull</div></div>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>
