@@ -1,0 +1,65 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Avail Documentation - The Availuator</title>
+	
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+		
+<h2 class="content-title">The Availuator</h2>
+
+<p>Wouldn't it be fantastic if you could run Avail expressions directly from the workbench without first:</p>
+
+<ol>
+<li>Create a source module.</li>
+<li>Populating it with the desired expressions.</li>
+<li>Defining entry points that evaluate those expressions.</li>
+<li>Compiling and loading the module.</li>
+<li>Loading it.</li>
+<li>And finally running some of the entry points?</li>
+</ol>
+
+<p>Introducing&hellip; the Availuator!</p>
+
+<img class="full-line-screenshot" src="/_images/documentation/availuator/availuator.png" width=820 alt="A screenshot of the Avail workbench having run several expressions and poised to run another one."/>
+
+<p>The only application that is delivered as part of the Avail standard library resides in <code class="module">/avail/Availuator</code>. The three <a href="/about-avail/documentation/modules/entry-points-section.html">entry points</a> defined here &mdash; <code class="command">"`!_"</code>, <code class="command">"time_"</code>, and <code class="command">"Run_"</code> &mdash; are collectively known as the <strong>Availuator</strong>. The Availuator is an Avail expression evaluator. It is capable of evaluating any expression exported by its siblings, the other modules within the <code>avail</code> <a href="/about-avail/documentation/modules/module-discovery.html">module root</a>.</p>
+
+<p>Let's look at each of the entry points. Note that <code>"time_"</code> has two definitions; the more general definition is listed first.</p>
+
+<dl>
+<dt><code class="method">"`!_"</code> <code>[any]&rarr;any</code></dt>
+<dd>Evaluate an argument expression. Answer its value.</dd>
+<dt style="margin-top: 20px"><code class="method">"Run_"</code> <code>[[&hellip;]&rarr;&#8868;]&rarr;&#8868;</code></dt>
+<dd>Run the specified <a href="/about-avail/documentation/type-system/types-function.html">function</a>. If it produces a value, then answer that value.</dd>
+<dt style="margin-top: 20px"><code class="method">"time_"</code> <code>[[&hellip;]&rarr;&#8868;]&rarr;whole number &mu;s</code></dt>
+<dd>Run the specified non-value-producing function. Answer a <code>dimensioned quantity</code> that represents the number of microseconds that elapsed during execution of the function.</dd>
+<dt style="margin-top: 20px"><code class="method">"time_"</code> <code>[[&hellip;]&rarr;any]&rarr;&lt;whole number &mu;s, any&hellip;|2&gt;</code></dt>
+<dd>Run the specified value-producing function. Answer a <a href="/about-avail/documentation/type-system/types-tuple.html">2-tuple</a>. The first element is a <code>dimensioned quantity</code> that represents the number of microseconds that elapsed during execution of the function. The second element is the value produced by the function.</dd>
+</dl>
+
+<p>The <a href="./expression-cookbook.html">expression cookbook</a> contains a plethora of varied expressions just waiting to be tried in the Availuator. Go on, give it a try!</p>
+
+<table class="book-nav">
+	<tr>
+		<td class="book-nav-up"><a class="book-nav-up" href="../index.html">Return to Documentation</a></td>
+	</tr>
+</table>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>
