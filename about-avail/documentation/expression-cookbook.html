@@ -1,0 +1,406 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+<!--#include virtual="/_include/sh-head.ssi" -->
+
+	
+		<title>Avail Documentation - Expression Cookbook</title>
+	
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+		
+<h2 class="content-title">Expression Cookbook</h2>
+
+<p>Here can be found handy expressions that illustrate a wide variety of small programming tasks.</p>
+
+<p>Each recipe begins with a question that you might ask, like <a href="#tuple-literal">"How do I create a literal array?"</a> Very likely, you are coming from some other programming language, and framing your question in its terms. We have taken care to include alien terminology in the introduction of each section. This means that a search of the page from your browser will be likely to turn up the right information. This is also a good way to learn Avail's native terminology.</p>
+
+<p>Following each question is a list of answers, each of which is provided as a sample expression. Most of these expressions are prefixed with an <em>exclamation point</em> <code>!</code> <code class="unicode">(U+0021)</code>. You can use the <a href="./availuator.html">Availuator</a> to run any of these expressions from the <a href="./workbench.html">workbench</a>. Simply copy the entire expression, including the leading exclamation point, paste it into the workbench's input field, and press <code>Enter</code>.<sup><a href="#fn1">[1]</a></sup> If you want to use one of these expressions in a module, then do not include the leading exclamation point in the copy. This character is part of the send of <code class="command">"`!_"</code>, the Availuator's primary expression evaluator.</p>
+
+<p>After the sample expressions are hyperlinks into the <a href="/about-avail/documentation/stacks/library-documentation/index.html">Stacks</a>. Each hyperlink targets a method used in a sample expression. Only methods of primary relevance to the topic are targeted.</p>
+
+<p>Note that the results of the expressions are deliberately not included on this page. Consider this as strong encouragement to play with the recipes in the Availuator! <code>:-)</code></p>
+
+<hr/>
+
+<table>
+<tr>
+<td><a href="#tuples">Tuples</a></td>
+</tr>
+</table>
+
+<hr/>
+
+<h3 id="tuples"><a href="/about-avail/documentation/type-system/types-tuple.html">Tuples</a></h4>
+
+<p><small>Synonyms: array, list, ordered collection, sequence, slice.</small></p>
+
+<p>Be aware that tuple subscripts are <strong>one-based</strong>, not zero-based.</p>
+
+<h4 id="tuple-empty">How do I specify an empty tuple?</h4>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! <>
+]]>
+</script></div></div>
+
+<ul>
+<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early Literals/983474234.html">"<«_‡,»>"</a></code></li>
+</ul>
+
+
+<h4 id="tuple-literal">How do I create a literal tuple?</h4>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! <1, 2, 3>
+]]>
+</script></div></div>
+
+<p>Literal tuples can be constructed using arbitrary value producing expressions, not just literal expressions.</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! <2^0, 2^1, 2^2, 2^3, 2^4>
+]]>
+</script></div></div>
+
+<ul>
+<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early Literals/983474234.html">"<«_‡,»>"</a></code></li>
+</ul>
+
+<h4 id="tuple-interval">How do I create a tuple of related integers?</h4>
+
+<p><small>Or, "How do I create an interval?"</small></p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! 1 to 100
+]]>
+</script></div></div>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! 100 to 1 by -1
+]]>
+</script></div></div>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! 4 to 100 by 17
+]]>
+</script></div></div>
+
+<ul>
+<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Tuples/318523937.html">"_to_"</a></code></li>
+<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/554530225.html">"_to_by_"</a></code></li>
+</ul>
+
+<h4 id="tuple-size">How do I get the size / length of a tuple?</h4>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! |<1, 5, 9, "kablam!">|
+]]>
+</script></div></div>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! |"kablam!"|
+]]>
+</script></div></div>
+
+<ul>
+<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/3472557257.html">"`|_`|"</a></code></li>
+</ul>
+
+
+<h4 id="tuple-subscript">How do I subscript / index a tuple?</h4>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! <"George", "Jane", "Judy", "Elroy">[2]
+]]>
+</script></div></div>
+
+<p>If you don't know if a subscript will be valid, then you can provide an <code>else</code> function to apply if the subscript isn't valid.</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! <"Gödel", "Escher", "Bach">[1] else ["Godot"]
+]]>
+</script></div></div>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! <"Gödel", "Escher", "Bach">[509829] else ["Godot"]
+]]>
+</script></div></div>
+
+<ul>
+<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2184539642.html">"_[_]"</a></code></li>
+<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Collections/1134191244.html">"_[_]else_"</a></code></li>
+</ul>
+
+<h4 id="tuple-subscript-replace">How do I replace the element at the specified subscript of a tuple?</h4>
+
+<p>Tuples are immutable, so you cannot replace their elements. However, you can easily (and efficiently) derive a new tuple that differs from an old one by only one element.</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! <"1", "2", "3", "四", "5">[4] → "4"
+]]>
+</script></div></div>
+
+<ul>
+<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/3716331827.html">"_[_]→_"</a></code></li>
+</ul>
+
+<h4 id="tuple-slice">How do I slice a tuple?</h4>
+
+<p><small>Or, "How do I get a consecutive range of elements from a tuple?"</small></p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! <1, 2, 3, 4, 5, 6>[4..5]
+]]>
+</script></div></div>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! <1, 2, 3, 4, 5, 6>[..3]
+]]>
+</script></div></div>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! <1, 2, 3, 4, 5, 6>[2..]
+]]>
+</script></div></div>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! <1, 2, 3, 4, 5, 6>[7..]
+]]>
+</script></div></div>
+
+<p>If you don't know if a range will be valid, then you can provide an <code>else</code> function to apply if the range isn't valid.</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! <"noun", "verb", "adjective", "adverb">[2..4] else [<"conjunction", "preposition">]
+]]>
+</script></div></div>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! <"noun", "verb", "adjective", "adverb">[3..5] else [<"conjunction", "preposition">]
+]]>
+</script></div></div>
+
+<ul>
+<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/1620438707.html">"_[_.._]"</a></code></li>
+<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early Tuples/2872239962.html">"_[.._]"</a></code></li>
+<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early Tuples/466345330.html">"_[_..]"</a></code></li>
+</ul>
+
+<h4 id="tuple-slice-replace">How do I replace a slice of a tuple?</h4>
+
+<p><small>Or, "How do I replace a consecutive range of elements from a tuple?"</small></p>
+
+<p>Tuples are immutable, so you cannot replace their elements. However, you can easily (and efficiently) derive a new tuple that differs from an old one by a consecutive range of elements.</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! <1, 2, 3, 6, 5, 4, 7>[4..6] → <4, 5, 6>
+]]>
+</script></div></div>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! <1, 2>[1..2] → <5, 3, 1>
+]]>
+</script></div></div>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! <>[1..0] → 1 to 10
+]]>
+</script></div></div>
+
+<ul>
+<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Tuples/4089704672.html">"_[_.._]→_"</a></code></li>
+</ul>
+
+<h4 id="tuple-concatenate">How do I concatenate tuples?</h4>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! "High " ++ "five"
+]]>
+</script></div></div>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! 1 to 10 ++ 10 to 1 by -1
+]]>
+</script></div></div>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! 1 to 3 ++ <"four"> ++ 5 to 7 ++ <"八", "九", "十">
+]]>
+</script></div></div>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! concatenate <1 to 3, <"four">, 5 to 7, <"八", "九", "十">>
+]]>
+</script></div></div>
+
+<ul>
+<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early Tuples/3216719640.html">"«_‡++»"</a></code></li>
+<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/582878776.html">"concatenate_"</a></code></li>
+</ul>
+
+<h4 id="tuple-for-each">How can I loop through each element of a tuple?</h4>
+
+<p>There are lots of ways to accomplish this, so here are just a few.</p>
+
+<p>Here's a very direct technique.</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+Run [For each of 10 to 20 do [i : [10..20] | Print: “i” ++ " ";];]
+]]>
+</script></div></div>
+
+<p>Here's how to loop through the tuple in parallel. Note that the result is unstable.</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+Run [For each of 10 to 20 in parallel do [i : [10..20] | Print: “i” ++ " ";];]
+]]>
+</script></div></div>
+
+<p>Here's an old-school subscripting loop.</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+Run [t ::= 10 to 20; From 1 to |t| do [i : natural number | Print: “t[i]” ++ " ";];]
+]]>
+</script></div></div>
+
+<ul>
+<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Collections/2291766889.html">"For each of⁇_do_"</a></code></li>
+<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/1686252124.html">"For each of⁇_in parallel«_-way»do_"</a></code></li>
+<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control Structures/2796786157.html">"From_to_do_"</a></code></li>
+</ul>
+
+<h4 id="tuple-map">How do I transform each element of a tuple?</h4>
+
+<p><small>Or, "How do I map a tuple through a function?"</small></p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! map <"one", "two", "three", "four", "five"> through [s : string | |s|]
+]]>
+</script></div></div>
+
+<p>This does the same computation, but in parallel.</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! map <"one", "two", "three", "four", "five"> in parallel through [s : string | |s|]
+]]>
+</script></div></div>
+
+<ul>
+<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Collections/2256608013.html">"map_through_"</a></code></li>
+<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/2097709900.html">"map_in parallel«_-way»through_"</a></code></li>
+</ul>
+
+<h4 id="tuple-filter">How do I filter the elements of a tuple?</h4>
+
+<p><small>Or, "How do I find every element of a tuple that satisfies a predicate function?"</small></p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! filter 1 to 20 by [i : [1..20] | i is odd]
+]]>
+</script></div></div>
+
+<p>This does the same computation, but in parallel.</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! filter 1 to 20 in parallel by [i : [1..20] | i is odd]
+]]>
+</script></div></div>
+
+<ul>
+<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Collections/990470023.html">"filter_by_"</a></code></li>
+<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/1160354066.html">"filter_in parallel«_-way»by_"</a></code></li>
+</ul>
+
+
+<hr/>
+
+<p><small><a id="fn1">[1]</a> Be sure that you have already loaded the Availuator by double-clicking it in one of the tree views on the left side of the workbench. Otherwise the workbench won't be able to find the <code class="command">"`!_"</code> entry point.</small></p>
+
+<table class="book-nav">
+	<tr>
+		<td class="book-nav-up"><a class="book-nav-up" href="../index.html">Return to Documentation</a></td>
+	</tr>
+</table>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+<!--#include virtual="/_include/sh-bottom.ssi" -->
+
+	</body>
+
+</html>
