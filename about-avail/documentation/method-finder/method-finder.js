@@ -20,19 +20,28 @@ internalLinkApp.controller(
 		$scope.resetLink = function()
 		{
 			$scope.$directLink = '';
-		}
-		$scope.getMethod = function(aMethod) {
+		};
+		$scope.getInternalLink = function(aMethod) {
 			if (aMethod in $scope.methodLinkage)
 			{
 				$scope.directLink = $scope.methodLinkage[aMethod];
 				$scope.linkText = 'Link to page';
 				return '<code class="method"><a href="' + $scope.methodLinkage[aMethod] + '">"' + aMethod + '"</a></code>';
 			}
+			$scope.directLink = '';
+			$scope.linkText = '';
+			return '<code class="method">"' + aMethod + '"</code>';
+		};
+		$scope.getExternalLink = function(aMethod) {
+			if (aMethod in $scope.methodLinkage)
 			{
-				$scope.directLink = '';
-				$scope.linkText = '';
-				return '<code class="method">"' + aMethod + '"</code>';
+				$scope.directLink = $scope.methodLinkage[aMethod];
+				$scope.linkText = 'Link to page';
+				return '<a href="http://www.availlang.org' + $scope.methodLinkage[aMethod] + '">"' + aMethod + '"</a>';
 			}
-		}
+			$scope.directLink = '';
+			$scope.linkText = '';
+			return '"' + aMethod + '"';
+		};
 	});
 

@@ -1,0 +1,52 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!--><html ng-app="internalLinkningApp" ng-controller="LinkCtrl">
+
+  <head>
+		<!--#include virtual="/_include/head.ssi" -->
+		    <meta charset="utf-8" />
+			<title>Hunt the Method</title>
+    		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="method-finder.js"></script>
+
+  </head>
+
+  <body class="gradient-logo">
+
+<!--#include virtual="/_include/body-top.ssi" -->
+
+     <h2 class="content-title">The Great Method Finder</h2>
+     
+     <p>This is a wee-app... nay, a <em>grand hunt</em> of the elusive method that you have stalked for so long.</p>
+     
+     <p>Enter a method name into the input field below and see if there is a link to a page specifically for that method. You do not need to press <code>Enter</code>; just type the method name in the input field and the output will update automatically.</p>
+     
+     <p>If the content of the input field names a method that is documented in the <a href="/about-avail/documentation/stacks/library-documentation/index.html">Stacks</a>, then two hyperlinks are produced: an internal one and an external one. The internal link is only suitable for use on the Avail website itself. The external link is location- and style-agnostic, and therefore suitable for use in any HTML document.</p>
+     
+     <p>If the content of the input field does not match a method documented in the Stacks, it will just give you stylized text.</p>
+     
+     <p><em>Beware the ambiguities lurking about every corner!</em> &nbsp; &#128123;</p>
+     
+     <p>In other words&hellip; Some methods have multiple pages, one for each module that introduces the name.  If you are looking for a specific implementation, go to the <code>_Ambiguous</code> page link provided to find your true quarry.</p>
+     
+     <p>Happy Hunting!<p>
+
+     <div>
+     <strong>Enter Method:</strong> <input type="text" ng-model="search">
+     <div>
+     <br>
+     <h4>Internal link:</h4>
+     <span style="color:blue">{{getInternalLink(search)}}</span>
+     </div>
+     <div><a href="{{directLink}}">{{linkText}}</a></div>
+
+     <h4>External link:</h4>
+     <span style="color:blue">{{getExternalLink(search)}}</span>
+     </div>
+     <div><a href="{{directLink}}">{{linkText}}</a></div>
+     <!--#include virtual="/_include/body-bottom.ssi" -->
+  </body>
+
+</html>
