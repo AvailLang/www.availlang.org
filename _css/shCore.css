@@ -32,7 +32,7 @@
   float: none !important;
   height: auto !important;
   left: auto !important;
-  line-height: 1.1em !important;
+ /* line-height: 1.25em !important;    This was cutting off the top of Kanji. */
   margin: 0px !important;
   outline: 0 !important;
   overflow: visible !important;
