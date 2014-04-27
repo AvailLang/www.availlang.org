@@ -7,6 +7,7 @@ TARGETDIR = ../../../../../_images/modules/
 	$(DOT) -Tsvg -o $@ $<
 
 SVGS=\
+feature-visibility.svg \
 module-resolution.svg \
 name-resolution.svg \
 upstream-downstream.svg

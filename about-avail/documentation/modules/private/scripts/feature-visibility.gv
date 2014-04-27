@@ -1,0 +1,45 @@
+strict digraph "Feature Visibility: The Module Quartet"
+{
+	fontname="Helvetica";
+	fontsize="8";
+	label="The dependency graph for\nPassive Number Adder,\nPassive Integer Adder,\nPassive String Adder,\nAdder User,\nand Bad Adder User.";
+	labelloc="bottom";
+	labeljust="left";
+	node
+	[
+		shape="box",
+		style="filled",
+		fillcolor="#E8E8E8",
+		fontname="Consolas",
+		fontsize="10",
+		fontcolor="#000000",
+		width="0",
+		height="0"
+	];
+	edge
+	[
+		style="dashed"
+	];
+	rankdir="BT";
+
+	/* Labels for the nodes. */
+	"Passive Number Adder" [label="Passive\nNumber\nAdder"];
+	"Passive Integer Adder" [label="Passive\nInteger\nAdder"];
+	"Passive String Adder" [label="Passive\nString\nAdder"];
+	"Adder User" [label="Adder\nUser"];
+	"Bad Adder User"
+	[
+		label="Bad\nAdder\nUser",
+		fillcolor="#FF3366",
+		fontcolor="#FFFFFF"
+	];
+
+	/* Connectivity. */
+	"Passive Integer Adder" -> "Passive Number Adder" [style="solid"];
+	"Passive String Adder" -> "Passive Number Adder";
+	"Adder User" -> "Passive Integer Adder";
+	"Adder User" -> "Passive String Adder";
+	"Bad Adder User" -> "Passive Number Adder";
+	"Bad Adder User" -> "Passive String Adder";
+}
+
