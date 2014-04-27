@@ -27,7 +27,7 @@
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Synchronization</div>
 		<div class="category-list"><em>Categories:</em> Synchronization</div>
 		<div class="signature-description">
-			<code>Await_</code> from the <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Synchronization/1231705102.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Synchronization/1231705102.html">semaphore</a> , then execute the specified function (as a critical section), then <code>Signal_</code> . If the semaphore is a <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Synchronization/4018549325.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Synchronization/4018549325.html">binary semaphore</a> , then multiple <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3760152050.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3760152050.html">fiber</a> s cannot concurrently execute the critical section; access is serialized. For a general <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Synchronization/2661399011.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Synchronization/2661399011.html">counting semaphore</a> , as may fibers as there are available permits are permitted to occupy the critical section concurrently.
+			<a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Synchronization/385176725.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Synchronization/385176725.html">Acquire a permit</a> from the <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Synchronization/1231705102.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Synchronization/1231705102.html">semaphore</a>, then execute the specified function (as a critical section), then <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Synchronization/1689951099.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Synchronization/1689951099.html">release the permit</a>. If the semaphore is a <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Synchronization/4018549325.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Synchronization/4018549325.html">binary semaphore</a>, then multiple <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3760152050.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3760152050.html">fiber</a> s cannot concurrently execute the critical section; access is serialized. For a general <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Synchronization/2661399011.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Synchronization/2661399011.html">counting semaphore</a>, as may fibers as there are available permits are permitted to occupy the critical section concurrently.
 		</div>
 		<table class="stacks">
 			<thead>
@@ -67,7 +67,7 @@
 				<tr class="methodParameters">
 					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Exceptions/2464274982.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Exceptions/2464274982.html">termination-requested exception</a></td>
 					<td class="stacks i-desc">
-						If <code>termination requested</code> .
+						If <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/3594469686.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/3594469686.html">termination has been requested</a>.
 					</td>
 				</tr>
 			</tbody>
@@ -76,7 +76,7 @@
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Synchronization</div>
 		<div class="category-list"><em>Categories:</em> Synchronization</div>
 		<div class="signature-description">
-			Acquire the  , then execute the specified function as a critical section. <code>fiber</code> cannot concurrently execute the critical section; access is serialized by the mutex, and only one fiber may own the mutex at a given time. The owner may reacquire the lock without incurring deadlock.
+			Acquire the , then execute the specified function as a critical section. <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3760152050.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3760152050.html">Fibers</a> cannot concurrently execute the critical section; access is serialized by the mutex, and only one fiber may own the mutex at a given time. The owner may reacquire the lock without incurring deadlock.
 		</div>
 		<table class="stacks">
 			<thead>
@@ -116,7 +116,7 @@
 				<tr class="methodParameters">
 					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Exceptions/2464274982.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Exceptions/2464274982.html">termination-requested exception</a></td>
 					<td class="stacks i-desc">
-						If <code>termination requested</code> .
+						If <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/3594469686.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/3594469686.html">termination has been requested</a>.
 					</td>
 				</tr>
 			</tbody>
@@ -125,7 +125,7 @@
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Synchronization</div>
 		<div class="category-list"><em>Categories:</em> Synchronization</div>
 		<div class="signature-description">
-			Acquire the  , then execute the specified function as a critical section. <code>fiber</code> cannot concurrently execute the critical section; access is serialized by the mutex, and only one fiber may own the mutex at a given time.
+			Acquire the , then execute the specified function as a critical section. <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3760152050.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3760152050.html">Fibers</a> cannot concurrently execute the critical section; access is serialized by the mutex, and only one fiber may own the mutex at a given time.
 		</div>
 		<table class="stacks">
 			<thead>
@@ -171,7 +171,7 @@
 				<tr class="methodParameters">
 					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Exceptions/2464274982.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Exceptions/2464274982.html">termination-requested exception</a></td>
 					<td class="stacks i-desc">
-						If <code>termination requested</code> .
+						If <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/3594469686.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/3594469686.html">termination has been requested</a>.
 					</td>
 				</tr>
 			</tbody>

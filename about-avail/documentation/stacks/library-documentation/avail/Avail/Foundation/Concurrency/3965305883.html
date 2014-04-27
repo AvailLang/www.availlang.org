@@ -27,7 +27,7 @@
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Concurrency</div>
 		<div class="category-list"><em>Categories:</em> Collections, Tuples, Transformers</div>
 		<div class="signature-description">
-			Concurrently apply <a href="#accumulator-1119920948">accumulator</a> to each element of <a href="#aTuple-1119920948">aTuple</a> in order to transform and filter its elements into a new tuple, preserving the original ordering. When <a href="#accumulator-1119920948">accumulator</a> is invoked, it is passed a keeper function. The keeper function may be invoked to save a particular value, i.e, a value that will be copied into the output tuple. The keeper function will save at most one value per element of <a href="#aTuple-1119920948">aTuple</a> , i.e. each time that <a href="#accumulator-1119920948">accumulator</a> is invoked, it may invoke the keeper function at most one time. Answer the new tuple.
+			Concurrently apply <a href="#accumulator-1119920948">accumulator</a> to each element of <a href="#aTuple-1119920948">aTuple</a> in order to transform and filter its elements into a new tuple, preserving the original ordering. When <a href="#accumulator-1119920948">accumulator</a> is invoked, it is passed a keeper function. The keeper function may be invoked to save a particular value, i.e, a value that will be copied into the output tuple. The keeper function will save at most one value per element of <a href="#aTuple-1119920948">aTuple</a>, i.e. each time that <a href="#accumulator-1119920948">accumulator</a> is invoked, it may invoke the keeper function at most one time. Answer the new tuple.
 		</div>
 		<table class="stacks">
 			<thead>
@@ -60,14 +60,14 @@
 					<td id="accumulator-1119920948" class="stacks i-code">accumulator</td>
 					<td class="stacks i-code">[⊥, ⊥, ⊥]→⊤</td>
 					<td class="stacks i-desc">
-						A function that accepts 1) an element from <a href="#aTuple-1119920948">aTuple</a> , 2) the index of that element, and 3) a keeper function. The keeper function accepts an argument of the type that should be saved.
+						A function that accepts 1) an element from <a href="#aTuple-1119920948">aTuple</a>, 2) the index of that element, and 3) a keeper function. The keeper function accepts an argument of the type that should be saved.
 					</td>
 				</tr>
 				<tr>
 					<th class="stacks i-row-label" colspan="2">Returns</th>
 					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3446388540.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3446388540.html">tuple</a></td>
 					<td class="stacks i-desc">
-						A tuple whose elements are those saved by the <a href="#accumulator-1119920948">accumulator</a> .
+						A tuple whose elements are those saved by the <a href="#accumulator-1119920948">accumulator</a>.
 					</td>
 				</tr>
 					<th class="stacks i-row-label" colspan="2" rowspan="2">Raises</th>
@@ -83,7 +83,7 @@
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Concurrency</div>
 		<div class="category-list"><em>Categories:</em> Collections, Maps, Transformers</div>
 		<div class="signature-description">
-			Concurrently apply <a href="#accumulator-2116224700">accumulator</a> to each binding of <a href="#aMap-2116224700">aMap</a> in order to transform and filter its elements into a new map. When <a href="#accumulator-2116224700">accumulator</a> is invoked, it is passed a keeper function. The keeper function may be invoked to save a particular value, i.e, a value that will be copied into the output set. The keeper function will save at most one value per element of <a href="#aMap-2116224700">aMap</a> , i.e. each time that <a href="#accumulator-2116224700">accumulator</a> is invoked, it may invoke the keeper function at most one time. Answer the new map.
+			Concurrently apply <a href="#accumulator-2116224700">accumulator</a> to each binding of <a href="#aMap-2116224700">aMap</a> in order to transform and filter its elements into a new map. When <a href="#accumulator-2116224700">accumulator</a> is invoked, it is passed a keeper function. The keeper function may be invoked to save a particular value, i.e, a value that will be copied into the output set. The keeper function will save at most one value per element of <a href="#aMap-2116224700">aMap</a>, i.e. each time that <a href="#accumulator-2116224700">accumulator</a> is invoked, it may invoke the keeper function at most one time. Answer the new map.
 		</div>
 		<table class="stacks">
 			<thead>
@@ -116,14 +116,14 @@
 					<td id="accumulator-2116224700" class="stacks i-code">accumulator</td>
 					<td class="stacks i-code">[⊥, ⊥, ⊥]→⊤</td>
 					<td class="stacks i-desc">
-						A function that accepts 1) a key from <a href="#aMap-2116224700">aMap</a> , 2) the value associated with that key, and 3) a keeper function. The keeper function accepts an argument of the (value) type that should be saved.
+						A function that accepts 1) a key from <a href="#aMap-2116224700">aMap</a>, 2) the value associated with that key, and 3) a keeper function. The keeper function accepts an argument of the (value) type that should be saved.
 					</td>
 				</tr>
 				<tr>
 					<th class="stacks i-row-label" colspan="2">Returns</th>
 					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3193443892.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3193443892.html">map</a></td>
 					<td class="stacks i-desc">
-						A map whose bindings are those saved by the <a href="#accumulator-2116224700">accumulator</a> .
+						A map whose bindings are those saved by the <a href="#accumulator-2116224700">accumulator</a>.
 					</td>
 				</tr>
 					<th class="stacks i-row-label" colspan="2" rowspan="2">Raises</th>
@@ -139,7 +139,7 @@
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Concurrency</div>
 		<div class="category-list"><em>Categories:</em> Collections, Sets, Transformers</div>
 		<div class="signature-description">
-			Concurrently apply <a href="#accumulator-1854744465">accumulator</a> to each element of <a href="#aSet-1854744465">aSet</a> in order to transform and filter its elements into a new set. When <a href="#accumulator-1854744465">accumulator</a> is invoked, it is passed a keeper function. The keeper function may be invoked to save a particular value, i.e, a value that will be copied into the output set. The keeper function will save at most one value per element of <a href="#aSet-1854744465">aSet</a> , i.e. each time that <a href="#accumulator-1854744465">accumulator</a> is invoked, it may invoke the keeper function at most one time. Answer the new set.
+			Concurrently apply <a href="#accumulator-1854744465">accumulator</a> to each element of <a href="#aSet-1854744465">aSet</a> in order to transform and filter its elements into a new set. When <a href="#accumulator-1854744465">accumulator</a> is invoked, it is passed a keeper function. The keeper function may be invoked to save a particular value, i.e, a value that will be copied into the output set. The keeper function will save at most one value per element of <a href="#aSet-1854744465">aSet</a>, i.e. each time that <a href="#accumulator-1854744465">accumulator</a> is invoked, it may invoke the keeper function at most one time. Answer the new set.
 		</div>
 		<table class="stacks">
 			<thead>
@@ -179,7 +179,7 @@
 					<th class="stacks i-row-label" colspan="2">Returns</th>
 					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2811620022.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2811620022.html">set</a></td>
 					<td class="stacks i-desc">
-						A set whose elements are those saved by the <a href="#accumulator-1854744465">accumulator</a> .
+						A set whose elements are those saved by the <a href="#accumulator-1854744465">accumulator</a>.
 					</td>
 				</tr>
 					<th class="stacks i-row-label" colspan="2" rowspan="2">Raises</th>
@@ -195,7 +195,7 @@
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Concurrency</div>
 		<div class="category-list"><em>Categories:</em> Collections, Tuples, Transformers</div>
 		<div class="signature-description">
-			Concurrently apply <a href="#accumulator892019293">accumulator</a> to each element of <a href="#aTuple892019293">aTuple</a> in order to transform and filter its elements into a new tuple, preserving the original ordering. When <a href="#accumulator892019293">accumulator</a> is invoked, it is passed a keeper function. The keeper function may be invoked to save a particular value, i.e, a value that will be copied into the output tuple. The keeper function will save at most one value per element of <a href="#aTuple892019293">aTuple</a> , i.e. each time that <a href="#accumulator892019293">accumulator</a> is invoked, it may invoke the keeper function at most one time. Answer the new tuple.
+			Concurrently apply <a href="#accumulator892019293">accumulator</a> to each element of <a href="#aTuple892019293">aTuple</a> in order to transform and filter its elements into a new tuple, preserving the original ordering. When <a href="#accumulator892019293">accumulator</a> is invoked, it is passed a keeper function. The keeper function may be invoked to save a particular value, i.e, a value that will be copied into the output tuple. The keeper function will save at most one value per element of <a href="#aTuple892019293">aTuple</a>, i.e. each time that <a href="#accumulator892019293">accumulator</a> is invoked, it may invoke the keeper function at most one time. Answer the new tuple.
 		</div>
 		<table class="stacks">
 			<thead>
@@ -235,7 +235,7 @@
 					<th class="stacks i-row-label" colspan="2">Returns</th>
 					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3446388540.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3446388540.html">tuple</a></td>
 					<td class="stacks i-desc">
-						A tuple whose elements are those saved by the <a href="#accumulator892019293">accumulator</a> .
+						A tuple whose elements are those saved by the <a href="#accumulator892019293">accumulator</a>.
 					</td>
 				</tr>
 					<th class="stacks i-row-label" colspan="2" rowspan="2">Raises</th>

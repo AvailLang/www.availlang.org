@@ -27,7 +27,7 @@
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Early Control Structures</div>
 		<div class="category-list"><em>Categories:</em> Bootstrap, Casts, Conditionals</div>
 		<div class="signature-description">
-			If the function <a href="#accept-1862738152">accept</a> accepts <a href="#value-1862738152">value</a> as an argument (based on its runtime type), then invoke <a href="#accept-1862738152">accept</a> with <a href="#value-1862738152">value</a> . Otherwise, invoke <a href="#reject-1862738152">reject</a> instead. This method effects a dynamic type cast of <a href="#value-1862738152">value</a> to the type of <a href="#accept-1862738152">accept</a> 's only parameter. While type casts are occasionally necessary even in runtime code, this facility is primarily intended for use by semantic restriction functions. Used in this way it leads to a stronger static type system.
+			If the function <a href="#accept-1862738152">accept</a> accepts <a href="#value-1862738152">value</a> as an argument (based on its runtime type), then invoke <a href="#accept-1862738152">accept</a> with <a href="#value-1862738152">value</a>. Otherwise, invoke <a href="#reject-1862738152">reject</a> instead. <p> This method effects a dynamic type cast of <a href="#value-1862738152">value</a> to the type of <a href="#accept-1862738152">accept</a> 's only parameter. While type casts are occasionally necessary even in runtime code, this facility is primarily intended for use by semantic restriction functions. Used in this way it leads to a stronger static type system. </p>
 		</div>
 		<table class="stacks">
 			<thead>
@@ -60,7 +60,7 @@
 					<td id="reject-1862738152" class="stacks i-code">reject</td>
 					<td class="stacks i-code">nullary procedure</td>
 					<td class="stacks i-desc">
-						The function to invoke if <a href="#value-1862738152">value</a> is not a subtype of the parameter type of <a href="#accept-1862738152">accept</a> .
+						The function to invoke if <a href="#value-1862738152">value</a> is not a subtype of the parameter type of <a href="#accept-1862738152">accept</a>.
 					</td>
 				</tr>
 				<tr>

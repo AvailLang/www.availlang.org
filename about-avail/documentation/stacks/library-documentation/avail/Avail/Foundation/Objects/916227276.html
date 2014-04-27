@@ -74,21 +74,21 @@
 					<td id="optionalImmutable1790031604" class="stacks i-code">optionalImmutable</td>
 					<td class="stacks i-code">&lt;&lt;&lt;boolean, boolean, atom, any meta…|4>…|1..>…|0..1></td>
 					<td class="stacks i-desc">
-						The extension fields of this class. An accessor will be generated for each field. A reconstructor will be generated for each field tagged as <code>reconstructible</code> . Each field tagged as <code>public</code> must be exported by the defining module.
+						The extension fields of this class. An accessor will be generated for each field. A reconstructor will be generated for each field tagged as <code class="method">reconstructible</code>. Each field tagged as <code class="method">public</code> must be exported by the defining module.
 					</td>
 				</tr>
 				<tr class="methodParameters">
 					<td id="optionalMutable1790031604" class="stacks i-code">optionalMutable</td>
 					<td class="stacks i-code">&lt;&lt;&lt;boolean, boolean, boolean, boolean, atom, any meta…|6>…|1..>…|0..1></td>
 					<td class="stacks i-desc">
-						The mutable fields of this class. An accessor will be generated for each field. A referer will be generated for each field tagged as <code>referable</code> . A mutator will be generated for each field not tagged as <code>read-only</code> . Each field tagged as <code>public</code> must have its accessor, referer, and mutator exported by the defining module. Each field tagged as <code>shared</code> will not be cloned (using a new variable) during reconstruction.
+						The mutable fields of this class. An accessor will be generated for each field. A referer will be generated for each field tagged as <code class="method">referable</code>. A mutator will be generated for each field not tagged as <code class="method">read-only</code>. Each field tagged as <code class="method">public</code> must have its accessor, referer, and mutator exported by the defining module. Each field tagged as <code class="method">shared</code> will not be cloned (using a new variable) during reconstruction.
 					</td>
 				</tr>
 				<tr class="methodParameters">
 					<td id="optionalReconstructors1790031604" class="stacks i-code">optionalReconstructors</td>
 					<td class="stacks i-code">&lt;&lt;&lt;boolean, &lt;atom…|1..>…|2>…|1..>…|0..1></td>
 					<td class="stacks i-desc">
-						The reconstructors of this class. A reconstructor will be generated for each specification tuple. Each reconstructor tagged as <code>public</code> must be exported by the defining module.
+						The reconstructors of this class. A reconstructor will be generated for each specification tuple. Each reconstructor tagged as <code class="method">public</code> must be exported by the defining module.
 					</td>
 				</tr>
 				<tr>
@@ -106,7 +106,7 @@
 		<div class="signature-heading">boolean's type, boolean's type, nonempty string's type, object's type, &lt;&lt;&lt;boolean, boolean, atom, any meta…|4>…|1..>…|0..1>'s type, &lt;&lt;&lt;boolean, boolean, boolean, boolean, atom, any meta…|6>…|1..>…|0..1>'s type, &lt;&lt;&lt;boolean, &lt;atom…|1..>…|2>…|1..>…|0..1>'s type</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Objects</div>
 		<div class="signature-description">
-			Class definition statically requires that: - Every field atom of the extension is known. - Each field atom of the extension appears only once during extension. - Each field atom of the extension is either 1) not present in the supertype or 2) specifies a type which covaries with the field type expressed in the supertype.
+			Class definition statically requires that: <p> - Every field atom of the extension is known. - Each field atom of the extension appears only once during extension. - Each field atom of the extension is either 1) not present in the supertype or 2) specifies a type which covaries with the field type expressed in the supertype. </p>
 		</div>
 		<table class="stacks">
 			<thead>

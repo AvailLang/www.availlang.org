@@ -71,7 +71,7 @@
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Objects</div>
 		<div class="category-list"><em>Categories:</em> Objects, Constructors</div>
 		<div class="signature-description">
-			Construct and answer an object which is an instance of <a href="#objectType-583504869">objectType</a> and whose field values are determined by <a href="#optional-583504869">optional</a> .
+			Construct and answer an object which is an instance of <a href="#objectType-583504869">objectType</a> and whose field values are determined by <a href="#optional-583504869">optional</a>.
 		</div>
 		<table class="stacks">
 			<thead>
@@ -97,7 +97,7 @@
 					<td id="optional-583504869" class="stacks i-code">optional</td>
 					<td class="stacks i-code">&lt;&lt;&lt;atom, boolean, any…|3>…|1..>…|0..1></td>
 					<td class="stacks i-desc">
-						A tuple of field assignments. The outermost tuple may be empty (but only to support the case that <code>objectType = object</code> ), but usually contains a single tuple of field assignments. A field assignment is a 3-tuple that consists of 1) an atom that uniquely identifies the field, 2) a boolean that is <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html">true</a> if the field is mutable and a variable should be created and initialized, and 3) the field value.
+						A tuple of field assignments. The outermost tuple may be empty (but only to support the case that <code class="method">objectType = object</code> ), but usually contains a single tuple of field assignments. A field assignment is a 3-tuple that consists of 1) an atom that uniquely identifies the field, 2) a boolean that is <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html">true</a> if the field is mutable and a variable should be created and initialized, and 3) the field value.
 					</td>
 				</tr>
 				<tr>
@@ -115,7 +115,7 @@
 		<div class="signature-heading">object's type's type, &lt;&lt;&lt;atom, boolean, any…|3>…|1..>…|0..1>'s type</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Objects</div>
 		<div class="signature-description">
-			Object instantiation statically requires that: - Every field atom of the instantiation tuple is known. - Each field atom of the instantiation tuple appears only once during instantiation. - An assigned value conforms to the field type. - An assignment occurs for every field of the object type except those for which the exact types are known; these will be supplied automatically.
+			Object instantiation statically requires that: <p> - Every field atom of the instantiation tuple is known. - Each field atom of the instantiation tuple appears only once during instantiation. - An assigned value conforms to the field type. - An assignment occurs for every field of the object type except those for which the exact types are known; these will be supplied automatically. </p>
 		</div>
 		<table class="stacks">
 			<thead>

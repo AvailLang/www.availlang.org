@@ -27,7 +27,7 @@
 		<div class="module-location"><em>Source</em>: /avail/Avail/IO/Network/Server/Primitives</div>
 		<div class="category-list"><em>Categories:</em> Unclassified</div>
 		<div class="signature-description">
-			Asynchronously accept an incoming connection on the specified <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Network/Server/Primitives/1155003838.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Network/Server/Primitives/1155003838.html">server socket</a> . If the operation is successful, then fork a new <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3760152050.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3760152050.html">fiber</a> to apply <a href="#success-1596158478">success</a> to the newly connected <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Network/Client/Primitives/4016232870.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Network/Client/Primitives/4016232870.html">client socket</a> . If the operation is unsuccessful, then fork a new fiber to apply <a href="#failure-1596158478">failure</a> to the <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3361325705.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3361325705.html">exception</a> that classifies the failure. Answer the new fiber.
+			Asynchronously accept an incoming connection on the specified <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Network/Server/Primitives/1155003838.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Network/Server/Primitives/1155003838.html">server socket</a>. If the operation is successful, then fork a new <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3760152050.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3760152050.html">fiber</a> to apply <a href="#success-1596158478">success</a> to the newly connected <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Network/Client/Primitives/4016232870.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Network/Client/Primitives/4016232870.html">client socket</a>. If the operation is unsuccessful, then fork a new fiber to apply <a href="#failure-1596158478">failure</a> to the <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3361325705.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3361325705.html">exception</a> that classifies the failure. Answer the new fiber.
 		</div>
 		<table class="stacks">
 			<thead>
@@ -53,7 +53,7 @@
 					<td id="optionalName-1596158478" class="stacks i-code">optionalName</td>
 					<td class="stacks i-code">&lt;nonempty string…|0..1></td>
 					<td class="stacks i-desc">
-						An optional string that describes the purpose of the client socket at a high level, provided for debugging purposes only. If not specified, then the default name <code>«unnamed»</code> is used.
+						An optional string that describes the purpose of the client socket at a high level, provided for debugging purposes only. If not specified, then the default name <code class="method">«unnamed»</code> is used.
 					</td>
 				</tr>
 				<tr class="methodParameters">
@@ -74,14 +74,14 @@
 					<td id="optionalPriority-1596158478" class="stacks i-code">optionalPriority</td>
 					<td class="stacks i-code">&lt;byte…|0..1></td>
 					<td class="stacks i-desc">
-						If specified, then the priority of the new fiber. If not specified, then the new fiber will run at the same priority as the <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/345620497.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/345620497.html">current fiber</a> .
+						If specified, then the priority of the new fiber. If not specified, then the new fiber will run at the same priority as the <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/345620497.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/345620497.html">current fiber</a>.
 					</td>
 				</tr>
 				<tr>
 					<th class="stacks i-row-label" colspan="2">Returns</th>
 					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3760152050.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3760152050.html">fiber</a></td>
 					<td class="stacks i-desc">
-						The new fiber which may eventually apply either <a href="#success-1596158478">success</a> or <a href="#failure-1596158478">failure</a> .
+						The new fiber which may eventually apply either <a href="#success-1596158478">success</a> or <a href="#failure-1596158478">failure</a>.
 					</td>
 				</tr>
 			</tbody>
@@ -133,7 +133,7 @@
 				<tr class="methodParameters">
 <td id="<byte…|0..1>'s type1813241600" class="stacks i-code">&lt;byte…|0..1>'s type</td>
 					<td class="stacks i-code">
-						
+						<p> </p>
 					</td>
 				</tr>
 			</tbody>

@@ -27,7 +27,7 @@
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Early Definers</div>
 		<div class="category-list"><em>Categories:</em> Declarations, Methods</div>
 		<div class="signature-description">
-			Define the indicated grammatical restrictions. Each element <code>e</code> of <a href="#exclusions1477965414">exclusions</a> , itself a set of method names, corresponds to an argument position <code>n</code> of <a href="#methodName1477965414">methodName</a> . The compiler rejects parses of source text that invoke methods named in <code>e</code> when they occur grammatically at argument position <code>n</code> of an invocation of the method named by <a href="#methodName1477965414">methodName</a> . Note that argument position corresponds to a blank, not to a top-level repeating sequence (indicated by guillemet notation).
+			Define the indicated grammatical restrictions. Each element <code class="method">e</code> of <a href="#exclusions1477965414">exclusions</a>, itself a set of method names, corresponds to an argument position <code class="method">n</code> of <a href="#methodName1477965414">methodName</a>. The compiler rejects parses of source text that invoke methods named in <code class="method">e</code> when they occur grammatically at argument position <code class="method">n</code> of an invocation of the method named by <a href="#methodName1477965414">methodName</a>. <p> Note that argument position corresponds to a blank, not to a top-level repeating sequence (indicated by guillemet notation). </p>
 		</div>
 		<table class="stacks">
 			<thead>
@@ -53,7 +53,7 @@
 					<td id="exclusions1477965414" class="stacks i-code">exclusions</td>
 					<td class="stacks i-code">tuple of set of string</td>
 					<td class="stacks i-desc">
-						A tuple of sets of method names. The method names in the <code>n</code> -th set are restricted from occurring grammatically at the <code>n</code> -th argument position of any invocation of the method named by <a href="#methodName1477965414">methodName</a> .
+						A tuple of sets of method names. The method names in the <code class="method">n</code> -th set are restricted from occurring grammatically at the <code class="method">n</code> -th argument position of any invocation of the method named by <a href="#methodName1477965414">methodName</a>.
 					</td>
 				</tr>
 				<tr>
@@ -69,7 +69,7 @@
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Early Definers</div>
 		<div class="category-list"><em>Categories:</em> Declarations, Methods</div>
 		<div class="signature-description">
-			Define the indicated grammatical restrictions. Each element `e` of `exclusions`, itself a set of method names, corresponds to an argument position `n` of `methodName`. The compiler rejects parses of source text that invoke methods named in `e` when they occur grammatically at argument position `n` of an invocation of the method named by `methodName`. Note that argument position corresponds to a blank, not to a top-level repeating sequence (indicated by guillemet notation).
+			Define the indicated grammatical restrictions. Each element `e` of `exclusions`, itself a set of method names, corresponds to an argument position `n` of `methodName`. The compiler rejects parses of source text that invoke methods named in `e` when they occur grammatically at argument position `n` of an invocation of the method named by `methodName`. <p> Note that argument position corresponds to a blank, not to a top-level repeating sequence (indicated by guillemet notation). </p>
 		</div>
 		<table class="stacks">
 			<thead>
@@ -111,7 +111,7 @@
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Fallible Primitives</div>
 		<div class="category-list"><em>Categories:</em> Primitives, Name Resolution, Methods, Constructors, Mutators</div>
 		<div class="signature-description">
-			Define the indicated grammatical restrictions. Each method name in <a href="#methodsToRestrict611548217">methodsToRestrict</a> must accept the same number of arguments, though not necessarily the same types (or the same order of types). Each element `e` of <a href="#exclusions611548217">exclusions</a> , itself a set of method names, corresponds to an argument position `n` of any method name in <a href="#methodsToRestrict611548217">methodsToRestrict</a> . The compiler rejects parses of source text that invoke methods named in `e` when they occur grammatically at argument position `n` of an invocation of any method named in <a href="#methodsToRestrict611548217">methodsToRestrict</a> . Note that argument position corresponds to a blank, not to a top-level repeating sequence (indicated by guillemet notation).
+			Define the indicated grammatical restrictions. Each method name in <a href="#methodsToRestrict611548217">methodsToRestrict</a> must accept the same number of arguments, though not necessarily the same types (or the same order of types). Each element `e` of <a href="#exclusions611548217">exclusions</a>, itself a set of method names, corresponds to an argument position `n` of any method name in <a href="#methodsToRestrict611548217">methodsToRestrict</a>. The compiler rejects parses of source text that invoke methods named in `e` when they occur grammatically at argument position `n` of an invocation of any method named in <a href="#methodsToRestrict611548217">methodsToRestrict</a>. <p> Note that argument position corresponds to a blank, not to a top-level repeating sequence (indicated by guillemet notation). </p>
 		</div>
 		<table class="stacks">
 			<thead>
@@ -137,7 +137,7 @@
 					<td id="exclusions611548217" class="stacks i-code">exclusions</td>
 					<td class="stacks i-code">tuple of set of atom</td>
 					<td class="stacks i-desc">
-						A tuple of sets of method names. The method names in the `n`-th set are restricted from occurring grammatically at the `n`-th argument position of any invocation of a method named in <a href="#methodsToRestrict611548217">methodsToRestrict</a> .
+						A tuple of sets of method names. The method names in the `n`-th set are restricted from occurring grammatically at the `n`-th argument position of any invocation of a method named in <a href="#methodsToRestrict611548217">methodsToRestrict</a>.
 					</td>
 				</tr>
 				<tr>
@@ -274,7 +274,7 @@
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Fallible Primitives</div>
 		<div class="category-list"><em>Categories:</em> Primitives, Name Resolution, Methods, Constructors, Mutators</div>
 		<div class="signature-description">
-			Define the indicated grammatical restrictions. Each method name in <a href="#methodsToRestrict-1400072091">methodsToRestrict</a> must accept the same number of arguments, though not necessarily the same types (or the same order of types). Each element `e` of <a href="#exclusions-1400072091">exclusions</a> , itself a set of method names, corresponds to an argument position `n` of any method name in <a href="#methodsToRestrict-1400072091">methodsToRestrict</a> . The compiler rejects parses of source text that invoke methods named in `e` when they occur grammatically at argument position `n` of an invocation of any method named in <a href="#methodsToRestrict-1400072091">methodsToRestrict</a> . Note that argument position corresponds to a blank, not to a top-level repeating sequence (indicated by guillemet notation).
+			Define the indicated grammatical restrictions. Each method name in <a href="#methodsToRestrict-1400072091">methodsToRestrict</a> must accept the same number of arguments, though not necessarily the same types (or the same order of types). Each element `e` of <a href="#exclusions-1400072091">exclusions</a>, itself a set of method names, corresponds to an argument position `n` of any method name in <a href="#methodsToRestrict-1400072091">methodsToRestrict</a>. The compiler rejects parses of source text that invoke methods named in `e` when they occur grammatically at argument position `n` of an invocation of any method named in <a href="#methodsToRestrict-1400072091">methodsToRestrict</a>. <p> Note that argument position corresponds to a blank, not to a top-level repeating sequence (indicated by guillemet notation). </p>
 		</div>
 		<table class="stacks">
 			<thead>
@@ -300,7 +300,7 @@
 					<td id="exclusions-1400072091" class="stacks i-code">exclusions</td>
 					<td class="stacks i-code">tuple of set of string</td>
 					<td class="stacks i-desc">
-						A tuple of sets of method names. The method names in the `n`-th set are restricted from occurring grammatically at the `n`-th argument position of any invocation of a method named in <a href="#methodsToRestrict-1400072091">methodsToRestrict</a> .
+						A tuple of sets of method names. The method names in the `n`-th set are restricted from occurring grammatically at the `n`-th argument position of any invocation of a method named in <a href="#methodsToRestrict-1400072091">methodsToRestrict</a>.
 					</td>
 				</tr>
 				<tr>

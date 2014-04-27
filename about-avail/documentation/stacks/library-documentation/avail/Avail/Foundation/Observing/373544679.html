@@ -27,7 +27,7 @@
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Observing</div>
 		<div class="category-list"><em>Categories:</em> Observing</div>
 		<div class="signature-description">
-			Enable <code>Track variables that are read before written</code> , then invoke <a href="#traceFunction-224004421">traceFunction</a> . For each <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1553968894.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1553968894.html">variable</a> dynamically reachable from <a href="#traceFunction-224004421">traceFunction</a> that was read before it is written, install a specialized <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Observing/2882738541.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Observing/2882738541.html">write reactor</a> . This write reactor will instigate a new trace of <a href="#traceFunction-224004421">traceFunction</a> , reinstall the specialized write reactor on the newly tracked variables, and compare the new result of <a href="#traceFunction-224004421">traceFunction</a> against its most recent successful result. If the results differ, then invoke <a href="#action-224004421">action</a> . Always invoke <a href="#action-224004421">action</a> after the initial trace.
+			Enable <code>Track variables that are read before written</code>, then invoke <a href="#traceFunction-224004421">traceFunction</a>. For each <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1553968894.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1553968894.html">variable</a> dynamically reachable from <a href="#traceFunction-224004421">traceFunction</a> that was read before it is written, install a specialized <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Observing/2882738541.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Observing/2882738541.html">write reactor</a>. This write reactor will instigate a new trace of <a href="#traceFunction-224004421">traceFunction</a>, reinstall the specialized write reactor on the newly tracked variables, and compare the new result of <a href="#traceFunction-224004421">traceFunction</a> against its most recent successful result. If the results differ, then invoke <a href="#action-224004421">action</a>. Always invoke <a href="#action-224004421">action</a> after the initial trace.
 		</div>
 		<table class="stacks">
 			<thead>
@@ -53,7 +53,7 @@
 					<td id="action-224004421" class="stacks i-code">action</td>
 					<td class="stacks i-code">[⊥]→⊤</td>
 					<td class="stacks i-desc">
-						An arbitrary function that is invoked whenever <a href="#traceFunction-224004421">traceFunction</a> produces a new value. It is applied to the value produced by <a href="#traceFunction-224004421">traceFunction</a> .
+						An arbitrary function that is invoked whenever <a href="#traceFunction-224004421">traceFunction</a> produces a new value. It is applied to the value produced by <a href="#traceFunction-224004421">traceFunction</a>.
 					</td>
 				</tr>
 				<tr>
