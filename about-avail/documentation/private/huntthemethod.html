@@ -5,11 +5,12 @@
 <!--[if gt IE 8]><!--><html ng-app="internalLinkningApp" ng-controller="LinkCtrl">
 
   <head>
-    <meta charset="utf-8" />
-    <title>Hunt the Method</title>
+		<!--#include virtual="/_include/head.ssi" -->
+		    <meta charset="utf-8" />
+			<title>Hunt the Method</title>
     		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
 		<script type="text/javascript" src="internalLinking.js"></script>
-		<!--#include virtual="/_include/head.ssi" -->
+
   </head>
 
   <body class="gradient-logo">
@@ -29,6 +30,7 @@
      <h4>Output:</h4>
      <span style="color:blue">{{getMethod(search)}}</span>
      </div>
+     <div><a href="{{directLink}}">{{linkText}}</a></div>
      <!--#include virtual="/_include/body-bottom.ssi" -->
   </body>
 
