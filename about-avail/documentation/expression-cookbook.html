@@ -34,13 +34,91 @@
 
 <hr/>
 
-<table>
+<table style="width: 100%">
 <tr>
+<td><a href="#maps">Maps</a></td>
+<td><a href="#sets">Sets</a></td>
 <td><a href="#tuples">Tuples</a></td>
 </tr>
 </table>
 
 <hr/>
+
+<h3 id="maps"><a href="/about-avail/documentation/type-system/types-map.html">Maps</a></h4>
+
+<p><small>Synonyms: associative array, dictionary, hash table.</small></p>
+
+<h4 id="map-empty">How do I specify an empty map?</h4>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! {}
+]]>
+</script></div></div>
+
+<ul>
+<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Literals/2606992317.html">"{«_→_‡,»}"</a></code></li>
+</ul>
+
+<h4 id="map-literal">How do I create a literal map?</h4>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! {1 → "one", 2 → "two", 3 → "three"}
+]]>
+</script></div></div>
+
+<p>Literal maps can be constructed using arbitrary value producing expressions, not just literal expressions.</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! {2 - 1 → 2^0, 3 - 1 → 2^1, 4 - 1 → 2^2}
+]]>
+</script></div></div>
+
+<ul>
+<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Literals/2606992317.html">"{«_→_‡,»}"</a></code></li>
+</ul>
+
+<h3 id="sets"><a href="/about-avail/documentation/type-system/types-set.html">Sets</a></h4>
+
+<h4 id="set-empty">How do I specify an empty set?</h4>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! ∅
+]]>
+</script></div></div>
+
+<ul>
+<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early Literals/2834648056.html">"{«_‡,»}"</a></code></li>
+</ul>
+
+<h4 id="set-literal">How do I create a literal set?</h4>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! {"do", "re", "mi", "fa", "so", "la", "ti", "do"}
+]]>
+</script></div></div>
+
+<p>Literal sets can be constructed using arbitrary value producing expressions, not just literal expressions.</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! {<1, 2, 3, 4, 5>[2..4], 10!, 20→float}
+]]>
+</script></div></div>
+
+<ul>
+<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early Literals/2834648056.html">"{«_‡,»}"</a></code></li>
+</ul>
 
 <h3 id="tuples"><a href="/about-avail/documentation/type-system/types-tuple.html">Tuples</a></h4>
 
@@ -298,6 +376,21 @@
 <ul>
 <li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early Tuples/3216719640.html">"«_‡++»"</a></code></li>
 <li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/582878776.html">"concatenate_"</a></code></li>
+</ul>
+
+<h4 id="tuple-append">How do I append an element onto a tuple?</h4>
+
+<p>Tuples are immutable, so you cannot append an element onto a table. However, you can easily (and efficiently) derive a new tuple that have the new element appended.</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! <1, 2, 3, 4> ++ <5>
+]]>
+</script></div></div>
+
+<ul>
+<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early Tuples/3216719640.html">"«_‡++»"</a></code></li>
 </ul>
 
 <h4 id="tuple-for-each">How can I loop through each element of a tuple?</h4>
