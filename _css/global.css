@@ -220,7 +220,6 @@ img.top-right-screenshot {
 }
 
 
-
 /********** Unrestricted style classes **********/
 /* These can be used on almost any tag, so construct them judiciously! */
 
@@ -372,10 +371,7 @@ contain <code> */
 	/* Small screen: set down from inline navigation menu, and inset a small amount. */
 	margin-top: 20px;
 	margin-bottom: 30px;
-	padding-left: 20px;
-	padding-right: 20px;
-	padding-top: 20px;
-	padding-bottom: 30px;
+	padding: 20px;
 	
 	overflow-y: auto;
 }
@@ -417,12 +413,11 @@ contain <code> */
 	background-color: transparent;
 }
 
-/* Book-style navigation footer used at the bottom of contentwritten in series. */
+/* Book-style navigation footer used at the bottom of content written in series. */
 .book-nav {
 	margin-left: auto;
 	margin-right: auto;
-	margin-bottom: -10px;
-	padding-top: 20px;
+	margin-top: 30px;
 
 	text-align: center;
 
@@ -620,7 +615,7 @@ contain <code> */
 		margin-left: 35px;
 		margin-right: 35px;
 	}
-	
+		
 	.footer-line {
 		/* Inline when the screen is wide enough */
 		display: inline-block;
@@ -678,10 +673,7 @@ contain <code> */
 
 	.content {
 		/* Increased padding when the screen width is a reasonable size */
-		padding-left: 40px;
-		padding-right: 40px;
-		padding-top: 40px;
-		padding-bottom: 30px;
+		padding: 40px;
 				
 		/* Restrict the width of the content pane to improve readability on very 
 		wide screens. */
@@ -697,4 +689,10 @@ contain <code> */
 		margin-right: 45px;
 	}
 	
+	.book-nav {
+		/* Move the nav links slightly closer to the bottom of the content panel
+		than on narrower screens, since the padding is larger. */
+		margin-bottom: -10px;
+	}
+
 }
