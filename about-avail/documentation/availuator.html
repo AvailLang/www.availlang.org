@@ -23,7 +23,7 @@
 <p>Wouldn't it be fantastic if you could run Avail expressions directly from the workbench without first:</p>
 
 <ol>
-<li>Create a source module.</li>
+<li>Creating a source module.</li>
 <li>Populating it with the desired expressions.</li>
 <li>Defining entry points that evaluate those expressions.</li>
 <li>Compiling and loading the module.</li>
@@ -35,12 +35,14 @@
 
 <img class="full-line-screenshot" src="/_images/documentation/availuator/availuator.png" width=820 alt="A screenshot of the Avail workbench having run several expressions and poised to run another one."/>
 
-<p>The only application that is delivered as part of the Avail standard library resides in <code class="module">/avail/Availuator</code>. The three <a href="/about-avail/documentation/modules/entry-points-section.html">entry points</a> defined here &mdash; <code class="command">"`!_"</code>, <code class="command">"time_"</code>, and <code class="command">"Run_"</code> &mdash; are collectively known as the <strong>Availuator</strong>. The Availuator is an Avail expression evaluator. It is capable of evaluating any expression exported by its siblings, the other modules within the <code>avail</code> <a href="/about-avail/documentation/modules/module-discovery.html">module root</a>.</p>
+<p>The only application that is delivered as part of the Avail standard library resides in the module,<code class="module">/avail/Availuator</code>. The three <a href="/about-avail/documentation/modules/entry-points-section.html">entry points</a> defined here &mdash; <code class="command">"`!_"</code>, <code class="command">"time_"</code>, and <code class="command">"Run_"</code> &mdash; are collectively known as the <strong>Availuator</strong>. The Availuator is an Avail expression evaluator. It is capable of evaluating any expression exported by its siblings, the other modules within the <code>avail</code> <a href="/about-avail/documentation/modules/module-discovery.html">module root</a>.</p>
 
 <p>Let's look at each of the entry points. Note that <code>"time_"</code> has two definitions; the more general definition is listed first.</p>
 
 <dl>
-<dt><code class="method">"`!_"</code> <code>[any]&rarr;any</code></dt>
+<dt><code class="method">"Help"</code></dt>
+<dd>Prints help text, complete with examples, to the Avail Workbench transcript pane.</dd>
+<dt style="margin-top: 20px"><dt><code class="method">"`!_"</code> <code>[any]&rarr;any</code></dt>
 <dd>Evaluate an argument expression. Answer its value.</dd>
 <dt style="margin-top: 20px"><code class="method">"Run_"</code> <code>[[&hellip;]&rarr;&#8868;]&rarr;&#8868;</code></dt>
 <dd>Run the specified <a href="/about-avail/documentation/type-system/types-function.html">function</a>. If it produces a value, then answer that value.</dd>
