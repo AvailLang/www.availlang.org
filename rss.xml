@@ -5,6 +5,13 @@
 		<description>Fresh posts on the site, including newsletters, tutorials, documentation, etc.</description>
 		<link>http://www.availlang.org</link>
 		<item>
+			<title>Newsletter #6 - Hello, World!</title>
+			<pubDate>Mon, 28 Apr 2014 22:30:00 GMT</pubDate>
+			<description>Today is release day, and the Avail programming language is now live. The first released version of Avail is "1.0.0 DEV 2014-04-28". This is the first major development milestone. It is not a production release, and is not recommended for mission-critical use.</description>
+			<link>http://www.availlang.org/about-avail/newsletters/E006.html</link>
+			<guid>http://www.availlang.org/about-avail/newsletters/E006.html</guid>
+  		</item>
+		<item>
 			<title>Newsletter #5 - The Builder</title>
 			<pubDate>Thu, 6 Feb 2014 15:00:00 GMT</pubDate>
 			<description>It's been a busy few months, but now it's time to showcase the recent rework of Avail's most-used tool: The Builder. We need to put on our best (inter)face as we approach our release date and prepare to greet the world…</description>
