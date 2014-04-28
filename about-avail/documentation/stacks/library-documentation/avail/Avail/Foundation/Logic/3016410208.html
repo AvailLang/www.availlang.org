@@ -10,13 +10,21 @@
 <![endif]-->
 	<!--[if gt IE 8]>
 	<!-->
-<html ng-app="stacksApp" class="">
+<html ng-app="stacksApp">
 <!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
 		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
 		<!--#include virtual="/_include/head.ssi" -->
 		<title>Avail - Library</title>
+		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="/about-avail/documentation/stacks/library-documentation/stacksApp.js"></script>
+		<script>
+			function myParent()
+			{
+				return window.parent;
+			}
+		</script>
 	</head>
 	<body ng-controller="CategoriesCntrl">
 		<div class="stacks-wrapper">
@@ -33,33 +41,33 @@
 			<tbody>
 				<tr>
 					<td class="stacks g-code" rowspan="2">Argument 1</td>
-					<td class="stacks g-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Logic/919864556.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Logic/919864556.html">_↔_</a></td>
+					<td class="stacks g-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Logic/919864556.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Logic/919864556.html">_↔_</a></td>
 				</tr>
 				<tr>
-					<td class="stacks g-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Logic/3985478089.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Logic/3985478089.html">_⊕_</a></td>
+					<td class="stacks g-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Logic/3985478089.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Logic/3985478089.html">_⊕_</a></td>
 				</tr>
 					<td class="stacks g-code" rowspan="6">Argument 2</td>
-					<td class="stacks g-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Logic/3327411942.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Logic/3327411942.html">_→_</a></td>
+					<td class="stacks g-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Logic/3327411942.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Logic/3327411942.html">_→_</a></td>
 				</tr>
 				<tr>
-					<td class="stacks g-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Logic/919864556.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Logic/919864556.html">_↔_</a></td>
+					<td class="stacks g-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Logic/919864556.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Logic/919864556.html">_↔_</a></td>
 				</tr>
 				<tr>
-					<td class="stacks g-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Logic/3016410208.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Logic/3016410208.html">_←_</a></td>
+					<td class="stacks g-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Logic/3016410208.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Logic/3016410208.html">_←_</a></td>
 				</tr>
 				<tr>
-					<td class="stacks g-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Logic/3985478089.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Logic/3985478089.html">_⊕_</a></td>
+					<td class="stacks g-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Logic/3985478089.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Logic/3985478089.html">_⊕_</a></td>
 				</tr>
 				<tr>
-					<td class="stacks g-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Logic/3676497931.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Logic/3676497931.html">_↛_</a></td>
+					<td class="stacks g-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Logic/3676497931.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Logic/3676497931.html">_↛_</a></td>
 				</tr>
 				<tr>
-					<td class="stacks g-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Logic/3211601598.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Logic/3211601598.html">_↚_</a></td>
+					<td class="stacks g-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Logic/3211601598.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Logic/3211601598.html">_↚_</a></td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
-	<h4 class="method-section-header">Implementations:</h4>
+	<h4 class="method-section-header">Definitions:</h4>
 	<div class="method-section-content">
 		<div class="signature-heading">boolean, []→boolean</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Logic</div>
@@ -82,7 +90,7 @@
 				</tr>
 				<tr class="methodParameters">
 					<td id="a1058580268" class="stacks i-code">a</td>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1043630010.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1043630010.html">boolean</a></td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1043630010.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1043630010.html">boolean</a></td>
 					<td class="stacks i-desc">
 						
 					</td>
@@ -96,7 +104,7 @@
 				</tr>
 				<tr>
 					<th class="stacks i-row-label" colspan="2">Returns</th>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1043630010.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1043630010.html">boolean</a></td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1043630010.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1043630010.html">boolean</a></td>
 					<td class="stacks i-desc">
 						
 					</td>
@@ -109,19 +117,19 @@
 		<div class="signature-heading">boolean's type, []→(false's type)'s type</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Logic</div>
 		<div class="signature-description">
-			If the right-hand argument of <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Logic/3016410208.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Logic/3016410208.html">_←_</a> is known statically to be <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html">false</a>, then the static type of the expression is <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html">true</a>.
+			If the right-hand argument of <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Logic/3016410208.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Logic/3016410208.html">_←_</a> is known statically to be <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html">false</a>, then the static type of the expression is <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html">true</a>.
 		</div>
 		<table class="stacks">
 			<thead>
 				<tr>
-					<th class="transparent"scope="col"></th>
-					<th class="stacks i-col-label-narrow"scope="col">Type</th>
-					<th class="stacks i-col-label-wide"scope="col">Description</th>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<th class="stacks i-row-label"rowspan="3">Parameter Types</th>
+					<th class="stacks i-row-label" rowspan="3">Parameter Types</th>
 				</tr>
 				<tr class="methodParameters">
 <td id="boolean's type1056769550" class="stacks i-code">boolean's type</td>
@@ -140,19 +148,19 @@
 		<div class="signature-heading">true's type's type, []→boolean's type</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Logic</div>
 		<div class="signature-description">
-			If the left-hand argument of <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Logic/3016410208.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Logic/3016410208.html">_←_</a> is known statically to be <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html">true</a>, then the static type of the expression is <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html">true</a>.
+			If the left-hand argument of <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Logic/3016410208.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Logic/3016410208.html">_←_</a> is known statically to be <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html">true</a>, then the static type of the expression is <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html">true</a>.
 		</div>
 		<table class="stacks">
 			<thead>
 				<tr>
-					<th class="transparent"scope="col"></th>
-					<th class="stacks i-col-label-narrow"scope="col">Type</th>
-					<th class="stacks i-col-label-wide"scope="col">Description</th>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<th class="stacks i-row-label"rowspan="3">Parameter Types</th>
+					<th class="stacks i-row-label" rowspan="3">Parameter Types</th>
 				</tr>
 				<tr class="methodParameters">
 <td id="true's type's type-731720936" class="stacks i-code">true's type's type</td>

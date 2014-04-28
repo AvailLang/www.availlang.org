@@ -10,24 +10,32 @@
 <![endif]-->
 	<!--[if gt IE 8]>
 	<!-->
-<html ng-app="stacksApp" class="">
+<html ng-app="stacksApp">
 <!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
 		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
 		<!--#include virtual="/_include/head.ssi" -->
 		<title>Avail - Library</title>
+		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="/about-avail/documentation/stacks/library-documentation/stacksApp.js"></script>
+		<script>
+			function myParent()
+			{
+				return window.parent;
+			}
+		</script>
 	</head>
 	<body ng-controller="CategoriesCntrl">
 		<div class="stacks-wrapper">
 	<h2 class="method-heading">the future of_</h2>
-	<h4 class="method-section-header">Implementations:</h4>
+	<h4 class="method-section-header">Definitions:</h4>
 	<div class="method-section-content">
 		<div class="signature-heading">[]→any</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Concurrency</div>
 		<div class="category-list"><em>Categories:</em> Data Abstractions, Futures</div>
 		<div class="signature-description">
-			Answer the <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/2437811379.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/2437811379.html">future</a> of applying the specified <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1716570550.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1716570550.html">function</a> in a new <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3760152050.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3760152050.html">fiber</a>.
+			Answer the <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/2437811379.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/2437811379.html">future</a> of applying the specified <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1716570550.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1716570550.html">function</a> in a new <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3760152050.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3760152050.html">fiber</a>.
 		</div>
 		<table class="stacks">
 			<thead>
@@ -51,7 +59,7 @@
 				</tr>
 				<tr>
 					<th class="stacks i-row-label" colspan="2">Returns</th>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/2437811379.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/2437811379.html">future</a></td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/2437811379.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/2437811379.html">future</a></td>
 					<td class="stacks i-desc">
 						The requested future.
 					</td>
@@ -69,14 +77,14 @@
 		<table class="stacks">
 			<thead>
 				<tr>
-					<th class="transparent"scope="col"></th>
-					<th class="stacks i-col-label-narrow"scope="col">Type</th>
-					<th class="stacks i-col-label-wide"scope="col">Description</th>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<th class="stacks i-row-label"rowspan="2">Parameter Types</th>
+					<th class="stacks i-row-label" rowspan="2">Parameter Types</th>
 				</tr>
 				<tr class="methodParameters">
 <td id="[]→any's type-2118159728" class="stacks i-code">[]→any's type</td>

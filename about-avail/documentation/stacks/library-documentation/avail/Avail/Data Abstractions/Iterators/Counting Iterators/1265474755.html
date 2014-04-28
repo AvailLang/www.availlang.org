@@ -10,24 +10,32 @@
 <![endif]-->
 	<!--[if gt IE 8]>
 	<!-->
-<html ng-app="stacksApp" class="">
+<html ng-app="stacksApp">
 <!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
 		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
 		<!--#include virtual="/_include/head.ssi" -->
 		<title>Avail - Library</title>
+		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="/about-avail/documentation/stacks/library-documentation/stacksApp.js"></script>
+		<script>
+			function myParent()
+			{
+				return window.parent;
+			}
+		</script>
 	</head>
 	<body ng-controller="CategoriesCntrl">
 		<div class="stacks-wrapper">
 	<h2 class="method-heading">a counting iterator from_to_</h2>
-	<h4 class="method-section-header">Implementations:</h4>
+	<h4 class="method-section-header">Definitions:</h4>
 	<div class="method-section-content">
 		<div class="signature-heading">integer, extended integer</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Iterators/Counting Iterators</div>
 		<div class="category-list"><em>Categories:</em> Unclassified</div>
 		<div class="signature-description">
-			Construct and answer an <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/4289004446.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/4289004446.html">iterator</a> that lazily produces all consecutive values between <a href="#start182784547">start</a> and <a href="#end182784547">end</a>.
+			Construct and answer an <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/4289004446.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/4289004446.html">iterator</a> that lazily produces all consecutive values between <a href="#start182784547">start</a> and <a href="#end182784547">end</a>.
 		</div>
 		<table class="stacks">
 			<thead>
@@ -44,14 +52,14 @@
 				</tr>
 				<tr class="methodParameters">
 					<td id="first182784547" class="stacks i-code">first</td>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3781248876.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3781248876.html">integer</a></td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3781248876.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3781248876.html">integer</a></td>
 					<td class="stacks i-desc">
 						The start value, inclusive. This is the first value that will be answered by the iterator.
 					</td>
 				</tr>
 				<tr class="methodParameters">
 					<td id="last182784547" class="stacks i-code">last</td>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1781217259.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1781217259.html">extended integer</a></td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1781217259.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1781217259.html">extended integer</a></td>
 					<td class="stacks i-desc">
 						The end value, inclusive. This is the last value that will be answered by the iterator.
 					</td>

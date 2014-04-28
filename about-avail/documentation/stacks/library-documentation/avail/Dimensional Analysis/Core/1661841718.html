@@ -10,18 +10,26 @@
 <![endif]-->
 	<!--[if gt IE 8]>
 	<!-->
-<html ng-app="stacksApp" class="">
+<html ng-app="stacksApp">
 <!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
 		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
 		<!--#include virtual="/_include/head.ssi" -->
 		<title>Avail - Library</title>
+		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="/about-avail/documentation/stacks/library-documentation/stacksApp.js"></script>
+		<script>
+			function myParent()
+			{
+				return window.parent;
+			}
+		</script>
 	</head>
 	<body ng-controller="CategoriesCntrl">
 		<div class="stacks-wrapper">
 	<h2 class="method-heading">«_‡«=|≤|<»!»</h2>
-	<h4 class="method-section-header">Implementations:</h4>
+	<h4 class="method-section-header">Definitions:</h4>
 	<div class="method-section-content">
 		<div class="signature-heading">&lt;&lt;dimensioned quantity, [1..3]…|1..2>…|3..∞></div>
 		<div class="module-location"><em>Source</em>: /avail/Dimensional Analysis/Core</div>
@@ -46,20 +54,20 @@
 					<td id="args1763037986" class="stacks i-code">args</td>
 					<td class="stacks i-code">&lt;&lt;dimensioned quantity, [1..3]…|1..2>…|3..∞></td>
 					<td class="stacks i-desc">
-						A tuple whose elements are a sequence of 2-tuples following by an ending 1-tuple. The first element of these 1,2-tuples is a <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Dimensional Analysis/Core/3305386234.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Dimensional Analysis/Core/3305386234.html">dimensioned quantity</a>. If present, the second element is 1, 2, or 3, indicating a comparison to the successive <code>dimensioned
+						A tuple whose elements are a sequence of 2-tuples following by an ending 1-tuple. The first element of these 1,2-tuples is a <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Dimensional Analysis/Core/3305386234.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Dimensional Analysis/Core/3305386234.html">dimensioned quantity</a>. If present, the second element is 1, 2, or 3, indicating a comparison to the successive <code>dimensioned
          quantity</code> by =, ≤, or <, respectively.
 					</td>
 				</tr>
 				<tr>
 					<th class="stacks i-row-label" colspan="2">Returns</th>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1043630010.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1043630010.html">boolean</a></td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1043630010.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1043630010.html">boolean</a></td>
 					<td class="stacks i-desc">
-						<a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html">true</a> if the entire chain of comparisons is true, <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html">false</a> otherwise.
+						<a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html">true</a> if the entire chain of comparisons is true, <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html">false</a> otherwise.
 					</td>
 				</tr>
 					<th class="stacks i-row-label" colspan="2" rowspan="2">Raises</th>
 				<tr class="methodParameters">
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Dimensional Analysis/Core/3549718992.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Dimensional Analysis/Core/3549718992.html">incompatible-quantities exception</a></td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Dimensional Analysis/Core/3549718992.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Dimensional Analysis/Core/3549718992.html">incompatible-quantities exception</a></td>
 					<td class="stacks i-desc">
 						If the arguments are incompatible.
 					</td>

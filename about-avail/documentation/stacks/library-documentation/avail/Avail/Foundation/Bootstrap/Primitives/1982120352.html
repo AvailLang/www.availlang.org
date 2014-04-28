@@ -10,13 +10,21 @@
 <![endif]-->
 	<!--[if gt IE 8]>
 	<!-->
-<html ng-app="stacksApp" class="">
+<html ng-app="stacksApp">
 <!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
 		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
 		<!--#include virtual="/_include/head.ssi" -->
 		<title>Avail - Library</title>
+		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="/about-avail/documentation/stacks/library-documentation/stacksApp.js"></script>
+		<script>
+			function myParent()
+			{
+				return window.parent;
+			}
+		</script>
 	</head>
 	<body ng-controller="CategoriesCntrl">
 		<div class="stacks-wrapper">
@@ -33,12 +41,12 @@
 			<tbody>
 				<tr>
 					<td class="stacks g-code" rowspan="1">Argument 1</td>
-					<td class="stacks g-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/844681301.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/844681301.html">function accepting_and returning_</a></td>
+					<td class="stacks g-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/844681301.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/844681301.html">function accepting_and returning_</a></td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
-	<h4 class="method-section-header">Implementations:</h4>
+	<h4 class="method-section-header">Definitions:</h4>
 	<div class="method-section-content">
 		<div class="signature-heading">send phrase</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Infallible Primitives</div>
@@ -61,7 +69,7 @@
 				</tr>
 				<tr class="methodParameters">
 					<td id="aSend-1420879953" class="stacks i-code">aSend</td>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2874087343.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2874087343.html">send phrase</a></td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2874087343.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2874087343.html">send phrase</a></td>
 					<td class="stacks i-desc">
 						A message send.
 					</td>
@@ -96,7 +104,7 @@
 				</tr>
 				<tr class="methodParameters">
 					<td id="aBlock1341970082" class="stacks i-code">aBlock</td>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1341970082.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1341970082.html">block phrase</a></td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1341970082.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1341970082.html">block phrase</a></td>
 					<td class="stacks i-desc">
 						A block.
 					</td>
@@ -156,14 +164,14 @@
 		<table class="stacks">
 			<thead>
 				<tr>
-					<th class="transparent"scope="col"></th>
-					<th class="stacks i-col-label-narrow"scope="col">Type</th>
-					<th class="stacks i-col-label-wide"scope="col">Description</th>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<th class="stacks i-row-label"rowspan="2">Parameter Types</th>
+					<th class="stacks i-row-label" rowspan="2">Parameter Types</th>
 				</tr>
 				<tr class="methodParameters">
 <td id="function meta's type2027021833" class="stacks i-code">function meta's type</td>

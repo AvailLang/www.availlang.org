@@ -10,23 +10,31 @@
 <![endif]-->
 	<!--[if gt IE 8]>
 	<!-->
-<html ng-app="stacksApp" class="">
+<html ng-app="stacksApp">
 <!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
 		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
 		<!--#include virtual="/_include/head.ssi" -->
 		<title>Avail - Library</title>
+		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="/about-avail/documentation/stacks/library-documentation/stacksApp.js"></script>
+		<script>
+			function myParent()
+			{
+				return window.parent;
+			}
+		</script>
 	</head>
 	<body ng-controller="CategoriesCntrl">
 		<div class="stacks-wrapper">
 	<h2 class="method-heading">Honor a termination request</h2>
-	<h4 class="method-section-header">Implementations:</h4>
+	<h4 class="method-section-header">Definitions:</h4>
 	<div class="method-section-content">
 		<div class="signature-heading">		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Exceptions</div>
 		<div class="category-list"><em>Categories:</em> Exceptions, Control Structures</div>
 		<div class="signature-description">
-			Raise a <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Exceptions/2464274982.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Exceptions/2464274982.html">termination-requested exception</a> iff <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/3594469686.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/3594469686.html">termination has been requested</a>.
+			Raise a <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Exceptions/2464274982.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Exceptions/2464274982.html">termination-requested exception</a> iff <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/3594469686.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/3594469686.html">termination has been requested</a>.
 		</div>
 		<table class="stacks">
 			<thead>
@@ -39,16 +47,16 @@
 			<tbody>
 				<tr>
 					<th class="stacks i-row-label" colspan="1">Returns</th>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/741866010.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/741866010.html">⊤</a></td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/741866010.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/741866010.html">⊤</a></td>
 					<td class="stacks i-desc">
 						
 					</td>
 				</tr>
 					<th class="stacks i-row-label" colspan="1" rowspan="2">Raises</th>
 				<tr class="methodParameters">
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Exceptions/2464274982.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Exceptions/2464274982.html">termination-requested exception</a></td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Exceptions/2464274982.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Exceptions/2464274982.html">termination-requested exception</a></td>
 					<td class="stacks i-desc">
-						If <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/3594469686.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/3594469686.html">termination has been requested</a>.
+						If <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/3594469686.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/3594469686.html">termination has been requested</a>.
 					</td>
 				</tr>
 			</tbody>

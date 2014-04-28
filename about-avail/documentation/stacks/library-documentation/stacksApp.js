@@ -1,12 +1,87 @@
 var stacksApp = angular.module('stacksApp',[]);
 
-function CategoriesCntrl($scope,Categories) {
+function CategoriesCntrl($scope,$http,Categories) {
 	$scope.categories = Categories;
+
+	$scope.jsonURL = "/about-avail/documentation/stacks/library-documentation/internalLink.json";
+	$scope.methodLinkage = {};
+	$scope.methodLinkagePairedDown = {};
+	$http.get($scope.jsonURL).then(function (response)
+		{
+			$scope.methodLinkage = response.data;
+		});
+		
+	$scope.weakMatchOnMethod = function(content) {
+    	return (((content.category.toLowerCase()).indexOf($scope.search.toLowerCase()) >= 0) || content.selected);
+	};
+	$scope.methodSearch = '';
+	$scope.directLink = '';
+	$scope.linkText = '';
+	$scope.strictSearch = false;
+	$scope.setLink = function(aLink)
+	{
+		$scope.$directLink = aLink;
+	}
+	$scope.resetLink = function()
+	{
+		$scope.$directLink = '';
+	};
+	$scope.customStyle = "";
+	$scope.getInternalLink = function(aMethod) {
+	
+		if ($scope.strictSearch)
+		{
+			if (aMethod in $scope.methodLinkage)
+			{
+				$scope.methodLinkagePairedDown={};
+				$scope.methodLinkagePairedDown[aMethod] = $scope.methodLinkage[aMethod];
+				$scope.customStyle = "";
+			}
+			else 
+			{	
+				if (aMethod.length > 0)
+				{
+					$scope.methodLinkagePairedDown={};	
+					$scope.methodLinkagePairedDown["Method Not Found"] = document.getElementById('api_frame').contentWindow.location.href;
+					$scope.customStyle = "font-style:italic";
+				}
+			}
+		}
+		else
+		{
+			var tempList = {};
+			$scope.methodLinkagePairedDown={};
+			for (var key in $scope.methodLinkage)
+			{
+				if((key.toLowerCase()).indexOf(aMethod.toLowerCase()) >=0)
+				{
+					tempList[key] = $scope.methodLinkage[key];
+					$scope.customStyle = "";
+				}
+			}
+			$scope.methodLinkagePairedDown = tempList;
+		}
+	};
+	$scope.getExternalLink = function(aMethod) {
+		if (aMethod in $scope.methodLinkage)
+		{
+			$scope.directLink = $scope.methodLinkage[aMethod];
+			$scope.linkText = 'Link to page';
+			return '<a href="http://www.availlang.org' + $scope.methodLinkage[aMethod] + '">"' + aMethod + '"</a>';
+		}
+		$scope.directLink = '';
+		$scope.linkText = '';
+		return '"' + aMethod + '"';
+	};
+
 	$scope.search = '';
 	$scope.filterOnCategory = function(content) {
     	return (((content.category.toLowerCase()).indexOf($scope.search.toLowerCase()) >= 0) || content.selected);
 	};
+	$scope.visibleFramedPage = "landing-detail.html";
 	$scope.methodList;	
+	$scope.backPageHistory = [];
+	$scope.backPageHistoryCount = 0;
 	$scope.methodListUpdate = function()
 	{
 		var allCategories = $scope.categories;
@@ -51,10 +126,36 @@ function CategoriesCntrl($scope,Categories) {
 	$scope.linkValue = "landing-detail.html";
 	$scope.changeLinkValue = function(link)
 	{
+		$scope.methodLinkagePairedDown={};
+		$scope.visibleFramedPage = document.getElementById('api_frame').contentWindow.location.href;
+		if ($scope.backPageHistory.length == $scope.backPageHistoryCount)
+		{
+			$scope.backPageHistory.push($scope.visibleFramedPage);
+			$scope.backPageHistoryCount++;
+		}
+		else
+		{
+			$scope.backPageHistory[$scope.backPageHistoryCount] = $scope.visibleFramedPagelink;
+			$scope.backPageHistoryCount++;
+		}
 		$scope.linkValue = link;
+		$scope.visibleFramedPage = link;
+			
+	}
+	$scope.backPage = function() {
+		if($scope.backPageHistory.length == 0 || $scope.backPageHistoryCount == 0)
+		{
+			$scope.linkValue = "landing-detail.html";
+			$scope.backPageHistoryCount = 0;
+		}
+		else
+		{
+			
+			$scope.linkValue = $scope.backPageHistory[$scope.backPageHistoryCount-1];
+			$scope.backPageHistoryCount--;
+		}
 	}
 }
-
 
 stacksApp.factory('Categories', function () {
 	var Categories = {};
@@ -1500,11 +1601,15 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "sizable iterator", "link" : "avail/Avail/Data Abstractions/Iterators/Sizable Iterators/1379338676.html", "distinct" : "sizable iterator/avail/Avail/Data Abstractions/Iterators/Sizable Iterators/1379338676.html"},
 			{"methodName" : "type promotion function for_", "link" : "avail/Avail/Foundation/Early Math/3422593957.html", "distinct" : "type promotion function for_/avail/Avail/Foundation/Early Math/3422593957.html"},
 			{"methodName" : "`|_'s⁇remaining elements`|", "link" : "avail/Avail/Data Abstractions/Iterators/Sizable Positionable Iterators/772359723.html", "distinct" : "`|_'s⁇remaining elements`|/avail/Avail/Data Abstractions/Iterators/Sizable Positionable Iterators/772359723.html"},
+			{"methodName" : "_→numeric code", "link" : "avail/Avail/IO/Files/File Access Rights/3142933595.html", "distinct" : "_→numeric code/avail/Avail/IO/Files/File Access Rights/3142933595.html"},
+			{"methodName" : "_→numeric code", "link" : "avail/Avail/IO/Files/File Open Options/3142933595.html", "distinct" : "_→numeric code/avail/Avail/IO/Files/File Open Options/3142933595.html"},
 			{"methodName" : "others", "link" : "avail/Avail/IO/Files/File Access Rights/428106901.html", "distinct" : "others/avail/Avail/IO/Files/File Access Rights/428106901.html"},
+			{"methodName" : "truncate existing", "link" : "avail/Avail/IO/Files/File Open Options/3348465767.html", "distinct" : "truncate existing/avail/Avail/IO/Files/File Open Options/3348465767.html"},
 			{"methodName" : "causal exception", "link" : "avail/Avail/Foundation/Exceptions/5222824.html", "distinct" : "causal exception/avail/Avail/Foundation/Exceptions/5222824.html"},
 			{"methodName" : "an edge from_to_", "link" : "avail/Avail/Data Abstractions/Graphs/Abstract Graphs/3157230617.html", "distinct" : "an edge from_to_/avail/Avail/Data Abstractions/Graphs/Abstract Graphs/3157230617.html"},
 			{"methodName" : "empty-stream exception", "link" : "avail/Avail/Data Abstractions/Streams/Abstract Streams/1076363163.html", "distinct" : "empty-stream exception/avail/Avail/Data Abstractions/Streams/Abstract Streams/1076363163.html"},
 			{"methodName" : "_'s⁇access rights«(don't follow if symlink)»?", "link" : "avail/Avail/IO/Files/File Access Rights/2455554292.html", "distinct" : "_'s⁇access rights«(don't follow if symlink)»?/avail/Avail/IO/Files/File Access Rights/2455554292.html"},
+			{"methodName" : "append", "link" : "avail/Avail/IO/Files/File Open Options/737538044.html", "distinct" : "append/avail/Avail/IO/Files/File Open Options/737538044.html"},
 			{"methodName" : "_'s⁇remote address", "link" : "avail/Avail/IO/Network/Client/Primitives/2320992362.html", "distinct" : "_'s⁇remote address/avail/Avail/IO/Network/Client/Primitives/2320992362.html"},
 			{"methodName" : "_'s⁇next buffer method is_", "link" : "avail/Avail/Data Abstractions/Iterators/Buffered Iterators/4170774085.html", "distinct" : "_'s⁇next buffer method is_/avail/Avail/Data Abstractions/Iterators/Buffered Iterators/4170774085.html"},
 			{"methodName" : "an iterator that buffers_element|elements of_", "link" : "avail/Avail/Data Abstractions/Iterators/Buffered Iterators/2345900195.html", "distinct" : "an iterator that buffers_element|elements of_/avail/Avail/Data Abstractions/Iterators/Buffered Iterators/2345900195.html"},
@@ -1517,6 +1622,7 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "_delimited by_", "link" : "avail/Avail/Data Abstractions/Streams/Delimited Streams/3581794890.html", "distinct" : "_delimited by_/avail/Avail/Data Abstractions/Streams/Delimited Streams/3581794890.html"},
 			{"methodName" : "current working directory", "link" : "avail/Avail/IO/Files/File Names/2381613883.html", "distinct" : "current working directory/avail/Avail/IO/Files/File Names/2381613883.html"},
 			{"methodName" : "read", "link" : "avail/Avail/IO/Files/File Access Rights/4019303604.html", "distinct" : "read/avail/Avail/IO/Files/File Access Rights/4019303604.html"},
+			{"methodName" : "read", "link" : "avail/Avail/IO/Files/File Open Options/4019303604.html", "distinct" : "read/avail/Avail/IO/Files/File Open Options/4019303604.html"},
 			{"methodName" : "all test suites in_", "link" : "avail/Avail/Unit Testing/Runners/287104578.html", "distinct" : "all test suites in_/avail/Avail/Unit Testing/Runners/287104578.html"},
 			{"methodName" : "test-already-exists exception", "link" : "avail/Avail/Unit Testing/Types/2193464061.html", "distinct" : "test-already-exists exception/avail/Avail/Unit Testing/Types/2193464061.html"},
 			{"methodName" : "empty stream", "link" : "avail/Avail/Data Abstractions/Streams/Abstract Streams/3274311783.html", "distinct" : "empty stream/avail/Avail/Data Abstractions/Streams/Abstract Streams/3274311783.html"},
@@ -1540,6 +1646,7 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "test-suite exception", "link" : "avail/Avail/Unit Testing/Types/1399280582.html", "distinct" : "test-suite exception/avail/Avail/Unit Testing/Types/1399280582.html"},
 			{"methodName" : "socket option", "link" : "avail/Avail/IO/Network/Options/2000068780.html", "distinct" : "socket option/avail/Avail/IO/Network/Options/2000068780.html"},
 			{"methodName" : "unlabeled graph of_", "link" : "avail/Avail/Data Abstractions/Graphs/Abstract Graphs/91047916.html", "distinct" : "unlabeled graph of_/avail/Avail/Data Abstractions/Graphs/Abstract Graphs/91047916.html"},
+			{"methodName" : "sparse", "link" : "avail/Avail/IO/Files/File Open Options/3264593298.html", "distinct" : "sparse/avail/Avail/IO/Files/File Open Options/3264593298.html"},
 			{"methodName" : "a counting iterator from_to_by_", "link" : "avail/Avail/Data Abstractions/Iterators/Counting Iterators/2683428435.html", "distinct" : "a counting iterator from_to_by_/avail/Avail/Data Abstractions/Iterators/Counting Iterators/2683428435.html"},
 			{"methodName" : "_limited to_elements", "link" : "avail/Avail/Data Abstractions/Streams/Bounded Streams/3340539970.html", "distinct" : "_limited to_elements/avail/Avail/Data Abstractions/Streams/Bounded Streams/3340539970.html"},
 			{"methodName" : "_limited to_elements", "link" : "avail/Avail/Data Abstractions/Iterators/Bounded Iterators/3340539970.html", "distinct" : "_limited to_elements/avail/Avail/Data Abstractions/Iterators/Bounded Iterators/3340539970.html"},
@@ -1589,10 +1696,12 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "Connect_to_", "link" : "avail/Avail/IO/Network/Client/Synchronous/2200602509.html", "distinct" : "Connect_to_/avail/Avail/IO/Network/Client/Synchronous/2200602509.html"},
 			{"methodName" : "read«at most»?_byte|bytes from_", "link" : "avail/Avail/IO/Common/160647328.html", "distinct" : "read«at most»?_byte|bytes from_/avail/Avail/IO/Common/160647328.html"},
 			{"methodName" : "file permission", "link" : "avail/Avail/IO/Files/File Access Rights/3192082263.html", "distinct" : "file permission/avail/Avail/IO/Files/File Access Rights/3192082263.html"},
+			{"methodName" : "create", "link" : "avail/Avail/IO/Files/File Open Options/2630972784.html", "distinct" : "create/avail/Avail/IO/Files/File Open Options/2630972784.html"},
 			{"methodName" : "Before running_,⁇do_", "link" : "avail/Avail/Unit Testing/Definers/485667948.html", "distinct" : "Before running_,⁇do_/avail/Avail/Unit Testing/Definers/485667948.html"},
 			{"methodName" : "_'s⁇creation time", "link" : "avail/Avail/IO/Files/File Metadata/Primitives/403031798.html", "distinct" : "_'s⁇creation time/avail/Avail/IO/Files/File Metadata/Primitives/403031798.html"},
 			{"methodName" : "_'s⁇absolute path", "link" : "avail/Avail/IO/Files/File Names/1151004818.html", "distinct" : "_'s⁇absolute path/avail/Avail/IO/Files/File Names/1151004818.html"},
 			{"methodName" : "_'s⁇group(follow if symlink=_)", "link" : "avail/Avail/IO/Files/File Principals/1512682987.html", "distinct" : "_'s⁇group(follow if symlink=_)/avail/Avail/IO/Files/File Principals/1512682987.html"},
+			{"methodName" : "open option", "link" : "avail/Avail/IO/Files/File Open Options/1647907657.html", "distinct" : "open option/avail/Avail/IO/Files/File Open Options/1647907657.html"},
 			{"methodName" : "edge from_to_,⁇labeled by_", "link" : "avail/Avail/Data Abstractions/Graphs/Abstract Graphs/4087779396.html", "distinct" : "edge from_to_,⁇labeled by_/avail/Avail/Data Abstractions/Graphs/Abstract Graphs/4087779396.html"},
 			{"methodName" : "module-oriented“_”", "link" : "avail/Avail/Unit Testing/Runners/111847297.html", "distinct" : "module-oriented“_”/avail/Avail/Unit Testing/Runners/111847297.html"},
 			{"methodName" : "special file", "link" : "avail/Avail/IO/Files/File Metadata/File Types/1673925877.html", "distinct" : "special file/avail/Avail/IO/Files/File Metadata/File Types/1673925877.html"},
@@ -1604,10 +1713,12 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "Move_to_«,⁇overwriting if necessary»?", "link" : "avail/Avail/IO/Files/File Management/2349623290.html", "distinct" : "Move_to_«,⁇overwriting if necessary»?/avail/Avail/IO/Files/File Management/2349623290.html"},
 			{"methodName" : "_'s⁇owner:=_«(don't follow if symlink)»?", "link" : "avail/Avail/IO/Files/File Principals/3502310664.html", "distinct" : "_'s⁇owner:=_«(don't follow if symlink)»?/avail/Avail/IO/Files/File Principals/3502310664.html"},
 			{"methodName" : "write", "link" : "avail/Avail/IO/Files/File Access Rights/119087633.html", "distinct" : "write/avail/Avail/IO/Files/File Access Rights/119087633.html"},
+			{"methodName" : "write", "link" : "avail/Avail/IO/Files/File Open Options/119087633.html", "distinct" : "write/avail/Avail/IO/Files/File Open Options/119087633.html"},
 			{"methodName" : "no-such-vertex exception", "link" : "avail/Avail/Data Abstractions/Graphs/Abstract Graphs/28839563.html", "distinct" : "no-such-vertex exception/avail/Avail/Data Abstractions/Graphs/Abstract Graphs/28839563.html"},
 			{"methodName" : "pRNG", "link" : "avail/Avail/Data Abstractions/Pseudorandom Number Generation/Abstract Random/3608384279.html", "distinct" : "pRNG/avail/Avail/Data Abstractions/Pseudorandom Number Generation/Abstract Random/3608384279.html"},
 			{"methodName" : "_'s⁇next binding of_", "link" : "avail/Avail/Data Abstractions/Pseudorandom Number Generation/Abstract Random/1279232306.html", "distinct" : "_'s⁇next binding of_/avail/Avail/Data Abstractions/Pseudorandom Number Generation/Abstract Random/1279232306.html"},
 			{"methodName" : "no-such-test-suite exception", "link" : "avail/Avail/Unit Testing/Types/1959932792.html", "distinct" : "no-such-test-suite exception/avail/Avail/Unit Testing/Types/1959932792.html"},
+			{"methodName" : "create new", "link" : "avail/Avail/IO/Files/File Open Options/2922303070.html", "distinct" : "create new/avail/Avail/IO/Files/File Open Options/2922303070.html"},
 			{"methodName" : "server socket option", "link" : "avail/Avail/IO/Network/Options/2196965329.html", "distinct" : "server socket option/avail/Avail/IO/Network/Options/2196965329.html"},
 			{"methodName" : "report on all tests in_", "link" : "avail/Avail/Unit Testing/Runners/3329508633.html", "distinct" : "report on all tests in_/avail/Avail/Unit Testing/Runners/3329508633.html"},
 			{"methodName" : "Close_", "link" : "avail/Avail/IO/Common/3332397417.html", "distinct" : "Close_/avail/Avail/IO/Common/3332397417.html"},
@@ -1631,6 +1742,7 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "Skip test", "link" : "avail/Avail/Unit Testing/Tools/247180433.html", "distinct" : "Skip test/avail/Avail/Unit Testing/Tools/247180433.html"},
 			{"methodName" : "group", "link" : "avail/Avail/IO/Files/File Access Rights/2026661651.html", "distinct" : "group/avail/Avail/IO/Files/File Access Rights/2026661651.html"},
 			{"methodName" : "Rename_to_", "link" : "avail/Avail/IO/Files/File Management/364047169.html", "distinct" : "Rename_to_/avail/Avail/IO/Files/File Management/364047169.html"},
+			{"methodName" : "delete on close", "link" : "avail/Avail/IO/Files/File Open Options/3874922944.html", "distinct" : "delete on close/avail/Avail/IO/Files/File Open Options/3874922944.html"},
 			{"methodName" : "<«_‡,»`…`|_..>", "link" : "avail/Avail/Foundation/Types/1850852081.html", "distinct" : "<«_‡,»`…`|_..>/avail/Avail/Foundation/Types/1850852081.html"},
 			{"methodName" : "IPv6 address", "link" : "avail/Avail/IO/Network/Address/1799966571.html", "distinct" : "IPv6 address/avail/Avail/IO/Network/Address/1799966571.html"},
 			{"methodName" : "unit test success", "link" : "avail/Avail/Unit Testing/Types/3042753139.html", "distinct" : "unit test success/avail/Avail/Unit Testing/Types/3042753139.html"},
@@ -1641,6 +1753,7 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "file access class", "link" : "avail/Avail/IO/Files/File Access Rights/2456261694.html", "distinct" : "file access class/avail/Avail/IO/Files/File Access Rights/2456261694.html"},
 			{"methodName" : "symbolic link", "link" : "avail/Avail/IO/Files/File Metadata/File Types/3936622342.html", "distinct" : "symbolic link/avail/Avail/IO/Files/File Metadata/File Types/3936622342.html"},
 			{"methodName" : "accept a new connection«named_»on_", "link" : "avail/Avail/IO/Network/Server/Synchronous/4116872409.html", "distinct" : "accept a new connection«named_»on_/avail/Avail/IO/Network/Server/Synchronous/4116872409.html"},
+			{"methodName" : "synchronize all", "link" : "avail/Avail/IO/Files/File Open Options/362733971.html", "distinct" : "synchronize all/avail/Avail/IO/Files/File Open Options/362733971.html"},
 			{"methodName" : "user principal", "link" : "avail/Avail/IO/Files/File Principals/824924269.html", "distinct" : "user principal/avail/Avail/IO/Files/File Principals/824924269.html"},
 			{"methodName" : "_'s⁇owner(follow if symlink=_)", "link" : "avail/Avail/IO/Files/File Principals/336651393.html", "distinct" : "_'s⁇owner(follow if symlink=_)/avail/Avail/IO/Files/File Principals/336651393.html"},
 			{"methodName" : "pRNG of_", "link" : "avail/Avail/Data Abstractions/Pseudorandom Number Generation/Abstract Random/327445279.html", "distinct" : "pRNG of_/avail/Avail/Data Abstractions/Pseudorandom Number Generation/Abstract Random/327445279.html"},
@@ -1656,6 +1769,7 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "an empty stream", "link" : "avail/Avail/Data Abstractions/Streams/Abstract Streams/3109736400.html", "distinct" : "an empty stream/avail/Avail/Data Abstractions/Streams/Abstract Streams/3109736400.html"},
 			{"methodName" : "edge from_to_", "link" : "avail/Avail/Data Abstractions/Graphs/Abstract Graphs/990712396.html", "distinct" : "edge from_to_/avail/Avail/Data Abstractions/Graphs/Abstract Graphs/990712396.html"},
 			{"methodName" : "execute", "link" : "avail/Avail/IO/Files/File Access Rights/2418245661.html", "distinct" : "execute/avail/Avail/IO/Files/File Access Rights/2418245661.html"},
+			{"methodName" : "synchronize data", "link" : "avail/Avail/IO/Files/File Open Options/1055411850.html", "distinct" : "synchronize data/avail/Avail/IO/Files/File Open Options/1055411850.html"},
 			{"methodName" : "Before running each test in_,⁇do_", "link" : "avail/Avail/Unit Testing/Definers/1378936590.html", "distinct" : "Before running each test in_,⁇do_/avail/Avail/Unit Testing/Definers/1378936590.html"},
 			{"methodName" : "_'s⁇owner:=_", "link" : "avail/Avail/IO/Files/File Metadata/File Metadata/624059637.html", "distinct" : "_'s⁇owner:=_/avail/Avail/IO/Files/File Metadata/File Metadata/624059637.html"},
 			{"methodName" : "socket address", "link" : "avail/Avail/IO/Network/Address/258075571.html", "distinct" : "socket address/avail/Avail/IO/Network/Address/258075571.html"},

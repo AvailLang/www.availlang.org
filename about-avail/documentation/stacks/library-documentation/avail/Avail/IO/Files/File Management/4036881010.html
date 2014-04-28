@@ -10,18 +10,26 @@
 <![endif]-->
 	<!--[if gt IE 8]>
 	<!-->
-<html ng-app="stacksApp" class="">
+<html ng-app="stacksApp">
 <!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
 		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
 		<!--#include virtual="/_include/head.ssi" -->
 		<title>Avail - Library</title>
+		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="/about-avail/documentation/stacks/library-documentation/stacksApp.js"></script>
+		<script>
+			function myParent()
+			{
+				return window.parent;
+			}
+		</script>
 	</head>
 	<body ng-controller="CategoriesCntrl">
 		<div class="stacks-wrapper">
 	<h2 class="method-heading">Move_to_(overwrite=_)</h2>
-	<h4 class="method-section-header">Implementations:</h4>
+	<h4 class="method-section-header">Definitions:</h4>
 	<div class="method-section-content">
 		<div class="signature-heading">file name, file name, boolean</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/IO/Files/File Management</div>
@@ -44,28 +52,28 @@
 				</tr>
 				<tr class="methodParameters">
 					<td id="src-1257683100" class="stacks i-code">src</td>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Files/File Names/2413129019.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Files/File Names/2413129019.html">file name</a></td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Files/File Names/2413129019.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Files/File Names/2413129019.html">file name</a></td>
 					<td class="stacks i-desc">
-						The source <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Files/File Names/2413129019.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Files/File Names/2413129019.html">file name</a>.
+						The source <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Files/File Names/2413129019.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Files/File Names/2413129019.html">file name</a>.
 					</td>
 				</tr>
 				<tr class="methodParameters">
 					<td id="dest-1257683100" class="stacks i-code">dest</td>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Files/File Names/2413129019.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Files/File Names/2413129019.html">file name</a></td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Files/File Names/2413129019.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Files/File Names/2413129019.html">file name</a></td>
 					<td class="stacks i-desc">
-						The destination <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Files/File Names/2413129019.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Files/File Names/2413129019.html">file name</a>.
+						The destination <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Files/File Names/2413129019.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Files/File Names/2413129019.html">file name</a>.
 					</td>
 				</tr>
 				<tr class="methodParameters">
 					<td id="overwrite-1257683100" class="stacks i-code">overwrite</td>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1043630010.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1043630010.html">boolean</a></td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1043630010.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1043630010.html">boolean</a></td>
 					<td class="stacks i-desc">
-						<a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html">true</a> if <a href="#dest-1257683100">dest</a> should be overwritten if it exists, <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html">false</a> otherwise.
+						<a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html">true</a> if <a href="#dest-1257683100">dest</a> should be overwritten if it exists, <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1102744121.html">false</a> otherwise.
 					</td>
 				</tr>
 				<tr>
 					<th class="stacks i-row-label" colspan="2">Returns</th>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/741866010.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/741866010.html">⊤</a></td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/741866010.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/741866010.html">⊤</a></td>
 					<td class="stacks i-desc">
 						
 					</td>
@@ -90,7 +98,7 @@
 					</td>
 				</tr>
 				<tr class="methodParameters">
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Exceptions/2508109724.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Exceptions/2508109724.html">I/O exception</a></td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Exceptions/2508109724.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Exceptions/2508109724.html">I/O exception</a></td>
 					<td class="stacks i-desc">
 						If an I/O error occurs for any reason.
 					</td>

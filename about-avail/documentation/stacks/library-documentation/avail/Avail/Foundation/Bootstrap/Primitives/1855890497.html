@@ -10,18 +10,26 @@
 <![endif]-->
 	<!--[if gt IE 8]>
 	<!-->
-<html ng-app="stacksApp" class="">
+<html ng-app="stacksApp">
 <!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
 		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
 		<!--#include virtual="/_include/head.ssi" -->
 		<title>Avail - Library</title>
+		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="/about-avail/documentation/stacks/library-documentation/stacksApp.js"></script>
+		<script>
+			function myParent()
+			{
+				return window.parent;
+			}
+		</script>
 	</head>
 	<body ng-controller="CategoriesCntrl">
 		<div class="stacks-wrapper">
 	<h2 class="method-heading">_→map</h2>
-	<h4 class="method-section-header">Implementations:</h4>
+	<h4 class="method-section-header">Definitions:</h4>
 	<div class="method-section-content">
 		<div class="signature-heading">object meta</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Infallible Primitives</div>
@@ -79,7 +87,7 @@
 				</tr>
 				<tr class="methodParameters">
 					<td id="anObject-638294441" class="stacks i-code">anObject</td>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3656672855.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3656672855.html">object</a></td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3656672855.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3656672855.html">object</a></td>
 					<td class="stacks i-desc">
 						An object whose fields should be the keys of the new map and whose values are the corresponding values.
 					</td>
@@ -121,7 +129,7 @@
 				</tr>
 				<tr>
 					<th class="stacks i-row-label" colspan="2">Returns</th>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3193443892.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3193443892.html">map</a></td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3193443892.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3193443892.html">map</a></td>
 					<td class="stacks i-desc">
 						The requested map.
 					</td>
@@ -139,14 +147,14 @@
 		<table class="stacks">
 			<thead>
 				<tr>
-					<th class="transparent"scope="col"></th>
-					<th class="stacks i-col-label-narrow"scope="col">Type</th>
-					<th class="stacks i-col-label-wide"scope="col">Description</th>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<th class="stacks i-row-label"rowspan="2">Parameter Types</th>
+					<th class="stacks i-row-label" rowspan="2">Parameter Types</th>
 				</tr>
 				<tr class="methodParameters">
 <td id="object meta-1309373960" class="stacks i-code">object meta</td>
@@ -164,14 +172,14 @@
 		<table class="stacks">
 			<thead>
 				<tr>
-					<th class="transparent"scope="col"></th>
-					<th class="stacks i-col-label-narrow"scope="col">Type</th>
-					<th class="stacks i-col-label-wide"scope="col">Description</th>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<th class="stacks i-row-label"rowspan="2">Parameter Types</th>
+					<th class="stacks i-row-label" rowspan="2">Parameter Types</th>
 				</tr>
 				<tr class="methodParameters">
 <td id="key-value tuple's type-390707523" class="stacks i-code">key-value tuple's type</td>

@@ -10,24 +10,32 @@
 <![endif]-->
 	<!--[if gt IE 8]>
 	<!-->
-<html ng-app="stacksApp" class="">
+<html ng-app="stacksApp">
 <!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
 		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
 		<!--#include virtual="/_include/head.ssi" -->
 		<title>Avail - Library</title>
+		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="/about-avail/documentation/stacks/library-documentation/stacksApp.js"></script>
+		<script>
+			function myParent()
+			{
+				return window.parent;
+			}
+		</script>
 	</head>
 	<body ng-controller="CategoriesCntrl">
 		<div class="stacks-wrapper">
 	<h2 class="method-heading">Whenever_changes,⁇do_</h2>
-	<h4 class="method-section-header">Implementations:</h4>
+	<h4 class="method-section-header">Definitions:</h4>
 	<div class="method-section-content">
 		<div class="signature-heading">[]→any, [⊥]→⊤</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Observing</div>
 		<div class="category-list"><em>Categories:</em> Observing</div>
 		<div class="signature-description">
-			Enable <code>Track variables that are read before written</code>, then invoke <a href="#traceFunction-224004421">traceFunction</a>. For each <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1553968894.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1553968894.html">variable</a> dynamically reachable from <a href="#traceFunction-224004421">traceFunction</a> that was read before it is written, install a specialized <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Observing/2882738541.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Observing/2882738541.html">write reactor</a>. This write reactor will instigate a new trace of <a href="#traceFunction-224004421">traceFunction</a>, reinstall the specialized write reactor on the newly tracked variables, and compare the new result of <a href="#traceFunction-224004421">traceFunction</a> against its most recent successful result. If the results differ, then invoke <a href="#action-224004421">action</a>. Always invoke <a href="#action-224004421">action</a> after the initial trace.
+			Enable <code>Track variables that are read before written</code>, then invoke <a href="#traceFunction-224004421">traceFunction</a>. For each <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1553968894.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1553968894.html">variable</a> dynamically reachable from <a href="#traceFunction-224004421">traceFunction</a> that was read before it is written, install a specialized <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Observing/2882738541.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Observing/2882738541.html">write reactor</a>. This write reactor will instigate a new trace of <a href="#traceFunction-224004421">traceFunction</a>, reinstall the specialized write reactor on the newly tracked variables, and compare the new result of <a href="#traceFunction-224004421">traceFunction</a> against its most recent successful result. If the results differ, then invoke <a href="#action-224004421">action</a>. Always invoke <a href="#action-224004421">action</a> after the initial trace.
 		</div>
 		<table class="stacks">
 			<thead>
@@ -58,16 +66,16 @@
 				</tr>
 				<tr>
 					<th class="stacks i-row-label" colspan="2">Returns</th>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/741866010.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/741866010.html">⊤</a></td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/741866010.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/741866010.html">⊤</a></td>
 					<td class="stacks i-desc">
 						
 					</td>
 				</tr>
 					<th class="stacks i-row-label" colspan="2" rowspan="2">Raises</th>
 				<tr class="methodParameters">
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3361325705.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3361325705.html">exception</a></td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3361325705.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3361325705.html">exception</a></td>
 					<td class="stacks i-desc">
-						If <a href="#traceFunction-224004421">traceFunction</a> raises an <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3361325705.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3361325705.html">exception</a> during the initial trace. Subsequently, <a href="#traceFunction-224004421">traceFunction</a> will be invoked by <code>Observe_</code> as a consequence of evaluating the relevant write reactors.
+						If <a href="#traceFunction-224004421">traceFunction</a> raises an <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3361325705.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3361325705.html">exception</a> during the initial trace. Subsequently, <a href="#traceFunction-224004421">traceFunction</a> will be invoked by <code>Observe_</code> as a consequence of evaluating the relevant write reactors.
 					</td>
 				</tr>
 			</tbody>

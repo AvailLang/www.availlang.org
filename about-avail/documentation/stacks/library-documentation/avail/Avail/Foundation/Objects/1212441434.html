@@ -10,13 +10,21 @@
 <![endif]-->
 	<!--[if gt IE 8]>
 	<!-->
-<html ng-app="stacksApp" class="">
+<html ng-app="stacksApp">
 <!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
 		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
 		<!--#include virtual="/_include/head.ssi" -->
 		<title>Avail - Library</title>
+		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="/about-avail/documentation/stacks/library-documentation/stacksApp.js"></script>
+		<script>
+			function myParent()
+			{
+				return window.parent;
+			}
+		</script>
 	</head>
 	<body ng-controller="CategoriesCntrl">
 		<div class="stacks-wrapper">
@@ -33,39 +41,39 @@
 			<tbody>
 				<tr>
 					<td class="stacks g-code" rowspan="10">Argument 1</td>
-					<td class="stacks g-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/2437811379.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/2437811379.html">future</a></td>
+					<td class="stacks g-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/2437811379.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/2437811379.html">future</a></td>
 				</tr>
 				<tr>
-					<td class="stacks g-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Synchronization/4018549325.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Synchronization/4018549325.html">binary semaphore</a></td>
+					<td class="stacks g-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Synchronization/4018549325.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Synchronization/4018549325.html">binary semaphore</a></td>
 				</tr>
 				<tr>
-					<td class="stacks g-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Synchronization/1047109177.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Synchronization/1047109177.html">condition</a></td>
+					<td class="stacks g-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Synchronization/1047109177.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Synchronization/1047109177.html">condition</a></td>
 				</tr>
 				<tr>
-					<td class="stacks g-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Synchronization/2661399011.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Synchronization/2661399011.html">counting semaphore</a></td>
+					<td class="stacks g-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Synchronization/2661399011.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Synchronization/2661399011.html">counting semaphore</a></td>
 				</tr>
 				<tr>
-					<td class="stacks g-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Synchronization/494039638.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Synchronization/494039638.html">monitor</a></td>
+					<td class="stacks g-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Synchronization/494039638.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Synchronization/494039638.html">monitor</a></td>
 				</tr>
 				<tr>
-					<td class="stacks g-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Synchronization/1618589912.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Synchronization/1618589912.html">non-reentrant mutex</a></td>
+					<td class="stacks g-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Synchronization/1618589912.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Synchronization/1618589912.html">non-reentrant mutex</a></td>
 				</tr>
 				<tr>
-					<td class="stacks g-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Synchronization/3081733836.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Synchronization/3081733836.html">reentrant mutex</a></td>
+					<td class="stacks g-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Synchronization/3081733836.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Synchronization/3081733836.html">reentrant mutex</a></td>
 				</tr>
 				<tr>
-					<td class="stacks g-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Synchronization/1231705102.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Synchronization/1231705102.html">semaphore</a></td>
+					<td class="stacks g-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Synchronization/1231705102.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Synchronization/1231705102.html">semaphore</a></td>
 				</tr>
 				<tr>
-					<td class="stacks g-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Codecs/Abstract Codecs/2724950553.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Codecs/Abstract Codecs/2724950553.html">decoding iterator</a></td>
+					<td class="stacks g-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Codecs/Abstract Codecs/2724950553.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Codecs/Abstract Codecs/2724950553.html">decoding iterator</a></td>
 				</tr>
 				<tr>
-					<td class="stacks g-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Codecs/Abstract Codecs/3323708971.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Codecs/Abstract Codecs/3323708971.html">encoding iterator</a></td>
+					<td class="stacks g-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Codecs/Abstract Codecs/3323708971.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Codecs/Abstract Codecs/3323708971.html">encoding iterator</a></td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
-	<h4 class="method-section-header">Implementations:</h4>
+	<h4 class="method-section-header">Definitions:</h4>
 	<div class="method-section-content">
 		<div class="signature-heading">object's type, &lt;&lt;&lt;atom, boolean, any…|3>…|1..>…|0..1></div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Objects</div>
@@ -97,12 +105,12 @@
 					<td id="optional-583504869" class="stacks i-code">optional</td>
 					<td class="stacks i-code">&lt;&lt;&lt;atom, boolean, any…|3>…|1..>…|0..1></td>
 					<td class="stacks i-desc">
-						A tuple of field assignments. The outermost tuple may be empty (but only to support the case that <code class="method">objectType = object</code> ), but usually contains a single tuple of field assignments. A field assignment is a 3-tuple that consists of 1) an atom that uniquely identifies the field, 2) a boolean that is <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html">true</a> if the field is mutable and a variable should be created and initialized, and 3) the field value.
+						A tuple of field assignments. The outermost tuple may be empty (but only to support the case that <code class="method">objectType = object</code> ), but usually contains a single tuple of field assignments. A field assignment is a 3-tuple that consists of 1) an atom that uniquely identifies the field, 2) a boolean that is <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3212227552.html">true</a> if the field is mutable and a variable should be created and initialized, and 3) the field value.
 					</td>
 				</tr>
 				<tr>
 					<th class="stacks i-row-label" colspan="2">Returns</th>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3656672855.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3656672855.html">object</a></td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3656672855.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3656672855.html">object</a></td>
 					<td class="stacks i-desc">
 						The requested object type.
 					</td>
@@ -120,14 +128,14 @@
 		<table class="stacks">
 			<thead>
 				<tr>
-					<th class="transparent"scope="col"></th>
-					<th class="stacks i-col-label-narrow"scope="col">Type</th>
-					<th class="stacks i-col-label-wide"scope="col">Description</th>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<th class="stacks i-row-label"rowspan="3">Parameter Types</th>
+					<th class="stacks i-row-label" rowspan="3">Parameter Types</th>
 				</tr>
 				<tr class="methodParameters">
 <td id="object's type's type-549225521" class="stacks i-code">object's type's type</td>

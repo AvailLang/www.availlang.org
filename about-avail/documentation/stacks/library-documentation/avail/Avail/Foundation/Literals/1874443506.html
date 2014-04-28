@@ -10,24 +10,32 @@
 <![endif]-->
 	<!--[if gt IE 8]>
 	<!-->
-<html ng-app="stacksApp" class="">
+<html ng-app="stacksApp">
 <!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
 		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
 		<!--#include virtual="/_include/head.ssi" -->
 		<title>Avail - Library</title>
+		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="/about-avail/documentation/stacks/library-documentation/stacksApp.js"></script>
+		<script>
+			function myParent()
+			{
+				return window.parent;
+			}
+		</script>
 	</head>
 	<body ng-controller="CategoriesCntrl">
 		<div class="stacks-wrapper">
 	<h2 class="method-heading">$…</h2>
-	<h4 class="method-section-header">Implementations:</h4>
+	<h4 class="method-section-header">Definitions:</h4>
 	<div class="method-section-content">
 		<div class="signature-heading">literal token</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Literals</div>
 		<div class="category-list"><em>Categories:</em> Atoms, Constructors</div>
 		<div class="signature-description">
-			Construct an atom literal from an arbitrary token. The atom is obtained via <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2402682501.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2402682501.html">atom for_</a>, i.e., it is looked up using in the current module's context. If the token is a string literal, then use its value instead of its lexeme for the name of the atom.
+			Construct an atom literal from an arbitrary token. The atom is obtained via <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2402682501.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2402682501.html">atom for_</a>, i.e., it is looked up using in the current module's context. If the token is a string literal, then use its value instead of its lexeme for the name of the atom.
 		</div>
 		<table class="stacks">
 			<thead>
@@ -44,14 +52,14 @@
 				</tr>
 				<tr class="methodParameters">
 					<td id="aToken1659294416" class="stacks i-code">aToken</td>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1659294416.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1659294416.html">literal token</a></td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1659294416.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1659294416.html">literal token</a></td>
 					<td class="stacks i-desc">
 						An arbitrary literal token.
 					</td>
 				</tr>
 				<tr>
 					<th class="stacks i-row-label" colspan="2">Returns</th>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2846126569.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2846126569.html">atom</a></td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2846126569.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2846126569.html">atom</a></td>
 					<td class="stacks i-desc">
 						An atom.
 					</td>
@@ -62,7 +70,7 @@
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Literals</div>
 		<div class="category-list"><em>Categories:</em> Atoms, Constructors</div>
 		<div class="signature-description">
-			Construct an atom literal from an arbitrary token. The atom is obtained via <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2402682501.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2402682501.html">atom for_</a>, i.e., it is looked up using in the current module's context. The name of the atom is provided by the argument's lexeme.
+			Construct an atom literal from an arbitrary token. The atom is obtained via <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2402682501.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2402682501.html">atom for_</a>, i.e., it is looked up using in the current module's context. The name of the atom is provided by the argument's lexeme.
 		</div>
 		<table class="stacks">
 			<thead>
@@ -79,14 +87,14 @@
 				</tr>
 				<tr class="methodParameters">
 					<td id="aToken1262887179" class="stacks i-code">aToken</td>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1262887179.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1262887179.html">token</a></td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1262887179.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1262887179.html">token</a></td>
 					<td class="stacks i-desc">
 						An arbitrary token.
 					</td>
 				</tr>
 				<tr>
 					<th class="stacks i-row-label" colspan="2">Returns</th>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2846126569.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2846126569.html">atom</a></td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2846126569.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2846126569.html">atom</a></td>
 					<td class="stacks i-desc">
 						An atom.
 					</td>
@@ -104,14 +112,14 @@
 		<table class="stacks">
 			<thead>
 				<tr>
-					<th class="transparent"scope="col"></th>
-					<th class="stacks i-col-label-narrow"scope="col">Type</th>
-					<th class="stacks i-col-label-wide"scope="col">Description</th>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<th class="stacks i-row-label"rowspan="2">Parameter Types</th>
+					<th class="stacks i-row-label" rowspan="2">Parameter Types</th>
 				</tr>
 				<tr class="methodParameters">
 <td id="token's type2053087957" class="stacks i-code">token's type</td>

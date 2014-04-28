@@ -10,18 +10,26 @@
 <![endif]-->
 	<!--[if gt IE 8]>
 	<!-->
-<html ng-app="stacksApp" class="">
+<html ng-app="stacksApp">
 <!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
 		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
 		<!--#include virtual="/_include/head.ssi" -->
 		<title>Avail - Library</title>
+		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="/about-avail/documentation/stacks/library-documentation/stacksApp.js"></script>
+		<script>
+			function myParent()
+			{
+				return window.parent;
+			}
+		</script>
 	</head>
 	<body ng-controller="CategoriesCntrl">
 		<div class="stacks-wrapper">
 	<h2 class="method-heading">New test suite,⁇_,⁇extends_</h2>
-	<h4 class="method-section-header">Implementations:</h4>
+	<h4 class="method-section-header">Definitions:</h4>
 	<div class="method-section-content">
 		<div class="signature-heading">atom, atom</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Unit Testing/Definers</div>
@@ -44,34 +52,34 @@
 				</tr>
 				<tr class="methodParameters">
 					<td id="id716387810" class="stacks i-code">id</td>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2846126569.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2846126569.html">atom</a></td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2846126569.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2846126569.html">atom</a></td>
 					<td class="stacks i-desc">
 						The identifier of the test suite.
 					</td>
 				</tr>
 				<tr class="methodParameters">
 					<td id="parentID716387810" class="stacks i-code">parentID</td>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2846126569.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2846126569.html">atom</a></td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2846126569.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2846126569.html">atom</a></td>
 					<td class="stacks i-desc">
 						The identifier of the parent test suite. When a test suite is run, then all of its child test suites are also run (and their unit tests are treated as the parent's own).
 					</td>
 				</tr>
 				<tr>
 					<th class="stacks i-row-label" colspan="2">Returns</th>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/741866010.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/741866010.html">⊤</a></td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/741866010.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/741866010.html">⊤</a></td>
 					<td class="stacks i-desc">
 						
 					</td>
 				</tr>
 					<th class="stacks i-row-label" colspan="2" rowspan="4">Raises</th>
 				<tr class="methodParameters">
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Exceptions/3998708994.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Exceptions/3998708994.html">bad-argument exception</a></td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Exceptions/3998708994.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Exceptions/3998708994.html">bad-argument exception</a></td>
 					<td class="stacks i-desc">
 						If <a href="#id716387810">id</a> = <a href="#parentID716387810">parentID</a>.
 					</td>
 				</tr>
 				<tr class="methodParameters">
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Unit Testing/Types/317300400.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Unit Testing/Types/317300400.html">test-suite-already-exists exception</a></td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Unit Testing/Types/317300400.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Unit Testing/Types/317300400.html">test-suite-already-exists exception</a></td>
 					<td class="stacks i-desc">
 						If <a href="#id716387810">id</a> references an existing unit test suite.
 					</td>

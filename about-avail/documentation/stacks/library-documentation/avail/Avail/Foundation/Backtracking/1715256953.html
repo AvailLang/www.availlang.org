@@ -10,18 +10,26 @@
 <![endif]-->
 	<!--[if gt IE 8]>
 	<!-->
-<html ng-app="stacksApp" class="">
+<html ng-app="stacksApp">
 <!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
 		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
 		<!--#include virtual="/_include/head.ssi" -->
 		<title>Avail - Library</title>
+		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="/about-avail/documentation/stacks/library-documentation/stacksApp.js"></script>
+		<script>
+			function myParent()
+			{
+				return window.parent;
+			}
+		</script>
 	</head>
 	<body ng-controller="CategoriesCntrl">
 		<div class="stacks-wrapper">
 	<h2 class="method-heading">Try again</h2>
-	<h4 class="method-section-header">Implementations:</h4>
+	<h4 class="method-section-header">Definitions:</h4>
 	<div class="method-section-content">
 		<div class="signature-heading">		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Backtracking</div>
 		<div class="category-list"><em>Categories:</em> Backtracking, Control Structures</div>
@@ -39,20 +47,20 @@
 			<tbody>
 				<tr>
 					<th class="stacks i-row-label" colspan="1">Returns</th>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3936338731.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3936338731.html">⊥</a></td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3936338731.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3936338731.html">⊥</a></td>
 					<td class="stacks i-desc">
 						
 					</td>
 				</tr>
 					<th class="stacks i-row-label" colspan="1" rowspan="3">Raises</th>
 				<tr class="methodParameters">
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Backtracking/3730899449.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Backtracking/3730899449.html">no-backtracking-fence exception</a></td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Backtracking/3730899449.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Backtracking/3730899449.html">no-backtracking-fence exception</a></td>
 					<td class="stacks i-desc">
-						If <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Backtracking/1715256953.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Backtracking/1715256953.html">Try again</a> is not invoked from within a function governed by <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Backtracking/1190077622.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Backtracking/1190077622.html">Backtracking fence_</a>.
+						If <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Backtracking/1715256953.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Backtracking/1715256953.html">Try again</a> is not invoked from within a function governed by <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Backtracking/1190077622.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Backtracking/1190077622.html">Backtracking fence_</a>.
 					</td>
 				</tr>
 				<tr class="methodParameters">
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Backtracking/904820567.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Backtracking/904820567.html">no-checkpoint exception</a></td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Backtracking/904820567.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Backtracking/904820567.html">no-checkpoint exception</a></td>
 					<td class="stacks i-desc">
 						If no checkpoint has been set.
 					</td>

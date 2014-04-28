@@ -10,13 +10,21 @@
 <![endif]-->
 	<!--[if gt IE 8]>
 	<!-->
-<html ng-app="stacksApp" class="">
+<html ng-app="stacksApp">
 <!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
 		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
 		<!--#include virtual="/_include/head.ssi" -->
 		<title>Avail - Library</title>
+		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="/about-avail/documentation/stacks/library-documentation/stacksApp.js"></script>
+		<script>
+			function myParent()
+			{
+				return window.parent;
+			}
+		</script>
 	</head>
 	<body ng-controller="CategoriesCntrl">
 		<div class="stacks-wrapper">
@@ -33,18 +41,18 @@
 			<tbody>
 				<tr>
 					<td class="stacks g-code" rowspan="1">Argument 1</td>
-					<td class="stacks g-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early Tuples/3216719640.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early Tuples/3216719640.html">«_‡++»</a></td>
+					<td class="stacks g-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early Tuples/3216719640.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early Tuples/3216719640.html">«_‡++»</a></td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
-	<h4 class="method-section-header">Implementations:</h4>
+	<h4 class="method-section-header">Definitions:</h4>
 	<div class="method-section-content">
 		<div class="signature-heading">&lt;number…|></div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Tuples</div>
 		<div class="category-list"><em>Categories:</em> Tuples, Sorting</div>
 		<div class="signature-description">
-			Construct and answer a sorted variant of <a href="#numbers389159301">numbers</a> using the quicksort algorithm. <p> When overriding <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Tuples/2543539736.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Tuples/2543539736.html">quicksort_</a>, only target tuple types that contain at least two elements. Not only do the trivial cases of 0 and 1 elements have a simple universal implementation, the 0-element (i.e., empty tuple) case causes ambiguous resolution if multiple overrides exist that will accept it. </p>
+			Construct and answer a sorted variant of <a href="#numbers389159301">numbers</a> using the quicksort algorithm. <p> When overriding <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Tuples/2543539736.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Tuples/2543539736.html">quicksort_</a>, only target tuple types that contain at least two elements. Not only do the trivial cases of 0 and 1 elements have a simple universal implementation, the 0-element (i.e., empty tuple) case causes ambiguous resolution if multiple overrides exist that will accept it. </p>
 		</div>
 		<table class="stacks">
 			<thead>
@@ -98,14 +106,14 @@
 					<td id="strings1081700723" class="stacks i-code">strings</td>
 					<td class="stacks i-code">&lt;string…|></td>
 					<td class="stacks i-desc">
-						The <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3446388540.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3446388540.html">tuple</a> of strings to sort
+						The <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3446388540.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3446388540.html">tuple</a> of strings to sort
 					</td>
 				</tr>
 				<tr>
 					<th class="stacks i-row-label" colspan="2">Returns</th>
 					<td class="stacks i-code">&lt;string…|></td>
 					<td class="stacks i-desc">
-						A sorted <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3446388540.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3446388540.html">tuple</a> of strings
+						A sorted <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3446388540.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3446388540.html">tuple</a> of strings
 					</td>
 				</tr>
 			</tbody>
@@ -121,14 +129,14 @@
 		<table class="stacks">
 			<thead>
 				<tr>
-					<th class="transparent"scope="col"></th>
-					<th class="stacks i-col-label-narrow"scope="col">Type</th>
-					<th class="stacks i-col-label-wide"scope="col">Description</th>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<th class="stacks i-row-label"rowspan="2">Parameter Types</th>
+					<th class="stacks i-row-label" rowspan="2">Parameter Types</th>
 				</tr>
 				<tr class="methodParameters">
 <td id="tuple meta-56198623" class="stacks i-code">tuple meta</td>

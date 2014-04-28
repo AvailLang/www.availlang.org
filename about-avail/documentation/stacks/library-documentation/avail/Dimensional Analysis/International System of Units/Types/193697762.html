@@ -10,13 +10,21 @@
 <![endif]-->
 	<!--[if gt IE 8]>
 	<!-->
-<html ng-app="stacksApp" class="">
+<html ng-app="stacksApp">
 <!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
 		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
 		<!--#include virtual="/_include/head.ssi" -->
 		<title>Avail - Library</title>
+		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="/about-avail/documentation/stacks/library-documentation/stacksApp.js"></script>
+		<script>
+			function myParent()
+			{
+				return window.parent;
+			}
+		</script>
 	</head>
 	<body ng-controller="CategoriesCntrl">
 		<div class="stacks-wrapper">
@@ -26,7 +34,7 @@
 		<div class="category-list"><em>Categories:</em> Dimensional Analysis</div>
 	<div class="method-section-content">
 		<div class="signature-heading">
-			Supertypes: <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Dimensional Analysis/Core/2579944460.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Dimensional Analysis/Core/2579944460.html">unit</a>
+			Supertypes: <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Dimensional Analysis/Core/2579944460.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Dimensional Analysis/Core/2579944460.html">unit</a>
 		</div>
 		<div class="signature-description">
 			An SI unit defines a family that relates units that differ only by scale.
@@ -34,7 +42,7 @@
 		<table class="stacks">
 			<thead>
 				<tr>
-					<th class="Transparent" scope="col"></th>
+					<th class="Transparent"  scope="col"></th>
 					<th class="stacks i-col-label-narrow" scope="col">Name</th>
 					<th class="stacks i-col-label-narrow" scope="col">Type</th>
 					<th class="stacks i-col-label-wide" scope="col">Description</th>
@@ -48,7 +56,7 @@
 					<td id="scale factor193697762" class="stacks i-code">scale factor</td>
 					<td class="stacks i-code">integer</td>
 					<td class="stacks i-desc">
-						The power-of-10 by which <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Dimensional Analysis/Core/3305386234.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Dimensional Analysis/Core/3305386234.html">dimensioned quantities</a> are scaled.
+						The power-of-10 by which <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Dimensional Analysis/Core/3305386234.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Dimensional Analysis/Core/3305386234.html">dimensioned quantities</a> are scaled.
 					</td>
 				</tr>
 			</tbody>

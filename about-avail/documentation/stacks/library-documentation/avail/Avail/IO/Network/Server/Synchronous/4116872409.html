@@ -10,25 +10,33 @@
 <![endif]-->
 	<!--[if gt IE 8]>
 	<!-->
-<html ng-app="stacksApp" class="">
+<html ng-app="stacksApp">
 <!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
 		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
 		<!--#include virtual="/_include/head.ssi" -->
 		<title>Avail - Library</title>
+		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="/about-avail/documentation/stacks/library-documentation/stacksApp.js"></script>
+		<script>
+			function myParent()
+			{
+				return window.parent;
+			}
+		</script>
 	</head>
 	<body ng-controller="CategoriesCntrl">
 		<div class="stacks-wrapper">
 	<h2 class="method-heading">accept a new connection«named_»on_</h2>
-	<h4 class="method-section-header">Implementations:</h4>
+	<h4 class="method-section-header">Definitions:</h4>
 	<div class="method-section-content">
 		<div class="signature-heading">&lt;nonempty string…|0..1>, server socket</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/IO/Network/Server/Synchronous</div>
 		<div class="category-list"><em>Categories:</em> Unclassified</div>
 		<div class="signature-description">
 			Synchronously accept an incoming connection on the specified <code>server
-  socket</code>. Answer the resultant <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Network/Client/Primitives/4016232870.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Network/Client/Primitives/4016232870.html">client socket</a>.
+  socket</code>. Answer the resultant <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Network/Client/Primitives/4016232870.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Network/Client/Primitives/4016232870.html">client socket</a>.
 		</div>
 		<table class="stacks">
 			<thead>
@@ -52,14 +60,14 @@
 				</tr>
 				<tr class="methodParameters">
 					<td id="s-183449858" class="stacks i-code">s</td>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Network/Server/Primitives/1155003838.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Network/Server/Primitives/1155003838.html">server socket</a></td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Network/Server/Primitives/1155003838.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Network/Server/Primitives/1155003838.html">server socket</a></td>
 					<td class="stacks i-desc">
 						
 					</td>
 				</tr>
 				<tr>
 					<th class="stacks i-row-label" colspan="2">Returns</th>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Network/Client/Primitives/4016232870.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Network/Client/Primitives/4016232870.html">client socket</a></td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Network/Client/Primitives/4016232870.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Network/Client/Primitives/4016232870.html">client socket</a></td>
 					<td class="stacks i-desc">
 						The newly connected client socket.
 					</td>

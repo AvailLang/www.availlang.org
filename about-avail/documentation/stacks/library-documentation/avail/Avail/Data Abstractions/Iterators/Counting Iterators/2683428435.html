@@ -10,24 +10,32 @@
 <![endif]-->
 	<!--[if gt IE 8]>
 	<!-->
-<html ng-app="stacksApp" class="">
+<html ng-app="stacksApp">
 <!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
 		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
 		<!--#include virtual="/_include/head.ssi" -->
 		<title>Avail - Library</title>
+		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="/about-avail/documentation/stacks/library-documentation/stacksApp.js"></script>
+		<script>
+			function myParent()
+			{
+				return window.parent;
+			}
+		</script>
 	</head>
 	<body ng-controller="CategoriesCntrl">
 		<div class="stacks-wrapper">
 	<h2 class="method-heading">a counting iterator from_to_by_</h2>
-	<h4 class="method-section-header">Implementations:</h4>
+	<h4 class="method-section-header">Definitions:</h4>
 	<div class="method-section-content">
 		<div class="signature-heading">number, number, number</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Iterators/Counting Iterators</div>
 		<div class="category-list"><em>Categories:</em> Unclassified</div>
 		<div class="signature-description">
-			Construct and answer an <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/4289004446.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/4289004446.html">iterator</a> that lazily produces values between <a href="#start1889985679">start</a> and <a href="#end1889985679">end</a>. For each value <em>v</em> produced, there is some <em>n ∈ number</em> such that:<br><br> <code class="method">anIterator ::= a counting iterator from start to end by step;&lt;br> ...&lt;br> v ::= anIterator's current element;&lt;br> Assert: v = start + n × step;</code> <br><br> <p> Note that <a href="#end1889985679">end</a> is not guaranteed to be the last value produced by the iterator. It is only guaranteed that no larger values than <a href="#end1889985679">end</a> will be answered. </p>
+			Construct and answer an <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/4289004446.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/4289004446.html">iterator</a> that lazily produces values between <a href="#start1889985679">start</a> and <a href="#end1889985679">end</a>. For each value <em>v</em> produced, there is some <em>n ∈ number</em> such that:<br><br> <code class="method">anIterator ::= a counting iterator from start to end by step;&lt;br> ...&lt;br> v ::= anIterator's current element;&lt;br> Assert: v = start + n × step;</code> <br><br> <p> Note that <a href="#end1889985679">end</a> is not guaranteed to be the last value produced by the iterator. It is only guaranteed that no larger values than <a href="#end1889985679">end</a> will be answered. </p>
 		</div>
 		<table class="stacks">
 			<thead>
@@ -44,21 +52,21 @@
 				</tr>
 				<tr class="methodParameters">
 					<td id="first1889985679" class="stacks i-code">first</td>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3684374893.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3684374893.html">number</a></td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3684374893.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3684374893.html">number</a></td>
 					<td class="stacks i-desc">
 						The start value, inclusive. This is the first value that will be answered by the iterator.
 					</td>
 				</tr>
 				<tr class="methodParameters">
 					<td id="last1889985679" class="stacks i-code">last</td>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3684374893.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3684374893.html">number</a></td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3684374893.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3684374893.html">number</a></td>
 					<td class="stacks i-desc">
 						The end value, inclusive. If <a href="#delta1889985679">delta</a> ≥ 0, then no values larger than this will be answered by the iterator. If <a href="#delta1889985679">delta</a> < 0, then no values smaller than this will be answered by the iterator.
 					</td>
 				</tr>
 				<tr class="methodParameters">
 					<td id="delta1889985679" class="stacks i-code">delta</td>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3684374893.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3684374893.html">number</a></td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3684374893.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3684374893.html">number</a></td>
 					<td class="stacks i-desc">
 						The amount by which successive values anwered by the iterator will differ.
 					</td>
@@ -76,7 +84,7 @@
 		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Iterators/Counting Iterators</div>
 		<div class="category-list"><em>Categories:</em> Unclassified</div>
 		<div class="signature-description">
-			Construct and answer an <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/4289004446.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/4289004446.html">iterator</a> that lazily produces values between <a href="#start1889985679">start</a> and <a href="#end1889985679">end</a>. For each value <em>v</em> produced, there is some <em>n ∈ number</em> such that:<br><br> <code class="method">anIterator ::= a counting iterator from start to end by step;&lt;br> ...&lt;br> v ::= anIterator's current element;&lt;br> Assert: v = start + n × step;</code> <br><br> <p> Note that <a href="#end1889985679">end</a> is not guaranteed to be the last value produced by the iterator. It is only guaranteed that no larger values than <a href="#end1889985679">end</a> will be answered. </p>
+			Construct and answer an <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/4289004446.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/4289004446.html">iterator</a> that lazily produces values between <a href="#start1889985679">start</a> and <a href="#end1889985679">end</a>. For each value <em>v</em> produced, there is some <em>n ∈ number</em> such that:<br><br> <code class="method">anIterator ::= a counting iterator from start to end by step;&lt;br> ...&lt;br> v ::= anIterator's current element;&lt;br> Assert: v = start + n × step;</code> <br><br> <p> Note that <a href="#end1889985679">end</a> is not guaranteed to be the last value produced by the iterator. It is only guaranteed that no larger values than <a href="#end1889985679">end</a> will be answered. </p>
 		</div>
 		<table class="stacks">
 			<thead>
@@ -93,21 +101,21 @@
 				</tr>
 				<tr class="methodParameters">
 					<td id="first1889985679" class="stacks i-code">first</td>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3684374893.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3684374893.html">number</a></td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3684374893.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3684374893.html">number</a></td>
 					<td class="stacks i-desc">
 						The start value, inclusive. This is the first value that will be answered by the iterator.
 					</td>
 				</tr>
 				<tr class="methodParameters">
 					<td id="last1889985679" class="stacks i-code">last</td>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3684374893.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3684374893.html">number</a></td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3684374893.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3684374893.html">number</a></td>
 					<td class="stacks i-desc">
 						The end value, inclusive. If <a href="#delta1889985679">delta</a> ≥ 0, then no values larger than this will be answered by the iterator. If <a href="#delta1889985679">delta</a> < 0, then no values smaller than this will be answered by the iterator.
 					</td>
 				</tr>
 				<tr class="methodParameters">
 					<td id="delta1889985679" class="stacks i-code">delta</td>
-					<td class="stacks i-code"><a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3684374893.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3684374893.html">number</a></td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3684374893.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3684374893.html">number</a></td>
 					<td class="stacks i-desc">
 						The amount by which successive values anwered by the iterator will differ.
 					</td>

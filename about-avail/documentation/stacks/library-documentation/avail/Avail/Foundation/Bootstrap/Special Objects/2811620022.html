@@ -10,13 +10,21 @@
 <![endif]-->
 	<!--[if gt IE 8]>
 	<!-->
-<html ng-app="stacksApp" class="">
+<html ng-app="stacksApp">
 <!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
 		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
 		<!--#include virtual="/_include/head.ssi" -->
 		<title>Avail - Library</title>
+		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="/about-avail/documentation/stacks/library-documentation/stacksApp.js"></script>
+		<script>
+			function myParent()
+			{
+				return window.parent;
+			}
+		</script>
 	</head>
 	<body ng-controller="CategoriesCntrl">
 		<div class="stacks-wrapper">
@@ -26,10 +34,10 @@
 		<div class="category-list"><em>Categories:</em> Primitives, Types</div>
 	<div class="method-section-content">
 		<div class="signature-heading">
-			Supertypes: <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/535552415.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/535552415.html">nontype</a>
+			Supertypes: <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/535552415.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/535552415.html">nontype</a>
 		</div>
 		<div class="signature-description">
-			A set is an immutable, finite, unordered collection of distinct, homogeneous values, called members or elements. The number of elements is the cardinality of the set. Breaking this down: <ul> <li>Immutable means that the composition of a set is not subject to change. No operations are, or can be, defined to modify a set in any way; only operations that derive new sets from existing sets are expressible.</li> <li>Finite means that the cardinality of a set is never the value <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/209068288.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/209068288.html">∞</a>. To store a set in memory requires space proportional to its cardinality, and memory is clearly always finite. Additional limits to the practical cardinality of sets may be imposed by the implementation.</li> <li>Unordered means that the members of a set do not occur in any particular order. Any two sets with the same membership are therefore equal.</li> <li>Distinct means that a member occurs only once in the membership of a set. Thus a value is either a member of a set or it is not.</li> <li>Homogeneous means that the members of a set universally conform to a single most general type.</li> </ul> A literal set is expressed as a left curly bracket <code class="method">{</code> (U+007B), then a list of members separated by commas <code class="method">,</code> (U+002C), and finally a right curly bracket <code class="method">}</code> (U+007D). The empty set is written as <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4206419147.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4206419147.html">∅</a> (U+2205). The elements of a set need not be known statically. Sets are constructed with the method <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early Literals/2834648056.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early Literals/2834648056.html">{«_‡,»}</a>; there is no special built-in syntax for constructing sets. When the compiler can infer an instance type for each argument expression of a particular send of this message, then the semantic restriction is able to strengthen the result to an instance type, thereby according it the same force as a literal understood primitively by the compiler.
+			A set is an immutable, finite, unordered collection of distinct, homogeneous values, called members or elements. The number of elements is the cardinality of the set. Breaking this down: <ul> <li>Immutable means that the composition of a set is not subject to change. No operations are, or can be, defined to modify a set in any way; only operations that derive new sets from existing sets are expressible.</li> <li>Finite means that the cardinality of a set is never the value <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/209068288.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/209068288.html">∞</a>. To store a set in memory requires space proportional to its cardinality, and memory is clearly always finite. Additional limits to the practical cardinality of sets may be imposed by the implementation.</li> <li>Unordered means that the members of a set do not occur in any particular order. Any two sets with the same membership are therefore equal.</li> <li>Distinct means that a member occurs only once in the membership of a set. Thus a value is either a member of a set or it is not.</li> <li>Homogeneous means that the members of a set universally conform to a single most general type.</li> </ul> A literal set is expressed as a left curly bracket <code class="method">{</code> (U+007B), then a list of members separated by commas <code class="method">,</code> (U+002C), and finally a right curly bracket <code class="method">}</code> (U+007D). The empty set is written as <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4206419147.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4206419147.html">∅</a> (U+2205). The elements of a set need not be known statically. Sets are constructed with the method <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early Literals/2834648056.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early Literals/2834648056.html">{«_‡,»}</a>; there is no special built-in syntax for constructing sets. When the compiler can infer an instance type for each argument expression of a particular send of this message, then the semantic restriction is able to strengthen the result to an instance type, thereby according it the same force as a literal understood primitively by the compiler.
 		</div>
 	</div>
 

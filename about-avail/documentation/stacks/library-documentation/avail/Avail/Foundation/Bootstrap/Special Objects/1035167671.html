@@ -10,13 +10,21 @@
 <![endif]-->
 	<!--[if gt IE 8]>
 	<!-->
-<html ng-app="stacksApp" class="">
+<html ng-app="stacksApp">
 <!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
 		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
 		<!--#include virtual="/_include/head.ssi" -->
 		<title>Avail - Library</title>
+		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="/about-avail/documentation/stacks/library-documentation/stacksApp.js"></script>
+		<script>
+			function myParent()
+			{
+				return window.parent;
+			}
+		</script>
 	</head>
 	<body ng-controller="CategoriesCntrl">
 		<div class="stacks-wrapper">
@@ -26,11 +34,11 @@
 		<div class="category-list"><em>Categories:</em> Primitives, Types, Numbers</div>
 	<div class="method-section-content">
 		<div class="signature-heading">
-			Supertypes: <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3684374893.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3684374893.html">number</a>
+			Supertypes: <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3684374893.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3684374893.html">number</a>
 		</div>
 		<div class="signature-description">
 			A double — that is, an IEEE 754 double-precision floating point number — is an approximation of a real number. The representation uses 64 binary digits, hereinafter bits, organized as 1 sign bit, 52 bits of mantissa, and 11 bits of exponent. The sign bit distinguishes positive (sign bit = 0) and negative (sign bit = 1) values. The mantissa encodes the significant binary digits of the number. The exponent scales the mantissa by a particular power of 2. Finite double values range from <code class="method">-1.79769313486231570e+308</code> to <code class="method">1.79769313486231570e+308</code>. The closest to zero nonzero double values are <code class="method">±4.94065645841246544e-324</code>. Positive zero ({@code 0.0 }) and negative zero ({@code -0.0 }) are considered distinct. Infinities are supported, but indicate an overflow of representational limits (rather than <code class="method">±∞</code> ). Some encodings do not represent real values; such a value is a not-a-number ({@code NaN }). No two differing <code class="method">NaN</code> encodings are considered equal. This is a departure from a strict interpretation of IEEE 754. <p> In Avail, a literal double begins with one or more decimal digits, contains a full stop <code class="method">.</code> (U+002E) and fractional part, and optionally ends with exponential notation — an <code class="method">E</code> (U+0045) or <code class="method">e</code> (U+0065) followed by one or more decimal digits. </p>
-<p> Though <code class="method">double</code> numerically subsumes <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1103920896.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1103920896.html">float</a>, they are considered siblings because their values differ by internal representation. <code class="method">double</code> is not a supertype of <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1103920896.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1103920896.html">float</a>. No float value is also a double value, and no double value is also a float value. </p>
+<p> Though <code class="method">double</code> numerically subsumes <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1103920896.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1103920896.html">float</a>, they are considered siblings because their values differ by internal representation. <code class="method">double</code> is not a supertype of <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1103920896.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1103920896.html">float</a>. No float value is also a double value, and no double value is also a float value. </p>
 		</div>
 	</div>
 

@@ -10,13 +10,21 @@
 <![endif]-->
 	<!--[if gt IE 8]>
 	<!-->
-<html ng-app="stacksApp" class="">
+<html ng-app="stacksApp">
 <!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
 		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
 		<!--#include virtual="/_include/head.ssi" -->
 		<title>Avail - Library</title>
+		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="/about-avail/documentation/stacks/library-documentation/stacksApp.js"></script>
+		<script>
+			function myParent()
+			{
+				return window.parent;
+			}
+		</script>
 	</head>
 	<body ng-controller="CategoriesCntrl">
 		<div class="stacks-wrapper">
@@ -26,7 +34,7 @@
 		<div class="category-list"><em>Categories:</em> Unclassified</div>
 	<div class="method-section-content">
 		<div class="signature-heading">
-			Supertypes: <a ng-click="changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Graphs/Abstract Graphs/3920288383.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Graphs/Abstract Graphs/3920288383.html">graph exception</a>
+			Supertypes: <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Graphs/Abstract Graphs/3920288383.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Graphs/Abstract Graphs/3920288383.html">graph exception</a>
 		</div>
 		<div class="signature-description">
 			A no-such-vertex exception is raised when an operation inappropriately specifies a vertex not present in the target graph.
