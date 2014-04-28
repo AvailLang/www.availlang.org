@@ -1,0 +1,158 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+
+		<title>Modules - Feature Visibility</title>
+
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+<!--#include virtual="/_include/sh-head.ssi" -->
+
+<h2 class="content-title">Feature Visibility</h2>
+
+<p>Avail methods are very complex entities, potentially comprising many definitions, <a href="/about-avail/documentation/type-system/semantic-restrictions.html">semantic restrictions</a>, grammatical restrictions, and seals. In aggregate, these components are called <strong>method features</strong> (or just <strong>features</strong> for short).</p>
+
+<p>The accessibility of a method is controlled entirely by the <a href="./name-resolution.html">name resolution</a> process<sup><a href="#fn1">[1]</a></sup>: if it is possible to resolve a name to the <a href="/about-avail/documentation/type-system/types-atom.html">atom</a> associated with the method, then it is possible to invoke or override the method. But the ability to access a method does not imply the ability to access all of its features.</p>
+
+<p>A feature is available within a module's body if either of the following complex conditions are met:</p>
+
+<ol>
+<li>The name of the method is resolvable, the feature is defined within the body of the module, and the use of the feature occurs lexically after the definition of the feature.</li>
+<li>The name of the method is resolvable and the module imports, for <a href="./private-imports-section.html">private</a> or <a href="./extended-imports-section.html">public</a> use, directly or indirectly, the upstream module that defined the feature.</li>
+</ol>
+
+<p>The first condition is fairly straightforward, but the second condition warrants some elaboration. Consider the following quartet of modules, each of which overrides or sends <code class="method">"_added to_"</code>:</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+Module "Passive Number Adder"
+Uses "Avail"
+Names "_added to_"
+Body
+
+Method "_added to_" is
+[
+	a : number,
+	b : number
+|
+	b + a
+] : number;
+]]>
+</script></div></div>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+Module "Passive Integer Adder"
+Uses "Avail"
+Extends "Passive Number Adder"
+Body
+
+Method "_added to_" is
+[
+	a : integer,
+	b : integer
+|
+	b + a
+] : integer;
+]]>
+</script></div></div>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+Module "Passive String Adder"
+Uses "Avail", "Passive Number Adder"
+Body
+
+Method "_added to_" is
+[
+	a : string,
+	b : string
+|
+	b ++ a
+] : string;
+]]>
+</script></div></div>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+Module "Adder User"
+Uses "Avail", "Passive Integer Adder", "Passive String Adder"
+Body
+
+x : number := 13 added to 7;
+y : string := "last" added to "first";
+z : integer := 5 added to 3;
+]]>
+</script></div></div>
+
+<p>To the right is a pictorial description of the dependency graph of the modules (including one that will be introduced below). The solid line represents an import through an extended imports section. The dashed lines represent imports through private imports sections.</p>
+
+<p><code class="module">Passive Number Adder</code> introduces and exports <code class="method">"_added to_"</code>. It also provides the initial definition, one that accepts two <code><a href="/about-avail/documentation/type-system/types-number.html">number</a></code>s and answers their sum as a <code>number</code>. Call this definition <code>D<sub>0</sub></code>.</p>
+<p><code class="module">Passive Integer Adder</code> imports and re-exports everything from <code class="module">Passive Number Adder</code>, and also adds a definition that specializes <code class="method">"_added to_"</code> to answer an <code><a href="/about-avail/documentation/type-system/types-extended-integer.html">integer</a></code> when the arguments are <code>integer</code>s. Call this definition <code>D<sub>1</sub></code>.</p>
+
+<div class="scrolling" style="float: right">
+<iframe src="/_images/modules/feature-visibility.svg" style="margin: auto" seamless></iframe>
+</div>
+
+<p><code class="module">Passive String Adder</code> imports from <code class="module">Passive Number Adder</code>, and adds a definition that operates on <code><a href="/about-avail/documentation/type-system/types-string.html">string</a></code>s, but does not re-export anything. Call this definition <code>D<sub>2</sub></code>.</p>
+
+<p><code class="module">Adder User</code> imports from both <code class="module">Passive Integer Adder</code> and <code class="module">Passive String Adder</code>. Its body includes three sends of <code class="method">"_added to_"</code>, one for each of the definitions <code>D<sub>0</sub></code>, <code>D<sub>1</sub></code>, and <code>D<sub>2</sub></code>, introduced in <code class="module">Passive Number Adder</code>, <code class="module">Passive Integer Adder</code>, and <code class="module">Passive String Adder</code>, respectively.</p>
+
+<p><code>D<sub>1</sub></code> is visible because <em>1)</em> <code class="method">"_added to_"</code> is <a href="./name-resolution.html">resolvable</a> (thanks to <code class="module">Passive Integer Adder</code> re-exporting <code class="module">Passive Number Adder</code>) and <em>2)</em> <code class="module">Adder User</code> imports <code class="module">Passive Integer Adder</code>.</p>
+
+<p><code>D<sub>2</sub></code> is visible because <em>1)</em> <code class="method">"_added to_"</code> is resolvable and <em>2)</em> <code class="module">Adder User</code> imports <code class="module">Passive String Adder</code>.</p>
+
+<p><code>D<sub>0</sub></code> is the most complex case. <code class="method">"_added to_"</code> is resolvable, so the precondition of method visibility is satisfied. But none of <code class="module">Adder User</code>'s import targets introduce this definition. The definition is nonetheless visible because it is visible in an upstream module. In this case, <code>D<sub>0</sub></code> is visible in each of <code class="module">Passive Number Adder</code>, <code class="module">Passive Integer Adder</code>, and <code class="module">Passive String Adder</code>, all of which are upstream of <code class="module">Adder User</code>.</p>
+
+<p>Now consider a final example:</p>
+
+<div class="restricted-width-container">
+<div class="bad-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 33">
+<![CDATA[
+Module "Bad Adder User"
+Uses "Avail", "Passive Number Adder", "Passive String Adder"
+Body
+
+x : number := 13 added to 7;
+y : string := "last" added to "first";
+z : integer := 5 added to 3;
+]]>
+</script></div></div>
+
+<p><code class="module">Bad Adder User</code> imports from <code class="module">Passive Number Adder</code> and <code class="module">Passive String Adder</code>. Its body includes the same three sends of <code class="method">"_added to_"</code> that <code class="module">Adder User</code> included. But only <code>D<sub>0</sub></code> and <code>D<sub>2</sub></code> are visible. The invocation of <code>D<sub>1</sub></code> on <strong>line 39</strong> is incorrect, as <code>D<sub>1</sub></code> is not visible &mdash; because <code class="module">Passive Integer Adder</code> is not upstream of <code class="module">Bad Adder User</code>.</p>
+
+<hr/>
+
+<p><small><a id="fn1">[1]</a> This is 99% true. Avail sports an extremely powerful reflective model, but balances it against sincerity of privacy. It is not possible to obtain through reflection access to a method that you could not have resolved at compile time. It is, however, possible to define a method <code>M</code> that resolves names to local methods, and then export <code>M</code> for use by downstream modules. In this way, it is possible for a module to gain access to a method that it cannot resolve directly &mdash; but the programmer has to specifically design this capability into the software.</small></p>
+
+<table class="book-nav">
+	<tr>
+		<td class="book-nav-back"><a class="book-nav-back" href="./name-resolution.html">‹ Name Resolution</a></td>
+		<td class="book-nav-spacer">|</td>
+		<td class="book-nav-up"><a class="book-nav-up" href="./index.html">Return to Modules</a></td>
+		<td class="book-nav-spacer">|</td>
+		<td class="book-nav-forward"><a class="book-nav-forward" href="./module-life-cycle.html">Module Life Cycle ›</a></td>
+	</tr>
+</table>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+<!--#include virtual="/_include/sh-bottom.ssi" -->
+
+	</body>
+
+</html>
