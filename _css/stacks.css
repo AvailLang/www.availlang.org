@@ -78,12 +78,24 @@ body {
 
 h2.pane-heading 
 {
-	height: 35;
+	height: 40px;
 	font-size: 14px;
 	font-weight: bold;
 	text-align: center;
 	color: white;
-	background-color:#2B5545; 
+	background-color:#1c553f; 
+	padding: 8px;
+	margin: 0px !important;
+}
+
+h4.section-heading 
+{
+	height: 40px;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	color: black;
+	background-color:#1c553f; 
 	padding: 8px;
 	margin: 0px !important;
 }
@@ -91,12 +103,50 @@ h2.pane-heading
 
 h2.pane-heading-right
 {
-	height: 35;
+	height: 40px;
 	font-size: 14px;
 	font-weight: bold;
 	text-align: right;
 	color: white;
-	background-color:#2B5545; 
+	background-color:#1c553f; 
+	padding: 8px;
+	margin: 0px !important;
+}
+
+.pane-heading-right
+{
+	height: 40px;
+	font-family: 'Raleway', sans-serif;
+	margin-bottom: 11px;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: right;
+	color: white;
+	background-color:#1c553f; 
+	padding: 8px;
+	margin: 0px !important;
+}
+
+div.frame-heading
+{
+	height: 40px;
+	font-size: 14px;
+	font-weight: bold;
+	color: white;
+	background-color:#1c553f; 
+	padding: 8px;
+	margin: 0px !important;
+}
+
+
+h2.pane-heading-left
+{
+	height: 40px;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: left;
+	color: white;
+	background-color:#1c553f; 
 	padding: 8px;
 	margin: 0px !important;
 }
@@ -118,13 +168,13 @@ a.method-link
 
 .pane-filter {
 	padding: 4px;
-	height: 25;
+	height: 25px;
 }
 
 
 .pane-contents {
 	padding: 4px;
-	height: calc(100% - 35px - 8px - 25px - 7px);
+	height: calc(100% - 40px);
 	overflow: scroll;
 }
 
@@ -339,10 +389,3 @@ td.s-desc
 	background-color: #EEEEEE;
 	width: 100%;
 }
-
-
-
-
-Todd L Smith
-CEO | The Avail Foundation, LLC
-+1 (608) 335-0892 | http://www.availlang.org
