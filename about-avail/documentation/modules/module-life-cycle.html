@@ -36,7 +36,7 @@
 
 <dl>
 <dt><em><a id="workbench">Launch the Avail workbench.</a></em></dt>
-<dd>The entire process begins when the programmer launches the workbench. Running the workbench, or some other Avail development environment, are prerequisites for Avail development. When the workbench begins, no modules have been loaded into the Avail run-time system. This means that no code is present and no commands can be issued.</dd>
+<dd>The entire process begins when the programmer launches the workbench. Running the workbench, or some other Avail development environment, is a prerequisite for Avail development. When the workbench begins, no modules have been loaded into the Avail run-time system. This means that no code is present and no commands can be issued.</dd>
 
 <dt class="life-cycle"><em><a id="edit">Edit some source modules.</a></em></dt>
 <dd>The programmer edits some modules using her favorite editor. After she is ready to try her changes, she saves the files and then <a href="#activate">activates</a> a modified module (or a module that is downstream of one that she has changed).</dd>
@@ -108,7 +108,7 @@
 <dd>Determine the appropriate binary module repository, based on the ancestor's enclosing module root, and store the binary module created by <a href="#compile">compilation</a> into it. This will speed up subsequent activations of the ancestor, even across an exit and restart of the workbench. Then <a href="#moreAncestors">determine</a> whether there are more modules in the activation queue.</dd>
 
 <dt class="life-cycle"><em><a id="moreAncestors">Are there still modules in the activation queue?</a></em></dt>
-<dd>If there are still modules in the activation queue, then then <a href="#nextAncestor">dequeue the next one</a>. If not, then activation has <a href="#success">succeeded</a>: the selected module and all of its ancestors have been activated.</dd>
+<dd>If there are still modules in the activation queue, then <a href="#nextAncestor">dequeue the next one</a>. If not, then activation has <a href="#success">succeeded</a>: the selected module and all of its ancestors have been activated.</dd>
 
 <dt class="life-cycle"><em><a id="success">The selected module has been activated.</a></em></dt>
 <dd>The selected module and its ancestors have been activated. Their services are now available to future downstream modules, and their entry points are ready to be run. The programmer can now interact with the Avail run-time system to her heart's content. When she is satisfied, then she can go back to <a href="#edit">creating or editing</a> source modules.</dd>
