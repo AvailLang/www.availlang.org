@@ -30,7 +30,10 @@
 
 <p>Playing the game should look something like this:</p>
 
-<img src="/_images/examples/guess-the-number/transcript.png" alt="A sample transcript of &quot;Play guess a number between_and_&quot;."/>
+<figure class="full-line-screenshot">
+    <img src="/_images/examples/guess-the-number/transcript.png" alt="A sample transcript of &quot;Play guess a number between_and_&quot;."/>
+    <figcaption>The Avail workbench after running <code>"Play guess a number between_and_"</code>.</figcaption>
+</figure>
 
 <p><small>(N.B.: <span style="font-variant: small-caps">Real Programming</span> is not really a trade mark. At least&hellip; it had better not be!)</small></p>
 
@@ -314,8 +317,10 @@ Private method "comment for_tries given a range of_" is
 
 <p>Well&hellip; What happens if the user supplies perverse values to <code>"Play guess a number between_and_"</code>? It says that it requires its arguments to be <code>integer</code>s, so we don't expect to be able to build a command with totally inappropriate arguments. Let's see what happens if we try.</p>
 
-<img src="/_images/examples/guess-the-number/bad-arguments.png" alt="Attempting to &quot;Play guess a number between_and_&quot;. with Flintstones."/>
-
+<figure class="full-line-screenshot">
+    <img src="/_images/examples/guess-the-number/bad-arguments.png" alt="Attempting to &quot;Play guess a number between_and_&quot;. with Flintstones."/>
+    <figcaption>An erroneous send of <code>"Play guess a number between_and_"</code>.</figcaption>
+</figure>
 <p>See? The compiler handily defeated our puerile attempt at flippancy. So we'll just have to try harder to break the program. How about we run the command with a <code>minimum</code> that is larger than the <code>maximum</code>? The parameter declarations just say that the arguments have to be integers, not that the first one has to be smaller than the second one. In fact, there isn't any way to define the parameter types to express this idea short of resorting to explicit ranges like <code>[50..100]</code> and <code>[200..300]</code>. But we can see that a command like <code class="command">Play guess a number between 20 and 10</code> is stupid, so what can we do about it?</p>
 
 <p>There are many approaches to dealing with this issue, but I've chosen to showcase one that is unique to Avail. Let's make the compiler itself reject a command whose minimum and maximum are reversed.</p>
@@ -353,7 +358,10 @@ Semantic restriction "Play guess a number between_and_" is
 
 <p>So let's concentrate on the conditional. <strong>Line 118</strong> asks if the lower bound of <code>minimumType</code> is greater than the upper bound of <code>maximumType</code>. If so, then there is no instance of <code>minimumType</code> that is smaller than any instance of <code>maximumType</code>. When that is the case, then it is guaranteed that the user is trying to supply the arguments in the wrong order. <strong>Lines 120-121</strong> use <code>"Reject parse,expected:_"</code> to instruct the compiler to reject the parse of this call site. The compiler records the supplied message to report if and only if it should later decide to terminate the exploration of a top-level statement's meaning because every possible parse was invalid in some way. If the compiler does decide to abandon the parse, then this message will be issued when the compiler's error report is printed. Since this semantic restriction will only run on commands that represent external call sites of <code>"Play guess a number between_and_"</code>, our custom parse rejection is pretty much guaranteed to show up. If that was a whole lot of technobabble, then hopefully a screenshot will clear things up:</p>
 
-<img src="/_images/examples/guess-the-number/parse-rejected.png" alt="Attempting to &quot;Play guess a number between_and_&quot; with the arguments reversed."/>
+<figure class="full-line-screenshot">
+    <img src="/_images/examples/guess-the-number/parse-rejected.png" alt="Attempting to &quot;Play guess a number between_and_&quot; with the arguments reversed."/>
+    <figcaption>Another erroneous send of <code>"Play guess a number between_and_"</code>.</figcaption>
+</figure>
 
 <p>See? A picture really is worth a thousand words. Well, a thousand of <em>my</em> words, anyway&hellip;</p>
 
