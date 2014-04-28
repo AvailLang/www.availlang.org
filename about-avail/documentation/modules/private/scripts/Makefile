@@ -8,6 +8,7 @@ TARGETDIR = ../../../../../_images/modules/
 
 SVGS=\
 feature-visibility.svg \
+module-life-cycle.svg \
 module-resolution.svg \
 name-resolution.svg \
 upstream-downstream.svg

@@ -1,0 +1,273 @@
+strict digraph "Module Life Cycle"
+{
+	compound="true";
+	label="The module life cycle.";
+	labelloc="bottom";
+	labeljust="center";
+	fontname="Helvetica";
+	fontsize="10";
+	fontcolor="#000000";
+	rankdir="TB";
+
+	node
+	[
+		shape="box",
+		fontname="Helvetica",
+		fontsize="10",
+		fontcolor="#0000A0",
+		target="_top"
+	];
+	edge
+	[
+		fontname="Helvetica",
+		fontsize="9",
+		fontcolor="#808080"
+	];
+
+	subgraph cluster_programmer
+	{
+		label="Programmer Actions";
+		style="filled";
+		color="#e8e8e8";
+
+		node
+		[
+			style="filled",
+			fillcolor="#ffffff"
+		];
+
+		edit
+		[
+			label="Edit\nModule",
+			tooltip="The programmer edits the source module, to fix a bug, enhance or add a feature, extend an API, etc.",
+			href="/about-avail/documentation/modules/module-life-cycle.html#edit"
+		];
+		workbench
+		[
+			label="Launch\nWorkbench",
+			tooltip="The programmer launches the Avail workbench in order to develop and test the module.",
+			shape="ellipse",
+			href="/about-avail/documentation/modules/module-life-cycle.html#workbench"
+		];
+		activate
+		[
+			label="Activate\nModule",
+			tooltip="The programmer activate the module by double-clicking it in the Avail workbench. The process begins by unloading any modules that have changed (and their descendents) since the last activation.",
+			href="/about-avail/documentation/modules/module-life-cycle.html#activate"
+		];
+
+		{rank="source"; edit -> activate;}
+		workbench -> activate;
+	}
+
+	subgraph unloading
+	{
+		label="Unloading Phase";
+
+		anyLoaded
+		[
+			label="Any\nLoaded\nModules?",
+			tooltip="Are there any modules loaded already? If so, then scan through these (in parallel), determining which ones need to be unloaded.",
+			shape="diamond",
+			href="/about-avail/documentation/modules/module-life-cycle.html#anyLoaded"
+		];
+		moreLoaded
+		[
+			label="More Loaded\nModules?",
+			tooltip="Are there any more loaded modules that have not yet been checked?",
+			shape="diamond",
+			href="/about-avail/documentation/modules/module-life-cycle.html#moreLoaded"
+		];
+		nextLoaded
+		[
+			label="Next\nLoaded",
+			tooltip="Proceed to the next loaded module.",
+			href="/about-avail/documentation/modules/module-life-cycle.html#nextLoaded"
+		];
+		modified
+		[
+			label="Modified\nContent?"
+			tooltip="Use the module's timestamp and content hash to determine if it has changed since it was loaded.",
+			shape="diamond",
+			href="/about-avail/documentation/modules/module-life-cycle.html#modified"
+		];
+		dirty
+		[
+			label="Mark\nDirty",
+			tooltip="Mark the module as dirty and place it into the dirty queue.",
+			href="/about-avail/documentation/modules/module-life-cycle.html#dirty"
+		];
+		anyDirty
+		[
+			label="Any\nDirty?",
+			tooltip="Are there any modules in the dirty queue?",
+			shape="diamond",
+			href="/about-avail/documentation/modules/module-life-cycle.html#anyDirty"
+		];
+		moreDirty
+		[
+			label="More\nDirty?",
+			tooltip="Are there more dirty modules in the dirty queue?",
+			shape="diamond",
+			href="/about-avail/documentation/modules/module-life-cycle.html#moreDirty"
+		];
+		nextDirty
+		[
+			label="Next\nDirty",
+			tooltip="Extract a module from the dirty queue.",
+			href="/about-avail/documentation/modules/module-life-cycle.html#nextDirty"
+		];
+		dirtyChildren
+		[
+			label="Dirty\nChildren",
+			tooltip="Mark every immediate dependent (direct importer) of the module as dirty. Place onto the dirty queue those that have never been placed there before.",
+			href="/about-avail/documentation/modules/module-life-cycle.html#dirtyChildren"
+		];
+		sortUnload
+		[
+			label="Sort\nDirty",
+			tooltip="Sort all dirty modules into reverse topological order, i.e. modules are processed from downstream to upstream.",
+			href="/about-avail/documentation/modules/module-life-cycle.html#sortUnload"
+		];
+		moreUnload
+		[
+			label="More\nDirty?",
+			tooltip="Are there more dirty modules to unload?",
+			shape="diamond",
+			href="/about-avail/documentation/modules/module-life-cycle.html#moreUnload"
+		];
+		nextUnload
+		[
+			label="Next\nDirty",
+			tooltip="Proceed to the next dirty module in the established topological order.",
+			href="/about-avail/documentation/modules/module-life-cycle.html#nextUnload"
+		];
+		unload
+		[
+				label="Unload",
+				tooltip="Since the dirty module has no dependents loaded anymore, it is safe to unload it.",
+			href="/about-avail/documentation/modules/module-life-cycle.html#unload"
+		];
+
+		activate -> anyLoaded;
+		anyLoaded -> nextLoaded [label=" yes"];
+		moreLoaded -> nextLoaded [label=" yes"];
+		moreLoaded -> anyDirty [label=" no"];
+		nextLoaded -> modified;
+		modified -> dirty [label=" yes"];
+		modified -> moreLoaded [label=" no"];
+		dirty -> moreLoaded;
+		anyDirty -> nextDirty [label=" yes"];
+		moreDirty -> nextDirty [label=" yes"];
+		moreDirty -> sortUnload [label=" no"];
+		nextDirty -> dirtyChildren;
+		dirtyChildren -> moreDirty;
+		sortUnload -> nextUnload;
+		moreUnload -> nextUnload [label=" yes"];
+		nextUnload -> unload;
+		unload -> moreUnload;
+	}
+
+	subgraph loading
+	{
+		label="Loading Phase";
+
+		trace
+		[
+			label="Trace\nAncestors",
+			tooltip="The system traces the activated module to determine its ancestry, i.e., all upstream modules. These will be explored in reverse topological order, starting at the activating module and working upstream. Then they are sorted into topological order, starting at modules without ancestors and working downstream toward the activated module. The process is aborted if any ancestral module headers contain errors.",
+			style="filled",
+			fillcolor="#87cefa",
+			href="/about-avail/documentation/modules/module-life-cycle.html#trace"
+		];
+		moreAncestors
+		[
+			label="More\nAncestors?",
+			tooltip="Are there more ancestors in the established topological order? This includes the activated module itself, which is processed last.",
+			shape="diamond",
+			href="/about-avail/documentation/modules/module-life-cycle.html#moreAncestors"
+		];
+		nextAncestor
+		[
+			label="Next\nAncestor",
+			tooltip="Proceed using the next ancestor in the established topological order.",
+			href="/about-avail/documentation/modules/module-life-cycle.html#nextAncestor"
+		];
+		isLoaded
+		[
+			label="Is\nLoaded?",
+			tooltip="Is the ancestor loaded? If so, then nothing in its own ancestry could have changed.",
+			shape="diamond",
+			href="/about-avail/documentation/modules/module-life-cycle.html#isLoaded"
+		];
+		isCompiled
+		[
+			label="Is\nCompiled?",
+			tooltip="Use the source module's timestamp and content hash to determine if the binary module repository contains a suitable compiled binary.",
+			href="/about-avail/documentation/modules/module-life-cycle.html#isCompiled"
+		];
+		load
+		[
+			label="Load\nBinary",
+			tooltip="Load the appropriate compilation of the module from a binary module repository. The process is aborted if this fails.",
+			style="filled",
+			fillcolor="#87cefa",
+			href="/about-avail/documentation/modules/module-life-cycle.html#load"
+		];
+		compile
+		[
+			label="Compile\nSource",
+			tooltip="Compile the source module. The process is aborted if this fails.",
+			style="filled",
+			fillcolor="#87cefa",
+			href="/about-avail/documentation/modules/module-life-cycle.html#compile"
+		];
+		persist
+		[
+			label="Persist\nBinary",
+			tooltip="Write the new compiled binary into the appropriate binary module repository.",
+			href="/about-avail/documentation/modules/module-life-cycle.html#persist"
+		];
+
+		anyDirty -> trace [label=" no"];
+		anyLoaded -> trace [label=" no"];
+		moreUnload -> trace [label=" no"];
+		trace -> nextAncestor [label="ok"];
+		moreAncestors -> nextAncestor [label=" yes"];
+		nextAncestor -> isLoaded;
+		isLoaded -> moreAncestors [label=" yes"];
+		isLoaded -> isCompiled [label=" no"];
+		isCompiled -> load [label=" yes"];
+		isCompiled -> compile [label=" no"];
+		load -> moreAncestors [label="ok"];
+		compile -> persist [label="ok"];
+		persist -> moreAncestors;
+	}
+
+	failure
+	[
+		label="Failure",
+		tooltip="Activation failed.",
+		shape="ellipse",
+		style="filled",
+		fillcolor="#e41e1e",
+		fontcolor="#ffffff",
+		href="/about-avail/documentation/modules/module-life-cycle.html#failure"
+	];
+	success
+	[
+		label="Success",
+		tooltip="Activation succeeded.",
+		shape="ellipse",
+		style="filled",
+		fillcolor="#33ff99",
+		href="/about-avail/documentation/modules/module-life-cycle.html#success"
+	];
+
+	trace -> failure [label="error"];
+	load -> failure [label="error"];
+	compile -> failure [label="error"];
+	moreAncestors -> success [label=" no"];
+	failure -> edit;
+	success -> edit;
+}

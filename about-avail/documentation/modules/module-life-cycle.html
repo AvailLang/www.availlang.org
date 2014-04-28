@@ -1,0 +1,97 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+
+		<title>Modules - Module Life Cycle</title>
+		<style>
+		.life-cycle
+		{
+			margin-top: 20px;
+		}
+		</style>
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+<!--#include virtual="/_include/sh-head.ssi" -->
+
+<h2 class="content-title">Module Life Cycle</h2>
+
+<p>If you have followed this series since the <a href="./introduction.html">beginning</a>, then you have a very good understanding of modules by now. You know what they contain, how they are discovered, how they relate to one another, and so forth. But how does a module become active in the first place? What is the path that a module follows from inception to activation?</p>
+
+<p>Let us now turn our attention to the final topic in this trail, the <strong>module life cycle</strong>, which we will consider relative to development using the <a href="/about-avail/documentation/workbench.html">Avail workbench</a><sup><a href="#fn1">[1]</a></sup>. Please turn your attention to the <em>bottom</em> of the following diagram. <small>(Warning! Unless your display is 3 meters high, then very likely you will need to scroll down&hellip;)</small></p>
+
+<div class="scrolling">
+<iframe src="/_images/modules/module-life-cycle.svg" style="margin: auto" seamless></iframe>
+</div>
+
+<dl>
+<dt><em><a id="workbench">Launch the Avail workbench.</a></em></dt>
+<dd>The entire process begins when the programmer launches the workbench. Running the workbench, or some other Avail development environment, are prerequisites for Avail development. When the workbench begins, no modules have been loaded into the Avail run-time system. This means that no code is present and no commands can be issued.</dd>
+
+<dt class="life-cycle"><em><a id="edit">Edit some source modules.</a></em></dt>
+<dd>The programmer edits some modules using her favorite editor. After she is ready to try her changes, she saves the files and then <a href="#activate">activates</a> a modified module (or a module that is downstream of one that she has changed).</dd>
+
+<dt class="life-cycle"><em><a id="activate">Activate a module from one of the tree views.</a></em></dt>
+<dd>When the programmer is ready to run Avail code or attempt to compile some newly changed modules, then she uses one of the two tree views to select a module for activation. This is an extremely complex process for the system, but very simple for the programmer &mdash; as long as she understands roughly what is happening.</dd>
+
+<dt class="life-cycle"><em><a id="anyLoaded">Are any modules loaded already?</a></em></dt>
+<dd>Immediately upon <a href="#activate">activating</a> a module, the system must decide how to proceed based upon whether any modules are already loaded. The system may need to unload these before the selected module can be fully activated. If modules are already loaded, then the system <a href="#nextLoaded">examines</a> them in arbitrary order<sup><a href="#fn2">[2]</a></sup> to see if their corresponding source modules have <a href="#modified">changed</a> since they were loaded. If no modules are loaded, then the system begins <a href="#trace">tracing</a> the dependencies of the selected module.</dd>
+
+<dt class="life-cycle"><em><a id="nextLoaded">Begin processing the next loaded module.</a></em></dt>
+<dd>There are still loaded modules that have not been processed yet, so begin <a href="#modified">processing</a> the next one.</dd>
+
+<dt class="life-cycle"><em><a id="modified">Has this loaded module been modified since it was loaded?</a></em></dt>
+<dd>The programmer may have changed the source for this module since it was loaded, so determine whether this is the case. The system first checks the last modification time of the source module. If the last modification time equals the previous value (if any) recorded for this module, then the system assumes that the source module has not changed. If the last modification time is different, then produce a <a class="offsite" href="http://en.wikipedia.org/wiki/Cryptographic_hash_function">cryptographic hash</a> of the source module's content. If this hash matches the one associated with the loaded module, then the system assumes that the source module has not changed.<sup><a href="#fn3">[3]</a></sup> If the source module has not changed, then ignore it; <a href="#moreLoaded">see</a> if there are more loaded modules to process. If the source module has changed, then <a href="#dirty">mark it as "dirty"</a> and place it into a queue of dirty loaded modules.</dd>
+
+<dt class="life-cycle"><em><a id="dirty">Mark this module as "dirty".</a></em></dt>
+<dd>The loaded module has <a href="#modified">changed</a> since it was loaded, so mark it as "dirty" and enqueue it for processing by a <a href="#anyDirty">subsequent phase</a>.</dd>
+
+<dt class="life-cycle"><em><a id="moreLoaded">Are there still loaded modules to process?</a></em></dt>
+<dd>If there are still loaded modules to process, then <a href="#nextLoaded">move on to the next one</a>. If not, then <a href="#anyDirty">determine</a> whether the queue of dirty loaded modules contains anything.</dd>
+
+<dt class="life-cycle"><em><a id="anyDirty">Are there any loaded modules in the "dirty" queue?</a></em></dt>
+<dd>If there are any loaded modules in the "dirty" queue, then it will be necessary to <a href="#unload">unload</a> these modules (and their downstream dependents) and <a href="#load">reload</a> or <a href="#compile">recompile</a> them.</dd>
+
+<dt class="life-cycle"><em><a id="nextDirty">Begin processing the next loaded module from the "dirty" queue.</a></em></dt>
+<dd>There are still "dirty" modules that have not been processed yet, so begin <a href="#dirtyChildren">processing</a> the next one.</dd>
+
+<dt class="life-cycle"><em><a id="dirtyChildren">Mark this module's immediate dependents as "dirty".</a></em></dt>
+<dd>Propagate the "dirtiness" of the loaded module to its immediate dependents, i.e., those modules that name it as an <a href="./private-imports-section.html">import target</a>: mark each dependent as dirty and place it into the dirty queue <a class="offsite" href="http://en.wikipedia.org/wiki/If_and_only_if">iff</a> it has not been placed into it since the selected module was <a href="#activate">activated</a>.</dd>
+
+<dt class="life-cycle"><em><a id="moreDirty">Are there still loaded modules on the "dirty" queue?</a></em></dt>
+<dd>If there are still loaded modules on the "dirty" queue, then <a href="#nextDirty">dequeue the next one</a>. If not, then <a href="#sortUnload">topologically sort</a> the dirty modules in preparation for <a href="#unload">unloading</a> them.</dd>
+
+<dt class="life-cycle"><em><a id="sortUnload">Topologically sort the "dirty" modules.</a></em></dt>
+<dd>CONTINUE HERE</dd>
+</dl>
+
+<hr/>
+
+<p><small><a id="fn1">[1]</a> Though this process is equally valid from the perspective of some other Avail development tool.</small></p>
+<p><small><a id="fn2">[2]</a> The system actually processes the loaded modules in parallel, since it is safe to do so in this circumstance.</small></p>
+<p><small><a id="fn3">[3]</a> In the event that you encounter a <a class="offsite" href="http://en.wikipedia.org/wiki/Collision_(computer_science)">cryptographic hash collision</a> in your project, then there are much more serious issues than whether the system correctly detects whether your source module has changed!</small></p>
+
+<table class="book-nav">
+	<tr>
+		<td class="book-nav-back"><a class="book-nav-back" href="./feature-visibility.html">‹ Feature Visibility</a></td>
+		<td class="book-nav-spacer">|</td>
+		<td class="book-nav-up"><a class="book-nav-up" href="./index.html">Return to Modules</a></td>
+	</tr>
+</table>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+<!--#include virtual="/_include/sh-bottom.ssi" -->
+
+	</body>
+
+</html>
