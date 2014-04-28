@@ -24,7 +24,10 @@
 Now that you've <a href="/about-avail/download/index.html">downloaded, installed, configured, and opened</a> the Avail workbench, let's take a tour!
 </p>
 <h3>Tour of the workbench</h3>
-<a href="/_images/documentation/workbench/fresh-workbench.png" title="View image at full resolution."><img class="full-line-screenshot" src="/_images/documentation/workbench/fresh-workbench.png" width=820 alt="A screenshot of the Avail workbench."></a>
+<figure class="full-line-screenshot">
+    <a href="/_images/documentation/workbench/fresh-workbench.png" title="View image at full resolution."><img src="/_images/documentation/workbench/fresh-workbench.png" width=820 alt="A screenshot of the Avail workbench."></a>
+    <figcaption>A fresh instance of the Avail workbench, with several items collapsed for variety.</figcaption>
+</figure>
 <p>
 The workbench has five main sections:
 <ol>
@@ -36,7 +39,10 @@ The workbench has five main sections:
 </ol>
 </p><p>
 <h4>1. The modules pane</h4>
-<a href="/_images/documentation/workbench/modules-pane.png" title="View image at full resolution."><img class="top-right-screenshot" src="/_images/documentation/workbench/modules-pane.png" width=232 align="right" alt="The workbench screenshot, cropped to show only the modules pane. Selected module roots and packages have been expanded or collapsed to show variety."></a>
+<figure class="top-right-screenshot">
+	<a href="/_images/documentation/workbench/modules-pane.png" title="View image at full resolution."><img src="/_images/documentation/workbench/modules-pane.png" width=232 alt="The workbench screenshot, cropped to show only the modules pane. Selected module roots and packages have been expanded or collapsed to show variety."></a>
+	<figcaption>The modules pane.</figcaption>
+</figure>
 Recall from the installation <code class="module">README</code> that the Avail workbench depends on the <code>AVAIL_ROOTS</code> environment variable for the <strong>root</strong> directories where Avail libraries may be found. If this variable is not explicitly set before the workbench is opened, the default roots <code>avail</code> and <code>examples</code> will be used. <code>avail</code> is the root of the standard library, which contains all of the functionality needed to program in Avail. Accordingly, this root must always be present. <code>examples</code> contains smallish programs that demonstrate various uses of Avail. This includes the source modules for all of the <a href="/about-avail/learn/index.html">tutorials</a> featured on the website.
 </p><p>
 Regardless of how they are specified, roots show up in the workbench modules pane as top-level, collapsible entities, and are arranged in the order that they were specified. As top-level entities of hierarchical structures, they are left-justified within the pane. Each root name is bolded, and the display visibility of each root's contents can be toggled by clicking on the triangle to the left of the root name.
@@ -46,18 +52,28 @@ Every time it starts up, the workbench determines the contents of each root by r
 The Avail compiler requires that each package directory contain an identically-named file, just inside, to function as the package representative module. Realistically, this representative <em>is</em> the package, because it encapsulates the component modules and provides a common interface for their public functionality. But to preserve hierarchical structuring in the filesystem, we must use directories. Since the workbench is focused on Avail's structure, and not the filesystem's structure, it provides access to the package through the package name. Accordingly, the representative module is not listed as a subordinate, and because of the structural nature of the scan, it does not even require its presence. So, beware! A directory that doesn't actually include a representative module will display as a package, but the package will fail to compile. We'll get to compilation after we're done with the tour.
 </p><p>
 <h4>2. The entry points pane</h4>
-<a href="/_images/documentation/workbench/entry-points-pane.png" title="View image at full resolution."><img class="top-right-screenshot" src="/_images/documentation/workbench/entry-points-pane.png" width=233 align="right" alt="The workbench screenshot, cropped to show only the entry points pane. Selected entry point modules have been expanded or collapsed to show variety."></a>
+<figure class="top-right-screenshot">
+	<a href="/_images/documentation/workbench/entry-points-pane.png" title="View image at full resolution."><img src="/_images/documentation/workbench/entry-points-pane.png" width=233 align="right" alt="The workbench screenshot, cropped to show only the entry points pane. Selected entry point modules have been expanded or collapsed to show variety."></a>
+	<figcaption>The entry points pane.</figcaption>
+</figure>
 After the workbench finishes scanning for all accessible <code>.avail</code> files and directories within its roots, it invokes the Avail compiler in a limited "header-scanning" mode. The compiler goes through all of the <code>.avail</code> files found, interpreting the information in its <code>Uses</code>, <code>Extends</code>, <code>Names</code>, and <code>Entries</code> sections in order to build the roots' dependency graphs. Whenever any module included anywhere on the dependency graph specifies a method in its <code>Entries</code> section, it is being marked as an Avail entry point. The method name and path are stored into a list, and that list is the source of information for the workbench's entry points pane.
 </p><p>
 Though entry points may occur at any depth within their own package hierarchy, entry points are Avail's equivalent of the classic <code>main()</code> method: each is a top-level program. So instead of displaying entry points hierarchically, they are instead grouped by their source module's full path. These path headings are displayed in bold and arranged in lexicographic order. The display visibility of a path's entry points can be toggled by clicking on the triangle to the left of the path. When visible, entry points common to a single path are displayed slightly indented below their path heading, and are listed in lexicographic order. 
 </p><p>
 <h4>3. The text input field</h4>
-<a href="/_images/documentation/workbench/text-entry-field.png" title="View image at full resolution."><img class="top-right-screenshot" src="/_images/documentation/workbench/text-entry-field.png" width=294 align="right" alt="The workbench screenshot, cropped to show only the left side of the empty and inactive text input field."></a>
+<figure class="top-right-screenshot">
+	<a href="/_images/documentation/workbench/text-entry-field.png" title="View image at full resolution."><img src="/_images/documentation/workbench/text-entry-field.png" width=294 align="right" alt="The workbench screenshot, cropped to show only the left side of the empty and inactive text input field."></a>
+	<figcaption>The text input field.</figcaption>
+</figure>
 There's not much to say about the initial appearance of the text input field. When the workbench is opened, it will be empty and have a grey background. Just above it is the label "Command:".
 </p><p>
 Yup. There it is, just sitting there, waiting for you to breathe life into it!
 <h4>4. The transcript pane</h4>
-<a href="/_images/documentation/workbench/transcript-pane.png" title="View image at full resolution."><img class="top-right-screenshot" src="/_images/documentation/workbench/transcript-pane.png" width=291 align="right" alt="The workbench screenshot, cropped to show only a small portion of the empty transcript pane."></a>
+<figure class="top-right-screenshot">
+	<a href="/_images/documentation/workbench/transcript-pane.png" title="View image at full resolution."><img src="/_images/documentation/workbench/transcript-pane.png" width=291 align="right" alt="The workbench screenshot, cropped to show only a small portion of the empty transcript pane."></a>
+	<figcaption>The transcript pane.</figcaption>
+</figure>
+
 In the transcript pane, you get to see the fruits of our collective labors! The text output of running processes, as well as the echo of any user input, will be displayed here in a fixed-width font. Specifically,
 <ul>
 	<li>Standard output text is displayed in <code><span style="color:black">black</span></code>.</li>

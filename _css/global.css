@@ -51,7 +51,7 @@ others
 /********** HTML tag style overrides **********/
 
 a {
-	font-weight: 500;
+	font-weight: 400;
 	text-decoration: inherit; /* no underline */
 
 	color: green;
@@ -105,6 +105,15 @@ code {
 
 	color: rgb(0, 0, 160); /* dark blue */
 	background-color: transparent;
+}
+
+figure {
+	display: table;
+}
+
+figure img {
+	max-width: 100%;
+	display: block;
 }
 
 h1, h2, h3, h4, h5 {
@@ -210,13 +219,35 @@ img.download-list-icon {
 	height: 24px;
 }
 
-img.full-line-screenshot {
+figure.full-line-screenshot {
+	width: auto;
 	clear: both;
+
+	text-align: left;
 }
 
-img.top-right-screenshot {
+figure.top-right-screenshot {
 	margin-bottom: 15px;
 	margin-left: 15px;
+	
+	float: right;
+}
+
+figure.top-left-screenshot {
+	margin-bottom: 15px;
+	margin-right: 15px;
+	
+	float: left;
+}
+
+figcaption {
+	width: inherit;
+	display: table-caption;
+	caption-side: bottom;
+
+	text-align: center;
+	font-weight: 400;
+	font-size: small;
 }
 
 
