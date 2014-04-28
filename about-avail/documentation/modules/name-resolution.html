@@ -26,7 +26,11 @@
 
 <h2 class="content-title">Name Resolution</h2>
 
-<img src="/_images/modules/import-export-intersection.png" alt="A Venn diagram showing 'Extends' as the intersection of 'Uses' and 'Names'." style="float: right; width: 33%"/>
+<figure class="top-right-screenshot">
+    <img src="/_images/modules/import-export-intersection.png" alt="A Venn diagram showing that the 'Uses' section is an import section, the 'Names' section is an export section, and the 'Extends' section is both an import and export section." width=225/>
+    <figcaption>The flow of names into, out of, and through an Avail module is controlled by its header sections.</figcaption>
+</figure>
+
 
 <p>Names are the concurrency of modules. Names flow into modules through <a href="./private-imports-section.html">private imports</a> and <a href="./extended-imports-section.html">extended imports</a> sections. Names flow out of modules through <a href="./introduced-names-section.html">introduced names</a> and extended imports sections.</p>
 

@@ -32,7 +32,10 @@
 
 <p>Running the program should look something like this:</p>
 
-<img src="/_images/examples/rpn/transcript.png" alt="A sample transcript of using &quot;RPN_&quot;."/>
+<figure class="full-line-screenshot">
+    <img src="/_images/examples/rpn/transcript.png" alt="A sample transcript of using &quot;RPN_&quot;."/>  
+    <figcaption>The Avail workbench after running "RPN_" several times.</figcaption>
+</figure>
 
 <h3><a id="Prerequisites">Prerequisites</a></h3>
 <ul>
@@ -126,7 +129,10 @@ Method "RPN_" is
 
 <p>No other expressions are legal here, so our program really is a complete RPN DSL. It has exactly those facilities which we explicitly provided, and no others. As proof of this point, this is what happens if you try to use an infix arithmetic operator in an <code class="command">"RPN_"</code> command:</p>
 
-<img src="/_images/examples/rpn/bad-command.png" alt="A sample transcript of using &quot;RPN_&quot; incorrectly."/>
+<figure class="full-line-screenshot">
+    <img src="/_images/examples/rpn/bad-command.png" alt="A sample transcript of using &quot;RPN_&quot; incorrectly."/>
+    <figcaption>An erroneous send of "RPN_".</figcaption>
+</figure>
 
 <p>That mess of red text is the compiler's way of informing you that something went wrong. In this case, the <code>Expected... simple expression</code> message means that the compiler was expecting a literal value, like a numeral, rather than an operator like <code>+</code>&hellip; because we took away all of the infix operators! (<code>Expected... end of command</code> means that the compiler would have been happy if the whole command had just been <code class="command">RPN 2</code>.)</p>
 
