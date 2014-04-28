@@ -77,7 +77,7 @@ b, strong {
 body {
 	margin: 0; 
 
-	min-width: 350px;
+	min-width: 320px;
 
 	font-size: 15px; 
 	line-height: 1.4; 
@@ -422,6 +422,8 @@ contain <code> */
 	text-align: center;
 
 	list-style-type: none;
+	
+	clear: both;
 }
 .book-nav-back, .book-nav-up, .book-nav-forward {
 	position: relative;
