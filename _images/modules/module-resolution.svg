@@ -12,7 +12,7 @@
 <text text-anchor="middle" x="196.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">The module resolution process.</text>
 <!-- canonize -->
 <g id="node1" class="node"><title>canonize</title>
-<g id="a_node1"><a xlink:title="Naively canonize the import target by appending its local name to the canonical name of the dependent module&#39;s enclosing container." target="_top">
+<g id="a_node1"><a xlink:href="/about-avail/documentation/modules/module-resolution.html#canonize" xlink:title="Naively canonize the import target by appending its local name to the canonical name of the dependent module&#39;s enclosing container." target="_top">
 <path fill="none" stroke="black" d="M109,-851C109,-851 179,-851 179,-851 185,-851 191,-857 191,-863 191,-863 191,-897 191,-897 191,-903 185,-909 179,-909 179,-909 109,-909 109,-909 103,-909 97,-903 97,-897 97,-897 97,-863 97,-863 97,-857 103,-851 109,-851"/>
 <text text-anchor="middle" x="143.673" y="-883" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#0000a0">Canonize Import</text>
 <text text-anchor="middle" x="143.673" y="-871" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#0000a0">Target</text>
@@ -21,7 +21,7 @@
 </g>
 <!-- canRename -->
 <g id="node2" class="node"><title>canRename</title>
-<g id="a_node2"><a xlink:title="Does a module rename rule exist for the naively canonized import target?" target="_top">
+<g id="a_node2"><a xlink:href="/about-avail/documentation/modules/module-resolution.html#canRename" xlink:title="Does a module rename rule exist for the naively canonized import target?" target="_top">
 <polygon fill="none" stroke="black" points="144,-812 97,-783 144,-754 191,-783 144,-812"/>
 <text text-anchor="middle" x="144" y="-786" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#0000a0">Rename Rule</text>
 <text text-anchor="middle" x="144" y="-774" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#0000a0">Exists?</text>
@@ -35,7 +35,7 @@
 </g>
 <!-- rename -->
 <g id="node3" class="node"><title>rename</title>
-<g id="a_node3"><a xlink:title="Apply the module rename rule to transform the naively canonized import target." target="_top">
+<g id="a_node3"><a xlink:href="/about-avail/documentation/modules/module-resolution.html#rename" xlink:title="Apply the module rename rule to transform the naively canonized import target." target="_top">
 <polygon fill="none" stroke="black" points="242,-706 148,-706 148,-648 242,-648 242,-706"/>
 <text text-anchor="middle" x="195" y="-680" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#0000a0">Apply Rename</text>
 <text text-anchor="middle" x="195" y="-668" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#0000a0">Rule</text>
@@ -50,7 +50,7 @@
 </g>
 <!-- translate -->
 <g id="node4" class="node"><title>translate</title>
-<g id="a_node4"><a xlink:title="Translate the naively canonized import target to a file path by 1) substituting the module root name for its source path and 2) appending .avail to each local name." target="_top">
+<g id="a_node4"><a xlink:href="/about-avail/documentation/modules/module-resolution.html#translate" xlink:title="Translate the naively canonized import target to a file path by 1) substituting the module root name for its source path and 2) appending .avail to each local name." target="_top">
 <polygon fill="none" stroke="black" points="189,-610 95,-610 95,-552 189,-552 189,-610"/>
 <text text-anchor="middle" x="142" y="-584" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#0000a0">Translate to</text>
 <text text-anchor="middle" x="142" y="-572" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#0000a0">File Path</text>
@@ -70,7 +70,7 @@
 </g>
 <!-- morePackages -->
 <g id="node5" class="node"><title>morePackages</title>
-<g id="a_node5"><a xlink:title="Are there still components of the file path that refer to packages?" target="_top">
+<g id="a_node5"><a xlink:href="/about-avail/documentation/modules/module-resolution.html#morePackages" xlink:title="Are there still components of the file path that refer to packages?" target="_top">
 <polygon fill="none" stroke="black" points="142,-514 95,-485 142,-456 189,-485 142,-514"/>
 <text text-anchor="middle" x="142" y="-482" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#0000a0">More Packages?</text>
 </a>
@@ -83,7 +83,7 @@
 </g>
 <!-- inPackage -->
 <g id="node6" class="node"><title>inPackage</title>
-<g id="a_node6"><a xlink:title="Does the file path refer to an existing file?" target="_top">
+<g id="a_node6"><a xlink:href="/about-avail/documentation/modules/module-resolution.html#inPackage" xlink:title="Does the file path refer to an existing file?" target="_top">
 <polygon fill="none" stroke="black" points="142,-408 95,-379 142,-350 189,-379 142,-408"/>
 <text text-anchor="middle" x="142" y="-382" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#0000a0">File Exists</text>
 <text text-anchor="middle" x="142" y="-370" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#0000a0">In Package?</text>
@@ -98,7 +98,7 @@
 </g>
 <!-- inRoot -->
 <g id="node11" class="node"><title>inRoot</title>
-<g id="a_node11"><a xlink:title="Does the file path refer to an existing file?" target="_top">
+<g id="a_node11"><a xlink:href="/about-avail/documentation/modules/module-resolution.html#inRoot" xlink:title="Does the file path refer to an existing file?" target="_top">
 <polygon fill="none" stroke="black" points="257,-408 210,-379 257,-350 304,-379 257,-408"/>
 <text text-anchor="middle" x="257" y="-382" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#0000a0">File Exists</text>
 <text text-anchor="middle" x="257" y="-370" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#0000a0">In Root?</text>
@@ -113,7 +113,7 @@
 </g>
 <!-- isPackage -->
 <g id="node7" class="node"><title>isPackage</title>
-<g id="a_node7"><a xlink:title="Does the file path refer to a package?" target="_top">
+<g id="a_node7"><a xlink:href="/about-avail/documentation/modules/module-resolution.html#isPackage" xlink:title="Does the file path refer to a package?" target="_top">
 <polygon fill="none" stroke="black" points="159,-302 112,-273 159,-244 206,-273 159,-302"/>
 <text text-anchor="middle" x="159" y="-270" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#0000a0">File is Package?</text>
 </a>
@@ -127,7 +127,7 @@
 </g>
 <!-- truncate -->
 <g id="node10" class="node"><title>truncate</title>
-<g id="a_node10"><a xlink:title="Drop the rightmost file path component that corresponds to a package. Proceed with the new file path." target="_top">
+<g id="a_node10"><a xlink:href="/about-avail/documentation/modules/module-resolution.html#truncate" xlink:title="Drop the rightmost file path component that corresponds to a package. Proceed with the new file path." target="_top">
 <polygon fill="none" stroke="black" points="94,-302 -7.10543e-15,-302 -7.10543e-15,-244 94,-244 94,-302"/>
 <text text-anchor="middle" x="47" y="-276" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#0000a0">Drop Last</text>
 <text text-anchor="middle" x="47" y="-264" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#0000a0">Package</text>
@@ -142,7 +142,7 @@
 </g>
 <!-- isRepresented -->
 <g id="node8" class="node"><title>isRepresented</title>
-<g id="a_node8"><a xlink:title="Append the package representative to the file path. Does the representative exist?" target="_top">
+<g id="a_node8"><a xlink:href="/about-avail/documentation/modules/module-resolution.html#isRepresented" xlink:title="Append the package representative to the file path. Does the representative exist?" target="_top">
 <polygon fill="none" stroke="black" points="185,-196 138,-167 185,-138 232,-167 185,-196"/>
 <text text-anchor="middle" x="185" y="-170" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#0000a0">Representative</text>
 <text text-anchor="middle" x="185" y="-158" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#0000a0">Exists?</text>
@@ -202,7 +202,7 @@
 </g>
 <!-- moreRoots -->
 <g id="node12" class="node"><title>moreRoots</title>
-<g id="a_node12"><a xlink:title="Are there still module roots that haven&#39;t been searched yet?" target="_top">
+<g id="a_node12"><a xlink:href="/about-avail/documentation/modules/module-resolution.html#moreRoots" xlink:title="Are there still module roots that haven&#39;t been searched yet?" target="_top">
 <polygon fill="none" stroke="black" points="271,-302 224,-273 271,-244 318,-273 271,-302"/>
 <text text-anchor="middle" x="271" y="-270" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#0000a0">More Roots?</text>
 </a>
@@ -216,7 +216,7 @@
 </g>
 <!-- nextRoot -->
 <g id="node13" class="node"><title>nextRoot</title>
-<g id="a_node13"><a xlink:title="Rewrite the prefix of the file path that corresponds to the module root. It should now refer to a root that hasn&#39;t been searched yet. Proceed with the new file path." target="_top">
+<g id="a_node13"><a xlink:href="/about-avail/documentation/modules/module-resolution.html#nextRoot" xlink:title="Rewrite the prefix of the file path that corresponds to the module root. It should now refer to a root that hasn&#39;t been searched yet. Proceed with the new file path." target="_top">
 <polygon fill="none" stroke="black" points="393,-196 299,-196 299,-138 393,-138 393,-196"/>
 <text text-anchor="middle" x="346" y="-170" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#0000a0">Translate to</text>
 <text text-anchor="middle" x="346" y="-158" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#0000a0">Next Root</text>

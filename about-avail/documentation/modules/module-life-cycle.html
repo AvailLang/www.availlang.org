@@ -28,7 +28,7 @@
 
 <p>If you have followed this series since the <a href="./introduction.html">beginning</a>, then you have a very good understanding of modules by now. You know what they contain, how they are discovered, how they relate to one another, and so forth. But how does a module become active in the first place? What is the path that a module follows from inception to activation?</p>
 
-<p>Let us now turn our attention to the final topic in this trail, the <strong>module life cycle</strong>, which we will consider relative to development using the <a href="/about-avail/documentation/workbench.html">Avail workbench</a><sup><a href="#fn1">[1]</a></sup>. Please turn your attention to the <em>bottom</em> of the following diagram. <small>(Warning! Unless your display is 3 meters high, then very likely you will need to scroll down&hellip;)</small></p>
+<p>Let us now turn our attention to the final topic in this trail, the <strong>module life cycle</strong>, which we will consider relative to development using the <a href="/about-avail/documentation/workbench.html">Avail workbench</a><sup><a href="#fn1">[1]</a></sup>. Please turn your attention to the <em>bottom</em> of the following diagram. <small>(Unless your display is 3 meters high, then very likely you will need to scroll down&hellip;)</small></p>
 
 <div class="scrolling">
 <iframe src="/_images/modules/module-life-cycle.svg" style="margin: auto" seamless></iframe>
@@ -42,7 +42,7 @@
 <dd>The programmer edits some modules using her favorite editor. After she is ready to try her changes, she saves the files and then <a href="#activate">activates</a> a modified module (or a module that is downstream of one that she has changed).</dd>
 
 <dt class="life-cycle"><em><a id="activate">Activate a module from one of the tree views.</a></em></dt>
-<dd>When the programmer is ready to run Avail code or attempt to compile some newly changed modules, then she uses one of the two tree views to select a module for activation. This is an extremely complex process for the system, but very simple for the programmer &mdash; as long as she understands roughly what is happening.</dd>
+<dd>When the programmer is ready to run Avail code or attempt to compile some newly changed modules, then she uses one of the two tree views to select a module for activation. This is an extremely complex process for the system, but automatic for the programmer.</dd>
 
 <dt class="life-cycle"><em><a id="anyLoaded">Are any modules loaded already?</a></em></dt>
 <dd>Immediately upon <a href="#activate">activating</a> a module, the system must decide how to proceed based upon whether any modules are already loaded. The system may need to unload these before the selected module can be fully activated. If modules are already loaded, then the system <a href="#nextLoaded">examines</a> them in arbitrary order<sup><a href="#fn2">[2]</a></sup> to see if their corresponding source modules have <a href="#modified">changed</a> since they were loaded. If no modules are loaded, then the system begins <a href="#trace">tracing</a> the dependencies of the selected module.</dd>
@@ -51,35 +51,115 @@
 <dd>There are still loaded modules that have not been processed yet, so begin <a href="#modified">processing</a> the next one.</dd>
 
 <dt class="life-cycle"><em><a id="modified">Has this loaded module been modified since it was loaded?</a></em></dt>
-<dd>The programmer may have changed the source for this module since it was loaded, so determine whether this is the case. The system first checks the last modification time of the source module. If the last modification time equals the previous value (if any) recorded for this module, then the system assumes that the source module has not changed. If the last modification time is different, then produce a <a class="offsite" href="http://en.wikipedia.org/wiki/Cryptographic_hash_function">cryptographic hash</a> of the source module's content. If this hash matches the one associated with the loaded module, then the system assumes that the source module has not changed.<sup><a href="#fn3">[3]</a></sup> If the source module has not changed, then ignore it; <a href="#moreLoaded">see</a> if there are more loaded modules to process. If the source module has changed, then <a href="#dirty">mark it as "dirty"</a> and place it into a queue of dirty loaded modules.</dd>
+<dd>The programmer may have changed the source for this module since it was loaded, so determine whether this is the case. The system first checks the last modification time of the source module. If the last modification time equals the previous value (if any) recorded for this module, then the system assumes that the source module has not changed. If the last modification time is different, then produce a <a class="offsite" href="http://en.wikipedia.org/wiki/Cryptographic_hash_function">cryptographic hash</a> of the source module's content. If this hash matches the one associated with the loaded module, then the system assumes that the source module has not changed.<sup><a href="#fn3">[3]</a></sup> If the source module has not changed, then ignore it; <a href="#moreLoaded">see</a> if there are more loaded modules to process. If the source module has changed, then <a href="#dirty">mark it as dirty</a> and place it into a queue of dirty loaded modules.</dd>
 
-<dt class="life-cycle"><em><a id="dirty">Mark this module as "dirty".</a></em></dt>
-<dd>The loaded module has <a href="#modified">changed</a> since it was loaded, so mark it as "dirty" and enqueue it for processing by a <a href="#anyDirty">subsequent phase</a>.</dd>
+<dt class="life-cycle"><em><a id=dirty>Mark this module as dirty.</a></em></dt>
+<dd>The loaded module has <a href="#modified">changed</a> since it was loaded, so mark it as dirty and enqueue on the <strong>dirty queue</strong> it for eventual <a href="#anyDirty">processing</a>.</dd>
 
 <dt class="life-cycle"><em><a id="moreLoaded">Are there still loaded modules to process?</a></em></dt>
-<dd>If there are still loaded modules to process, then <a href="#nextLoaded">move on to the next one</a>. If not, then <a href="#anyDirty">determine</a> whether the queue of dirty loaded modules contains anything.</dd>
+<dd>If there are still loaded modules to process, then <a href="#nextLoaded">move on to the next one</a>. If not, then <a href="#anyDirty">determine</a> whether the dirty queue contains anything.</dd>
 
-<dt class="life-cycle"><em><a id="anyDirty">Are there any loaded modules in the "dirty" queue?</a></em></dt>
-<dd>If there are any loaded modules in the "dirty" queue, then it will be necessary to <a href="#unload">unload</a> these modules (and their downstream dependents) and <a href="#load">reload</a> or <a href="#compile">recompile</a> them.</dd>
+<dt class="life-cycle"><em><a id="anyDirty">Are there any loaded modules in the dirty queue?</a></em></dt>
+<dd>If there are any loaded modules in the dirty queue, then it will be necessary to <a href="#unload">unload</a> these modules (and their downstream dependents) and <a href="#load">reload</a> or <a href="#compile">recompile</a> them.</dd>
 
-<dt class="life-cycle"><em><a id="nextDirty">Begin processing the next loaded module from the "dirty" queue.</a></em></dt>
-<dd>There are still "dirty" modules that have not been processed yet, so begin <a href="#dirtyChildren">processing</a> the next one.</dd>
+<dt class="life-cycle"><em><a id="nextDirty">Begin processing the next loaded module from the dirty queue.</a></em></dt>
+<dd>There are still dirty modules that have not been processed yet, so <a href="#dirtyChildren">begin processing</a> the next one.</dd>
 
-<dt class="life-cycle"><em><a id="dirtyChildren">Mark this module's immediate dependents as "dirty".</a></em></dt>
-<dd>Propagate the "dirtiness" of the loaded module to its immediate dependents, i.e., those modules that name it as an <a href="./private-imports-section.html">import target</a>: mark each dependent as dirty and place it into the dirty queue <a class="offsite" href="http://en.wikipedia.org/wiki/If_and_only_if">iff</a> it has not been placed into it since the selected module was <a href="#activate">activated</a>.</dd>
+<dt class="life-cycle"><em><a id="dirtyChildren">Mark this module's immediate dependents as dirty.</a></em></dt>
+<dd>Propagate the dirtiness of the loaded module to its immediate dependents, i.e., those modules that name it as an <a href="./private-imports-section.html">import target</a>: mark each dependent as dirty and place it into the dirty queue <a class="offsite" href="http://en.wikipedia.org/wiki/If_and_only_if">iff</a> it has not been placed into it since the selected module was <a href="#activate">activated</a>.</dd>
 
-<dt class="life-cycle"><em><a id="moreDirty">Are there still loaded modules on the "dirty" queue?</a></em></dt>
-<dd>If there are still loaded modules on the "dirty" queue, then <a href="#nextDirty">dequeue the next one</a>. If not, then <a href="#sortUnload">topologically sort</a> the dirty modules in preparation for <a href="#unload">unloading</a> them.</dd>
+<dt class="life-cycle"><em><a id="moreDirty">Are there still loaded modules on the dirty queue?</a></em></dt>
+<dd>If there are still loaded modules on the dirty queue, then <a href="#nextDirty">dequeue the next one</a>. If not, then <a href="#sortUnload">topologically sort</a> the dirty modules in preparation for <a href="#unload">unloading</a> them.</dd>
 
-<dt class="life-cycle"><em><a id="sortUnload">Topologically sort the "dirty" modules.</a></em></dt>
-<dd>CONTINUE HERE</dd>
+<dt class="life-cycle"><em><a id="sortUnload">Topologically sort the dirty modules.</a></em></dt>
+<dd>The dirty queue is now empty, but there are loaded modules that are marked as dirty. Sort these into a <a class="offsite" href="http://en.wikipedia.org/wiki/Topological_sorting">topological order</a> such that the modules furthest downstream will be processed first and the modules furthest upstream will be processed last. Let us call this ordering the <strong>unload queue</strong>. Now <a href="#nextUnload">begin processing</a> the first module in the unload queue.</dd>
+
+<dt class="life-cycle"><em><a id="nextUnload">Begin processing the next loaded module in the unload queue.</a></em></dt>
+<dd>There are still dirty modules that have not been processed yet, so <a href="#unload">begin processing</a> the next one.</dd>
+
+<dt class="life-cycle"><em><a id="unload">Unload this module.</a></em></dt>
+<dd>Unload the module from the Avail run-time system. Any method features that it defined are removed, and no longer accessible. This is safe, because all dependents of this module have already been unloaded, and these features were only <a href="./feature-visibility.html">visible</a> in the dependents. Once all doomed method features have been removed, run all <a href="#unloadReactors">unload reactors</a> registered by sends of <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2893876431.html">"After the current module is unloaded,⁇do_"</a></code> that were encountered during compilation of the module. The unload reactors are run in reverse registration order. Any values created by this module that are held transitively by upstream modules continue to exist.</dd>
+
+<dt class="life-cycle"><em><a id="moreUnload">Are there still loaded modules in the unload queue?</a></em></dt>
+<dd>If there are still loaded modules on the unload queue, then <a href="#nextUnload">dequeue the next one</a>. If not, then unloading is now complete. Any module whose ancestors (including itself) did not <a href="#modified">change</a> since the <em>previous</em> <a href="#activate">activation</a> remains loaded. Now <a href="#trace">trace</a> the ancestry of the activated module.</dd>
+
+<dt class="life-cycle"><em><a id="trace">Trace the ancestry of the activated module.</a></em></dt>
+<dd>Recursively explore the ancestry of the activated module. The <strong>ancestry</strong> of a module comprises itself and every module that is recursively upstream of it. These are the exact modules &mdash; called <strong>ancestors</strong> &mdash; upon which the activated module depends for the names and features that it uses. During tracing, only the <a href="./module-headers.html">module headers</a> of the ancestors are examined, not the <a href="./module-bodies.html">module bodies</a>. If any errors are encountered during the trace, such as a malformed <a href="./private-imports-section.html#import-specification">import specification</a> or a cyclical dependency between two modules, then the trace is aborted: activation has <a href="#failure">failed</a> and appropriate error messages are written to the workbench's transcript. If no errors are encountered, then <a href="#sortAncestors">topologically sort</a> the ancestors in preparation for activation.</dd>
+
+<dt class="life-cycle"><em><a id="sortAncestors">Topologically sort the ancestors.</a></em></dt>
+<dd>Sort the ancestors of the selected module into a topological order such that the modules furthest upstream will be processed first and the selected module, which is furthest downstream, will be processed last. Call this ordering the <strong>activation queue</strong>. Now <a href="#nextAncestor">begin processing</a> the first module in the activation queue.</dd>
+
+<dt class="life-cycle"><em><a id="nextAncestor">Begin processing the next ancestor in the activation queue.</a></em></dt>
+<dd>There are still modules in the activation queue, so <a href="#isLoaded">begin processing</a> the next one.</dd>
+
+<dt class="life-cycle"><em><a id="isLoaded">Is this ancestor already loaded?</a></em></dt>
+<dd>If this ancestor is already loaded into the Avail run-time system, then ignore it and <a href="#moreAncestors">move along</a>. If no, then determine whether it has a relevant existing <a href="#isCompiled">compilation</a>.</dd>
+
+<dt class="life-cycle"><em><a id="isCompiled">Is this ancestor already compiled?</a></em></dt>
+<dd>Each <a href="./module-discovery.html">module root</a> has an associated binary module repository that contains compilations of its enclosed modules. Based on the timestamp and cryptographic content hash of the source module, search the appropriate repository for a prior compilation. The repository stores several prior compilations of the source module, corresponding to various versions of the content. If an appropriate binary module already exists, then <a href="#load">load</a> it. If not, then <a href="#compile">compile</a> the source module.<sup><a href="#fn4">[4]</a></sup></dd>
+
+<dt class="life-cycle"><em><a id="load">Load an existing compilation of this ancestor.</a></em></dt>
+<dd>Load the appropriate existing compilation of the ancestor. This process behaves as if each top-level statement were executed in lexical order. If any top-level statement raises an <a href="/about-avail/documentation/type-system/types-exception.html">exception</a>, then abort the load: activation has <a href="#failure">failed</a> and appropriate error messages are written to the workbench's transcript. Otherwise, the module's services are now available to downstream modules and its <a href="./entry-points-section.html">entry points</a> are now available to the programmer. <a href="#moreAncestors">Determine</a> whether there are more modules in the activation queue.</dd>
+
+<dt class="life-cycle"><em><a id="compile">Compile this ancestor.</a></em></dt>
+<dd>Compile the ancestor. This also loads the module into the Avail run-time system. If the compiler encounters any errors while parsing, evaluating <a href="/about-avail/documentation/type-system/semantic-restrictions.html">semantic restrictions</a>, or executing top-level statements for side-effect, then abort the compilation: activation has <a href="#failure">failed</a> and appropriate error messages are written to the workbench's transcript. Otherwise, the module's services are now available to downstream modules and its entry points are now available to the programmer. <a href="#persist">Persistently store</a> the binary module produced by this compilation into the appropriate binary module repository.</dd>
+
+<dt class="life-cycle"><em><a id="persist">Store the ancestor's new compilation into a repository.</a></em></dt>
+<dd>Determine the appropriate binary module repository, based on the ancestor's enclosing module root, and store the binary module created by <a href="#compile">compilation</a> into it. This will speed up subsequent activations of the ancestor, even across an exit and restart of the workbench. Then <a href="#moreAncestors">determine</a> whether there are more modules in the activation queue.</dd>
+
+<dt class="life-cycle"><em><a id="moreAncestors">Are there still modules in the activation queue?</a></em></dt>
+<dd>If there are still modules in the activation queue, then then <a href="#nextAncestor">dequeue the next one</a>. If not, then activation has <a href="#success">succeeded</a>: the selected module and all of its ancestors have been activated.</dd>
+
+<dt class="life-cycle"><em><a id="success">The selected module has been activated.</a></em></dt>
+<dd>The selected module and its ancestors have been activated. Their services are now available to future downstream modules, and their entry points are ready to be run. The programmer can now interact with the Avail run-time system to her heart's content. When she is satisfied, then she can go back to <a href="#edit">creating or editing</a> source modules.</dd>
+
+<dt class="life-cycle"><em><a id="failure">The selected module could not be activated.</a></em></dt>
+<dd>The system encountered an error while <a href="#trace">tracing</a>, <a href="#load">loading</a>, or <a href="#compile">compiling</a> the selected module or an ancestor. The programmer can now analyze the error messages that were written to the workbench's transcript and <a href="#edit">modify her code</a> accordingly to address the issues discovered during the activation attempt.</dd>
 </dl>
+
+<h3 id="unloadReactors">Unload Reactors</h3>
+
+<p>Executing certain top-level statements &mdash; such as sends of <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Unit%20Testing/Definers/150610456.html">"_is a new test suite"</a></code> and <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Unit%20Testing/Definers/3834520673.html">"Test_in_&laquo;,&#8263;if supported&laquo;on this platform&raquo;&#8263;,&#8263;&raquo;?is_&laquo;must raise_&raquo;"</a></code>, each defined by Avail's testing framework &mdash; may update global data structures stored in module variables. In order to ensure correct operation of all entry points when the Avail run-time system is in flux because of an explicit activation or unload, side-effects like these should be reversed during the <a href="#unload">unloading</a> of the module that caused them.</p>
+
+<p>An <strong>unload reactor</strong> is a <a href="/about-avail/documentation/type-system/types-function.html">function</a> that is registered with <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2893876431.html">"After the current module is unloaded,⁇do_"</a></code>. An unload reactor typically performs an operation that reverses the side effects of previous operations, so that module variables remain consistent across repeated activations and deactivations of modules. A module's unload reactors are run, in reverse registration order, only <em>after</em> any method features introduced by the module have been removed.</p>
+
+<p>Please be aware that the activation process is highly parallel, and several modules may undergo unloading simultaneously. If these modules have registered unload reactors that share access to common resources, such as module variables, then contention for these resources may occur. To avoid <a class="offsite" href="http://en.wikipedia.org/wiki/Race_condition">race conditions</a> and possible data loss, access to these shared resources must be synchronized.</p>
+
+<p>Consider the following example from <code class="module">/avail/Avail/Unit Testing/Definers</code>:</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 59">
+<![CDATA[
+Private method "Remember the current module" is
+[
+	/* If necessary, then record the current module and arrange to forget
+	 * about it when it is unloaded.
+	 */
+	currentModule ::= current module;
+	If ¬currentModule ∈ modules then
+	[
+		modules := modules + currentModule;
+		After the current module is unloaded, do
+		[
+			Lock suite lock for
+			[
+				modules := modules - currentModule;
+			];
+		];
+	];
+];
+]]>
+</script></div></div>
+
+<p>Without delving too deeply, <code class="method">Remember the current module</code> records the module that is undergoing activation into a module variable, <code>modules</code>.<sup><a href="#fn5">[5]</a></sup> <strong>Lines 68-75</strong> register an unload handler that removes the module, captured into the local constant <code>currentModule</code>, from <code>modules</code>. This prevents the unit testing framework from tracking the module after it is unloaded, thereby ensuring that the module is safe to reactivate.</p>
 
 <hr/>
 
-<p><small><a id="fn1">[1]</a> Though this process is equally valid from the perspective of some other Avail development tool.</small></p>
+<p><small><a id="fn1">[1]</a> This process is equally valid from the perspective of some other Avail development tool.</small></p>
 <p><small><a id="fn2">[2]</a> The system actually processes the loaded modules in parallel, since it is safe to do so in this circumstance.</small></p>
 <p><small><a id="fn3">[3]</a> In the event that you encounter a <a class="offsite" href="http://en.wikipedia.org/wiki/Collision_(computer_science)">cryptographic hash collision</a> in your project, then there are much more serious issues than whether the system correctly detects whether your source module has changed!</small></p>
+<p><small><a id="fn4">[4]</a> This process is an optimization, of course, because <a href="#load">loading</a> a binary module is much faster that <a href="#compile">compiling</a> a source module.</small></p>
+<p><small><a id="fn5">[5]</a> Just in case you were wondering, access to <code>modules</code> is synchronized on <code>suite lock</code> by the caller, so the code presented here is free of race conditions and potential data loss.</small></p>
 
 <table class="book-nav">
 	<tr>

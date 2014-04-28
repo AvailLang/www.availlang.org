@@ -30,49 +30,57 @@ strict digraph "Module resolution"
 		label="Canonize Import\nTarget",
 		tooltip="Naively canonize the import target by appending its local name to the canonical name of the dependent module's enclosing container.",
 		shape="record",
-		style="rounded"
+		style="rounded",
+		href="/about-avail/documentation/modules/module-resolution.html#canonize"
 	];
 	canRename
 	[
 		label="Rename Rule\nExists?",
 		tooltip="Does a module rename rule exist for the naively canonized import target?"
-		shape="diamond"
+		shape="diamond",
+		href="/about-avail/documentation/modules/module-resolution.html#canRename"
 	];
 	rename
 	[
 		label="Apply Rename\nRule",
 		tooltip="Apply the module rename rule to transform the naively canonized import target.",
-		shape="box"
+		shape="box",
+		href="/about-avail/documentation/modules/module-resolution.html#rename"
 	];
 	translate
 	[
 		label="Translate to\nFile Path",
 		tooltip="Translate the naively canonized import target to a file path by 1) substituting the module root name for its source path and 2) appending .avail to each local name.",
-		shape="box"
+		shape="box",
+		href="/about-avail/documentation/modules/module-resolution.html#translate"
 	];
 	morePackages
 	[
 		label="More Packages?",
 		tooltip="Are there still components of the file path that refer to packages?",
-		shape="diamond"
+		shape="diamond",
+		href="/about-avail/documentation/modules/module-resolution.html#morePackages"
 	];
 	inPackage
 	[
 		label="File Exists\nIn Package?",
 		tooltip="Does the file path refer to an existing file?",
-		shape="diamond"
+		shape="diamond",
+		href="/about-avail/documentation/modules/module-resolution.html#inPackage"
 	];
 	isPackage
 	[
 		label="File is Package?",
 		tooltip="Does the file path refer to a package?",
-		shape="diamond"
+		shape="diamond",
+		href="/about-avail/documentation/modules/module-resolution.html#isPackage"
 	];
 	isRepresented
 	[
 		label="Representative\nExists?",
 		tooltip="Append the package representative to the file path. Does the representative exist?",
-		shape="diamond"
+		shape="diamond",
+		href="/about-avail/documentation/modules/module-resolution.html#isRepresented"
 	];
 	resolved
 	[
@@ -86,25 +94,29 @@ strict digraph "Module resolution"
 	[
 		label="Drop Last\nPackage",
 		tooltip="Drop the rightmost file path component that corresponds to a package. Proceed with the new file path.",
-		shape="box"
+		shape="box",
+		href="/about-avail/documentation/modules/module-resolution.html#truncate"
 	];
 	inRoot
 	[
 		label="File Exists\nIn Root?",
 		tooltip="Does the file path refer to an existing file?",
-		shape="diamond"
+		shape="diamond",
+		href="/about-avail/documentation/modules/module-resolution.html#inRoot"
 	];
 	moreRoots
 	[
 		label="More Roots?",
 		tooltip="Are there still module roots that haven't been searched yet?",
-		shape="diamond"
+		shape="diamond",
+		href="/about-avail/documentation/modules/module-resolution.html#moreRoots"
 	];
 	nextRoot
 	[
 		label="Translate to\nNext Root",
 		tooltip="Rewrite the prefix of the file path that corresponds to the module root. It should now refer to a root that hasn't been searched yet. Proceed with the new file path.",
-		shape="box"
+		shape="box",
+		href="/about-avail/documentation/modules/module-resolution.html#nextRoot"
 	];
 	unresolvable
 	[

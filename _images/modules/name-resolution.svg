@@ -12,7 +12,7 @@
 <text text-anchor="middle" x="210.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">The name resolution process.</text>
 <!-- stringProvided -->
 <g id="node1" class="node"><title>stringProvided</title>
-<g id="a_node1"><a xlink:title="The name is provided as a string to a method that performs name resolution." target="_top">
+<g id="a_node1"><a xlink:href="/about-avail/documentation/modules/name-resolution.html#stringProvided" xlink:title="The name is provided as a string to a method that performs name resolution." target="_top">
 <path fill="none" stroke="black" d="M12,-705C12,-705 82,-705 82,-705 88,-705 94,-711 94,-717 94,-717 94,-751 94,-751 94,-757 88,-763 82,-763 82,-763 12,-763 12,-763 6,-763 0,-757 0,-751 0,-751 0,-717 0,-717 0,-711 6,-705 12,-705"/>
 <text text-anchor="middle" x="46.949" y="-737" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#0000a0">Name Provided</text>
 <text text-anchor="middle" x="46.949" y="-725" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#0000a0">As String</text>
@@ -21,7 +21,7 @@
 </g>
 <!-- lookup -->
 <g id="node3" class="node"><title>lookup</title>
-<g id="a_node3"><a xlink:title="Use the name to look up the set of candidate atoms in the module&#39;s internal directory of visible names." target="_top">
+<g id="a_node3"><a xlink:href="/about-avail/documentation/modules/name-resolution.html#lookup" xlink:title="Use the name to look up the set of candidate atoms in the module&#39;s internal directory of visible names." target="_top">
 <polygon fill="#87cefa" stroke="black" points="103,-666 56,-637 103,-608 150,-637 103,-666"/>
 <text text-anchor="middle" x="103" y="-634" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#0000a0">Look Up Atom</text>
 </a>
@@ -34,7 +34,7 @@
 </g>
 <!-- parse -->
 <g id="node2" class="node"><title>parse</title>
-<g id="a_node2"><a xlink:title="The compiler parses the name from a lexical expression in the module body." target="_top">
+<g id="a_node2"><a xlink:href="/about-avail/documentation/modules/name-resolution.html#parse" xlink:title="The compiler parses the name from a lexical expression in the module body." target="_top">
 <path fill="none" stroke="black" d="M124,-705C124,-705 194,-705 194,-705 200,-705 206,-711 206,-717 206,-717 206,-751 206,-751 206,-757 200,-763 194,-763 194,-763 124,-763 124,-763 118,-763 112,-757 112,-751 112,-751 112,-717 112,-717 112,-711 118,-705 124,-705"/>
 <text text-anchor="middle" x="158.507" y="-737" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#0000a0">Name Sent</text>
 <text text-anchor="middle" x="158.507" y="-725" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#0000a0">As Message</text>
@@ -48,7 +48,7 @@
 </g>
 <!-- create -->
 <g id="node4" class="node"><title>create</title>
-<g id="a_node4"><a xlink:title="Create a new atom and associate it with the name." target="_top">
+<g id="a_node4"><a xlink:href="/about-avail/documentation/modules/name-resolution.html#create" xlink:title="Create a new atom and associate it with the name." target="_top">
 <polygon fill="none" stroke="black" points="135,-484 41,-484 41,-426 135,-426 135,-484"/>
 <text text-anchor="middle" x="88" y="-458" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#0000a0">Create a</text>
 <text text-anchor="middle" x="88" y="-446" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#0000a0">New Atom</text>
@@ -63,7 +63,7 @@
 </g>
 <!-- isNew -->
 <g id="node5" class="node"><title>isNew</title>
-<g id="a_node5"><a xlink:title="Is the name mentioned in the introduced names section of the resolving module?" target="_top">
+<g id="a_node5"><a xlink:href="/about-avail/documentation/modules/name-resolution.html#isNew" xlink:title="Is the name mentioned in the introduced names section of the resolving module?" target="_top">
 <polygon fill="none" stroke="black" points="163,-560 116,-531 163,-502 210,-531 163,-560"/>
 <text text-anchor="middle" x="163" y="-534" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#0000a0">Created</text>
 <text text-anchor="middle" x="163" y="-522" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#0000a0">Locally?</text>
@@ -91,7 +91,7 @@
 </g>
 <!-- howMany -->
 <g id="node6" class="node"><title>howMany</title>
-<g id="a_node6"><a xlink:title="How many atoms are associated with the name?" target="_top">
+<g id="a_node6"><a xlink:href="/about-avail/documentation/modules/name-resolution.html#howMany" xlink:title="How many atoms are associated with the name?" target="_top">
 <polygon fill="#87cefa" stroke="black" points="225,-408 178,-379 225,-350 272,-379 225,-408"/>
 <text text-anchor="middle" x="225" y="-382" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#0000a0">Count</text>
 <text text-anchor="middle" x="225" y="-370" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#0000a0">Atoms</text>
@@ -112,7 +112,7 @@
 </g>
 <!-- typeInfo -->
 <g id="node7" class="node"><title>typeInfo</title>
-<g id="a_node7"><a xlink:title="Is type information available? This will be true at the call site of a name, or during the reflective lookup of a method definition using &quot;method definition of_for&quot;." target="_top">
+<g id="a_node7"><a xlink:href="/about-avail/documentation/modules/name-resolution.html#typeInfo" xlink:title="Is type information available? This will be true at the call site of a name, or during the reflective lookup of a method definition using &quot;method definition of_for&quot;." target="_top">
 <polygon fill="none" stroke="black" points="270,-302 223,-273 270,-244 317,-273 270,-302"/>
 <text text-anchor="middle" x="270" y="-276" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#0000a0">Types</text>
 <text text-anchor="middle" x="270" y="-264" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#0000a0">Available?</text>
@@ -133,7 +133,7 @@
 </g>
 <!-- filter -->
 <g id="node8" class="node"><title>filter</title>
-<g id="a_node8"><a xlink:title="Filter the candidate atoms by using available argument type information. This is only possible for atoms with attached methods." target="_top">
+<g id="a_node8"><a xlink:href="/about-avail/documentation/modules/name-resolution.html#filter" xlink:title="Filter the candidate atoms by using available argument type information. This is only possible for atoms with attached methods." target="_top">
 <polygon fill="#87cefa" stroke="black" points="270,-196 223,-167 270,-138 317,-167 270,-196"/>
 <text text-anchor="middle" x="270" y="-170" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#0000a0">Filter by</text>
 <text text-anchor="middle" x="270" y="-158" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#0000a0">Argument Type</text>

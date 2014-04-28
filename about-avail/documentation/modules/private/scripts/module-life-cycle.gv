@@ -180,6 +180,12 @@ strict digraph "Module Life Cycle"
 			fillcolor="#87cefa",
 			href="/about-avail/documentation/modules/module-life-cycle.html#trace"
 		];
+		sortAncestors
+		[
+			label="Sort\nAncestors",
+			tooltip="Topologically sort the ancestors such that the furthest ancestors will be processed first and the activated module will be processed last.",
+			href="/about-avail/documentation/modules/module-life-cycle.html#sortAncestors"
+		];
 		moreAncestors
 		[
 			label="More\nAncestors?",
@@ -232,7 +238,8 @@ strict digraph "Module Life Cycle"
 		anyDirty -> trace [label=" no"];
 		anyLoaded -> trace [label=" no"];
 		moreUnload -> trace [label=" no"];
-		trace -> nextAncestor [label="ok"];
+		trace -> sortAncestors [label="ok"];
+		sortAncestors -> nextAncestor;
 		moreAncestors -> nextAncestor [label=" yes"];
 		nextAncestor -> isLoaded;
 		isLoaded -> moreAncestors [label=" yes"];

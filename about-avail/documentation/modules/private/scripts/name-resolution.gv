@@ -30,14 +30,16 @@ strict digraph "Name resolution"
 		label="Name Provided\nAs String",
 		tooltip="The name is provided as a string to a method that performs name resolution.",
 		shape="record",
-		style="rounded"
+		style="rounded",
+		href="/about-avail/documentation/modules/name-resolution.html#stringProvided"
 	];
 	parse
 	[
 		label="Name Sent\nAs Message",
 		tooltip="The compiler parses the name from a lexical expression in the module body.",
 		shape="record",
-		style="rounded"
+		style="rounded",
+		href="/about-avail/documentation/modules/name-resolution.html#parse"
 	];
 	lookup
 	[
@@ -45,19 +47,22 @@ strict digraph "Name resolution"
 		tooltip="Use the name to look up the set of candidate atoms in the module's internal directory of visible names.",
 		shape="diamond",
 		style="filled",
-		fillcolor="#87cefa"
+		fillcolor="#87cefa",
+		href="/about-avail/documentation/modules/name-resolution.html#lookup"
 	];
 	create
 	[
 		label="Create a\nNew Atom",
 		tooltip="Create a new atom and associate it with the name.",
-		shape="box"
+		shape="box",
+		href="/about-avail/documentation/modules/name-resolution.html#create"
 	];
 	isNew
 	[
 		label="Created\nLocally?",
 		tooltip="Is the name mentioned in the introduced names section of the resolving module?",
-		shape="diamond"
+		shape="diamond",
+		href="/about-avail/documentation/modules/name-resolution.html#isNew"
 	];
 	howMany
 	[
@@ -65,13 +70,15 @@ strict digraph "Name resolution"
 		tooltip="How many atoms are associated with the name?",
 		shape="diamond",
 		style="filled",
-		fillcolor="#87cefa"
+		fillcolor="#87cefa",
+		href="/about-avail/documentation/modules/name-resolution.html#howMany"
 	];
 	typeInfo
 	[
 		label="Types\nAvailable?",
 		tooltip="Is type information available? This will be true at the call site of a name, or during the reflective lookup of a method definition using \"method definition of_for\".",
-		shape="diamond"
+		shape="diamond",
+		href="/about-avail/documentation/modules/name-resolution.html#typeInfo"
 	];
 	filter
 	[
@@ -79,7 +86,8 @@ strict digraph "Name resolution"
 		tooltip="Filter the candidate atoms by using available argument type information. This is only possible for atoms with attached methods.",
 		shape="diamond",
 		style="filled",
-		fillcolor="#87cefa"
+		fillcolor="#87cefa",
+		href="/about-avail/documentation/modules/name-resolution.html#filter"
 	];
 	resolved
 	[
