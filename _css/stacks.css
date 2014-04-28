@@ -38,10 +38,11 @@ body {
 	padding: 0px !important;
 }
 
+
 .main-frame {
-	height: calc(100% - 95px);
+	min-height: 500px;
+	height: calc(100% - 60px);
 	width: 100%;
-	
 	display: block;
 	border: none;
 }
@@ -127,17 +128,6 @@ h2.pane-heading-right
 	margin: 0px !important;
 }
 
-div.frame-heading
-{
-	height: 15%;
-	font-size: 14px;
-	font-weight: bold;
-	color: white;
-	background-color:#1c553f; 
-	padding: 8px;
-	margin: 0px !important;
-}
-
 
 h2.pane-heading-left
 {
@@ -174,7 +164,7 @@ a.method-link
 
 .pane-contents {
 	padding: 4px;
-	height: calc(100% - 65px);
+	height: calc(100% - 85px);
 	overflow: scroll;
 }
 
