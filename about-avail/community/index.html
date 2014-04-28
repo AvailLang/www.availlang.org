@@ -28,6 +28,8 @@
 
 <p>If you would like to participate in the Avail community, then please join one or more of our <a class="unmarked" href="http://lists.availlang.org/">community mailing lists</a>. Avail has only recently gone live, so the mailing lists are rather sparse, and could definitely use your enthusiasm to liven them up.</p>
 
+<p>The quality of the product and our website are extremely important to us. You can help us with the continuous process of improvement by <a href="#report">reporting any issues that you encounter</a> with the <a href="#reportWebsite">website</a> or <a href="#reportSoftware">software</a>.</p>
+
 <h3 id="contribute">Contributing</h3>
 
 <p>The Avail <a href="/about-us/team/index.html">team</a> is small, but very dedicated and industrious. Though we have accomplished much in the years leading up to Avail's debut, our ambition is much larger than the current scale of the project. There is far more yet to do than we can reasonably achieve alone.</p>
@@ -42,6 +44,57 @@
 <p>Now that we've reached our first milestone &mdash; the release of a public, open-source, development version of Avail &mdash; we ask for your patience in the coming months as we struggle to respond to incoming correspondence. We will, of course, make every effort to respond to your inquiries in a timely fashion, but inevitably there will be delays. In addition to the sweat, blood, and tears that we are pouring into Avail, we also have full-time scholastic or employment obligations. So please bear with us!</p>
 
 <p>With that out of the way, if you have something to say to us that is best said privately, rather than via the community mailing lists, then feel free to contact us <a class="unmarked" href="http://www.google.com/recaptcha/mailhide/d?k=01Q0QkAFTdQOKPZ8xtrmwl_g==&amp;c=512LOxSdGaO-UpsHrK2_TXZl7o-7bYfyh991efx9ATw=" onclick="window.open('http://www.google.com/recaptcha/mailhide/d?k\07501Q0QkAFTdQOKPZ8xtrmwl_g\75\75\46c\075512LOxSdGaO-UpsHrK2_TXZl7o-7bYfyh991efx9ATw\075', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;" title="Email the site administrator">directly</a>.</p>
+
+<h3 id="report">Reporting Issues</h3>
+
+<h4 id="reportWebsite">Reporting an Issue with the Website</h4>
+
+<p>To report a problem with the Avail website, please help us out by taking the following steps:</p>
+
+<ol>
+<li><p>To reduce the incidence of duplicate problem reports, first search for the issue by using our issue tracking system:</p>
+
+	<blockquote><a href="https://trac.availlang.org/report">https://trac.availlang.org/report</a></blockquote>
+
+<p>If you do locate the issue, then please feel free to add any information not already reported in the history of the existing issue.</p></li>
+
+<li><p>If you could not locate the issue in our database, then please create a new ticket in our issue system:</p>
+
+	<blockquote><a href="https://trac.availlang.org/newticket">https://trac.availlang.org/newticket</a></blockquote>
+
+<p>Please set the <code>Component</code> drop-down to <code>Website</code>. While we are very sensitive (in a good way!) about our spelling, grammar, and phraseology, these are cosmetic issues that take a back seat to factual inaccuracies and disruptions of service. So please set the priority of cosmetic issues to <code>trivial</code>, the priority of factual inaccuracies to <code>minor</code>, and disruptions of service to <code>major</code>. We will adjust the priorities if necessary, so do not worry excessively about misclassifying the issue.</p>
+</li>
+</ol>
+
+<h4 id="reportSoftware">Reporting an Issue with the Software</h4>
+
+<p>To report a problem with the Avail virtual machine, standard library, or website, please take the following steps:</p>
+
+<ol>
+<li>Please verify, to the best of your ability, that the problem does not result from a bug in your own code. We all write buggy code, including the developers at The Avail Foundation, so please make sure that the problem is ours and not yours – so that we can concentrate our efforts on fixing our own bugs!</li>
+
+<li><p>Once you are certain that the bug's provenance makes it our problem, please verify that the bug has not already been reported. You can do this by searching for the bug using our issue tracking system:</p>
+
+	<blockquote><a href="https://trac.availlang.org/report">https://trac.availlang.org/report</a></blockquote>
+
+<p>If you do locate the bug, then please feel free to add any information not already reported in the history of the existing issue. If this bug is mission-critical for you, then please let us know this so that we can assess our current priorities and adjust them accordingly.</p></li>
+
+<li><p>If you could not locate the bug in our database, then please create a new ticket in our issue system:</p>
+
+	<blockquote><a href="https://trac.availlang.org/newticket">https://trac.availlang.org/newticket</a></blockquote>
+
+<p>Please try to find the minimal test case that reproduces the problem, and attach any relevant source files, resources, and screenshots to the new issue. Please set the <code>Priority</code> to a reasonable value, but do not set the priority to <code>blocker</code>. From the <code>Component</code> drop-down, choose <code>Virtual Machine</code> or <code>System Library</code>, as appropriate. It is perfectly fair if you do not know what priority to set, or which component to choose, so do not fret about misclassifying the issue. We will adjust these fields if necessary when we begin investigating.</p></li>
+
+<li><p>You are certainly welcome to stop at #3; at this point, you have definitely done your duty as a responsible and considerate user of open-source software. If you are feeling especially ambitious, however, you may wish to tackle the bug yourself! This may be a trivial matter or a serious ordeal, depending on the
+nature of the bug, and providing advice to the ambitious is beyond the scope of this humble document. If you do decide to attempt a resolution yourself, then please include a statement of your intentions in the issue report. Should your efforts prove successful, then please create a minimal patch file in <a class="offsite" href="http://en.wikipedia.org/wiki/Diff#Unified_format">unified format (unidiff)</a>, treating absent files as empty. On Unix systems, you can do this with a command like:</p>
+
+	<div class="restricted-width-container">
+<div class="console code-block">$ diff -udrN $PROJ $COPY</div></div>
+
+<p>Where <code>$PROJ</code> denotes the original clone of the project repository and <code>$COPY</code> denotes a fork that contains your updated files. Please attach the resultant patch file to the relevant issue. Once we have had an opportunity to review the patch for vulnerabilities and stylistic issues, then we will apply your patch to the appropriate project branches in Git.</p>
+
+<p>If you start but give up before achieving a resolution, then simply update the issue to let us know that you are no longer working on the problem.</p></li>
+</ol>
 
 
 <!--#include virtual="/_include/body-bottom.ssi" -->
