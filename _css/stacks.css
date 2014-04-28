@@ -39,7 +39,7 @@ body {
 }
 
 .main-frame {
-	height: 100%;
+	height: calc(100% - 95px);
 	width: 100%;
 	
 	display: block;
@@ -78,7 +78,7 @@ body {
 
 h2.pane-heading 
 {
-	height: 40px;
+	height: 25px;
 	font-size: 14px;
 	font-weight: bold;
 	text-align: center;
@@ -90,7 +90,7 @@ h2.pane-heading
 
 h4.section-heading 
 {
-	height: 40px;
+	height: 15%;
 	font-size: 14px;
 	font-weight: bold;
 	text-align: center;
@@ -103,7 +103,7 @@ h4.section-heading
 
 h2.pane-heading-right
 {
-	height: 40px;
+	height: 25px;
 	font-size: 14px;
 	font-weight: bold;
 	text-align: right;
@@ -115,7 +115,7 @@ h2.pane-heading-right
 
 .pane-heading-right
 {
-	height: 40px;
+	height: 10px;
 	font-family: 'Raleway', sans-serif;
 	margin-bottom: 11px;
 	font-size: 14px;
@@ -129,7 +129,7 @@ h2.pane-heading-right
 
 div.frame-heading
 {
-	height: 40px;
+	height: 15%;
 	font-size: 14px;
 	font-weight: bold;
 	color: white;
@@ -141,7 +141,7 @@ div.frame-heading
 
 h2.pane-heading-left
 {
-	height: 40px;
+	height: 25px;
 	font-size: 14px;
 	font-weight: bold;
 	text-align: left;
@@ -174,7 +174,7 @@ a.method-link
 
 .pane-contents {
 	padding: 4px;
-	height: calc(100% - 40px);
+	height: calc(100% - 65px);
 	overflow: scroll;
 }
 
