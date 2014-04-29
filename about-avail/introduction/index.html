@@ -25,7 +25,7 @@ Avail is a multi-paradigmatic general purpose programming language whose feature
 </p><p>
 Traditional programming languages provide only small context-free grammars and low-level values. They are therefore well suited for solving software engineering problems, like sorting an array of 32-bit integral values in place, but poorly suited for solving problems of other kinds. This is unfortunate, because the overwhelming majority of programs target some other domain. The vocabulary and concepts of bits, bytes, loops, arrays, and floating point numbers are extremely poorly suited for tackling everyday problems in chemistry, banking, insurance, pharmacology, linguistics, and a thousand other fields.
 </p><p>
-It is, of course, possible to describe a thing at the wrong level and using the wrong language, but not even a career programmer wants to say:
+It is, of course, possible to describe a thing at the wrong level and using the wrong language. Consider the following example, written in C, one of the most successful programming languages of all time:
 </p>
 <div class="restricted-width-container">
 <div class="neutral-code code-block">int i;
@@ -36,14 +36,18 @@ for (i = 1; i <= 10; i++)
 }
 </div></div>
 <p>
-When she could instead say:
+But there are many career programmers who would rather say:
 </p>
 <div class="restricted-width-container">
 <div class="neutral-code code-block">Print 1 to 10, as a comma-separated list.
 </div></div>
 <p>
 Programmers must continually solve adaptation problems in order to translate high-level concepts from the rich vocabulary of a natural language and the specialized jargon of a problem domain into the impoverished expression space of a traditional programming language. Many everyday problems are hard enough to describe and solve using humanity's best tools for communication: natural language and visual metaphor. Any programmer who has ever worked on a nontrivial problem does not need to imagine the difficulty of encoding a good solution using only low-level concepts and a handful of special keywords; she does this very thing for a living! Even using best practice in software engineering, throughout her career she will solve the same adaptation problems repeatedly, gradually building up a repertoire of design patterns, mental boilerplate, dirty tricks, and professional discipline in order to compensate for the chronic deficiencies of traditional programming languages. Nevertheless, any complex project spends its early years replete with bugs that arise directly from the mismatch of the problem and solution domains.
-</p><p>
+</p>
+<p>
+Obviously, a natural language pidgin is not always the right language for the job. If you have ever read mathematical proofs from the era before modern mathematical notation, then you know that natural language absolutely falls flat on its face in certain situations. Clearly there is no single language that is right for every job. What good is your own natural language when confronted with someone who doesn't speak it? But there is always <em>some</em> language that is right. This is why Avail strives to provide the tools needed to build any language whatsoever. Avail is not so much a language, as an <em>infinite collection of languages</em>, waiting just beneath the surface.
+</p>
+<p>
 <h3>Articulate Programming with Avail</h3>
 Articulate programming endeavors to streamline software development by reducing the degree of mismatch between the problem and solution domains. 
 </p>
