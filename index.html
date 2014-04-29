@@ -9,6 +9,7 @@
 	<head>
 		
 <!--#include virtual="/_include/head.ssi" -->
+<!--#include virtual="/_include/sh-head.ssi" -->
 	
 		<title>The Avail Programming Language</title>
 		<style>
@@ -41,6 +42,50 @@
 
 <hr/>
 
+<p>To whet your appetite for Avail, here is a snippet from our largest example, <code class="module">Wump the Wumpus</code>:</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+Public method "Play Wump the Wumpus with reader_with reporter_" is
+[
+	reader : []→string,
+	writer : [string]→⊤
+|
+	/* Set up the game's I/O. */
+	Wump the Wumpus reader := reader;
+	Wump the Wumpus reporter := writer;
+	/* Create a new game. All references to game objects within the block are
+	 * implicitly understood as relative to this new game.
+	 */
+	newGame ::= a game of Wump the Wumpus;
+	Use newGame as the implied game and do
+	[
+		Welcome;
+		Look around, having just entered;
+		Until the game is over, do
+		[
+			Give the agent a turn;
+			Give the first swarm a turn;
+			Give the second swarm a turn;
+			Give the wumpus a turn;
+		];
+		If the agent is alive then
+		[
+			If the wumpus is dead then [Report victory;]
+			else [Report cowardice;];
+		]
+		else [Report defeat;];
+		Goodbye;
+	];
+] : ⊤;
+]]>
+</script></div></div>
+
+<p><small>(The parameters are dependency injected I/O functions, in case you were wondering.)</small></p>
+
+<hr/>
+
 <p>This site is under active development, and, like Avail itself, it is by no means "complete". It is, nonetheless, home to a significant volume of useful content. This content can be accessed from the side bar to the left.</p>
 
 <ol>
@@ -61,6 +106,7 @@
 <p><strong>2014.04.28:</strong> <a href="/about-avail/newsletters/E006.html">Avail Newsletters, Edition #6: Hello, World!</a> is now available. <small>(Oh, and we also changed the entire website and added a download link.)</small></p>
 
 <!--#include virtual="/_include/body-bottom.ssi" -->
+<!--#include virtual="/_include/sh-bottom.ssi" -->
 
 	</body>
 
