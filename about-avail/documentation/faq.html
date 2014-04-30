@@ -1,0 +1,292 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+<!--#include virtual="/_include/sh-head.ssi" -->
+	
+		<title>Avail FAQ</title>
+		<style>
+			table.faq
+			{
+				background: linear-gradient(to right, rgb(242, 242, 242), rgb(252, 252, 252));
+				width: 100%;
+			}
+			tr.header
+			{
+				background: white;
+				color: black;
+				text-align: left;
+				vertical-align: bottom;
+			}
+			tr.faq:nth-child(odd)
+			{
+				color: black;
+				vertical-align: baseline;
+			}
+			tr.faq:nth-child(even)
+			{
+				background: white;
+				color: black;
+				vertical-align: baseline;
+			}
+			.question
+			{
+				background: linear-gradient(to right, rgb(242, 242, 242), rgb(252, 252, 252));
+			}
+		</style>
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+
+		<h2 class="content-title">Frequently Asked Questions <small>(FAQ)</small></h2>
+
+<p>Before we announced Avail to the world on <a class="offsite" href="http://en.wikipedia.org/wiki/April_28">April 28, 2014</a>, we had no idea what questions would be asked frequently. Sure, we came up with some, and some of our guesses were even correct. But we wanted to use a <a class="offsite" href="http://en.wikipedia.org/wiki/Data_driven">data-driven</a> approach to writing our FAQ. So we erred on the side of caution, and waited for compelling reasons to believe that certain questions would, in fact, be asked frequently.</p>
+
+<p>Thanks to the mind-bogglingly successful proliferation of the announcement, and the lively discussions that ensued, we now have a pretty good idea about what people are asking &mdash; and how we should respond.</p>
+
+<table class="faq">
+<thead>
+<tr class="header">
+	<th style="width: 70%">Question</th>
+	<th style="width: 30%">Short Answer</th>
+</tr>
+</thead>
+<tbody>
+<tr class="faq">
+	<td><a href="#q1">Who is Avail for?</a></td>
+	<td>You, if you want it to be.</td>
+</tr>
+<tr class="faq">
+	<td><a href="#q2">Why did we build Avail?</a></td>
+	<td>Because it didn't exist already.</td>
+</tr>
+<tr class="faq">
+	<td><a href="#q3">Is Avail natural language programming?</a></td>
+	<td>No.</td>
+</tr>
+<tr class="faq">
+	<td><a href="#q4">Does Avail require English language proficiency?</a></td>
+	<td>Yes, and so do its competitors.</td>
+</tr>
+<tr class="faq">
+	<td><a href="#q5">Why does Avail use so much Unicode?</a></td>
+	<td>Because it's international, relevant, and pretty.</td>
+</tr>
+<tr class="faq">
+	<td><a href="#q6">Why isn't feature <code>X</code> supported?</a></td>
+	<td>Because you didn't build it yet.</td>
+</tr>
+</tbody>
+</table>
+
+<hr/>
+
+<h2 class="content-title">Long Answers</h2>
+
+<h4 class="question" id="q1">Who is Avail for?</h4>
+<p>At the risk of being facetious, Avail is for people who want to use Avail, just like <a class="offsite" href="http://www.oracle.com/technetwork/java/index.html?ssSourceSiteId=opn">Java</a> is for people who want to use Java, and <a class="offsite" href="http://www.haskell.org/haskellwiki/Haskell">Haskell</a> is for people who want to use Haskell. These is no question that, at the present time, these other programming languages, and most other programming languages that you have ever used or heard of, are more capable than Avail. They are faster, they are more reliable, they are better documented, they have larger ecosystems, and so on. If you are developing mission-critical software, then there is absolutely no question that you should use some other system &mdash; any other system &mdash; to build your product.</p>
+
+<p>At this very minute, Avail is for enthusiasts who want to experiment with an emerging technology that offers clean semantics and unprecedented expressiveness. It is for people who want to write statically-typed, syntactically-appropriate, semantically-rich domain-specific languages without having to sacrifice immutable values, imperative flow control, exception handling, type polymorphism, multiple dispatch, parallel computing, or anything else in order to do so.</p>
+
+<p>Avail is for people who know where they want to go, who don't need to get there today, and who would prefer blazing a new trail to the future rather than taking the many well-trodden roads that brought them to the present &mdash; but still do not go where they want to go.</p>
+
+<h4 class="question" id="q2">Why did we build Avail?</h4>
+<p>Because we <em>love</em> programming, but prefer accomplishing ambitious tasks to being frustrated and disappointed with the programming languages that are available to us.</p>
+
+<p>We analyzed the design decisions that went into established, successful programming languages. We found one thing in common among them: they excel at doing the things that they were specifically designed to do &mdash; and everything else is painful. Why? Because the designers wanted to produce viable artifacts within their productive lifetimes, so that people could use them while they were still important and relevant. Hats off to every single one of them. Without their compromises, the state of the art today would be appalling. Maybe we'd still be using punchcards, who knows?</p>
+
+<p>But all the same, we believe that these pioneers sacrificed the future for the sake of the present, so that they could build and deliver tools while they were still needed. They saved themselves person-years of effort by choosing pragmatic designs that cut corners, and as a result we the programmers have spent person-centuries writing boilerplate, working around permanent design defects, contorting our code into preposterous shapes, and screaming in desperation whenever we realized that we just couldn't get there from here. How long did it take Java to get proper lexical closures? About 19 years. That's a long time to wait for something that is considered a <em>sine qua non</em> by many developers.</p>
+
+<p>We knew that we weren't going to get what we wanted out of programming if we waited for someone else to build it, so we rolled up our sleeves and got to work. Avail may have taken 20 years to build, but from your point of view, they are years that have already been spent. They are not years that you have to wait.</p>
+
+<h4 class="question" id="q3">Is Avail natural language programming?</h4>
+<p>The <a href="/about-avail/introduction/index.html#articulateProgramming">articulate programming paradigm</a> espoused by Avail is not about writing programs in natural language. I cannot be more explicit about this: <span style="text-decoration: underline">programs should not be written using natural language</span>. I ask the court, who on earth wants to write code like this?</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+The (2-tuple of real)-valued formula called:
+	roots of a degree-2 polynomial given coefficents
+		_ (called a),
+		_ (called b), 
+		and _ (called c);
+Where:
+	Parameter a is an integer;
+	Parameter b is an integer;
+	Parameter c is an integer;
+Is:
+	the tuple of
+		(negative b minus square root of (b squared minus 4 times a times c))
+			divided by (2 times a)
+	then
+		(negative b plus square root of (b squared minus 4 times a times c))
+		 	divided by (2 times a);
+Thus written;
+]]>
+</script></div></div>
+
+<p>If your reaction is, "Ulch! Gag me with a <a class="offsite" href="http://apod.nasa.gov/apod/ap131102.html">planet</a>!", then you had exactly the same reaction that I did &mdash; except that I had to firm up my guts enough to actually write the damned thing, whereas you hopefully got to laugh at my hapless <a class="offsite" href="http://en.wikipedia.org/wiki/Straw_man">straw man</a>.</p>
+
+<p>This example has clearly been taken to its absurd, ham-fisted extreme, and there are certainly less horrible ways to implement the <a class="offsite" href="http://en.wikipedia.org/wiki/Quadratic_formula">quadratic formula</a> using natural language. But every solution that uses natural language is going to have a similar bouquet of horribleness, because natural language is exceptionally poorly suited to mathematical discourse. There is a huge mismatch between the problem domain and the solution domain. Natural language is the wrong language for the job.</p>
+
+<p>With a few more planned updates to our compiler, like macros (methods that run on phrases to produce phrases), we could actually write something like the silliness above. But a real Avail implementation would look more like this:<sup><a href="#fn1">[1]</a></sup></p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+Method "roots of_x^2+_x+_" is
+[
+	a : number,
+	b : number,
+	c : number
+|
+	<(-b - √(b^2 - 4 × a × c)) ÷ (2 × a), (-b + √(b^2 - 4 × a × c)) ÷ (2 × a)>
+] : <double…|2>;
+]]>
+</script></div></div>
+
+<p>This is anything but natural language, as I'm sure you'll agree. It lacks the lovely typesetting that you would see in a textbook, but this is unmistakably the quadratic formula that you learned in primary school.</p>
+
+<p>Avail provides you the tools necessary to use the language that is appropriate for the task at hand &mdash; for any task, not just a half-dozen tasks that the language designers targeted. This is what articulate programming is all about.</p>
+
+<p>It just so happens that articulate programming often employs pidgins of natural language, because there are very many contexts in which it is actually quite useful. Consider the following official Avail example, which implements a short <a class="offsite" href="http://en.wikipedia.org/wiki/Choose_Your_Own_Adventure">choosable path</a> story based on the British sci-fi comedy franchise, <a class="offsite" href="http://en.wikipedia.org/wiki/Red_Dwarf">Red Dwarf</a>:</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 33">
+<![CDATA[
+Module "Crimson Short One Choosable Path"
+Versions
+	"1.0.0 DEV 2014-04-28"
+Uses
+	"Avail",
+	"Choosable Path"
+Entries
+	"Play Crimson Short One"
+Body
+
+Let the game context include
+	boolean state
+		"astronavigation exam requires revision" ✔ /
+		"astronavigation exam does not require revision"
+	whole number state
+		"years served" (initially 15);
+
+Let "Just Waking Up",
+	"Studying is Hard",
+	"Drive Room Maintenance",
+	"Drive Room Diligence",
+	and "Drive Room Disaster" be scenes;
+
+Just Waking Up is described by
+	"Yawwwn. You would've slept better if a certain gerbil-faced git hadn't
+	kept you up all night with his uninspired guitar playing. Oh well. Time
+	to face the day."
+and has transitions
+	to Studying is Hard
+		described by
+			"Your astronavigation exam is tomorrow. You really need to pass it
+			so that you can become an officer and leave slob city behind.
+			Better get cracking!"
+	to Drive Room Maintenance
+		described by
+			"You should report for duty. You'd hate to get a reprimand!";
+
+Studying is Hard
+	is described by
+		"You cover yourself with arcane mathematical formulae. Ha! You
+		definitely won't write \"I am a fish\" on the test now!",
+	upon entry does [Now astronavigation exam does not require revision;],
+and has a transition
+	to Drive Room Maintenance
+		described by
+			"Okay, guess it's time to report for duty.";
+
+Drive Room Maintenance is described by
+	"According to the duty roster, it's time to perform maintenance on the
+	drive plate. Sounds like real work. Blech."
+and has transitions
+	to Drive Room Disaster
+		described by
+			"Poke around, but don't bother double checking the drive plate.
+			Everything will be fine, and you have other things to do.",
+	to Drive Room Diligence
+		contingent on [astronavigation exam does not require revision]
+		described by
+		[
+			time ::= years served + 5;
+			"Better double check the drive plate. You'd hate for there to be
+			some kind of freakish nuclear holocaust to interfere with
+			acquiring your " ++ “time” ++ " years long service medal."
+		];
+
+Drive Room Disaster is described by
+	"You go about your day until you are suddenly transformed into a small pile
+	of white dust by a nuclear explosion. \"Gazpacho soup…\"";
+
+Drive Room Diligence is described by
+	"It's a good thing that you checked the drive plate! It needed serious
+	attention. Were it not for your diligence, there might have been a nuclear
+	holocaust.\n\nCongratulations!";
+
+Let Just Waking Up be the opening scene;
+
+Verify story;
+
+Method "Play Crimson Short One" is
+[
+	Play a game,
+		creating a context with [a game context],
+		interacting with standard console interface;
+];
+]]>
+</script></div></div>
+
+<p>I consider this a very strong recommendation for an English pidgin &mdash; in the context of building a choosable path story, this is definitely the way to go.</p>
+
+<h4 class="question" id="q4">Does Avail require English language proficiency?</h4>
+<p>Today it does, yes. The standard library is written using English keywords, and all of the <a href="/about-avail/documentation/stacks/library-documentation/index.html">Stacks</a> documentation is English. The compiler's error messages are also English, as are the user interface elements of the <a href="/about-avail/documentation/workbench.html">workbench</a>. This is basically the same situation for every other programming language that has ever existed: the core tools are written for English speakers. English currently enjoys the privilege of being the <em>lingua franca</em> of computer programming, so keywords are basically always English words or <a class="offsite" href="http://en.wikipedia.org/wiki/Portmanteau">portmanteaux</a>.</p>
+
+<p>Given Avail's extreme support for Unicode and fluid syntax, however, it will be very easy to build modules in other languages. Not just modules that contain words and phrases in other languages, but modules that do not contain English at all. While it is very nice to have a <em>lingua franca</em> for programming, it would be equally nice to teach your children how to program without first teaching them a complicated and irregular foreign language &mdash; such as English, if you are one of the <a class="offsite" href="http://en.wikipedia.org/wiki/List_of_languages_by_total_number_of_speakers">estimated 6.3 billion people who don't speak it as a first language, or one of the 5.5 billion people who don't speak it at all</a>.</p>
+
+<h4 class="question" id="q5">Why does Avail use so much Unicode?</h4>
+<p>Avail aims to reduce the mismatch between conventional typesetting and programming. Programming languages traditionally center around ASCII. They may allow Unicode characters in string literals, comments, or identifiers, but they typically shy away from Unicode operator characters. I will venture that this is probably because of the specter of <a class="offsite" href="http://en.wikipedia.org/wiki/APL_(programming_language)">APL</a> and its notorious <a class="offsite" href="http://upload.wikimedia.org/wikipedia/commons/9/9f/APL-keybd2.svg">special keyboards</a>.</p>
+
+<p>This is very unfortunate, because there are many modern editors, keyboard drivers, visual character maps, and so forth that have excellent support for Unicode display and composition. The Unicode standard attempts, quite admirably and successfully, to map all useful characters from past and present human orthographies, natural or specialized, into a single character set. This is obviously the right substrate for expressing concepts in math, science, and language. Because Unicode has code points for so many characters that succinctly capture useful metaphors, we agonized over the mental hew and cry that we imagined arising from programmers and then embraced Unicode anyway.</p>
+
+<p>To those of you who despise, um, characters&hellip; please let me direct your attention to the <code class="module">Convenient ASCII</code> module that is delivered as part of the standard library. It contains the beginnings of an effort to provide ASCII <a href="/about-avail/documentation/modules/private-imports-section.html#import-specification">renames</a> of all Unicode methods. We haven't done a lot of work on this module yet, so this is definitely an area that could use volunteers.</p>
+
+<p>Our long-term plan for <code class="module">Convenient ASCII</code> is not to pollute our beautiful source code with silly ASCII approximations, but rather to provide the basis for a large suite of source-altering macros that enable a programmer to type ASCII expressions that are promptly and automatically translated into their sexy true (Unicode) selves by our upcoming integrated development environment.</p>
+
+<h4 class="question" id="q6">Why isn't feature <code>X</code> supported?</h4>
+<p>First, make sure that your feature really isn't supported yet. Avail is brand new, and still woefully under-documented, so it is perfectly fair if you can't tell whether the feature you are looking for is supported. Most of the domain-specific features that you would expect to obtain from a third-party library, like a statistics package or a NoSQL database connector, are probably not available &mdash; yet.</p>
+
+<p>But Avail is a open-source language with great core features. If you would like to use Avail, and you would also like to use feature <code>X</code>, then there is a very good chance that it can already be built using the existing core features and standard library. Please contact us if you would like our assistance, or at least guidance, in building an awesome library.</p>
+
+<p>You can also make a feature request using our <a href="https://trac.availlang.org/">project management system</a>. You do not need to register for an account<sup><a href="#fn2">[2]</a></sup> in order to post a new issue or comment on an existing issue, but you will need to supply a valid e-mail address if you wish to receive ticket update notifications.</p>
+
+<hr/>
+
+<p><small><a id="fn1">[1]</a> I told a little white lie with this code example. Right now, our message syntax does not support digits, so you'd actually have to replace <code>2</code> with an underscore and insert <code>two : 2's type</code> between the definitions of <code>a</code> and <code>b</code>. This restriction will be removed in an upcoming development milestone; using digits in method names turns out to be quite useful, actually.</small></p>
+<p><small><a id="fn2">[2]</a> In fact, you contain register for an account at this time. Accounts are for the Avail team and contributors. If you would like to become an active contributor, then please read the <a href="/about-avail/community/index.html">community page</a> and follow the instructions there.</small></p>
+
+<table class="book-nav">
+	<tr>
+		<td class="book-nav-up"><a class="book-nav-up" href="index.html">Return to Documentation</a></td>
+	</tr>
+</table>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+<!--#include virtual="/_include/sh-bottom.ssi" -->
+
+	</body>
+
+</html>
