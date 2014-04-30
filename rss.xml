@@ -5,6 +5,13 @@
 		<description>Fresh posts on the site, including newsletters, tutorials, documentation, etc.</description>
 		<link>http://www.availlang.org</link>
 		<item>
+			<title>FAQ</title>
+			<pubDate>Wed, 30 Apr 2014 05:50:00 GMT</pubDate>
+			<description>The Avail FAQ is now available.</description>
+			<link>http://www.availlang.org/about-avail/documentation/faq.html</link>
+			<guid>http://www.availlang.org/about-avail/documentation/faq.html</guid>
+  		</item>
+		<item>
 			<title>Newsletter #6 - Hello, World!</title>
 			<pubDate>Mon, 28 Apr 2014 22:30:00 GMT</pubDate>
 			<description>Today is release day, and the Avail programming language is now live. The first released version of Avail is "1.0.0 DEV 2014-04-28". This is the first major development milestone. It is not a production release, and is not recommended for mission-critical use.</description>
