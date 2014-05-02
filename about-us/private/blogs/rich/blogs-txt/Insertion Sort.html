@@ -34,7 +34,7 @@
 <p>At much smaller tuple sizes, it is more efficient to use <a class="offsite" href="http://en.wikipedia.org/wiki/Insertion_sort">insertion sort</a> than merge sort due to the overhead of merge sort (here is a nice <a href="http://www.khanacademy.org/science/computer-science/v/insertion-sort-algorithm">video on insertion sort</a> put together by the Khan Academy).  Because of this, I have created multiple implementations of merge sort as a public method in the Tuples module of the library (a public method is exported for use outside the module).  In the implementation of merge sort for tuples with 2 to 10 elements, I have made a call to the private implementation of insertion sort to do the sorting (a private method is not exported and can only be used inside the module it is defined in).  My implementation of insertion sort only operates on tuples ranging in size from 2 to 10 elements (the merge sort algorithm is implemented for merge sort calls on tuples of 11 elements or more).</p>
 
 <p>In order to better understand the Avail implementations I display, I'll list some of the methods used in them.  The part in quotes is the method itself, with the signature that provides the input and return values:  <code>[paramType1,paramType2]→returnType</code>.  Each underscore represents an input. Here is a list of methods used in the creation of the sort methods.</p>
-<a name="methodsUsed"></a>
+<a id="methodsUsed"></a>
 <ul>
 <li><code>"↑_"</code> :: <code>[any meta]→variable meta</code> - Construct and answer a variable type with the specified containment type.
 <li><code>"_++"</code> / <code>"_--"</code> :: <code>[variable]→⊤</code> - increment/decrement the numeric variable</li> 
