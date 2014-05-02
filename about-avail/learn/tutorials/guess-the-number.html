@@ -49,15 +49,15 @@
 <li>Learn how to declare, initialize, and assign local variables.</li>
 <li>Learn how to use a few basic control structures:
 	<ul>
-	<li>Conditional branching (using <code>"If|if_then_&laquo;else if_then_&raquo;&laquo;else_&raquo;"</code>).</li>
-	<li>Looping (using <code>"Do_until_alternate with_"</code>).</li>
-	<li>Exception handling (using <code>"try_else_"</code>).</li>
+	<li>Conditional branching (using <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/1404901630.html">"If|if_then_&laquo;else if_then_&raquo;&laquo;else_&raquo;"</a></code>).</li>
+	<li>Looping (using <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/66427220.html">"Do_until_alternate with_"</a></code>).</li>
+	<li>Exception handling (using <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Exceptions/2333798108.html">"try_else_"</a></code>).</li>
 	</ul>
 </li>
-<li>Learn how to read from standard input (using <code>"next line&laquo;from standard input&raquo;&#8263;"</code>).</li>
-<li>Learn how to produce formatted text from templates and values (using <code>"format_with&laquo;&hellip;::=_&Dagger;,&raquo;"</code>).</li>
-<li>Learn how to parse <code><a href="/about-avail/documentation/type-system/types-extended-integer.html">integer</a></code>s from <code><a href="/about-avail/documentation/type-system/types-string.html">string</a></code>s (using <code>"_&rarr;_"</code>).</li>
-<li>Learn how to compare <code><a href="/about-avail/documentation/type-system/types-number.html">number</a></code>s (using <code>"_=_"</code>, <code>"_&ne;_"</code>, <code>"_&ge;_"</code>, <code>"_&gt;_"</code>, <code>"_&le;_"</code>, and <code>"_&lt;_"</code>).</li>
+<li>Learn how to read from standard input (using <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Standard%20Input/921428567.html">"next line&laquo;from standard input&raquo;&#8263;"</a></code>).</li>
+<li>Learn how to produce formatted text from templates and values (using <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Strings/3791278301.html">"format_with&laquo;&hellip;::=_&Dagger;,&raquo;"</a></code>).</li>
+<li>Learn how to parse <code><a href="/about-avail/documentation/type-system/types-extended-integer.html">integer</a></code>s from <code><a href="/about-avail/documentation/type-system/types-string.html">string</a></code>s (using <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Logic/3327411942.html">"_&rarr;_"</a></code>).</li>
+<li>Learn how to compare <code><a href="/about-avail/documentation/type-system/types-number.html">number</a></code>s (using <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/1075349505.html">"_=_"</a></code>, <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early%20Logic/3090655184.html">"_&ne;_"</a></code>, <code>"_&ge;_"</code>, <code>"_&gt;_"</code>, <code>"_&le;_"</code>, and <code>"_&lt;_"</code>).</li>
 <li>Learn how to construct an <a href="/about-avail/documentation/type-system/types-extended-integer.html">integral type</a> (using <code>"[_.._]"</code>).</li>
 <li>Learn how to extract the bounds of an <a href="/about-avail/documentation/type-system/types-extended-integer.html">integral type</a> (using <code>"&#9123;_&#9126;"</code> and <code>"&#9121;_&#9124;"</code>).</li>
 <li>Learn how to obtain pseudo-random values (using <code>"a pRNG"</code> and <code>"_'s&#8263;next&laquo;value in&raquo;&#8263;_"</code>).</li>
@@ -81,7 +81,7 @@
 
 <p>In short, we are starting all the way down at <strong>line 100</strong> because we needed space to define everything that we are going to use <em>before</em> we actually use it. Capiche? Right! Now stop procrastinating and join me on <strong>line 100</strong>.</p>
 
-<a name=local-constant></a>
+<a id=local-constant></a>
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 100">
 <![CDATA[
@@ -197,7 +197,7 @@ Private method "tries to guess_from range_" is
 </ol>
 
 <p>Collectively, <strong>lines 65-75</strong> handle these three cases. The method <code>"If|if_then_&laquo;else if_then_&raquo;&laquo;else_&raquo;"</code> is the all-terrain conditional control structure. Forget about the weird metacharacters in the name and just focus on how we are using this method in the code; we will introduce the concepts associated with these metacharacters in a later tutorial. Suffice to say, you can have one <code>If &hellip; then [&hellip;]</code> fragment, zero or more <code>else if [&hellip;] then [&hellip;]</code> fragments, and zero or one <code>else [&hellip;]</code> fragment. Before we break down this specific usage, let's look up at <strong>line 42</strong>:</p>
-<a name="module-constant"></a>
+<a id="module-constant"></a>
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 42">
 <![CDATA[

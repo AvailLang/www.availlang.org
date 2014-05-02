@@ -35,7 +35,11 @@
 
 		
 <h3><a id="Prerequisites">Prerequisites</a></h3>
-<p>There are no prerequisites for appreciating this tutorial. You don't need to know anything about programming in Avail, so this is an excellent place to begin.</p>
+<ul>
+<li>While technically not required, you will get the most out of this and subsequent tutorials if you <a href="/about-avail/download/index.html">download Avail</a>, so that you can run the tutorials and work through the exercises.</li>
+<li>Understand how to use the <a href="/about-avail/documentation/workbench.html">Avail workbench</a>.</li>
+<li>There are no coding prerequisites for appreciating this tutorial. You don't need to know anything about programming in Avail, so this is an excellent place to begin.</li>
+</ul>
 
 <h3><a id="Goals">Goals</a></h3>
 <ul>
@@ -43,13 +47,13 @@
 <li>Learn how to import the Avail standard library, <code class="module">Avail</code>, which includes the standard grammar and vocabulary of an Avail program.</li>
 <li>Learn how to define an entry point.</li>
 <li>Learn about the <em>low line</em> (or <em>underscore</em>) <code>_</code> <code class="unicode">(U+005F)</code> message metacharacter.</li>
-<li>Learn how to create a simple method (using <code>"Method_is_"</code>).</li>
-<li>Learn how to print a <code><a href="/about-avail/documentation/type-system/types-string.html">string</a></code> to standard output (using <code>"Print:_"</code>).</li>
+<li>Learn how to create a simple method (using <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Very%20Early%20Definers/2215474179.html">"Method_is_"</a></code>).</li>
+<li>Learn how to print a <code><a href="/about-avail/documentation/type-system/types-string.html">string</a></code> to standard output (using <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/1474264080.html">"Print:_"</a></code>).</li>
 </ul>
 
 <h3><a id="Sources">Complete Sources</a></h3>
 <ul>
-<li><code><a href="/_examples/hello-world/Hello%20World.avail"><img src="/_images/download-icons/avail.png" height="24px" style="padding-bottom:14px;padding-right:4px;">Hello World.avail</a></code></li>
+<li><code><a href="/_examples/hello-world/Hello%20World.avail"><img src="/_images/download-icons/avail.png" class="download-list-icon" alt="Avail source module logo.">Hello World.avail</a></code></li>
 </ul>
    
 <h3><a id="Walkthrough">Walkthrough</a></h3>
@@ -71,7 +75,7 @@ Body
 
 <p><strong>Line 33.</strong> Every module header (and thus source module) begins with the <code>Module</code> keyword and its name. In this case, the module is named <code class="module">Hello World</code>. This <code><a href="/about-avail/documentation/type-system/types-string.html">string</a></code> is arbitrary and may include any Unicode character, but must match the name of the file (sans the <code>.avail</code> extension). If the module name recorded here does not match the file name, then the compiler issues an error message. This is an important crosscheck that you are working on the right module!</p>
 
-<p><strong>Line 34.</strong> Remember how I said that an Avail program is described by a collection of source modules? <code>Hello World.avail</code> is not our entire program. It is merely the tip of an enormous iceberg. That iceberg is the Avail standard library, which is helpfully called <code class="module">Avail</code>. The <code>Uses</code> keyword introduces the <a href="/about-avail/documentation/modules/private-imports-section.html">list of modules</a> that our module needs to import in order to gain access to features that it wants to use. In this case, the standard library contains everything that we need to deliver a boisterous greeting to planet Earth, so it is the only module that we need to import.</p>
+<p><strong>Line 34.</strong> Remember how I said that an Avail program is described by a collection of source modules? <code>Hello World.avail</code> is not our entire program. It is merely the tip of an enormous iceberg. That iceberg is the Avail standard library, which is helpfully called <code class="module">Avail</code>. (When <code class="module">Avail</code> appears in this style, I will specifically mean the <code class="module">Avail</code> module, not the Avail programming language.) The <code>Uses</code> keyword introduces the <a href="/about-avail/documentation/modules/private-imports-section.html">list of modules</a> that our module needs to import in order to gain access to features that it wants to use. In this case, the standard library contains everything that we need to deliver a boisterous greeting to planet Earth, so it is the only module that we need to import.</p>
 
 <p>(It is worth mentioning that the Avail standard library has a deeper obligation than the standard libraries of other programming languages. Without the Avail standard library, there is literally no syntax other than the rigid syntax of module headers. If you didn't <code>Use "Avail"</code>, then you wouldn't be able to declare types, perform arithmetic, use control structures, etc. Some of these restrictions might be okay if you were working with a domain-specific language, but not so for general purpose programming.)</p>
 
@@ -79,7 +83,7 @@ Body
 
 <p><strong>Line 36.</strong> The keyword <code>Body</code> marks the end of the module header, and consequently the beginning of the module body. So let's turn our attention to the module body now.</p>
 
-<a name="method"></a>
+<a id="method"></a>
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 38">
 <![CDATA[
@@ -88,7 +92,7 @@ Method "Greet" is [ Print: "Hello, world!\n"; ];
 </script></div></div>
 
 <p><strong>Line 38</strong> defines an operation named <code class="command">"Greet"</code>. In Avail, a named operation is called a <strong>method</strong>. Much will be said about methods at a later time, but right now what's important is that this method's name matches the name given after the keyword <code>Entries</code> on <strong>line 35</strong>. If the compiler doesn't find a method named <code>"Greet"</code> while parsing the source module, then it will issue an error message to the effect that a declared entry point doesn't exist.</p>
-<a name="argument-position"></a>
+<a id="argument-position"></a>
 <p>The standard library exports a method named <code>"Method_is_"</code> &mdash; pronounced <em>method blank is blank</em> &mdash; whose purpose is to define new methods. The blanks, formally called underscores, indicate <strong>argument positions</strong> in the grammar specified by the method name. <code>"Method_is_"</code> accepts two arguments. The first is a <code>string</code> that represents the name of the new method. The second is a <code><a href="/about-avail/documentation/type-system/types-function.html">function</a></code> that supplies code to implement the method. The number of arguments permitted by the function &mdash; its <strong>arity</strong> &mdash; must agree with the number of argument positions present in the method name. <code class="command">"Greet"</code> has no blanks, so the associated function must not accept any arguments.</p>
 
 <p>A place in the source code where a method is used is termed a <strong>call site</strong>. At the call site of <code>"Method_is_"</code> on <strong>line 38</strong>, the actual arguments are <code>"Greet"</code> and <code>[Print: "Hello, world!\n";]</code>. So the new method will be called <code class="command">"Greet"</code>, which is what we expect.</p>

@@ -58,7 +58,7 @@ Body
 <p>In this example, <code class="module">Dice</code> is a module that defines services related to constructing and evaluating arbitrary dice expressions of the kinds prescribed by many <a class="offsite" href="http://en.wikipedia.org/wiki/Role-playing_game_system">role-playing game systems</a>. As such, it provides dice-related services but does not consume them, i.e., it knows how to use dice but does not know why or when to do so. <code class="module">Dice</code> is a service provider, e.g., library, and its introduced names section constitutes the catalog of its available services.</p>
 
 <p>By including a name in the introduced names section, the compiler or executor creates a new atom and associates it with the name. Equivalent names imported from upstream modules are <strong>shadowed</strong> by the new name. This means that an operation that <a href="./name-resolution.html">resolves a name</a> to an atom will always prefer an atom created by a locally introduced name over one imported from an upstream module. Because of this rule, the following scenario is unambiguous despite the fact that <code class="module">Avail</code> and <code class="module">Dimensional Analysis</code> each export <code>"_+_"</code>:</p>
-<a name="module-constant"></a>
+<a id="module-constant"></a>
 <div class="restricted-width-container">
 <div class="neutral-code code-block">Module "Concatenating Plus"
 Uses
