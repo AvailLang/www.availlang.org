@@ -18,15 +18,21 @@
 	
 <!--#include virtual="/_include/body-top.ssi" -->
 		
-<h2 class="content-title">Module</h2>
+<h2 class="content-title">Upstream</h2>
 
-<p>A module is a container for Avail code. An Avail program &mdash; be it a system, library, or application &mdash; comprises a collection of modules.</p>
+<p>A module is upstream of another module if the first module must be compiled before the second can be compiled. Upstream and <a href="downstream.html">downstream</a> are reciprocal relationships based on the notion of module dependency: a module depends upon another (upstream) module, directly or indirectly, if it consumes services made available by that module.</p>
+
+
+<p>
+<strong>Example:</strong> <div class="scrolling" style="float: center;">
+<iframe src="/_images/modules/upstream-downstream.svg" seamless></iframe>
+</div>
+</p>
 
 <p>
 <em>References:</em>
 <ul>
-<li><a href="/about-avail/documentation/modules/introduction.html">An introduction and broad overview of modules</a></li>
-<li>See also, the glossary pages for <a href="binary-module.html">Binary Module</a> and <a href="source-module.html">Source Module</a></li>
+<li><a href="/about-avail/documentation/modules/introduction.html">Modules introduction</a></li>
 </ul>
 </p>
 
