@@ -5,6 +5,13 @@
 		<description>Fresh posts on the site, including newsletters, tutorials, documentation, etc.</description>
 		<link>http://www.availlang.org</link>
 		<item>
+			<title>Tutorial #5 - Fibonacci</title>
+			<pubDate>Sat, 03 May 2014 10:50:00 GMT</pubDate>
+			<description> Fibonacci, the next installment of the Learning Avail tutorial series, is now available.</description>
+			<link>http://www.availlang.org/about-avail/learn/tutorials/fibonacci.html</link>
+			<guid>http://www.availlang.org/about-avail/learn/tutorials/fibonacci.html</guid>
+  		</item>
+		<item>
 			<title>Privacy Policy Update</title>
 			<pubDate>Sat, 03 May 2014 03:50:00 GMT</pubDate>
 			<description> We have enabled Google Analytics Demographics and Interest Reporting in the hope that it will provide information helpful in expanding our audience, and have updated our Privacy Policy accordingly.</description>

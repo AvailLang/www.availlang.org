@@ -27,8 +27,8 @@
 <p>Running the program should look something like this:</p>
 
 <figure class="full-line-screenshot">
-	<img src="/_images/examples/hello-world/transcript.png" alt="A sample transcript of using &quot;Greet&quot;."/>
-	<figcaption>The Avail workbench after running "Greet".</figcaption>
+	<a href="/_images/examples/hello-world/transcript.png"><img src="/_images/examples/hello-world/transcript.png" alt="A sample transcript of using &quot;Greet&quot;."/></a>
+	<figcaption>The Avail workbench after running <code class="command">"Greet"</code>.</figcaption>
 </figure>
 
 <p>Just feel the optimism effervescing from those happy pixels!</p>
@@ -55,7 +55,17 @@
 <ul>
 <li><code><a href="/_examples/hello-world/Hello%20World.avail"><img src="/_images/download-icons/avail.png" class="download-list-icon" alt="Avail source module logo.">Hello World.avail</a></code></li>
 </ul>
-   
+
+<p>If you have installed Avail on your system, then you can find a local copy of this file in your installation directory.</p>
+
+<p>On Windows, the default installation directory is <code>C:\Program Files\Avail</code>; assuming that you installed the product to its default location, then you can find <code class="module">Hello World</code> at <code>C:\Program Files\Avail\src\examples\Tutorial.avail\Hello World.avail</code>.</p>
+
+<p>On Mac OS X, Linux, and Unix, the default installation directory is <code>/usr/local/avail</code>; assuming that you installed the product to its default location, then you can find <code class="module">Hello World</code> at <code>/usr/local/avail/src/examples/Tutorial.avail/Hello World.avail</code>.</p>
+
+<p>If you wish to edit these files, then you may wish to copy them into your home directory first; the default installation directories are system locations, so you will need to escalate your privileges in order to make modifications. For this reason, it is more convenient to work on local copies installed under your own <a href="/about-avail/documentation/modules/module-discovery.html">module root</a>. The <code>README</code> file included with the product contains information on setting up the <code>AVAIL_ROOTS</code> environment variable so that you can work on your own projects. You can also find this information <a href="/about-avail/download/get-source.html#configuring">here</a>.</p>
+
+<p>At the time of writing, Avail does not have an <a class="offsite" href="http://en.wikipedia.org/wiki/Integrated_development_environment">integrated development environment</a>. In order to write or edit Avail modules, you are encouraged to obtain a programmer's editor with good support for Unicode composition and code templates.</p>
+
 <h3><a id="Walkthrough">Walkthrough</a></h3>
 <p>An Avail program is described by a collection of source modules. A source module is just a plain-text file that encodes some part of an Avail program. Over the course of many tutorials, you will glean what exactly goes into a source module. For now, let's concentrate on the two major parts of every source module: the <strong>module header</strong> and the <strong>module body</strong>.</p>
 

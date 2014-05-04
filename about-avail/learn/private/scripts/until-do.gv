@@ -1,0 +1,56 @@
+strict digraph "Until_do_"
+{
+	label="\"Until_do_\"";
+	labelloc="top";
+	labeljust="center";
+	fontname="Consolas";
+	fontsize="10";
+	fontcolor="#0000A0";
+	node
+	[
+		shape="plaintext",
+		fontname="Consolas",
+		fontsize="10",
+		fontcolor="#0000A0",
+		target="_top"
+	];
+	edge
+	[
+		fontname="Helvetica",
+		fontsize="9",
+		fontcolor="#808080"
+	];
+
+	/* Nodes. */
+	start
+	[
+		label="",
+		width="0.0",
+		height="0.0",
+		fixedsize="true"
+	];
+	predicate
+	[
+		label="predicate()",
+		shape="diamond"
+	];
+	body
+	[
+		label="body()",
+		shape="ellipse"
+	];
+	exit
+	[
+		label="exit",
+		shape="ellipse",
+		style="filled",
+		fillcolor="#dda0dd"
+	];
+
+	/* Connectivity. */
+	start -> predicate [label="&nbsp;start"];
+	predicate -> exit [label="true"];
+	predicate -> body [label="false"];
+	body -> predicate;
+}
+
