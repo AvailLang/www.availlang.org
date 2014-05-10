@@ -112,7 +112,7 @@ The current fiber will be terminated.</font>
 	 	];
 	 
 	 	priorNewLine := i;
-		↑lineCount++;
+		lineCount++;
 	];
 	
 	/* Tokenize comment lines */
@@ -144,7 +144,7 @@ The current fiber will be terminated.</font>
 	
 			 	 	/* Consume nested comment without tokenizing but moving *
 			 	 	 * column pointer										*/
-			 	 	If charCounter = 0 then [↑charCounter++;];
+			 	 	If charCounter = 0 then [charCounter++;];
 			 	 	
 					word : <character…|> := take from commentLine[charCounter+1..] 
 					until 
@@ -152,7 +152,7 @@ The current fiber will be terminated.</font>
 					 	c : character 
 					 |
 	
-						If charCounter ≠ |commentLine| then [↑charCounter++;];
+						If charCounter ≠ |commentLine| then [charCounter++;];
 					 	c ∈ {¢/,¢*}  ∨ [charCounter = |commentLine|]
 					];
 			 	 	
@@ -172,8 +172,8 @@ The current fiber will be terminated.</font>
 							 	If commentLine[j+1] = ¢/ then
 							 	[
 							 	 	/*Close nested comment*/
-							 	 	↑openComment--;
-							 	 	↑charCounter++;
+							 	 	openComment--;
+							 	 	charCounter++;
 							 	];
 							],
 							¢/ is
@@ -181,8 +181,8 @@ The current fiber will be terminated.</font>
 								If commentLine[j+1] = ¢* then
 								[
 								 	/*Open new nested comment*/
-									↑openComment++;
-									↑charCounter++;
+									openComment++;
+									charCounter++;
 								];
 							];
 						];
@@ -201,7 +201,7 @@ The current fiber will be terminated.</font>
 				[
 				 	c : character 
 				 |
-				 	↑charCounter++;
+				 	charCounter++;
 				 	c ∈ keyCharacters  ∨ [charCounter = |commentLine|+1]
 				];
 	
@@ -237,13 +237,13 @@ The current fiber will be terminated.</font>
 			 				[
 			 					ch : character 
 			 				 |
-			 				 	↑charCounter++;
+			 				 	charCounter++;
 			 					ch = ¢" " ∨ [ch =  ¢"\n"]
 			 				];
 				 			stacksTokens := stacksTokens ++ 
 				 				<token <word,lineNumber,wordStart>>;
 						 	/* Counter will be re-incremented above.*/
-						 	↑charCounter--;
+						 	charCounter--;
 						],
 						¢" " is
 						[
@@ -265,7 +265,7 @@ The current fiber will be terminated.</font>
 			 				[
 			 					ch : character 
 			 				 |
-			 					↑charCounter++;
+			 					charCounter++;
 			 					ch = ¢"\"" ∨ [charCounter = |commentLine|]
 			 				];
 						 	if charCounter < |commentLine| + 1 then
@@ -306,7 +306,7 @@ The current fiber will be terminated.</font>
 							  	if commentLine[j+1] ∈ {¢@,¢"\"",¢`,¢*} then
 							  	[
 							  	 	word := word ++ commentLine[j..j+1];
-							  		↑charCounter++;
+							  		charCounter++;
 							  		If charCounter ≠ |commentLine| then
 							  		[
 								  		word := word ++ 
@@ -314,7 +314,7 @@ The current fiber will be terminated.</font>
 						 				[
 						 					ch : character 
 						 				 |
-						 					↑charCounter++;
+						 					charCounter++;
 						 					ch ∈ keyCharacters  
 						 				];
 									 	If word ∉ doNotTokenize then 
@@ -327,12 +327,12 @@ The current fiber will be terminated.</font>
 							  	else 
 							  	[
 							  	 	word := word ++ <commentLine[j]>;
-							  		↑charCounter++;
+							  		charCounter++;
 							  		word := word ++ take from commentLine[j+1..] until 
 					 				[
 					 					ch : character 
 					 				 |
-					 					↑charCounter++;
+					 					charCounter++;
 					 					ch ∈ keyCharacters ∨ 
 				 							[charCounter = |commentLine|]
 					 				];
@@ -357,31 +357,31 @@ The current fiber will be terminated.</font>
 						 	/*Check to see if open nested comment*/
 						 	if commentLine[j+1] = ¢* then
 					 		[
-			 		 	 		↑charCounter++;
+			 		 	 		charCounter++;
 					 		 	if openComment = 0 ∧ [|commentLine| ≤ j + 2] then
 					 		 	[
 					 		 	 	/*Open new comment*/
-					 		 	 	↑openComment++;
+					 		 	 	openComment++;
 					 		 	 	If commentLine[j+2] = ¢* then
 					 		 	 	[
 					 		 	 	 	/* Start of main comment*/
-					 		 	 	 	↑charCounter++;
+					 		 	 	 	charCounter++;
 					 		 	 	];
 					 		 	] else
 					 		 	[
 					 		 	 	/*Open new nested comment*/
-					 		 	 	↑openComment++;
-					 		 	 	↑charCounter++;
+					 		 	 	openComment++;
+					 		 	 	charCounter++;
 					 		 	];
 							] else
 							[
 						  	 	word := word ++ <commentLine[j]>;
-						  		↑charCounter++;
+						  		charCounter++;
 						  		word := word ++ take from commentLine[j+1..] until 
 				 				[
 				 					ch : character 
 				 				 |
-				 					↑charCounter++;
+				 					charCounter++;
 				 					ch ∈ keyCharacters ∨ 
 			 							[charCounter = |commentLine|]
 				 				];

@@ -139,7 +139,7 @@ The error is clear as mud, right?  I may have to break down and poke Todd about 
 	 	];
 	 
 	 	priorNewLine := i;
-		↑lineCount++;
+		lineCount++;
 	];
 	
 	/* Tokenize comment lines */
@@ -171,7 +171,7 @@ The error is clear as mud, right?  I may have to break down and poke Todd about 
 	
 			 	 	/* Consume nested comment without tokenizing but moving *
 			 	 	 * column pointer										*/
-			 	 	If charCounter = 0 then [↑charCounter++;];
+			 	 	If charCounter = 0 then [charCounter++;];
 			 	 	
 					word : &lt;character…|> := take from commentLine[charCounter+1..] 
 					until 
@@ -179,7 +179,7 @@ The error is clear as mud, right?  I may have to break down and poke Todd about 
 					 	c : character 
 					 |
 	
-						If charCounter ≠ |commentLine| then [↑charCounter++;];
+						If charCounter ≠ |commentLine| then [charCounter++;];
 					 	c ∈ {¢/,¢*}  ∨ [charCounter = |commentLine|]
 					];
 			 	 	
@@ -199,8 +199,8 @@ The error is clear as mud, right?  I may have to break down and poke Todd about 
 							 	If commentLine[j+1] = ¢/ then
 							 	[
 							 	 	/*Close nested comment*/
-							 	 	↑openComment--;
-							 	 	↑charCounter++;
+							 	 	openComment--;
+							 	 	charCounter++;
 							 	];
 							],
 							¢/ is
@@ -208,8 +208,8 @@ The error is clear as mud, right?  I may have to break down and poke Todd about 
 								If commentLine[j+1] = ¢* then
 								[
 								 	/*Open new nested comment*/
-									↑openComment++;
-									↑charCounter++;
+									openComment++;
+									charCounter++;
 								];
 							];
 						];
@@ -228,7 +228,7 @@ The error is clear as mud, right?  I may have to break down and poke Todd about 
 				[
 				 	c : character 
 				 |
-				 	↑charCounter++;
+				 	charCounter++;
 				 	c ∈ keyCharacters  ∨ [charCounter = |commentLine|+1]
 				];
 	
@@ -264,13 +264,13 @@ The error is clear as mud, right?  I may have to break down and poke Todd about 
 			 				[
 			 					ch : character 
 			 				 |
-			 				 	↑charCounter++;
+			 				 	charCounter++;
 			 					ch = ¢" " ∨ [ch =  ¢"\n"]
 			 				];
 				 			stacksTokens := stacksTokens ++ 
 				 				&lt;token &lt;word,lineNumber,wordStart>>;
 						 	/* Counter will be re-incremented above.*/
-						 	↑charCounter--;
+						 	charCounter--;
 						],
 						¢" " is
 						[
@@ -292,7 +292,7 @@ The error is clear as mud, right?  I may have to break down and poke Todd about 
 			 				[
 			 					ch : character 
 			 				 |
-			 					↑charCounter++;
+			 					charCounter++;
 			 					ch = ¢"\"" ∨ [charCounter = |commentLine|]
 			 				];
 						 	if charCounter &lt; |commentLine| + 1 then
@@ -333,7 +333,7 @@ The error is clear as mud, right?  I may have to break down and poke Todd about 
 							  	if commentLine[j+1] ∈ {¢@,¢"\"",¢`,¢*} then
 							  	[
 							  	 	word := word ++ commentLine[j..j+1];
-							  		↑charCounter++;
+							  		charCounter++;
 							  		If charCounter ≠ |commentLine| then
 							  		[
 								  		word := word ++ 
@@ -341,7 +341,7 @@ The error is clear as mud, right?  I may have to break down and poke Todd about 
 						 				[
 						 					ch : character 
 						 				 |
-						 					↑charCounter++;
+						 					charCounter++;
 						 					ch ∈ keyCharacters  
 						 				];
 									 	If word ∉ doNotTokenize then 
@@ -354,12 +354,12 @@ The error is clear as mud, right?  I may have to break down and poke Todd about 
 							  	else 
 							  	[
 							  	 	word := word ++ &lt;commentLine[j]>;
-							  		↑charCounter++;
+							  		charCounter++;
 							  		word := word ++ take from commentLine[j+1..] until 
 					 				[
 					 					ch : character 
 					 				 |
-					 					↑charCounter++;
+					 					charCounter++;
 					 					ch ∈ keyCharacters ∨ 
 				 							[charCounter = |commentLine|]
 					 				];
@@ -384,31 +384,31 @@ The error is clear as mud, right?  I may have to break down and poke Todd about 
 						 	/*Check to see if open nested comment*/
 						 	if commentLine[j+1] = ¢* then
 					 		[
-			 		 	 		↑charCounter++;
+			 		 	 		charCounter++;
 					 		 	if openComment = 0 ∧ [|commentLine| ≤ j + 2] then
 					 		 	[
 					 		 	 	/*Open new comment*/
-					 		 	 	↑openComment++;
+					 		 	 	openComment++;
 					 		 	 	If commentLine[j+2] = ¢* then
 					 		 	 	[
 					 		 	 	 	/* Start of main comment*/
-					 		 	 	 	↑charCounter++;
+					 		 	 	 	charCounter++;
 					 		 	 	];
 					 		 	] else
 					 		 	[
 					 		 	 	/*Open new nested comment*/
-					 		 	 	↑openComment++;
-					 		 	 	↑charCounter++;
+					 		 	 	openComment++;
+					 		 	 	charCounter++;
 					 		 	];
 							] else
 							[
 						  	 	word := word ++ &lt;commentLine[j]>;
-						  		↑charCounter++;
+						  		charCounter++;
 						  		word := word ++ take from commentLine[j+1..] until 
 				 				[
 				 					ch : character 
 				 				 |
-				 					↑charCounter++;
+				 					charCounter++;
 				 					ch ∈ keyCharacters ∨ 
 			 							[charCounter = |commentLine|]
 				 				];

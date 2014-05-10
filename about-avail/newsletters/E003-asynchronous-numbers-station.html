@@ -41,14 +41,14 @@ Method "Mystify_" is
 			on success doing [Signal sem;],
 			on failure doing [e : exception | killer := e; Signal sem;];
 		Await sem;
-		If ↑killer is assigned then [Raise killer];
+		If killer is assigned then [Raise killer];
 		/* Send some mysterious numbers. */
 		weirdNumbers ::= map 1 to howMany through [i : byte | rng's next byte];
 		Ignore: a fiber writing weirdNumbers to client,
 			on success doing [Signal sem;],
 			on failure doing [e : exception | killer := e; Signal sem;];
 		Await sem;
-		If ↑killer is assigned then [Raise killer];
+		If killer is assigned then [Raise killer];
 	]
 	ensure [Close client;];
 ] : ⊤;
@@ -80,7 +80,7 @@ Method "Start Lincolnshire Poacher" is
 				on success doing [client : client socket | Signal sem; Mystify client;]
 				on failure doing [e : exception | killer := e; Signal sem;];
 			Await sem;
-			If ↑killer is assigned then [Raise killer];
+			If killer is assigned then [Raise killer];
 		] 3 times;
 	]
 	ensure [Close server;]
@@ -101,7 +101,7 @@ Method "Be mystified" is
 			on success doing [Signal sem;],
 			on failure doing [e : exception | killer := e; Signal sem;];
 		Await sem;
-		If ↑killer is assigned then [Raise killer];
+		If killer is assigned then [Raise killer];
 		expected : byte;
 		Ignore: a fiber reading 1 byte from client,
 			on success doing
@@ -114,8 +114,8 @@ Method "Be mystified" is
 			]
 			on failure doing [e : exception | killer := e; Signal sem;];
 		Await sem;
-		If ↑killer is assigned then [Raise killer];
-		Assert: ↑expected is assigned;
+		If killer is assigned then [Raise killer];
+		Assert: expected is assigned;
 		weirdNumbers : &lt;byte…|&gt; := &lt;&gt;;
 		Until
 		[
@@ -130,9 +130,9 @@ Method "Be mystified" is
 				]
 				on failure doing [e : exception | killer := e; Signal sem;];
 			Await sem;
-			↑killer is assigned ∨ [expected = |weirdNumbers|]
+			killer is assigned ∨ [expected = |weirdNumbers|]
 		];
-		If ↑killer is assigned then [Raise killer];
+		If killer is assigned then [Raise killer];
 		/* Report the mysterious numbers. */
 		quintets ::= map 1 to |weirdNumbers| - 1 by 5 through
 			[i : byte | weirdNumbers[i..i + 4]];
