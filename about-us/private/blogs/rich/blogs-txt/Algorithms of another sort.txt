@@ -43,16 +43,16 @@
 			<font color="green">/*tuple 1 wins. swap out the k<sup>th</sup> element of the output tuple with the i<sup>th</sup> element of tuple 1
 			 * and increment the tuple 1 index counter.*/</font>
 			output := output[k]→splitInput[1][i]; 
-			↑i++;
+			i++;
 		]
 		else
 		[
 			<font color="green">/*tuple 2 wins. swap out the k<sup>th</sup> element of the output tuple with the j<sup>th</sup> element of tuple 2
 			 * and increment the tuple 2 index counter.*/</font>
 			output := output[k]→splitInput[2][j];
-			↑j++;
+			j++;
 		];
-		↑k++;  <font color="green">/*increment output tuple index counter*/</font>
+		k++;  <font color="green">/*increment output tuple index counter*/</font>
 	];
 	<font color="green">/*Once one sorted input tuple is exhausted, add all remaining elements of the remaining input sorted
 	 * tuples to the end of the combined sorted output tuple*/</font>

@@ -26,7 +26,7 @@ internalLinkApp.controller(
 			{
 				$scope.directLink = $scope.methodLinkage[aMethod];
 				$scope.linkText = 'Link to page';
-				return '<code class="method"><a href="' + $scope.methodLinkage[aMethod] + '">"' + aMethod + '"</a></code>';
+				return '<code class="method"><a href="' + encodeURI($scope.methodLinkage[aMethod]) + '">"' + htmlSafe(aMethod) + '"</a></code>';
 			}
 			$scope.directLink = '';
 			$scope.linkText = '';
@@ -37,11 +37,14 @@ internalLinkApp.controller(
 			{
 				$scope.directLink = $scope.methodLinkage[aMethod];
 				$scope.linkText = 'Link to page';
-				return '<a href="http://www.availlang.org' + $scope.methodLinkage[aMethod] + '">"' + aMethod + '"</a>';
+				return '<a href="http://www.availlang.org' + encodeURI($scope.methodLinkage[aMethod]) + '">"' + htmlSafe(aMethod) + '"</a>';
 			}
 			$scope.directLink = '';
 			$scope.linkText = '';
 			return '"' + aMethod + '"';
 		};
-	});
 
+		var htmlSafe = function(originalString) {
+			return originalString.replace(/(&[^\s]*;)/, "&").replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+		}
+	});
