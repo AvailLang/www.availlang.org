@@ -71,7 +71,7 @@ Because it is getting late and I have been working on this blog post almost as l
 	[
 		If aTuple[current] = aTuple[position] then
 		[
-		 	↑current++;
+		 	current++;
 
 		] 
 		else
@@ -79,7 +79,7 @@ Because it is getting late and I have been working on this blog post almost as l
 			current := 1;
 		];
 		overlap := overlap + aTuple[..position]→current;
-		↑position++;
+		position++;
 	];
 	overlap
 ]:{tuple→natural number|};
@@ -116,7 +116,7 @@ The remaning code indicated here is the KMP implementation in Avail.  This porti
 					subtupleStart := cast tupleIndex - subtupleIndex + 1 into 
 						[w : whole number | w];
 				]
-				else [↑subtupleIndex++;];
+				else [subtupleIndex++;];
 				
 			]
 			else
@@ -124,7 +124,7 @@ The remaning code indicated here is the KMP implementation in Avail.  This porti
 			 	subtupleIndex := overlapTable[subtuple[..subtupleIndex]] 
 			 		else [1];
 			];
-			↑tupleIndex++;
+			tupleIndex++;
 		];
 		subtupleStart
 	...

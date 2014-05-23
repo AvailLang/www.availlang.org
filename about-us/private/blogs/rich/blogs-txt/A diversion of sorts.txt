@@ -47,8 +47,8 @@
 		do
 		[
 		 	output := output[k↔j]; <font color="green">/*swap the element at the k<sup>th</sup> index with the element at the j<sup>th</sup> index*/</font>
-			↑j--;  <font color="green">/*decrement j*/</font>
-			↑k--;  <font color="green">/*decrement k*/</font>
+			j--;  <font color="green">/*decrement j*/</font>
+			k--;  <font color="green">/*decrement k*/</font>
 		];
 	   <font color="green">/* When the head of the tuple is reached, the final comparison has to be completed outside of the
 		* loop.  If this final comparison were to be completed in the loop, it would execute the block which
