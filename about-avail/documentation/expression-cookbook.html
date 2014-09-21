@@ -79,8 +79,142 @@
 ]]>
 </script></div></div>
 
+<p>If the same key is repeated, then only the rightmost binding for that key will occur in the resulting map.</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! {"duplicate" → "original", "duplicate" → "duplicate", "duplicate" → "super duplicate"}
+]]>
+</script></div></div>
+
+
 <ul>
 <li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Literals/2606992317.html">"{«_→_‡,»}"</a></code></li>
+</ul>
+
+<h4 id="map-add-binding">How do I add a binding to a map?</h4>
+
+<p>Maps are immutable, so you can't add a binding. But it's easy to produce a new map given an existing map and a key→value binding.</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! {1 → "one", 2 → "two"} + 3 → "three"
+]]>
+</script></div></div>
+
+<p>If the key matches one already present in the map, then the binding is "replaced" in the new map.</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! {1 → "one"} + 1 → "一"
+]]>
+</script></div></div>
+
+<ul>
+<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2346033560.html">"_+_→_"</a></code></li>
+</ul>
+
+<h4 id="map-remove-binding">How do I remove a binding from a map?</h4>
+
+<p>Maps are immutable, so you can't remove a binding. But it's easy to derive a new map that doesn't include a binding for a particular key.</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! {"baggage" → "unwanted"} - "baggage"
+]]>
+</script></div></div>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! {1 → "odd", 3 → "odd"} - 2
+]]>
+</script></div></div>
+
+<ul>
+<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/899314641.html">"_-_"</a></code></li>
+</ul>
+
+<h4 id="map-size">How do I get the size / cardinality of a map?</h4>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! |{3 → 9, 4 → 16, 5 → 25, 6 → 36}|
+]]>
+</script></div></div>
+
+<ul>
+<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/3472557257.html">"`|_`|"</a></code></li>
+</ul>
+
+<h4 id="map-subscript">How do I subscript / index / query a map?</h4>
+
+<small>Or, "How do I look up a value in a map given its key?"</small>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! {"Bugs" → "Bunny", "Elmer" → "Fudd"}["Bugs"]
+]]>
+</script></div></div>
+
+<p>If you don't know if a subscript will be valid, then you can provide an else function to apply if the subscript isn't valid.</p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! {"Bugs" → "Bunny", "Elmer" → "Fudd"}["Yosemite"] else ["Sam"]
+]]>
+</script></div></div>
+
+<ul>
+<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2184539642.html">"_[_]"</a></code></li>
+</ul>
+
+<h4 id="map-keys">How do I enumerate the keys of a map?</h4>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! {"१" → 1, "२" → 2, "३" → 3, "४" → 4, "५" → 5}'s keys
+]]>
+</script></div></div>
+
+<ul>
+<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/1304499276.html">"_'s⁇keys"</a></code></li>
+</ul>
+
+<h4 id="map-values">How do I enumerate the values of a map?</h4>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! {"5" → 5, "५" → 5, "五" → 5, "five" → 5}'s values
+]]>
+</script></div></div>
+
+<ul>
+<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/772060960.html">"_'s⁇values"</a></code></li>
+</ul>
+
+<h4 id="map-bindings">How do I enumerate the bindings of a map?</h4>
+
+<small>Or, "How do I convert a map into a tuple of key-value pairs?"</small>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! {2 → 2!, 3 → 3!, 4 → 4!, 5 → 5!}'s bindings
+]]>
+</script></div></div>
+
+<ul>
+<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/910873706.html">"_'s⁇bindings"</a></code></li>
 </ul>
 
 <h3 id="sets"><a href="/about-avail/documentation/type-system/types-set.html">Sets</a></h4>
@@ -118,6 +252,19 @@
 
 <ul>
 <li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early Literals/2834648056.html">"{«_‡,»}"</a></code></li>
+</ul>
+
+<h4 id="set-size">How do I get the size / cardinality of a set?</h4>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! |{"Jackie", "Tito", "Jermaine", "Marlon", "Michael"}|
+]]>
+</script></div></div>
+
+<ul>
+<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/3472557257.html">"`|_`|"</a></code></li>
 </ul>
 
 <h3 id="tuples"><a href="/about-avail/documentation/type-system/types-tuple.html">Tuples</a></h4>
@@ -192,7 +339,7 @@
 <li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/554530225.html">"_to_by_"</a></code></li>
 </ul>
 
-<h4 id="tuple-size">How do I get the size / length of a tuple?</h4>
+<h4 id="tuple-size">How do I get the size / length / cardinality of a tuple?</h4>
 
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
