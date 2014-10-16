@@ -1,0 +1,49 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Avail Newsletters, Edition #7: Reworked File I/O.</title>
+	
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+
+<h2 class="content-title">File I/O.  Mostly.</h2>
+
+<div class="content-meta-info">Edition #7 - October 16, 2014</div>
+
+<p><a href="/about-us/team/index.html#Mark">Mark</a> here.  It's been a while, but I finally managed to get iterators working well enough to run all tests again.</p>
+
+<p>Todd had implemented the iterator hierarchy quite nicely.  It was truly a thing of beauty.  The original idea was to provide layers of protocols related to processing sequences of data items.  It was really quite elegant and thorough, and gave one that nice design feeling that you get from libraries that are clearly built with just the right kind of care, forethought, and skill.  Truly a work of art.  Unfortunately, it had to go.</p>
+
+<p>Our assumption all along was that the beautiful constructs related to reading through iterators would be extensible in some way when we applied them to files.  In truth, the buffered file reading mechanisms fit snugly into place with all the other iterator variations.  The problem was <em>writing</em> to files.  Try as I might, I couldn't find a way to keep the iterator infrastructure the same while also adding support for writing through iterators.</p>
+
+<p>The main change was to take the old version of iterator, which included reading capability, and split it into two main abstractions below iterator: reader and writer.  Iterator itself became a hollow shell onto which to layer various capabilities related to positioning.</p>
+
+<p>While it might seem that the story would end there, or at least thereabouts, the truth is, I struggled <em>hard</em> to make that work.  Several times I made plans and rebuilt the world around it, only to discover an inescapable problem with the contravariance endemic to writing through an iterator.  I'd tear it all up and try again, only to slam into another problem with contravariance or invariance related to the abstract positioning mechanisms introduced in the various layers.  At some point I was relying on variable types to allow reading and writing types to diverge in just the right way.  Nope, it didn't fit together right either.  Another time I was stuffing functions into fields of objects in an attempt to ensure co/contravariance would line up just right with the functions' arguments and return type.  No dice.</p>
+
+<p>If you're interested in the final solution, feel free to <a href="/about-avail/download">download</a> the latest, or if you already have Avail you can run "git pull" in the appropriate directory.  Be warned that file writing is known to be quite incomplete and has no tests, but it has now become fairly obvious how to build the few missing pieces.  The primitives are all in place (asynchronous I/O with adaptive buffering and fence-based cache coherence protocol), it's just we're still missing the streaming writer protocol.  Since I've been working on this for several months, I figured you'd give me some leeway about the commit being a touch incomplete.  Friends, still?</p>
+
+<table class="book-nav">
+	<tr>
+		<td class="book-nav-back"><a class="book-nav-back" href="./E006.html">‹ Previous</a></td>
+		<td class="book-nav-spacer">|</td>
+		<td class="book-nav-up"><a class="book-nav-up" href="./index.html">Return to Newsletters</a></td>
+	</tr>
+</table>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>
