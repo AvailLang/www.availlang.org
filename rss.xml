@@ -7,6 +7,13 @@
 		<copyright>© 2012-2014 The Avail Foundation, LLC</copyright>
 
 		<item>
+			<title>Blog - Todd L Smith - The Avail Retreat of 2014</title>
+			<pubDate>Thu, 16 Oct 2014 21:34:00 GMT</pubDate>
+			<description>The Founders Three retreat from the world in order to revitalize Avail, after months of apparent inactivity.</description>
+			<link>http://www.availlang.org/about-us/blogs/todd/E0001.html</link>
+			<guid>http://www.availlang.org/about-us/blogs/todd/E0001.html</guid>
+  		</item>
+		<item>
 			<title>Newsletter #7 - File I/O. Mostly.</title>
 			<pubDate>Thu, 16 Oct 2014 21:34:00 GMT</pubDate>
 			<description>The construction work on file I/O and iterators is still ongoing, but open again for read-bound traffic.</description>

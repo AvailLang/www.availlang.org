@@ -1,0 +1,121 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Avail - Todd's Blog</title>
+	
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+
+<a href="./index.html"><h4 class="content-supertitle">Programming Profundities: The Blog of Todd L Smith</h4></a>
+
+<h2 class="content-title">The Avail Retreat of 2014</h2>
+
+<p>
+	From October 22nd to October 27th, Mark, Rich, and I were in <a class="offsite" href="https://www.google.com/maps/place/Two+Rivers,+WI">Two Rivers, WI</a>, on the first annual Avail retreat. The retreat was a smashing success that produced some awesome technology. It was exactly what we all needed to get back into the swing of things after an uncomfortably long hiatus. It struck the perfect balance between hiking, eating, and coding.
+</p>
+<p>
+	Just after the <code>"1.0.0 DEV 2014-04-28"</code> release, I began work on a subproject codenamed <strong>"Avalanche"</strong>. Avalanche was an attempt to migrate Avail's implementation from Java to machine code (plus dynamic translation via <a class="offsite" href="http://llvm.org">LLVM</a>). I had most of the LLVM instruction set codified, and a substantial portion of the Avalanche front-end and back-end written.
+</p>
+<p>
+	And then my laptop crashed. The hard drive died in a major way. No problem, though, because I'm a good boy who makes regular backups.
+</p>
+<p>
+	And then my Time Capsule died. And three months worth of work on Avalanche was lost forever. I looked briefly into recovery options for the dead drives, but the quotes were prohibitively expensive.
+</p>
+<p>
+	You could say that I was demoralized by this loss, but you would be guilty of a profound understatement. I couldn't even think about Avail for months. It was just too depressing. Mark continued working on file I/O, but otherwise Avail languished.
+</p>
+<p>
+	About a month ago I decided that I had grieved long enough; it was time to get back to work. But I wasn't ready to tackle Avalanche again. I needed a different kind of diversion.
+</p>
+<p>
+	So I decided to make Avail web-accessible. As in, functional as an application server. So&hellip;
+</p>
+<ul>
+<li>
+	I started by building a multithreaded, fully asychronous implementation of server-side WebSocket.
+</li>
+<li>
+	Then I built an Avail server capable of processing commands, e.g., <code>"load module /examples/Wump the Wumpus"</code>, <code>"run Play Wump the Wumpus"</code>.
+</li>
+<li>
+	Then I rebuilt Avail's standard I/O infrastructure. Every fiber now has its own standard input (<code>"next character"</code>), standard output (<code>"Print:_"</code>, and standard error channel (<code>"Error:_"</code>), and forked fibers inherit their parent's chanels. The server architecture permits these channels to be layered on top of WebSocket (or some other transport).
+</li>
+<li>
+	Then I gave every Avail value the ability to render its observable properties as <a class="offsite" href="http://json.org">JSON</a>, taking special care to prevent emitting cycles.
+</li>
+</ul>
+<p>
+	 Along the way I also mocked up a web version of the Avail workbench. It is still missing a couple features that the workbench has, most notably the ability to run entry points by double clicking them. It can still run entry points though &emdash; you just have to type them. It isn't a polished tool by any means, but it was good enough that I was able to use it instead of the Avail workbench starting sometime on October 23rd.
+</p>
+<p>
+	Here's a screenshot of the current version of the tool:
+</p>
+<img src="/_images/blogs/todd/E0001-TestClient-Wumpus.png" alt="The web workbench playing Wump the Wumpus. Well, losing really.">
+<p>
+	And here it is again, with the command console open:
+</p>
+<img src="/_images/blogs/todd/E0001-TestClient-Availuator.png" alt="The web workbench with an Availuator transcript and an open command console.">
+<p>
+	The web workbench serves primarily to prototype an Avail web client. The command console exists to illustrate how interaction between the client and the server happens, and assists in debugging. If you are interested in the web workbench, then start the Avail server (<code>com.avail.server.AvailServer</code>) and then navigate your web browser to <code>file://$AVAIL_HOME/web/ide/TestClient.html</code>. The web workbench is cool, but it is not the real goal.
+</p>
+<p>
+	If you read the URL carefully, then you probably surmised that the real goal is to develop a full-featured web IDE for Avail. The Avail server still needs more development in order to realize this goal, but it is far enough along that the work can begin in earnest. Peter has signed up for this challenge, and likely we will all chip in to support his efforts. The IDE should include at least:
+</p>
+<ul>
+<li>
+	A syntax-aware editor for Avail source files. (This is trickier than it sounds because of Avail's fluid syntax, but we have good ideas about how to do it already.)
+</li>
+<li>
+	An interactive source tree, with the ability to load and unload modules. (This already exists in the web workbench.)
+</li>
+<li>
+	An interactive entry point tree, with the ability to edit and run commands.
+</li>
+<li>
+	Automatic compilation of dirty source files after a user-configurable timeout. This can also be used to provide live syntax highlighting.
+</li>
+<li>
+	<em>An Avail debugger.</em> Everyone here is looking forward to this one. Developing a language is pretty hard without a debugger, even given a language like Avail that eliminates so many bugs at compile time!
+</li>
+<li>
+	When macros become available, the IDE will provide an all-purpose refactoring tool that enables source-altering grammatical substitutions.
+</li>
+</ul>
+<p>
+	On Sunday October 26th, to make Cislyn smile I decided to build a custom web UI for <em>"The Ship of Stories"</em>, the choosable path adventure that she built using Avail. The following snapshots are a short sequence of play, with the selected choices highlighted in yellow:
+</p>
+<img src="/_images/blogs/todd/E0001-Princess 1.png" alt="The web workbench playing Wump the Wumpus. Well, losing really.">
+<img src="/_images/blogs/todd/E0001-Princess 2.png" alt="The web workbench playing Wump the Wumpus. Well, losing really.">
+<img src="/_images/blogs/todd/E0001-Princess 3.png" alt="The web workbench playing Wump the Wumpus. Well, losing really.">
+<img src="/_images/blogs/todd/E0001-Princess 4.png" alt="The web workbench playing Wump the Wumpus. Well, losing really.">
+<p>
+	To try the web UI yourself, start the Avail server and then navigate your browser to <code>file://$AVAIL_HOME/web/clients/The%20Ship%20of%20Stories/Client.html</code>.
+</p>
+<p>
+	We have a pretty big vision for Avail on the web, and I promise to blog about it soon.
+</p>		
+
+<table class="book-nav">
+	<tr>
+		<td class="book-nav-up"><a class="book-nav-up" href="./index.html">Return to Todd's Blog</a></td>
+	</tr>
+</table>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>
