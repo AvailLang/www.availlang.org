@@ -45,20 +45,20 @@
 </p>
 <ul>
 <li>
-	I started by building a multithreaded, fully asychronous implementation of server-side WebSocket.
+	I started by building a multithreaded, fully asynchronous implementation of server-side WebSocket.
 </li>
 <li>
 	Then I built an Avail server capable of processing commands, e.g., <code>"load module /examples/Wump the Wumpus"</code>, <code>"run Play Wump the Wumpus"</code>.
 </li>
 <li>
-	Then I rebuilt Avail's standard I/O infrastructure. Every fiber now has its own standard input (<code>"next character"</code>), standard output (<code>"Print:_"</code>, and standard error channel (<code>"Error:_"</code>), and forked fibers inherit their parent's chanels. The server architecture permits these channels to be layered on top of WebSocket (or some other transport).
+	Then I rebuilt Avail's standard I/O infrastructure. Every fiber now has its own standard input (<code>"next character"</code>), standard output (<code>"Print:_"</code>, and standard error channel (<code>"Error:_"</code>), and forked fibers inherit their parent's channels. The server architecture permits these channels to be layered on top of WebSocket (or some other transport).
 </li>
 <li>
 	Then I gave every Avail value the ability to render its observable properties as <a class="offsite" href="http://json.org">JSON</a>, taking special care to prevent emitting cycles.
 </li>
 </ul>
 <p>
-	 Along the way I also mocked up a web version of the Avail workbench. It is still missing a couple features that the workbench has, most notably the ability to run entry points by double clicking them. It can still run entry points though &emdash; you just have to type them. It isn't a polished tool by any means, but it was good enough that I was able to use it instead of the Avail workbench starting sometime on October 23rd.
+	 Along the way I also mocked up a web version of the Avail workbench. It is still missing a couple features that the workbench has, most notably the ability to run entry points by double clicking them. It can still run entry points though &mdash; you just have to type them. It isn't a polished tool by any means, but it was good enough that I was able to use it instead of the Avail workbench starting sometime on October 23rd.
 </p>
 <p>
 	Here's a screenshot of the current version of the tool:
@@ -72,7 +72,7 @@
 	The web workbench serves primarily to prototype an Avail web client. The command console exists to illustrate how interaction between the client and the server happens, and assists in debugging. If you are interested in the web workbench, then start the Avail server (<code>com.avail.server.AvailServer</code>) and then navigate your web browser to <code>file://$AVAIL_HOME/web/ide/TestClient.html</code>. The web workbench is cool, but it is not the real goal.
 </p>
 <p>
-	If you read the URL carefully, then you probably surmised that the real goal is to develop a full-featured web IDE for Avail. The Avail server still needs more development in order to realize this goal, but it is far enough along that the work can begin in earnest. Peter has signed up for this challenge, and likely we will all chip in to support his efforts. The IDE should include at least:
+	If you read the URL carefully, then you probably surmised that the real goal is to develop a full-featured web IDE (integrated development environment) for Avail. The Avail server still needs more development in order to realize this goal, but it is far enough along that the work can begin in earnest. Peter has signed up for this challenge, and likely we will all chip in to support his efforts. The IDE should include at least:
 </p>
 <ul>
 <li>
@@ -97,10 +97,10 @@
 <p>
 	On Sunday October 26th, to make Cislyn smile I decided to build a custom web UI for <em>"The Ship of Stories"</em>, the choosable path adventure that she built using Avail. The following snapshots are a short sequence of play, with the selected choices highlighted in yellow:
 </p>
-<img src="/_images/blogs/todd/E0001-Princess 1.png" alt="The web workbench playing Wump the Wumpus. Well, losing really.">
-<img src="/_images/blogs/todd/E0001-Princess 2.png" alt="The web workbench playing Wump the Wumpus. Well, losing really.">
-<img src="/_images/blogs/todd/E0001-Princess 3.png" alt="The web workbench playing Wump the Wumpus. Well, losing really.">
-<img src="/_images/blogs/todd/E0001-Princess 4.png" alt="The web workbench playing Wump the Wumpus. Well, losing really.">
+<img src="/_images/blogs/todd/E0001-Princess%201.png" alt="The web workbench playing The Ship of Stories on the main page.">
+<img src="/_images/blogs/todd/E0001-Princess%202.png" alt="The web workbench playing The Ship of Stories as the Princess.">
+<img src="/_images/blogs/todd/E0001-Princess%203.png" alt="The web workbench playing The Ship of Stories as the Princess breaking out.">
+<img src="/_images/blogs/todd/E0001-Princess%204.png" alt="The web workbench playing The Ship of Stories… Well, not any more.">
 <p>
 	To try the web UI yourself, start the Avail server and then navigate your browser to <code>file://$AVAIL_HOME/web/clients/The%20Ship%20of%20Stories/Client.html</code>.
 </p>
