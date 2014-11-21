@@ -61,7 +61,7 @@
 </tr>
 <tr>
 <td style="width: 20%">Phone:</td>
-<td>608.335.0892</td>
+<td>608.692.5433</td>
 </tr>
 </table>
 
@@ -205,6 +205,10 @@ Provide vision for the Avail programming language and leadership for the Avail t
 Collaborate on the design and implementation of the Avail programming language. <small>(<em>N.B.</em> The Avail Foundation formally came into existence in 2012, but I began working on Avail in 2008.)</small>
 
 <ul>
+<li>
+Designed and implemented the Avail server. The virtual machine now incorporates a high-performance, asynchronous, multi-threaded, standards-compliant implementation of WebSocket (RFC 6455). Web clients can leverage this mechanism to load Avail modules, interrogate an Avail system, and execute programs written in Avail.
+</li>
+
 <li>
 Designed and implemented the Avail concurrency mechanisms. Avail threads are lightweight agents that are transiently bound to native threads by a preemptive scheduler, thereby utilizing multiple CPUs while also transcending the concurrency and resource limits of the underlying OS. High-level synchronization mechanisms emerge gracefully from atomic primitives, such as compare-and-swap, that operate on semantic equality. Avail elides low-level synchronization when accessing objects that provably cannot be referenced by multiple threads.
 </li>
