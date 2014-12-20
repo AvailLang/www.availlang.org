@@ -1,0 +1,51 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Mark's Avail Blog</title>
+	
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+
+<a href="./index.html"><h4 class="content-supertitle">Mark's Avail Blog</h4></a>
+
+<h2 class="content-title">File I/O is stable!</h2>
+
+<p>When I started working on the asynchronous file I/O operations, I figured a simple, state-of-the-art, efficient implementation would take a few days.  I'd have to get the primitives written up in a particular way, while tweaking Avail's iterator hierarchy.  Then I'd spend at most days or weeks to shake out correctness, performance, and usability problems with it.  Not.  Even.  Close.</p>
+
+<p>The biggest part by far was reworking iterators.  I did a brief <a href="../../../about-avail/newsletters/E007.html">write-up about this</a> in October.  A little while after that, the cofounders and I had our first Avail retreat, where we managed to get away from life's distractions for a few days, holed up in beautiful Two Rivers, Wisconsin.  While there, I managed to make some decent progress against writers (iterators through which one writes), and got most of the infrastructure in place to finish up with file writers (iterators through which one writes to files).  It took until earlier this week to get file writing to pass some trivial tests, and today it finally passed a fairly extensive thrash-test.  <em>Now</em> I consider file I/O ready to use.</p>
+
+<p>There's not much written up about the internal buffering mechanisms, but I might get around to it some day; right now there's too much other work to do.</p>
+
+<p>Potential next steps for me:</p>
+
+<ul>
+	<li>Finishing macros</li>
+	<li>Tool support: code editor, browser, debugger</li>
+	<li>Inlining non-primitives in L2</li>
+</ul>
+
+<p>Wish me luck!</p>
+
+<table class="book-nav">
+	<tr>
+		<td class="book-nav-up"><a class="book-nav-up" href="./index.html">Return to Mark's Avail Blog</a></td>
+	</tr>
+</table>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>
