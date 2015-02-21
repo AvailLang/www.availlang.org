@@ -37,8 +37,8 @@
 <dt><code>check</code></dt>
 <dd>A <code>check</code> pragma asserts that some quality of the Avail virtual machine is compatible with the module. A <code>check</code> pragma comprises the <code>check</code> keyword, then an <em>equals sign</em> <code>=</code> <code class="unicode">(U+003D)</code>, then a <strong>property</strong>, then an equals sign, then a <strong>value</strong>:
 
-<div class="scrolling">
-<iframe src="/_images/modules/check-pragma.svg" style="margin-top: 15px; margin-bottom: 15px; margin-left: auto; margin-right: auto" seamless></iframe>
+<div class="svg-wrapper">
+<img src="/_images/modules/check-pragma.svg" style="margin-top: 15px; margin-bottom: 15px; margin-left: auto; margin-right: auto" class="embedded-svg">
 </div>
 
 Where <code>property</code> is the property, and <code>value</code> is the property value. The format and character of the value is determined by the property. The supported properties are:
@@ -52,8 +52,8 @@ Where <code>property</code> is the property, and <code>value</code> is the prope
 <dt class="pragma-kind"><code>method</code></dt>
 <dd>A <code>method</code> pragma introduces a new <a href="/about-avail/documentation/type-system/types-atom.html">atom</a> and associates it with the primitive function designated by the specified primitive number. A <code>method</code> pragma comprises the <code>method</code> keyword, then an equals sign, then a <strong>primitive number</strong>, then an equals sign, then a canonical message.
 
-<div class="scrolling">
-<iframe src="/_images/modules/method-pragma.svg" style="margin-top: 15px; margin-bottom: 15px; margin-left: auto; margin-right: auto" seamless></iframe>
+<div class="svg-wrapper">
+<img src="/_images/modules/method-pragma.svg" style="margin-top: 15px; margin-bottom: 15px; margin-left: auto; margin-right: auto" class="embedded-svg">
 </div>
 
 Where <code>primitiveNumber</code> is the primitive number and <code>message</code> is the message. The arity of the message must agree with the arity of the primitive function. If a send of the message fails for any reason, then the primitive fails as if by sending <code>"Crash:_"</code> to a 2-<a href="/about-avail/documentation/type-system/types-tuple.html">tuple</a> whose first element is the failure code and whose second element is a tuple of the primitive function's arguments.</dd>
@@ -61,8 +61,8 @@ Where <code>primitiveNumber</code> is the primitive number and <code>message</co
 <dt class="pragma-kind"><code>stringify</code></dt>
 <dd>A <code>stringify</code> pragma tells the Avail virtual machine what message it should send in order to stringify an arbitrary value. Whenever the compiler or executor is called upon to render a textual description of a value &mdash; for example, when the compiler emits an error message &mdash; this message is sent to the value. A <code>stringify</code> pragma comprises the <code>stringify</code> keyword, then an equals sign, then a canonical message:
 
-<div class="scrolling">
-<iframe src="/_images/modules/stringify-pragma.svg" style="margin-top: 15px; margin-bottom: 15px; margin-left: auto; margin-right: auto" seamless></iframe>
+<div class="svg-wrapper">
+<img src="/_images/modules/stringify-pragma.svg" style="margin-top: 15px; margin-bottom: 15px; margin-left: auto; margin-right: auto" class="embedded-svg">
 </div>
 
 Where <code>message</code> is the stringification message. The stringification message must have an arity of 1. If stringification fails for any reason, then the system falls back on the internal mechanism used by <code>"primitive descriptive of_"</code> to render a textual description of the value, prepending a parenthetical indication that the attempt to stringfy failed.

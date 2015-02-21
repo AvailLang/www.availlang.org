@@ -205,6 +205,20 @@ code.unicode {
 	color: rgb(207, 83, 0); /* burnt orange */
 }
 
+div.svg-wrapper {
+	overflow-x: auto;
+	overflow-y: hidden;
+
+	text-align: center;
+}
+
+div.floating-svg-wrapper {
+	overflow-x: auto; 
+	overflow-y: hidden;
+
+	max-width: 100%; 
+}
+
 img.download-inline-icon {
 	padding-bottom: 6px;
 	padding-right: 2px;
@@ -217,6 +231,12 @@ img.download-list-icon {
 	padding-right: 4px;
 
 	height: 24px;
+}
+
+img.embedded-svg {
+	max-width: none;
+	max-height: none;
+	border: none;
 }
 
 figure.full-line-screenshot {

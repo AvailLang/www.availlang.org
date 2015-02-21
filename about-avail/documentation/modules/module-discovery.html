@@ -51,23 +51,23 @@
 
 <p>The module roots are supplied to the compiler by means of a <strong>module roots path</strong>. A module roots path satisfies the <code>ModuleRootsPath</code> <a class="offsite" href="http://en.wikipedia.org/wiki/Syntax_diagram">syntax diagram</a>:</p>
 
-<div class="scrolling">
+<div class="svg-wrapper">
 <p style="text-align: center"><code>ModuleRootsPath</code></p>
-<iframe src="/_images/modules/module-roots-path.svg" style="margin: auto" seamless></iframe>
+<img src="/_images/modules/module-roots-path.svg" class="embedded-svg">
 </div>
 
 <p>A module roots path comprises zero or many module root specifications. A <strong>module root specification</strong> is a binding between a module root name and a module root path. A module root specification satisfies the <a class="offsite" href="http://en.wikipedia.org/wiki/Terminal_and_nonterminal_symbols">nonterminal</a> <code>ModuleRootSpecification</code>, and corresponds to the following syntax diagram,</p>
 
-<div class="scrolling">
+<div class="svg-wrapper">
 <p style="text-align: center"><code>ModuleRootSpecification</code></p>
-<iframe src="/_images/modules/module-root-specification.svg" style="margin: auto" seamless></iframe>
+<img src="/_images/modules/module-root-specification.svg" class="embedded-svg">
 </div>
 
 <p>where the <a class="offsite" href="http://en.wikipedia.org/wiki/Terminal_and_nonterminal_symbols">terminal</a> <code>moduleRootName</code> denotes a module root name. A <strong>module root path</strong> conjoins a binary repository path and a source module path. A module root path satisfies the <code>ModuleRootPath</code> nonterminal, and corresponds to the following syntax diagram,</p>
 
-<div class="scrolling">
+<div class="svg-wrapper">
 <p style="text-align: center"><code>ModuleRootPath</code></p>
-<iframe src="/_images/modules/module-root-path.svg" style="margin: auto" seamless></iframe>
+<img src="/_images/modules/module-root-path.svg" class="embedded-svg">
 </div>
 
 <p>where the terminal <code>binaryPath</code> is a binary repository path and the terminal <code>sourcePath</code> is a source module path. A <strong>binary repository path</strong> specifies a <a class="offsite" href="http://en.wikipedia.org/wiki/Regular_file#Regular_file">regular file</a> encoded in the binary repository format used by the compiler and executor. If the binary repository path specifies a location that does not correspond to an existing file, then the compiler will create an appropriate file at this location and populate it with the results of compilation. A <strong>source module path</strong> specifies a file system <a class="offsite" href="http://en.wikipedia.org/wiki/Directory_(computing)">directory</a> that recursively contains source modules.</p>
