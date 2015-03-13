@@ -233,7 +233,7 @@ img.download-list-icon {
 	height: 24px;
 }
 
-img.embedded-svg {
+embedded-svg {
 	max-width: none;
 	max-height: none;
 	border: none;
