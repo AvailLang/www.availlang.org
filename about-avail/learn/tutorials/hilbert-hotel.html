@@ -70,7 +70,7 @@
 	<li>Determining the cardinality of a <code>tuple</code> (using <code>"`|_`|"</code>).</li>
 	<li>Subscripting a <code>tuple</code> in order to obtain an element (using <code>"_[_]"</code> and <code>"_[_]else_"</code>).</li>
 	<li><a class="offsite" href="http://en.wikipedia.org/wiki/Array_slicing">Slicing</a> a <code>tuple</code> (using <code>"_[_.._]"</code>, <code>"_[_..]"</code>, and <code>"_[.._]"</code>).</li>
-	<li>Concatenating <code>tuple</code>s (using <code>"&laquo;_&Dagger;++&raquo;"</code>).</li>
+	<li>Concatenating <code>tuple</code>s (using <code>"_++_"</code>).</li>
 	</ul>
 </li>
 <li>Learn about message metacharacters:
@@ -296,7 +296,7 @@ titleIndex : [1..2] := a pRNG's next value in [1..2];
 ]]>
 </script></div></div>
 
-<p>On <strong>line 80</strong>, <code>pattern</code> is the parameter of <code>"Concierge says,_"</code>. When <code>"What's all this`?"</code> sends <code>"Concierge says,_"</code>, <code>pattern</code> will be bound to the large block of flavor text on <strong>lines 103-111</strong>. The method <code>"&laquo;_&Dagger;++&raquo;"</code> &mdash; the <strong>concatenation operator</strong> &mdash; chains together a lexical sequence of tuples into a single tuple. The concatenation operator works on all tuples, and a <code>string</code> is just a <code>tuple</code> whose default element type is <code><a href="/about-avail/documentation/type-system/types-character.html">character</a></code>. In this instance, we are appending a line feed to the formatted text.</p>
+<p>On <strong>line 80</strong>, <code>pattern</code> is the parameter of <code>"Concierge says,_"</code>. When <code>"What's all this`?"</code> sends <code>"Concierge says,_"</code>, <code>pattern</code> will be bound to the large block of flavor text on <strong>lines 103-111</strong>. The method <code>"_++_"</code> &mdash; the <strong>concatenation operator</strong> &mdash; concatenates two tuples into a single tuple. The concatenation operator works on all tuples, and a <code>string</code> is just a <code>tuple</code> whose default element type is <code><a href="/about-avail/documentation/type-system/types-character.html">character</a></code>. In this instance, we are appending a line feed to the formatted text.</p>
 
 <p><strong>Line 81</strong> binds the format variable <code>you</code> to the result of sending <code>"_[_]"</code> to <code>allTitles</code> and <code>titleIndex</code>. The method <code>"_[_]"</code>, called the <strong>subscript operator</strong>, answers the element of its left argument at the subscript given by its right argument. So when <code>titleIndex</code> is <code>1</code> it answers <code>"sir"</code>, and when it's <code>2</code> it answers <code>"miss"</code>.</p>
 
@@ -396,7 +396,7 @@ Private method "Who is in room_`?" is
 <div class="neutral-code code-block">guest[2] ++ " " ++ guest[1]</div>
 </div>
 
-<p>There are two possible interpretations of <code>guest</code>: the method defined on <strong>line 47</strong> and the local constant defined on <strong>line 68</strong>. The former is a tuple type and the latter is a tuple. There are three messages sent by this expression, but only two distinct methods are involved: <code>"_[_]"</code> and <code>"&laquo;_&Dagger;++&raquo;"</code>. The former is defined for both tuples and tuple types. For tuples, it answers the element associated with the supplied subscript; for tuple types, it answers the element type associated with the supplied subscript. Phooey. That doesn't help at all; given only this much information, both interpretations are quite reasonable. But the concatenation operator is only defined for tuples, not tuple types. This is enough to convince the compiler that <code>guest</code> can only refer to the local constant.</p>
+<p>There are two possible interpretations of <code>guest</code>: the method defined on <strong>line 47</strong> and the local constant defined on <strong>line 68</strong>. The former is a tuple type and the latter is a tuple. There are three messages sent by this expression, but only two distinct methods are involved: <code>"_[_]"</code> and <code>"_++_"</code>. <code>"_[_]"</code> is defined for both tuples and tuple types. For tuples, it answers the element associated with the supplied subscript; for tuple types, it answers the element type associated with the supplied subscript. Phooey. That doesn't help at all; given only this much information, both interpretations are quite reasonable. <code>"_++_"</code> is likewise defined for both tuples and tuple types. For tuples, it answers the concatenation of the two tuples; for tuple types it answers a type that describes the concatenation of instances of the arguments. The interleaving string <code>" "</code> comes to the rescue; its presence establishes that we are concatenating tuples, not tuple types, and permits the compiler to infer that <code>guest</code> can only refer to the local constant.</p>
 
 <h4>Seriously, who is in room 1?</h4>
 
