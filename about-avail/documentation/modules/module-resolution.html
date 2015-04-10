@@ -44,7 +44,7 @@
 <p>Following is a detailed description of the module resolution algorithm: <sup><a href="#fn1">[1]</a></sup></p>
 
 <div class="svg-wrapper">
-<img src="/_images/modules/module-resolution.svg" class="embedded-svg">
+<!--#include virtual="/_images/modules/module-resolution.svg" -->
 </div>
 
 <dl>
@@ -103,10 +103,10 @@ Now see if <code>F&prime;</code> <a href="#inPackage">includes any packages</a>.
 
 Does <code>F</code> denote an existing file? If so, then <a href="#isPackage">determine whether <code>F</code> is a package</a>. If not, then <a href="#moreRoots">determine whether there are any unexplored module roots</a>.</dd>
 
-<dt class="resolution-rules"><em><a id="#moreRoots">Are some module roots still unexplored?</a></em></dt>
+<dt class="resolution-rules"><em><a id="moreRoots">Are some module roots still unexplored?</a></em></dt>
 <dd>With respect to the resolution of <code>M</code>, are some module roots specified on the module root path still unexplored? If so, then <a href="#nextRoot">replace <code>S</code> with <code>S&prime;</code></a>. If not, then module resolution has failed; the system will emit an appropriate error message and then halt.</dd>
 
-<dt class="resolution-rules"><em><a id="#nextRoot">Try the next unexplored module root.</a></em></dt>
+<dt class="resolution-rules"><em><a id="nextRoot">Try the next unexplored module root.</a></em></dt>
 <dd>Recall that the module roots path is the list of all module roots that participate in module discovery. The module roots are necessarily ordered, because all text is ordered. Derive <code>S&prime;</code> by choosing the leftmost module root from the module roots path that has not already been searched. Then derive <code>F&prime;</code> such that
 
 	<blockquote style="font-size: 14pt"><code>F &#8797; /S&prime;/L.avail</code>.</blockquote>
