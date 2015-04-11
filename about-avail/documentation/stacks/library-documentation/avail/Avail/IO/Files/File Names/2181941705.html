@@ -1,0 +1,97 @@
+<!doctype html>
+<!--[if lt IE 7]>
+ 	<html class="ie6 oldie">
+<![endif]-->
+<!--[if IE 7]>
+	<html class="ie7 oldie">
+<![endif]-->
+<!--[if IE 8]>
+	<html class="ie8 oldie">
+<![endif]-->
+	<!--[if gt IE 8]>
+	<!-->
+<html ng-app="stacksApp">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
+		<!--#include virtual="/_include/head.ssi" -->
+		<title>Avail - Library</title>
+		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="/about-avail/documentation/stacks/library-documentation/stacksApp.js"></script>
+		<script>
+			function myParent()
+			{
+				return window.parent;
+			}
+		</script>
+	</head>
+	<body ng-controller="CategoriesCntrl">
+		<div class="stacks-wrapper">
+	<h2 class="method-heading">_exists(follow if symlink=_)</h2>
+	<h4 class="method-section-header">Definitions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">file name, boolean</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/IO/Files/File Names</div>
+		<div class="category-list"><em>Categories:</em> Files</div>
+		<div class="signature-description">
+			Does the specified <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Files/File Names/1079439857.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Files/File Names/1079439857.html">file name</a> exist? <p> Note that the answer is only guaranteed valid at the time of the underlying file system query, and is outdated immediately thereafter. </p>
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="fn-208025295" class="stacks i-code">fn</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Files/File Names/1079439857.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Files/File Names/1079439857.html">file name</a></td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="followIfSymlink-208025295" class="stacks i-code">followIfSymlink</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/149560384.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/149560384.html">boolean</a></td>
+					<td class="stacks i-desc">
+						<a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a> if <a href="#fn-208025295">fn</a> should be followed if it refers to a symbolic link, <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4256818863.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4256818863.html">false</a> otherwise.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/149560384.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/149560384.html">boolean</a></td>
+					<td class="stacks i-desc">
+						<a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a> if <a href="#fn-208025295">fn</a> names an existing file, <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4256818863.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4256818863.html">false</a> otherwise.
+					</td>
+				</tr>
+					<th class="stacks i-row-label" colspan="3" rowspan="3">Raises</th>
+				<tr class="methodParameters">
+					<td class="stacks i-code">invalid-path exception</td>
+					<td class="stacks i-desc">
+						If <a href="#fn-208025295">fn</a> cannot be understood as a path.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">permission-denied exception</td>
+					<td class="stacks i-desc">
+						If permission is denied to use the file named by <a href="#fn-208025295">fn</a>.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+		</div>
+	</body>
+</html>
+			

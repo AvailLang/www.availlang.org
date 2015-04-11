@@ -1,0 +1,429 @@
+<!doctype html>
+<!--[if lt IE 7]>
+ 	<html class="ie6 oldie">
+<![endif]-->
+<!--[if IE 7]>
+	<html class="ie7 oldie">
+<![endif]-->
+<!--[if IE 8]>
+	<html class="ie8 oldie">
+<![endif]-->
+	<!--[if gt IE 8]>
+	<!-->
+<html ng-app="stacksApp">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
+		<!--#include virtual="/_include/head.ssi" -->
+		<title>Avail - Library</title>
+		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="/about-avail/documentation/stacks/library-documentation/stacksApp.js"></script>
+		<script>
+			function myParent()
+			{
+				return window.parent;
+			}
+		</script>
+	</head>
+	<body ng-controller="CategoriesCntrl">
+		<div class="stacks-wrapper">
+	<h2 class="method-heading">_-_</h2>
+	<h4 class="method-section-header">Definitions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">map, any</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Infallible Primitives</div>
+		<div class="category-list"><em>Categories:</em> Primitives, Maps, Transformers</div>
+		<div class="signature-description">
+			Construct and answer a map that is based on the supplied map. The answer (potentially) differs from the argument in that it does not contain a binding for <a href="#key728009526">key</a>; any such previous binding is forgotten in the new map.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="aMap728009526" class="stacks i-code">aMap</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html">map</a></td>
+					<td class="stacks i-desc">
+						A map.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="key728009526" class="stacks i-code">key</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/421086860.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/421086860.html">any</a></td>
+					<td class="stacks i-desc">
+						A key whose binding should be omitted.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html">map</a></td>
+					<td class="stacks i-desc">
+						The requested map.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">tuple, any</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Tuples</div>
+		<div class="category-list"><em>Categories:</em> Tuples</div>
+		<div class="signature-description">
+			Construct and answer a tuple like <a href="#aTuple-1000637190">aTuple</a>, but with the leftmost occurrence of <a href="#doomed-1000637190">doomed</a> removed.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="aTuple-1000637190" class="stacks i-code">aTuple</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
+					<td class="stacks i-desc">
+						A tuple.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="doomed-1000637190" class="stacks i-code">doomed</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/421086860.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/421086860.html">any</a></td>
+					<td class="stacks i-desc">
+						A value.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
+					<td class="stacks i-desc">
+						The requested tuple, which will be <a href="#aTuple-1000637190">aTuple</a> if there were no occurrences of <a href="#doomed-1000637190">doomed</a>.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">number, number</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Fallible Primitives</div>
+		<div class="category-list"><em>Categories:</em> Primitives, Numbers, Mathematics</div>
+		<div class="signature-description">
+			Compute and answer the difference of the arguments.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="minuend-960046046" class="stacks i-code">minuend</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/238122053.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/238122053.html">number</a></td>
+					<td class="stacks i-desc">
+						The minuend.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="subtrahend-960046046" class="stacks i-code">subtrahend</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/238122053.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/238122053.html">number</a></td>
+					<td class="stacks i-desc">
+						The subtrahend.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/238122053.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/238122053.html">number</a></td>
+					<td class="stacks i-desc">
+						The difference of the minuend and the subtrahend.
+					</td>
+				</tr>
+					<th class="stacks i-row-label" colspan="3" rowspan="2">Raises</th>
+				<tr class="methodParameters">
+					<td class="stacks i-code">cannot-subtract-like-infinities exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">extended integer's type, extended integer's type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Math</div>
+		<div class="category-list"><em>Categories:</em> Mathematics, Integers, Types</div>
+		<div class="signature-description">
+			Compute and answer the integer range type of the difference of the argument types.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="a1092975578" class="stacks i-code">a</td>
+					<td class="stacks i-code">extended integer's type</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="b1092975578" class="stacks i-code">b</td>
+					<td class="stacks i-code">extended integer's type</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code">extended integer's type</td>
+					<td class="stacks i-desc">
+						The narrowest integer range type general enough to hold all possible differences of the arguments' instances.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">set, any</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Infallible Primitives</div>
+		<div class="category-list"><em>Categories:</em> Primitives, Sets, Mathematics</div>
+		<div class="signature-description">
+			Compute and answer the asymmetric set difference of the specified set and a set containing the supplied element.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="aSet506259264" class="stacks i-code">aSet</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3016318916.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3016318916.html">set</a></td>
+					<td class="stacks i-desc">
+						A set.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="oldElement506259264" class="stacks i-code">oldElement</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/421086860.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/421086860.html">any</a></td>
+					<td class="stacks i-desc">
+						The element that must not be present in the resultant set.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3016318916.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3016318916.html">set</a></td>
+					<td class="stacks i-desc">
+						A set that contains the same elements as <a href="#aSet506259264">aSet</a> except that it does not contain <a href="#oldElement506259264">oldElement</a>.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<h4 class="method-section-header">Semantic restrictions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">map meta, any meta</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Early Maps</div>
+		<div class="signature-description">
+			
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="map meta1616376700" class="stacks i-code">map meta</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="any meta1616376700" class="stacks i-code">any meta</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">number, number</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Early Math</div>
+		<div class="signature-description">
+			
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="number-960046046" class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/238122053.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/238122053.html">number</a></td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="number-960046046" class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/238122053.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/238122053.html">number</a></td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">tuple meta, any meta</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Tuples</div>
+		<div class="signature-description">
+			
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="tuple meta1272216368" class="stacks i-code">tuple meta</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="any meta1272216368" class="stacks i-code">any meta</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">extended integer's type, extended integer's type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Math</div>
+		<div class="signature-description">
+			Compute and answer the integer range type of the difference of the argument types.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="extended integer's type1092975578" class="stacks i-code">extended integer's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="extended integer's type1092975578" class="stacks i-code">extended integer's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">set meta, any meta</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Sets</div>
+		<div class="signature-description">
+			
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="set meta1394626438" class="stacks i-code">set meta</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="any meta1394626438" class="stacks i-code">any meta</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+		</div>
+	</body>
+</html>
+			

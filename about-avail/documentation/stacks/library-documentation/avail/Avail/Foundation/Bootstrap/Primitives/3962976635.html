@@ -1,0 +1,265 @@
+<!doctype html>
+<!--[if lt IE 7]>
+ 	<html class="ie6 oldie">
+<![endif]-->
+<!--[if IE 7]>
+	<html class="ie7 oldie">
+<![endif]-->
+<!--[if IE 8]>
+	<html class="ie8 oldie">
+<![endif]-->
+	<!--[if gt IE 8]>
+	<!-->
+<html ng-app="stacksApp">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
+		<!--#include virtual="/_include/head.ssi" -->
+		<title>Avail - Library</title>
+		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="/about-avail/documentation/stacks/library-documentation/stacksApp.js"></script>
+		<script>
+			function myParent()
+			{
+				return window.parent;
+			}
+		</script>
+	</head>
+	<body ng-controller="CategoriesCntrl">
+		<div class="stacks-wrapper">
+	<h2 class="method-heading">_→tuple</h2>
+	<h4 class="method-section-header">Definitions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">object</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Infallible Primitives</div>
+		<div class="category-list"><em>Categories:</em> Primitives, Tuples, Objects, Conversions</div>
+		<div class="signature-description">
+			Construct and answer a tuple based on the supplied object.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="2">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="anObject-1617444665" class="stacks i-code">anObject</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2677522631.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2677522631.html">object</a></td>
+					<td class="stacks i-desc">
+						An object.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code">&lt;&lt;atom, any…|2>…|></td>
+					<td class="stacks i-desc">
+						A tuple that represents the composition of the object. Its elements are 2-tuples. Each 2-tuple's first element is an atom (i.e., the field identifier) and its second element is associated value.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">object meta</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Infallible Primitives</div>
+		<div class="category-list"><em>Categories:</em> Primitives, Types, Tuples, Objects, Conversions</div>
+		<div class="signature-description">
+			Construct and answer a tuple based on the supplied object type.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="2">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="anObjectType-2129963826" class="stacks i-code">anObjectType</td>
+					<td class="stacks i-code">object meta</td>
+					<td class="stacks i-desc">
+						An object type.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code">&lt;&lt;atom, (any)'s type…|2>…|></td>
+					<td class="stacks i-desc">
+						A tuple that represents the composition of the object type. Its elements are 2-tuples. Each 2-tuple's first element is an atom (i.e., the field identifier) and its second element is the value type permitted by the field.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">pojo array</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Infallible Primitives</div>
+		<div class="category-list"><em>Categories:</em> Primitives, Tuples, POJO, Conversions</div>
+		<div class="signature-description">
+			Construct and answer a tuple whose elements are sourced from the specified pojo array.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="2">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="aPojoArray-610524289" class="stacks i-code">aPojoArray</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3684443007.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3684443007.html">pojo array</a></td>
+					<td class="stacks i-desc">
+						A pojo array.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
+					<td class="stacks i-desc">
+						The requested tuple.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">set</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Infallible Primitives</div>
+		<div class="category-list"><em>Categories:</em> Primitives, Sets, Tuples, Conversions</div>
+		<div class="signature-description">
+			Construct and answer a tuple that arbitrarily orders the elements of the specified set. The conversion is unstable, and thus different calls given the same argument may produce different orderings.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="2">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="aSet-1278648380" class="stacks i-code">aSet</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3016318916.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3016318916.html">set</a></td>
+					<td class="stacks i-desc">
+						A set.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
+					<td class="stacks i-desc">
+						The requested tuple.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<h4 class="method-section-header">Semantic restrictions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">object meta</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Objects</div>
+		<div class="signature-description">
+			
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="2">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="object meta-2129963826" class="stacks i-code">object meta</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">pojo's array's type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Pojos</div>
+		<div class="signature-description">
+			
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="2">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="pojo's array's type-192124171" class="stacks i-code">pojo's array's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">set meta</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Sets</div>
+		<div class="signature-description">
+			
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="2">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="set meta-1576617745" class="stacks i-code">set meta</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+		</div>
+	</body>
+</html>
+			

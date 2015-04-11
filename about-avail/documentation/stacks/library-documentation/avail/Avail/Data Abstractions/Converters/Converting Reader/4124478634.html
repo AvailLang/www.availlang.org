@@ -1,0 +1,79 @@
+<!doctype html>
+<!--[if lt IE 7]>
+ 	<html class="ie6 oldie">
+<![endif]-->
+<!--[if IE 7]>
+	<html class="ie7 oldie">
+<![endif]-->
+<!--[if IE 8]>
+	<html class="ie8 oldie">
+<![endif]-->
+	<!--[if gt IE 8]>
+	<!-->
+<html ng-app="stacksApp">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
+		<!--#include virtual="/_include/head.ssi" -->
+		<title>Avail - Library</title>
+		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="/about-avail/documentation/stacks/library-documentation/stacksApp.js"></script>
+		<script>
+			function myParent()
+			{
+				return window.parent;
+			}
+		</script>
+	</head>
+	<body ng-controller="CategoriesCntrl">
+		<div class="stacks-wrapper">
+	<h2 class="method-heading">converting reader</h2>
+		<div class="module-location">/avail/Avail/Data Abstractions/Converters/Converting Reader: <strong>converting reader</strong></div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Converters/Converting Reader</div>
+		<div class="category-list"><em>Categories:</em> Data Abstractions, Converters, Readers</div>
+		<div class="signature-description">
+			A <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/3955613307.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/3955613307.html">reader</a> that applies a supplied <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Converters/Abstract Converters/2942279992.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Converters/Abstract Converters/2942279992.html">converter</a> to another <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/3955613307.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/3955613307.html">reader</a> 's buffers of data.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="Transparent"  scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="4">Fields</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="base reader-170488662" class="stacks i-code">base reader</td>
+					<td class="stacks i-code">reader</td>
+					<td class="stacks i-desc">
+						The reader being wrapped by the converter.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="element converter-170488662" class="stacks i-code">element converter</td>
+					<td class="stacks i-code">converter</td>
+					<td class="stacks i-desc">
+						The converter that wraps the base reader.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="buffer-170488662" class="stacks i-code">buffer</td>
+					<td class="stacks i-code">tuple</td>
+					<td class="stacks i-desc">
+						The mutable buffer of converted but not yet consumed data.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+		</div>
+	</body>
+</html>
+			

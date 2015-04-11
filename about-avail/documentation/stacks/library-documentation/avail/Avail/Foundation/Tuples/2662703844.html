@@ -1,0 +1,158 @@
+<!doctype html>
+<!--[if lt IE 7]>
+ 	<html class="ie6 oldie">
+<![endif]-->
+<!--[if IE 7]>
+	<html class="ie7 oldie">
+<![endif]-->
+<!--[if IE 8]>
+	<html class="ie8 oldie">
+<![endif]-->
+	<!--[if gt IE 8]>
+	<!-->
+<html ng-app="stacksApp">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
+		<!--#include virtual="/_include/head.ssi" -->
+		<title>Avail - Library</title>
+		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="/about-avail/documentation/stacks/library-documentation/stacksApp.js"></script>
+		<script>
+			function myParent()
+			{
+				return window.parent;
+			}
+		</script>
+	</head>
+	<body ng-controller="CategoriesCntrl">
+		<div class="stacks-wrapper">
+	<h2 class="method-heading">quicksort_</h2>
+	<h4 class="method-section-header">Grammatical restrictions:</h4>
+	<div class="method-section-content">
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th style="white-space:nowrap" class="stacks g-col-label-narrow" scope="col">Argument Position</th>
+					<th class="stacks g-col-label-wide" scope="col">Prohibited Expression</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="stacks g-code" rowspan="1">Argument 1</td>
+					<td class="stacks g-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/3643568524.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/3643568524.html">_++_</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<h4 class="method-section-header">Definitions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">number*</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Tuples</div>
+		<div class="category-list"><em>Categories:</em> Tuples, Sorting</div>
+		<div class="signature-description">
+			Construct and answer a sorted variant of <a href="#numbers283934883">numbers</a> using the quicksort algorithm. <p> When overriding <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Tuples/2662703844.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Tuples/2662703844.html">quicksort_</a>, only target tuple types that contain at least two elements. Not only do the trivial cases of 0 and 1 elements have a simple universal implementation, the 0-element (i.e., empty tuple) case causes ambiguous resolution if multiple overrides exist that will accept it. </p>
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="2">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="numbers283934883" class="stacks i-code">numbers</td>
+					<td class="stacks i-code">number*</td>
+					<td class="stacks i-desc">
+						A tuple of numbers.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code">number*</td>
+					<td class="stacks i-desc">
+						A tuple of numbers in ascending order.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">string*</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Strings</div>
+		<div class="category-list"><em>Categories:</em> Strings, Sorting</div>
+		<div class="signature-description">
+			Quicksort a tuple of strings in ascending order.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="2">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="strings2098682513" class="stacks i-code">strings</td>
+					<td class="stacks i-code">string*</td>
+					<td class="stacks i-desc">
+						The <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a> of strings to sort
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code">string*</td>
+					<td class="stacks i-desc">
+						A sorted <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a> of strings
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<h4 class="method-section-header">Semantic restrictions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">tuple meta</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Tuples</div>
+		<div class="signature-description">
+			
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="2">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="tuple meta-1379283583" class="stacks i-code">tuple meta</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+		</div>
+	</body>
+</html>
+			

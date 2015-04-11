@@ -1,0 +1,73 @@
+<!doctype html>
+<!--[if lt IE 7]>
+ 	<html class="ie6 oldie">
+<![endif]-->
+<!--[if IE 7]>
+	<html class="ie7 oldie">
+<![endif]-->
+<!--[if IE 8]>
+	<html class="ie8 oldie">
+<![endif]-->
+	<!--[if gt IE 8]>
+	<!-->
+<html ng-app="stacksApp">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
+		<!--#include virtual="/_include/head.ssi" -->
+		<title>Avail - Library</title>
+		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="/about-avail/documentation/stacks/library-documentation/stacksApp.js"></script>
+		<script>
+			function myParent()
+			{
+				return window.parent;
+			}
+		</script>
+	</head>
+	<body ng-controller="CategoriesCntrl">
+		<div class="stacks-wrapper">
+	<h2 class="method-heading">converter</h2>
+		<div class="module-location">/avail/Avail/Data Abstractions/Converters/Abstract Converters: <strong>converter</strong></div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Converters/Abstract Converters</div>
+		<div class="category-list"><em>Categories:</em> Data Abstractions, Converters</div>
+		<div class="signature-description">
+			A <code class="method">converter</code> repeatedly accepts a tuple of input values and produces a tuple of output values. The converter may maintain internal dynamic state to deal with conversion of sequences of values (such as UTF-8's multi-byte encoding of code points). <p> A final <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Converters/Abstract Converters/1296995153.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Converters/Abstract Converters/1296995153.html">flush_</a> indicates that the converter will not receive any more data, and must now produce the final burst of output values. </p>
+<p> A pair of converters can which have effectively inverse effects can together be considered a codec (enCOder/DECoder). Because of Avail's uniform treatment of primitive and non-primitive values, the same concept of converter can be usefully employed for both encoding and decoding. </p>
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="Transparent"  scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Fields</th>
+				</tr>
+				<tr class="methodParameters">
+					<td id="conversion type-1352687304" class="stacks i-code">conversion type</td>
+					<td class="stacks i-code">([⊥]→tuple)'s type</td>
+					<td class="stacks i-desc">
+						How to convert a bufferful of input, empty indicating a final flush.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td id="on failure-1352687304" class="stacks i-code">on failure</td>
+					<td class="stacks i-code">[⊥]→tuple</td>
+					<td class="stacks i-desc">
+						What to produce when a sequence of input elements is invalid. It may raise an exception to indicate the problem, or return a tuple suitable for use in lieu of the conversion function.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+		</div>
+	</body>
+</html>
+			

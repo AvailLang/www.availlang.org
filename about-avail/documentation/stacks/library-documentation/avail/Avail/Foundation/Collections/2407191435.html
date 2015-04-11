@@ -1,0 +1,251 @@
+<!doctype html>
+<!--[if lt IE 7]>
+ 	<html class="ie6 oldie">
+<![endif]-->
+<!--[if IE 7]>
+	<html class="ie7 oldie">
+<![endif]-->
+<!--[if IE 8]>
+	<html class="ie8 oldie">
+<![endif]-->
+	<!--[if gt IE 8]>
+	<!-->
+<html ng-app="stacksApp">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
+		<!--#include virtual="/_include/head.ssi" -->
+		<title>Avail - Library</title>
+		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="/about-avail/documentation/stacks/library-documentation/stacksApp.js"></script>
+		<script>
+			function myParent()
+			{
+				return window.parent;
+			}
+		</script>
+	</head>
+	<body ng-controller="CategoriesCntrl">
+		<div class="stacks-wrapper">
+	<h2 class="method-heading">select each…from_§where_</h2>
+	<h4 class="method-section-header">Definitions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">literal phrase ⇒ token, expression phrase ⇒ any, block phrase ⇒ []→⊤</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Tuples</div>
+		<div class="category-list"><em>Categories:</em> Control Structures, Loops, Collections, Tuples</div>
+		<div class="signature-description">
+			Iteratively apply <a href="#predicate968059654">predicate</a> to each consecutive element of <a href="#aTuple968059654">aTuple</a>, collecting those elements for which <a href="#predicate968059654">predicate</a> answers <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a> into a new tuple (and preserving ordering). Answer the new tuple.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="4">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="elementPhrase968059654" class="stacks i-code">elementPhrase</td>
+					<td class="stacks i-code">literal phrase ⇒ token</td>
+					<td class="stacks i-desc">
+						A <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/740996712.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/740996712.html">literal phrase</a> holding a synthetic <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4028275074.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4028275074.html">literal token</a> whose value is the name of the loop variable. The generated loop variable is given the strongest possible type based on the type union of the leading types and default type of <a href="#aTuple968059654">aTuple</a>.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="aTuple968059654" class="stacks i-code">aTuple</td>
+					<td class="stacks i-code">expression phrase ⇒ any</td>
+					<td class="stacks i-desc">
+						An <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2803304151.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2803304151.html">expression phrase</a> that yields the tuple to iterate over
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">3</td>
+					<td id="action968059654" class="stacks i-code">action</td>
+					<td class="stacks i-code">block phrase ⇒ []→⊤</td>
+					<td class="stacks i-desc">
+						A zero-argument <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2531827218.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2531827218.html">block phrase</a> that represents the body of the loop.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code">send phrase ⇒ ⊤</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">literal phrase ⇒ token, expression phrase ⇒ any, block phrase ⇒ []→⊤</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Iterators/Iterators</div>
+		<div class="category-list"><em>Categories:</em> Loops, Data Abstractions, Readers</div>
+		<div class="signature-description">
+			Iteratively apply <a href="#predicate968059654">predicate</a> to each consecutive element of <a href="#aReader968059654">aReader</a>, collecting those elements for which <a href="#predicate968059654">predicate</a> answers <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a> into a new reader (and preserving ordering). Answer the new reader.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="4">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="elementPhrase968059654" class="stacks i-code">elementPhrase</td>
+					<td class="stacks i-code">literal phrase ⇒ token</td>
+					<td class="stacks i-desc">
+						A <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/740996712.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/740996712.html">literal phrase</a> holding a synthetic <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4028275074.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4028275074.html">literal token</a> whose value is the name of the loop variable. The generated loop variable is given the strongest possible type based on the type union of the leading types and default type of <a href="#aReader968059654">aReader</a>.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="aReader968059654" class="stacks i-code">aReader</td>
+					<td class="stacks i-code">expression phrase ⇒ any</td>
+					<td class="stacks i-desc">
+						An <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2803304151.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2803304151.html">expression phrase</a> that yields the reader to iterate over
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">3</td>
+					<td id="action968059654" class="stacks i-code">action</td>
+					<td class="stacks i-code">block phrase ⇒ []→⊤</td>
+					<td class="stacks i-desc">
+						A zero-argument <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2531827218.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2531827218.html">block phrase</a> that represents the body of the loop.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code">send phrase ⇒ ⊤</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">literal phrase ⇒ token, expression phrase ⇒ any, block phrase ⇒ []→⊤</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Streams/Streams</div>
+		<div class="category-list"><em>Categories:</em> Loops, Data Abstractions, Streams</div>
+		<div class="signature-description">
+			Iteratively apply <a href="#predicate968059654">predicate</a> to each consecutive element of <a href="#aStream968059654">aStream</a>, collecting those elements for which <a href="#predicate968059654">predicate</a> answers <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a> into a new stream (and preserving ordering). Answer the new stream.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="4">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="elementPhrase968059654" class="stacks i-code">elementPhrase</td>
+					<td class="stacks i-code">literal phrase ⇒ token</td>
+					<td class="stacks i-desc">
+						A <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/740996712.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/740996712.html">literal phrase</a> holding a synthetic <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4028275074.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4028275074.html">literal token</a> whose value is the name of the loop variable. The generated loop variable is given the strongest possible type based on the type union of the leading types and default type of <a href="#aStream968059654">aStream</a>.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="aStream968059654" class="stacks i-code">aStream</td>
+					<td class="stacks i-code">expression phrase ⇒ any</td>
+					<td class="stacks i-desc">
+						An <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2803304151.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2803304151.html">expression phrase</a> that yields the stream to iterate over
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">3</td>
+					<td id="action968059654" class="stacks i-code">action</td>
+					<td class="stacks i-code">block phrase ⇒ []→⊤</td>
+					<td class="stacks i-desc">
+						A zero-argument <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2531827218.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2531827218.html">block phrase</a> that represents the body of the loop.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code">send phrase ⇒ ⊤</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">literal phrase ⇒ token, expression phrase ⇒ any, block phrase ⇒ []→⊤</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Sets</div>
+		<div class="category-list"><em>Categories:</em> Control Structures, Loops, Collections, Sets</div>
+		<div class="signature-description">
+			Iteratively apply <a href="#predicate968059654">predicate</a> to each consecutive element of <a href="#aSet968059654">aSet</a>, collecting those elements for which <a href="#predicate968059654">predicate</a> answers <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a> into a new set. Answer the new set.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="4">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="elementPhrase968059654" class="stacks i-code">elementPhrase</td>
+					<td class="stacks i-code">literal phrase ⇒ token</td>
+					<td class="stacks i-desc">
+						A <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/740996712.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/740996712.html">literal phrase</a> holding a synthetic <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4028275074.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4028275074.html">literal token</a> whose value is the name of the loop variable. The generated loop variable is given the strongest possible type based on the type union of the leading types and default type of <a href="#aSet968059654">aSet</a>.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="aSet968059654" class="stacks i-code">aSet</td>
+					<td class="stacks i-code">expression phrase ⇒ any</td>
+					<td class="stacks i-desc">
+						An <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2803304151.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2803304151.html">expression phrase</a> that yields the set to iterate over
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">3</td>
+					<td id="action968059654" class="stacks i-code">action</td>
+					<td class="stacks i-code">block phrase ⇒ []→⊤</td>
+					<td class="stacks i-desc">
+						A zero-argument <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2531827218.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2531827218.html">block phrase</a> that represents the body of the loop.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code">send phrase ⇒ ⊤</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+		</div>
+	</body>
+</html>
+			

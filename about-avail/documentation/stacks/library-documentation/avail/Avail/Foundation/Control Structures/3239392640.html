@@ -1,0 +1,62 @@
+<!doctype html>
+<!--[if lt IE 7]>
+ 	<html class="ie6 oldie">
+<![endif]-->
+<!--[if IE 7]>
+	<html class="ie7 oldie">
+<![endif]-->
+<!--[if IE 8]>
+	<html class="ie8 oldie">
+<![endif]-->
+	<!--[if gt IE 8]>
+	<!-->
+<html ng-app="stacksApp">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
+		<!--#include virtual="/_include/head.ssi" -->
+		<title>Avail - Library</title>
+		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="/about-avail/documentation/stacks/library-documentation/stacksApp.js"></script>
+		<script>
+			function myParent()
+			{
+				return window.parent;
+			}
+		</script>
+	</head>
+	<body ng-controller="CategoriesCntrl">
+		<div class="stacks-wrapper">
+	<h2 class="method-heading">here</h2>
+	<h4 class="method-section-header">Definitions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Control Structures</div>
+		<div class="category-list"><em>Categories:</em> Control Structures, Continuations</div>
+		<div class="signature-description">
+			Answer a continuation that represents (approximately) the current continuation. This facility may be used to simulate labels within (but not at the start of) blocks. The answer may be restarted, but not exited, which causes execution to resume at the point where the continuation is computed and answered.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" colspan="1">Returns</th>
+					<td class="stacks i-code">$[]→⊥</td>
+					<td class="stacks i-desc">
+						A continuation which, when restarted, causes <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control Structures/3239392640.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control Structures/3239392640.html">here</a> to answer the continuation again.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+		</div>
+	</body>
+</html>
+			

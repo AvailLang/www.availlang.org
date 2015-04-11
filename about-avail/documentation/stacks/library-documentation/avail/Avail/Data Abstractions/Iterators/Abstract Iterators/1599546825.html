@@ -1,0 +1,125 @@
+<!doctype html>
+<!--[if lt IE 7]>
+ 	<html class="ie6 oldie">
+<![endif]-->
+<!--[if IE 7]>
+	<html class="ie7 oldie">
+<![endif]-->
+<!--[if IE 8]>
+	<html class="ie8 oldie">
+<![endif]-->
+	<!--[if gt IE 8]>
+	<!-->
+<html ng-app="stacksApp">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
+		<!--#include virtual="/_include/head.ssi" -->
+		<title>Avail - Library</title>
+		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="/about-avail/documentation/stacks/library-documentation/stacksApp.js"></script>
+		<script>
+			function myParent()
+			{
+				return window.parent;
+			}
+		</script>
+	</head>
+	<body ng-controller="CategoriesCntrl">
+		<div class="stacks-wrapper">
+	<h2 class="method-heading">_'s⁇current element method is_</h2>
+	<h4 class="method-section-header">Definitions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">reader's type, [⊥]→any</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Iterators/Abstract Iterators</div>
+		<div class="category-list"><em>Categories:</em> Data Abstractions, Readers</div>
+		<div class="signature-description">
+			Define a method to provide the current element of a non-exhausted reader. The public operation, , does not permit extension (to ensure that readers are always checked for exhaustion), but the private operation should not be called directly from client code. This special defining method allows the private operation to be overridden for specific reader implementations without exposing it for direct use. These mechanisms cooperate to ensure that reader exhaustion checking is never bypassed.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="readerType69037458" class="stacks i-code">readerType</td>
+					<td class="stacks i-code">reader's type</td>
+					<td class="stacks i-desc">
+						The reader's type, as a cross check for the implementation.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="implementation69037458" class="stacks i-code">implementation</td>
+					<td class="stacks i-code">[⊥]→any</td>
+					<td class="stacks i-desc">
+						The new method extension.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3911882092.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3911882092.html">⊤</a></td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<h4 class="method-section-header">Semantic restrictions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">readerType, implementation</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Iterators/Abstract Iterators</div>
+		<div class="signature-description">
+			Ensure the supplied function's argument type is the same as the specified <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/3955613307.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/3955613307.html">reader</a> type.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="readerType419741335" class="stacks i-code">readerType</td>
+					<td class="stacks i-code">
+						reader's type The reader's type, as a cross check for the implementation.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="implementation419741335" class="stacks i-code">implementation</td>
+					<td class="stacks i-code">
+						[⊥]→any The new method extension.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label"colspan="1">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3911882092.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3911882092.html">⊤</a></td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+		</div>
+	</body>
+</html>
+			

@@ -1,0 +1,170 @@
+<!doctype html>
+<!--[if lt IE 7]>
+ 	<html class="ie6 oldie">
+<![endif]-->
+<!--[if IE 7]>
+	<html class="ie7 oldie">
+<![endif]-->
+<!--[if IE 8]>
+	<html class="ie8 oldie">
+<![endif]-->
+	<!--[if gt IE 8]>
+	<!-->
+<html ng-app="stacksApp">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
+		<!--#include virtual="/_include/head.ssi" -->
+		<title>Avail - Library</title>
+		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="/about-avail/documentation/stacks/library-documentation/stacksApp.js"></script>
+		<script>
+			function myParent()
+			{
+				return window.parent;
+			}
+		</script>
+	</head>
+	<body ng-controller="CategoriesCntrl">
+		<div class="stacks-wrapper">
+	<h2 class="method-heading">Drop from_while_</h2>
+	<h4 class="method-section-header">Definitions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">reader, [⊥]→boolean</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Iterators/Abstract Iterators</div>
+		<div class="category-list"><em>Categories:</em> Data Abstractions, Readers</div>
+		<div class="signature-description">
+			Forward the specified <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/3955613307.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/3955613307.html">reader</a> past the prefix of elements that answer <code class="method">true</code> to <a href="#predicate-1647836078">predicate</a>.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="aReader-1647836078" class="stacks i-code">aReader</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/3955613307.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/3955613307.html">reader</a></td>
+					<td class="stacks i-desc">
+						An reader.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="predicate-1647836078" class="stacks i-code">predicate</td>
+					<td class="stacks i-code">[⊥]→boolean</td>
+					<td class="stacks i-desc">
+						A function that can accept each element of the specified reader. It should answer <code class="method">true</code> to discard the element (and continue scanning) or <code class="method">false</code> to abort.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3911882092.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3911882092.html">⊤</a></td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">reader, [⊥]→boolean</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Iterators/Abstract Iterators</div>
+		<div class="category-list"><em>Categories:</em> Data Abstractions, Readers</div>
+		<div class="signature-description">
+			Forward the specified <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/3955613307.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/3955613307.html">reader</a> past the prefix of elements that answer <code class="method">false</code> to <a href="#predicate-1647836078">predicate</a>.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="aReader-1647836078" class="stacks i-code">aReader</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/3955613307.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/3955613307.html">reader</a></td>
+					<td class="stacks i-desc">
+						An reader.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="predicate-1647836078" class="stacks i-code">predicate</td>
+					<td class="stacks i-code">[⊥]→boolean</td>
+					<td class="stacks i-desc">
+						A function that can accept each element of the specified reader. It should answer <code class="method">false</code> to discard the element (and continue scanning) or <code class="method">true</code> to abort.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3911882092.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3911882092.html">⊤</a></td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<h4 class="method-section-header">Semantic restrictions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">readerType, predicate</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Iterators/Abstract Iterators</div>
+		<div class="signature-description">
+			Verify statically that <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/626326036.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/626326036.html">Drop from_while_</a> 's reader provides elements suitable for processing by the predicate.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="readerType113018646" class="stacks i-code">readerType</td>
+					<td class="stacks i-code">
+						reader's type
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="predicate113018646" class="stacks i-code">predicate</td>
+					<td class="stacks i-code">
+						[⊥]→boolean's type
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label"colspan="1">Returns</th>
+					<td class="stacks i-code">⊤'s type</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+		</div>
+	</body>
+</html>
+			

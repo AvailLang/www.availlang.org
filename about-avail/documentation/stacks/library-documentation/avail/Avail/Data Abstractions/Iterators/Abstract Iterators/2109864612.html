@@ -1,0 +1,266 @@
+<!doctype html>
+<!--[if lt IE 7]>
+ 	<html class="ie6 oldie">
+<![endif]-->
+<!--[if IE 7]>
+	<html class="ie7 oldie">
+<![endif]-->
+<!--[if IE 8]>
+	<html class="ie8 oldie">
+<![endif]-->
+	<!--[if gt IE 8]>
+	<!-->
+<html ng-app="stacksApp">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
+		<!--#include virtual="/_include/head.ssi" -->
+		<title>Avail - Library</title>
+		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="/about-avail/documentation/stacks/library-documentation/stacksApp.js"></script>
+		<script>
+			function myParent()
+			{
+				return window.parent;
+			}
+		</script>
+	</head>
+	<body ng-controller="CategoriesCntrl">
+		<div class="stacks-wrapper">
+	<h2 class="method-heading">take«at most»?_from_</h2>
+	<h4 class="method-section-header">Definitions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">boolean, [0..∞], reader</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Iterators/Abstract Iterators</div>
+		<div class="category-list"><em>Categories:</em> Data Abstractions, Readers</div>
+		<div class="signature-description">
+			Answer a tuple containing (at most) the first <a href="#count432512117">count</a> elements of <a href="#aReader432512117">aReader</a>.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="4">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="isLax432512117" class="stacks i-code">isLax</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/149560384.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/149560384.html">boolean</a></td>
+					<td class="stacks i-desc">
+						<code class="method">false</code> if an <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/3200521557.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/3200521557.html">exhausted-iterator exception</a> should be raised if <a href="#count432512117">count</a> exceeds the number of elements remaining, <code class="method">true</code> otherwise.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="count432512117" class="stacks i-code">count</td>
+					<td class="stacks i-code">[0..∞]</td>
+					<td class="stacks i-desc">
+						The size of the requested tuple.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">3</td>
+					<td id="aReader432512117" class="stacks i-code">aReader</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/3955613307.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/3955613307.html">reader</a></td>
+					<td class="stacks i-desc">
+						An reader.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
+					<td class="stacks i-desc">
+						A tuple containing the first <a href="#count432512117">count</a> elements of <a href="#aReader432512117">aReader</a>, preserving the original order.
+					</td>
+				</tr>
+					<th class="stacks i-row-label" colspan="3" rowspan="2">Raises</th>
+				<tr class="methodParameters">
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/3200521557.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/3200521557.html">exhausted-iterator exception</a></td>
+					<td class="stacks i-desc">
+						If <a href="#isLax432512117">isLax</a> is <code class="method">false</code> and <a href="#aReader432512117">aReader</a> does not contain <a href="#count432512117">count</a> elements.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">boolean, [0..∞], buffered reader</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Iterators/Buffered Iterators</div>
+		<div class="category-list"><em>Categories:</em> Data Abstractions, Iterators</div>
+		<div class="signature-description">
+			Answer a tuple containing (at most) the first <a href="#count-2054666032">count</a> elements of <a href="#aReader-2054666032">aReader</a>. Take advantage of the buffering for performance.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="4">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="isLax-2054666032" class="stacks i-code">isLax</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/149560384.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/149560384.html">boolean</a></td>
+					<td class="stacks i-desc">
+						<code class="method">false</code> if an <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/3200521557.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/3200521557.html">exhausted-iterator exception</a> should be raised if <a href="#count-2054666032">count</a> exceeds the number of elements remaining, <code class="method">true</code> otherwise.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="count-2054666032" class="stacks i-code">count</td>
+					<td class="stacks i-code">[0..∞]</td>
+					<td class="stacks i-desc">
+						The size of the requested tuple.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">3</td>
+					<td id="aReader-2054666032" class="stacks i-code">aReader</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Buffered Iterators/4034433970.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Buffered Iterators/4034433970.html">buffered reader</a></td>
+					<td class="stacks i-desc">
+						A reader.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
+					<td class="stacks i-desc">
+						A tuple containing the first <a href="#count-2054666032">count</a> elements of <a href="#aReader-2054666032">aReader</a>, possibly less if <a href="#isLax-2054666032">isLax</a> is <code class="method">true</code>.
+					</td>
+				</tr>
+					<th class="stacks i-row-label" colspan="3" rowspan="2">Raises</th>
+				<tr class="methodParameters">
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/3200521557.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/3200521557.html">exhausted-iterator exception</a></td>
+					<td class="stacks i-desc">
+						If <a href="#isLax-2054666032">isLax</a> is <code class="method">false</code> and <a href="#aReader-2054666032">aReader</a> does not contain <a href="#count-2054666032">count</a> elements.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">boolean, [0..∞], reader</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Iterators/Random Access Buffered Iterators</div>
+		<div class="category-list"><em>Categories:</em> Data Abstractions, Iterators</div>
+		<div class="signature-description">
+			Answer a tuple containing (at most) the first <a href="#count432512117">count</a> elements of <a href="#aReader432512117">aReader</a>. Take advantage of the buffering for performance.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="4">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="isLax432512117" class="stacks i-code">isLax</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/149560384.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/149560384.html">boolean</a></td>
+					<td class="stacks i-desc">
+						<code class="method">false</code> if an <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/3200521557.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/3200521557.html">exhausted-iterator exception</a> should be raised if <a href="#count432512117">count</a> exceeds the number of elements remaining, <code class="method">true</code> otherwise.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="count432512117" class="stacks i-code">count</td>
+					<td class="stacks i-code">[0..∞]</td>
+					<td class="stacks i-desc">
+						The size of the requested tuple.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">3</td>
+					<td id="aReader432512117" class="stacks i-code">aReader</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/3955613307.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/3955613307.html">reader</a></td>
+					<td class="stacks i-desc">
+						A reader.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
+					<td class="stacks i-desc">
+						A tuple containing the first <a href="#count432512117">count</a> elements of <a href="#aReader432512117">aReader</a>, possibly less if <a href="#isLax432512117">isLax</a> is <code class="method">true</code>.
+					</td>
+				</tr>
+					<th class="stacks i-row-label" colspan="3" rowspan="2">Raises</th>
+				<tr class="methodParameters">
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/3200521557.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/3200521557.html">exhausted-iterator exception</a></td>
+					<td class="stacks i-desc">
+						If <a href="#isLax432512117">isLax</a> is <code class="method">false</code> and <a href="#aReader432512117">aReader</a> does not contain <a href="#count432512117">count</a> elements.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<h4 class="method-section-header">Semantic restrictions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">laxity, count, readerType</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Iterators/Abstract Iterators</div>
+		<div class="signature-description">
+			Strengthen the result of the take operation. Take into account the reader's element type, how many elements are to be extracted, and whether the at most clause was present.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="4">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="laxity-902184807" class="stacks i-code">laxity</td>
+					<td class="stacks i-code">
+						boolean's type
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="count-902184807" class="stacks i-code">count</td>
+					<td class="stacks i-code">
+						[0..∞]'s type
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="readerType-902184807" class="stacks i-code">readerType</td>
+					<td class="stacks i-code">
+						reader's type
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label"colspan="1">Returns</th>
+					<td class="stacks i-code">tuple's type</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+		</div>
+	</body>
+</html>
+			

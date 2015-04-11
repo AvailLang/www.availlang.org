@@ -1,0 +1,446 @@
+<!doctype html>
+<!--[if lt IE 7]>
+ 	<html class="ie6 oldie">
+<![endif]-->
+<!--[if IE 7]>
+	<html class="ie7 oldie">
+<![endif]-->
+<!--[if IE 8]>
+	<html class="ie8 oldie">
+<![endif]-->
+	<!--[if gt IE 8]>
+	<!-->
+<html ng-app="stacksApp">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
+		<!--#include virtual="/_include/head.ssi" -->
+		<title>Avail - Library</title>
+		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="/about-avail/documentation/stacks/library-documentation/stacksApp.js"></script>
+		<script>
+			function myParent()
+			{
+				return window.parent;
+			}
+		</script>
+	</head>
+	<body ng-controller="CategoriesCntrl">
+		<div class="stacks-wrapper">
+	<h2 class="method-heading">filter_by_</h2>
+	<h4 class="method-section-header">Definitions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">reader, [⊥]→boolean</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Iterators/Filtered Readers</div>
+		<div class="category-list"><em>Categories:</em> Data Abstractions, Readers</div>
+		<div class="signature-description">
+			Construct and answer an reader that applies <a href="#predicate-1647836078">predicate</a> to <a href="#aReader-1647836078">aReader</a>. The result is lazy, so <a href="#aReader-1647836078">aReader</a> may be infinite. The result contains only those elements of <a href="#aReader-1647836078">aReader</a> that pass the specified filter. <p> Note that <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/2536042994.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/2536042994.html">_is exhausted</a> may require an infinite amount of time to complete when presented with an infinite filtered reader, e.g., consider the case of: </p> <pre> filter reader from 1 to ∞ by [ x: natural number | x < 10 ] </pre> </p> Which will require infinite computation after advancing beyond the element <code class="method">10</code>. </p>
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="aReader-1647836078" class="stacks i-code">aReader</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/3955613307.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/3955613307.html">reader</a></td>
+					<td class="stacks i-desc">
+						An <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/3955613307.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/3955613307.html">reader</a>.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="predicate-1647836078" class="stacks i-code">predicate</td>
+					<td class="stacks i-code">[⊥]→boolean</td>
+					<td class="stacks i-desc">
+						A function that accepts the elements of <a href="#aReader-1647836078">aReader</a> and answers <code class="method">true</code> iff they should be obtainable via the result reader.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/3955613307.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/3955613307.html">reader</a></td>
+					<td class="stacks i-desc">
+						An reader capable of producing exactly those elements of <a href="#aReader-1647836078">aReader</a> for which <a href="#predicate-1647836078">predicate</a> answers <code class="method">true</code>.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">set, [⊥]→boolean</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Sets</div>
+		<div class="category-list"><em>Categories:</em> Collections, Sets, Control Structures</div>
+		<div class="signature-description">
+			Iteratively apply <a href="#predicate1194549119">predicate</a> to each element of <a href="#aSet1194549119">aSet</a>, in no particular order, collecting those elements for which <a href="#predicate1194549119">predicate</a> answers <a href="#true1194549119">true</a> into a new set. Answer the new set.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="aSet1194549119" class="stacks i-code">aSet</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3016318916.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3016318916.html">set</a></td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="predicate1194549119" class="stacks i-code">predicate</td>
+					<td class="stacks i-code">[⊥]→boolean</td>
+					<td class="stacks i-desc">
+						A function that accepts the elements of the set and answers <a href="#true1194549119">true</a> iff they should be accumulated into the output set.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3016318916.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3016318916.html">set</a></td>
+					<td class="stacks i-desc">
+						A set containing exactly those elements of <a href="#aSet1194549119">aSet</a> for which <a href="#predicate1194549119">predicate</a> answered <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a>.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">tuple, [⊥]→boolean</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Tuples</div>
+		<div class="category-list"><em>Categories:</em> Tuples, Control Structures, Collections, Transformers</div>
+		<div class="signature-description">
+			Iteratively apply <a href="#predicate597656209">predicate</a> to each consecutive element of <a href="#aTuple597656209">aTuple</a>, collecting those elements for which <a href="#predicate597656209">predicate</a> answers <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a> into a new tuple (and preserving ordering). Answer the new tuple.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="aTuple597656209" class="stacks i-code">aTuple</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="predicate597656209" class="stacks i-code">predicate</td>
+					<td class="stacks i-code">[⊥]→boolean</td>
+					<td class="stacks i-desc">
+						A function that accepts the elements of the tuple and answers <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a> iff they should be accumulated into the output tuple.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
+					<td class="stacks i-desc">
+						A tuple containing exactly those elements of <a href="#aTuple597656209">aTuple</a> for which <a href="#predicate597656209">predicate</a> answered <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a>.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">tuple, [⊥, ⊥]→boolean</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Tuples</div>
+		<div class="category-list"><em>Categories:</em> Tuples, Control Structures, Collections, Transformers</div>
+		<div class="signature-description">
+			Iteratively apply <a href="#predicate1954061950">predicate</a> to each consecutive element and index of <a href="#aTuple1954061950">aTuple</a>, collecting those elements for which <a href="#predicate1954061950">predicate</a> answers <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a> into a new tuple (and preserving ordering). Answer the new tuple.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="aTuple1954061950" class="stacks i-code">aTuple</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="predicate1954061950" class="stacks i-code">predicate</td>
+					<td class="stacks i-code">[⊥, ⊥]→boolean</td>
+					<td class="stacks i-desc">
+						A function that accepts 1) an element of the tuple and 2) the index of that element and which answers <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a> iff the elements should be accumulated into the output tuple.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
+					<td class="stacks i-desc">
+						A tuple containing exactly those elements of <a href="#aTuple1954061950">aTuple</a> for which <a href="#predicate1954061950">predicate</a> answered <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a>.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">stream, [⊥]→boolean</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Streams/Abstract Streams</div>
+		<div class="category-list"><em>Categories:</em> Data Abstractions, Streams</div>
+		<div class="signature-description">
+			Construct and answer a stream that applies `predicate` to `aStream`. The result is lazy, so `aStream` may be infinite. The result contains only those elements of `aStream` that pass the specified filter. <p> Note that the public stream operations may require an infinite amount of time to complete when presented with an infinite filtered stream, e.g., consider that case of: </p>
+<p> filter stream from 1 to ∞ by [ x: natural number | x < 10 ] </p>
+<p> Which will require infinite computation after advancing beyond the element `10`. </p>
+<p> Also, filtered streams are slow in general (because they must rescan for each public operation). Consider using filtered iterators instead. </p>
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="aStream437733907" class="stacks i-code">aStream</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Streams/Abstract Streams/1746215996.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Streams/Abstract Streams/1746215996.html">stream</a></td>
+					<td class="stacks i-desc">
+						aStream - The source stream.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="predicate437733907" class="stacks i-code">predicate</td>
+					<td class="stacks i-code">[⊥]→boolean</td>
+					<td class="stacks i-desc">
+						predicate - A function that accepts the elements of `aStream` and answers `true` iff they should be obtainable via the result stream.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Streams/Abstract Streams/1746215996.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Streams/Abstract Streams/1746215996.html">stream</a></td>
+					<td class="stacks i-desc">
+						A stream capable of producing exactly those elements of `aStream` for which `predicate` answers `true`.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">map, [⊥, ⊥]→boolean</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Maps</div>
+		<div class="category-list"><em>Categories:</em> Collections, Maps, Control Structures</div>
+		<div class="signature-description">
+			Iteratively apply <a href="#predicate316157722">predicate</a> to each binding of <a href="#aMap316157722">aMap</a>, in no particular order, collecting those bindings for which <a href="#predicate316157722">predicate</a> answers <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a> into a new map. Answer the new map.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="aMap316157722" class="stacks i-code">aMap</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html">map</a></td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="predicate316157722" class="stacks i-code">predicate</td>
+					<td class="stacks i-code">[⊥, ⊥]→boolean</td>
+					<td class="stacks i-desc">
+						A function that accepts the bindings of the map and answers <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a> iff they should be accumulated into the output map.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html">map</a></td>
+					<td class="stacks i-desc">
+						A map containing exactly those bindings of <a href="#aMap316157722">aMap</a> for which <a href="#predicate316157722">predicate</a> answered <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a>.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<h4 class="method-section-header">Semantic restrictions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">readerType, predicateType</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Iterators/Filtered Readers</div>
+		<div class="signature-description">
+			Ensure the predicate will accept the inner reader's elements. Also strengthen the result to be a <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/3955613307.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/3955613307.html">reader</a> whose elements are the same as those of the inner reader.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="readerType-1810571016" class="stacks i-code">readerType</td>
+					<td class="stacks i-code">
+						reader's type An <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/3955613307.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/3955613307.html">reader</a>.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="predicateType-1810571016" class="stacks i-code">predicateType</td>
+					<td class="stacks i-code">
+						[⊥]→boolean's type A function that accepts the elements of <a href="#aReader-1810571016">aReader</a> and answers <code class="method">true</code> iff they should be obtainable via the result reader.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label"colspan="1">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/3955613307.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/3955613307.html">reader</a></td>
+					<td class="stacks i-desc">
+						The filtered reader's strengthened type.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">tuple meta, […]→boolean's type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Tuples</div>
+		<div class="signature-description">
+			Ensure that the function will accept all elements and indices of the tuple.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="tuple meta-1890053851" class="stacks i-code">tuple meta</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="[…]→boolean's type-1890053851" class="stacks i-code">[…]→boolean's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">map meta, [⊥, ⊥]→boolean's type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Maps</div>
+		<div class="signature-description">
+			Ensure that the function will accept all bindings of the map.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="map meta1585413677" class="stacks i-code">map meta</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="[⊥, ⊥]→boolean's type1585413677" class="stacks i-code">[⊥, ⊥]→boolean's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">set meta, [⊥]→boolean's type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Sets</div>
+		<div class="signature-description">
+			Ensure that the function will accept all elements of the set.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="set meta1390798758" class="stacks i-code">set meta</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="[⊥]→boolean's type1390798758" class="stacks i-code">[⊥]→boolean's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+		</div>
+	</body>
+</html>
+			

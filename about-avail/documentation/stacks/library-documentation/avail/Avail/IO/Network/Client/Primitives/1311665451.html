@@ -1,0 +1,160 @@
+<!doctype html>
+<!--[if lt IE 7]>
+ 	<html class="ie6 oldie">
+<![endif]-->
+<!--[if IE 7]>
+	<html class="ie7 oldie">
+<![endif]-->
+<!--[if IE 8]>
+	<html class="ie8 oldie">
+<![endif]-->
+	<!--[if gt IE 8]>
+	<!-->
+<html ng-app="stacksApp">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
+		<!--#include virtual="/_include/head.ssi" -->
+		<title>Avail - Library</title>
+		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="/about-avail/documentation/stacks/library-documentation/stacksApp.js"></script>
+		<script>
+			function myParent()
+			{
+				return window.parent;
+			}
+		</script>
+	</head>
+	<body ng-controller="CategoriesCntrl">
+		<div class="stacks-wrapper">
+	<h2 class="method-heading">a fiber reading_byte|bytes from_,⁇on success doing_,⁇on failure doing_«⁇,forked at priority_»</h2>
+	<h4 class="method-section-header">Definitions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">whole number, client socket, [byte*, boolean]→⊤, [exception]→⊤, byte?</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/IO/Network/Client/Primitives</div>
+		<div class="category-list"><em>Categories:</em> IO, Networking, Sockets</div>
+		<div class="signature-description">
+			Asynchronously read data from a <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Network/Client/Primitives/2704670048.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Network/Client/Primitives/2704670048.html">client socket</a>. If the operation is successful, then fork a new <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html">fiber</a> to apply <a href="#success-1252286528">success</a> to the tuple of bytes read and a boolean that is <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a> if the connection has reached end-of-stream. If the operation is unsuccessful, then fork a new fiber to apply <a href="#failure-1252286528">failure</a> to the error code that classifies the failure. Answer the new fiber.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="6">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="count-1252286528" class="stacks i-code">count</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3836536488.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3836536488.html">whole number</a></td>
+					<td class="stacks i-desc">
+						The maximum number of bytes to read from the connection.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="s-1252286528" class="stacks i-code">s</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Network/Client/Primitives/2704670048.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Network/Client/Primitives/2704670048.html">client socket</a></td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">3</td>
+					<td id="success-1252286528" class="stacks i-code">success</td>
+					<td class="stacks i-code">[byte*, boolean]→⊤</td>
+					<td class="stacks i-desc">
+						The function to apply to the newly read data and end-of-stream indicator.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">4</td>
+					<td id="failure-1252286528" class="stacks i-code">failure</td>
+					<td class="stacks i-code">[exception]→⊤</td>
+					<td class="stacks i-desc">
+						The function to apply to the <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1291306455.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1291306455.html">exception</a> that classifies the failure of the asynchronous read operation.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">5</td>
+					<td id="optionalPriority-1252286528" class="stacks i-code">optionalPriority</td>
+					<td class="stacks i-code">byte?</td>
+					<td class="stacks i-desc">
+						If specified, then the priority of the new fiber. If not specified, then the new fiber will run at the same priority as the <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/249247655.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/249247655.html">current fiber</a>.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html">fiber</a></td>
+					<td class="stacks i-desc">
+						The new fiber which may eventually apply either <a href="#success-1252286528">success</a> or <a href="#failure-1252286528">failure</a>.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<h4 class="method-section-header">Semantic restrictions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">whole number's type, client socket's type, []→⊤'s type, [exception]→⊤'s type, byte?'s type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/IO/Network/Client/Primitives</div>
+		<div class="signature-description">
+			
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="6">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="whole number's type249932730" class="stacks i-code">whole number's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="client socket's type249932730" class="stacks i-code">client socket's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="[]→⊤'s type249932730" class="stacks i-code">[]→⊤'s type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="[exception]→⊤'s type249932730" class="stacks i-code">[exception]→⊤'s type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="byte?'s type249932730" class="stacks i-code">byte?'s type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+		</div>
+	</body>
+</html>
+			

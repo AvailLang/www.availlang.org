@@ -1,0 +1,109 @@
+<!doctype html>
+<!--[if lt IE 7]>
+ 	<html class="ie6 oldie">
+<![endif]-->
+<!--[if IE 7]>
+	<html class="ie7 oldie">
+<![endif]-->
+<!--[if IE 8]>
+	<html class="ie8 oldie">
+<![endif]-->
+	<!--[if gt IE 8]>
+	<!-->
+<html ng-app="stacksApp">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
+		<!--#include virtual="/_include/head.ssi" -->
+		<title>Avail - Library</title>
+		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="/about-avail/documentation/stacks/library-documentation/stacksApp.js"></script>
+		<script>
+			function myParent()
+			{
+				return window.parent;
+			}
+		</script>
+	</head>
+	<body ng-controller="CategoriesCntrl">
+		<div class="stacks-wrapper">
+	<h2 class="method-heading">injector from_to_by_doing_in parallel_-way</h2>
+	<h4 class="method-section-header">Definitions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">start, extended integer, integer, [⊥]→⊤, natural number</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Concurrency</div>
+		<div class="category-list"><em>Categories:</em> Concurrency, Control Structures</div>
+		<div class="signature-description">
+			Construct and answer an injector <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html">fiber</a> that spawns worker <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html">fiber</a> s to apply <a href="#action-1546434590">action</a> to each of the <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1558086042.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1558086042.html">integer</a> s in the implied range, running no more than <a href="#limit-1546434590">limit</a> worker <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html">fiber</a> s in parallel. The injector honors any <code>termination request</code> s. <p> If possible, then the injector runs at a priority that is <code class="method">1</code> less than the <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/249247655.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/249247655.html">current fiber</a> 's. If possible, then each worker fiber runs at a priority that is <code class="method">1</code> less than than the injector's. </p>
+<p> While this method is very useful in its own right, it is primarily intended as a building block for higher-level concurrent control structures. </p>
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="6">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="integer-1546434590" class="stacks i-code">integer</td>
+					<td class="stacks i-code">start</td>
+					<td class="stacks i-desc">
+						The start value, inclusive.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="end-1546434590" class="stacks i-code">end</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/964914967.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/964914967.html">extended integer</a></td>
+					<td class="stacks i-desc">
+						The end value, inclusive.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">3</td>
+					<td id="step-1546434590" class="stacks i-code">step</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1558086042.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1558086042.html">integer</a></td>
+					<td class="stacks i-desc">
+						The amount by which to adjust the value after each iteration.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">4</td>
+					<td id="action-1546434590" class="stacks i-code">action</td>
+					<td class="stacks i-code">[⊥]→⊤</td>
+					<td class="stacks i-desc">
+						A function that accepts a value in the implied range.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">5</td>
+					<td id="limit-1546434590" class="stacks i-code">limit</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2452598284.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2452598284.html">natural number</a></td>
+					<td class="stacks i-desc">
+						The maximum number of worker <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html">fiber</a> s that are permitted to run concurrently.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code">fiber→⊤</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+		</div>
+	</body>
+</html>
+			

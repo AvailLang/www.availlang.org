@@ -1,0 +1,139 @@
+<!doctype html>
+<!--[if lt IE 7]>
+ 	<html class="ie6 oldie">
+<![endif]-->
+<!--[if IE 7]>
+	<html class="ie7 oldie">
+<![endif]-->
+<!--[if IE 8]>
+	<html class="ie8 oldie">
+<![endif]-->
+	<!--[if gt IE 8]>
+	<!-->
+<html ng-app="stacksApp">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
+		<!--#include virtual="/_include/head.ssi" -->
+		<title>Avail - Library</title>
+		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="/about-avail/documentation/stacks/library-documentation/stacksApp.js"></script>
+		<script>
+			function myParent()
+			{
+				return window.parent;
+			}
+		</script>
+	</head>
+	<body ng-controller="CategoriesCntrl">
+		<div class="stacks-wrapper">
+	<h2 class="method-heading">Cast|cast_into«_‡,»«else_»</h2>
+	<h4 class="method-section-header">Definitions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">any, &lt;[⊥]→⊤…|2..>, ([]→⊤)?</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Casts</div>
+		<div class="category-list"><em>Categories:</em> Casts, Control Structures, Conditionals</div>
+		<div class="signature-description">
+			Invoke the first function of <a href="#caseTuple-1759904065">caseTuple</a> that accepts <a href="#value-1759904065">value</a>. If no such function is specified, then invoke <a href="#else-1759904065">else</a>. If <a href="#else-1759904065">else</a> is not specified, then raise a <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Casts/3813197555.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Casts/3813197555.html">bad-multiway-cast exception</a>.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="4">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="value-1759904065" class="stacks i-code">value</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/421086860.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/421086860.html">any</a></td>
+					<td class="stacks i-desc">
+						An arbitrary value.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="caseTuple-1759904065" class="stacks i-code">caseTuple</td>
+					<td class="stacks i-code">&lt;[⊥]→⊤…|2..></td>
+					<td class="stacks i-desc">
+						A tuple of arity-1 functions. The first of these able to accept <a href="#value-1759904065">value</a> will be applied to it.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">3</td>
+					<td id="else-1759904065" class="stacks i-code">else</td>
+					<td class="stacks i-code">([]→⊤)?</td>
+					<td class="stacks i-desc">
+						An optional arity-0 function. If provided, then it will be invoked iff no function of <a href="#caseTuple-1759904065">caseTuple</a> is able to accept <a href="#value-1759904065">value</a>.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3911882092.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3911882092.html">⊤</a></td>
+					<td class="stacks i-desc">
+						The result of whatever function is applied.
+					</td>
+				</tr>
+					<th class="stacks i-row-label" colspan="3" rowspan="2">Raises</th>
+				<tr class="methodParameters">
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Casts/3813197555.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Casts/3813197555.html">bad-multiway-cast exception</a></td>
+					<td class="stacks i-desc">
+						If no <a href="#else-1759904065">else</a> function was supplied and no function of <a href="#caseTuple-1759904065">caseTuple</a> was able to accept <a href="#value-1759904065">value</a>.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<h4 class="method-section-header">Semantic restrictions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">any meta, &lt;[⊥]→⊤…|2..>'s type, ([]→⊤)?'s type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Casts</div>
+		<div class="signature-description">
+			Strengthen the return type so the method may be used as a value-producing expression. If any case is unnecessary or invalid, then reject the current parse.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="4">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="any meta-1080297930" class="stacks i-code">any meta</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="<[⊥]→⊤…|2..>'s type-1080297930" class="stacks i-code">&lt;[⊥]→⊤…|2..>'s type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="([]→⊤)?'s type-1080297930" class="stacks i-code">([]→⊤)?'s type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+		</div>
+	</body>
+</html>
+			
