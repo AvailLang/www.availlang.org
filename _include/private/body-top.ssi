@@ -2,38 +2,21 @@
 			<a class="header-text" href="/index.html">The Avail Programming Language</a>
 		</div>
 		<div class="search-bar">
-			<gcse:searchbox-only resultsUrl="/private/search/index-new.html"></gcse:searchbox-only>
+			<gcse:searchbox-only resultsUrl="/search/index.html"></gcse:searchbox-only>
 		</div>
 		<div class="main-wrapper">
 			<div class="nav-wrapper">
 				<div class="navigation">
 					<div class="nav-section">
-						<div class="nav-section-header">About Avail</div>
+						<div class="nav-section-header private"><a class="private" href="/private">Members Only</a></div>
 						<div class="nav-links">
-							<div><a class="nav-link" href="/about-avail/introduction/index.html">Introduction</a></div>
-							<div><a class="nav-link" href="/about-avail/history/index.html">History</a></div>
-							<div><a class="nav-link" href="/about-avail/newsletters/index.html">Newsletters</a></div>
-							<div><a class="nav-link" href="/about-avail/documentation/index.html">Documentation</a></div>
-							<div><a class="nav-link" href="/about-avail/glossary/index.html">Glossary</a></div>
-							<div><a class="nav-link" href="/about-avail/trac/index.html">Trac</a></div>
+							<div><a class="nav-link private" href="/private/avail-team/documentation-tags.html">Documentation<br> &nbsp; &nbsp; Tags</a></div>
+							<div><a class="nav-link private" href="/private/avail-team/style-guide.html">Website Style<br> &nbsp; &nbsp; Guide</a></div>
+							<div><a class="nav-link private" href="/private/avail-team/setting-up-avail/index.html">Setting up Avail<br> &nbsp; &nbsp; with Eclipse</a></div>
+							<div><a class="nav-link private" href="/private/avail-team/videos.html">Videos</a></div>
 						</div>
 					</div>
-					<div class="nav-section">
-						<div class="nav-section-header">Using Avail</div>
-						<div class="nav-links">
-							<div><a class="nav-link" href="/using-avail/try-it-out.html">Try it Out</a></div>
-							<div><a class="nav-link" href="/using-avail/licensing.html">Licensing</a></div>
-							<div><a class="nav-link" href="/using-avail/source.html">Get the Source</a></div>
-						</div>
-					</div>
-					<div class="nav-section">
-						<div class="nav-section-header">About Us</div>
-						<div class="nav-links">
-							<div><a class="nav-link" href="/about-us/philosophy/index.html">Philosophy</a></div>
-							<div><a class="nav-link" href="/about-us/team/index.html">Team</a></div>
-							<div><a class="nav-link" href="/about-us/blogs/index.html">Blogs</a></div>
-						</div>
-					</div>
+<!--#include virtual="/_include/public-nav-sections.ssi" -->
 				</div>
 			</div>
 			<div class="content-wrapper">
