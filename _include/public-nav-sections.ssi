@@ -1,0 +1,22 @@
+					<div class="nav-section">
+						<div class="nav-section-header">About Avail</div>
+						<div class="nav-links">
+							<div><a class="nav-link" href="/about-avail/introduction/index.html">Introduction</a></div>
+							<div><a class="nav-link" href="/about-avail/documentation/faq.html">FAQ</a></div>
+							<div><a class="nav-link" href="/about-avail/history/index.html">History</a></div>
+							<div><a class="nav-link" href="/about-avail/download/index.html">Download</a></div>
+							<div><a class="nav-link" href="/about-avail/learn/index.html">Learn</a></div>
+							<div><a class="nav-link" href="/about-avail/documentation/index.html">Documentation</a></div>
+							<div><a class="nav-link" href="/about-avail/glossary/index.html">Glossary</a></div>
+							<div><a class="nav-link" href="/about-avail/community/index.html">Community</a></div>
+							<div><a class="nav-link" href="https://trac.availlang.org">Trac</a></div>
+						</div>
+					</div>
+					<div class="nav-section">
+						<div class="nav-section-header">About Us</div>
+						<div class="nav-links">
+							<div><a class="nav-link" href="/about-us/team/index.html">Team</a></div>
+							<div><a class="nav-link" href="/about-us/blogs/index.html">Blogs</a></div>
+							<div><a class="nav-link" href="/about-us/acknowledgments/index.html">Acknowledgments</a></div>
+						</div>
+					</div>

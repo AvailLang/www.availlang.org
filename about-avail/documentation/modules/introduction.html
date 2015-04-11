@@ -37,7 +37,7 @@
 </ul>
 
 <div style="float: right;" class="floating-svg-wrapper">
-<img src="/_images/modules/upstream-downstream.svg" class="embedded-svg">
+<!--#include virtual="/_images/modules/upstream-downstream.svg" -->
 </div>
 
 <p>A module <code class="module">A</code> is <strong>upstream</strong> of a module <code class="module">B</code> if <code class="module">A</code> must be compiled before <code class="module">B</code> can be compiled. A module <code class="module">C</code> is <strong>downstream</strong> of a module <code class="module">D</code> if <code class="module">C</code> cannot be compiled until <code class="module">D</code> has been compiled. So upstream and downstream are reciprocal relationships based on the notion of <strong>module dependency</strong>: a module depends upon another (upstream) module, directly or indirectly, if it consumes services made available by that module.</p>

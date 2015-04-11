@@ -1,0 +1,25 @@
+		<div class="header-wrapper">
+			<a class="header-text" href="/index.html">The Avail Programming Language</a>
+		</div>
+		<div class="search-bar">
+			<gcse:searchbox-only resultsUrl="/search/index.html"></gcse:searchbox-only>
+		</div>
+		<div class="main-wrapper">
+			<div class="nav-wrapper">
+				<div class="navigation">
+					<div class="nav-section">
+						<div class="nav-section-header private"><a class="private" href="/private">Members Only</a></div>
+						<div class="nav-links">
+							<div><a class="nav-link private" href="/private/avail-team/documentation-tags.html">Documentation<br> &nbsp; &nbsp; Tags</a></div>
+							<div><a class="nav-link private" href="/private/avail-team/style-guide.html">Website Style<br> &nbsp; &nbsp; Guide</a></div>
+							<div><a class="nav-link private" href="/private/avail-team/setting-up-avail/index.html">Setting up Avail<br> &nbsp; &nbsp; with Eclipse</a></div>
+							<div><a class="nav-link private" href="/private/avail-team/videos.html">Videos</a></div>
+						</div>
+					</div>
+<!--#include virtual="/_include/public-nav-sections.ssi" -->
+				</div>
+			</div>
+			<div class="content-wrapper">
+				<div class="content shadow">
+					<section>
+						<div class="no-margin no-padding">
