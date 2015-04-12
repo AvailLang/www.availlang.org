@@ -1,0 +1,124 @@
+<!doctype html>
+<!--[if lt IE 7]>
+ 	<html class="ie6 oldie">
+<![endif]-->
+<!--[if IE 7]>
+	<html class="ie7 oldie">
+<![endif]-->
+<!--[if IE 8]>
+	<html class="ie8 oldie">
+<![endif]-->
+	<!--[if gt IE 8]>
+	<!-->
+<html ng-app="stacksApp">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
+		<!--#include virtual="/_include/head.ssi" -->
+		<title>Avail - Library</title>
+		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="/about-avail/documentation/stacks/library-documentation/stacksApp.js"></script>
+		<script>
+			function myParent()
+			{
+				return window.parent;
+			}
+		</script>
+	</head>
+	<body ng-controller="CategoriesCntrl">
+		<div class="stacks-wrapper">
+	<h2 class="method-heading">[««…:_†§‡,»`|»?«Primitive…#«(…:_†)»?§;»?«$…«:_†»?;§»?«_!§»«_!»?]«:_†»?«^«_†‡,»»?</h2>
+	<h4 class="method-section-header">Definitions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">list phrase⇒(&lt;token, any meta…|>?*), list phrase⇒(&lt;literal token⇒natural number, &lt;token, any meta…|>?>?), list phrase⇒(&lt;token, any meta?…|>?), list phrase⇒(statement*), list phrase⇒(any?), list phrase⇒(any meta?), list phrase⇒(exception*)</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Origin</div>
+		<div class="category-list"><em>Categories:</em> Avail Syntax, Functions</div>
+		<div class="signature-description">
+			Construct and answer a <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2531827218.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2531827218.html">block phrase</a> from the supplied components.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="8">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="argPhrases-308803370" class="stacks i-code">argPhrases</td>
+					<td class="stacks i-code">list phrase⇒(&lt;token, any meta…|>?*)</td>
+					<td class="stacks i-desc">
+						A <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3311205151.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3311205151.html">list phrase</a> corresponding to the <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2535337430.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2535337430.html">argument declarations</a>. Zero or many <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2535337430.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2535337430.html">argument phrase</a> s are permitted.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="primitivePhrase-308803370" class="stacks i-code">primitivePhrase</td>
+					<td class="stacks i-code">list phrase⇒(&lt;literal token⇒natural number, &lt;token, any meta…|>?>?)</td>
+					<td class="stacks i-desc">
+						A <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3311205151.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3311205151.html">list phrase</a> that includes the parts of the primitive declaration (primitive number, primitive failure reason, primitive failure reason type). Zero or one primitive declaration is permitted.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">3</td>
+					<td id="labelPhrase-308803370" class="stacks i-code">labelPhrase</td>
+					<td class="stacks i-code">list phrase⇒(&lt;token, any meta?…|>?)</td>
+					<td class="stacks i-desc">
+						A <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3311205151.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3311205151.html">list phrase</a> that includes the parts of the <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/732262667.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/732262667.html">label declaration</a> (label name, label return type). The label return type is optional, and will be inferred from the enclosing <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2531827218.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2531827218.html">block</a> 's return type if absent. Zero or more label declaration is permitted.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">4</td>
+					<td id="bodyPhrase-308803370" class="stacks i-code">bodyPhrase</td>
+					<td class="stacks i-code">list phrase⇒(statement*)</td>
+					<td class="stacks i-desc">
+						A <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3311205151.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3311205151.html">list phrase</a> corresponding to the <code>statement</code> s that comprise the body. Zero or many <code>statement</code> s are permitted.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">5</td>
+					<td id="returnPhrase-308803370" class="stacks i-code">returnPhrase</td>
+					<td class="stacks i-code">list phrase⇒(any?)</td>
+					<td class="stacks i-desc">
+						A <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3311205151.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3311205151.html">list phrase</a> corresponding to the value-producing return <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2803304151.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2803304151.html">expression</a>. Zero or one return <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2803304151.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2803304151.html">expression</a> is permitted; if omitted, then the return type is inferred to be <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3911882092.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3911882092.html">⊤</a>.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">6</td>
+					<td id="returnTypePhrase-308803370" class="stacks i-code">returnTypePhrase</td>
+					<td class="stacks i-code">list phrase⇒(any meta?)</td>
+					<td class="stacks i-desc">
+						A <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3311205151.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3311205151.html">list phrase</a> corresponding to the return type declaration. Zero or one return type declaration is permitted; if omitted, then the return type is inferred to be <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2800898572.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2800898572.html">type union</a> of the type indicated by <a href="#returnPhrase-308803370">returnPhrase</a> and the label return type.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">7</td>
+					<td id="exceptionTypesPhrase-308803370" class="stacks i-code">exceptionTypesPhrase</td>
+					<td class="stacks i-code">list phrase⇒(exception*)</td>
+					<td class="stacks i-desc">
+						A <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3311205151.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3311205151.html">list phrase</a> corresponding to the declared <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1291306455.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1291306455.html">exception</a> s. Zero or many <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1291306455.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1291306455.html">exception</a> s may be declared.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2531827218.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2531827218.html">block phrase</a></td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+		</div>
+	</body>
+</html>
+			

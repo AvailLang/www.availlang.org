@@ -596,6 +596,7 @@ stacksApp.factory('Categories', function () {
 		"selected" : false,
 		"category" : "Maps",
 		"methods" : [
+			{"methodName" : "reject each…→…from_§where_", "link" : "avail/Avail/Foundation/Maps/1424573264.html", "distinct" : "reject each…→…from_§where_/avail/Avail/Foundation/Maps/1424573264.html"},
 			{"methodName" : "${…}«else_»", "link" : "avail/Avail/Foundation/Early Maps/4240280620.html", "distinct" : "${…}«else_»/avail/Avail/Foundation/Early Maps/4240280620.html"},
 			{"methodName" : "count of_where_", "link" : "avail/Avail/Foundation/Collections/3539268823.html", "distinct" : "count of_where_/avail/Avail/Foundation/Collections/3539268823.html"},
 			{"methodName" : "_is empty", "link" : "avail/Avail/Foundation/Collections/3469355514.html", "distinct" : "_is empty/avail/Avail/Foundation/Collections/3469355514.html"},
@@ -642,7 +643,6 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "{_→_`|}", "link" : "avail/Avail/Foundation/Types/1942699196.html", "distinct" : "{_→_`|}/avail/Avail/Foundation/Types/1942699196.html"},
 			{"methodName" : "For each of⁇_do_", "link" : "avail/Avail/Foundation/Collections/2718131021.html", "distinct" : "For each of⁇_do_/avail/Avail/Foundation/Collections/2718131021.html"},
 			{"methodName" : "_'s⁇key type", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/1380789951.html", "distinct" : "_'s⁇key type/avail/Avail/Foundation/Bootstrap/Primitives/1380789951.html"},
-			{"methodName" : "reject each…,…from_§where_", "link" : "avail/Avail/Foundation/Collections/95146670.html", "distinct" : "reject each…,…from_§where_/avail/Avail/Foundation/Collections/95146670.html"},
 			{"methodName" : "map and filter_by_", "link" : "avail/Avail/Foundation/Collections/2642164780.html", "distinct" : "map and filter_by_/avail/Avail/Foundation/Collections/2642164780.html"}
 		]
 	},
@@ -1246,8 +1246,23 @@ stacksApp.factory('Categories', function () {
 	},
 	{
 		"selected" : false,
+		"category" : "Avail Syntax",
+		"methods" : [
+			{"methodName" : "…:=_;", "link" : "avail/Avail/Foundation/Bootstrap/Origin/888846343.html", "distinct" : "…:=_;/avail/Avail/Foundation/Bootstrap/Origin/888846343.html"},
+			{"methodName" : "_!;", "link" : "avail/Avail/Foundation/Bootstrap/Origin/918606635.html", "distinct" : "_!;/avail/Avail/Foundation/Bootstrap/Origin/918606635.html"},
+			{"methodName" : "…:_†;", "link" : "avail/Avail/Foundation/Bootstrap/Origin/2014612466.html", "distinct" : "…:_†;/avail/Avail/Foundation/Bootstrap/Origin/2014612466.html"},
+			{"methodName" : "…:_†:=_;", "link" : "avail/Avail/Foundation/Bootstrap/Origin/3745911864.html", "distinct" : "…:_†:=_;/avail/Avail/Foundation/Bootstrap/Origin/3745911864.html"},
+			{"methodName" : "…", "link" : "avail/Avail/Foundation/Bootstrap/Origin/2572044834.html", "distinct" : "…/avail/Avail/Foundation/Bootstrap/Origin/2572044834.html"},
+			{"methodName" : "[««…:_†§‡,»`|»?«Primitive…#«(…:_†)»?§;»?«$…«:_†»?;§»?«_!§»«_!»?]«:_†»?«^«_†‡,»»?", "link" : "avail/Avail/Foundation/Bootstrap/Origin/766417660.html", "distinct" : "[««…:_†§‡,»`|»?«Primitive…#«(…:_†)»?§;»?«$…«:_†»?;§»?«_!§»«_!»?]«:_†»?«^«_†‡,»»?/avail/Avail/Foundation/Bootstrap/Origin/766417660.html"},
+			{"methodName" : "…::=_;", "link" : "avail/Avail/Foundation/Bootstrap/Origin/1174930601.html", "distinct" : "…::=_;/avail/Avail/Foundation/Bootstrap/Origin/1174930601.html"},
+			{"methodName" : "(_::_†)", "link" : "avail/Avail/Foundation/Bootstrap/Origin/543451539.html", "distinct" : "(_::_†)/avail/Avail/Foundation/Bootstrap/Origin/543451539.html"}
+		]
+	},
+	{
+		"selected" : false,
 		"category" : "Collections",
 		"methods" : [
+			{"methodName" : "reject each…→…from_§where_", "link" : "avail/Avail/Foundation/Maps/1424573264.html", "distinct" : "reject each…→…from_§where_/avail/Avail/Foundation/Maps/1424573264.html"},
 			{"methodName" : "count of…from|in|of_§where_", "link" : "avail/Avail/Foundation/Collections/3622004228.html", "distinct" : "count of…from|in|of_§where_/avail/Avail/Foundation/Collections/3622004228.html"},
 			{"methodName" : "first index of…in_§where_", "link" : "avail/Avail/Foundation/Tuples/403185686.html", "distinct" : "first index of…in_§where_/avail/Avail/Foundation/Tuples/403185686.html"},
 			{"methodName" : "count of_where_", "link" : "avail/Avail/Foundation/Collections/3539268823.html", "distinct" : "count of_where_/avail/Avail/Foundation/Collections/3539268823.html"},
@@ -1290,7 +1305,8 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "For each of⁇_do_", "link" : "avail/Avail/Foundation/Collections/2718131021.html", "distinct" : "For each of⁇_do_/avail/Avail/Foundation/Collections/2718131021.html"},
 			{"methodName" : "map each…in|of_§through_", "link" : "avail/Avail/Foundation/Collections/4042299671.html", "distinct" : "map each…in|of_§through_/avail/Avail/Foundation/Collections/4042299671.html"},
 			{"methodName" : "reject each…,…from_§where_", "link" : "avail/Avail/Foundation/Collections/95146670.html", "distinct" : "reject each…,…from_§where_/avail/Avail/Foundation/Collections/95146670.html"},
-			{"methodName" : "map and filter_by_", "link" : "avail/Avail/Foundation/Collections/2642164780.html", "distinct" : "map and filter_by_/avail/Avail/Foundation/Collections/2642164780.html"}
+			{"methodName" : "map and filter_by_", "link" : "avail/Avail/Foundation/Collections/2642164780.html", "distinct" : "map and filter_by_/avail/Avail/Foundation/Collections/2642164780.html"},
+			{"methodName" : "map each…,…in|of_§through_", "link" : "avail/Avail/Foundation/Tuples/1160016877.html", "distinct" : "map each…,…in|of_§through_/avail/Avail/Foundation/Tuples/1160016877.html"}
 		]
 	},
 	{
@@ -1994,7 +2010,8 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "function accepting_and returning_", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/2460717171.html", "distinct" : "function accepting_and returning_/avail/Avail/Foundation/Bootstrap/Primitives/2460717171.html"},
 			{"methodName" : "_'s⁇implementation", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/2918585826.html", "distinct" : "_'s⁇implementation/avail/Avail/Foundation/Bootstrap/Primitives/2918585826.html"},
 			{"methodName" : "_'s⁇return type", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/3153676350.html", "distinct" : "_'s⁇return type/avail/Avail/Foundation/Bootstrap/Primitives/3153676350.html"},
-			{"methodName" : "_[_]", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/2532617994.html", "distinct" : "_[_]/avail/Avail/Foundation/Bootstrap/Primitives/2532617994.html"}
+			{"methodName" : "_[_]", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/2532617994.html", "distinct" : "_[_]/avail/Avail/Foundation/Bootstrap/Primitives/2532617994.html"},
+			{"methodName" : "[««…:_†§‡,»`|»?«Primitive…#«(…:_†)»?§;»?«$…«:_†»?;§»?«_!§»«_!»?]«:_†»?«^«_†‡,»»?", "link" : "avail/Avail/Foundation/Bootstrap/Origin/766417660.html", "distinct" : "[««…:_†§‡,»`|»?«Primitive…#«(…:_†)»?§;»?«$…«:_†»?;§»?«_!§»«_!»?]«:_†»?«^«_†‡,»»?/avail/Avail/Foundation/Bootstrap/Origin/766417660.html"}
 		]
 	},
 	{
@@ -2288,6 +2305,7 @@ stacksApp.factory('Categories', function () {
 		"selected" : false,
 		"category" : "Variables",
 		"methods" : [
+			{"methodName" : "…:=_;", "link" : "avail/Avail/Foundation/Bootstrap/Origin/888846343.html", "distinct" : "…:=_;/avail/Avail/Foundation/Bootstrap/Origin/888846343.html"},
 			{"methodName" : "(↓new`↑_:=_)", "link" : "avail/Avail/Foundation/Variables/3161831264.html", "distinct" : "(↓new`↑_:=_)/avail/Avail/Foundation/Variables/3161831264.html"},
 			{"methodName" : "eject_↑", "link" : "avail/Avail/Foundation/Early Variables/2898419347.html", "distinct" : "eject_↑/avail/Avail/Foundation/Early Variables/2898419347.html"},
 			{"methodName" : "↓_else_", "link" : "avail/Avail/Foundation/Variables/824879194.html", "distinct" : "↓_else_/avail/Avail/Foundation/Variables/824879194.html"},
@@ -2308,17 +2326,21 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "_↑-=_", "link" : "avail/Avail/Foundation/Tuples/3669724029.html", "distinct" : "_↑-=_/avail/Avail/Foundation/Tuples/3669724029.html"},
 			{"methodName" : "_↑-=_", "link" : "avail/Avail/Foundation/Late Math/3669724029.html", "distinct" : "_↑-=_/avail/Avail/Foundation/Late Math/3669724029.html"},
 			{"methodName" : "_'s⁇write reactors+=_→_", "link" : "avail/Avail/Foundation/Observing/1021242814.html", "distinct" : "_'s⁇write reactors+=_→_/avail/Avail/Foundation/Observing/1021242814.html"},
+			{"methodName" : "…:_†;", "link" : "avail/Avail/Foundation/Bootstrap/Origin/2014612466.html", "distinct" : "…:_†;/avail/Avail/Foundation/Bootstrap/Origin/2014612466.html"},
 			{"methodName" : "`↑_↑", "link" : "avail/Avail/Foundation/Early Variables/2908255025.html", "distinct" : "`↑_↑/avail/Avail/Foundation/Early Variables/2908255025.html"},
 			{"methodName" : "atomically read_↑and add_", "link" : "avail/Avail/Foundation/Early Variables/4249823690.html", "distinct" : "atomically read_↑and add_/avail/Avail/Foundation/Early Variables/4249823690.html"},
 			{"methodName" : "(_↑--)", "link" : "avail/Avail/Foundation/Variables/2636956855.html", "distinct" : "(_↑--)/avail/Avail/Foundation/Variables/2636956855.html"},
+			{"methodName" : "…:_†:=_;", "link" : "avail/Avail/Foundation/Bootstrap/Origin/3745911864.html", "distinct" : "…:_†:=_;/avail/Avail/Foundation/Bootstrap/Origin/3745911864.html"},
 			{"methodName" : "_↑`?=_'s⁇initialization", "link" : "avail/Avail/Foundation/Early Variables/2667929156.html", "distinct" : "_↑`?=_'s⁇initialization/avail/Avail/Foundation/Early Variables/2667929156.html"},
 			{"methodName" : "Clear_↑", "link" : "avail/Avail/Foundation/Early Variables/2120577191.html", "distinct" : "Clear_↑/avail/Avail/Foundation/Early Variables/2120577191.html"},
 			{"methodName" : "Public variable_is_", "link" : "avail/Avail/Foundation/Definers/4010850847.html", "distinct" : "Public variable_is_/avail/Avail/Foundation/Definers/4010850847.html"},
 			{"methodName" : "_↑÷=_", "link" : "avail/Avail/Foundation/Late Math/3588720315.html", "distinct" : "_↑÷=_/avail/Avail/Foundation/Late Math/3588720315.html"},
+			{"methodName" : "…", "link" : "avail/Avail/Foundation/Bootstrap/Origin/2572044834.html", "distinct" : "…/avail/Avail/Foundation/Bootstrap/Origin/2572044834.html"},
 			{"methodName" : "_↑is assigned", "link" : "avail/Avail/Foundation/Variables/2140367658.html", "distinct" : "_↑is assigned/avail/Avail/Foundation/Variables/2140367658.html"},
 			{"methodName" : "++_↑", "link" : "avail/Avail/Foundation/Variables/2334517466.html", "distinct" : "++_↑/avail/Avail/Foundation/Variables/2334517466.html"},
 			{"methodName" : "_↑is unassigned", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/3114394705.html", "distinct" : "_↑is unassigned/avail/Avail/Foundation/Bootstrap/Primitives/3114394705.html"},
 			{"methodName" : "_↑`?=_", "link" : "avail/Avail/Foundation/Early Variables/709619303.html", "distinct" : "_↑`?=_/avail/Avail/Foundation/Early Variables/709619303.html"},
+			{"methodName" : "…::=_;", "link" : "avail/Avail/Foundation/Bootstrap/Origin/1174930601.html", "distinct" : "…::=_;/avail/Avail/Foundation/Bootstrap/Origin/1174930601.html"},
 			{"methodName" : "(--_↑)", "link" : "avail/Avail/Foundation/Variables/617357895.html", "distinct" : "(--_↑)/avail/Avail/Foundation/Variables/617357895.html"},
 			{"methodName" : "Public read-only variable_is_", "link" : "avail/Avail/Foundation/Definers/3026371070.html", "distinct" : "Public read-only variable_is_/avail/Avail/Foundation/Definers/3026371070.html"},
 			{"methodName" : "_'s⁇read type", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/1271922174.html", "distinct" : "_'s⁇read type/avail/Avail/Foundation/Bootstrap/Primitives/1271922174.html"},
@@ -2828,6 +2850,7 @@ stacksApp.factory('Categories', function () {
 		"category" : "Loops",
 		"methods" : [
 			{"methodName" : "Repeat__times", "link" : "avail/Avail/Foundation/Control Structures/586972225.html", "distinct" : "Repeat__times/avail/Avail/Foundation/Control Structures/586972225.html"},
+			{"methodName" : "reject each…→…from_§where_", "link" : "avail/Avail/Foundation/Maps/1424573264.html", "distinct" : "reject each…→…from_§where_/avail/Avail/Foundation/Maps/1424573264.html"},
 			{"methodName" : "Until_do_", "link" : "avail/Avail/Foundation/Control Structures/3060146973.html", "distinct" : "Until_do_/avail/Avail/Foundation/Control Structures/3060146973.html"},
 			{"methodName" : "While_", "link" : "avail/Avail/Foundation/Control Structures/2373171068.html", "distinct" : "While_/avail/Avail/Foundation/Control Structures/2373171068.html"},
 			{"methodName" : "map_in parallel«_-way»through_", "link" : "avail/Avail/Foundation/Concurrency/796037696.html", "distinct" : "map_in parallel«_-way»through_/avail/Avail/Foundation/Concurrency/796037696.html"},
@@ -2859,7 +2882,8 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "For each…,…in|of_§do_", "link" : "avail/Avail/Foundation/Tuples/1984216688.html", "distinct" : "For each…,…in|of_§do_/avail/Avail/Foundation/Tuples/1984216688.html"},
 			{"methodName" : "Do_until_alternate with_", "link" : "avail/Avail/Foundation/Control Structures/1282337684.html", "distinct" : "Do_until_alternate with_/avail/Avail/Foundation/Control Structures/1282337684.html"},
 			{"methodName" : "map each…in|of_§through_", "link" : "avail/Avail/Foundation/Collections/4042299671.html", "distinct" : "map each…in|of_§through_/avail/Avail/Foundation/Collections/4042299671.html"},
-			{"methodName" : "reject each…,…from_§where_", "link" : "avail/Avail/Foundation/Collections/95146670.html", "distinct" : "reject each…,…from_§where_/avail/Avail/Foundation/Collections/95146670.html"}
+			{"methodName" : "reject each…,…from_§where_", "link" : "avail/Avail/Foundation/Collections/95146670.html", "distinct" : "reject each…,…from_§where_/avail/Avail/Foundation/Collections/95146670.html"},
+			{"methodName" : "map each…,…in|of_§through_", "link" : "avail/Avail/Foundation/Tuples/1160016877.html", "distinct" : "map each…,…in|of_§through_/avail/Avail/Foundation/Tuples/1160016877.html"}
 		]
 	},
 	{
@@ -3141,6 +3165,7 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "map each…in|of_§through_", "link" : "avail/Avail/Foundation/Collections/4042299671.html", "distinct" : "map each…in|of_§through_/avail/Avail/Foundation/Collections/4042299671.html"},
 			{"methodName" : "reject each…,…from_§where_", "link" : "avail/Avail/Foundation/Collections/95146670.html", "distinct" : "reject each…,…from_§where_/avail/Avail/Foundation/Collections/95146670.html"},
 			{"methodName" : "map and filter_by_", "link" : "avail/Avail/Foundation/Collections/2642164780.html", "distinct" : "map and filter_by_/avail/Avail/Foundation/Collections/2642164780.html"},
+			{"methodName" : "map each…,…in|of_§through_", "link" : "avail/Avail/Foundation/Tuples/1160016877.html", "distinct" : "map each…,…in|of_§through_/avail/Avail/Foundation/Tuples/1160016877.html"},
 			{"methodName" : "«_‡zip»", "link" : "avail/Avail/Foundation/Tuples/2110198113.html", "distinct" : "«_‡zip»/avail/Avail/Foundation/Tuples/2110198113.html"}
 		]
 	},
