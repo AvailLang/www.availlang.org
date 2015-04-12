@@ -1,0 +1,147 @@
+<!doctype html>
+<!--[if lt IE 7]>
+ 	<html class="ie6 oldie">
+<![endif]-->
+<!--[if IE 7]>
+	<html class="ie7 oldie">
+<![endif]-->
+<!--[if IE 8]>
+	<html class="ie8 oldie">
+<![endif]-->
+	<!--[if gt IE 8]>
+	<!-->
+<html ng-app="stacksApp">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
+		<!--#include virtual="/_include/head.ssi" -->
+		<title>Avail - Library</title>
+		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="/about-avail/documentation/stacks/library-documentation/stacksApp.js"></script>
+		<script>
+			function myParent()
+			{
+				return window.parent;
+			}
+		</script>
+	</head>
+	<body ng-controller="CategoriesCntrl">
+		<div class="stacks-wrapper">
+	<h2 class="method-heading">a counting stream from_to_by_</h2>
+	<h4 class="method-section-header">Definitions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">integer, number, integer</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Streams/Counting Streams</div>
+		<div class="category-list"><em>Categories:</em> Data Abstractions, Streams</div>
+		<div class="signature-description">
+			Construct and answer a stream that lazily produces values between `start` and `end`. For each value <em>v</em> produced, there is some <em>n ∈ integer</em> such that: <p> aStream ::= a counting stream from start to end by step; ... v ::= aStream's head; Assert: v = start + n × step; </p>
+<p> Note that `end` is not guaranteed to be the last value produced by the stream. It is only guaranteed that no larger values than `end` will be answered. </p>
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="4">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="start-148154107" class="stacks i-code">start</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1558086042.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1558086042.html">integer</a></td>
+					<td class="stacks i-desc">
+						start - The start value, inclusive. This is the first value that will be answered by the stream.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="end-148154107" class="stacks i-code">end</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/238122053.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/238122053.html">number</a></td>
+					<td class="stacks i-desc">
+						end - The end value, inclusive. If `delta ≥ 0`, then no values larger than this will be answered by the stream. If `delta < 0`, then no values smaller than this will be answered by the stream.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">3</td>
+					<td id="delta-148154107" class="stacks i-code">delta</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1558086042.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1558086042.html">integer</a></td>
+					<td class="stacks i-desc">
+						delta - The amount by which successive values anwered by the stream will differ.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code">stream of integer</td>
+					<td class="stacks i-desc">
+						The requested stream.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">number, number, number</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Streams/Counting Streams</div>
+		<div class="category-list"><em>Categories:</em> Data Abstractions, Streams</div>
+		<div class="signature-description">
+			Construct and answer a stream that lazily produces values between `start` and `end`. For each value <em>v</em> produced, there is some <em>n ∈ number</em> such that: <p> aStream ::= stream from start to end by step; ... v ::= aStream's head; Assert: v = start + n × step; </p>
+<p> Note that `end` is not guaranteed to be the last value produced by the stream. It is only guaranteed that no larger values than `end` will be answered. </p>
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="4">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="start-1898857257" class="stacks i-code">start</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/238122053.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/238122053.html">number</a></td>
+					<td class="stacks i-desc">
+						start - The start value, inclusive. This is the first value that will be answered by the stream.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="end-1898857257" class="stacks i-code">end</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/238122053.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/238122053.html">number</a></td>
+					<td class="stacks i-desc">
+						end - The end value, inclusive. If `delta ≥ 0`, then no values larger than this will be answered by the stream. If `delta < 0`, then no values smaller than this will be answered by the stream.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">3</td>
+					<td id="delta-1898857257" class="stacks i-code">delta</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/238122053.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/238122053.html">number</a></td>
+					<td class="stacks i-desc">
+						delta - The amount by which successive values anwered by the stream will differ.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code">stream of number</td>
+					<td class="stacks i-desc">
+						The requested stream.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+		</div>
+	</body>
+</html>
+			

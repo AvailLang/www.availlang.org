@@ -1,0 +1,346 @@
+<!doctype html>
+<!--[if lt IE 7]>
+ 	<html class="ie6 oldie">
+<![endif]-->
+<!--[if IE 7]>
+	<html class="ie7 oldie">
+<![endif]-->
+<!--[if IE 8]>
+	<html class="ie8 oldie">
+<![endif]-->
+	<!--[if gt IE 8]>
+	<!-->
+<html ng-app="stacksApp">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
+		<!--#include virtual="/_include/head.ssi" -->
+		<title>Avail - Library</title>
+		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="/about-avail/documentation/stacks/library-documentation/stacksApp.js"></script>
+		<script>
+			function myParent()
+			{
+				return window.parent;
+			}
+		</script>
+	</head>
+	<body ng-controller="CategoriesCntrl">
+		<div class="stacks-wrapper">
+	<h2 class="method-heading">map and filter_by_</h2>
+	<h4 class="method-section-header">Definitions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">tuple, [⊥, ⊥, ⊥]→⊤</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Tuples</div>
+		<div class="category-list"><em>Categories:</em> Tuples, Control Structures, Collections, Transformers</div>
+		<div class="signature-description">
+			Iteratively apply <a href="#accumulator-1974360245">accumulator</a> to the consecutive elements and indices of <a href="#aTuple-1974360245">aTuple</a> in order to transform and filter its elements into a new tuple. When <a href="#accumulator-1974360245">accumulator</a> is invoked, it is passed a keeper function. The keeper function may be invoked to save a particular value, i.e., a value that will be copied into the output tuple. The keeper function will save at most one value per element of <a href="#aTuple-1974360245">aTuple</a>, i.e., each time that <a href="#accumulator-1974360245">accumulator</a> is invoked, it may invoke the keeper function at most one time. Answer the new tuple.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="aTuple-1974360245" class="stacks i-code">aTuple</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="accumulator-1974360245" class="stacks i-code">accumulator</td>
+					<td class="stacks i-code">[⊥, ⊥, ⊥]→⊤</td>
+					<td class="stacks i-desc">
+						A function that accepts 1) an element from <a href="#aTuple-1974360245">aTuple</a>, 2) the index of that element, and 3) a keeper function. The keeper function accepts an argument of the type that should be saved.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
+					<td class="stacks i-desc">
+						A tuple whose elements are those saved by the <a href="#accumulator-1974360245">accumulator</a>.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">tuple, [⊥, ⊥]→⊤</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Tuples</div>
+		<div class="category-list"><em>Categories:</em> Tuples, Control Structures, Collections, Transformers</div>
+		<div class="signature-description">
+			Iteratively apply <a href="#accumulator-1604931094">accumulator</a> to the consecutive elements of <a href="#aTuple-1604931094">aTuple</a> in order to transform and filter its elements into a new tuple. When <a href="#accumulator-1604931094">accumulator</a> is invoked, it is passed a keeper function. The keeper function may be invoked to save a particular value, i.e., a value that will be copied into the output tuple. The keeper function will save at most one value per element of <a href="#aTuple-1604931094">aTuple</a>, i.e., each time that <a href="#accumulator-1604931094">accumulator</a> is invoked, it may invoke the keeper function at most one time. Answer the new tuple.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="aTuple-1604931094" class="stacks i-code">aTuple</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="accumulator-1604931094" class="stacks i-code">accumulator</td>
+					<td class="stacks i-code">[⊥, ⊥]→⊤</td>
+					<td class="stacks i-desc">
+						A function that accepts 1) an element from <a href="#aTuple-1604931094">aTuple</a> and 2) a keeper function. The keeper function accepts an argument of the type that should be saved.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
+					<td class="stacks i-desc">
+						A tuple whose elements are those saved by the <a href="#accumulator-1604931094">accumulator</a>.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">map, [⊥, ⊥, ⊥]→⊤</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Maps</div>
+		<div class="category-list"><em>Categories:</em> Collections, Maps, Control Structures</div>
+		<div class="signature-description">
+			Iteratively apply <a href="#accumulator78908575">accumulator</a> to the bindings of <a href="#aMap78908575">aMap</a>, in no particular order, in order to transform and filter its bindings into a new map. When <a href="#accumulator78908575">accumulator</a> is invoked, it is passed a keeper function. The keeper function may be invoked to save a particular value, i.e., a value that will be associated with the current key in the output set. The keeper function will save at most one value per binding of <a href="#aSet78908575">aSet</a>, i.e., each time that <a href="#accumulator78908575">accumulator</a> is invoked, it may invoke the keeper function at most one time. Answer the new map.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="aMap78908575" class="stacks i-code">aMap</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html">map</a></td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="accumulator78908575" class="stacks i-code">accumulator</td>
+					<td class="stacks i-code">[⊥, ⊥, ⊥]→⊤</td>
+					<td class="stacks i-desc">
+						A function that accepts 1) a key from <a href="#aMap78908575">aMap</a>, 2) the value associated with that key, and 3) a keeper function. The keeper function accepts an argument of the (value) type that should be saved.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html">map</a></td>
+					<td class="stacks i-desc">
+						A map whose bindings are those saved by the <a href="#accumulator78908575">accumulator</a>.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">set, [⊥, ⊥]→⊤</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Sets</div>
+		<div class="category-list"><em>Categories:</em> Collections, Sets, Control Structures</div>
+		<div class="signature-description">
+			Iteratively apply <a href="#accumulator1698831024">accumulator</a> to the elements of <a href="#aSet1698831024">aSet</a>, in no particular order, in order to transform and filter its elements into a new set. When <a href="#accumulator1698831024">accumulator</a> is invoked, it is passed a keeper function. The keeper function may be invoked to save a particular value, i.e., a value that will be copied into the output set. The keeper function will save at most one value per element of <a href="#aSet1698831024">aSet</a>, i.e., each time that <a href="#accumulator1698831024">accumulator</a> is invoked, it may invoke the keeper function at most one time. Answer the new set.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="aSet1698831024" class="stacks i-code">aSet</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3016318916.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3016318916.html">set</a></td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="accumulator1698831024" class="stacks i-code">accumulator</td>
+					<td class="stacks i-code">[⊥, ⊥]→⊤</td>
+					<td class="stacks i-desc">
+						A function that accepts 1) an element from <a href="#aSet1698831024">aSet</a> and 2) a keeper function. The keeper function accepts an argument of the type that should be saved.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3016318916.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3016318916.html">set</a></td>
+					<td class="stacks i-desc">
+						A set whose elements are those saved by the <a href="#accumulator1698831024">accumulator</a>.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<h4 class="method-section-header">Semantic restrictions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">tuple meta, [⊥, ⊥]→⊤'s type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Tuples</div>
+		<div class="signature-description">
+			Ensure that the function will accept all elements of the tuple and also an appropriately typed keeper function.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="tuple meta1422720389" class="stacks i-code">tuple meta</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="[⊥, ⊥]→⊤'s type1422720389" class="stacks i-code">[⊥, ⊥]→⊤'s type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">set meta, [⊥, ⊥]→⊤'s type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Sets</div>
+		<div class="signature-description">
+			Ensure that the function will accept all arguments of the set and also an appropriately typed keeper function.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="set meta-1755412653" class="stacks i-code">set meta</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="[⊥, ⊥]→⊤'s type-1755412653" class="stacks i-code">[⊥, ⊥]→⊤'s type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">map meta, [⊥, ⊥, ⊥]→⊤'s type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Maps</div>
+		<div class="signature-description">
+			Ensure that the function will accept all bindings of the map and also an appropriately typed keeper function.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="map meta-1169805346" class="stacks i-code">map meta</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="[⊥, ⊥, ⊥]→⊤'s type-1169805346" class="stacks i-code">[⊥, ⊥, ⊥]→⊤'s type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">tuple meta, [⊥, ⊥, ⊥]→⊤'s type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Tuples</div>
+		<div class="signature-description">
+			Ensure that the function will accept all elements and indices of the tuple and also an appropriately typed keeper function.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="tuple meta1262325730" class="stacks i-code">tuple meta</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="[⊥, ⊥, ⊥]→⊤'s type1262325730" class="stacks i-code">[⊥, ⊥, ⊥]→⊤'s type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+		</div>
+	</body>
+</html>
+			

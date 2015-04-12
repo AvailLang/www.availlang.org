@@ -1,0 +1,107 @@
+<!doctype html>
+<!--[if lt IE 7]>
+ 	<html class="ie6 oldie">
+<![endif]-->
+<!--[if IE 7]>
+	<html class="ie7 oldie">
+<![endif]-->
+<!--[if IE 8]>
+	<html class="ie8 oldie">
+<![endif]-->
+	<!--[if gt IE 8]>
+	<!-->
+<html ng-app="stacksApp">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
+		<!--#include virtual="/_include/head.ssi" -->
+		<title>Avail - Library</title>
+		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="/about-avail/documentation/stacks/library-documentation/stacksApp.js"></script>
+		<script>
+			function myParent()
+			{
+				return window.parent;
+			}
+		</script>
+	</head>
+	<body ng-controller="CategoriesCntrl">
+		<div class="stacks-wrapper">
+	<h2 class="method-heading">Test_in_«,⁇if supported«on this platform»⁇,⁇»?is_«must raise_»</h2>
+	<h4 class="method-section-header">Definitions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">string, atom, []→⊤, exception?</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Unit Testing/Definers</div>
+		<div class="category-list"><em>Categories:</em> Unit Testing</div>
+		<div class="signature-description">
+			Define a unit test.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="5">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="name-41326028" class="stacks i-code">name</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2052869683.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2052869683.html">string</a></td>
+					<td class="stacks i-desc">
+						The name of the test. This name will be resolved to an atom in the context of the current module. Since an atom retains its provenance, this permits the unit testing framework to report the module that defined the test. This also allows name collisions between modules.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="id-41326028" class="stacks i-code">id</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3442635109.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3442635109.html">atom</a></td>
+					<td class="stacks i-desc">
+						The test suite identifier of the test suite to which the new test should belong.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">3</td>
+					<td id="test-41326028" class="stacks i-code">test</td>
+					<td class="stacks i-code">[]→⊤</td>
+					<td class="stacks i-desc">
+						The unit test.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">4</td>
+					<td id="optionalException-41326028" class="stacks i-code">optionalException</td>
+					<td class="stacks i-code">exception?</td>
+					<td class="stacks i-desc">
+						If specified, then <a href="#test-41326028">test</a> must raise an exception of this type when applied. If not specified, then test must not raise any exceptions.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3911882092.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3911882092.html">⊤</a></td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+					<th class="stacks i-row-label" colspan="3" rowspan="2">Raises</th>
+				<tr class="methodParameters">
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Unit Testing/Types/3284298275.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Unit Testing/Types/3284298275.html">test-already-exists exception</a></td>
+					<td class="stacks i-desc">
+						If <a href="#name-41326028">name</a> names an existing unit test.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+		</div>
+	</body>
+</html>
+			

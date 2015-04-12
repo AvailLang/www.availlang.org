@@ -1,0 +1,200 @@
+<!doctype html>
+<!--[if lt IE 7]>
+ 	<html class="ie6 oldie">
+<![endif]-->
+<!--[if IE 7]>
+	<html class="ie7 oldie">
+<![endif]-->
+<!--[if IE 8]>
+	<html class="ie8 oldie">
+<![endif]-->
+	<!--[if gt IE 8]>
+	<!-->
+<html ng-app="stacksApp">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
+		<!--#include virtual="/_include/head.ssi" -->
+		<title>Avail - Library</title>
+		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="/about-avail/documentation/stacks/library-documentation/stacksApp.js"></script>
+		<script>
+			function myParent()
+			{
+				return window.parent;
+			}
+		</script>
+	</head>
+	<body ng-controller="CategoriesCntrl">
+		<div class="stacks-wrapper">
+	<h2 class="method-heading">_process_</h2>
+	<h4 class="method-section-header">Definitions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">UTF8 decoder</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Converters/UTF-8 Converters</div>
+		<div class="category-list"><em>Categories:</em> Data Abstractions, Converters, Codecs</div>
+		<div class="signature-description">
+			Decode some UTF-8 bytes into a Unicode string. Unrecognized byte sequences will be converted into the Unicode replacement character (U+FFFD). An incomplete byte sequence will simply wait until more data is supplied or a flush occurs (which will cause U+FFFD to be emitted for the truncated buffered content).
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="2">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="decoder2093822805" class="stacks i-code">decoder</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Converters/UTF-8 Converters/2093822805.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Converters/UTF-8 Converters/2093822805.html">UTF8 decoder</a></td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code">bytes</td>
+					<td class="stacks i-desc">
+						byte*
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">converter, tuple</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Converters/Abstract Converters</div>
+		<div class="category-list"><em>Categories:</em> Data Abstractions, Converters</div>
+		<div class="signature-description">
+			Process a tuple of input values to produce a tuple of output values. Since a subsequence of input values that produce a single output value may be split across multiple calls, the converter may have to be stateful, waiting until a subsequent call to produce a value started at this call. To force the hidden state to be output, always end use of a converter with <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Converters/Abstract Converters/1296995153.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Converters/Abstract Converters/1296995153.html">flush_</a>.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="aConverter270799742" class="stacks i-code">aConverter</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Converters/Abstract Converters/2942279992.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Converters/Abstract Converters/2942279992.html">converter</a></td>
+					<td class="stacks i-desc">
+						The converter that will process a tuple of inputs.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="sourceTuple270799742" class="stacks i-code">sourceTuple</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
+					<td class="stacks i-desc">
+						The input values to be consumed.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
+					<td class="stacks i-desc">
+						The output values produced by the converter.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">UTF8 encoder, string</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Converters/UTF-8 Converters</div>
+		<div class="category-list"><em>Categories:</em> Data Abstractions, Converters, Codecs</div>
+		<div class="signature-description">
+			Encode some characters into UTF-8 bytes.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="encoder-2095655574" class="stacks i-code">encoder</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Converters/UTF-8 Converters/2889779495.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Converters/UTF-8 Converters/2889779495.html">UTF8 encoder</a></td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="sourceTuple-2095655574" class="stacks i-code">sourceTuple</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2052869683.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2052869683.html">string</a></td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code">bytes*</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<h4 class="method-section-header">Semantic restrictions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">converter's type, tuple's type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Converters/Abstract Converters</div>
+		<div class="signature-description">
+			Make sure the converter will accept the tuple at this call site, and strengthen the type of values that will be produced.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="converter's type1258478950" class="stacks i-code">converter's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="tuple's type1258478950" class="stacks i-code">tuple's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+		</div>
+	</body>
+</html>
+			

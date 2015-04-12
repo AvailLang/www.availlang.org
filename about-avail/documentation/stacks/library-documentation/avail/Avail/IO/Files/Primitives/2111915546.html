@@ -1,0 +1,139 @@
+<!doctype html>
+<!--[if lt IE 7]>
+ 	<html class="ie6 oldie">
+<![endif]-->
+<!--[if IE 7]>
+	<html class="ie7 oldie">
+<![endif]-->
+<!--[if IE 8]>
+	<html class="ie8 oldie">
+<![endif]-->
+	<!--[if gt IE 8]>
+	<!-->
+<html ng-app="stacksApp">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
+		<!--#include virtual="/_include/head.ssi" -->
+		<title>Avail - Library</title>
+		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="/about-avail/documentation/stacks/library-documentation/stacksApp.js"></script>
+		<script>
+			function myParent()
+			{
+				return window.parent;
+			}
+		</script>
+	</head>
+	<body ng-controller="CategoriesCntrl">
+		<div class="stacks-wrapper">
+	<h2 class="method-heading">a fiber truncating_to_bytes⁇then_else_priority_</h2>
+	<h4 class="method-section-header">Definitions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">writable file, whole number, []→⊤, [{I/O-error code}ᵀ]→⊤, byte</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/IO/Files/Primitives</div>
+		<div class="category-list"><em>Categories:</em> Asynchronous IO, Files</div>
+		<div class="signature-description">
+			Set the size of the specified <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Files/Primitives/2403987510.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Files/Primitives/2403987510.html">writable file</a> to <a href="#newSize755935579">newSize</a>, if <a href="#newSize755935579">newSize</a> is less than the current size of <a href="#f755935579">f</a>, otherwise do nothing. Any data beyond the new size will be destroyed.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="6">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="f755935579" class="stacks i-code">f</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Files/Primitives/2403987510.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Files/Primitives/2403987510.html">writable file</a></td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="newSize755935579" class="stacks i-code">newSize</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3836536488.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3836536488.html">whole number</a></td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">3</td>
+					<td id="success755935579" class="stacks i-code">success</td>
+					<td class="stacks i-code">[]→⊤</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">4</td>
+					<td id="failure755935579" class="stacks i-code">failure</td>
+					<td class="stacks i-code">[{I/O-error code}ᵀ]→⊤</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">5</td>
+					<td id="priority755935579" class="stacks i-code">priority</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3858386480.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3858386480.html">byte</a></td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html">fiber</a></td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+					<th class="stacks i-row-label" colspan="3" rowspan="6">Raises</th>
+				<tr class="methodParameters">
+					<td class="stacks i-code">invalid handle</td>
+					<td class="stacks i-desc">
+						If an I/O error occurs for any reason.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Files/Primitives/3545014262.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/IO/Files/Primitives/3545014262.html">file-closed exception</a></td>
+					<td class="stacks i-desc">
+						If <a href="#f755935579">f</a> has already been closed.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">invalid handle</td>
+					<td class="stacks i-desc">
+						If <a href="#f755935579">f</a> is not a file handle.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">special atom</td>
+					<td class="stacks i-desc">
+						If <a href="#f755935579">f</a> is a special atom.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">not open for write</td>
+					<td class="stacks i-desc">
+						If <a href="#f755935579">f</a> is a valid file handle, but not opened for write.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+		</div>
+	</body>
+</html>
+			

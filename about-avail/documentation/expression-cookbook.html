@@ -39,6 +39,8 @@
 <td><a href="#maps">Maps</a></td>
 <td><a href="#sets">Sets</a></td>
 <td><a href="#tuples">Tuples</a></td>
+<td><a href="#loops">Loops</a></td>
+<!--<td><a href="#structures">Control Structures</a></td>-->
 </tr>
 </table>
 
@@ -539,17 +541,140 @@
 <ul>
 <li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early%20Tuples/3216719640.html">"«_‡++»"</a></code></li>
 </ul>
-
-<h4 id="tuple-for-each">How can I loop through each element of a tuple?</h4>
-
-<p>There are lots of ways to accomplish this, so here are just a few.</p>
-
-<p>Here's a very direct technique.</p>
+<h3 id="loops">Loops</a></h3>
+<h4 id="tuple-for-each">How do I create a simple index-based loop?</h4>
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+Run [For each i from 1 to 10 do [Print: “i” ++ " ";];]
+]]>
+</script></div></div>
+<p>Here's an old-school subscripting loop.</p>
 
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
 <![CDATA[
-Run [For each of 10 to 20 do [i : [10..20] | Print: “i” ++ " ";];]
+Run [t ::= 10 to 20; For each i from 1 to |t| do [Print: “t[i]” ++ " ";];]
+]]>
+</script></div></div>
+
+<h4 id="tuple-for-each">How do I create various while loops?</h4>
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+Run [i : integer := 1; While i < 5 do [Print: “i” ++ " "; i++;];]
+]]>
+</script></div>
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+Run [i : integer := 1; Do [Print: “i” ++ " "; i++;] while i < 5;]
+]]>
+</script></div>
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+Run [i : integer := 1; Until i > 5 do [Print: “i” ++ " "; i++;];]
+]]>
+</script></div>
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+Run [i : integer := 1; Do [Print: “i” ++ " "; i++;] until i > 5;]
+]]>
+</script></div>
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+Run [i : integer := 1; 
+	While i < 5 
+	do [Print: “i” ++ " "; i++;] 
+	alternate with [Print: "\nIn between!\n";];]
+]]>
+</script></div>
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+Run [i : integer := 1; 
+	Do [Print: “i” ++ " "; i++;] 
+	while i < 5 
+	alternate with [Print: "\nIn between!\n";];]
+]]>
+</script></div>
+
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+Run [i : integer := 1; 
+	Until i > 5 
+	do [Print: “i” ++ " "; i++;] 
+	alternate with [Print: "\nIn between!\n";];]
+]]>
+</script></div>
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+Run [i : integer := 1; 
+	Do [Print: “i” ++ " "; i++;] 
+	until i > 5 
+	alternate with [Print: "\nIn between!\n";];]
+]]>
+</script></div>
+<ul>
+<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/2555597256.html">"While_do_"</a></code></li>
+<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/3677270057.html">"While_do_alternate with_"</a></code></li>
+<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/37606759.html">"Until_do_"</a></code></li>
+<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/1159279560.html">"Until_do_alternate with_"</a></code></li>
+<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/2016176488.html">"Do_while_"</a></code></li>
+<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/3137849289.html">"Do_while_alternate with_"</a></code></ii>
+<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/3239721715.html">"Do_until_"</a></code></li>
+<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/66427220.html">"Do_until_alternate with_"</a></code></li>
+</ul>
+
+
+<h4 id="tuple-for-each">How can I loop through each element of a tuple/set/map/reader/stream?</h4>
+
+<p>There are lots of ways to accomplish this, each of which is the same general syntax for each data structure.  Here are just a few.</p>
+
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+Run [aTuple ::= <1,2,3,4>;
+	For each element of aTuple do [Print: “element” ++ " ";];]
+]]>
+</script></div></div>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+Run [aTuple ::= <8,7,6,5>;
+	For each element, index of aTuple do 
+	[Print: “element” ++ " is at index " ++ “index” ++ " \n";];]
+]]>
+</script></div></div>
+
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+Run [aSet ::= {1,2,3,4};
+	For each element of aSet do [Print: “element” ++ " ";];]
+]]>
+</script></div></div>
+
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+Run [aMap ::= {"foo"→1,"bar"→2,"frog"→3,"prince"→4}; 
+	For each key → value of aMap do 
+	[Print: key ++ "→" ++ “value” ++ "\n";];]
+]]>
+</script></div></div>
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+Run [aReader ::= a reader over <1,2,3,4>;
+	For each element of aReader do [Print: “element” ++ " ";];]
+]]>
+</script></div></div>
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+Run [aStream ::= a stream over <1,2,3,4>;
+	For each element of aStream do [Print: “element” ++ " ";];]
 ]]>
 </script></div></div>
 
@@ -558,16 +683,31 @@ Run [For each of 10 to 20 do [i : [10..20] | Print: “i” ++ " ";];]
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
 <![CDATA[
-Run [For each of 10 to 20 in parallel do [i : [10..20] | Print: “i” ++ " ";];]
+Run [For each i of 10 to 20 in parallel do [Print: “i” ++ " ";];]
 ]]>
 </script></div></div>
-
-<p>Here's an old-school subscripting loop.</p>
-
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
 <![CDATA[
-Run [t ::= 10 to 20; From 1 to |t| do [i : natural number | Print: “t[i]” ++ " ";];]
+Run [For each element,index of 10 to 20 in parallel 
+	do [Print: “index” ++ ": " ++“element” ++ "\n";];]
+]]>
+</script></div></div>
+<p>Here's how to do the same parallel loop for a set.</p>
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+Run [aSet ::= {1,2,3,4}; 
+	For each i of aSet in parallel do [Print: “i” ++ " ";];]
+]]>
+</script></div></div>
+<p>...And a map</p>
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+Run [aMap ::= {"foo"→1,"bar"→2,"frog"→3,"prince"→4};
+	For each key → value of aMap in parallel 
+	do [Print: key ++ "→" ++ “value” ++ "\n";];]
 ]]>
 </script></div></div>
 

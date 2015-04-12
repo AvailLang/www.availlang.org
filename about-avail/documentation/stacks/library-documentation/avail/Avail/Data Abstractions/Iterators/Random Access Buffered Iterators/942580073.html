@@ -1,0 +1,125 @@
+<!doctype html>
+<!--[if lt IE 7]>
+ 	<html class="ie6 oldie">
+<![endif]-->
+<!--[if IE 7]>
+	<html class="ie7 oldie">
+<![endif]-->
+<!--[if IE 8]>
+	<html class="ie8 oldie">
+<![endif]-->
+	<!--[if gt IE 8]>
+	<!-->
+<html ng-app="stacksApp">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
+		<!--#include virtual="/_include/head.ssi" -->
+		<title>Avail - Library</title>
+		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="/about-avail/documentation/stacks/library-documentation/stacksApp.js"></script>
+		<script>
+			function myParent()
+			{
+				return window.parent;
+			}
+		</script>
+	</head>
+	<body ng-controller="CategoriesCntrl">
+		<div class="stacks-wrapper">
+	<h2 class="method-heading">_'s⁇write tuple method is_</h2>
+	<h4 class="method-section-header">Definitions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">random access buffered writer's type, [tuple, ⊥, natural number]→⊤</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Iterators/Random Access Buffered Iterators</div>
+		<div class="category-list"><em>Categories:</em> Data Abstractions, Iterators</div>
+		<div class="signature-description">
+			There is already a buffer-exiting method defined in <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Buffered Iterators/500417153.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Buffered Iterators/500417153.html">buffered iterator</a>, but because we want more control over buffer alignment we now define a method ({@method _'s⁇write tuple method is_ }) to define an implementation of a private method that writes an arbitrary tuple of bytes at the specified position into the construct backing some writer.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="writerType967121600" class="stacks i-code">writerType</td>
+					<td class="stacks i-code">random access buffered writer's type</td>
+					<td class="stacks i-desc">
+						The writer's type, as a cross check for the implementation.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="implementation967121600" class="stacks i-code">implementation</td>
+					<td class="stacks i-code">[tuple, ⊥, natural number]→⊤</td>
+					<td class="stacks i-desc">
+						The new method extension. Its first argument is the tuple to write, the second argument is the writer, and the third argument is the starting position at which the tuple is to be written to whatever is backing the writer.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3911882092.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3911882092.html">⊤</a></td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<h4 class="method-section-header">Semantic restrictions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">writerType, implementation</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Iterators/Random Access Buffered Iterators</div>
+		<div class="signature-description">
+			Strengthen the <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Random Access Buffered Iterators/942580073.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Random Access Buffered Iterators/942580073.html">_'s⁇write tuple method is_</a> method so that the supplied function accepts the specified <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/3347360357.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/3347360357.html">writer</a> subtype.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="writerType-188511615" class="stacks i-code">writerType</td>
+					<td class="stacks i-code">
+						random access buffered writer's type's type The type of the writer's type, which must be known statically. This is used to cross check against the implementation.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="implementation-188511615" class="stacks i-code">implementation</td>
+					<td class="stacks i-code">
+						([tuple, ⊥, natural number]→⊤)'s type The new method extension. Its first argument is the tuple to write, the second argument is the writer, and the third argument is the starting position at which the tuple is to be written to whatever is backing the writer.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label"colspan="1">Returns</th>
+					<td class="stacks i-code">⊤'s type</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+		</div>
+	</body>
+</html>
+			

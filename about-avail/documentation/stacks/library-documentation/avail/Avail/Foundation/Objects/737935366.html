@@ -1,0 +1,333 @@
+<!doctype html>
+<!--[if lt IE 7]>
+ 	<html class="ie6 oldie">
+<![endif]-->
+<!--[if IE 7]>
+	<html class="ie7 oldie">
+<![endif]-->
+<!--[if IE 8]>
+	<html class="ie8 oldie">
+<![endif]-->
+	<!--[if gt IE 8]>
+	<!-->
+<html ng-app="stacksApp">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
+		<!--#include virtual="/_include/head.ssi" -->
+		<title>Avail - Library</title>
+		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="/about-avail/documentation/stacks/library-documentation/stacksApp.js"></script>
+		<script>
+			function myParent()
+			{
+				return window.parent;
+			}
+		</script>
+	</head>
+	<body ng-controller="CategoriesCntrl">
+		<div class="stacks-wrapper">
+	<h2 class="method-heading">«Public»?«Explicit|explicit»?Class|class_extends_«with immutable⁇field|fields««public»?«reconstructible»?_:_«(accessor⁇_)»‡,»»«with mutable field|fields««public»?«shared»?«referable»?«read-only»?_:_«(««accessor|mutator|referrer»!_‡,»)»‡,»»«with reconstructor|reconstructors««public»?(«_‡,»)‡,»»</h2>
+	<h4 class="method-section-header">Definitions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">boolean, boolean, nonempty string, object's type, &lt;
+            &lt;
+              &lt;
+                boolean,
+                boolean,
+                atom,
+                any meta,
+                nonempty string?…
+              |5>…
+            |1..>…
+          |0..1>, &lt;
+            &lt;
+              &lt;
+                boolean,
+                boolean,
+                boolean,
+                boolean,
+                atom,
+                any meta,
+                &lt;
+                  &lt;
+                    &lt;
+                      [1..3],
+                      nonempty string…
+                    |2>…
+                  |1..3>…
+                |0..1>…
+              |7>…
+            |1..>…
+          |0..1>, &lt;&lt;&lt;boolean, atom+…|2>…|1..>…|0..1></div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Objects</div>
+		<div class="category-list"><em>Categories:</em> Objects, Types, Declarations</div>
+		<div class="signature-description">
+			Define a class. In Avail, a class is simply a named object type supported by 1) a generated method that reliably reproduces the object type, 2) generated methods that provide access to the field definitions, and 3) generated methods that provide access to instance field values. A class is essentially only a lexical construct, and is analogous to the distinction between blocks (lexical) and functions (semantic).
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="8">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="public-885077162" class="stacks i-code">public</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/149560384.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/149560384.html">boolean</a></td>
+					<td class="stacks i-desc">
+						<a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a> if the class should be exported by the defining module, <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4256818863.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4256818863.html">false</a> otherwise.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="explicit-885077162" class="stacks i-code">explicit</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/149560384.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/149560384.html">boolean</a></td>
+					<td class="stacks i-desc">
+						<a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a> if the class should have an artificial identity introduced (in order to ensure intentional provenance of subtypes), <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4256818863.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4256818863.html">false</a> otherwise.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">3</td>
+					<td id="className-885077162" class="stacks i-code">className</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2106812585.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2106812585.html">nonempty string</a></td>
+					<td class="stacks i-desc">
+						The name of the class. A method will be generated with this name. This method will answer the object type. The object type will also be christened with this name.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">4</td>
+					<td id="supertype-885077162" class="stacks i-code">supertype</td>
+					<td class="stacks i-code">object's type</td>
+					<td class="stacks i-desc">
+						The supertype of the class. Type intersection may be used here to facilitate inheritance from multiple sources.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">5</td>
+					<td id="optionalImmutable-885077162" class="stacks i-code">optionalImmutable</td>
+					<td class="stacks i-code">&lt;
+            &lt;
+              &lt;
+                boolean,
+                boolean,
+                atom,
+                any meta,
+                nonempty string?…
+              |5>…
+            |1..>…
+          |0..1></td>
+					<td class="stacks i-desc">
+						The extension fields of this class. An accessor will be generated for each field. A reconstructor will be generated for each field tagged as <code class="method">reconstructible</code>. Each field tagged as <code class="method">public</code> must be exported by the defining module. Unless a parenthetical name appears after a field's type, then its accessor will be given a default name ("_'s⁇" ++ the field name).
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">6</td>
+					<td id="optionalMutable-885077162" class="stacks i-code">optionalMutable</td>
+					<td class="stacks i-code">&lt;
+            &lt;
+              &lt;
+                boolean,
+                boolean,
+                boolean,
+                boolean,
+                atom,
+                any meta,
+                &lt;
+                  &lt;
+                    &lt;
+                      [1..3],
+                      nonempty string…
+                    |2>…
+                  |1..3>…
+                |0..1>…
+              |7>…
+            |1..>…
+          |0..1></td>
+					<td class="stacks i-desc">
+						The mutable fields of this class. An accessor will be generated for each field. A referrer will be generated for each field tagged as <code class="method">referable</code>. A mutator will be generated for each field not tagged as <code class="method">read-only</code>. Each field tagged as <code class="method">public</code> must have its accessor, referrer, and mutator exported by the defining module. Each field tagged as <code class="method">shared</code> will not be cloned (using a new variable) during reconstruction. Unless parenthetical names appear after a field's type, then the accessor, mutator, and referrer will be given default names as appropriate.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">7</td>
+					<td id="optionalReconstructors-885077162" class="stacks i-code">optionalReconstructors</td>
+					<td class="stacks i-code">&lt;&lt;&lt;boolean, atom+…|2>…|1..>…|0..1></td>
+					<td class="stacks i-desc">
+						The reconstructors of this class. A reconstructor will be generated for each specification tuple. Each reconstructor tagged as <code class="method">public</code> must be exported by the defining module.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3911882092.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3911882092.html">⊤</a></td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<h4 class="method-section-header">Semantic restrictions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">boolean's type, boolean's type, nonempty string's type, object's type, &lt;
+            &lt;
+              &lt;
+                boolean,
+                boolean,
+                atom,
+                any meta,
+                nonempty string?…
+              |5>…
+            |1..>…
+          |0..1>'s type, &lt;
+            &lt;
+              &lt;
+                boolean,
+                boolean,
+                boolean,
+                boolean,
+                atom,
+                any meta,
+                &lt;
+                  &lt;
+                    &lt;
+                      [1..3],
+                      nonempty string…
+                    |2>…
+                  |1..3>…
+                |0..1>…
+              |7>…
+            |1..>…
+          |0..1>'s type, &lt;boolean, atom+…|2>+?'s type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Objects</div>
+		<div class="signature-description">
+			Class definition statically requires that: <p> - Every field atom of the extension is known. - Each field atom of the extension appears only once during extension. - Each field atom of the extension is either 1) not present in the supertype or 2) specifies a type which covaries with the field type expressed in the supertype. </p>
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="8">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="boolean's type2019623454" class="stacks i-code">boolean's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="boolean's type2019623454" class="stacks i-code">boolean's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="nonempty string's type2019623454" class="stacks i-code">nonempty string's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="object's type2019623454" class="stacks i-code">object's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="<
+            <
+              <
+                boolean,
+                boolean,
+                atom,
+                any meta,
+                nonempty string?…
+              |5>…
+            |1..>…
+          |0..1>'s type2019623454" class="stacks i-code">&lt;
+            &lt;
+              &lt;
+                boolean,
+                boolean,
+                atom,
+                any meta,
+                nonempty string?…
+              |5>…
+            |1..>…
+          |0..1>'s type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="<
+            <
+              <
+                boolean,
+                boolean,
+                boolean,
+                boolean,
+                atom,
+                any meta,
+                <
+                  <
+                    <
+                      [1..3],
+                      nonempty string…
+                    |2>…
+                  |1..3>…
+                |0..1>…
+              |7>…
+            |1..>…
+          |0..1>'s type2019623454" class="stacks i-code">&lt;
+            &lt;
+              &lt;
+                boolean,
+                boolean,
+                boolean,
+                boolean,
+                atom,
+                any meta,
+                &lt;
+                  &lt;
+                    &lt;
+                      [1..3],
+                      nonempty string…
+                    |2>…
+                  |1..3>…
+                |0..1>…
+              |7>…
+            |1..>…
+          |0..1>'s type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="<boolean, atom+…|2>+?'s type2019623454" class="stacks i-code">&lt;boolean, atom+…|2>+?'s type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+		</div>
+	</body>
+</html>
+			

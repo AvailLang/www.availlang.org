@@ -1,0 +1,169 @@
+<!doctype html>
+<!--[if lt IE 7]>
+ 	<html class="ie6 oldie">
+<![endif]-->
+<!--[if IE 7]>
+	<html class="ie7 oldie">
+<![endif]-->
+<!--[if IE 8]>
+	<html class="ie8 oldie">
+<![endif]-->
+	<!--[if gt IE 8]>
+	<!-->
+<html ng-app="stacksApp">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
+		<!--#include virtual="/_include/head.ssi" -->
+		<title>Avail - Library</title>
+		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="/about-avail/documentation/stacks/library-documentation/stacksApp.js"></script>
+		<script>
+			function myParent()
+			{
+				return window.parent;
+			}
+		</script>
+	</head>
+	<body ng-controller="CategoriesCntrl">
+		<div class="stacks-wrapper">
+	<h2 class="method-heading">_`?→_†</h2>
+	<h4 class="method-section-header">Definitions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">any, type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Casts</div>
+		<div class="category-list"><em>Categories:</em> Casts</div>
+		<div class="signature-description">
+			Cast the value into the specified <em>statically evaluated</em> type. If the value at runtime does not comply with this type, fail the same way any call overly strengthened by a semantic restriction would fail.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="value-1596753970" class="stacks i-code">value</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/421086860.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/421086860.html">any</a></td>
+					<td class="stacks i-desc">
+						The value whose type is to be strengthened.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="strongerType-1596753970" class="stacks i-code">strongerType</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3671539130.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3671539130.html">type</a></td>
+					<td class="stacks i-desc">
+						Evaluated at compile time to produce the strengthened type of this call.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/421086860.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/421086860.html">any</a></td>
+					<td class="stacks i-desc">
+						Restricted to the strongerType.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<h4 class="method-section-header">Semantic restrictions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">valueType, strongerMeta, elseFunctionType</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Casts</div>
+		<div class="signature-description">
+			Cast the value into the specified <em>statically evaluated</em> type. If the value at runtime does not comply with this type, return instead the result of evaluating the zero-argument elseFunction. <p> The value's static type and the provided type must have a non-⊥ intersection. Additionally, the value's static type must not already be sufficiently strong by being a subtype of the provided type. The resulting type of the call site is the union of the else function's return type and the intersection of the value's static type and the provided strengthening type. Note that this means it is acceptable for the else function to produce a value that is not in compliance with the specified strengthening type. This has value when the goal is to type check, strengthen, and alternatively run arbitrary code for side-effect and return an otherwise out-of-band sentinel, which was specifically excluded in the type check. </p>
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="4">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="valueType732671571" class="stacks i-code">valueType</td>
+					<td class="stacks i-code">
+						any's type The static type of the expression whose type is to be strengthened.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="strongerMeta732671571" class="stacks i-code">strongerMeta</td>
+					<td class="stacks i-code">
+						type's type Evaluated at compile time to produce the strengthened type of this call. The actual type is passed at runtime, but the metatype is what gets provided to this semantic restriction.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="elseFunctionType732671571" class="stacks i-code">elseFunctionType</td>
+					<td class="stacks i-code">
+						([]→any)'s type What to do in case the value being tested does not comply with the strengthening type. The result of running this function will be used as the call site's resulting value.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label"colspan="1">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3671539130.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3671539130.html">type</a></td>
+					<td class="stacks i-desc">
+						The restricted type at this call site.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">valueType, strongerMeta</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Casts</div>
+		<div class="signature-description">
+			Cast the value into the specified <em>statically evaluated</em> type. If the value at runtime does not comply with this type, fail the same way any call overly strengthened by a semantic restriction would fail. <p> The value's static type and the provided type must have a non-⊥ intersection. Additionally, the value's static type must not already be sufficiently strong by being a subtype of the provided type. The resulting type of the call site is the intersection of the value's static type and the provided type. </p>
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="valueType-1356866910" class="stacks i-code">valueType</td>
+					<td class="stacks i-code">
+						any's type The static type of the expression whose type is to be strengthened.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="strongerMeta-1356866910" class="stacks i-code">strongerMeta</td>
+					<td class="stacks i-code">
+						type's type Evaluated at compile time to produce the strengthened type of this call. The actual type is passed at runtime, but the metatype is what gets provided to this semantic restriction.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label"colspan="1">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3671539130.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3671539130.html">type</a></td>
+					<td class="stacks i-desc">
+						The restricted type at this call site.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+		</div>
+	</body>
+</html>
+			

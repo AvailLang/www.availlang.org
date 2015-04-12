@@ -1,0 +1,125 @@
+<!doctype html>
+<!--[if lt IE 7]>
+ 	<html class="ie6 oldie">
+<![endif]-->
+<!--[if IE 7]>
+	<html class="ie7 oldie">
+<![endif]-->
+<!--[if IE 8]>
+	<html class="ie8 oldie">
+<![endif]-->
+	<!--[if gt IE 8]>
+	<!-->
+<html ng-app="stacksApp">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
+		<!--#include virtual="/_include/head.ssi" -->
+		<title>Avail - Library</title>
+		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="/about-avail/documentation/stacks/library-documentation/stacksApp.js"></script>
+		<script>
+			function myParent()
+			{
+				return window.parent;
+			}
+		</script>
+	</head>
+	<body ng-controller="CategoriesCntrl">
+		<div class="stacks-wrapper">
+	<h2 class="method-heading">partially format_with«…::=_‡,»</h2>
+	<h4 class="method-section-header">Definitions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">string, &lt;&lt;token, any…|2>…|1..></div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Strings</div>
+		<div class="category-list"><em>Categories:</em> Formatting, Strings</div>
+		<div class="signature-description">
+			Answer the result of partially formatting the specified template using lexically specified format variable bindings. If a format variable does not have a corresponding binding, then re-emit it into the (partially) formatted result. <p> A template intermixes raw character data with format variable interpolation sites. An interpolation site begins with either the ¢‘ or ¢“ metacharacter and ends with the corresponding close metacharacter, either ¢’ or ¢”, respectively. An interpolation site may contain any character except the expected close metacharacter. The contents are understood to name a variable that may appear as a key within the specified map; the associated value is this variable's value. If an interpolation site uses ¢“ (and ¢”), then the value will be converted to a string via `“_”` when it is copied into the result. If an interpolation site uses ¢‘ (and ¢’), then the value must be a string and will be copied directly into the result. To escape a metacharacter, precede it immediately by ¢`. </p>
+<p> For example: </p>
+<p> Assert: (partially format ‘greeting’, ‘recipient’!
+ with greeting ::= Hello ) = Hello, “recipient”!
+; Assert: (partially format (partially format ‘greeting’, ‘recipient’!
+ with greeting ::= Hello ) with recipient ::= world ) = Hello, world!
+; </p>
+<p> The semantic restriction ensures that every lexically specified binding corresponds to a format variable embedded within the template. </p>
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="template-1384071413" class="stacks i-code">template</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2052869683.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2052869683.html">string</a></td>
+					<td class="stacks i-desc">
+						A template string.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="bindings-1384071413" class="stacks i-code">bindings</td>
+					<td class="stacks i-code">&lt;&lt;token, any…|2>…|1..></td>
+					<td class="stacks i-desc">
+						The format variable bindings.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2052869683.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2052869683.html">string</a></td>
+					<td class="stacks i-desc">
+						The result of partially formatting the template usings the specified bindings.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<h4 class="method-section-header">Semantic restrictions:</h4>
+	<div class="method-section-content">
+		<div class="signature-heading">string's type, &lt;&lt;token, any…|2>…|1..>'s type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Strings</div>
+		<div class="signature-description">
+			If the template is statically known, then ensure that 1) each lexical binding references a valid format variable and 2) each format variable that uses the $text interpolation mode is actually bound to a string.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="string's type693539483" class="stacks i-code">string's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="<<token, any…|2>…|1..>'s type693539483" class="stacks i-code">&lt;&lt;token, any…|2>…|1..>'s type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+		</div>
+	</body>
+</html>
+			
