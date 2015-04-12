@@ -121,51 +121,6 @@
 				</tr>
 			</tbody>
 		</table>
-		<div class="signature-heading">map, [⊥, ⊥, ⊥]→⊤</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Maps</div>
-		<div class="category-list"><em>Categories:</em> Collections, Maps, Control Structures</div>
-		<div class="signature-description">
-			Iteratively apply <a href="#accumulator78908575">accumulator</a> to the bindings of <a href="#aMap78908575">aMap</a>, in no particular order, in order to transform and filter its bindings into a new map. When <a href="#accumulator78908575">accumulator</a> is invoked, it is passed a keeper function. The keeper function may be invoked to save a particular value, i.e., a value that will be associated with the current key in the output set. The keeper function will save at most one value per binding of <a href="#aSet78908575">aSet</a>, i.e., each time that <a href="#accumulator78908575">accumulator</a> is invoked, it may invoke the keeper function at most one time. Answer the new map.
-		</div>
-		<table class="stacks">
-			<thead>
-				<tr>
-					<th class="transparent" scope="col"></th>
-					<th class="stacks i-col-label-narrow" scope="col">Position</th>
-					<th class="stacks i-col-label-narrow" scope="col">Name</th>
-					<th class="stacks i-col-label-narrow" scope="col">Type</th>
-					<th class="stacks i-col-label-wide" scope="col">Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th class="stacks i-row-label" rowspan="3">Parameters</th>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">1</td>
-					<td id="aMap78908575" class="stacks i-code">aMap</td>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html">map</a></td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">2</td>
-					<td id="accumulator78908575" class="stacks i-code">accumulator</td>
-					<td class="stacks i-code">[⊥, ⊥, ⊥]→⊤</td>
-					<td class="stacks i-desc">
-						A function that accepts 1) a key from <a href="#aMap78908575">aMap</a>, 2) the value associated with that key, and 3) a keeper function. The keeper function accepts an argument of the (value) type that should be saved.
-					</td>
-				</tr>
-				<tr>
-					<th class="stacks i-row-label" colspan="3">Returns</th>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html">map</a></td>
-					<td class="stacks i-desc">
-						A map whose bindings are those saved by the <a href="#accumulator78908575">accumulator</a>.
-					</td>
-				</tr>
-			</tbody>
-		</table>
 		<div class="signature-heading">set, [⊥, ⊥]→⊤</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Sets</div>
 		<div class="category-list"><em>Categories:</em> Collections, Sets, Control Structures</div>
@@ -211,6 +166,51 @@
 				</tr>
 			</tbody>
 		</table>
+		<div class="signature-heading">map, [⊥, ⊥, ⊥]→⊤</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Maps</div>
+		<div class="category-list"><em>Categories:</em> Collections, Maps, Control Structures</div>
+		<div class="signature-description">
+			Iteratively apply <a href="#accumulator78908575">accumulator</a> to the bindings of <a href="#aMap78908575">aMap</a>, in no particular order, in order to transform and filter its bindings into a new map. When <a href="#accumulator78908575">accumulator</a> is invoked, it is passed a keeper function. The keeper function may be invoked to save a particular value, i.e., a value that will be associated with the current key in the output set. The keeper function will save at most one value per binding of <a href="#aSet78908575">aSet</a>, i.e., each time that <a href="#accumulator78908575">accumulator</a> is invoked, it may invoke the keeper function at most one time. Answer the new map.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="aMap78908575" class="stacks i-code">aMap</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html">map</a></td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="accumulator78908575" class="stacks i-code">accumulator</td>
+					<td class="stacks i-code">[⊥, ⊥, ⊥]→⊤</td>
+					<td class="stacks i-desc">
+						A function that accepts 1) a key from <a href="#aMap78908575">aMap</a>, 2) the value associated with that key, and 3) a keeper function. The keeper function accepts an argument of the (value) type that should be saved.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html">map</a></td>
+					<td class="stacks i-desc">
+						A map whose bindings are those saved by the <a href="#accumulator78908575">accumulator</a>.
+					</td>
+				</tr>
+			</tbody>
+		</table>
 	</div>
 	<h4 class="method-section-header">Semantic restrictions:</h4>
 	<div class="method-section-content">
@@ -239,37 +239,6 @@
 				</tr>
 				<tr class="methodParameters">
 <td id="[⊥, ⊥]→⊤'s type1422720389" class="stacks i-code">[⊥, ⊥]→⊤'s type</td>
-					<td class="stacks i-code">
-						
-					</td>
-				</tr>
-			</tbody>
-		</table>
-		<div class="signature-heading">set meta, [⊥, ⊥]→⊤'s type</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Sets</div>
-		<div class="signature-description">
-			Ensure that the function will accept all arguments of the set and also an appropriately typed keeper function.
-		</div>
-		<table class="stacks">
-			<thead>
-				<tr>
-					<th class="transparent" scope="col"></th>
-					<th class="stacks i-col-label-narrow" scope="col">Type</th>
-					<th class="stacks i-col-label-wide" scope="col">Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th class="stacks i-row-label" rowspan="3">Parameter Types</th>
-				</tr>
-				<tr class="methodParameters">
-<td id="set meta-1755412653" class="stacks i-code">set meta</td>
-					<td class="stacks i-code">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-<td id="[⊥, ⊥]→⊤'s type-1755412653" class="stacks i-code">[⊥, ⊥]→⊤'s type</td>
 					<td class="stacks i-code">
 						
 					</td>
@@ -332,6 +301,37 @@
 				</tr>
 				<tr class="methodParameters">
 <td id="[⊥, ⊥, ⊥]→⊤'s type1262325730" class="stacks i-code">[⊥, ⊥, ⊥]→⊤'s type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">set meta, [⊥, ⊥]→⊤'s type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Sets</div>
+		<div class="signature-description">
+			Ensure that the function will accept all arguments of the set and also an appropriately typed keeper function.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="set meta-1755412653" class="stacks i-code">set meta</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="[⊥, ⊥]→⊤'s type-1755412653" class="stacks i-code">[⊥, ⊥]→⊤'s type</td>
 					<td class="stacks i-code">
 						
 					</td>

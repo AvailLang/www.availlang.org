@@ -31,9 +31,9 @@
 	<h2 class="method-heading">Seal method_at_</h2>
 	<h4 class="method-section-header">Definitions:</h4>
 	<div class="method-section-content">
-		<div class="signature-heading">string, function's type</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Security</div>
-		<div class="category-list"><em>Categories:</em> Declarations, Methods</div>
+		<div class="signature-heading">atom, tuple of any meta</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Fallible Primitives</div>
+		<div class="category-list"><em>Categories:</em> Primitives, Methods, Constructors, Mutators</div>
 		<div class="signature-description">
 			Seal the named method at the specified signature. No further definitions may be added at or below this signature. This facility is provided to secure methods against dangerous, unscrupulous, or confusing extensions.
 		</div>
@@ -53,23 +53,144 @@
 				</tr>
 				<tr class="methodParameters">
 					<td class="stacks i-code">1</td>
-					<td id="methodName-348537703" class="stacks i-code">methodName</td>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2052869683.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2052869683.html">string</a></td>
+					<td id="methodName-744458769" class="stacks i-code">methodName</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3442635109.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3442635109.html">atom</a></td>
 					<td class="stacks i-desc">
-						The name of the method to seal.
+						The atom that uniquely designates the method to seal.
 					</td>
 				</tr>
 				<tr class="methodParameters">
 					<td class="stacks i-code">2</td>
-					<td id="functionType-348537703" class="stacks i-code">functionType</td>
-					<td class="stacks i-code">function's type</td>
+					<td id="signature-744458769" class="stacks i-code">signature</td>
+					<td class="stacks i-code">tuple of any meta</td>
 					<td class="stacks i-desc">
-						The signature at which the seal should be placed. Only the parameter types are actually used to place the seal, but the semantic restriction cross-checks the return type if possible.
+						A tuple of parameter types. This is the signature at which the seal will be placed.
 					</td>
 				</tr>
 				<tr>
 					<th class="stacks i-row-label" colspan="3">Returns</th>
 					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3911882092.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3911882092.html">⊤</a></td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+					<th class="stacks i-row-label" colspan="3" rowspan="21">Raises</th>
+				<tr class="methodParameters">
+					<td class="stacks i-code">incorrect-number-of-arguments exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">incorrect-argument-type exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">incorrect-type-for-group exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">exclamation-mark-must-follow-an-alternation-group exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">incorrect-type-for-complex-group exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">incorrect-use-of-double-dagger exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">unbalanced-guillemets exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">method-name-is-not-canonical exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">expected-operator-after-backquote exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">incorrect-type-for-boolean-group exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">incorrect-type-for-counting-group exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">octothorp-must-follow-a-simple-group exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">question-mark-must-follow-a-simple-group exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">case-insensitive-expression-canonization exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">tilde-must-not-follow-argument exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">double-question-mark-must-follow-a-token-or-simple-group exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">alternative-must-not-contain-arguments exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">vertical-bar-must-separate-tokens-or-simple-groups exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">incorrect-type-for-numbered-choice exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">loading-is-over exception</td>
 					<td class="stacks i-desc">
 						
 					</td>
@@ -248,9 +369,9 @@
 				</tr>
 			</tbody>
 		</table>
-		<div class="signature-heading">atom, tuple of any meta</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Fallible Primitives</div>
-		<div class="category-list"><em>Categories:</em> Primitives, Methods, Constructors, Mutators</div>
+		<div class="signature-heading">string, function's type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Security</div>
+		<div class="category-list"><em>Categories:</em> Declarations, Methods</div>
 		<div class="signature-description">
 			Seal the named method at the specified signature. No further definitions may be added at or below this signature. This facility is provided to secure methods against dangerous, unscrupulous, or confusing extensions.
 		</div>
@@ -270,144 +391,23 @@
 				</tr>
 				<tr class="methodParameters">
 					<td class="stacks i-code">1</td>
-					<td id="methodName-744458769" class="stacks i-code">methodName</td>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3442635109.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3442635109.html">atom</a></td>
+					<td id="methodName-348537703" class="stacks i-code">methodName</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2052869683.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2052869683.html">string</a></td>
 					<td class="stacks i-desc">
-						The atom that uniquely designates the method to seal.
+						The name of the method to seal.
 					</td>
 				</tr>
 				<tr class="methodParameters">
 					<td class="stacks i-code">2</td>
-					<td id="signature-744458769" class="stacks i-code">signature</td>
-					<td class="stacks i-code">tuple of any meta</td>
+					<td id="functionType-348537703" class="stacks i-code">functionType</td>
+					<td class="stacks i-code">function's type</td>
 					<td class="stacks i-desc">
-						A tuple of parameter types. This is the signature at which the seal will be placed.
+						The signature at which the seal should be placed. Only the parameter types are actually used to place the seal, but the semantic restriction cross-checks the return type if possible.
 					</td>
 				</tr>
 				<tr>
 					<th class="stacks i-row-label" colspan="3">Returns</th>
 					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3911882092.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3911882092.html">⊤</a></td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-					<th class="stacks i-row-label" colspan="3" rowspan="21">Raises</th>
-				<tr class="methodParameters">
-					<td class="stacks i-code">incorrect-number-of-arguments exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">incorrect-argument-type exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">incorrect-type-for-group exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">exclamation-mark-must-follow-an-alternation-group exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">incorrect-type-for-complex-group exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">incorrect-use-of-double-dagger exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">unbalanced-guillemets exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">method-name-is-not-canonical exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">expected-operator-after-backquote exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">incorrect-type-for-boolean-group exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">incorrect-type-for-counting-group exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">octothorp-must-follow-a-simple-group exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">question-mark-must-follow-a-simple-group exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">case-insensitive-expression-canonization exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">tilde-must-not-follow-argument exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">double-question-mark-must-follow-a-token-or-simple-group exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">alternative-must-not-contain-arguments exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">vertical-bar-must-separate-tokens-or-simple-groups exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">incorrect-type-for-numbered-choice exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">loading-is-over exception</td>
 					<td class="stacks i-desc">
 						
 					</td>
