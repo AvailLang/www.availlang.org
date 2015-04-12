@@ -1055,7 +1055,7 @@ Method "How many angels can dance on the head of a pin`?" is
 </tr>
 <tr class="quick-ref">
 	<td><code>«</code><em>p</em><code>»</code></td>
-	<td>"sum⤷<code>«</code>_<code>»</code>"</td>
+	<td>"sum⤷<code>«_»</code>"</td>
 	<td>&lt;⤷<code>number+</code>&gt;</td>
 	<td>sum ⤷<code>1 2 3</code></td>
 	<td>match ≥0 of pattern <em>p</em>, pass accumulated arguments as a single tuple</td>
@@ -1069,10 +1069,17 @@ Method "How many angels can dance on the head of a pin`?" is
 </tr>
 <tr class="quick-ref">
 	<td><code>«</code><em>p</em><code>»?</code></td>
-	<td>"…#.…#⤷<code>«</code>f<code>»?</code>"</td>
+	<td>"…#.…#⤷<code>«f»?</code>"</td>
 	<td>&lt;literal token⇒integer, literal token⇒integer, ⤷<code>boolean</code>&gt;</td>
-	<td>6.4⤷ <br><em style="font-size: xx-small">OR</em><br>6.4⤷<code>f</code></td>
-	<td>match 0≤<em>n</em>≤1 occurrence of pattern <em>p</em>, pass <em>n</em>=1 as a boolean</td>
+	<td>6.4⤷&nbsp;<br><em style="font-size: xx-small">OR</em><br>6.4⤷<code>f</code></td>
+	<td>match 0≤<em>n</em>≤1 occurrence of pattern <em>p</em>, pass <em>n</em>=1 as an argument</td>
+</tr>
+<tr class="quick-ref">
+	<td><code>«</code><em>p</em><code>»#</code></td>
+	<td>"⤷<code>«please‡,»#</code>stop"</td>
+	<td>&lt;⤷<code>whole number</code>&gt;</td>
+	<td>⤷&nbsp;stop <br><em style="font-size: xx-small">OR</em><br>⤷<code>please</code> stop<br><em style="font-size: xx-small">OR</em><br>⤷<code>please, please, please</code> stop</td>
+	<td>match <em>n</em> occurrences of pattern <em>p</em>, pass <em>n</em> as an argument</td>
 </tr>
 </tbody>
 </table>
