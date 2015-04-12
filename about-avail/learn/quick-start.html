@@ -48,7 +48,7 @@
 
 <p>This quick start guide is targeted at experienced programmers who want to get started writing Avail as quickly as possible. No special effort has been expended to ensure that the material herein is suitable for those with a limited or nonexistent programming background. Furthermore, the quick start guide assumes that you have already <a href="/about-avail/download/index.html">installed and configured</a> an Avail environment suitable for development of personal projects, and that you know how to launch the <a href="/about-avail/documentation/workbench.html">workbench</a>.</p>
 
-<p>Lest the start should no longer be quick, let's do this.</p>
+<p>The quick start guide endeavors to use code patterns as often as possible to engage the phenomenal pattern finding abilities of the human brain. For the fastest possible start, I recommend that you study the code samples to get a feel for the language but skim the text as much as possible, concentrating on the text only when samples don't click for you. You may want to read sections that don't contain code samples more carefully, since these sections are likely to answer technical questions about the language at a high-level. Some sections end with a quick reference subsection; you can generally skip these subsections completely on a first pass.</p>
 
 <h5>Table of Contents</h5>
 
@@ -981,7 +981,7 @@ Method "How many angels can dance on the head of a pin`?" is
 	<td>"⤷<code>integer</code>"</td>
 	<td>&lt;&gt;</td>
 	<td>⤷<code>integer</code></td>
-	<td>match a keyword token</td>
+	<td>match a keyword token case-sensitively</td>
 </tr>
 <tr class="quick-ref">
 	<td><em>operator</em></td>
@@ -992,10 +992,24 @@ Method "How many angels can dance on the head of a pin`?" is
 </tr>
 <tr class="quick-ref">
 	<td><code>`</code><em>metacharacter</em></td>
-	<td>"_⤷<code>`</code>!"</td>
+	<td>"_⤷<code>`!</code>"</td>
 	<td>&lt;[0..∞]&gt;</td>
 	<td>20⤷<code>!</code></td>
 	<td>escape the following metacharacter, disabling its special meaning</td>
+</tr>
+<tr class="quick-ref">
+	<td><em>pattern</em><code>⁇</code></td>
+	<td>"_⤷occurrences<code>⁇</code>of_"</td>
+	<td>&lt;whole number, any&gt;</td>
+	<td>7⤷ of 9 <br><em style="font-size: xx-small">OR</em><br>7⤷<code>occurrences</code>of 9</td>
+	<td>match 0 or 1 occurrence of a pattern</td>
+</tr>
+<tr class="quick-ref">
+	<td><em>pattern</em><code>~</code></td>
+	<td>"«red alert»~"</td>
+	<td>&lt;&gt;</td>
+	<td>red alert<br><em style="font-size: xx-small">OR</em><br>RED ALERT<br><em style="font-size: xx-small">OR</em><br>rEd AlErT<br><em style="font-size: xx-small">OR</em><br><em>etc.</em></td>
+	<td>match a pattern case-insensitively</td>
 </tr>
 <tr class="quick-ref">
 	<td><code>_</code></td>
@@ -1040,18 +1054,25 @@ Method "How many angels can dance on the head of a pin`?" is
 	<td>match an operator token, pass it as an argument</td>
 </tr>
 <tr class="quick-ref">
-	<td><code>«</code><em>p</em>+<code>»</code></td>
-	<td>"sum⤷<code>«_»</code>"</td>
+	<td><code>«</code><em>p</em><code>»</code></td>
+	<td>"sum⤷<code>«</code>_<code>»</code>"</td>
 	<td>&lt;⤷<code>number+</code>&gt;</td>
 	<td>sum ⤷<code>1 2 3</code></td>
 	<td>match ≥0 of pattern <em>p</em>, pass accumulated arguments as a single tuple</td>
 </tr>
 <tr class="quick-ref">
-	<td><code>«</code><em>p1</em>+‡<em>p2</em><code>»</code></td>
+	<td><code>«</code><em>p1</em>‡<em>p2</em><code>»</code></td>
 	<td>"{⤷<code>«_‡,»</code>}"</td>
 	<td>&lt;⤷<code>any*</code>&gt;</td>
 	<td>{⤷<code>2, 4, 6</code>}</td>
-	<td>match ≥0 (=<em>n</em>) of pattern <em>p1</em> interleaved with <em>n-1</em> occurrences of pattern <em>p2</em>, pass accumulated arguments as a single tuple</td>
+	<td>match <em>n</em>≥0 of pattern <em>p1</em> interleaved with <em>n-1</em> occurrences of pattern <em>p2</em>, pass accumulated arguments as a single tuple</td>
+</tr>
+<tr class="quick-ref">
+	<td><code>«</code><em>p</em><code>»?</code></td>
+	<td>"…#.…#⤷<code>«</code>f<code>»?</code>"</td>
+	<td>&lt;literal token⇒integer, literal token⇒integer, ⤷<code>boolean</code>&gt;</td>
+	<td>6.4⤷ <br><em style="font-size: xx-small">OR</em><br>6.4⤷<code>f</code></td>
+	<td>match 0≤<em>n</em>≤1 occurrence of pattern <em>p</em>, pass <em>n</em>=1 as a boolean</td>
 </tr>
 </tbody>
 </table>
