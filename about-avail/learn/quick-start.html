@@ -1,0 +1,1092 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+<!--#include virtual="/_include/sh-head.ssi" -->
+	
+		<title>Avail - Quick Start</title>
+		<style>
+			table.quick-ref
+			{
+				background: linear-gradient(to right, rgb(242, 242, 242), rgb(252, 252, 252));
+				width: 100%;
+			}
+			tr.header
+			{
+				background: white;
+				color: black;
+				text-align: left;
+				vertical-align: bottom;
+				font-size: smaller;
+			}
+			tr.quick-ref:nth-child(odd)
+			{
+				color: black;
+				vertical-align: baseline;
+			}
+			tr.quick-ref:nth-child(even)
+			{
+				background: white;
+				color: black;
+				vertical-align: baseline;
+			}
+		</style>
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+
+<h2 class="content-title">Quick Start</h2>
+
+<p>This quick start guide is targeted at experienced programmers who want to get started writing Avail as quickly as possible. No special effort has been expended to ensure that the material herein is suitable for those with a limited or nonexistent programming background. Furthermore, the quick start guide assumes that you have already <a href="/about-avail/download/index.html">installed and configured</a> an Avail environment suitable for development of personal projects, and that you know how to launch the <a href="/about-avail/documentation/workbench.html">workbench</a>.</p>
+
+<p>The quick start guide endeavors to use code patterns as often as possible to engage the phenomenal pattern finding abilities of the human brain. For the fastest possible start, I recommend that you study the code samples to get a feel for the language but skim the text as much as possible, concentrating on the text only when samples don't click for you. You may want to read sections that don't contain code samples more carefully, since these sections are likely to answer technical questions about the language at a high-level. Some sections end with a quick reference subsection; you can generally skip these subsections completely on a first pass.</p>
+
+<h5>Table of Contents</h5>
+
+<ul>
+	<li><a href="#modules">Modules</a>
+	<ul>
+		<li><a href="#modules-anatomy-of-a-module">Anatomy of a Module</a>
+			<ul>
+				<li><a href="#modules-module-header">Module Header</a></li>
+				<li><a href="#modules-module-body">Module Body</a></li>
+			</ul>
+		</li>
+		<li><a href="#modules-using-the-standard-library">Using the Standard Library</a></li>
+	</ul>
+	</li>
+	<li><a href="#tokenization">Tokenization</a>
+	<ul>
+		<li><a href="#tokenization-keyword-tokens">Keyword Tokens</a></li>
+		<li><a href="#tokenization-string-literals">String Literals</a></li>
+		<li><a href="#tokenization-nonnegative-integer-literals">Nonnegative Integer Literals</a></li>
+		<li><a href="#tokenization-operator-tokens">Operator Tokens</a></li>
+		<li><a href="#tokenization-whitespace">Whitespace</a></li>
+		<li><a href="#tokenization-comments">Comments</a></li>
+	</ul>
+	</li>
+	<li><a href="#parsing">Parsing</a></li>
+	<li><a href="#types">Types</a> <small>(<a href="#types-quick-ref">quick ref</a>)</small></li>
+	<li><a href="#literals">Literals</a> <small>(<a href="#literals-quick-ref">quick ref</a>)</small>
+	<ul>
+		<li><a href="#literals-built-in-literals">Built-in Literals</a></li>
+		<li><a href="#literals-floating-point-literals">Floating-point Literals</a></li>
+		<li><a href="#literals-negative-numeric-literals">Negative Numeric Literals</a></li>
+		<li><a href="#literals-boolean-literals">Boolean Literals</a></li>
+	</ul>
+	</li>
+	<li><a href="#constants">Constants</a> <small>(<a href="#constants-quick-ref">quick ref</a>)</small>
+	<ul>
+		<li><a href="#constants-module-constants">Module Constants</a></li>
+		<li><a href="#constants-local-constants">Local Constants</a></li>
+	</ul>
+	</li>
+	<li><a href="#variables">Variables</a> <small>(<a href="#variables-quick-ref">quick ref</a>)</small>
+		<ul>
+		<li><a href="#variables-module-variables">Module Variables</a></li>
+		<li><a href="#variables-local-variables">Local Variables</a></li>
+	</ul>
+	</li>
+	<li><a href="#blocks">Blocks</a> <small>(<a href="#blocks-quick-ref">quick ref</a>)</small>
+	<ul>
+		<li><a href="#blocks-blocks-without-parameters">Blocks without Parameters</a></li>
+		<li><a href="#blocks-blocks-with-parameters">Blocks with Parameters</a></li>
+		<li><a href="#blocks-return-types">Return Types</a></li>
+		<li><a href="#blocks-semicolons">Semicolons</a></li>
+		<li><a href="#blocks-labels">Labels</a></li>
+		<li><a href="#blocks-lexical-closures-and-outers">Lexical Closures and Outers</a></li>
+		<li><a href="#blocks-blocks-in-control-structures">Blocks in Control Structures</a></li>
+		<li><a href="#blocks-evaluating-a-block-immediately">Evaluating a Block Immediately</a></li>
+	</ul>
+	</li>
+	<li><a href="#methods">Methods</a> <small>(<a href="#methods-quick-ref">quick ref</a>)</small>
+	<ul>
+		<li><a href="#methods-message-pattern-language">Message Pattern Language</a></li>
+	</ul>
+	</li>
+</ul>
+
+<h3 id="modules">Modules</h3>
+
+<p><a href="/about-avail/documentation/modules/introduction.html">Modules</a> are where Avail code lives. Modules are organized recursively into roots and <a href="/about-avail/documentation/modules/module-packages.html">packages</a>, and every package is positioned recursively within a root. Modules and packages both end with a <code>.avail</code> file extension, but modules are regular files and packages are directories. Each package contains an eponymous module, called the <strong>representative</strong>, which specifies the exports of that package.</p>
+
+<p>Before you can start coding, you will need to create a root for your own Avail packages and modules. Set the <code>AVAIL_ROOTS</code> environment variable to something like this:</p>
+
+<div class="restricted-width-container"><div class="code-block">myproject=$HOME/.avail/repos/myproject.repo,$HOME/myproject;avail=$HOME/.avail/repos/avail.repo,$INSTALL/src/avail;examples=$HOME/.avail/repos/examples.repo,$INSTALL/src/examples</div></div>
+
+<p>This path contains three (3) module root specifications:</p>
+
+<table class="quick-ref">
+<thead>
+<tr class="header">
+	<th>Root</th>
+	<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="quick-ref">
+	<td><code>avail</code></td>
+	<td>The standard library.</td>
+</tr>
+<tr class="quick-ref">
+	<td><code>examples</code></td>
+	<td>The standard examples.</td>
+</tr>
+<tr class="quick-ref">
+	<td><code>myproject</code></td>
+	<td>Your exploratory project, where your own Avail packages and modules go.</td>
+</tr>
+</tbody>
+</table>
+
+<p>Obviously you can choose another name than <code>myproject</code> or another path than <code>$HOME/myproject</code>. There is no need for the last path component of your root's source path to match the name of the root. For the rest of this guide, I will assume that you called the root <code>myproject</code>.</p>
+
+<p>Once you have updated <code>AVAIL_ROOTS</code>, relaunch the Avail workbench. You can now populate your <code>myproject</code> root with modules and packages. Use a shell or text editor to create a module called <code>"Exploration.avail"</code> directly inside <code>myproject</code>, then switch focus back to the workbench and hit <code>F5</code> (or choose the <code>"Refresh"</code> item from the <code>"Build"</code> menu) to update the module view. You should be able to find <code>Exploration</code> now under your <code>myproject</code> root. You will double-click <code>Exploration</code> whenever you want to recompile it.</p>
+
+<h4 id="modules-anatomy-of-a-module">Anatomy of a Module</h4>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 33">
+<![CDATA[
+/* Everything up to and including the keyword "Body" is the module header. */
+Module "Exploration"
+Uses
+	"Avail"
+Body
+
+/* Everything after the keyword "Body" is the module body. */
+]]>
+</script></div></div>
+
+<h5 id="modules-module-header">Module Header</h5>
+
+<p>The <a href="/about-avail/documentation/modules/module-headers.html">module header</a> specifies linkage information for the module. It supports a small variety of keywords, each of which leads a section. The following sections are most likely to be immediately useful:</p>
+
+<table class="quick-ref">
+<thead>
+<tr class="header">
+	<th>Keyword</th>
+	<th>Section</th>
+	<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="quick-ref">
+	<td><code>Module</code></td>
+	<td><strong><a href="/about-avail/documentation/modules/module-name-section.html">module name section</a></strong></td>
+	<td>Declares the name of the module.</td>
+</tr>
+<tr class="quick-ref">
+	<td><code>Uses</code></td>
+	<td><strong><a href="/about-avail/documentation/modules/private-imports-section.html">private imports section</a></strong></td>
+	<td>Declares the private imports of the module.</td>
+</tr>
+<tr class="quick-ref">
+	<td><code>Extends</code></td>
+	<td><strong><a href="/about-avail/documentation/modules/extended-imports-section.html">extended imports section</a></strong></td>
+	<td>Declares the re-exported imports of the module.</td>
+</tr>
+<tr class="quick-ref">
+	<td><code>Names</code></td>
+	<td><strong><a href="/about-avail/documentation/modules/introduced-names-section.html">introduced names section</a></strong></td>
+	<td>Declares all names introduced and exported by the module.</td>
+</tr>
+<tr class="quick-ref">
+	<td><code>Entries</code></td>
+	<td><strong><a href="/about-avail/documentation/modules/entry-points-section.html">entry points section</a></strong></td>
+	<td>Declares all entry points of the module.</td>
+</tr>
+</tbody>
+</table>
+
+<h5 id="modules-module-body">Module Body</h5>
+
+<p>The <a href="/about-avail/documentation/modules/module-bodies.html">module body</a> is where code lives. When you are experimenting with Avail, you will put your code into the body of your <code>Exploration</code> module.</p>
+
+<h4 id="modules-using-the-standard-library">Using the Standard Library</h4>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 33">
+<![CDATA[
+Module "Using the Standard Library"
+Uses
+	"Avail"
+Body
+]]>
+</script></div></div>
+
+<p>In order to gain access to the native Avail syntax and the extensive functionality of the standard library, be sure to include <code>"Avail"</code> in the <a href="/about-avail/documentation/modules/private-imports-section.html">private imports section</a> of the module header. This section begins with the keyword <code>Uses</code>.</p>
+
+<p>This is very important &mdash; much more important even than including the standard libraries of other programming languages. Since Avail's native syntax is supplied by the standard library, and not built into the compiler, you won't even be able to use literals, define constants, declare variables, or write statements without importing the standard library. So don't forget this critical step.</p>
+
+<h3 id="tokenization">Tokenization</h3>
+
+<p>Module bodies are fully tokenized prior to parsing. The parser operates on tokens to produce unambiguous top-level sends of macros and methods.</p>
+
+<p>There are four (4) types of tokens, described below using <a class="offsite" href="http://www.regular-expressions.info/unicode.html">regular expressions and Unicode categories</a>:</p>
+
+<table class="quick-ref">
+<thead>
+<tr class="header">
+	<th>Token Type</th>
+	<th>Scanning Rule</th>
+</tr>
+</thead>
+<tbody>
+<tr class="quick-ref">
+	<td><a href="#tokenization-keyword-tokens"><em>keyword</em></a></td>
+	<td><code>[\p{L}\p{Nl}][\p{Cf}\p{L}\p{Mc}\p{Mn}\p{Nd}\p{Nl}\p{Pc}]*</code></td>
+</tr>
+<tr class="quick-ref">
+	<td><a href="#tokenization-string-literals"><em>string literal</em></a></td>
+	<td><code>"(?:\\"|[^"])*?"</code></td>
+</tr>
+<tr class="quick-ref">
+	<td><a href="#tokenization-nonnegative-integer-literals"><em>nonnegative integer literal</em></a></td>
+	<td><code>\{Nd}+</code></td>
+</tr>
+<tr class="quick-ref">
+	<td><a href="#tokenization-operator-tokens"><em>operator</em></a></td>
+	<td><code>\P{Cn}</code> (and does not match a previous rule)</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="tokenization-keyword-tokens">Keyword Tokens</h4>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+id
+Jackson5
+日本語
+ᎣᏏᏲ
+]]>
+</script></div></div>
+
+<p>Keyword tokens may be used as identifiers, i.e., names of <a href="#constants">constants</a> and <a href="#variables">variables</a>. Keyword tokens are read greedily.</p>
+
+<h4 id="tokenization-string-literals">String Literals</h4>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+"Hello, world!"
+"Veni, vidi, vici.\n"
+"I met a traveller from an antique land
+	\|Who said: "Two vast and trunkless legs of stone
+	\|Stand in the desert. Near them, on the sand,
+	\|Half sunk, a shattered visage lies, whose frown,
+	\|And wrinkled lip, and sneer of cold command,
+	\|Tell that its sculptor well those passions read
+	\|Which yet survive, stamped on these lifeless things,
+	\|The hand that mocked them and the heart that fed:
+	\|And on the pedestal these words appear:
+	\|'My name is Ozymandias, king of kings:
+	\|Look on my works, ye Mighty, and despair!'
+	\|Nothing beside remains. Round the decay
+	\|Of that colossal wreck, boundless and bare
+	\|The lone and level sands stretch far away."
+]]>
+</script></div></div>
+
+<p>The Avail compiler has built-in support for scanning <a href="/about-avail/documentation/type-system/types-string.html">string literals</a>. String literals are read non-greedily.</p>
+
+<h4 id="tokenization-nonnegative-integer-literals">Nonnegative Integer Literals</h4>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+0
+1
+42
+239458789734587928741827309473586406789573012984902375846783749028401301938716263541253823753904689045769836572745128974
+]]>
+</script></div></div>
+
+<p>The Avail compiler has built-in support for scanning nonnegative integer literals, e.g., those described by the type <code><a href="/about-avail/documentation/type-system/types-extended-integer.html#types-whole-number">whole number</a></code>. Nonnegative integer literals are read greedily, and can therefore denote arbitrarily large finite values, not just ℤ/(2<sup>32</sup>) or ℤ/(2<sup>64</sup>), i.e., the integers modulo 2<sup>32</sup> or 2<sup>64</sup>.</p>
+
+<h4 id="tokenization-operator-tokens">Operator Tokens</h4>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
++
+-
+×
+∂
+]]>
+</script></div></div>
+
+<p>Every other non-whitespace character is scanned as a single operator token, so <code>::=</code> produces three (3) tokens, not one (1).</p>
+
+<h4 id="tokenization-whitespace">Whitespace</h4>
+
+<p>Whitespace (<code>\p{Z}*</code>) is permitted to appear before or after any token, and must appear between two distinct greedily read tokens of the same type in order to distinguish them as separate tokens.</p>
+
+<p>Intervening whitespace is not necessary to distinguish adjacent tokens of different token types.</p>
+
+<p>Tokens carry their leading (<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/444430217.html">"_'s⁇leading whitespace"</a></code>) and trailing whitespace (<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2518714655.html">"_'s⁇trailing whitespace"</a></code>), meaning that macros can react to whitespace if they are so inclined. This is what allows <code>6.4</code> to be recognized as a literal double, but not <code style="white-space: pre">6   . 4</code>. This mechanism allows macros to decide whether whitespace is significant situationally, rather than the compiler enforcing a universal policy.</p>
+
+<h4 id="tokenization-comments">Comments</h4>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+/* This is a comment. */
+/* This is a /* nested comment. */ */
+]]>
+</script></div></div>
+
+<p>Block comments begin with <code>/*</code> and end with <code>*/</code>. Unlike in C, C++, or Java, block comments nest, allowing you to comment out sections of code that happen to contain other block comments. Block comments are permitted wherever whitespace would be permitted.</p>
+
+<p>There are no special end-of-line comments.</p>
+
+<h3 id="parsing">Parsing</h3>
+
+<p>The compiler parses a module body by attempting to convert sequences of tokens into unambiguous top-level sends of <code><a href="/about-avail/documentation/type-system/types-statement.html">statement</a></code>-valued macros and <code><a href="/about-avail/documentation/type-system/types-top.html">⊤</a></code>-valued methods. Whenever such a send is recognized, the compiler evaluates it immediately, allowing it to perform its side effects in the environment of the module undergoing compilation. These side effects are how new Avail elements are introduced, like method definitions, macro definitions, semantic restrictions, grammatical restrictions, etc. Once an Avail element has been introduced, it can be used immediately, i.e., in the next top-level statement.</p>
+
+<h3 id="types">Types</h3>
+
+<p>Avail is <a href="/about-avail/documentation/type-system/types.html">statically typed</a>, and more strongly typed than any traditional programming language. Every value has a most specific type that is distinct from the most specific type of every other value. This type is called the <strong>instance type</strong> (referred to as a singleton type in some programming language literature). For example, <code>5's type</code> and <code>"Hello!"'s type</code> are both instance types.</p>
+
+<p>Explicit type annotations are required for variable declarations and block argument declarations. They are permitted in some other places, like label declarations and return type declarations. Otherwise types are inferred from context.</p>
+
+<p>Every value is an instance of infinitely many types, so Avail trivially supports multiple inheritance. Avail's types are organized into an <a href="/about-avail/documentation/type-system/type-relations.html">algebraic lattice</a>, so any two types have a most specific more general type (the type union) and a most general more specific type (the type intersection).</p>
+
+<p>Every type is denotable in Avail itself, i.e., there are no types intelligible to the compiler which cannot be mentioned explicitly by an Avail programmer. Additionally, every type is itself a value, whose own type is one of Avail's infinitely many <a href="/about-avail/documentation/type-system/metatypes.html">metatypes</a>. Metatypes are organized by the law of metacovariance: given two types <code>A</code> and <code>B</code>, <code>A</code> is a subtype of <code>B</code> iff <code>A's type</code> is a subtype of <code>B's type</code>.</p>
+
+<h5 id="types-quick-ref">Quick Reference</h5>
+
+<table class="quick-ref">
+<thead>
+<tr class="header">
+	<th>Message</th>
+	<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="quick-ref">
+	<td><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special%20Objects/238122053.html">"number"</a></code></td>
+	<td>type shared by all numbers</td>
+</tr>
+<tr class="quick-ref">
+	<td><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special%20Objects/1558086042.html">"integer"</a></code></td>
+	<td>type shared by all finite integers</td>
+</tr>
+<tr class="quick-ref">
+	<td><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special%20Objects/3924891330.html">"float"</a></code></td>
+	<td>type shared by all floats</td>
+</tr>
+<tr class="quick-ref">
+	<td><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special%20Objects/1152411223.html">"double"</a></code></td>
+	<td>type shared by all doubles</td>
+</tr>
+<tr class="quick-ref">
+	<td><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special%20Objects/149560384.html">"boolean"</a></code></td>
+	<td>type shared by <code>true</code> and <code>false</code></td>
+</tr>
+<tr class="quick-ref">
+	<td><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special%20Objects/4241914910.html">"tuple"</a></code></td>
+	<td>type shared by all tuples</td>
+</tr>
+<tr class="quick-ref">
+	<td><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special%20Objects/2052869683.html">"string"</a></code></td>
+	<td>type shared by all strings</td>
+</tr>
+<tr class="quick-ref">
+	<td><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special%20Objects/3016318916.html">"set"</a></code></td>
+	<td>type shared by all sets</td>
+</tr>
+<tr class="quick-ref">
+	<td><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special%20Objects/3238069178.html">"map"</a></code></td>
+	<td>type shared by all maps</td>
+</tr>
+<tr class="quick-ref">
+	<td><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2354691226.html">"_'s⁇type"</a></code></td>
+	<td>get instance type of value</td>
+</tr>
+<tr class="quick-ref">
+	<td><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early%20Enumeration%20Support/2988760413.html">"_'s⁇instance"</a></code></td>
+	<td>get sole instance of instance type</td>
+</tr>
+<tr class="quick-ref">
+	<td><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/595778544.html">"_⊆_"</a></code></td>
+	<td>subtype</td>
+</tr>
+<tr class="quick-ref">
+	<td><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2800898572.html">"_∪_"</a></code></td>
+	<td>union</td>
+</tr>
+<tr class="quick-ref">
+	<td><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2794616015.html">"_∩_"</a></code></td>
+	<td>intersection</td>
+</tr>
+<tr class="quick-ref">
+	<td><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/156781086.html">"_∈_"</a></code></td>
+	<td>instance of</td>
+</tr>
+<tr class="quick-ref">
+	<td><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Casts/1829530275.html">"_`?→_†"</a></code></td>
+	<td>cast</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="literals">Literals</h3>
+
+<p>Unlike traditional programming languages which have fixed syntax for a small variety of literal types, Avail's macros permit values of any data type to be literalized. Macros act on <a href="/about-avail/documentation/type-system/types-phrase.html">phrases</a> at compile time, and can execute arbitrary user code to effect substitutions, thereby allowing any computable value to be literalized. It is therefore not possible to give an exhaustive list of literal formats.</p>
+
+<h4 id="literals-built-in-literals">Built-in Literals</h4>
+
+<p><a href="#string-literals">String literals</a> and <a href="#nonnegative-integer-literals">nonnegative integer literals</a> are the only literal formats built into the compiler.</p>
+
+<h4 id="literals-floating-point-literals">Floating-point Literals</h4>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+11.8
+4.95e12
+9.54e-12
+7.701f
+]]>
+</script></div></div>
+
+<p>Floating-point literals must include the fractional part. Exponential notation is optional. If the literal ends in <code>f</code> <code class="unicode">(U+0066)</code>, then a <a href="/about-avail/documentation/type-system/types-float.html">single-precision floating-point number</a> is indicated; otherwise, a <a href="/about-avail/documentation/type-system/types-double.html">double-precision floating-point number</a> is indicated.</p>
+
+<h4 id="literals-negative-numeric-literals">Negative Numeric Literals</h4>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+-1
+-48.5
+-0.0f
+]]>
+</script></div></div>
+
+<p>Negative numeric literals are constructed using the macro <code class="method">"-_"</code>.</p>
+
+<h4 id="literals-boolean-literals">Boolean Literals</h4>
+
+<p>The <a href="/about-avail/documentation/type-system/types-boolean.html">boolean</a> type comprises the values <code>true</code> and <code>false</code> (written thus).</p>
+
+<h5 id="literals-quick-ref">Quick Reference</h5>
+
+<table class="quick-ref">
+<thead>
+<tr class="header">
+	<th>Message</th>
+	<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="quick-ref">
+	<td><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Literals/1499216551.html">"…#.…#«f»?"</a></code></td>
+	<td>floating-point literal constructor</td>
+</tr>
+<tr class="quick-ref">
+	<td><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Literals/3799419994.html">"…#.…#…"</a></code></td>
+	<td>floating-point literal constructor (positive exponential notation without sign)</td>
+</tr>
+<tr class="quick-ref">
+	<td><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Literals/4256687377.html">"…#.…#e|E«+|-»!…#«f»?"</a></code></td>
+	<td>floating-point literal constructor (positive exponential notation with sign)</td>
+</tr>
+<tr class="quick-ref">
+	<td><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Math/3448065836.html">"-_"</a></code></td>
+	<td>negative numeric literal constructor</td>
+</tr>
+<tr class="quick-ref">
+	<td><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special%20Objects/2445051960.html">"true"</a></code></td>
+	<td>value representing truth</td>
+</tr>
+<tr class="quick-ref">
+	<td><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special%20Objects/4256818863.html">"false"</a></code></td>
+	<td>value representing falsehood</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="constants">Constants</h3>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 38">
+<![CDATA[
+e ::= 2.718281828459045;
+π ::= 3.141592653589793;
+]]>
+</script></div></div>
+
+<p>Avail features a rich collection of immutable data types, and a plethora of persistent operators. It is very natural to bind the results of expressions to constants, thus constant definitions appear much more commonly in Avail code than variable declarations. As the name suggests, constants are written once, upon creation, and never change during their lifetime.</p>
+
+<h4 id="constants-module-constants">Module Constants</h4>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 41">
+<![CDATA[
+evens ::= select each n from 1 to 20 where [n is even];
+odds ::= reject each n from 1 to 20 where [n is even];
+Method "stitch" is [concatenate odds zip evens];
+]]>
+</script></div></div>
+
+<p>If a constant definition appears as a top-level statement, then a module constant is created. This constant can be referenced from any lexically subsequent statement in the module; it never goes out of scope.</p>
+
+<h4 id="constants-local-constants">Local Constants</h4>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 45">
+<![CDATA[
+Method "For last index of_in_ignore exceptions while doing_" is
+[
+	value : any,
+	aTuple : tuple,
+	action : [⊥]→⊤
+|
+	index ::= last index of elem in aTuple where [elem = value];
+	Guard
+	[
+		/* index is available here… */
+		action(index);
+	]
+	intercept
+	[
+		e : exception
+	|
+		/* …and here… */
+	];
+];
+/* …but not here. */
+]]>
+</script></div></div>
+
+<p>If a constant definition appears within a block expression, then a local constant is created. This constant can be referenced from any lexically subsequent statement or expression in the same block. It goes out of scope after the block expression ends.</p>
+
+<h5 id="constants-quick-ref">Quick Reference</h5>
+
+<table class="quick-ref">
+<thead>
+<tr class="header">
+	<th>Message</th>
+	<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="quick-ref">
+	<td><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Origin/1174930601.html">"…::=_;"</a></code></td>
+	<td>constant definition</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="variables">Variables</h3>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 38">
+<![CDATA[
+mimesInFrance : whole number;
+favoriteSong : nonempty string := "Amnesia";
+]]>
+</script></div></div>
+
+<p>Despite Avail's many <a class="offsite" href="http://en.wikipedia.org/wiki/Functional_programming">functional programming</a> features, Avail is an <a class="offsite" href="http://en.wikipedia.org/wiki/Imperative_programming">imperative programming language</a>. As such, it permits the declaration of variables, holders of state that can be written as well as read and can thus change over time.</p>
+
+<p>Variables can be initialized upon declaration. A variable that is not explicitly initialized is deemed <em>unassigned</em> until it is written. Reading from an unassigned variable will raise a <code class="method">cannot-read-unassigned-variable exception</code>.</p>
+
+<h4 id="variables-module-variables">Module Variables</h4>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 41">
+<![CDATA[
+nextStart : natural number := 1;
+Method "next counter" is
+[
+	counter : natural number := nextStart;
+	nextStart := nextStart + 1;
+	[
+		value ::= counter;
+		counter := counter + 1;
+		value
+	]
+];
+]]>
+</script></div></div>
+
+<p>If a variable declaration appears as a top-level statement, then a module variable is created. This variable can be referenced from any lexically subsequent statement in the module; it never goes out of scope.</p>
+
+<h4 id="variables-local-variables">Local Variables</h4>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 53">
+<![CDATA[
+Method "this many_`?" is [count : [0..∞) | true] : boolean;
+Method "How many angels can dance on the head of a pin`?" is
+[
+	angels : whole number := 0;
+	While [this many angels?] do [angels++;];
+	angels
+];
+]]>
+</script></div></div>
+
+<p>If a variable declaration appears within a block expression, then a local variable is created. This variable can be referenced from any lexically subsequent statement or expression in the same block. It goes out of scope after the block expression ends.</p>
+
+<h5 id="variables-quick-ref">Quick Reference</h5>
+
+<table class="quick-ref">
+<thead>
+<tr class="header">
+	<th>Message</th>
+	<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="quick-ref">
+	<td><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Origin/2014612466.html">"…:_†;"</a></code></td>
+	<td>variable declaration</td>
+</tr>
+<tr class="quick-ref">
+	<td><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Origin/3745911864.html">"…:_†:=_;"</a></code></td>
+	<td>variable declaration with initialization</td>
+</tr>
+<tr class="quick-ref">
+	<td><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Origin/2572044834.html">"…"</a></code></td>
+	<td>variable use (just say its name)</td>
+</tr>
+<tr class="quick-ref">
+	<td><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Origin/888846343.html">"…:=_;"</a></code></td>
+	<td>variable assignment</td>
+</tr>
+<tr class="quick-ref">
+	<td><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Variables/2140367658.html">"_↑is assigned"</a></code></td>
+	<td><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special%20Objects/2445051960.html">true</a></code> if variable is assigned</td>
+</tr>
+<tr class="quick-ref">
+	<td><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/3114394705.html">"_↑is unassigned"</a></code></td>
+	<td><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special%20Objects/4256818863.html">false</a></code> if variable is assigned</td>
+</tr>
+<tr class="quick-ref">
+	<td><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early%20Variables/2120577191.html">"Clear_↑"</a></code></td>
+	<td>make variable unassigned</td>
+</tr>
+<tr class="quick-ref">
+	<td><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Variables/3358011626.html">"_↑++"</a></code></td>
+	<td>increment (integer variables only)</td>
+</tr>
+<tr class="quick-ref">
+	<td><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Variables/1153725182.html">"_↑--"</a></code></td>
+	<td>decrement (integer variables only)</td>
+</tr>
+<tr class="quick-ref">
+	<td><code class="method">"cannot-read-unassigned-variable exception"</code></td>
+	<td>raised when reading unassigned variable</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="blocks">Blocks</h3>
+
+<p><a href="/about-avail/documentation/type-system/types-block-phrase.html">Blocks</a> are lexical specifications of <a href="/about-avail/documentation/type-system/types-function.html">functions</a>. A function is a body of code whose execution is deferred until the function is applied (or invoked or executed or called, depending on what terminology is familiar to you).</p>
+
+<h4 id="blocks-blocks-without-parameters">Blocks without Parameters</h4>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+[5 + 5]
+[Print: "Hello, world!\n";]
+[
+	count : natural number := 1;
+	Until [next line from standard input = "quit"] do [count++;];
+	Print:
+		format "Typed \"quit\" in “①” tr‘②’.\n"
+		with
+			count,
+			if count = 1 then ["y"] else ["ies"];
+]
+]]>
+</script></div></div>
+
+<p>Blocks for arity-0 functions (i.e., functions without arguments) are just bodies of code inside <em>left square bracket</em> <code>[</code> <code class="unicode">(U+005B)</code> and <em>right square bracket</em> <code>]</code> <code class="unicode">(U+005D)</code>.</p>
+
+<h4 id="blocks-blocks-with-parameters">Blocks with Parameters</h4>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+[x : integer | x + 5]
+[text : string | Print: text ++ "\n";]
+[
+	magicWord : string,
+	limit : natural number
+|
+	count : natural number := 1;
+	Until [count > limit ∨ next line from standard input = magicWord]
+	do [count++;];
+	If count ≤ limit then
+	[
+		Print:
+			format "Typed “①” in “②” tr‘③’.\n"
+			with
+				magicWord,
+				count,
+				if count = 1 then ["y"] else ["ies"];
+	];
+]
+]]>
+</script></div></div>
+
+<p>Block parameters are separated by <em>commas</em> <code>,</code> <code class="unicode">(U+002C)</code> and appear to the left of a <em>vertical line</em> <code>|</code> <code class="unicode">(U+007C)</code>.</p>
+
+<h4 id="blocks-return-types">Return Types</h4>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+[10 × 10] : 100's type
+[Print: "I produce no return value.\n";] : ⊤
+[Repeat [Print: "I never return at all.\n";]] : ⊥
+[false] : boolean
+]]>
+</script></div></div>
+
+<p>Blocks infer their return types from their final expressions, but you can also annotate the return type of a block explicitly. This annotation is only necessary if you wish to weaken the return type of the block (because the compiler will always infer the strongest possible type).</p>
+
+<p>The return type of a block that ends with a statement is <code><a href="/about-avail/documentation/type-system/types-top.html">⊤</a></code>, Avail's most general type. A return type of <code>⊤</code> means that a block returns control to its caller without producing a value.</p>
+
+<p><code><a href="/about-avail/documentation/type-system/types-bottom.html">⊥</a></code> is Avail's most specific type. A return type of <code>⊥</code> means that a block never returns control to its caller, i.e., because it always raises an exception, loops forever, switches continuations, etc.</p>
+
+<h4 id="blocks-semicolons">Semicolons</h4>
+
+<p>By now you might be confused by the semicolons. When are they needed, and when not?</p>
+
+<p>The body of a block is a series of statements followed by an optional expression. Statements are <code>⊤</code>-valued, and must end with a <em>semicolon</em> <code>;</code> <code class="unicode">(U+003B)</code>. The optional final expression produces a value, and must not end with a semicolon, even if <code>⊥</code>-valued.</p>
+
+<p>Summary: Every "line of code" in a block except the last one definitely ends with a semicolon. If the last "line" is a value-producing expression, then don't put a semicolon after it; otherwise, throw a semicolon in at the end.</p>
+
+<h4 id="blocks-labels">Labels</h4>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+[
+	predicate : []→boolean
+|
+	$loop;
+	If predicate() then
+	[
+		/* continue */
+		Restart loop
+	];
+]
+
+[
+	values : tuple,
+	target : any
+|
+	$body : whole number;
+	For each value, index of values do
+	[
+		If value = target then
+		[
+			/* return */
+			Exit body with index
+		];
+	];
+	0
+] : whole number
+
+[
+	values : tuple,
+	target : any,
+	missing : []→⊤
+|
+	found : whole number;
+	[
+		$body : ⊤;
+		For each value, index of values do
+		[
+			If value = target then
+			[
+				found := index;
+				/* break */
+				Exit body
+			];
+		];
+	]();
+	If found is unassigned then missing;
+]
+]]>
+</script></div></div>
+
+<p>Following the parameters section, an optional label definition is permitted. The label represents a <a href="/about-avail/documentation/type-system/types-continuation.html">continuation</a> that resumes at the top of the block, i.e., the beginning of the applied function. The return type of the label is optional, but should be included whenever you plan to exit the continuation using the label. If omitted, the label return type is assumed to be <code>⊥</code> (because continuations are <a href="/about-avail/documentation/type-system/type-parameterization.html">contravariant</a> by return type).</p>
+
+<p>Defining a label permits use of several transfer-of-control mechanisms:</p>
+
+<table class="quick-ref">
+<thead>
+<tr class="header">
+	<th>Message</th>
+	<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="quick-ref">
+	<td><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/3901860716.html">"Restart_"</a></code></td>
+	<td>Restart the continuation (like traditional <code>continue</code>)</td>
+</tr>
+<tr class="quick-ref">
+	<td><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/311690528.html">"Exit_with_"</a></code></td>
+	<td>Exit the continuation with a specific value (usually like traditional <code>return</code>)</td>
+</tr>
+<tr class="quick-ref">
+	<td><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/480960825.html">"Exit_"</a></code></td>
+	<td>Exit the continuation without producing a value (like traditional <code>break</code>)</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="blocks-lexical-closures-and-outers">Lexical Closures and Outers</h4>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+[
+	magicWord : string,
+	limit : natural number
+|
+	count : natural number := 1;
+	Until [count > limit ∨ next line from standard input = magicWord]
+	do [count++;];
+	If count ≤ limit then
+	[
+		Print:
+			format "Typed “①” in “②” tr‘③’.\n"
+			with
+				magicWord,
+				count,
+				if count = 1 then ["y"] else ["ies"];
+	];
+]
+]]>
+</script></div></div>
+
+<p>Blocks behave as lexical closures of bindings declared in outer scopes. These bindings comprise arguments, labels, primitive failure reasons, local and module constants, and local and module variables. The bindings declared in an outer scope and captured by lexical closure are called <strong>outers</strong>. Mutable outers, i.e., module and local variables, may be rebound (by assignments or other mechanisms).</p>
+
+<h4 id="blocks-blocks-in-control-structures">Blocks in Control Structures</h4>
+
+<p>Because blocks are just lexical specifications of functions, they may appear wherever functions may appear. This means that blocks can occur as arguments to standard control structures, like <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early%20Conditionals/2164012100.html">"If_then_"</a></code> and <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/2864842610.html">"While_do_"</a></code>. This makes Avail ideal for <a class="offsite" href="http://en.wikipedia.org/wiki/Higher-order_programming">higher-order programming</a>.</p>
+
+<p>And because block labels represent continuations, blocks can even be used to implement low-level constructs like loops.</p>
+
+<h4 id="blocks-evaluating-a-block-immediately">Evaluating a Block Immediately</h4>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+[
+	msg ::= "The block runs right away.\n";
+	Print: msg;
+]()
+
+[
+	x : integer,
+	y : integer
+|
+	Print: “x + y” ++ "\n";
+](1, 21)
+]]>
+</script></div></div>
+
+<p>It is sometimes useful to evaluate a block immediately after closing it. This is especially useful when you just want to introduce a new scope for local constants and variables, or when you want to use a label to exit an inner scope without exiting the outermost block.</p>
+
+<h5 id="blocks-quick-ref">Quick Reference</h5>
+
+<table class="quick-ref">
+<thead>
+<tr class="header">
+	<th>Message</th>
+	<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="quick-ref">
+	<td><code class="method" style="white-space: pre"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Origin/766417660.html">"\
+	\|[\
+		\|««…:_†§‡,»`|»?\
+		\|«Primitive…#«(…:_†)»?§;»?\
+		\|«$…«:_†»?;§»?\
+		\|«_!§»\
+		\|«_!»?\
+	\|]\
+	\|«:_†»?\
+	\|«^«_†‡,»»?"</a></code></td>
+	<td>block definition</td>
+</tr>
+<tr class="quick-ref">
+	<td><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special%20Objects/2192401646.html">"function"</a></code></td>
+	<td>type shared by all functions</td>
+</tr>
+<tr class="quick-ref">
+	<td><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/3901860716.html">"Restart_"</a></code></td>
+	<td>Restart the continuation (like traditional <code>continue</code>)</td>
+</tr>
+<tr class="quick-ref">
+	<td><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/311690528.html">"Exit_with_"</a></code></td>
+	<td>Exit the continuation with a specific value (usually like traditional <code>return</code>)</td>
+</tr>
+<tr class="quick-ref">
+	<td><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/480960825.html">"Exit_"</a></code></td>
+	<td>Exit the continuation without producing a value (like traditional <code>break</code>)</td>
+</tr>
+<tr class="quick-ref">
+	<td><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early%20Functions/308711842.html">"_(«_‡,»)"</a></code></td>
+	<td>apply a function (with or without arguments)</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="methods">Methods</h3>
+
+<p>Methods are named operations. Method names are called <strong>messages</strong>. In traditional languages, messages are typically constrained to be standard identifiers. Avail's story is rather different.</p>
+
+<h4 id="methods-message-pattern-language">Message Pattern Language</h4>
+
+<p>Messages are specified using a pattern language that it commonly understood by the various method definers, like <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Very%20Early%20Definers/3752095115.html">"Method_is_"</a></code>. A message teaches the parser how to recognize that some new syntax represents an invocation of the named method. The following chart describes the pattern language of messages, omitting some patterns that are only useful for defining macros:</p>
+
+<table class="quick-ref">
+<thead>
+<tr class="header">
+	<th>Pattern</th>
+	<th>Example Message</th>
+	<th>Example Signature</th>
+	<th>Example Use</th>
+	<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="quick-ref">
+	<td><em>keyword</em></td>
+	<td>"⤷<code>integer</code>"</td>
+	<td>&lt;&gt;</td>
+	<td>⤷<code>integer</code></td>
+	<td>match a keyword token case-sensitively</td>
+</tr>
+<tr class="quick-ref">
+	<td><em>operator</em></td>
+	<td>"⤷<code>∞</code>"</td>
+	<td>&lt;&gt;</td>
+	<td>⤷<code>∞</code></td>
+	<td>match an operator token</td>
+</tr>
+<tr class="quick-ref">
+	<td><code>`</code><em>metacharacter</em></td>
+	<td>"_⤷<code>`!</code>"</td>
+	<td>&lt;[0..∞]&gt;</td>
+	<td>20⤷<code>!</code></td>
+	<td>escape the following metacharacter, disabling its special meaning</td>
+</tr>
+<tr class="quick-ref">
+	<td><em>pattern</em><code>⁇</code></td>
+	<td>"_⤷occurrences<code>⁇</code>of_"</td>
+	<td>&lt;whole number, any&gt;</td>
+	<td>7⤷ of 9 <br><em style="font-size: xx-small">OR</em><br>7⤷<code>occurrences</code>of 9</td>
+	<td>match 0 or 1 occurrence of a pattern</td>
+</tr>
+<tr class="quick-ref">
+	<td><em>pattern</em><code>~</code></td>
+	<td>"«red alert»~"</td>
+	<td>&lt;&gt;</td>
+	<td>red alert<br><em style="font-size: xx-small">OR</em><br>RED ALERT<br><em style="font-size: xx-small">OR</em><br>rEd AlErT<br><em style="font-size: xx-small">OR</em><br><em>etc.</em></td>
+	<td>match a pattern case-insensitively</td>
+</tr>
+<tr class="quick-ref">
+	<td><code>_</code></td>
+	<td>"Print:⤷<code>_</code>"</td>
+	<td>&lt;⤷<code>string</code>&gt;</td>
+	<td>Print: ⤷<code>"Hello!"</code></td>
+	<td>match a type-safe argument expression, pass it as an argument</td>
+</tr>
+<tr class="quick-ref">
+	<td><code>_↑</code></td>
+	<td>"`↑⤷<code>_↑</code>"</td>
+	<td>&lt;⤷<code>variable</code>&gt;</td>
+	<td>↑⤷<code>var</code></td>
+	<td>match a variable use, pass the variable itself as an argument</td>
+</tr>
+<tr class="quick-ref">
+	<td><code>_†</code></td>
+	<td>"_`?→<code>_†</code>"</td>
+	<td>&lt;any, ⤷<code>type</code>&gt;</td>
+	<td>n ?→ ⤷<code>[10..20]</code></td>
+	<td>match a type expression, evaluate it in the module scope, pass result as an argument</td>
+</tr>
+<tr class="quick-ref">
+	<td><code>…</code></td>
+	<td>"⤷<code>…</code>::=_;"</td>
+	<td>&lt;⤷<code>token</code>, expression phrase&gt;</td>
+	<td>⤷<code>x</code> ::= 0;</td>
+	<td>match a keyword token, pass it as an argument</td>
+</tr>
+<tr class="quick-ref">
+	<td><code>…#</code></td>
+	<td>"⤷<code>…#</code>.⤷<code>…#</code>«f»?"</td>
+	<td>&lt;⤷<code>literal token⇒integer</code>, ⤷<code>literal token⇒integer</code>, boolean&gt;</td>
+	<td>⤷<code>6</code>.⤷<code>4</code></td>
+	<td>match a type-safe <a href="#literals-built-in-literals">literal token</a>, pass it as an argument</td>
+</tr>
+<tr class="quick-ref">
+	<td><code>…!</code></td>
+	<td>"¢⤷<code>…!</code>"</td>
+	<td>&lt;⤷<code>token</code>&gt;</td>
+	<td>¢⤷<code>=</code></td>
+	<td>match an operator token, pass it as an argument</td>
+</tr>
+<tr class="quick-ref">
+	<td><code>«</code><em>p</em><code>»</code></td>
+	<td>"sum⤷<code>«_»</code>"</td>
+	<td>&lt;⤷<code>number+</code>&gt;</td>
+	<td>sum ⤷<code>1 2 3</code></td>
+	<td>match ≥0 of pattern <em>p</em>, pass accumulated arguments as a single tuple</td>
+</tr>
+<tr class="quick-ref">
+	<td><code>«</code><em>p1</em>‡<em>p2</em><code>»</code></td>
+	<td>"{⤷<code>«_‡,»</code>}"</td>
+	<td>&lt;⤷<code>any*</code>&gt;</td>
+	<td>{⤷<code>2, 4, 6</code>}</td>
+	<td>match <em>n</em>≥0 of pattern <em>p1</em> interleaved with <em>n-1</em> occurrences of pattern <em>p2</em>, pass accumulated arguments as a single tuple</td>
+</tr>
+<tr class="quick-ref">
+	<td><code>«</code><em>p</em><code>»?</code></td>
+	<td>"…#.…#⤷<code>«f»?</code>"</td>
+	<td>&lt;literal token⇒integer, literal token⇒integer, ⤷<code>boolean</code>&gt;</td>
+	<td>6.4⤷&nbsp;<br><em style="font-size: xx-small">OR</em><br>6.4⤷<code>f</code></td>
+	<td>match 0≤<em>n</em>≤1 occurrence of pattern <em>p</em>, pass <em>n</em>=1 as an argument</td>
+</tr>
+<tr class="quick-ref">
+	<td><code>«</code><em>p</em><code>»#</code></td>
+	<td>"⤷<code>«please‡,»#</code>stop"</td>
+	<td>&lt;⤷<code>whole number</code>&gt;</td>
+	<td>⤷&nbsp;stop <br><em style="font-size: xx-small">OR</em><br>⤷<code>please</code> stop<br><em style="font-size: xx-small">OR</em><br>⤷<code>please, please, please</code> stop</td>
+	<td>match <em>n</em> occurrences of pattern <em>p</em>, pass <em>n</em> as an argument</td>
+</tr>
+</tbody>
+</table>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+<!--#include virtual="/_include/sh-bottom.ssi" -->
+
+	</body>
+
+</html>

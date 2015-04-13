@@ -148,7 +148,11 @@ h5 {
 
 	font-size: 12px;
 }
-
+li > ul, li > ol {
+	/* Eliminate vertical padding around nested lists. */
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+}
 
 /********** HTML-tag-specific style classes **********/
 
