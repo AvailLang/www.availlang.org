@@ -449,7 +449,14 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "pojo constructor", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/1776734978.html", "distinct" : "pojo constructor/avail/Avail/Foundation/Bootstrap/Special Objects/1776734978.html"},
 			{"methodName" : "pojo self type", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/3137372068.html", "distinct" : "pojo self type/avail/Avail/Foundation/Bootstrap/Special Objects/3137372068.html"},
 			{"methodName" : "`↑_", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/1908539256.html", "distinct" : "`↑_/avail/Avail/Foundation/Bootstrap/Primitives/1908539256.html"},
-			{"methodName" : "any meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/123117495.html", "distinct" : "any meta/avail/Avail/Foundation/Bootstrap/Special Objects/123117495.html"}
+			{"methodName" : "extended integer meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/2190032790.html", "distinct" : "extended integer meta/avail/Avail/Foundation/Bootstrap/Special Objects/2190032790.html"},
+			{"methodName" : "any meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/123117495.html", "distinct" : "any meta/avail/Avail/Foundation/Bootstrap/Special Objects/123117495.html"},
+			{"methodName" : "variable meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/1074882789.html", "distinct" : "variable meta/avail/Avail/Foundation/Bootstrap/Special Objects/1074882789.html"},
+			{"methodName" : "map meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/2940099813.html", "distinct" : "map meta/avail/Avail/Foundation/Bootstrap/Special Objects/2940099813.html"},
+			{"methodName" : "tuple meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/2915683713.html", "distinct" : "tuple meta/avail/Avail/Foundation/Bootstrap/Special Objects/2915683713.html"},
+			{"methodName" : "function meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/3820265869.html", "distinct" : "function meta/avail/Avail/Foundation/Bootstrap/Special Objects/3820265869.html"},
+			{"methodName" : "set meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/2718349551.html", "distinct" : "set meta/avail/Avail/Foundation/Bootstrap/Special Objects/2718349551.html"},
+			{"methodName" : "continuation meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/3936674258.html", "distinct" : "continuation meta/avail/Avail/Foundation/Bootstrap/Special Objects/3936674258.html"}
 		]
 	},
 	{
@@ -1410,6 +1417,17 @@ stacksApp.factory('Categories', function () {
 	},
 	{
 		"selected" : false,
+		"category" : "Standard I/O",
+		"methods" : [
+			{"methodName" : "Mark for_character|characters of read ahead", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/1889419918.html", "distinct" : "Mark for_character|characters of read ahead/avail/Avail/Foundation/Bootstrap/Primitives/1889419918.html"},
+			{"methodName" : "next character", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/2748706928.html", "distinct" : "next character/avail/Avail/Foundation/Bootstrap/Primitives/2748706928.html"},
+			{"methodName" : "Reset to mark", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/1935165025.html", "distinct" : "Reset to mark/avail/Avail/Foundation/Bootstrap/Primitives/1935165025.html"},
+			{"methodName" : "Error:_", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/3191548691.html", "distinct" : "Error:_/avail/Avail/Foundation/Bootstrap/Primitives/3191548691.html"},
+			{"methodName" : "Print:_", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/152740190.html", "distinct" : "Print:_/avail/Avail/Foundation/Bootstrap/Primitives/152740190.html"}
+		]
+	},
+	{
+		"selected" : false,
 		"category" : "IP",
 		"methods" : [
 			{"methodName" : "IPv4 address", "link" : "avail/Avail/IO/Network/Address/2915576881.html", "distinct" : "IPv4 address/avail/Avail/IO/Network/Address/2915576881.html"},
@@ -1629,12 +1647,7 @@ stacksApp.factory('Categories', function () {
 		"methods" : [
 			{"methodName" : "next«value in»⁇_«from standard input»⁇", "link" : "avail/Avail/IO/Standard Input/1998103749.html", "distinct" : "next«value in»⁇_«from standard input»⁇/avail/Avail/IO/Standard Input/1998103749.html"},
 			{"methodName" : "next line«from standard input»⁇", "link" : "avail/Avail/IO/Standard Input/3903660865.html", "distinct" : "next line«from standard input»⁇/avail/Avail/IO/Standard Input/3903660865.html"},
-			{"methodName" : "Mark for_character|characters of read ahead", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/1889419918.html", "distinct" : "Mark for_character|characters of read ahead/avail/Avail/Foundation/Bootstrap/Primitives/1889419918.html"},
-			{"methodName" : "next_character|characters«from standard input»⁇", "link" : "avail/Avail/IO/Standard Input/1322571957.html", "distinct" : "next_character|characters«from standard input»⁇/avail/Avail/IO/Standard Input/1322571957.html"},
-			{"methodName" : "next character", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/2748706928.html", "distinct" : "next character/avail/Avail/Foundation/Bootstrap/Primitives/2748706928.html"},
-			{"methodName" : "Reset to mark", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/1935165025.html", "distinct" : "Reset to mark/avail/Avail/Foundation/Bootstrap/Primitives/1935165025.html"},
-			{"methodName" : "Error:_", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/3191548691.html", "distinct" : "Error:_/avail/Avail/Foundation/Bootstrap/Primitives/3191548691.html"},
-			{"methodName" : "Print:_", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/152740190.html", "distinct" : "Print:_/avail/Avail/Foundation/Bootstrap/Primitives/152740190.html"}
+			{"methodName" : "next_character|characters«from standard input»⁇", "link" : "avail/Avail/IO/Standard Input/1322571957.html", "distinct" : "next_character|characters«from standard input»⁇/avail/Avail/IO/Standard Input/1322571957.html"}
 		]
 	},
 	{
@@ -1955,7 +1968,14 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "pojo constructor", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/1776734978.html", "distinct" : "pojo constructor/avail/Avail/Foundation/Bootstrap/Special Objects/1776734978.html"},
 			{"methodName" : "pojo self type", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/3137372068.html", "distinct" : "pojo self type/avail/Avail/Foundation/Bootstrap/Special Objects/3137372068.html"},
 			{"methodName" : "`↑_", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/1908539256.html", "distinct" : "`↑_/avail/Avail/Foundation/Bootstrap/Primitives/1908539256.html"},
-			{"methodName" : "any meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/123117495.html", "distinct" : "any meta/avail/Avail/Foundation/Bootstrap/Special Objects/123117495.html"}
+			{"methodName" : "extended integer meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/2190032790.html", "distinct" : "extended integer meta/avail/Avail/Foundation/Bootstrap/Special Objects/2190032790.html"},
+			{"methodName" : "any meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/123117495.html", "distinct" : "any meta/avail/Avail/Foundation/Bootstrap/Special Objects/123117495.html"},
+			{"methodName" : "variable meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/1074882789.html", "distinct" : "variable meta/avail/Avail/Foundation/Bootstrap/Special Objects/1074882789.html"},
+			{"methodName" : "map meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/2940099813.html", "distinct" : "map meta/avail/Avail/Foundation/Bootstrap/Special Objects/2940099813.html"},
+			{"methodName" : "tuple meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/2915683713.html", "distinct" : "tuple meta/avail/Avail/Foundation/Bootstrap/Special Objects/2915683713.html"},
+			{"methodName" : "function meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/3820265869.html", "distinct" : "function meta/avail/Avail/Foundation/Bootstrap/Special Objects/3820265869.html"},
+			{"methodName" : "set meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/2718349551.html", "distinct" : "set meta/avail/Avail/Foundation/Bootstrap/Special Objects/2718349551.html"},
+			{"methodName" : "continuation meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/3936674258.html", "distinct" : "continuation meta/avail/Avail/Foundation/Bootstrap/Special Objects/3936674258.html"}
 		]
 	},
 	{
