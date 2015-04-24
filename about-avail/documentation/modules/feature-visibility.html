@@ -102,15 +102,15 @@ z : integer := 5 added to 3;
 
 <p>To the right is a pictorial description of the dependency graph of the modules (including one that will be introduced below). The solid line represents an import through an extended imports section. The dashed lines represent imports through private imports sections.</p>
 
-<p><code class="module">Passive Number Adder</code> introduces and exports <code class="method">"_added to_"</code>. It also provides the initial definition, one that accepts two <code><a href="/about-avail/documentation/type-system/types-number.html">number</a></code>s and answers their sum as a <code>number</code>. Call this definition <code>D<sub>0</sub></code>.</p>
+<p><code class="module">Passive Number Adder</code> introduces and exports <code class="method">"_added to_"</code>. It also provides the initial definition, one that accepts two <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special%20Objects/238122053.html">"number"</a></code>s and answers their sum as a <code>number</code>. Call this definition <code>D<sub>0</sub></code>.</p>
 
-<p><code class="module">Passive Integer Adder</code> imports and re-exports everything from <code class="module">Passive Number Adder</code>, and also adds a definition that specializes <code class="method">"_added to_"</code> to answer an <code><a href="/about-avail/documentation/type-system/types-extended-integer.html">integer</a></code> when the arguments are <code>integer</code>s. Call this definition <code>D<sub>1</sub></code>.</p>
+<p><code class="module">Passive Integer Adder</code> imports and re-exports everything from <code class="module">Passive Number Adder</code>, and also adds a definition that specializes <code class="method">"_added to_"</code> to answer an <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special%20Objects/1558086042.html">"integer"</a></code> when the arguments are <code>integer</code>s. Call this definition <code>D<sub>1</sub></code>.</p>
 
 <div style="float: right;" class="floating-svg-wrapper">
 <!--#include virtual="/_images/modules/feature-visibility.svg" -->
 </div>
 
-<p><code class="module">Passive String Adder</code> imports from <code class="module">Passive Number Adder</code>, and adds a definition that operates on <code><a href="/about-avail/documentation/type-system/types-string.html">string</a></code>s, but does not re-export anything. Call this definition <code>D<sub>2</sub></code>.</p>
+<p><code class="module">Passive String Adder</code> imports from <code class="module">Passive Number Adder</code>, and adds a definition that operates on <code><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special%20Objects/2052869683.html">"string"</a></code>s, but does not re-export anything. Call this definition <code>D<sub>2</sub></code>.</p>
 
 <p><code class="module">Adder User</code> imports from both <code class="module">Passive Integer Adder</code> and <code class="module">Passive String Adder</code>. Its body includes three sends of <code class="method">"_added to_"</code>, one for each of the definitions <code>D<sub>0</sub></code>, <code>D<sub>1</sub></code>, and <code>D<sub>2</sub></code>, introduced in <code class="module">Passive Number Adder</code>, <code class="module">Passive Integer Adder</code>, and <code class="module">Passive String Adder</code>, respectively.</p>
 
