@@ -37,6 +37,11 @@
 				color: black;
 				vertical-align: baseline;
 			}
+			span.here
+			{
+				color: red;
+				font-weight: bold;
+			}
 		</style>
 	</head>
 
@@ -963,7 +968,19 @@ Method "How many angels can dance on the head of a pin`?" is
 
 <h4 id="methods-message-pattern-language">Message Pattern Language</h4>
 
-<p>Messages are specified using a pattern language that it commonly understood by the various method definers, like <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Very%20Early%20Definers/3752095115.html">"Method_is_"</a></code>. A message teaches the parser how to recognize that some new syntax represents an invocation of the named method. The following chart describes the pattern language of messages, omitting some patterns that are only useful for defining macros:</p>
+<p>Messages are specified using a pattern language that it commonly understood by the various method definers, like <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Very%20Early%20Definers/3752095115.html">"Method_is_"</a></code>. A message teaches the parser how to recognize that some new syntax represents an invocation of the named method.</p>
+
+<p>The chart below describes the pattern language of messages, omitting some patterns that are only useful for defining macros.</p>
+
+<ol>
+<li>The <strong>Pattern</strong> column shows a single pattern abstractly, with metacharacters in <code>blue monospace</code>. <strong>Bold</strong> patterns are eponymous and descriptive, i.e., <strong>keyword</strong> stands for a keyword token. <em>Italic</em> patterns are shortened to conserve horizontal space, and elaborated upon in the description.</li>
+<li>The <strong>Example Message</strong> column shows a message that embeds the pattern at least once.</li>
+<li>The <strong>Example Signature</strong> shows the types of the arguments accepted by the method, in their natural order.</li>
+<li>The <strong>Example Use</strong> shows an expression that sends the message.</li>
+<li>The <strong>Description</strong> tersely describes the feature that is activated by using the pattern.</li>
+</ol>
+
+<p>Throughout the chart, the <span class="here">red</span> <em>arrowing pointing downwards then curving rightwards</em> <code>⤷</code> <code class="unicode">(U+2937)</code> indicates the beginning of a <code>blue monospace</code> region that corresponds to the illustrated pattern.</p>
 
 <table class="quick-ref">
 <thead>
@@ -977,109 +994,130 @@ Method "How many angels can dance on the head of a pin`?" is
 </thead>
 <tbody>
 <tr class="quick-ref">
-	<td><em>keyword</em></td>
-	<td>"⤷<code>integer</code>"</td>
+	<td><strong>keyword</strong></td>
+	<td>"<span class="here">⤷</span><code>integer</code>"</td>
 	<td>&lt;&gt;</td>
-	<td>⤷<code>integer</code></td>
+	<td><span class="here">⤷</span><code>integer</code></td>
 	<td>match a keyword token case-sensitively</td>
 </tr>
 <tr class="quick-ref">
-	<td><em>operator</em></td>
-	<td>"⤷<code>∞</code>"</td>
+	<td><strong>operator</strong></td>
+	<td>"<span class="here">⤷</span><code>∞</code>"</td>
 	<td>&lt;&gt;</td>
-	<td>⤷<code>∞</code></td>
+	<td><span class="here">⤷</span><code>∞</code></td>
 	<td>match an operator token</td>
 </tr>
 <tr class="quick-ref">
-	<td><code>`</code><em>metacharacter</em></td>
-	<td>"_⤷<code>`!</code>"</td>
-	<td>&lt;[0..∞]&gt;</td>
-	<td>20⤷<code>!</code></td>
-	<td>escape the following metacharacter, disabling its special meaning</td>
-</tr>
-<tr class="quick-ref">
-	<td><em>pattern</em><code>⁇</code></td>
-	<td>"_⤷occurrences<code>⁇</code>of_"</td>
+	<td><em>p</em><code>⁇</code></td>
+	<td>"_<span class="here">⤷</span><code>occurrences⁇</code>of_"</td>
 	<td>&lt;whole number, any&gt;</td>
-	<td>7⤷ of 9 <br><em style="font-size: xx-small">OR</em><br>7⤷<code>occurrences</code>of 9</td>
-	<td>match 0 or 1 occurrence of a pattern</td>
+	<td>7<span class="here">⤷</span>&nbsp;of 9 <br><em style="font-size: xx-small">OR</em><br>7<span class="here">⤷</span><code>occurrences</code>of 9</td>
+	<td>match 0 or 1 occurrence of a pattern <em>p</em></td>
 </tr>
 <tr class="quick-ref">
-	<td><em>pattern</em><code>~</code></td>
-	<td>"«red alert»~"</td>
+	<td><em>t<sub>1</sub></em><code>|</code>…<code>|</code><em>t<sub>n</sub></em></td>
+	<td>"<span class="here">⤷</span><code>If|if</code>_then_else_"</td>
+	<td>&lt;boolean, []→⊤, []→⊤&gt;</td>
+	<td><span class="here">⤷</span><code>If</code> a ≥ 1 then [a] else [0]<br><em style="font-size: xx-small">OR</em><br><span class="here">⤷</span><code>if</code> a ≥ 1 then [a] else [0]</td>
+	<td>match any token <em>t<sub>1</sub></em> .. <em>t<sub>n</sub></em> of an alternation</td>
+</tr>
+<tr class="quick-ref">
+	<td><code>«</code><em>p<sub>1</sub></em><code>|</code>…<code>|</code><em>p<sub>n</sub></em><code>»</code></td>
+	<td>"<span class="here">⤷</span><code>«a lion|a tiger|a bear|oh my»</code>"</td>
 	<td>&lt;&gt;</td>
-	<td>red alert<br><em style="font-size: xx-small">OR</em><br>RED ALERT<br><em style="font-size: xx-small">OR</em><br>rEd AlErT<br><em style="font-size: xx-small">OR</em><br><em>etc.</em></td>
-	<td>match a pattern case-insensitively</td>
+	<td><span class="here">⤷</span><code>a lion</code><br><em style="font-size: xx-small">OR</em><br><span class="here">⤷</span><code>a tiger</code><br><em style="font-size: xx-small">OR</em><br><span class="here">⤷</span><code>a bear</code><br><em style="font-size: xx-small">OR</em><br><span class="here">⤷</span><code>oh my</code></td>
+	<td>match any pattern <em>p<sub>1</sub></em> .. <em>p<sub>n</sub></em> of an alternation</td>
+</tr>
+<tr class="quick-ref">
+	<td><em>p</em><code>~</code></td>
+	<td>"<code>«red alert»~"</code></td>
+	<td>&lt;&gt;</td>
+	<td><span class="here">⤷</span><code>red alert</code><br><em style="font-size: xx-small">OR</em><br><span class="here">⤷</span><code>RED ALERT</code><br><em style="font-size: xx-small">OR</em><br><span class="here">⤷</span><code>rEd AlErT</code><br><em style="font-size: xx-small">OR</em><br><em>etc.</em></td>
+	<td>match a pattern <em>p</em> case-insensitively</td>
 </tr>
 <tr class="quick-ref">
 	<td><code>_</code></td>
-	<td>"Print:⤷<code>_</code>"</td>
-	<td>&lt;⤷<code>string</code>&gt;</td>
-	<td>Print: ⤷<code>"Hello!"</code></td>
+	<td>"Print:<span class="here">⤷</span><code>_</code>"</td>
+	<td>&lt;<span class="here">⤷</span><code>string</code>&gt;</td>
+	<td>Print: <span class="here">⤷</span><code>"Hello!"</code></td>
 	<td>match a type-safe argument expression, pass it as an argument</td>
 </tr>
 <tr class="quick-ref">
 	<td><code>_↑</code></td>
-	<td>"`↑⤷<code>_↑</code>"</td>
-	<td>&lt;⤷<code>variable</code>&gt;</td>
-	<td>↑⤷<code>var</code></td>
+	<td>"`↑<span class="here">⤷</span><code>_↑</code>"</td>
+	<td>&lt;<span class="here">⤷</span><code>variable</code>&gt;</td>
+	<td>↑<span class="here">⤷</span><code>var</code></td>
 	<td>match a variable use, pass the variable itself as an argument</td>
 </tr>
 <tr class="quick-ref">
 	<td><code>_†</code></td>
 	<td>"_`?→<code>_†</code>"</td>
-	<td>&lt;any, ⤷<code>type</code>&gt;</td>
-	<td>n ?→ ⤷<code>[10..20]</code></td>
+	<td>&lt;any, <span class="here">⤷</span><code>type</code>&gt;</td>
+	<td>n ?→ <span class="here">⤷</span><code>[10..20]</code></td>
 	<td>match a type expression, evaluate it in the module scope, pass result as an argument</td>
 </tr>
 <tr class="quick-ref">
 	<td><code>…</code></td>
-	<td>"⤷<code>…</code>::=_;"</td>
-	<td>&lt;⤷<code>token</code>, expression phrase&gt;</td>
-	<td>⤷<code>x</code> ::= 0;</td>
+	<td>"<span class="here">⤷</span><code>…</code>::=_;"</td>
+	<td>&lt;<span class="here">⤷</span><code>token</code>, expression phrase&gt;</td>
+	<td><span class="here">⤷</span><code>x</code> ::= 0;</td>
 	<td>match a keyword token, pass it as an argument</td>
 </tr>
 <tr class="quick-ref">
 	<td><code>…#</code></td>
-	<td>"⤷<code>…#</code>.⤷<code>…#</code>«f»?"</td>
-	<td>&lt;⤷<code>literal token⇒integer</code>, ⤷<code>literal token⇒integer</code>, boolean&gt;</td>
-	<td>⤷<code>6</code>.⤷<code>4</code></td>
+	<td>"<span class="here">⤷</span><code>…#</code>.<span class="here">⤷</span><code>…#</code>«f»?"</td>
+	<td>&lt;<span class="here">⤷</span><code>literal token⇒integer</code>, <span class="here">⤷</span><code>literal token⇒integer</code>, boolean&gt;</td>
+	<td><span class="here">⤷</span><code>6</code>.<span class="here">⤷</span><code>4</code></td>
 	<td>match a type-safe <a href="#literals-built-in-literals">literal token</a>, pass it as an argument</td>
 </tr>
 <tr class="quick-ref">
 	<td><code>…!</code></td>
-	<td>"¢⤷<code>…!</code>"</td>
-	<td>&lt;⤷<code>token</code>&gt;</td>
-	<td>¢⤷<code>=</code></td>
+	<td>"¢<span class="here">⤷</span><code>…!</code>"</td>
+	<td>&lt;<span class="here">⤷</span><code>token</code>&gt;</td>
+	<td>¢<span class="here">⤷</span><code>=</code></td>
 	<td>match an operator token, pass it as an argument</td>
 </tr>
 <tr class="quick-ref">
 	<td><code>«</code><em>p</em><code>»</code></td>
-	<td>"sum⤷<code>«_»</code>"</td>
-	<td>&lt;⤷<code>number+</code>&gt;</td>
-	<td>sum ⤷<code>1 2 3</code></td>
+	<td>"sum<span class="here">⤷</span><code>«_»</code>"</td>
+	<td>&lt;<span class="here">⤷</span><code>number+</code>&gt;</td>
+	<td>sum <span class="here">⤷</span><code>1 2 3</code></td>
 	<td>match ≥0 of pattern <em>p</em>, pass accumulated arguments as a single tuple</td>
 </tr>
 <tr class="quick-ref">
 	<td><code>«</code><em>p1</em>‡<em>p2</em><code>»</code></td>
-	<td>"{⤷<code>«_‡,»</code>}"</td>
-	<td>&lt;⤷<code>any*</code>&gt;</td>
-	<td>{⤷<code>2, 4, 6</code>}</td>
+	<td>"{<span class="here">⤷</span><code>«_‡,»</code>}"</td>
+	<td>&lt;<span class="here">⤷</span><code>any*</code>&gt;</td>
+	<td>{<span class="here">⤷</span><code>2, 4, 6</code>}</td>
 	<td>match <em>n</em>≥0 of pattern <em>p1</em> interleaved with <em>n-1</em> occurrences of pattern <em>p2</em>, pass accumulated arguments as a single tuple</td>
 </tr>
 <tr class="quick-ref">
 	<td><code>«</code><em>p</em><code>»?</code></td>
-	<td>"…#.…#⤷<code>«f»?</code>"</td>
-	<td>&lt;literal token⇒integer, literal token⇒integer, ⤷<code>boolean</code>&gt;</td>
-	<td>6.4⤷&nbsp;<br><em style="font-size: xx-small">OR</em><br>6.4⤷<code>f</code></td>
+	<td>"…#.…#<span class="here">⤷</span><code>«f»?</code>"</td>
+	<td>&lt;literal token⇒integer, literal token⇒integer, <span class="here">⤷</span><code>boolean</code>&gt;</td>
+	<td>6.4<span class="here">⤷</span>&nbsp;<br><em style="font-size: xx-small">OR</em><br>6.4<span class="here">⤷</span><code>f</code></td>
 	<td>match 0≤<em>n</em>≤1 occurrence of pattern <em>p</em>, pass <em>n</em>=1 as an argument</td>
 </tr>
 <tr class="quick-ref">
 	<td><code>«</code><em>p</em><code>»#</code></td>
-	<td>"⤷<code>«please‡,»#</code>stop"</td>
-	<td>&lt;⤷<code>whole number</code>&gt;</td>
-	<td>⤷&nbsp;stop <br><em style="font-size: xx-small">OR</em><br>⤷<code>please</code> stop<br><em style="font-size: xx-small">OR</em><br>⤷<code>please, please, please</code> stop</td>
+	<td>"<span class="here">⤷</span><code>«please‡,»#</code>stop"</td>
+	<td>&lt;<span class="here">⤷</span><code>whole number</code>&gt;</td>
+	<td><span class="here">⤷</span>&nbsp;stop <br><em style="font-size: xx-small">OR</em><br><span class="here">⤷</span><code>please</code> stop<br><em style="font-size: xx-small">OR</em><br><span class="here">⤷</span><code>please, please, please</code> stop</td>
 	<td>match <em>n</em> occurrences of pattern <em>p</em>, pass <em>n</em> as an argument</td>
+</tr>
+<tr class="quick-ref">
+	<td><code>«</code><em>p<sub>1</sub></em><code>|</code>…<code>|</code><em>p<sub>n</sub></em><code>»!</code></td>
+	<td>"<span class="here">⤷</span><code>«a lion|a tiger|a bear|oh my»!</code>"</td>
+	<td>&lt;<span class="here">⤷</span><code>[1..4]</code>&gt;</td>
+	<td><span class="here">⤷</span><code>a lion</code><br><em style="font-size: xx-small">OR</em><br><span class="here">⤷</span><code>a tiger</code><br><em style="font-size: xx-small">OR</em><br><span class="here">⤷</span><code>a bear</code><br><em style="font-size: xx-small">OR</em><br><span class="here">⤷</span><code>oh my</code></td>
+	<td>match any pattern <em>p<sub>1</sub></em> .. <em>p<sub>n</sub></em> of an alternation, pass the pattern's ordinal</td>
+</tr>
+<tr class="quick-ref">
+	<td><code>`</code><em>m</em></td>
+	<td>"Yes<span class="here">⤷</span><code>`…</code><span class="here">⤷</span><code>`?</code>"</td>
+	<td>&lt;&gt;</td>
+	<td><code>Yes<span class="here">⤷</span>…</code><span class="here">⤷</span>?</td>
+	<td>escape the following metacharacter <em>m</em>, disabling its special meaning (otherwise <code>…</code> and <code>?</code> each would have had special meaning)</td>
 </tr>
 </tbody>
 </table>
