@@ -87,6 +87,7 @@
 		<li><a href="#literals-floating-point-literals">Floating-point Literals</a></li>
 		<li><a href="#literals-negative-numeric-literals">Negative Numeric Literals</a></li>
 		<li><a href="#literals-boolean-literals">Boolean Literals</a></li>
+		<li><a href="#literals-null-literals">Null Literals?</a></li>
 	</ul>
 	</li>
 	<li><a href="#constants">Constants</a> <small>(<a href="#constants-quick-ref">quick ref</a>)</small>
@@ -116,6 +117,8 @@
 	<li><a href="#methods">Methods</a> <small>(<a href="#methods-quick-ref">quick ref</a>)</small>
 	<ul>
 		<li><a href="#methods-message-pattern-language">Message Pattern Language</a></li>
+		<li><a href="#methods-method-overriding">Message Overriding</a></li>
+		<li><a href="#methods-method-dispatch">Message Dispatch</a></li>
 	</ul>
 	</li>
 </ul>
@@ -486,6 +489,10 @@ Jackson5
 
 <p>The <a href="/about-avail/documentation/type-system/types-boolean.html">boolean</a> type comprises the values <code>true</code> and <code>false</code> (written thus).</p>
 
+<h4 id="literals-null-literals">Null Literals?</h4>
+
+<p>Avail does not expose a null value for use by a programmer. An unassigned variable can be used for a similar purpose, but it does not travel as conveniently as a traditional null.</p>
+
 <h5 id="literals-quick-ref">Quick Reference</h5>
 
 <table class="quick-ref">
@@ -608,6 +615,8 @@ favoriteSong : nonempty string := "Amnesia";
 <p>Despite Avail's many <a class="offsite" href="http://en.wikipedia.org/wiki/Functional_programming">functional programming</a> features, Avail is an <a class="offsite" href="http://en.wikipedia.org/wiki/Imperative_programming">imperative programming language</a>. As such, it permits the declaration of variables, holders of state that can be written as well as read and can thus change over time.</p>
 
 <p>Variables can be initialized upon declaration. A variable that is not explicitly initialized is deemed <em>unassigned</em> until it is written. Reading from an unassigned variable will raise a <code class="method">cannot-read-unassigned-variable exception</code>.</p>
+
+<p>An unassigned variable can be used for a purpose similar to a traditional null value (which Avail does not support).</p>
 
 <h4 id="variables-module-variables">Module Variables</h4>
 
@@ -752,7 +761,7 @@ Method "How many angels can dance on the head of a pin`?" is
 ]]>
 </script></div></div>
 
-<p>Block parameters are separated by <em>commas</em> <code>,</code> <code class="unicode">(U+002C)</code> and appear to the left of a <em>vertical line</em> <code>|</code> <code class="unicode">(U+007C)</code>.</p>
+<p>Block parameters are separated by <em>commas</em> <code>,</code> <code class="unicode">(U+002C)</code> and precede a <em>vertical line</em> <code>|</code> <code class="unicode">(U+007C)</code>.</p>
 
 <h4 id="blocks-return-types">Return Types</h4>
 
@@ -973,11 +982,11 @@ Method "How many angels can dance on the head of a pin`?" is
 <p>The chart below describes the pattern language of messages, omitting some patterns that are only useful for defining macros.</p>
 
 <ol>
-<li>The <strong>Pattern</strong> column shows a single pattern abstractly, with metacharacters in <code>blue monospace</code>. <strong>Bold</strong> patterns are eponymous and descriptive, i.e., <strong>keyword</strong> stands for a keyword token. <em>Italic</em> patterns are shortened to conserve horizontal space, and elaborated upon in the description.</li>
-<li>The <strong>Example Message</strong> column shows a message that embeds the pattern at least once.</li>
-<li>The <strong>Example Signature</strong> shows the types of the arguments accepted by the method, in their natural order.</li>
-<li>The <strong>Example Use</strong> shows an expression that sends the message.</li>
-<li>The <strong>Description</strong> tersely describes the feature that is activated by using the pattern.</li>
+	<li>The <strong>Pattern</strong> column shows a single pattern abstractly, with metacharacters in <code>blue monospace</code>. <strong>Bold</strong> patterns are eponymous and descriptive, i.e., <strong>keyword</strong> stands for a keyword token. <em>Italic</em> patterns are shortened to conserve horizontal space, and elaborated upon in the description.</li>
+	<li>The <strong>Example Message</strong> column shows a message that embeds the pattern at least once.</li>
+	<li>The <strong>Example Signature</strong> shows the types of the arguments accepted by the method, in their natural order.</li>
+	<li>The <strong>Example Use</strong> shows an expression that sends the message.</li>
+	<li>The <strong>Description</strong> tersely describes the feature that is activated by using the pattern.</li>
 </ol>
 
 <p>Throughout the chart, the <span class="here">red</span> <em>arrowing pointing downwards then curving rightwards</em> <code>⤷</code> <code class="unicode">(U+2937)</code> indicates the beginning of a <code>blue monospace</code> region that corresponds to the illustrated pattern.</p>
@@ -1030,7 +1039,7 @@ Method "How many angels can dance on the head of a pin`?" is
 </tr>
 <tr class="quick-ref">
 	<td><em>p</em><code>~</code></td>
-	<td>"<code>«red alert»~"</code></td>
+	<td>"<span class="here">⤷</span><code>«red alert»~"</code></td>
 	<td>&lt;&gt;</td>
 	<td><span class="here">⤷</span><code>red alert</code><br><em style="font-size: xx-small">OR</em><br><span class="here">⤷</span><code>RED ALERT</code><br><em style="font-size: xx-small">OR</em><br><span class="here">⤷</span><code>rEd AlErT</code><br><em style="font-size: xx-small">OR</em><br><em>etc.</em></td>
 	<td>match a pattern <em>p</em> case-insensitively</td>
@@ -1110,7 +1119,7 @@ Method "How many angels can dance on the head of a pin`?" is
 	<td>"<span class="here">⤷</span><code>«a lion|a tiger|a bear|oh my»!</code>"</td>
 	<td>&lt;<span class="here">⤷</span><code>[1..4]</code>&gt;</td>
 	<td><span class="here">⤷</span><code>a lion</code><br><em style="font-size: xx-small">OR</em><br><span class="here">⤷</span><code>a tiger</code><br><em style="font-size: xx-small">OR</em><br><span class="here">⤷</span><code>a bear</code><br><em style="font-size: xx-small">OR</em><br><span class="here">⤷</span><code>oh my</code></td>
-	<td>match any pattern <em>p<sub>1</sub></em> .. <em>p<sub>n</sub></em> of an alternation, pass the pattern's ordinal</td>
+	<td>match any pattern <em>p<sub>1</sub></em> .. <em>p<sub>n</sub></em> of an alternation, pass the pattern's ordinal, e.g., 1 for <code>a lion</code>, 2 for <code>a tiger</code>, etc.</td>
 </tr>
 <tr class="quick-ref">
 	<td><code>`</code><em>m</em></td>
@@ -1121,6 +1130,62 @@ Method "How many angels can dance on the head of a pin`?" is
 </tr>
 </tbody>
 </table>
+
+<h4 id="methods-method-overriding">Method Overriding</h4>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 60">
+<![CDATA[
+Method "compare_and_" is
+[
+	a : number,
+	b : number
+|
+	a - b
+];
+
+Method "compare_and_" is
+[
+	a : apple,
+	o : orange
+|
+	a's fruitiness - (o's fruitiness + 10)
+];
+
+Print: “compare 5 and 10” ++ "\n";
+Print: “compare an apple and an orange” ++ "\n";
+]]>
+</script></div></div>
+
+<p>The ordering of a method's parameter types is called its <strong>signature</strong>. Methods can be overridden for any combination of parameter types. The names of the parameters are not considered part of the method's signature.</p>
+
+<h4 id="methods-method-dispatch">Method Dispatch</h4>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 97">
+<![CDATA[
+Method "compare_and_" is
+[
+	a : moldy apple,
+	o : orange
+|
+	a's fruitiness - (o's fruitiness + 100)
+];
+
+Method "compare_and_" is
+[
+	a : moldy apple,
+	o : succulent orange
+|
+	a's fruitiness - (o's fruitiness + 1000)
+];
+
+Print: “compare a moldy apple and an orange” ++ "\n";
+Print: “compare a moldy apple and a succulent orange” ++ "\n";
+]]>
+</script></div></div>
+
+<p>Every argument of a message send participates in the resolution of a method. The method definition selected is the most specific definition available for the supplied combination of arguments. If no method definition is uniquely most specific at runtime, then the dispatch mechanism raises an <code>ambiguous-method-definition exception</code>.</p>
 
 <!--#include virtual="/_include/body-bottom.ssi" -->
 <!--#include virtual="/_include/sh-bottom.ssi" -->
