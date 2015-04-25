@@ -806,7 +806,18 @@ Run [a ::= 5;
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
 <![CDATA[
 ! quicksort <3,6,1,6,8,2,1,9>
+! quicksort n, m in <3,6,1,6,8,2,1,9> by [n > m]
+! quicksort a, b in <"ada", "fousfa", "zgfsat"> by [a > b]
 ! merge sort <3,6,1,6,8,2,1,9>
+! merge sort n, m in <3,6,1,6,8,2,1,9> by [n > m]
+! merge sort <"ada", "fousfa", "zgfsat">
+! merge sort a, b in <¢a, ¢b, ¢z, ¢U, ¢c> by [a's code point ≥ b's code point]
+! merge sort n, m in <14,4,6,1,2,3,20,18,19,17,16,15,12,13,5,7,8,9,10,11> by
+[
+	(n is odd ∧ m is even)
+		∨ (n is odd ∧ m is odd ∧ n ≤ m)
+		∨ (n is even ∧ m is even ∧ n ≥ m)
+]
 ]]>
 </script></div></div>
 
@@ -814,12 +825,14 @@ Run [a ::= 5;
 <li>
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Tuples/2662703844.html">"quicksort_"</a></code>
 </li>
+<li><code>"quicksort…,…in|of_§by_"</code></li>
 <li>
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Tuples/975529423.html">"quicksort_with_"</a></code>
 </li>
 <li>
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Tuples/1034928887.html">"merge sort_"</a></code>
 </li>
+<li><code>"merge sort…,…in|of_§by_"</code></li>
 <li>
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Tuples/3002682086.html">"merge sort_with_"</a></code>
 </li>
