@@ -10,7 +10,13 @@
 	
 <!--#include virtual="/_include/head.ssi" -->
 <!--#include virtual="/_include/sh-head.ssi" -->
+<style>
+ul {list-style-type: none;}
+table{ 
+margin-left: 50px;
+}
 
+</style>
 	
 		<title>Avail Documentation - Expression Cookbook</title>
 	
@@ -36,6 +42,8 @@
 
 <table style="width: 100%">
 <tr>
+<td><a href="#logic">Logic</a></td>
+<td><a href="#math">Math</a></td>
 <td><a href="#conditionals">Conditionals</a></td>
 <td><a href="#maps">Maps</a></td>
 <td><a href="#sets">Sets</a></td>
@@ -45,6 +53,233 @@
 </table>
 
 <hr/>
+
+<h3 id="logic"><a href="/about-avail/documentation/type-system/types-map.html">Logic</a></h3>
+<h4 id="and-or">What are the basic logical operators?</h4>
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! ¬true
+! true ∧ true
+! true ∧ false
+! false ∨ true
+! false ∨ false
+! true ↑ false
+! true ↑ true
+! true ↓ false
+! true ⊕ false
+! true ⊕ true
+! false ∨ true ∧ true ⊕ false
+]]>
+</script></div></div>
+<div class="restricted-width-container">
+<table style="width:100%">
+<tr>
+	<td>
+	&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early%20Logic/4288642529.html">"_∧_"</a></code>
+	</td>
+	<td>
+	&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early%20Logic/3489868414.html">"_∨_"</a></code>
+	</td>
+	<td>
+	&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Logic/995828215.html">"_`↑_"</a></code>
+	</td>
+	<td>
+	&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Logic/1984994613.html">"_↓_"</a></code>
+	</td>
+</tr>
+<tr>
+	<td>
+	&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early%20Logic/2497675543.html">"¬_"</a></code>
+	</td>
+	<td>
+	&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Logic/4049228147.html">"_⊕_"</a></code>
+	</td>
+	<td>
+	&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Logic/4230016284.html">"_↚_"</a></code>
+	</td>
+	<td>
+	&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Logic/1932239341.html">"_↛_"</a></code>
+	</td>
+</tr>
+<tr>
+	<td>
+	&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Logic/1541788374.html">"_←_"</a></code>
+	</td>
+	<td>
+	&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Logic/4173156580.html">"_→_"</a></code>
+	</td>
+	<td>
+	&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Logic/3898701666.html">"_↔_"</a></code>
+	</td>
+</tr>
+</table>
+</div>
+
+<h3 id="math"><a href="/about-avail/documentation/type-system/types-map.html">Math</a></h3>
+<h4 id="arithmetic">How do I do arithmetic?</h4>
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! 5 + 7 × 8 - 4 ÷ -2
+! (5 + 7 × 8 - 4) ÷ -2
+! 5 + 7 × 8 - 40 ÷ -2 ^ 3
+! 27 mod 4
+]]>
+</script></div></div>
+<div class="restricted-width-container">
+<table style="width:100%">
+<tr>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/648752861.html">"_+_"</a></code>
+</td>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2124146203.html">"_-_"</a></code>
+</td>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/3313719281.html">"_×_"</a></code>
+</td>
+</tr>
+<tr>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/1074891985.html">"_÷_"</a></code>
+</td>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/3969385240.html">"_^_"</a></code>
+</td>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/3008545014.html">"_mod_"</a></code>
+</td>
+</tr>
+</table>
+</div>
+
+<h4 id="comparison-operators">What are the comparison operators?</h4>
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! 3 ≤ 8
+! 5 = 6
+! 4 ≥ -10035
+! 14 < 7
+! 120 ÷ 3 > 39 
+]]>
+</script></div></div>
+<div class="restricted-width-container">
+<table style="width:100%">
+<tr>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early%20Math/2967698744.html">"_&gt;_"</a></code>
+</td>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/1297982970.html">"_&lt;_"</a></code>
+</td>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/505623499.html">"_=_"</a></code>
+</td>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/4036131282.html">"_≤_"</a></code>
+</td>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early%20Math/7923043.html">"_≥_"</a></code>
+</td>
+</tr>
+</table>
+</div>
+
+
+<h4 id="other-math">What other math operations are available?</h4>
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! greatest common denominator of 126720 and 131040
+! least common multiple of 80 and 44
+! ln 10
+! log 2 of 35184372088832
+! max <5,7,1,3,9>
+! min <5,7,2,3,9>
+! 25!
+! ∑ <1,2,3,4,5,6,7,8,9,10>
+! ∏ <6,7,8,9,10>
+]]>
+</script></div></div>
+<div class="restricted-width-container">
+<table style="width:70%">
+<tr>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Math/2822996678.html">"greatest common denominator of_and_"</a></code>
+</td>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2320386797.html">"ln_"</a></code>
+</td>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Math/645089633.html">"log_of_"</a></code>
+</td>
+</tr>
+<tr>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Math/4074134856.html">"least common multiple of_and_"</a></code>
+</td>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early%20Math/3092696039.html">"min_"</a></code>
+</td>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early%20Math/3639607389.html">"max_"</a></code>
+</td>
+</tr>
+<tr>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Advanced%20Math/Combinatorics/2197987420.html">"_`!"</a></code>
+</td>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Tuples/3186114408.html">"∑_"</a></code>
+</td>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Tuples/2662426946.html">"∏_"</a></code>
+</td>
+</tr>
+</table>
+</div>
+
+<h4 id="other-math">How do I do bitwise operations?</h4>
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! 1 << 5
+! 32 >> 5
+! 3 << 1 keeping 2 bits
+! 22133 bit∧ 172351
+! 357 bit∨ 536
+! 4 bit⊕ 6
+]]>
+</script></div></div>
+<div class="restricted-width-container">
+<table style="width:100%">
+<tr>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2119957638.html">"_&gt;&gt;_"</a></code>
+</td>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/3023668002.html">"_&lt;&lt;_"</a></code>
+</td>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/3801614038.html">"_&lt;&lt;_keeping_bits"</a></code>
+</td>
+</tr>
+<tr>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/3972572920.html">"_bit∧_"</a></code>
+</td>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2806988889.html">"_bit∨_"</a></code>
+</td>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/225148658.html">"_bit⊕_"</a></code>
+</td>
+</tr>
+</table>
+</div>
+
 
 <h3 id="conditionals"><a href="/about-avail/documentation/type-system/types-map.html">Conditionals</a></h3>
 <h4 id="if-then-else">How do I build conditionals?</h4>
@@ -85,16 +320,26 @@ Run [a ::= 5; Unless a < 3 then [Print: "no";] else [Print: "yes";];]
 ]]>
 </script></div></div>
 
-<ul>
-	<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early%20Conditionals/2164012100.html">"If_then_"</a></code></li>
-	<li>
-	<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early%20Conditionals/1215304123.html">"If|if_then_else_"</a></code>
-	</li>
-	<li>
-	<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/2048263859.html">"Unless_then_"</a></code>
-	</li>
-	<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/3805057829.html">"Unless|unless_then_else_"</a></code></li>
-</ul>
+<div class="restricted-width-container">
+<table style="width:100%">
+<tr>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early%20Conditionals/2164012100.html">"If_then_"</a></code>
+</td>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early%20Conditionals/1215304123.html">"If|if_then_else_"</a></code>
+</td>
+</tr>
+<tr>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/2048263859.html">"Unless_then_"</a></code>
+</td>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/3805057829.html">"Unless|unless_then_else_"</a></code>
+</td>
+</tr>
+</table>
+</div>
 
 <h4 id="if-then-else-if">How do I build chained conditionals?</h4>
 <div class="restricted-width-container">
@@ -143,10 +388,20 @@ Run [a ::= 5;
 ]]>
 </script></div></div>
 
-<ul>
-	<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/365211011.html">"If|if_then_«else if_then_»«else_»?"</a></code></li>
-	<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/2378914416.html">"Unless|unless_then_«else unless_then_»«else_»?"</a></code></li>
-</ul>
+<div class="restricted-width-container">
+<table style="width:100%">
+<tr>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/365211011.html">"If|if_then_«else if_then_»«else_»?"</a></code>
+</td>
+</tr>
+<tr>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/2378914416.html">"Unless|unless_then_«else unless_then_»«else_»?"</a></code>
+</td>
+</tr>
+</table>
+</div>
 
 
 <h3 id="maps"><a href="/about-avail/documentation/type-system/types-map.html">Maps</a></h3>
@@ -163,7 +418,9 @@ Run [a ::= 5;
 </script></div></div>
 
 <ul>
-<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Literals/2367902331.html">"{«_→_‡,»}"</a></code></li>
+<li>&#8226;
+<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Literals/2367902331.html">"{«_→_‡,»}"</a></code>
+</li>
 </ul>
 
 <h4 id="map-literal">How do I create a literal map?</h4>
@@ -193,9 +450,10 @@ Run [a ::= 5;
 ]]>
 </script></div></div>
 
-
 <ul>
-<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Literals/2367902331.html">"{«_→_‡,»}"</a></code></li>
+<li>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Literals/2367902331.html">"{«_→_‡,»}"</a></code>
+</li>
 </ul>
 
 <h4 id="map-add-binding">How do I add a binding to a map?</h4>
@@ -219,7 +477,9 @@ Run [a ::= 5;
 </script></div></div>
 
 <ul>
-<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2941105706.html">"_+_→_"</a></code></li>
+<li>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2941105706.html">"_+_→_"</a></code>
+</li>
 </ul>
 
 <h4 id="map-remove-binding">How do I remove a binding from a map?</h4>
@@ -241,7 +501,9 @@ Run [a ::= 5;
 </script></div></div>
 
 <ul>
-<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2124146203.html">"_-_"</a></code></li>
+<li>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2124146203.html">"_-_"</a></code>
+</li>
 </ul>
 
 <h4 id="map-size">How do I get the size / cardinality of a map?</h4>
@@ -254,7 +516,9 @@ Run [a ::= 5;
 </script></div></div>
 
 <ul>
-<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2168035951.html">"`|_`|"</a></code></li>
+<li>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2168035951.html">"`|_`|"</a></code>
+</li>
 </ul>
 
 <h4 id="map-subscript">How do I subscript / index / query a map?</h4>
@@ -279,7 +543,7 @@ Run [a ::= 5;
 
 <ul>
 <li>
-<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2532617994.html">"_[_]"</a></code>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2532617994.html">"_[_]"</a></code>
 </li>
 </ul>
 
@@ -294,7 +558,7 @@ Run [a ::= 5;
 
 <ul>
 <li>
-<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/563792412.html">"_'s⁇keys"</a></code>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/563792412.html">"_'s⁇keys"</a></code>
 </li>
 </ul>
 
@@ -309,7 +573,8 @@ Run [a ::= 5;
 
 <ul>
 <li>
-<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/270566076.html">"_'s⁇values"</a></code></li>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/270566076.html">"_'s⁇values"</a></code>
+</li>
 </ul>
 
 <h4 id="map-bindings">How do I enumerate the bindings of a map?</h4>
@@ -325,7 +590,7 @@ Run [a ::= 5;
 
 <ul>
 <li>
-<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/1782278458.html">"_'s⁇bindings"</a></code>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/1782278458.html">"_'s⁇bindings"</a></code>
 </li>
 </ul>
 
@@ -340,7 +605,7 @@ Run [a ::= 5;
 
 <ul>
 <li>
-<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/156781086.html">"_∈_"</a></code>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/156781086.html">"_∈_"</a></code>
 </li>
 </ul>
 
@@ -357,7 +622,7 @@ Run [a ::= 5;
 
 <ul>
 <li>
-<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special%20Objects/2744570401.html">"∅"</a></code>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special%20Objects/2744570401.html">"∅"</a></code>
 </li>
 </ul>
 
@@ -381,7 +646,7 @@ Run [a ::= 5;
 
 <ul>
 <li>
-<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early%20Literals/869143398.html">"{«_‡,»}"</a></code>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early%20Literals/869143398.html">"{«_‡,»}"</a></code>
 </li>
 </ul>
 
@@ -396,7 +661,7 @@ Run [a ::= 5;
 
 <ul>
 <li>
-<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2168035951.html">"`|_`|"</a></code>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2168035951.html">"`|_`|"</a></code>
 </li>
 </ul>
 
@@ -410,16 +675,20 @@ Run [a ::= 5;
 ]]>
 </script></div></div>
 
-<ul>
-<li>
+<div class="restricted-width-container">
+<table style="width:50%">
+<tr>
+<td>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/648752861.html">"_+_"</a></code>
-</li>
-<li>
+</td>
+<td>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2124146203.html">"_-_"</a></code>
-</li>
-</ul>
+</td>
+</tr>
+</table>
+</div>
 
-<h4 id="set-size">How do I check to see if an element is in a set?</h4>
+<h4 id="set-membership">How do I check to see if an element is in a set?</h4>
 
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
@@ -429,22 +698,26 @@ Run [a ::= 5;
 ]]>
 </script></div></div>
 
-<ul>
-<li>
+<div class="restricted-width-container">
+<table style="width:100%">
+<tr>
+<td>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/156781086.html">"_∈_"</a></code>
-</li>
-<li>
+</td>
+<td>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Collections/4095105007.html">"_∉_"</a></code>
-</li>
-<li>
+</td>
+<td>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Sets/2855935869.html">"_∋_"</a></code>
-</li>
-<li>
+</td>
+<td>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Sets/2150005162.html">"_∌_"</a></code>
-</li>
-</ul>
+</td>
+</tr>
+</table>
+</div>
 
-<h4 id="set-size">How do I test for subset/proper subset of a set?</h4>
+<h4 id="subset">How do I test for subset/proper subset of a set?</h4>
 
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
@@ -454,34 +727,40 @@ Run [a ::= 5;
 ]]>
 </script></div></div>
 
-<ul>
-<li>
+<div class="restricted-width-container">
+<table style="width:100%">
+<tr>
+<td>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Sets/1294107252.html">"_⊂_"</a></code>
-</li>
-<li>
+</td>
+<td>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Sets/2762189234.html">"_⊄_"</a></code>
-</li>
-<li>
+</td>
+<td>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/595778544.html">"_⊆_"</a></code>
-</li>
-<li>
+</td>
+<td>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Types/1457465502.html">"_⊈_"</a></code>
-</li>
-<li>
+</td>
+</tr>
+<tr>
+<td>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Sets/563172975.html">"_⊉_"</a></code>
-</li>
-<li>
+</td>
+<td>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Sets/1785948801.html">"_⊇_"</a></code>
-</li>
-<li>
+</td>
+<td>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Sets/3081759941.html">"_⊃_"</a></code>
-</li>
-<li>
+</td>
+<td>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Sets/4219477571.html">"_⊅_"</a></code>
-</li>
-</ul>
+</td>
+</tr>
+</table>
+</div>
 
-<h4 id="set-size">How do I calculate the set union/intersection/symmetric difference?</h4>
+<h4 id="set-union-intersection">How do I calculate the set union/intersection/symmetric difference?</h4>
 
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
@@ -493,17 +772,21 @@ Run [a ::= 5;
 ]]>
 </script></div></div>
 
-<ul>
-<li>
+<div class="restricted-width-container">
+<table style="width:100%">
+<tr>
+<td>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2794616015.html">"_∩_"</a></code>
-</li>
-<li>
+</td>
+<td>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2800898572.html">"_∪_"</a></code>
-</li>
-<li>
+</td>
+<td>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Sets/542060898.html">"_Δ_"</a></code>
-</li>
-</ul>
+</td>
+</tr>
+</table>
+</div>
 
 
 <h4 id="set-size">How do I create a set from a tuple?</h4>
@@ -517,10 +800,9 @@ Run [a ::= 5;
 
 <ul>
 <li>
-<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2997758481.html">"_→set"</a></code>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2997758481.html">"_→set"</a></code>
 </li>
 </ul>
-
 
 <h3 id="tuples"><a href="/about-avail/documentation/type-system/types-tuple.html">Tuples</a></h3>
 
@@ -539,10 +821,9 @@ Run [a ::= 5;
 
 <ul>
 <li>
-<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early%20Literals/219614880.html">"&lt;«_‡,»&gt;"</a></code>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early%20Literals/219614880.html">"&lt;«_‡,»&gt;"</a></code>
 </li>
 </ul>
-
 
 <h4 id="tuple-literal">How do I create a literal tuple?</h4>
 
@@ -564,7 +845,7 @@ Run [a ::= 5;
 
 <ul>
 <li>
-<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early%20Literals/219614880.html">"&lt;«_‡,»&gt;"</a></code>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early%20Literals/219614880.html">"&lt;«_‡,»&gt;"</a></code>
 </li>
 </ul>
 
@@ -593,11 +874,16 @@ Run [a ::= 5;
 ]]>
 </script></div></div>
 
-<ul>
-<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Tuples/4051761149.html">"_to_"</a></code>
-</li>
-<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/3588900467.html">"_to_by_"</a></code></li>
-</ul>
+<div class="restricted-width-container">
+<table style="width:100%">
+<tr>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Tuples/4051761149.html">"_to_"</a></code>
+</td>
+<td>&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/3588900467.html">"_to_by_"</a></code></td>
+</tr>
+</table>
+</div>
 
 <h4 id="tuple-size">How do I get the size / length / cardinality of a tuple?</h4>
 
@@ -616,7 +902,9 @@ Run [a ::= 5;
 </script></div></div>
 
 <ul>
-<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2168035951.html">"`|_`|"</a></code></li>
+<li>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2168035951.html">"`|_`|"</a></code>
+</li>
 </ul>
 
 
@@ -645,10 +933,14 @@ Run [a ::= 5;
 ]]>
 </script></div></div>
 
-<ul>
-<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2532617994.html">"_[_]"</a></code></li>
-<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Collections/4170018326.html">"_[_]else_"</a></code></li>
-</ul>
+<div class="restricted-width-container">
+<table style="width:100%">
+<tr>
+<td>&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2532617994.html">"_[_]"</a></code></td>
+<td>&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Collections/4170018326.html">"_[_]else_"</a></code></td>
+</tr>
+</table>
+</div>
 
 <h4 id="tuple-subscript-replace">How do I replace the element at the specified subscript of a tuple?</h4>
 
@@ -662,7 +954,9 @@ Run [a ::= 5;
 </script></div></div>
 
 <ul>
-<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2141404147.html">"_[_]→_"</a></code></li>
+<li>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2141404147.html">"_[_]→_"</a></code>
+</li>
 </ul>
 
 <h4 id="tuple-slice">How do I slice a tuple?</h4>
@@ -713,11 +1007,15 @@ Run [a ::= 5;
 ]]>
 </script></div></div>
 
-<ul>
-<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2264114797.html">"_[_.._]"</a></code></li>
-<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early%20Tuples/3273437238.html">"_[.._]"</a></code></li>
-<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early%20Tuples/552806574.html">"_[_..]"</a></code></li>
-</ul>
+<div class="restricted-width-container">
+<table style="width:100%">
+<tr>
+<td>&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2264114797.html">"_[_.._]"</a></code></td>
+<td>&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early%20Tuples/3273437238.html">"_[.._]"</a></code></td>
+<td>&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early%20Tuples/552806574.html">"_[_..]"</a></code></td>
+</tr>
+</table>
+</div>
 
 <h4 id="tuple-slice-replace">How do I replace a slice of a tuple?</h4>
 
@@ -747,7 +1045,9 @@ Run [a ::= 5;
 </script></div></div>
 
 <ul>
-<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Tuples/998097930.html">"_[_.._]→_"</a></code></li>
+<li>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Tuples/998097930.html">"_[_.._]→_"</a></code>
+</li>
 </ul>
 
 <h4 id="tuple-concatenate">How do I concatenate tuples?</h4>
@@ -780,10 +1080,14 @@ Run [a ::= 5;
 ]]>
 </script></div></div>
 
-<ul>
-<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/_Ambiguities/1439340124.html">"«_‡++»"</a></code></li>
-<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/582878776.html">"concatenate_"</a></code></li>
-</ul>
+<div class="restricted-width-container">
+<table style="width:100%">
+<tr>
+<td>&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/_Ambiguities/1439340124.html">"«_‡++»"</a></code></td>
+<td>&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/582878776.html">"concatenate_"</a></code></td>
+</tr>
+</table>
+</div>
 
 <h4 id="tuple-append">How do I append an element onto a tuple?</h4>
 
@@ -797,10 +1101,12 @@ Run [a ::= 5;
 </script></div></div>
 
 <ul>
-<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/_Ambiguities/1439340124.html">"«_‡++»"</a></code></li>
+<li>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/_Ambiguities/1439340124.html">"«_‡++»"</a></code>
+</li>
 </ul>
 
-<h4 id="set-size">How do I sort a tuple?</h4>
+<h4 id="tuple-sorting">How do I sort a tuple?</h4>
 
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
@@ -811,7 +1117,7 @@ Run [a ::= 5;
 ! merge sort <3,6,1,6,8,2,1,9>
 ! merge sort n, m in <3,6,1,6,8,2,1,9> by [n > m]
 ! merge sort <"ada", "fousfa", "zgfsat">
-! merge sort a, b in <¢a, ¢b, ¢z, ¢U, ¢c> by [a's code point ≥ b's code point]
+! merge sort a, b in "Mary had a little lamb" by [a's code point ≥ b's code point]
 ! merge sort n, m in <14,4,6,1,2,3,20,18,19,17,16,15,12,13,5,7,8,9,10,11> by
 [
 	(n is odd ∧ m is even)
@@ -821,22 +1127,28 @@ Run [a ::= 5;
 ]]>
 </script></div></div>
 
-<ul>
-<li>
+<div class="restricted-width-container">
+<table style="width:100%">
+<tr>
+<td>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Tuples/2662703844.html">"quicksort_"</a></code>
-</li>
-<li><code>"quicksort…,…in|of_§by_"</code></li>
-<li>
+</td>
+<td>&#8226;<code>"quicksort…,…in|of_§by_"</code></td>
+<td>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Tuples/975529423.html">"quicksort_with_"</a></code>
-</li>
-<li>
+</td>
+</tr>
+<tr>
+<td>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Tuples/1034928887.html">"merge sort_"</a></code>
-</li>
-<li><code>"merge sort…,…in|of_§by_"</code></li>
-<li>
+</td>
+<td>&#8226;<code>"merge sort…,…in|of_§by_"</code></td>
+<td>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Tuples/3002682086.html">"merge sort_with_"</a></code>
-</li>
-</ul>
+</td>
+</tr>
+</table>
+</div>
 
 
 <h3 id="loops">Loops</a></h3>
@@ -860,14 +1172,19 @@ Run [For each i from 2 to 22 by 4 do [Print: “i” ++ " ";];]
 Run [t ::= 10 to 20; For each i from 1 to |t| do [Print: “t[i]” ++ " ";];]
 ]]>
 </script></div></div>
-<ul>
-<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/2753007895.html">"From_to_do_"</a></code></li>
-<li>
-<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/1003154888.html">"For each…from_to_§do_"</a></code>
-</li>
-</ul>
 
-<h4 id="tuple-for-each">How do I create various while loops?</h4>
+<div class="restricted-width-container">
+<table style="width:100%">
+<tr>
+<td>&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/2753007895.html">"From_to_do_"</a></code></td>
+<td>&#8226;
+<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/1003154888.html">"For each…from_to_§do_"</a></code>
+</td>
+</tr>
+</table>
+</div>
+
+<h4 id="tuple-while">How do I create various while loops?</h4>
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
 <![CDATA[
 Run [i : integer := 1; While i < 5 do [Print: “i” ++ " "; i++;];]
@@ -921,19 +1238,46 @@ Run [i : integer := 1;
 	alternate with [Print: "\nIn between!\n";];]
 ]]>
 </script></div>
-<ul>
-<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/2864842610.html">"While_do_"</a></code></li>
-<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/2973785005.html">"While_do_alternate with_"</a></code></li>
-<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/3060146973.html">"Until_do_"</a></code></li>
-<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/3169089368.html">"Until_do_alternate with_"</a></code></li>
-<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/2446694226.html">"Do_while_"</a></code></li>
-<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/2555636621.html">"Do_while_alternate with_"</a></code></li>
-<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/1173395289.html">"Do_until_"</a></code></li>
-<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/1282337684.html">"Do_until_alternate with_"</a></code></li>
-</ul>
+
+<div class="restricted-width-container">
+<table style="width:100%">
+<tr>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/2864842610.html">"While_do_"</a></code>
+</td>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/2973785005.html">"While_do_alternate with_"</a></code>
+</td>
+</tr>
+<tr>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/3060146973.html">"Until_do_"</a></code>
+</td>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/3169089368.html">"Until_do_alternate with_"</a></code>
+</td>
+</tr>
+<tr>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/2446694226.html">"Do_while_"</a></code>
+</td>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/2555636621.html">"Do_while_alternate with_"</a></code>
+</td>
+</tr>
+<tr>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/1173395289.html">"Do_until_"</a></code>
+</td>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/1282337684.html">"Do_until_alternate with_"</a></code>
+</td>
+</tr>
+</table>
+</div>
 
 
-<h4 id="tuple-for-each">How can I loop through each element of a tuple/set/map/reader/stream?</h4>
+<h4 id="loop-data-structure">How can I loop through each element of a tuple/set/map/reader/stream?</h4>
 
 <p>There are lots of ways to accomplish this, each of which is the same general syntax for each data structure.  Here are just a few.</p>
 
@@ -1021,18 +1365,34 @@ Run [aMap ::= {"foo"→1,"bar"→2,"frog"→3,"prince"→4};
 ]]>
 </script></div></div>
 
-<ul>
-<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Collections/1107959754.html">"For each…in|of_§do_"</a></code></li>
-<li>
-<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Tuples/1984216688.html">"For each…,…in|of_§do_"</a></code>
-</li>
-<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/1110814801.html">"For each…in|of_§in parallel«_-way»do_"</a></code></li>
-<li>
-<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/4185893775.html">"For each…,…in|of_§in parallel«_-way»do_"</a></code>
-</li>
-<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Maps/2927347210.html">"For each…→…in|of_§do_"</a></code></li>
-<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/834057001.html">"For each…→…in|of_§in parallel«_-way»do_"</a></code></li>
-</ul>
+<div class="restricted-width-container">
+<table style="width:100%">
+<tr>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Collections/1107959754.html">"For each…in|of_§do_"</a></code>
+</td>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/1110814801.html">"For each…in|of_§in parallel«_-way»do_"</a></code>
+</td>
+</tr>
+<tr>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Tuples/1984216688.html">"For each…,…in|of_§do_"</a></code>
+</td>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/4185893775.html">"For each…,…in|of_§in parallel«_-way»do_"</a></code>
+</td>
+</tr>
+<tr>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Maps/2927347210.html">"For each…→…in|of_§do_"</a></code>
+</td>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/834057001.html">"For each…→…in|of_§in parallel«_-way»do_"</a></code>
+</td>
+</tr>
+</table>
+</div>
 
 <h4 id="tuple-map">How do I transform each element of a tuple?</h4>
 
@@ -1081,23 +1441,34 @@ Run [aMap ::= {"foo"→1,"bar"→2,"frog"→3,"prince"→4};
 </script></div>
 </div>
 
-<ul>
-<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Collections/4042299671.html">"map each…in|of_§through_"</a></code></li>
-<li>
-<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Tuples/1160016877.html">"map each…,…in|of_§through_"</a></code>
-</li>
-<li>
-<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Maps/2103147399.html">"map each…→…in|of_§through_"</a></code>
-</li>
-<li>
-<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/441902414.html">"map each…in|of_§in parallel«_-way»through_"</a></code>
-</li>
-<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/4195911740.html">"map each…,…in|of_§in parallel«_-way»through_"</a></code></li>
-
-<li>
-<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/844074966.html">"map each…→…in|of_§in parallel«_-way»through_"</a></code>
-</li>
-</ul>
+<div class="restricted-width-container">
+<table style="width:100%">
+<tr>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Collections/4042299671.html">"map each…in|of_§through_"</a></code>
+</td>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/441902414.html">"map each…in|of_§in parallel«_-way»through_"</a></code>
+</td>
+</tr>
+<tr>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Maps/2103147399.html">"map each…→…in|of_§through_"</a></code>
+</td>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/844074966.html">"map each…→…in|of_§in parallel«_-way»through_"</a></code>
+</td>
+</tr>
+<tr>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Tuples/1160016877.html">"map each…,…in|of_§through_"</a></code>
+</td>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/4195911740.html">"map each…,…in|of_§in parallel«_-way»through_"</a></code>
+</td>
+</tr>
+</table>
+</div>
 
 <h4 id="tuple-filter">How do I filter the elements of a collection?</h4>
 
@@ -1124,11 +1495,24 @@ Run [aMap ::= {"foo"→1,"bar"→2,"frog"→3,"prince"→4};
 ! select each key → value from {4→1,7→2,15→9,10→3} where [1 + key × value is odd]
 ]]>
 </script></div>
-<ul>
-<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Tuples/3366071145.html">"select each…,…from_§where_"</a></code></li>
-<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Collections/2407191435.html">"select each…from_§where_"</a></code></li>
-<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Maps/400530443.html">"select each…→…from_§where_"</a></code></li>
-</ul>
+<div class="restricted-width-container">
+<table style="width:100%">
+<tr>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Tuples/3366071145.html">"select each…,…from_§where_"</a></code>
+</td>
+</tr>
+<tr>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Collections/2407191435.html">"select each…from_§where_"</a></code>
+</td>
+</tr>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Maps/400530443.html">"select each…→…from_§where_"</a></code>
+</td>
+</tr>
+</table>
+</div>
 </div>
 
 <p><small>Or, "How about rejecting each element of a tuple/set/map that satisfies a predicate function?"</small></p>
@@ -1155,13 +1539,25 @@ Run [aMap ::= {"foo"→1,"bar"→2,"frog"→3,"prince"→4};
 ]]>
 </script></div>
 
-<ul>
-<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Collections/3431234256.html">"reject each…from_§where_"</a></code></li>
-<li>
-<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Collections/95146670.html">"reject each…,…from_§where_"</a></code>
-</li>
-<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Maps/1424573264.html">"reject each…→…from_§where_"</a></code></li>
-</ul>
+<div class="restricted-width-container">
+<table style="width:100%">
+<tr>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Collections/3431234256.html">"reject each…from_§where_"</a></code>
+</td>
+</tr>
+<tr>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Collections/95146670.html">"reject each…,…from_§where_"</a></code>
+</td>
+</tr>
+<tr>
+<td>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Maps/1424573264.html">"reject each…→…from_§where_"</a></code>
+</td>
+</tr>
+</table>
+</div>
 </div>
 <p>This does the same computation, but in parallel.</p>
 
@@ -1173,9 +1569,10 @@ Run [aMap ::= {"foo"→1,"bar"→2,"frog"→3,"prince"→4};
 </script></div></div>
 
 <ul>
-<li><code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/1160354066.html">"filter_in parallel«_-way»by_"</a></code></li>
+<li>
+&#8226;<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/1160354066.html">"filter_in parallel«_-way»by_"</a></code>
+</li>
 </ul>
-
 
 <hr/>
 
