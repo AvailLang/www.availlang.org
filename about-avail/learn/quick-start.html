@@ -42,6 +42,10 @@
 				color: red;
 				font-weight: bold;
 			}
+			td
+			{
+				padding: 0 10px 0 0;
+			}
 		</style>
 	</head>
 
@@ -125,7 +129,7 @@
 
 <h3 id="modules">Modules</h3>
 
-<p><a href="/about-avail/documentation/modules/introduction.html">Modules</a> are where Avail code lives. Modules are organized recursively into roots and <a href="/about-avail/documentation/modules/module-packages.html">packages</a>, and every package is positioned recursively within a root. Modules and packages both end with a <code>.avail</code> file extension, but modules are regular files and packages are directories. Each package contains an eponymous module, called the <strong>representative</strong>, which specifies the exports of that package.</p>
+<p><a href="/about-avail/documentation/modules/introduction.html">Modules</a> are where Avail code lives. Modules are organized recursively into roots and <a href="/about-avail/documentation/modules/module-packages.html">packages</a>, and every package is positioned recursively within a root. Modules and packages both end with the <code>.avail</code> file extension, but modules are regular files whereas packages are directories. Each package contains an eponymous module, called the <strong>representative</strong>, which specifies the exports of that package.</p>
 
 <p>Before you can start coding, you will need to create a root for your own Avail packages and modules. Set the <code>AVAIL_ROOTS</code> environment variable to something like this:</p>
 
@@ -156,7 +160,7 @@
 </tbody>
 </table>
 
-<p>Obviously you can choose another name than <code>myproject</code> or another path than <code>$HOME/myproject</code>. There is no need for the last path component of your root's source path to match the name of the root. For the rest of this guide, I will assume that you called the root <code>myproject</code>.</p>
+<p>Obviously you can choose a name other than <code>myproject</code> or a path other than <code>$HOME/myproject</code>. There is no need for the last component of your root's source path to match the name of the root. For the rest of this guide, I will assume that you called the root <code>myproject</code>.</p>
 
 <p>Once you have updated <code>AVAIL_ROOTS</code>, relaunch the Avail workbench. You can now populate your <code>myproject</code> root with modules and packages. Use a shell or text editor to create a module called <code>"Exploration.avail"</code> directly inside <code>myproject</code>, then switch focus back to the workbench and hit <code>F5</code> (or choose the <code>"Refresh"</code> item from the <code>"Build"</code> menu) to update the module view. You should be able to find <code>Exploration</code> now under your <code>myproject</code> root. You will double-click <code>Exploration</code> whenever you want to recompile it.</p>
 
@@ -373,7 +377,7 @@ Jackson5
 
 <p>Every type is denotable in Avail itself, i.e., there are no types intelligible to the compiler which cannot be mentioned explicitly by an Avail programmer. Additionally, every type is itself a value, whose own type is one of Avail's infinitely many <a href="/about-avail/documentation/type-system/metatypes.html">metatypes</a>. Metatypes are organized by the law of metacovariance: given two types <code>A</code> and <code>B</code>, <code>A</code> is a subtype of <code>B</code> iff <code>A's type</code> is a subtype of <code>B's type</code>.</p>
 
-<h5 id="types-quick-ref">Quick Reference</h5>
+<h5 id="types-quick-ref">Types Quick Reference</h5>
 
 <table class="quick-ref">
 <thead>
@@ -493,7 +497,7 @@ Jackson5
 
 <p>Avail does not expose a null value for use by a programmer. An unassigned variable can be used for a similar purpose, but it does not travel as conveniently as a traditional null.</p>
 
-<h5 id="literals-quick-ref">Quick Reference</h5>
+<h5 id="literals-quick-ref">Literals Quick Reference</h5>
 
 <table class="quick-ref">
 <thead>
@@ -540,7 +544,7 @@ e ::= 2.718281828459045;
 ]]>
 </script></div></div>
 
-<p>Avail features a rich collection of immutable data types, and a plethora of persistent operators. It is very natural to bind the results of expressions to constants, thus constant definitions appear much more commonly in Avail code than variable declarations. As the name suggests, constants are written once, upon creation, and never change during their lifetime.</p>
+<p>Avail features a rich collection of immutable data types and a plethora of persistent operators. It is very natural to bind the results of expressions to constants, thus constant definitions appear much more commonly in Avail code than variable declarations. As the name suggests, constants are written once, upon creation, and never change during their lifetime.</p>
 
 <h4 id="constants-module-constants">Module Constants</h4>
 
@@ -585,7 +589,7 @@ Method "For last index of_in_ignore exceptions while doing_" is
 
 <p>If a constant definition appears within a block expression, then a local constant is created. This constant can be referenced from any lexically subsequent statement or expression in the same block. It goes out of scope after the block expression ends.</p>
 
-<h5 id="constants-quick-ref">Quick Reference</h5>
+<h5 id="constants-quick-ref">Constants Quick Reference</h5>
 
 <table class="quick-ref">
 <thead>
@@ -612,7 +616,7 @@ favoriteSong : nonempty string := "Amnesia";
 ]]>
 </script></div></div>
 
-<p>Despite Avail's many <a class="offsite" href="http://en.wikipedia.org/wiki/Functional_programming">functional programming</a> features, Avail is an <a class="offsite" href="http://en.wikipedia.org/wiki/Imperative_programming">imperative programming language</a>. As such, it permits the declaration of variables, holders of state that can be written as well as read and can thus change over time.</p>
+<p>Despite Avail's many <a class="offsite" href="http://en.wikipedia.org/wiki/Functional_programming">functional programming</a> features, Avail is an <a class="offsite" href="http://en.wikipedia.org/wiki/Imperative_programming">imperative programming language</a>. As such, it permits the declaration of variables&mdash;holders of state that can be written as well as read and can thus change over time.</p>
 
 <p>Variables can be initialized upon declaration. A variable that is not explicitly initialized is deemed <em>unassigned</em> until it is written. Reading from an unassigned variable will raise a <code class="method">cannot-read-unassigned-variable exception</code>.</p>
 
@@ -656,7 +660,7 @@ Method "How many angels can dance on the head of a pin`?" is
 
 <p>If a variable declaration appears within a block expression, then a local variable is created. This variable can be referenced from any lexically subsequent statement or expression in the same block. It goes out of scope after the block expression ends.</p>
 
-<h5 id="variables-quick-ref">Quick Reference</h5>
+<h5 id="variables-quick-ref">Variables Quick Reference</h5>
 
 <table class="quick-ref">
 <thead>
@@ -925,7 +929,7 @@ Method "How many angels can dance on the head of a pin`?" is
 
 <p>It is sometimes useful to evaluate a block immediately after closing it. This is especially useful when you just want to introduce a new scope for local constants and variables, or when you want to use a label to exit an inner scope without exiting the outermost block.</p>
 
-<h5 id="blocks-quick-ref">Quick Reference</h5>
+<h5 id="blocks-quick-ref">Blocks Quick Reference</h5>
 
 <table class="quick-ref">
 <thead>
@@ -977,7 +981,7 @@ Method "How many angels can dance on the head of a pin`?" is
 
 <h4 id="methods-message-pattern-language">Message Pattern Language</h4>
 
-<p>Messages are specified using a pattern language that it commonly understood by the various method definers, like <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Very%20Early%20Definers/3752095115.html">"Method_is_"</a></code>. A message teaches the parser how to recognize that some new syntax represents an invocation of the named method.</p>
+<p>Messages are specified using a pattern language that is commonly understood by the various method definers, like <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Very%20Early%20Definers/3752095115.html">"Method_is_"</a></code>. A message teaches the parser how to recognize that some new syntax represents an invocation of the named method.</p>
 
 <p>The chart below describes the pattern language of messages, omitting some patterns that are only useful for defining macros.</p>
 
