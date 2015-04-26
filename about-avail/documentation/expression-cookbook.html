@@ -50,6 +50,7 @@ margin-left: 50px;
 <td><a href="#sets">Sets</a></td>
 <td><a href="#tuples">Tuples</a></td>
 <td><a href="#loops">Loops</a></td>
+<td><a href="#strings">Strings</a></td>
 </tr>
 </table>
 
@@ -235,6 +236,13 @@ margin-left: 50px;
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
 <![CDATA[
 ! 120 &divide; 3 > 39 
+]]>
+</script></div></div>
+<p><small>Character comparison is based upon a character's numeric code point</small></p>
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! ¢a > ¢G
 ]]>
 </script></div></div>
 <div class="restricted-width-container">
@@ -1982,6 +1990,146 @@ Run [
 </tr>
 </table>
 </div>
+
+<h3 id="strings"><a href="/about-avail/documentation/type-system/types-string.html">Strings</a></h3>
+<p>Strings are tuples of <a href="/documentation/type-system/types-character.html">Characters</a>.  Strings respond to all tuple methods.  Each element of a string (character) respond to character methods.</p>
+
+<h4 id="strings-characters">How do I represent a character?</h4>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! &cent;a
+]]>
+</script></div></div>
+
+<ul>
+<li>
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Literals/3887901693.html">"&cent;&hellip;!"</a></code>
+</li>
+</ul>
+
+<h4 id="strings-characters-codepoint">How do I get a character's code point? character representation from a code point?
+</h4>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! &cent;a's code point
+]]>
+</script></div></div>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! 98&rarr;character
+]]>
+</script></div></div>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! <65, 118, 97, 105, 108, 32, 105, 115, 32, 97, 119, 101, 115, 111, 109, 101, 33>→string
+]]>
+</script></div></div>
+
+<div class="restricted-width-container">
+<table style="width:100%">
+<tr>
+<td>
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/3345552701.html">"_'s&#8263;code point"</a></code>
+</td>
+<td> 
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/388711886.html">"_&rarr;character"</a></code>
+</td>
+<td> 
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Strings/3097851224.html">"_→string"</a></code>
+</td>
+</tr>
+</table>
+</div>
+
+<h4 id="strings-characters-query">How do I inspect characteristics of a character?</h4>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! &cent;a is lowercase
+]]>
+</script></div></div>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! &cent;d is uppercase
+]]>
+</script></div></div>
+
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! &cent;8 is an Arabic numeral
+]]>
+</script></div></div>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! &cent;" " is whitespace
+]]>
+</script></div></div>
+
+<div class="restricted-width-container">
+<table style="width:100%">
+<tr>
+<td>
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Characters/2184531440.html">"_is lowercase"</a></code>
+</td>
+<td> 
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Characters/1156641867.html">"_is uppercase"</a></code>
+</td>
+</tr>
+<tr>
+<td> 
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Characters/125642156.html">"_is an Arabic numeral"</a></code>
+</td>
+<td> 
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Characters/310828092.html">"_is whitespace"</a></code>
+</td>
+</tr>
+</table>
+</div>
+
+<h4 id="strings-characters-conversion">How do I convert characters?</h4>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! uppercase &cent;a
+]]>
+</script></div></div>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! lowercase &cent;Q
+]]>
+</script></div></div>
+
+<div class="restricted-width-container">
+<table style="width:100%">
+<tr>
+<td>
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Characters/1525689923.html">"uppercase_"</a></code>
+</td>
+<td> 
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Characters/896597272.html">"lowercase_"</a></code>
+</td>
+</tr>
+</table>
+</div>
+
 
 <hr/>
 
