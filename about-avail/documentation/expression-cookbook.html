@@ -40,17 +40,20 @@ margin-left: 50px;
 
 <hr/>
 
-<table style="width: 100%">
+<table id="top" style="width: 100%">
 <tr>
 <td><a href="#logic">Logic</a></td>
 <td><a href="#math">Math</a></td>
 <td><a href="#conditionals">Conditionals</a></td>
 <td><a href="#collections">Collections</a></td>
 <td><a href="#maps">Maps</a></td>
+</tr>
+<tr>
 <td><a href="#sets">Sets</a></td>
 <td><a href="#tuples">Tuples</a></td>
 <td><a href="#loops">Loops</a></td>
 <td><a href="#strings">Strings</a></td>
+<td><a href="#exceptions">Exceptions</a></td>
 </tr>
 </table>
 
@@ -144,7 +147,9 @@ margin-left: 50px;
 </tr>
 </table>
 </div>
-
+<hr/>
+<div style="text-align:center"><a href="#top"><small>(back to top)</small></a></div>
+<hr/>
 <h3 id="math"><a href="/about-avail/documentation/type-system/types-map.html">Math</a></h3>
 <h4 id="arithmetic">How do I do arithmetic?</h4>
 <p><small><em>Keywords: addition, subtraction, multiplication, division, modulus, exponentiation.</em></small></p>
@@ -430,14 +435,17 @@ margin-left: 50px;
 </table>
 </div>
 
-
+<hr/>
+<div style="text-align:center"><a href="#top"><small>(back to top)</small></a></div>
+<hr/>
 <h3 id="conditionals"><a href="/about-avail/documentation/type-system/types-map.html">Conditionals</a></h3>
 <h4 id="if-then-else">How do I build conditionals?</h4>
 <p><small><em>Keywords: IF-THEN-ELSE</em></small></p>
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
 <![CDATA[
-Run [
+Run
+[
 	a ::= 5; 
 	If a > 3 then [Print: "yes";];
 ]
@@ -446,16 +454,18 @@ Run [
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
 <![CDATA[
-Run [
+Run
+[
 	a ::= 5; 
-	Unless a < 3 then [Print: “a”;];
+	Unless a < 3 then [Print: &OpenCurlyDoubleQuote;a&CloseCurlyDoubleQuote;;];
 ]
 ]]>
 </script></div></div>
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
 <![CDATA[
-Run [
+Run
+[
 	a ::= 5; 
 	If a < 3 then [Print: "yes";] else [Print: "no";];
 ]
@@ -464,7 +474,8 @@ Run [
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
 <![CDATA[
-Run [
+Run
+[
 	a ::= 5;
 	Unless a < 3 then [Print: "no";] else [Print: "yes";];
 ]
@@ -509,7 +520,8 @@ Run [
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
 <![CDATA[
-Run [
+Run
+[
 	a ::= 5; 
     If a < 3 then [Print: "a < 3";] 
     else if 3 &leq; a < 6 then [Print: "3 &leq; a < 6";] 
@@ -520,7 +532,8 @@ Run [
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
 <![CDATA[
-Run [
+Run
+[
 	a ::= 5; 
     If a < 3 then [Print: "a < 3";] 
     else if 3 &leq; a < 6 then [Print: "3 &leq; a < 6";];
@@ -530,7 +543,8 @@ Run [
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
 <![CDATA[
-Run [
+Run
+[
 	a ::= 5; 
     Unless a > 3 then [Print: "a < 3";] 
     else unless 8 &leq; a  then [Print: "3 &leq; a < 8";] 
@@ -572,7 +586,9 @@ Run [
 </tr>
 </table>
 </div>
-
+<hr/>
+<div style="text-align:center"><a href="#top"><small>(back to top)</small></a></div>
+<hr/>
 <h3 id="collections">Collections</h3>
 
 <p><small>Synonyms: tuples, arrays, maps, sets, containers, lists, dictionary, groups, bag, queue, stack.</small></p>
@@ -786,7 +802,9 @@ Run [
 &#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/1160354066.html">"filter_in parallel«_-way»by_"</a></code>
 </li>
 </ul>
-
+<hr/>
+<div style="text-align:center"><a href="#top"><small>(back to top)</small></a></div>
+<hr/>
 
 <h3 id="maps"><a href="/about-avail/documentation/type-system/types-map.html">Maps</a></h3>
 
@@ -992,7 +1010,9 @@ Run [
 &#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/156781086.html">"_∈_"</a></code>
 </li>
 </ul>
-
+<hr/>
+<div style="text-align:center"><a href="#top"><small>(back to top)</small></a></div>
+<hr/>
 <h3 id="sets"><a href="/about-avail/documentation/type-system/types-set.html">Sets</a></h3>
 
 <h4 id="set-empty">How do I specify an empty set?</h4>
@@ -1217,6 +1237,9 @@ Run [
 &#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2997758481.html">"_&rarr;set"</a></code>
 </li>
 </ul>
+<hr/>
+<div style="text-align:center"><a href="#top"><small>(back to top)</small></a></div>
+<hr/>
 
 <h3 id="tuples"><a href="/about-avail/documentation/type-system/types-tuple.html">Tuples</a></h3>
 
@@ -1615,24 +1638,28 @@ Run [
 </table>
 </div>
 
-
+<hr/>
+<div style="text-align:center"><a href="#top"><small>(back to top)</small></a></div>
+<hr/>
 <h3 id="loops">Loops</a></h3>
 <h4 id="tuple-for-each">How do I create a simple index-based loop?</h4>
 <p><small><em>Keywords: for loop</em></small></p>
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
 <![CDATA[
-Run [
+Run
+[
 	For each i from 1 to 10 do 
-	[Print: “i” ++ " ";];
+	[Print: &OpenCurlyDoubleQuote;i&CloseCurlyDoubleQuote; ++ " ";];
 ]
 ]]>
 </script></div>
 
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
 <![CDATA[
-Run [
+Run
+[
 	For each i from 2 to 22 by 4 do 
-	[Print: “i” ++ " ";];
+	[Print: &OpenCurlyDoubleQuote;i&CloseCurlyDoubleQuote; ++ " ";];
 ]
 ]]>
 </script></div></div>
@@ -1641,10 +1668,11 @@ Run [
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
 <![CDATA[
-Run [
+Run
+[
 	t ::= 10 to 20; 
 	For each i from 1 to |t| do 
-	[Print: “t[i]” ++ " ";];
+	[Print: &OpenCurlyDoubleQuote;t[i]&CloseCurlyDoubleQuote; ++ " ";];
 ]
 ]]>
 </script></div></div>
@@ -1663,51 +1691,57 @@ Run [
 <h4 id="tuple-while">How do I create various while loops?</h4>
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
 <![CDATA[
-Run [
+Run
+[
 	i : integer := 1; 
-	While i < 5 do [Print: “i” ++ " "; i++;];
+	While i < 5 do [Print: &OpenCurlyDoubleQuote;i&CloseCurlyDoubleQuote; ++ " "; i++;];
 ]
 ]]>
 </script></div>
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
 <![CDATA[
-Run [
+Run
+[
 	i : integer := 1; 
-	Do [Print: “i” ++ " "; i++;] while i < 5;
+	Do [Print: &OpenCurlyDoubleQuote;i&CloseCurlyDoubleQuote; ++ " "; i++;] while i < 5;
 ]
 ]]>
 </script></div>
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
 <![CDATA[
-Run [
+Run
+[
 	i : integer := 1; 
-	Until i > 5 do [Print: “i” ++ " "; i++;];
+	Until i > 5 do [Print: &OpenCurlyDoubleQuote;i&CloseCurlyDoubleQuote; ++ " "; i++;];
 ]
 ]]>
 </script></div>
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
 <![CDATA[
-Run [
+Run
+[
 	i : integer := 1; 
-	Do [Print: “i” ++ " "; i++;] until i > 5;
+	Do [Print: &OpenCurlyDoubleQuote;i&CloseCurlyDoubleQuote; ++ " "; i++;] until i > 5;
 ]
 ]]>
 </script></div>
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
 <![CDATA[
-Run [
+Run
+[
 	i : integer := 1; 
 	While i < 5 
-	do [Print: “i” ++ " "; i++;] 
+	do [Print: &OpenCurlyDoubleQuote;i&CloseCurlyDoubleQuote; ++ " "; i++;] 
 	alternate with [Print: "\nIn between!\n";];
 ]
 ]]>
 </script></div>
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
 <![CDATA[
-Run [
+Run
+[
 	i : integer := 1; 
-	Do [Print: “i” ++ " "; i++;] 
+	Do [Print: &OpenCurlyDoubleQuote;i&CloseCurlyDoubleQuote; ++ " "; i++;] 
 	while i < 5 
 	alternate with [Print: "\nIn between!\n";];
 ]
@@ -1716,19 +1750,21 @@ Run [
 
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
 <![CDATA[
-Run [
+Run
+[
 	i : integer := 1; 
 	Until i > 5 
-	do [Print: “i” ++ " "; i++;] 
+	do [Print: &OpenCurlyDoubleQuote;i&CloseCurlyDoubleQuote; ++ " "; i++;] 
 	alternate with [Print: "\nIn between!\n";];
 ]
 ]]>
 </script></div>
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
 <![CDATA[
-Run [
+Run
+[
 	i : integer := 1; 
-	Do [Print: “i” ++ " "; i++;] 
+	Do [Print: &OpenCurlyDoubleQuote;i&CloseCurlyDoubleQuote; ++ " "; i++;] 
 	until i > 5 
 	alternate with [Print: "\nIn between!\n";];
 ]
@@ -1781,10 +1817,11 @@ Run [
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
 <![CDATA[
-Run [
+Run
+[
 	aTuple ::= <1,2,3,4>;
 	For each element of aTuple do 
-	[Print: “element” ++ " ";];
+	[Print: &OpenCurlyDoubleQuote;element&CloseCurlyDoubleQuote; ++ " ";];
 ]
 ]]>
 </script></div></div>
@@ -1792,10 +1829,11 @@ Run [
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
 <![CDATA[
-Run [
+Run
+[
 	aTuple ::= <8,7,6,5>;
 	For each element, index of aTuple do 
-	[Print: “element” ++ " is at index " ++ “index” ++ " \n";];
+	[Print: &OpenCurlyDoubleQuote;element&CloseCurlyDoubleQuote; ++ " is at index " ++ &OpenCurlyDoubleQuote;index&CloseCurlyDoubleQuote; ++ " \n";];
 ]
 ]]>
 </script></div></div>
@@ -1804,9 +1842,10 @@ Run [
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
 <![CDATA[
-Run [
+Run
+[
 	aSet ::= {1,2,3,4};
-	For each element of aSet do [Print: “element” ++ " ";];
+	For each element of aSet do [Print: &OpenCurlyDoubleQuote;element&CloseCurlyDoubleQuote; ++ " ";];
 ]
 ]]>
 </script></div></div>
@@ -1815,30 +1854,33 @@ Run [
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
 <![CDATA[
-Run [
+Run
+[
 	aMap ::= {"foo"&rarr;1,"bar"&rarr;2,"frog"&rarr;3,"prince"&rarr;4}; 
 	For each key &rarr; value of aMap do 
-	[Print: key ++ "&rarr;" ++ “value” ++ "\n";];
+	[Print: key ++ "&rarr;" ++ &OpenCurlyDoubleQuote;value&CloseCurlyDoubleQuote; ++ "\n";];
 ]
 ]]>
 </script></div></div>
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
 <![CDATA[
-Run [
+Run
+[
 	aReader ::= a reader over <1,2,3,4>;
 	For each element of aReader do 
-	[Print: “element” ++ " ";];
+	[Print: &OpenCurlyDoubleQuote;element&CloseCurlyDoubleQuote; ++ " ";];
 ]
 ]]>
 </script></div></div>
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
 <![CDATA[
-Run [
+Run
+[
 	aStream ::= a stream over <1,2,3,4>;
 	For each element of aStream do 
-	[Print: “element” ++ " ";];
+	[Print: &OpenCurlyDoubleQuote;element&CloseCurlyDoubleQuote; ++ " ";];
 ]
 ]]>
 </script></div></div>
@@ -1848,18 +1890,20 @@ Run [
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
 <![CDATA[
-Run [
+Run
+[
 	For each i of 10 to 20 in parallel do 
-	[Print: “i” ++ " ";];
+	[Print: &OpenCurlyDoubleQuote;i&CloseCurlyDoubleQuote; ++ " ";];
 ]
 ]]>
 </script></div></div>
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
 <![CDATA[
-Run [
+Run
+[
 	For each element,index of 10 to 20 in parallel do 
-	[Print: “index” ++ ": " ++“element” ++ "\n";];
+	[Print: &OpenCurlyDoubleQuote;index&CloseCurlyDoubleQuote; ++ ": " ++&OpenCurlyDoubleQuote;element&CloseCurlyDoubleQuote; ++ "\n";];
 ]
 ]]>
 </script></div></div>
@@ -1867,10 +1911,11 @@ Run [
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
 <![CDATA[
-Run [
+Run
+[
 	aSet ::= {1,2,3,4}; 
 	For each i of aSet in parallel do 
-	[Print: “i” ++ " ";];
+	[Print: &OpenCurlyDoubleQuote;i&CloseCurlyDoubleQuote; ++ " ";];
 ]
 ]]>
 </script></div></div>
@@ -1878,10 +1923,11 @@ Run [
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
 <![CDATA[
-Run [
+Run
+[
 	aMap ::= {"foo"&rarr;1,"bar"&rarr;2,"frog"&rarr;3,"prince"&rarr;4};
 	For each key &rarr; value of aMap in parallel 
-	do [Print: key ++ "&rarr;" ++ “value” ++ "\n";];
+	do [Print: key ++ "&rarr;" ++ &OpenCurlyDoubleQuote;value&CloseCurlyDoubleQuote; ++ "\n";];
 ]
 ]]>
 </script></div></div>
@@ -1990,7 +2036,9 @@ Run [
 </tr>
 </table>
 </div>
-
+<hr/>
+<div style="text-align:center"><a href="#top"><small>(back to top)</small></a></div>
+<hr/>
 <h3 id="strings"><a href="/about-avail/documentation/type-system/types-string.html">Strings</a></h3>
 <p>Strings are tuples of <a href="/documentation/type-system/types-character.html">Characters</a>.  Strings respond to all tuple methods.  Each element of a string (character) respond to character methods.</p>
 
@@ -2130,6 +2178,370 @@ Run [
 </table>
 </div>
 
+<h4 id="strings-conversion">How do I convert non-string values to strings?</h4>
+<p><small><em>Keywords: stringification, stringify, textual representation.</em></small></p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! &OpenCurlyDoubleQuote;64&CloseCurlyDoubleQuote;
+]]>
+</script></div></div>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! &OpenCurlyDoubleQuote;<8, ¢Q, 72, {9→"nine"}>&CloseCurlyDoubleQuote;
+]]>
+</script></div></div>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! reject each c from &OpenCurlyDoubleQuote;<12,10,15,14,11,10,11,14>&CloseCurlyDoubleQuote;(hex) where [c = ¢0]
+]]>
+</script></div></div>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! &OpenCurlyDoubleQuote;a UUID&CloseCurlyDoubleQuote;(UUID)
+]]>
+</script></div></div>
+
+<div class="restricted-width-container">
+<table style="width:100%">
+<tr>
+<td>
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early%20Literals/202741432.html">"&OpenCurlyDoubleQuote;_&CloseCurlyDoubleQuote;"</a></code>
+</td>
+<td> 
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Strings/1453070126.html">"&OpenCurlyDoubleQuote;_&CloseCurlyDoubleQuote;(hex)"</a></code>
+</td>
+<td>
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early%20Tuples/260428668.html">"a UUID"</a></code>
+</td>
+<td> 
+&#8226; <code class="method">"&OpenCurlyDoubleQuote;_&CloseCurlyDoubleQuote;(UUID)"</code>
+</td>
+</tr>
+</table>
+</div>
+
+<h4 id="strings-printing">How do I print strings to the standard output stream?</h4>
+<p><small><em>Keywords: printing, standard out, I/O.</em></small></p>
+<p><small>Printing returns no value, so it has to be executed in a "Run_" block on the Availuator.</small></p>
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+Run
+[
+	Print: "Hello World!";
+]
+]]>
+</script></div></div>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+Run
+[
+	myFavoriteNumber ::= 17;
+	Print: &OpenCurlyDoubleQuote;myFavoriteNumber&CloseCurlyDoubleQuote;;
+]
+]]>
+</script></div></div>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+Run
+[
+	Print: 
+		<84, 104, 101, 115, 101, 32, 
+		 97, 114, 101, 32, 116, 104, 
+		 101, 32, 34, 97, 98, 99, 
+		 39, 115, 34, 32, 111, 102, 
+		 32, 65, 118, 97, 105, 108>→string;
+]
+]]>
+</script></div></div>
+
+<div class="restricted-width-container">
+<table style="width:100%">
+<tr>
+<td>
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/152740190.html">"Print:_"</a></code>
+</td>
+</tr>
+</table>
+</div>
+
+<h4 id="strings-whitespace">How do I trim leading and trailing whitespace?</h4>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! trim "		OH MY! Just look at all this pesky whitespace...      "
+]]>
+</script></div></div>
+
+<div class="restricted-width-container">
+<table style="width:100%">
+<tr>
+<td> 
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Strings/2428097291.html">"trim_"</a></code>
+</td>
+</tr>
+</table>
+</div>
+
+<h4 id="strings-format">How do I format strings?</h4>
+<p><small><em>Keywords: formatting, formatter, printf.</em></small></p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! format "‘greeting’, ‘recipient’!" with {"greeting"→"Hello", "recipient"→"world"}
+]]>
+</script></div></div>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! format "Did you know that Avail has been in development for over “①” years?" with 20
+]]>
+</script></div></div>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! format "‘primaryInventor’ started development on ‘language’ way back in “year”!" with 
+	"language" ::= "Avail", "year" ::= 1993, "primaryInventor" ::= "Mark van Gulik"
+]]>
+</script></div></div>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! partially format "‘greeting’, ‘recipient’!" with {"greeting"→"Hello"}
+]]>
+</script></div></div>
+
+<p><small>
+The input in the Availuator is a text field.  Because of this, it doesn't recognize newlines.  In order to break continuous 
+strings over multiple lines, ignoring newlines and other whitespace, in an actual avail module, you'd insert a back slash (\)
+at the end of the line immediately preceding the newline character.  On the next line, all white space is ignored up to the 
+first occurrence of the combination of a back slash (\) immediately followed by a pipe (|).  The following example is meant 
+for use in an Avail module and will not run in the Availuator.
+</small></p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+brokenUpString ::= "In 1493 Columbus \
+	\|most certainly did not \
+	\|sail the deep blue sea.";
+]]>
+</script></div></div>
+
+<p><small>
+The following example has been created to work specifically in the Availuator. This will work as is in an Avail module,
+however, all the newlines will be captured as they are literally placed in the current code.  To run this example in an
+Avail module utilizing continuous string breaking formatting, the above line breaking methodology would need 
+to be implemented at each newline.  Indentation at the next line would also be added before the "\|" characters.  
+We considered not adding the following example because of this, but I had too much fun building it not to show it! 
+</small></p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+Run
+[
+	aPoem ::= format "‘⑨’ ‘①’,‘⑭’‘⑨’ twilight d‘⑧’ens, ‘②’ curlew c‘④’;‘⑭’Along
+‘②’ ‘⑦’-s‘③’s damp ‘③’ brown‘⑭’‘⑨’ ‘⑤’ ha‘⑪’ens toward ‘②’ town,‘⑭’‘⑮’‘⑩’
+‘②’ ‘①’.‘⑭’‘⑭’D‘⑧’n‘⑬’s settl‘⑬’ on roofs ‘③’ w‘④’,‘⑭’But ‘②’
+‘⑦’, ‘②’ ‘⑦’ ‘⑫’ ‘②’ d‘⑧’n‘⑬’s c‘④’;‘⑭’‘⑨’ little wav‘⑬’,
+with ‘②’ir soft, white h‘③’s,‘⑭’Efface ‘②’ footpr‘⑫’ts
+‘⑫’ ‘②’ s‘③’s,‘⑭’‘⑮’‘⑩’ ‘②’ ‘①’.‘⑭’‘⑭’‘⑨’ morn‘⑫’g breaks;
+‘②’ ‘⑪’eeds ‘⑫’ ‘②’ir ‘⑪’‘④’‘⑭’Stamp ‘③’ neigh, as ‘②’
+ho‘⑪’ler c‘④’;‘⑭’‘⑨’ day r‘⑥’, but nevermore‘⑭’R‘⑥’
+‘②’ ‘⑤’ to ‘②’ shore,‘⑭’‘⑮’‘⑩’ ‘②’ ‘①’.‘⑭’"
+		with "tide rises, the tide falls", "the", "and", "alls", "traveller",
+			"eturns", "sea", "ark", "The", "And", "st", "in", "es", "\n", "\t";
+	Print: aPoem;
+]
+]]>
+</script></div></div>
+
+<div class="restricted-width-container">
+<table style="width:100%">
+<tr>
+<td>
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Strings/35454703.html">"format_with_"</a></code>
+</td>
+<td> 
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Strings/972373158.html">"format_with«_‡,»"</a></code> 
+</td>
+</tr>
+<tr>
+<td>
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Strings/2392352593.html">"format_with unchecked_"</a></code>
+</td>
+<td> 
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Strings/4100671162.html">"format_with«&hellip;
+[!::=_‡,»"</a></code>
+</td>
+</tr>
+<tr>
+<td>
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Strings/1913558909.html">"partially format_with_"</a></code>
+</td>
+<td> 
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Strings/1453934071.html">"partially format_with«&hellip;
+[::=_‡,»"</a></code>
+</td>
+</tr>
+</table>
+</div>
+<hr/>
+<div style="text-align:center"><a href="#top"><small>(back to top)</small></a></div>
+<hr/>
+<h3 id="exceptions">Exceptions</h3>
+
+<p>Exceptions are forms of <a href="/documentation/type-system/types-object.html">objects</a> in Avail.</p>
+<p><small>Synonyms: errors.</small></p>
+
+<h4 id="exceptions-raise">How do I raise an exception?</h4>
+<p><small>Note that the result of running the following code snippets in the Availuator will result in the reporting an error.</small></p>
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+Run [ Raise an arithmetic exception]
+]]>
+</script></div></div>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+Run 
+[
+	Raise a descriptive exception with 
+		error message ::= "Hmmmm&hellip; AHA!  There's &#11015; your problem!"
+]
+]]>
+</script></div></div>
+
+<div class="restricted-width-container">
+<table style="width:100%">
+<tr>
+<td>
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Exceptions/3225944599.html">"Raise_"</a></code>
+</td>
+</tr>
+</table>
+</div>
+
+<h4 id="exceptions-handling">How do I handle exceptions?</h4>
+<p><small><em>Keywords: exception handling, error handling, unwind</em></small></p>
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! try [Raise a cannot-divide-by-zero exception]
+else 
+[
+	"Did that break?!  Well run me instead!"
+]
+]]>
+</script></div></div>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+Run 
+[ 
+	Guard [Raise a cannot-add-unlike-infinities exception] 
+	intercept 
+	[
+		e : cannot-add-unlike-infinities exception 
+	| 
+		Print: "Intercepted that exception&hellip;\n";
+	]; 
+	Print: "&hellip;and then kept going!";
+]
+]]>
+</script></div></div>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[ 
+! guard [Raise a cannot-read-unassigned-variable exception] 
+intercept 
+[
+	e : cannot-read-unassigned-variable exception
+| 
+	7
+]
+]]>
+</script></div></div>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+Run
+[ 
+	Guard [Raise a no-such-fiber-variable exception] 
+	intercept 
+	[
+		e : subscript-out-of-bounds exception
+	| 
+		Print: "You won't get here because it isn't intercepting correctly";
+	]
+	ensure
+	[
+		Print: "Exception wasn't caught, but this still ran";
+	];
+]
+]]>
+</script></div></div>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! guard [Raise a incorrect-number-of-arguments exception] 
+intercept 
+[
+	e : incorrect-argument-type exception
+| 
+	Print: "The first intercept does not catch this\n";
+	13
+]
+intercept 
+[
+	e : incorrect-number-of-arguments exception
+| 
+	Print: "The second intercept caught this and gave you a 7 instead\n";
+	7
+]
+ensure
+[
+	Print: "Still did the ensure\n";
+]
+]]>
+</script></div></div>
+
+<div class="restricted-width-container">
+<table style="width:100%">
+<tr>
+<td>
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Exceptions/2541026102.html">"try_else_"</a></code>
+</td>
+<td>
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Exceptions/644971167.html">"Guard|guard_«intercept_»«ensure_»"</a></code>
+</td>
+</tr>
+</table>
+</div>
 
 <hr/>
 
