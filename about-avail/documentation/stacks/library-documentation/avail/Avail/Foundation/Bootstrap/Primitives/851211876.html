@@ -57,6 +57,43 @@
 	</div>
 	<h4 class="method-section-header">Definitions:</h4>
 	<div class="method-section-content">
+		<div class="signature-heading">set meta</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Literals</div>
+		<div class="category-list"><em>Categories:</em> Sets, Types, Queries</div>
+		<div class="signature-description">
+			Answer the upper bound of the argument.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="2">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="aSetType-1576617745" class="stacks i-code">aSetType</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2718349551.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2718349551.html">set meta</a></td>
+					<td class="stacks i-desc">
+						A set type.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code">[0..∞]</td>
+					<td class="stacks i-desc">
+						The upper bound of the argument.
+					</td>
+				</tr>
+			</tbody>
+		</table>
 		<div class="signature-heading">float</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Infallible Primitives</div>
 		<div class="category-list"><em>Categories:</em> Primitives, Numbers, Mathematics</div>
@@ -94,11 +131,11 @@
 				</tr>
 			</tbody>
 		</table>
-		<div class="signature-heading">set meta</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Literals</div>
-		<div class="category-list"><em>Categories:</em> Sets, Types, Queries</div>
+		<div class="signature-heading">extended integer meta</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Early Math</div>
+		<div class="category-list"><em>Categories:</em> Integers, Types, Queries</div>
 		<div class="signature-description">
-			Answer the upper bound of the argument.
+			Answer the upper bound of the specified integral range type. Note that unlike <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2589171559.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2589171559.html">_'s⁇genuine upper bound</a>, this method explicitly forbids the argument from being ⊥. It is intended as a practical (but not universal) replacement.
 		</div>
 		<table class="stacks">
 			<thead>
@@ -116,15 +153,15 @@
 				</tr>
 				<tr class="methodParameters">
 					<td class="stacks i-code">1</td>
-					<td id="aSetType-1576617745" class="stacks i-code">aSetType</td>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2718349551.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2718349551.html">set meta</a></td>
+					<td id="range-2104934506" class="stacks i-code">range</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2190032790.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2190032790.html">extended integer meta</a></td>
 					<td class="stacks i-desc">
-						A set type.
+						An integral range type. Must not be ⊥.
 					</td>
 				</tr>
 				<tr>
 					<th class="stacks i-row-label" colspan="3">Returns</th>
-					<td class="stacks i-code">[0..∞]</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/964914967.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/964914967.html">extended integer</a></td>
 					<td class="stacks i-desc">
 						The upper bound of the argument.
 					</td>
@@ -164,43 +201,6 @@
 					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1152411223.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1152411223.html">double</a></td>
 					<td class="stacks i-desc">
 						If the `0` is ±∞ or not-a-number, then <a href="#x1152411223">x</a>, otherwise the ceiling of <a href="#x1152411223">x</a>.
-					</td>
-				</tr>
-			</tbody>
-		</table>
-		<div class="signature-heading">extended integer meta</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Early Math</div>
-		<div class="category-list"><em>Categories:</em> Integers, Types, Queries</div>
-		<div class="signature-description">
-			Answer the upper bound of the specified integral range type. Note that unlike <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2589171559.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2589171559.html">_'s⁇genuine upper bound</a>, this method explicitly forbids the argument from being ⊥. It is intended as a practical (but not universal) replacement.
-		</div>
-		<table class="stacks">
-			<thead>
-				<tr>
-					<th class="transparent" scope="col"></th>
-					<th class="stacks i-col-label-narrow" scope="col">Position</th>
-					<th class="stacks i-col-label-narrow" scope="col">Name</th>
-					<th class="stacks i-col-label-narrow" scope="col">Type</th>
-					<th class="stacks i-col-label-wide" scope="col">Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th class="stacks i-row-label" rowspan="2">Parameters</th>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">1</td>
-					<td id="range-2104934506" class="stacks i-code">range</td>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2190032790.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2190032790.html">extended integer meta</a></td>
-					<td class="stacks i-desc">
-						An integral range type. Must not be ⊥.
-					</td>
-				</tr>
-				<tr>
-					<th class="stacks i-row-label" colspan="3">Returns</th>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/964914967.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/964914967.html">extended integer</a></td>
-					<td class="stacks i-desc">
-						The upper bound of the argument.
 					</td>
 				</tr>
 			</tbody>
@@ -394,31 +394,6 @@
 				</tr>
 			</tbody>
 		</table>
-		<div class="signature-heading">map meta's type</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Literals</div>
-		<div class="signature-description">
-			Strengthen the upper bound for map types.
-		</div>
-		<table class="stacks">
-			<thead>
-				<tr>
-					<th class="transparent" scope="col"></th>
-					<th class="stacks i-col-label-narrow" scope="col">Type</th>
-					<th class="stacks i-col-label-wide" scope="col">Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th class="stacks i-row-label" rowspan="2">Parameter Types</th>
-				</tr>
-				<tr class="methodParameters">
-<td id="map meta's type-88166771" class="stacks i-code">map meta's type</td>
-					<td class="stacks i-code">
-						
-					</td>
-				</tr>
-			</tbody>
-		</table>
 		<div class="signature-heading">tuple meta's type</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Literals</div>
 		<div class="signature-description">
@@ -438,6 +413,31 @@
 				</tr>
 				<tr class="methodParameters">
 <td id="tuple meta's type-1751640727" class="stacks i-code">tuple meta's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">map meta's type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Literals</div>
+		<div class="signature-description">
+			Strengthen the upper bound for map types.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="2">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="map meta's type-88166771" class="stacks i-code">map meta's type</td>
 					<td class="stacks i-code">
 						
 					</td>

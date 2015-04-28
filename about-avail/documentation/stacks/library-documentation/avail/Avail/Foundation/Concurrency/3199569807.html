@@ -91,11 +91,11 @@
 				</tr>
 			</tbody>
 		</table>
-		<div class="signature-heading">tuple, natural number?, [⊥, ⊥]→⊤</div>
+		<div class="signature-heading">tuple, natural number?, [⊥, ⊥, ⊥]→⊤</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Concurrency</div>
 		<div class="category-list"><em>Categories:</em> Collections, Tuples, Transformers</div>
 		<div class="signature-description">
-			Concurrently apply <a href="#accumulator-1609021279">accumulator</a> to each element of <a href="#aTuple-1609021279">aTuple</a> in order to transform and filter its elements into a new tuple, preserving the original ordering. When <a href="#accumulator-1609021279">accumulator</a> is invoked, it is passed a keeper function. The keeper function may be invoked to save a particular value, i.e, a value that will be copied into the output tuple. The keeper function will save at most one value per element of <a href="#aTuple-1609021279">aTuple</a>, i.e. each time that <a href="#accumulator-1609021279">accumulator</a> is invoked, it may invoke the keeper function at most one time. Answer the new tuple.
+			Concurrently apply <a href="#accumulator1241772422">accumulator</a> to each element of <a href="#aTuple1241772422">aTuple</a> in order to transform and filter its elements into a new tuple, preserving the original ordering. When <a href="#accumulator1241772422">accumulator</a> is invoked, it is passed a keeper function. The keeper function may be invoked to save a particular value, i.e, a value that will be copied into the output tuple. The keeper function will save at most one value per element of <a href="#aTuple1241772422">aTuple</a>, i.e. each time that <a href="#accumulator1241772422">accumulator</a> is invoked, it may invoke the keeper function at most one time. Answer the new tuple.
 		</div>
 		<table class="stacks">
 			<thead>
@@ -113,7 +113,7 @@
 				</tr>
 				<tr class="methodParameters">
 					<td class="stacks i-code">1</td>
-					<td id="aTuple-1609021279" class="stacks i-code">aTuple</td>
+					<td id="aTuple1241772422" class="stacks i-code">aTuple</td>
 					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
 					<td class="stacks i-desc">
 						
@@ -121,7 +121,7 @@
 				</tr>
 				<tr class="methodParameters">
 					<td class="stacks i-code">2</td>
-					<td id="optionalLimit-1609021279" class="stacks i-code">optionalLimit</td>
+					<td id="optionalLimit1241772422" class="stacks i-code">optionalLimit</td>
 					<td class="stacks i-code">natural number?</td>
 					<td class="stacks i-desc">
 						If specified, then the maximum number of worker <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html">fiber</a> s permitted to run in parallel. If not specified, then permit <code>default maximum worker fibers</code> worker <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html">fiber</a> s to run in parallel.
@@ -129,17 +129,17 @@
 				</tr>
 				<tr class="methodParameters">
 					<td class="stacks i-code">3</td>
-					<td id="accumulator-1609021279" class="stacks i-code">accumulator</td>
-					<td class="stacks i-code">[⊥, ⊥]→⊤</td>
+					<td id="accumulator1241772422" class="stacks i-code">accumulator</td>
+					<td class="stacks i-code">[⊥, ⊥, ⊥]→⊤</td>
 					<td class="stacks i-desc">
-						A function that accepts 1) an element from <a href="#aTuple-1609021279">aTuple</a> and 2) a keeper function. The keeper function accepts an argument of the type that should be saved.
+						A function that accepts 1) an element from <a href="#aTuple1241772422">aTuple</a>, 2) the index of that element, and 3) a keeper function. The keeper function accepts an argument of the type that should be saved.
 					</td>
 				</tr>
 				<tr>
 					<th class="stacks i-row-label" colspan="3">Returns</th>
 					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
 					<td class="stacks i-desc">
-						A tuple whose elements are those saved by the <a href="#accumulator-1609021279">accumulator</a>.
+						A tuple whose elements are those saved by the <a href="#accumulator1241772422">accumulator</a>.
 					</td>
 				</tr>
 					<th class="stacks i-row-label" colspan="3" rowspan="2">Raises</th>
@@ -211,11 +211,11 @@
 				</tr>
 			</tbody>
 		</table>
-		<div class="signature-heading">tuple, natural number?, [⊥, ⊥, ⊥]→⊤</div>
+		<div class="signature-heading">tuple, natural number?, [⊥, ⊥]→⊤</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Concurrency</div>
 		<div class="category-list"><em>Categories:</em> Collections, Tuples, Transformers</div>
 		<div class="signature-description">
-			Concurrently apply <a href="#accumulator1241772422">accumulator</a> to each element of <a href="#aTuple1241772422">aTuple</a> in order to transform and filter its elements into a new tuple, preserving the original ordering. When <a href="#accumulator1241772422">accumulator</a> is invoked, it is passed a keeper function. The keeper function may be invoked to save a particular value, i.e, a value that will be copied into the output tuple. The keeper function will save at most one value per element of <a href="#aTuple1241772422">aTuple</a>, i.e. each time that <a href="#accumulator1241772422">accumulator</a> is invoked, it may invoke the keeper function at most one time. Answer the new tuple.
+			Concurrently apply <a href="#accumulator-1609021279">accumulator</a> to each element of <a href="#aTuple-1609021279">aTuple</a> in order to transform and filter its elements into a new tuple, preserving the original ordering. When <a href="#accumulator-1609021279">accumulator</a> is invoked, it is passed a keeper function. The keeper function may be invoked to save a particular value, i.e, a value that will be copied into the output tuple. The keeper function will save at most one value per element of <a href="#aTuple-1609021279">aTuple</a>, i.e. each time that <a href="#accumulator-1609021279">accumulator</a> is invoked, it may invoke the keeper function at most one time. Answer the new tuple.
 		</div>
 		<table class="stacks">
 			<thead>
@@ -233,7 +233,7 @@
 				</tr>
 				<tr class="methodParameters">
 					<td class="stacks i-code">1</td>
-					<td id="aTuple1241772422" class="stacks i-code">aTuple</td>
+					<td id="aTuple-1609021279" class="stacks i-code">aTuple</td>
 					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
 					<td class="stacks i-desc">
 						
@@ -241,7 +241,7 @@
 				</tr>
 				<tr class="methodParameters">
 					<td class="stacks i-code">2</td>
-					<td id="optionalLimit1241772422" class="stacks i-code">optionalLimit</td>
+					<td id="optionalLimit-1609021279" class="stacks i-code">optionalLimit</td>
 					<td class="stacks i-code">natural number?</td>
 					<td class="stacks i-desc">
 						If specified, then the maximum number of worker <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html">fiber</a> s permitted to run in parallel. If not specified, then permit <code>default maximum worker fibers</code> worker <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html">fiber</a> s to run in parallel.
@@ -249,17 +249,17 @@
 				</tr>
 				<tr class="methodParameters">
 					<td class="stacks i-code">3</td>
-					<td id="accumulator1241772422" class="stacks i-code">accumulator</td>
-					<td class="stacks i-code">[⊥, ⊥, ⊥]→⊤</td>
+					<td id="accumulator-1609021279" class="stacks i-code">accumulator</td>
+					<td class="stacks i-code">[⊥, ⊥]→⊤</td>
 					<td class="stacks i-desc">
-						A function that accepts 1) an element from <a href="#aTuple1241772422">aTuple</a>, 2) the index of that element, and 3) a keeper function. The keeper function accepts an argument of the type that should be saved.
+						A function that accepts 1) an element from <a href="#aTuple-1609021279">aTuple</a> and 2) a keeper function. The keeper function accepts an argument of the type that should be saved.
 					</td>
 				</tr>
 				<tr>
 					<th class="stacks i-row-label" colspan="3">Returns</th>
 					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
 					<td class="stacks i-desc">
-						A tuple whose elements are those saved by the <a href="#accumulator1241772422">accumulator</a>.
+						A tuple whose elements are those saved by the <a href="#accumulator-1609021279">accumulator</a>.
 					</td>
 				</tr>
 					<th class="stacks i-row-label" colspan="3" rowspan="2">Raises</th>
@@ -274,6 +274,43 @@
 	</div>
 	<h4 class="method-section-header">Semantic restrictions:</h4>
 	<div class="method-section-content">
+		<div class="signature-heading">tuple meta, natural number?, [⊥, ⊥, ⊥]→⊤'s type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Concurrency</div>
+		<div class="signature-description">
+			Ensure that the function will accept all elements and indices of the tuple. Ensure that it does not produce a value.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="4">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="tuple meta1920498545" class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2915683713.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2915683713.html">tuple meta</a></td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="natural number?1920498545" class="stacks i-code">natural number?</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="[⊥, ⊥, ⊥]→⊤'s type1920498545" class="stacks i-code">[⊥, ⊥, ⊥]→⊤'s type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
 		<div class="signature-heading">tuple meta, natural number?, [⊥, ⊥, ⊥]→⊤'s type</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Concurrency</div>
 		<div class="signature-description">
@@ -379,43 +416,6 @@
 				</tr>
 				<tr class="methodParameters">
 <td id="[⊥, ⊥]→⊤'s type1283141750" class="stacks i-code">[⊥, ⊥]→⊤'s type</td>
-					<td class="stacks i-code">
-						
-					</td>
-				</tr>
-			</tbody>
-		</table>
-		<div class="signature-heading">tuple meta, natural number?, [⊥, ⊥, ⊥]→⊤'s type</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Concurrency</div>
-		<div class="signature-description">
-			Ensure that the function will accept all elements and indices of the tuple. Ensure that it does not produce a value.
-		</div>
-		<table class="stacks">
-			<thead>
-				<tr>
-					<th class="transparent" scope="col"></th>
-					<th class="stacks i-col-label-narrow" scope="col">Type</th>
-					<th class="stacks i-col-label-wide" scope="col">Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th class="stacks i-row-label" rowspan="4">Parameter Types</th>
-				</tr>
-				<tr class="methodParameters">
-<td id="tuple meta1920498545" class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2915683713.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2915683713.html">tuple meta</a></td>
-					<td class="stacks i-code">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-<td id="natural number?1920498545" class="stacks i-code">natural number?</td>
-					<td class="stacks i-code">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-<td id="[⊥, ⊥, ⊥]→⊤'s type1920498545" class="stacks i-code">[⊥, ⊥, ⊥]→⊤'s type</td>
 					<td class="stacks i-code">
 						
 					</td>

@@ -453,8 +453,8 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "any meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/123117495.html", "distinct" : "any meta/avail/Avail/Foundation/Bootstrap/Special Objects/123117495.html"},
 			{"methodName" : "variable meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/1074882789.html", "distinct" : "variable meta/avail/Avail/Foundation/Bootstrap/Special Objects/1074882789.html"},
 			{"methodName" : "map meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/2940099813.html", "distinct" : "map meta/avail/Avail/Foundation/Bootstrap/Special Objects/2940099813.html"},
-			{"methodName" : "tuple meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/2915683713.html", "distinct" : "tuple meta/avail/Avail/Foundation/Bootstrap/Special Objects/2915683713.html"},
 			{"methodName" : "function meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/3820265869.html", "distinct" : "function meta/avail/Avail/Foundation/Bootstrap/Special Objects/3820265869.html"},
+			{"methodName" : "tuple meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/2915683713.html", "distinct" : "tuple meta/avail/Avail/Foundation/Bootstrap/Special Objects/2915683713.html"},
 			{"methodName" : "set meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/2718349551.html", "distinct" : "set meta/avail/Avail/Foundation/Bootstrap/Special Objects/2718349551.html"},
 			{"methodName" : "continuation meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/3936674258.html", "distinct" : "continuation meta/avail/Avail/Foundation/Bootstrap/Special Objects/3936674258.html"}
 		]
@@ -1152,6 +1152,7 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "split_before_", "link" : "avail/Avail/Foundation/Tuples/1092715625.html", "distinct" : "split_before_/avail/Avail/Foundation/Tuples/1092715625.html"},
 			{"methodName" : "Drop…from_§until_", "link" : "avail/Avail/Data Abstractions/Iterators/Iterators/3709839308.html", "distinct" : "Drop…from_§until_/avail/Avail/Data Abstractions/Iterators/Iterators/3709839308.html"},
 			{"methodName" : "_-_", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/2124146203.html", "distinct" : "_-_/avail/Avail/Foundation/Bootstrap/Primitives/2124146203.html"},
+			{"methodName" : "“_”(UUID)", "link" : "avail/Avail/Foundation/Strings/1810231868.html", "distinct" : "“_”(UUID)/avail/Avail/Foundation/Strings/1810231868.html"},
 			{"methodName" : "map_in parallel«_-way»through_", "link" : "avail/Avail/Foundation/Concurrency/796037696.html", "distinct" : "map_in parallel«_-way»through_/avail/Avail/Foundation/Concurrency/796037696.html"},
 			{"methodName" : "left fold_through_", "link" : "avail/Avail/Foundation/Tuples/1278327767.html", "distinct" : "left fold_through_/avail/Avail/Foundation/Tuples/1278327767.html"},
 			{"methodName" : "concatenate_", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/2967470624.html", "distinct" : "concatenate_/avail/Avail/Foundation/Bootstrap/Primitives/2967470624.html"},
@@ -1165,6 +1166,7 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "_[_.._]", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/2264114797.html", "distinct" : "_[_.._]/avail/Avail/Foundation/Bootstrap/Primitives/2264114797.html"},
 			{"methodName" : "drop from_while_", "link" : "avail/Avail/Foundation/Tuples/4178391668.html", "distinct" : "drop from_while_/avail/Avail/Foundation/Tuples/4178391668.html"},
 			{"methodName" : "map_through_", "link" : "avail/Avail/Foundation/Collections/2000288729.html", "distinct" : "map_through_/avail/Avail/Foundation/Collections/2000288729.html"},
+			{"methodName" : "tuple concatenate_", "link" : "avail/Avail/Avail/1140855662.html", "distinct" : "tuple concatenate_/avail/Avail/Avail/1140855662.html"},
 			{"methodName" : "map each…in|of_§in parallel«_-way»through_", "link" : "avail/Avail/Foundation/Concurrency/441902414.html", "distinct" : "map each…in|of_§in parallel«_-way»through_/avail/Avail/Foundation/Concurrency/441902414.html"},
 			{"methodName" : "_«[_]»→_", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/36432589.html", "distinct" : "_«[_]»→_/avail/Avail/Foundation/Bootstrap/Primitives/36432589.html"},
 			{"methodName" : "_[_.._]→_", "link" : "avail/Avail/Foundation/Tuples/998097930.html", "distinct" : "_[_.._]→_/avail/Avail/Foundation/Tuples/998097930.html"},
@@ -1181,6 +1183,7 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "group_by_", "link" : "avail/Avail/Foundation/Collections/1036144922.html", "distinct" : "group_by_/avail/Avail/Foundation/Collections/1036144922.html"},
 			{"methodName" : "map and filter_in parallel«_-way»by_", "link" : "avail/Avail/Foundation/Concurrency/3199569807.html", "distinct" : "map and filter_in parallel«_-way»by_/avail/Avail/Foundation/Concurrency/3199569807.html"},
 			{"methodName" : "trim_", "link" : "avail/Avail/Foundation/Strings/2428097291.html", "distinct" : "trim_/avail/Avail/Foundation/Strings/2428097291.html"},
+			{"methodName" : "file names concatenate_", "link" : "avail/Avail/Avail/1706561696.html", "distinct" : "file names concatenate_/avail/Avail/Avail/1706561696.html"},
 			{"methodName" : "filter_in parallel«_-way»by_", "link" : "avail/Avail/Foundation/Concurrency/3235340098.html", "distinct" : "filter_in parallel«_-way»by_/avail/Avail/Foundation/Concurrency/3235340098.html"},
 			{"methodName" : "_[_↔_]", "link" : "avail/Avail/Foundation/Tuples/3730814093.html", "distinct" : "_[_↔_]/avail/Avail/Foundation/Tuples/3730814093.html"},
 			{"methodName" : "filter_by_", "link" : "avail/Avail/Foundation/Collections/3191303231.html", "distinct" : "filter_by_/avail/Avail/Foundation/Collections/3191303231.html"},
@@ -1195,6 +1198,7 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "take from_until_", "link" : "avail/Avail/Foundation/Tuples/392331491.html", "distinct" : "take from_until_/avail/Avail/Foundation/Tuples/392331491.html"},
 			{"methodName" : "stripe_at_", "link" : "avail/Avail/Foundation/Tuples/1702541770.html", "distinct" : "stripe_at_/avail/Avail/Foundation/Tuples/1702541770.html"},
 			{"methodName" : "take from_while_", "link" : "avail/Avail/Foundation/Tuples/424699680.html", "distinct" : "take from_while_/avail/Avail/Foundation/Tuples/424699680.html"},
+			{"methodName" : "quicksort…,…in|of_§by_", "link" : "avail/Avail/Foundation/Tuples/2169357673.html", "distinct" : "quicksort…,…in|of_§by_/avail/Avail/Foundation/Tuples/2169357673.html"},
 			{"methodName" : "map and filter_by_", "link" : "avail/Avail/Foundation/Collections/2642164780.html", "distinct" : "map and filter_by_/avail/Avail/Foundation/Collections/2642164780.html"},
 			{"methodName" : "«_‡zip»", "link" : "avail/Avail/Foundation/Tuples/2110198113.html", "distinct" : "«_‡zip»/avail/Avail/Foundation/Tuples/2110198113.html"}
 		]
@@ -1337,6 +1341,7 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "Drop from_while_", "link" : "avail/Avail/Data Abstractions/Iterators/Abstract Iterators/626326036.html", "distinct" : "Drop from_while_/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/626326036.html"},
 			{"methodName" : "concatenation reader", "link" : "avail/Avail/Data Abstractions/Iterators/Concatenation Readers/476253209.html", "distinct" : "concatenation reader/avail/Avail/Data Abstractions/Iterators/Concatenation Readers/476253209.html"},
 			{"methodName" : "map_through_", "link" : "avail/Avail/Foundation/Collections/2000288729.html", "distinct" : "map_through_/avail/Avail/Foundation/Collections/2000288729.html"},
+			{"methodName" : "tuple concatenate_", "link" : "avail/Avail/Avail/1140855662.html", "distinct" : "tuple concatenate_/avail/Avail/Avail/1140855662.html"},
 			{"methodName" : "Seal_'s⁇current element method", "link" : "avail/Avail/Data Abstractions/Iterators/Abstract Iterators/4120376915.html", "distinct" : "Seal_'s⁇current element method/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/4120376915.html"},
 			{"methodName" : "_delimited by_", "link" : "avail/Avail/Data Abstractions/Iterators/Delimited Readers/2282626934.html", "distinct" : "_delimited by_/avail/Avail/Data Abstractions/Iterators/Delimited Readers/2282626934.html"},
 			{"methodName" : "a counting reader from_to_by_", "link" : "avail/Avail/Data Abstractions/Iterators/Counting Readers/473721006.html", "distinct" : "a counting reader from_to_by_/avail/Avail/Data Abstractions/Iterators/Counting Readers/473721006.html"},
@@ -1354,6 +1359,7 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "«_‡++»", "link" : "avail/Avail/Data Abstractions/Iterators/Concatenation Readers/1439340124.html", "distinct" : "«_‡++»/avail/Avail/Data Abstractions/Iterators/Concatenation Readers/1439340124.html"},
 			{"methodName" : "zipped reader", "link" : "avail/Avail/Data Abstractions/Iterators/Zipped Readers/2794081467.html", "distinct" : "zipped reader/avail/Avail/Data Abstractions/Iterators/Zipped Readers/2794081467.html"},
 			{"methodName" : "take…from_§until_", "link" : "avail/Avail/Foundation/Tuples/3508212952.html", "distinct" : "take…from_§until_/avail/Avail/Foundation/Tuples/3508212952.html"},
+			{"methodName" : "file names concatenate_", "link" : "avail/Avail/Avail/1706561696.html", "distinct" : "file names concatenate_/avail/Avail/Avail/1706561696.html"},
 			{"methodName" : "exhausted reader", "link" : "avail/Avail/Data Abstractions/Iterators/Exhausted Readers/3060096778.html", "distinct" : "exhausted reader/avail/Avail/Data Abstractions/Iterators/Exhausted Readers/3060096778.html"},
 			{"methodName" : "_'s⁇current element method is_", "link" : "avail/Avail/Data Abstractions/Iterators/Abstract Iterators/1599546825.html", "distinct" : "_'s⁇current element method is_/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/1599546825.html"},
 			{"methodName" : "filter_by_", "link" : "avail/Avail/Foundation/Collections/3191303231.html", "distinct" : "filter_by_/avail/Avail/Foundation/Collections/3191303231.html"},
@@ -1413,17 +1419,6 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "a fiber reading_byte|bytes from_,⁇on success doing_,⁇on failure doing_«⁇,forked at priority_»", "link" : "avail/Avail/IO/Network/Client/Primitives/1311665451.html", "distinct" : "a fiber reading_byte|bytes from_,⁇on success doing_,⁇on failure doing_«⁇,forked at priority_»/avail/Avail/IO/Network/Client/Primitives/1311665451.html"},
 			{"methodName" : "Close_", "link" : "avail/Avail/IO/Common/657425393.html", "distinct" : "Close_/avail/Avail/IO/Common/657425393.html"},
 			{"methodName" : "address reusability", "link" : "avail/Avail/IO/Network/Options/1889730139.html", "distinct" : "address reusability/avail/Avail/IO/Network/Options/1889730139.html"}
-		]
-	},
-	{
-		"selected" : false,
-		"category" : "Standard I/O",
-		"methods" : [
-			{"methodName" : "Mark for_character|characters of read ahead", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/1889419918.html", "distinct" : "Mark for_character|characters of read ahead/avail/Avail/Foundation/Bootstrap/Primitives/1889419918.html"},
-			{"methodName" : "next character", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/2748706928.html", "distinct" : "next character/avail/Avail/Foundation/Bootstrap/Primitives/2748706928.html"},
-			{"methodName" : "Reset to mark", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/1935165025.html", "distinct" : "Reset to mark/avail/Avail/Foundation/Bootstrap/Primitives/1935165025.html"},
-			{"methodName" : "Error:_", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/3191548691.html", "distinct" : "Error:_/avail/Avail/Foundation/Bootstrap/Primitives/3191548691.html"},
-			{"methodName" : "Print:_", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/152740190.html", "distinct" : "Print:_/avail/Avail/Foundation/Bootstrap/Primitives/152740190.html"}
 		]
 	},
 	{
@@ -1492,8 +1487,9 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "_'s⁇exit buffer method is_", "link" : "avail/Avail/Data Abstractions/Iterators/Buffered Iterators/2371495348.html", "distinct" : "_'s⁇exit buffer method is_/avail/Avail/Data Abstractions/Iterators/Buffered Iterators/2371495348.html"},
 			{"methodName" : "drop from_while_", "link" : "avail/Avail/Foundation/Tuples/4178391668.html", "distinct" : "drop from_while_/avail/Avail/Foundation/Tuples/4178391668.html"},
 			{"methodName" : "concatenation reader", "link" : "avail/Avail/Data Abstractions/Iterators/Concatenation Readers/476253209.html", "distinct" : "concatenation reader/avail/Avail/Data Abstractions/Iterators/Concatenation Readers/476253209.html"},
-			{"methodName" : "graph", "link" : "avail/Avail/Data Abstractions/Graphs/Abstract Graphs/581830746.html", "distinct" : "graph/avail/Avail/Data Abstractions/Graphs/Abstract Graphs/581830746.html"},
 			{"methodName" : "map_through_", "link" : "avail/Avail/Foundation/Collections/2000288729.html", "distinct" : "map_through_/avail/Avail/Foundation/Collections/2000288729.html"},
+			{"methodName" : "graph", "link" : "avail/Avail/Data Abstractions/Graphs/Abstract Graphs/581830746.html", "distinct" : "graph/avail/Avail/Data Abstractions/Graphs/Abstract Graphs/581830746.html"},
+			{"methodName" : "tuple concatenate_", "link" : "avail/Avail/Avail/1140855662.html", "distinct" : "tuple concatenate_/avail/Avail/Avail/1140855662.html"},
 			{"methodName" : "`|_`|", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/2168035951.html", "distinct" : "`|_`|/avail/Avail/Foundation/Bootstrap/Primitives/2168035951.html"},
 			{"methodName" : "Seal_'s⁇current element method", "link" : "avail/Avail/Data Abstractions/Iterators/Abstract Iterators/4120376915.html", "distinct" : "Seal_'s⁇current element method/avail/Avail/Data Abstractions/Iterators/Abstract Iterators/4120376915.html"},
 			{"methodName" : "_delimited by_", "link" : "avail/Avail/Data Abstractions/Streams/Delimited Streams/2282626934.html", "distinct" : "_delimited by_/avail/Avail/Data Abstractions/Streams/Delimited Streams/2282626934.html"},
@@ -1537,6 +1533,7 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "positionable iterator", "link" : "avail/Avail/Data Abstractions/Iterators/Positionable Iterators/2591120719.html", "distinct" : "positionable iterator/avail/Avail/Data Abstractions/Iterators/Positionable Iterators/2591120719.html"},
 			{"methodName" : "a UTF8 encoder", "link" : "avail/Avail/Data Abstractions/Converters/UTF-8 Converters/778815988.html", "distinct" : "a UTF8 encoder/avail/Avail/Data Abstractions/Converters/UTF-8 Converters/778815988.html"},
 			{"methodName" : "random access buffered iterator", "link" : "avail/Avail/Data Abstractions/Iterators/Random Access Buffered Iterators/4223107832.html", "distinct" : "random access buffered iterator/avail/Avail/Data Abstractions/Iterators/Random Access Buffered Iterators/4223107832.html"},
+			{"methodName" : "file names concatenate_", "link" : "avail/Avail/Avail/1706561696.html", "distinct" : "file names concatenate_/avail/Avail/Avail/1706561696.html"},
 			{"methodName" : "buffered writer", "link" : "avail/Avail/Data Abstractions/Iterators/Buffered Iterators/1416038100.html", "distinct" : "buffered writer/avail/Avail/Data Abstractions/Iterators/Buffered Iterators/1416038100.html"},
 			{"methodName" : "“_”(UTF8)", "link" : "avail/Avail/Data Abstractions/Converters/UTF-8 Converters/3262023828.html", "distinct" : "“_”(UTF8)/avail/Avail/Data Abstractions/Converters/UTF-8 Converters/3262023828.html"},
 			{"methodName" : "unlabeled graph", "link" : "avail/Avail/Data Abstractions/Graphs/Abstract Graphs/4238470770.html", "distinct" : "unlabeled graph/avail/Avail/Data Abstractions/Graphs/Abstract Graphs/4238470770.html"},
@@ -1647,7 +1644,12 @@ stacksApp.factory('Categories', function () {
 		"methods" : [
 			{"methodName" : "next«value in»⁇_«from standard input»⁇", "link" : "avail/Avail/IO/Standard Input/1998103749.html", "distinct" : "next«value in»⁇_«from standard input»⁇/avail/Avail/IO/Standard Input/1998103749.html"},
 			{"methodName" : "next line«from standard input»⁇", "link" : "avail/Avail/IO/Standard Input/3903660865.html", "distinct" : "next line«from standard input»⁇/avail/Avail/IO/Standard Input/3903660865.html"},
-			{"methodName" : "next_character|characters«from standard input»⁇", "link" : "avail/Avail/IO/Standard Input/1322571957.html", "distinct" : "next_character|characters«from standard input»⁇/avail/Avail/IO/Standard Input/1322571957.html"}
+			{"methodName" : "Mark for_character|characters of read ahead", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/1889419918.html", "distinct" : "Mark for_character|characters of read ahead/avail/Avail/Foundation/Bootstrap/Primitives/1889419918.html"},
+			{"methodName" : "next_character|characters«from standard input»⁇", "link" : "avail/Avail/IO/Standard Input/1322571957.html", "distinct" : "next_character|characters«from standard input»⁇/avail/Avail/IO/Standard Input/1322571957.html"},
+			{"methodName" : "next character", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/2748706928.html", "distinct" : "next character/avail/Avail/Foundation/Bootstrap/Primitives/2748706928.html"},
+			{"methodName" : "Reset to mark", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/1935165025.html", "distinct" : "Reset to mark/avail/Avail/Foundation/Bootstrap/Primitives/1935165025.html"},
+			{"methodName" : "Error:_", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/3191548691.html", "distinct" : "Error:_/avail/Avail/Foundation/Bootstrap/Primitives/3191548691.html"},
+			{"methodName" : "Print:_", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/152740190.html", "distinct" : "Print:_/avail/Avail/Foundation/Bootstrap/Primitives/152740190.html"}
 		]
 	},
 	{
@@ -1711,8 +1713,8 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "variable reference phrase", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/2502982516.html", "distinct" : "variable reference phrase/avail/Avail/Foundation/Bootstrap/Special Objects/2502982516.html"},
 			{"methodName" : "_→set", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/2997758481.html", "distinct" : "_→set/avail/Avail/Foundation/Bootstrap/Primitives/2997758481.html"},
 			{"methodName" : "_∨_", "link" : "avail/Avail/Foundation/Early Logic/3489868414.html", "distinct" : "_∨_/avail/Avail/Foundation/Early Logic/3489868414.html"},
-			{"methodName" : "_→block phrase", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/2143441807.html", "distinct" : "_→block phrase/avail/Avail/Foundation/Bootstrap/Primitives/2143441807.html"},
 			{"methodName" : "``_``(_)", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/2569282231.html", "distinct" : "``_``(_)/avail/Avail/Foundation/Bootstrap/Primitives/2569282231.html"},
+			{"methodName" : "_→block phrase", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/2143441807.html", "distinct" : "_→block phrase/avail/Avail/Foundation/Bootstrap/Primitives/2143441807.html"},
 			{"methodName" : "Request termination of_", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/4288484431.html", "distinct" : "Request termination of_/avail/Avail/Foundation/Bootstrap/Primitives/4288484431.html"},
 			{"methodName" : "After the current module is unloaded,⁇do_", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/786522757.html", "distinct" : "After the current module is unloaded,⁇do_/avail/Avail/Foundation/Bootstrap/Primitives/786522757.html"},
 			{"methodName" : "type", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/3671539130.html", "distinct" : "type/avail/Avail/Foundation/Bootstrap/Special Objects/3671539130.html"},
@@ -1778,6 +1780,7 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "label phrase", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/732262667.html", "distinct" : "label phrase/avail/Avail/Foundation/Bootstrap/Special Objects/732262667.html"},
 			{"methodName" : "_(«_‡,»)", "link" : "avail/Avail/Foundation/Early Functions/308711842.html", "distinct" : "_(«_‡,»)/avail/Avail/Foundation/Early Functions/308711842.html"},
 			{"methodName" : "_\_", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/381847258.html", "distinct" : "_\_/avail/Avail/Foundation/Bootstrap/Primitives/381847258.html"},
+			{"methodName" : "tuple concatenate_", "link" : "avail/Avail/Avail/1140855662.html", "distinct" : "tuple concatenate_/avail/Avail/Avail/1140855662.html"},
 			{"methodName" : "`|_`|", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/2168035951.html", "distinct" : "`|_`|/avail/Avail/Foundation/Bootstrap/Primitives/2168035951.html"},
 			{"methodName" : "_'s⁇write type", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/2765185409.html", "distinct" : "_'s⁇write type/avail/Avail/Foundation/Bootstrap/Primitives/2765185409.html"},
 			{"methodName" : "_to_by_", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/3588900467.html", "distinct" : "_to_by_/avail/Avail/Foundation/Bootstrap/Primitives/3588900467.html"},
@@ -1869,6 +1872,7 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "Clear_↑", "link" : "avail/Avail/Foundation/Early Variables/2120577191.html", "distinct" : "Clear_↑/avail/Avail/Foundation/Early Variables/2120577191.html"},
 			{"methodName" : "current fiber[_]:=_", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/3782541260.html", "distinct" : "current fiber[_]:=_/avail/Avail/Foundation/Bootstrap/Primitives/3782541260.html"},
 			{"methodName" : "token", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/1704033833.html", "distinct" : "token/avail/Avail/Foundation/Bootstrap/Special Objects/1704033833.html"},
+			{"methodName" : "file names concatenate_", "link" : "avail/Avail/Avail/1706561696.html", "distinct" : "file names concatenate_/avail/Avail/Avail/1706561696.html"},
 			{"methodName" : "_'s⁇leading whitespace", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/444430217.html", "distinct" : "_'s⁇leading whitespace/avail/Avail/Foundation/Bootstrap/Primitives/444430217.html"},
 			{"methodName" : "local constant phrase", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/1840175396.html", "distinct" : "local constant phrase/avail/Avail/Foundation/Bootstrap/Special Objects/1840175396.html"},
 			{"methodName" : "whole number", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/3836536488.html", "distinct" : "whole number/avail/Avail/Foundation/Bootstrap/Special Objects/3836536488.html"},
@@ -1926,8 +1930,8 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "∅", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/2744570401.html", "distinct" : "∅/avail/Avail/Foundation/Bootstrap/Special Objects/2744570401.html"},
 			{"methodName" : "invoke_with_,⁇forked at priority_", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/3781935158.html", "distinct" : "invoke_with_,⁇forked at priority_/avail/Avail/Foundation/Bootstrap/Primitives/3781935158.html"},
 			{"methodName" : "argument phrase", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/2535337430.html", "distinct" : "argument phrase/avail/Avail/Foundation/Bootstrap/Special Objects/2535337430.html"},
-			{"methodName" : "_'s⁇genuine lower bound", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/1265642924.html", "distinct" : "_'s⁇genuine lower bound/avail/Avail/Foundation/Bootstrap/Primitives/1265642924.html"},
 			{"methodName" : "_→object", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/108087564.html", "distinct" : "_→object/avail/Avail/Foundation/Bootstrap/Primitives/108087564.html"},
+			{"methodName" : "_'s⁇genuine lower bound", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/1265642924.html", "distinct" : "_'s⁇genuine lower bound/avail/Avail/Foundation/Bootstrap/Primitives/1265642924.html"},
 			{"methodName" : "_has terminated", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/3915397384.html", "distinct" : "_has terminated/avail/Avail/Foundation/Bootstrap/Primitives/3915397384.html"},
 			{"methodName" : "_∩_", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/2794616015.html", "distinct" : "_∩_/avail/Avail/Foundation/Bootstrap/Primitives/2794616015.html"},
 			{"methodName" : "method", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/3306493381.html", "distinct" : "method/avail/Avail/Foundation/Bootstrap/Special Objects/3306493381.html"},
@@ -1972,8 +1976,8 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "any meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/123117495.html", "distinct" : "any meta/avail/Avail/Foundation/Bootstrap/Special Objects/123117495.html"},
 			{"methodName" : "variable meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/1074882789.html", "distinct" : "variable meta/avail/Avail/Foundation/Bootstrap/Special Objects/1074882789.html"},
 			{"methodName" : "map meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/2940099813.html", "distinct" : "map meta/avail/Avail/Foundation/Bootstrap/Special Objects/2940099813.html"},
-			{"methodName" : "tuple meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/2915683713.html", "distinct" : "tuple meta/avail/Avail/Foundation/Bootstrap/Special Objects/2915683713.html"},
 			{"methodName" : "function meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/3820265869.html", "distinct" : "function meta/avail/Avail/Foundation/Bootstrap/Special Objects/3820265869.html"},
+			{"methodName" : "tuple meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/2915683713.html", "distinct" : "tuple meta/avail/Avail/Foundation/Bootstrap/Special Objects/2915683713.html"},
 			{"methodName" : "set meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/2718349551.html", "distinct" : "set meta/avail/Avail/Foundation/Bootstrap/Special Objects/2718349551.html"},
 			{"methodName" : "continuation meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/3936674258.html", "distinct" : "continuation meta/avail/Avail/Foundation/Bootstrap/Special Objects/3936674258.html"}
 		]
@@ -2057,6 +2061,14 @@ stacksApp.factory('Categories', function () {
 	},
 	{
 		"selected" : false,
+		"category" : "Unclassified",
+		"methods" : [
+			{"methodName" : "system exception", "link" : "avail/Avail/Foundation/Exceptions/3339444876.html", "distinct" : "system exception/avail/Avail/Foundation/Exceptions/3339444876.html"},
+			{"methodName" : "Require:macro send has no internal whitespace(_)", "link" : "avail/Avail/Foundation/Macro Support/3517158234.html", "distinct" : "Require:macro send has no internal whitespace(_)/avail/Avail/Foundation/Macro Support/3517158234.html"}
+		]
+	},
+	{
+		"selected" : false,
 		"category" : "Semantic Restrictions",
 		"methods" : [
 			{"methodName" : "Semantic restriction_is_", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/379558764.html", "distinct" : "Semantic restriction_is_/avail/Avail/Foundation/Bootstrap/Primitives/379558764.html"},
@@ -2114,6 +2126,7 @@ stacksApp.factory('Categories', function () {
 		"methods" : [
 			{"methodName" : "failed-requirement exception", "link" : "avail/Avail/Unit Testing/Tools/1907496598.html", "distinct" : "failed-requirement exception/avail/Avail/Unit Testing/Tools/1907496598.html"},
 			{"methodName" : "Require:_(_)", "link" : "avail/Avail/Unit Testing/Tools/3435885694.html", "distinct" : "Require:_(_)/avail/Avail/Unit Testing/Tools/3435885694.html"},
+			{"methodName" : "Require if supported«on this platform»⁇:_(_)", "link" : "avail/Avail/Unit Testing/Tools/1156648326.html", "distinct" : "Require if supported«on this platform»⁇:_(_)/avail/Avail/Unit Testing/Tools/1156648326.html"},
 			{"methodName" : "all test suites in_", "link" : "avail/Avail/Unit Testing/Runners/2942395024.html", "distinct" : "all test suites in_/avail/Avail/Unit Testing/Runners/2942395024.html"},
 			{"methodName" : "Do not run tests in_in parallel", "link" : "avail/Avail/Unit Testing/Definers/2647843074.html", "distinct" : "Do not run tests in_in parallel/avail/Avail/Unit Testing/Definers/2647843074.html"},
 			{"methodName" : "explicit-failed-test exception", "link" : "avail/Avail/Unit Testing/Tools/1891735320.html", "distinct" : "explicit-failed-test exception/avail/Avail/Unit Testing/Tools/1891735320.html"},
@@ -2128,6 +2141,8 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "long“_”", "link" : "avail/Avail/Unit Testing/Types/3574108620.html", "distinct" : "long“_”/avail/Avail/Unit Testing/Types/3574108620.html"},
 			{"methodName" : "report on all tests", "link" : "avail/Avail/Unit Testing/Runners/1390646997.html", "distinct" : "report on all tests/avail/Avail/Unit Testing/Runners/1390646997.html"},
 			{"methodName" : "module-oriented“_”", "link" : "avail/Avail/Unit Testing/Runners/1753852241.html", "distinct" : "module-oriented“_”/avail/Avail/Unit Testing/Runners/1753852241.html"},
+			{"methodName" : "Require if supported«on this platform»⁇:_raises_", "link" : "avail/Avail/Unit Testing/Tools/1639514568.html", "distinct" : "Require if supported«on this platform»⁇:_raises_/avail/Avail/Unit Testing/Tools/1639514568.html"},
+			{"methodName" : "Require if supported«on this platform»⁇:_raises_(_)", "link" : "avail/Avail/Unit Testing/Tools/848128136.html", "distinct" : "Require if supported«on this platform»⁇:_raises_(_)/avail/Avail/Unit Testing/Tools/848128136.html"},
 			{"methodName" : "Fail test", "link" : "avail/Avail/Unit Testing/Tools/1980757108.html", "distinct" : "Fail test/avail/Avail/Unit Testing/Tools/1980757108.html"},
 			{"methodName" : "_'s⁇metrics by test suite", "link" : "avail/Avail/Unit Testing/Runners/208222624.html", "distinct" : "_'s⁇metrics by test suite/avail/Avail/Unit Testing/Runners/208222624.html"},
 			{"methodName" : "Require:_", "link" : "avail/Avail/Unit Testing/Tools/2444465342.html", "distinct" : "Require:_/avail/Avail/Unit Testing/Tools/2444465342.html"},
@@ -2146,11 +2161,13 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "unit test report", "link" : "avail/Avail/Unit Testing/Types/363927676.html", "distinct" : "unit test report/avail/Avail/Unit Testing/Types/363927676.html"},
 			{"methodName" : "all test suites", "link" : "avail/Avail/Unit Testing/Runners/1626761562.html", "distinct" : "all test suites/avail/Avail/Unit Testing/Runners/1626761562.html"},
 			{"methodName" : "no-such-test exception", "link" : "avail/Avail/Unit Testing/Types/160026893.html", "distinct" : "no-such-test exception/avail/Avail/Unit Testing/Types/160026893.html"},
+			{"methodName" : "Require:_raises_(_)", "link" : "avail/Avail/Unit Testing/Tools/762748544.html", "distinct" : "Require:_raises_(_)/avail/Avail/Unit Testing/Tools/762748544.html"},
 			{"methodName" : "no-such-test-suite exception", "link" : "avail/Avail/Unit Testing/Types/504291408.html", "distinct" : "no-such-test-suite exception/avail/Avail/Unit Testing/Types/504291408.html"},
 			{"methodName" : "unit test result", "link" : "avail/Avail/Unit Testing/Types/2554599663.html", "distinct" : "unit test result/avail/Avail/Unit Testing/Types/2554599663.html"},
 			{"methodName" : "Test_in_«,⁇if supported«on this platform»⁇,⁇»?is_«must raise_»", "link" : "avail/Avail/Unit Testing/Definers/310504441.html", "distinct" : "Test_in_«,⁇if supported«on this platform»⁇,⁇»?is_«must raise_»/avail/Avail/Unit Testing/Definers/310504441.html"},
 			{"methodName" : "After running_,⁇do_", "link" : "avail/Avail/Unit Testing/Definers/94969867.html", "distinct" : "After running_,⁇do_/avail/Avail/Unit Testing/Definers/94969867.html"},
 			{"methodName" : "_is a new test suite", "link" : "avail/Avail/Unit Testing/Definers/4179382976.html", "distinct" : "_is a new test suite/avail/Avail/Unit Testing/Definers/4179382976.html"},
+			{"methodName" : "Require:_raises_", "link" : "avail/Avail/Unit Testing/Tools/3913783232.html", "distinct" : "Require:_raises_/avail/Avail/Unit Testing/Tools/3913783232.html"},
 			{"methodName" : "short“_”", "link" : "avail/Avail/Unit Testing/Types/3415883868.html", "distinct" : "short“_”/avail/Avail/Unit Testing/Types/3415883868.html"}
 		]
 	},
@@ -2161,6 +2178,7 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "Declare loop variable_as_", "link" : "avail/Avail/Foundation/Macro Support/3586507150.html", "distinct" : "Declare loop variable_as_/avail/Avail/Foundation/Macro Support/3586507150.html"},
 			{"methodName" : "scope map:=_", "link" : "avail/Avail/Foundation/Early Macro Support/4217415454.html", "distinct" : "scope map:=_/avail/Avail/Foundation/Early Macro Support/4217415454.html"},
 			{"methodName" : "parse map", "link" : "avail/Avail/Foundation/Early Macro Support/3485660473.html", "distinct" : "parse map/avail/Avail/Foundation/Early Macro Support/3485660473.html"},
+			{"methodName" : "constituent tokens", "link" : "avail/Avail/Foundation/Early Macro Support/4125117948.html", "distinct" : "constituent tokens/avail/Avail/Foundation/Early Macro Support/4125117948.html"},
 			{"methodName" : "scope map", "link" : "avail/Avail/Foundation/Early Macro Support/4064468220.html", "distinct" : "scope map/avail/Avail/Foundation/Early Macro Support/4064468220.html"},
 			{"methodName" : "parse map:=_", "link" : "avail/Avail/Foundation/Early Macro Support/3638607707.html", "distinct" : "parse map:=_/avail/Avail/Foundation/Early Macro Support/3638607707.html"},
 			{"methodName" : "restricted send_with_:_", "link" : "avail/Avail/Foundation/Phrases/673246446.html", "distinct" : "restricted send_with_:_/avail/Avail/Foundation/Phrases/673246446.html"},
@@ -2392,6 +2410,7 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "Assert:_(_)", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/4136188519.html", "distinct" : "Assert:_(_)/avail/Avail/Foundation/Bootstrap/Primitives/4136188519.html"},
 			{"methodName" : "Assert:_(_)", "link" : "avail/Avail/Foundation/Assertions/4136188519.html", "distinct" : "Assert:_(_)/avail/Avail/Foundation/Assertions/4136188519.html"},
 			{"methodName" : "Require:_is public", "link" : "avail/Avail/Foundation/Early Definers/1290609389.html", "distinct" : "Require:_is public/avail/Avail/Foundation/Early Definers/1290609389.html"},
+			{"methodName" : "Shouldn't happen(_)", "link" : "avail/Avail/Foundation/Assertions/1790540324.html", "distinct" : "Shouldn't happen(_)/avail/Avail/Foundation/Assertions/1790540324.html"},
 			{"methodName" : "Assert:_", "link" : "avail/Avail/Foundation/Assertions/4197287.html", "distinct" : "Assert:_/avail/Avail/Foundation/Assertions/4197287.html"},
 			{"methodName" : "Require:_accepts_", "link" : "avail/Avail/Foundation/Collections/230012956.html", "distinct" : "Require:_accepts_/avail/Avail/Foundation/Collections/230012956.html"}
 		]
@@ -2402,6 +2421,7 @@ stacksApp.factory('Categories', function () {
 		"methods" : [
 			{"methodName" : "_is a letter", "link" : "avail/Avail/Foundation/Characters/204639032.html", "distinct" : "_is a letter/avail/Avail/Foundation/Characters/204639032.html"},
 			{"methodName" : "_→character", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/388711886.html", "distinct" : "_→character/avail/Avail/Foundation/Bootstrap/Primitives/388711886.html"},
+			{"methodName" : "_<_", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/1297982970.html", "distinct" : "_<_/avail/Avail/Foundation/Bootstrap/Primitives/1297982970.html"},
 			{"methodName" : "_is titlecase", "link" : "avail/Avail/Foundation/Characters/939963221.html", "distinct" : "_is titlecase/avail/Avail/Foundation/Characters/939963221.html"},
 			{"methodName" : "titlecase_", "link" : "avail/Avail/Foundation/Characters/1836170157.html", "distinct" : "titlecase_/avail/Avail/Foundation/Characters/1836170157.html"},
 			{"methodName" : "_is lowercase", "link" : "avail/Avail/Foundation/Characters/2184531440.html", "distinct" : "_is lowercase/avail/Avail/Foundation/Characters/2184531440.html"},
@@ -2412,6 +2432,7 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "_is whitespace", "link" : "avail/Avail/Foundation/Characters/310828092.html", "distinct" : "_is whitespace/avail/Avail/Foundation/Characters/310828092.html"},
 			{"methodName" : "¢…!", "link" : "avail/Avail/Foundation/Literals/3887901693.html", "distinct" : "¢…!/avail/Avail/Foundation/Literals/3887901693.html"},
 			{"methodName" : "capitalize_", "link" : "avail/Avail/Foundation/Characters/2274743889.html", "distinct" : "capitalize_/avail/Avail/Foundation/Characters/2274743889.html"},
+			{"methodName" : "_>_", "link" : "avail/Avail/Foundation/Early Math/2967698744.html", "distinct" : "_>_/avail/Avail/Foundation/Early Math/2967698744.html"},
 			{"methodName" : "uppercase_", "link" : "avail/Avail/Foundation/Characters/1525689923.html", "distinct" : "uppercase_/avail/Avail/Foundation/Characters/1525689923.html"}
 		]
 	},
@@ -2487,6 +2508,7 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "select each…from_§where_", "link" : "avail/Avail/Foundation/Collections/2407191435.html", "distinct" : "select each…from_§where_/avail/Avail/Foundation/Collections/2407191435.html"},
 			{"methodName" : "drop from_while_", "link" : "avail/Avail/Foundation/Tuples/4178391668.html", "distinct" : "drop from_while_/avail/Avail/Foundation/Tuples/4178391668.html"},
 			{"methodName" : "map_through_", "link" : "avail/Avail/Foundation/Collections/2000288729.html", "distinct" : "map_through_/avail/Avail/Foundation/Collections/2000288729.html"},
+			{"methodName" : "tuple concatenate_", "link" : "avail/Avail/Avail/1140855662.html", "distinct" : "tuple concatenate_/avail/Avail/Avail/1140855662.html"},
 			{"methodName" : "_delimited by_", "link" : "avail/Avail/Data Abstractions/Streams/Delimited Streams/2282626934.html", "distinct" : "_delimited by_/avail/Avail/Data Abstractions/Streams/Delimited Streams/2282626934.html"},
 			{"methodName" : "an empty stream", "link" : "avail/Avail/Data Abstractions/Streams/Abstract Streams/1463298590.html", "distinct" : "an empty stream/avail/Avail/Data Abstractions/Streams/Abstract Streams/1463298590.html"},
 			{"methodName" : "zip_", "link" : "avail/Avail/Foundation/Tuples/1628356322.html", "distinct" : "zip_/avail/Avail/Foundation/Tuples/1628356322.html"},
@@ -2497,6 +2519,7 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "reject each…from_§where_", "link" : "avail/Avail/Foundation/Collections/3431234256.html", "distinct" : "reject each…from_§where_/avail/Avail/Foundation/Collections/3431234256.html"},
 			{"methodName" : "«_‡++»", "link" : "avail/Avail/Data Abstractions/Streams/Abstract Streams/1439340124.html", "distinct" : "«_‡++»/avail/Avail/Data Abstractions/Streams/Abstract Streams/1439340124.html"},
 			{"methodName" : "take…from_§until_", "link" : "avail/Avail/Foundation/Tuples/3508212952.html", "distinct" : "take…from_§until_/avail/Avail/Foundation/Tuples/3508212952.html"},
+			{"methodName" : "file names concatenate_", "link" : "avail/Avail/Avail/1706561696.html", "distinct" : "file names concatenate_/avail/Avail/Avail/1706561696.html"},
 			{"methodName" : "_'s⁇tail method is_", "link" : "avail/Avail/Data Abstractions/Streams/Abstract Streams/1934156810.html", "distinct" : "_'s⁇tail method is_/avail/Avail/Data Abstractions/Streams/Abstract Streams/1934156810.html"},
 			{"methodName" : "a counting stream from_to_by_", "link" : "avail/Avail/Data Abstractions/Streams/Counting Streams/3110336163.html", "distinct" : "a counting stream from_to_by_/avail/Avail/Data Abstractions/Streams/Counting Streams/3110336163.html"},
 			{"methodName" : "_'s⁇head", "link" : "avail/Avail/Foundation/Tuples/810420382.html", "distinct" : "_'s⁇head/avail/Avail/Foundation/Tuples/810420382.html"},
@@ -2546,6 +2569,7 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "least common multiple of_and_", "link" : "avail/Avail/Foundation/Math/4074134856.html", "distinct" : "least common multiple of_and_/avail/Avail/Foundation/Math/4074134856.html"},
 			{"methodName" : "∏_", "link" : "avail/Avail/Foundation/Tuples/2662426946.html", "distinct" : "∏_/avail/Avail/Foundation/Tuples/2662426946.html"},
 			{"methodName" : "_↑×=_", "link" : "avail/Avail/Foundation/Late Math/3384645467.html", "distinct" : "_↑×=_/avail/Avail/Foundation/Late Math/3384645467.html"},
+			{"methodName" : "low_bits of_", "link" : "avail/Avail/Foundation/Late Math/2879742051.html", "distinct" : "low_bits of_/avail/Avail/Foundation/Late Math/2879742051.html"},
 			{"methodName" : "(++_↑)", "link" : "avail/Avail/Foundation/Variables/2274453731.html", "distinct" : "(++_↑)/avail/Avail/Foundation/Variables/2274453731.html"},
 			{"methodName" : "--_↑", "link" : "avail/Avail/Foundation/Variables/680587982.html", "distinct" : "--_↑/avail/Avail/Foundation/Variables/680587982.html"},
 			{"methodName" : "_÷_", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/1074891985.html", "distinct" : "_÷_/avail/Avail/Foundation/Bootstrap/Primitives/1074891985.html"},
@@ -2571,6 +2595,7 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "_`!", "link" : "avail/Avail/Advanced Math/Combinatorics/2197987420.html", "distinct" : "_`!/avail/Avail/Advanced Math/Combinatorics/2197987420.html"},
 			{"methodName" : "_≥_", "link" : "avail/Avail/Foundation/Early Math/7923043.html", "distinct" : "_≥_/avail/Avail/Foundation/Early Math/7923043.html"},
 			{"methodName" : "ln_", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/2320386797.html", "distinct" : "ln_/avail/Avail/Foundation/Bootstrap/Primitives/2320386797.html"},
+			{"methodName" : "_→_bytes", "link" : "avail/Avail/Foundation/Late Math/3457589467.html", "distinct" : "_→_bytes/avail/Avail/Foundation/Late Math/3457589467.html"},
 			{"methodName" : "_bit⊕_", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/225148658.html", "distinct" : "_bit⊕_/avail/Avail/Foundation/Bootstrap/Primitives/225148658.html"},
 			{"methodName" : "_↑÷=_", "link" : "avail/Avail/Foundation/Late Math/3588720315.html", "distinct" : "_↑÷=_/avail/Avail/Foundation/Late Math/3588720315.html"},
 			{"methodName" : "_^_", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/3969385240.html", "distinct" : "_^_/avail/Avail/Foundation/Bootstrap/Primitives/3969385240.html"},
@@ -2651,9 +2676,11 @@ stacksApp.factory('Categories', function () {
 		"category" : "Sorting",
 		"methods" : [
 			{"methodName" : "merge sort_", "link" : "avail/Avail/Foundation/Tuples/1034928887.html", "distinct" : "merge sort_/avail/Avail/Foundation/Tuples/1034928887.html"},
+			{"methodName" : "merge sort…,…in|of_§by_", "link" : "avail/Avail/Foundation/Tuples/3156705720.html", "distinct" : "merge sort…,…in|of_§by_/avail/Avail/Foundation/Tuples/3156705720.html"},
 			{"methodName" : "merge sort_with_", "link" : "avail/Avail/Foundation/Tuples/3002682086.html", "distinct" : "merge sort_with_/avail/Avail/Foundation/Tuples/3002682086.html"},
 			{"methodName" : "quicksort_", "link" : "avail/Avail/Foundation/Tuples/2662703844.html", "distinct" : "quicksort_/avail/Avail/Foundation/Tuples/2662703844.html"},
-			{"methodName" : "quicksort_with_", "link" : "avail/Avail/Foundation/Tuples/975529423.html", "distinct" : "quicksort_with_/avail/Avail/Foundation/Tuples/975529423.html"}
+			{"methodName" : "quicksort_with_", "link" : "avail/Avail/Foundation/Tuples/975529423.html", "distinct" : "quicksort_with_/avail/Avail/Foundation/Tuples/975529423.html"},
+			{"methodName" : "quicksort…,…in|of_§by_", "link" : "avail/Avail/Foundation/Tuples/2169357673.html", "distinct" : "quicksort…,…in|of_§by_/avail/Avail/Foundation/Tuples/2169357673.html"}
 		]
 	},
 	{
@@ -2771,8 +2798,10 @@ stacksApp.factory('Categories', function () {
 		"selected" : false,
 		"category" : "Bits",
 		"methods" : [
+			{"methodName" : "low_bits of_", "link" : "avail/Avail/Foundation/Late Math/2879742051.html", "distinct" : "low_bits of_/avail/Avail/Foundation/Late Math/2879742051.html"},
 			{"methodName" : "_<<_", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/3023668002.html", "distinct" : "_<<_/avail/Avail/Foundation/Bootstrap/Primitives/3023668002.html"},
 			{"methodName" : "an unsigned integer from_", "link" : "avail/Avail/Foundation/Late Math/966809965.html", "distinct" : "an unsigned integer from_/avail/Avail/Foundation/Late Math/966809965.html"},
+			{"methodName" : "_→_bytes", "link" : "avail/Avail/Foundation/Late Math/3457589467.html", "distinct" : "_→_bytes/avail/Avail/Foundation/Late Math/3457589467.html"},
 			{"methodName" : "_bit⊕_", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/225148658.html", "distinct" : "_bit⊕_/avail/Avail/Foundation/Bootstrap/Primitives/225148658.html"},
 			{"methodName" : "an integer from_", "link" : "avail/Avail/Foundation/Late Math/2813974952.html", "distinct" : "an integer from_/avail/Avail/Foundation/Late Math/2813974952.html"},
 			{"methodName" : "_bit∧_", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/3972572920.html", "distinct" : "_bit∧_/avail/Avail/Foundation/Bootstrap/Primitives/3972572920.html"},
@@ -2907,6 +2936,7 @@ stacksApp.factory('Categories', function () {
 		"category" : "Strings",
 		"methods" : [
 			{"methodName" : "partially format_with_", "link" : "avail/Avail/Foundation/Strings/1913558909.html", "distinct" : "partially format_with_/avail/Avail/Foundation/Strings/1913558909.html"},
+			{"methodName" : "“_”(UUID)", "link" : "avail/Avail/Foundation/Strings/1810231868.html", "distinct" : "“_”(UUID)/avail/Avail/Foundation/Strings/1810231868.html"},
 			{"methodName" : "partially format_with«…::=_‡,»", "link" : "avail/Avail/Foundation/Strings/1453934071.html", "distinct" : "partially format_with«…::=_‡,»/avail/Avail/Foundation/Strings/1453934071.html"},
 			{"methodName" : "_<_", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/1297982970.html", "distinct" : "_<_/avail/Avail/Foundation/Bootstrap/Primitives/1297982970.html"},
 			{"methodName" : "merge sort_", "link" : "avail/Avail/Foundation/Tuples/1034928887.html", "distinct" : "merge sort_/avail/Avail/Foundation/Tuples/1034928887.html"},
@@ -3058,6 +3088,7 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "For each…,…in|of_§in parallel«_-way»do_", "link" : "avail/Avail/Foundation/Concurrency/4185893775.html", "distinct" : "For each…,…in|of_§in parallel«_-way»do_/avail/Avail/Foundation/Concurrency/4185893775.html"},
 			{"methodName" : "_is empty", "link" : "avail/Avail/Foundation/Collections/3469355514.html", "distinct" : "_is empty/avail/Avail/Foundation/Collections/3469355514.html"},
 			{"methodName" : "_-_", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/2124146203.html", "distinct" : "_-_/avail/Avail/Foundation/Bootstrap/Primitives/2124146203.html"},
+			{"methodName" : "“_”(UUID)", "link" : "avail/Avail/Foundation/Strings/1810231868.html", "distinct" : "“_”(UUID)/avail/Avail/Foundation/Strings/1810231868.html"},
 			{"methodName" : "“_”", "link" : "avail/Avail/Foundation/Early Literals/202741432.html", "distinct" : "“_”/avail/Avail/Foundation/Early Literals/202741432.html"},
 			{"methodName" : "Require:_accepts_«(check indices)»?", "link" : "avail/Avail/Foundation/Tuples/4125797631.html", "distinct" : "Require:_accepts_«(check indices)»?/avail/Avail/Foundation/Tuples/4125797631.html"},
 			{"methodName" : "_to_", "link" : "avail/Avail/Foundation/Tuples/4051761149.html", "distinct" : "_to_/avail/Avail/Foundation/Tuples/4051761149.html"},
@@ -3095,6 +3126,7 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "map_through_", "link" : "avail/Avail/Foundation/Collections/2000288729.html", "distinct" : "map_through_/avail/Avail/Foundation/Collections/2000288729.html"},
 			{"methodName" : "<«_‡,»`…`|_.._>", "link" : "avail/Avail/Foundation/Types/1289221860.html", "distinct" : "<«_‡,»`…`|_.._>/avail/Avail/Foundation/Types/1289221860.html"},
 			{"methodName" : "(the)“_”«else_»", "link" : "avail/Avail/Foundation/Strings/2589551376.html", "distinct" : "(the)“_”«else_»/avail/Avail/Foundation/Strings/2589551376.html"},
+			{"methodName" : "tuple concatenate_", "link" : "avail/Avail/Avail/1140855662.html", "distinct" : "tuple concatenate_/avail/Avail/Avail/1140855662.html"},
 			{"methodName" : "`|_`|", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/2168035951.html", "distinct" : "`|_`|/avail/Avail/Foundation/Bootstrap/Primitives/2168035951.html"},
 			{"methodName" : "_to_by_", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/3588900467.html", "distinct" : "_to_by_/avail/Avail/Foundation/Bootstrap/Primitives/3588900467.html"},
 			{"methodName" : "∪_[_.._]", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/606976983.html", "distinct" : "∪_[_.._]/avail/Avail/Foundation/Bootstrap/Primitives/606976983.html"},
@@ -3113,6 +3145,7 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "_++_", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/3643568524.html", "distinct" : "_++_/avail/Avail/Foundation/Bootstrap/Primitives/3643568524.html"},
 			{"methodName" : "_[.._]", "link" : "avail/Avail/Foundation/Early Tuples/3273437238.html", "distinct" : "_[.._]/avail/Avail/Foundation/Early Tuples/3273437238.html"},
 			{"methodName" : "⎣_⎦", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/1031568848.html", "distinct" : "⎣_⎦/avail/Avail/Foundation/Bootstrap/Primitives/1031568848.html"},
+			{"methodName" : "merge sort…,…in|of_§by_", "link" : "avail/Avail/Foundation/Tuples/3156705720.html", "distinct" : "merge sort…,…in|of_§by_/avail/Avail/Foundation/Tuples/3156705720.html"},
 			{"methodName" : "all indices of_in_", "link" : "avail/Avail/Foundation/Tuples/1795252290.html", "distinct" : "all indices of_in_/avail/Avail/Foundation/Tuples/1795252290.html"},
 			{"methodName" : "split_after_", "link" : "avail/Avail/Foundation/Tuples/599566736.html", "distinct" : "split_after_/avail/Avail/Foundation/Tuples/599566736.html"},
 			{"methodName" : "_'s⁇tail", "link" : "avail/Avail/Foundation/Tuples/2641897078.html", "distinct" : "_'s⁇tail/avail/Avail/Foundation/Tuples/2641897078.html"},
@@ -3138,6 +3171,7 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "map and filter_in parallel«_-way»by_", "link" : "avail/Avail/Foundation/Concurrency/3199569807.html", "distinct" : "map and filter_in parallel«_-way»by_/avail/Avail/Foundation/Concurrency/3199569807.html"},
 			{"methodName" : "trim_", "link" : "avail/Avail/Foundation/Strings/2428097291.html", "distinct" : "trim_/avail/Avail/Foundation/Strings/2428097291.html"},
 			{"methodName" : "“_”«else_»(as simple list)", "link" : "avail/Avail/Foundation/Strings/2461708705.html", "distinct" : "“_”«else_»(as simple list)/avail/Avail/Foundation/Strings/2461708705.html"},
+			{"methodName" : "file names concatenate_", "link" : "avail/Avail/Avail/1706561696.html", "distinct" : "file names concatenate_/avail/Avail/Avail/1706561696.html"},
 			{"methodName" : "<«_‡,»>", "link" : "avail/Avail/Foundation/Early Literals/219614880.html", "distinct" : "<«_‡,»>/avail/Avail/Foundation/Early Literals/219614880.html"},
 			{"methodName" : "filter_in parallel«_-way»by_", "link" : "avail/Avail/Foundation/Concurrency/3235340098.html", "distinct" : "filter_in parallel«_-way»by_/avail/Avail/Foundation/Concurrency/3235340098.html"},
 			{"methodName" : "(a`|an)“_”«else_»", "link" : "avail/Avail/Foundation/Strings/3668296827.html", "distinct" : "(a`|an)“_”«else_»/avail/Avail/Foundation/Strings/3668296827.html"},
@@ -3177,6 +3211,7 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "stripe_at_", "link" : "avail/Avail/Foundation/Tuples/1702541770.html", "distinct" : "stripe_at_/avail/Avail/Foundation/Tuples/1702541770.html"},
 			{"methodName" : "take from_while_", "link" : "avail/Avail/Foundation/Tuples/424699680.html", "distinct" : "take from_while_/avail/Avail/Foundation/Tuples/424699680.html"},
 			{"methodName" : "_'s⁇last", "link" : "avail/Avail/Foundation/Tuples/2519082692.html", "distinct" : "_'s⁇last/avail/Avail/Foundation/Tuples/2519082692.html"},
+			{"methodName" : "quicksort…,…in|of_§by_", "link" : "avail/Avail/Foundation/Tuples/2169357673.html", "distinct" : "quicksort…,…in|of_§by_/avail/Avail/Foundation/Tuples/2169357673.html"},
 			{"methodName" : "all indices of_where_", "link" : "avail/Avail/Foundation/Tuples/1552026038.html", "distinct" : "all indices of_where_/avail/Avail/Foundation/Tuples/1552026038.html"},
 			{"methodName" : "map each…in|of_§through_", "link" : "avail/Avail/Foundation/Collections/4042299671.html", "distinct" : "map each…in|of_§through_/avail/Avail/Foundation/Collections/4042299671.html"},
 			{"methodName" : "reject each…,…from_§where_", "link" : "avail/Avail/Foundation/Collections/95146670.html", "distinct" : "reject each…,…from_§where_/avail/Avail/Foundation/Collections/95146670.html"},
@@ -3213,6 +3248,7 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "π", "link" : "avail/Avail/Foundation/Math/1023530576.html", "distinct" : "π/avail/Avail/Foundation/Math/1023530576.html"},
 			{"methodName" : "max_", "link" : "avail/Avail/Foundation/Early Math/3639607389.html", "distinct" : "max_/avail/Avail/Foundation/Early Math/3639607389.html"},
 			{"methodName" : "extended integer", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/964914967.html", "distinct" : "extended integer/avail/Avail/Foundation/Bootstrap/Special Objects/964914967.html"},
+			{"methodName" : "low_bits of_", "link" : "avail/Avail/Foundation/Late Math/2879742051.html", "distinct" : "low_bits of_/avail/Avail/Foundation/Late Math/2879742051.html"},
 			{"methodName" : "_÷_", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/1074891985.html", "distinct" : "_÷_/avail/Avail/Foundation/Bootstrap/Primitives/1074891985.html"},
 			{"methodName" : "…#.…#e|E«+|-»!…#«f»?", "link" : "avail/Avail/Foundation/Literals/4256687377.html", "distinct" : "…#.…#e|E«+|-»!…#«f»?/avail/Avail/Foundation/Literals/4256687377.html"},
 			{"methodName" : "_<<_", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/3023668002.html", "distinct" : "_<<_/avail/Avail/Foundation/Bootstrap/Primitives/3023668002.html"},
@@ -3234,6 +3270,7 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "_`!", "link" : "avail/Avail/Advanced Math/Combinatorics/2197987420.html", "distinct" : "_`!/avail/Avail/Advanced Math/Combinatorics/2197987420.html"},
 			{"methodName" : "_≥_", "link" : "avail/Avail/Foundation/Early Math/7923043.html", "distinct" : "_≥_/avail/Avail/Foundation/Early Math/7923043.html"},
 			{"methodName" : "ln_", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/2320386797.html", "distinct" : "ln_/avail/Avail/Foundation/Bootstrap/Primitives/2320386797.html"},
+			{"methodName" : "_→_bytes", "link" : "avail/Avail/Foundation/Late Math/3457589467.html", "distinct" : "_→_bytes/avail/Avail/Foundation/Late Math/3457589467.html"},
 			{"methodName" : "_bit⊕_", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/225148658.html", "distinct" : "_bit⊕_/avail/Avail/Foundation/Bootstrap/Primitives/225148658.html"},
 			{"methodName" : "an integer from_", "link" : "avail/Avail/Foundation/Late Math/2813974952.html", "distinct" : "an integer from_/avail/Avail/Foundation/Late Math/2813974952.html"},
 			{"methodName" : "_^_", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/3969385240.html", "distinct" : "_^_/avail/Avail/Foundation/Bootstrap/Primitives/3969385240.html"},
