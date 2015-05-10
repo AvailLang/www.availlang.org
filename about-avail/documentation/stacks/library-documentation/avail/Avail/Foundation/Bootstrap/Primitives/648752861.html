@@ -76,109 +76,6 @@
 				</tr>
 			</tbody>
 		</table>
-		<div class="signature-heading">set, any</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Infallible Primitives</div>
-		<div class="category-list"><em>Categories:</em> Primitives, Sets, Mathematics</div>
-		<div class="signature-description">
-			Compute and answer the set union of the specified set and a set containing the supplied element.
-		</div>
-		<table class="stacks">
-			<thead>
-				<tr>
-					<th class="transparent" scope="col"></th>
-					<th class="stacks i-col-label-narrow" scope="col">Position</th>
-					<th class="stacks i-col-label-narrow" scope="col">Name</th>
-					<th class="stacks i-col-label-narrow" scope="col">Type</th>
-					<th class="stacks i-col-label-wide" scope="col">Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th class="stacks i-row-label" rowspan="3">Parameters</th>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">1</td>
-					<td id="aSet506259264" class="stacks i-code">aSet</td>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3016318916.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3016318916.html">set</a></td>
-					<td class="stacks i-desc">
-						A set.
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">2</td>
-					<td id="newElement506259264" class="stacks i-code">newElement</td>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/421086860.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/421086860.html">any</a></td>
-					<td class="stacks i-desc">
-						The element that must be present in the resultant set.
-					</td>
-				</tr>
-				<tr>
-					<th class="stacks i-row-label" colspan="3">Returns</th>
-					<td class="stacks i-code">{any|1..∞}</td>
-					<td class="stacks i-desc">
-						A set that contains the same elements as <a href="#aSet506259264">aSet</a> but also contains <a href="#newElement506259264">newElement</a>.
-					</td>
-				</tr>
-			</tbody>
-		</table>
-		<div class="signature-heading">labeled graph, edge</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Graphs/Abstract Graphs</div>
-		<div class="category-list"><em>Categories:</em> Data Abstractions, Graphs</div>
-		<div class="signature-description">
-			Compute and answer a <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Graphs/Abstract Graphs/581830746.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Graphs/Abstract Graphs/581830746.html">graph</a> that differs from <a href="#aGraph1600728916">aGraph</a> at most by the addition of <a href="#anEdge1600728916">anEdge</a>. If <a href="#anEdge1600728916">anEdge</a> is already present, then answer <a href="#aGraph1600728916">aGraph</a>.
-		</div>
-		<table class="stacks">
-			<thead>
-				<tr>
-					<th class="transparent" scope="col"></th>
-					<th class="stacks i-col-label-narrow" scope="col">Position</th>
-					<th class="stacks i-col-label-narrow" scope="col">Name</th>
-					<th class="stacks i-col-label-narrow" scope="col">Type</th>
-					<th class="stacks i-col-label-wide" scope="col">Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th class="stacks i-row-label" rowspan="3">Parameters</th>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">1</td>
-					<td id="aGraph1600728916" class="stacks i-code">aGraph</td>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Graphs/Abstract Graphs/3249090551.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Graphs/Abstract Graphs/3249090551.html">labeled graph</a></td>
-					<td class="stacks i-desc">
-						A graph.
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">2</td>
-					<td id="anEdge1600728916" class="stacks i-code">anEdge</td>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Graphs/Abstract Graphs/441386721.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Graphs/Abstract Graphs/441386721.html">edge</a></td>
-					<td class="stacks i-desc">
-						An edge.
-					</td>
-				</tr>
-				<tr>
-					<th class="stacks i-row-label" colspan="3">Returns</th>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Graphs/Abstract Graphs/581830746.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Graphs/Abstract Graphs/581830746.html">graph</a></td>
-					<td class="stacks i-desc">
-						A graph based on <a href="#aGraph1600728916">aGraph</a> that definitely contains <a href="#anEdge1600728916">anEdge</a>.
-					</td>
-				</tr>
-					<th class="stacks i-row-label" colspan="3" rowspan="3">Raises</th>
-				<tr class="methodParameters">
-					<td class="stacks i-code">incorrect-argument-type exception</td>
-					<td class="stacks i-desc">
-						If <a href="#anEdge1600728916">anEdge</a> is not a <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Graphs/Abstract Graphs/1235812190.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Graphs/Abstract Graphs/1235812190.html">labeled edge</a>.
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Graphs/Abstract Graphs/3202726407.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Graphs/Abstract Graphs/3202726407.html">no-such-vertex exception</a></td>
-					<td class="stacks i-desc">
-						If <a href="#anEdge1600728916">anEdge</a> references vertices that are not present in <a href="#aGraph1600728916">aGraph</a>.
-					</td>
-				</tr>
-			</tbody>
-		</table>
 		<div class="signature-heading">extended integer's type, extended integer's type</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Math</div>
 		<div class="category-list"><em>Categories:</em> Mathematics, Integers, Types</div>
@@ -272,6 +169,64 @@
 					<td class="stacks i-code">cannot-add-unlike-infinities exception</td>
 					<td class="stacks i-desc">
 						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">labeled graph, edge</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Graphs/Abstract Graphs</div>
+		<div class="category-list"><em>Categories:</em> Data Abstractions, Graphs</div>
+		<div class="signature-description">
+			Compute and answer a <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Graphs/Abstract Graphs/581830746.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Graphs/Abstract Graphs/581830746.html">graph</a> that differs from <a href="#aGraph1600728916">aGraph</a> at most by the addition of <a href="#anEdge1600728916">anEdge</a>. If <a href="#anEdge1600728916">anEdge</a> is already present, then answer <a href="#aGraph1600728916">aGraph</a>.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="aGraph1600728916" class="stacks i-code">aGraph</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Graphs/Abstract Graphs/3249090551.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Graphs/Abstract Graphs/3249090551.html">labeled graph</a></td>
+					<td class="stacks i-desc">
+						A graph.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="anEdge1600728916" class="stacks i-code">anEdge</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Graphs/Abstract Graphs/441386721.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Graphs/Abstract Graphs/441386721.html">edge</a></td>
+					<td class="stacks i-desc">
+						An edge.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Graphs/Abstract Graphs/581830746.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Graphs/Abstract Graphs/581830746.html">graph</a></td>
+					<td class="stacks i-desc">
+						A graph based on <a href="#aGraph1600728916">aGraph</a> that definitely contains <a href="#anEdge1600728916">anEdge</a>.
+					</td>
+				</tr>
+					<th class="stacks i-row-label" colspan="3" rowspan="3">Raises</th>
+				<tr class="methodParameters">
+					<td class="stacks i-code">incorrect-argument-type exception</td>
+					<td class="stacks i-desc">
+						If <a href="#anEdge1600728916">anEdge</a> is not a <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Graphs/Abstract Graphs/1235812190.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Graphs/Abstract Graphs/1235812190.html">labeled edge</a>.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Graphs/Abstract Graphs/3202726407.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Graphs/Abstract Graphs/3202726407.html">no-such-vertex exception</a></td>
+					<td class="stacks i-desc">
+						If <a href="#anEdge1600728916">anEdge</a> references vertices that are not present in <a href="#aGraph1600728916">aGraph</a>.
 					</td>
 				</tr>
 			</tbody>
@@ -373,6 +328,51 @@
 				</tr>
 			</tbody>
 		</table>
+		<div class="signature-heading">set, any</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Infallible Primitives</div>
+		<div class="category-list"><em>Categories:</em> Primitives, Sets, Mathematics</div>
+		<div class="signature-description">
+			Compute and answer the set union of the specified set and a set containing the supplied element.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="aSet506259264" class="stacks i-code">aSet</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3016318916.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3016318916.html">set</a></td>
+					<td class="stacks i-desc">
+						A set.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="newElement506259264" class="stacks i-code">newElement</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/421086860.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/421086860.html">any</a></td>
+					<td class="stacks i-desc">
+						The element that must be present in the resultant set.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code">{any|1..∞}</td>
+					<td class="stacks i-desc">
+						A set that contains the same elements as <a href="#aSet506259264">aSet</a> but also contains <a href="#newElement506259264">newElement</a>.
+					</td>
+				</tr>
+			</tbody>
+		</table>
 	</div>
 	<h4 class="method-section-header">Semantic restrictions:</h4>
 	<div class="method-section-content">
@@ -432,37 +432,6 @@
 				</tr>
 				<tr class="methodParameters">
 <td id="any meta1394626438" class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/123117495.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/123117495.html">any meta</a></td>
-					<td class="stacks i-code">
-						
-					</td>
-				</tr>
-			</tbody>
-		</table>
-		<div class="signature-heading">tuple's type, any's type</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Tuples</div>
-		<div class="signature-description">
-			
-		</div>
-		<table class="stacks">
-			<thead>
-				<tr>
-					<th class="transparent" scope="col"></th>
-					<th class="stacks i-col-label-narrow" scope="col">Type</th>
-					<th class="stacks i-col-label-wide" scope="col">Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th class="stacks i-row-label" rowspan="3">Parameter Types</th>
-				</tr>
-				<tr class="methodParameters">
-<td id="tuple's type1673664314" class="stacks i-code">tuple's type</td>
-					<td class="stacks i-code">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-<td id="any's type1673664314" class="stacks i-code">any's type</td>
 					<td class="stacks i-code">
 						
 					</td>

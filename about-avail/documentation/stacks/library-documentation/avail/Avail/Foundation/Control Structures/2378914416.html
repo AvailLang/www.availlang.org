@@ -31,67 +31,6 @@
 	<h2 class="method-heading">Unless|unless_then_«else unless_then_»«else_»?</h2>
 	<h4 class="method-section-header">Definitions:</h4>
 	<div class="method-section-content">
-		<div class="signature-heading">boolean, []→⊤, &lt;&lt;[]→boolean, []→⊤…|2>…|1..>, ([]→⊤)?</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Control Structures</div>
-		<div class="category-list"><em>Categories:</em> Control Structures, Conditionals</div>
-		<div class="signature-description">
-			Multiply branching conditional statement/expression. Execute the first action for which the associated predicate answers <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4256818863.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4256818863.html">false</a>. If none of the predicates answer <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4256818863.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4256818863.html">false</a>, then execute the else action. If no else action is provided, then do not execute any of the action blocks.
-		</div>
-		<table class="stacks">
-			<thead>
-				<tr>
-					<th class="transparent" scope="col"></th>
-					<th class="stacks i-col-label-narrow" scope="col">Position</th>
-					<th class="stacks i-col-label-narrow" scope="col">Name</th>
-					<th class="stacks i-col-label-narrow" scope="col">Type</th>
-					<th class="stacks i-col-label-wide" scope="col">Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th class="stacks i-row-label" rowspan="5">Parameters</th>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">1</td>
-					<td id="firstPredicate1054084907" class="stacks i-code">firstPredicate</td>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/149560384.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/149560384.html">boolean</a></td>
-					<td class="stacks i-desc">
-						The first predicate. This argument is a raw boolean rather than a function answering a boolean, because it must always be evalutated (and hence there is no point deferring its evaluation).
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">2</td>
-					<td id="firstThen1054084907" class="stacks i-code">firstThen</td>
-					<td class="stacks i-code">[]→⊤</td>
-					<td class="stacks i-desc">
-						The action to perform if <a href="#firstPredicate1054084907">firstPredicate</a> is <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4256818863.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4256818863.html">false</a>.
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">3</td>
-					<td id="elseUnlessTuple1054084907" class="stacks i-code">elseUnlessTuple</td>
-					<td class="stacks i-code">&lt;&lt;[]→boolean, []→⊤…|2>…|1..></td>
-					<td class="stacks i-desc">
-						A lexically constructed tuple of 2-tuples. Each 2-tuple has as its first element a predicate function and as its second element an action to perform if the predicate function answers <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4256818863.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4256818863.html">false</a>.
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">4</td>
-					<td id="else1054084907" class="stacks i-code">else</td>
-					<td class="stacks i-code">([]→⊤)?</td>
-					<td class="stacks i-desc">
-						A lexically constructed tuple that optionally contains the action to perform if <a href="#firstPredicate1054084907">firstPredicate</a> is <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a> and all predicates of <a href="#elseIfTuple1054084907">elseIfTuple</a> answer <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a>.
-					</td>
-				</tr>
-				<tr>
-					<th class="stacks i-row-label" colspan="3">Returns</th>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3911882092.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3911882092.html">⊤</a></td>
-					<td class="stacks i-desc">
-						If used as an expression, then the value of the selected action.
-					</td>
-				</tr>
-			</tbody>
-		</table>
 		<div class="signature-heading">expression phrase ⇒ boolean, expression phrase ⇒ []→⊤, list phrase ⇒ (&lt;boolean, []→⊤…|2>+), list phrase ⇒ (([]→⊤)?)</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Control Structures</div>
 		<div class="category-list"><em>Categories:</em> Control Structures, Conditionals</div>
@@ -142,6 +81,67 @@
 					<td class="stacks i-code">list phrase ⇒ (([]→⊤)?)</td>
 					<td class="stacks i-desc">
 						A lexically constructed tuple that optionally contains the action to perform if <a href="#firstPredicate1225879825">firstPredicate</a> is <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4256818863.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4256818863.html">false</a> and all predicates of <a href="#elseIfTuple1225879825">elseIfTuple</a> answer <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4256818863.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4256818863.html">false</a>.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3911882092.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3911882092.html">⊤</a></td>
+					<td class="stacks i-desc">
+						If used as an expression, then the value of the selected action.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">boolean, []→⊤, &lt;&lt;[]→boolean, []→⊤…|2>…|1..>, ([]→⊤)?</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Control Structures</div>
+		<div class="category-list"><em>Categories:</em> Control Structures, Conditionals</div>
+		<div class="signature-description">
+			Multiply branching conditional statement/expression. Execute the first action for which the associated predicate answers <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4256818863.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4256818863.html">false</a>. If none of the predicates answer <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4256818863.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4256818863.html">false</a>, then execute the else action. If no else action is provided, then do not execute any of the action blocks.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="5">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="firstPredicate1054084907" class="stacks i-code">firstPredicate</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/149560384.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/149560384.html">boolean</a></td>
+					<td class="stacks i-desc">
+						The first predicate. This argument is a raw boolean rather than a function answering a boolean, because it must always be evalutated (and hence there is no point deferring its evaluation).
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="firstThen1054084907" class="stacks i-code">firstThen</td>
+					<td class="stacks i-code">[]→⊤</td>
+					<td class="stacks i-desc">
+						The action to perform if <a href="#firstPredicate1054084907">firstPredicate</a> is <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4256818863.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4256818863.html">false</a>.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">3</td>
+					<td id="elseUnlessTuple1054084907" class="stacks i-code">elseUnlessTuple</td>
+					<td class="stacks i-code">&lt;&lt;[]→boolean, []→⊤…|2>…|1..></td>
+					<td class="stacks i-desc">
+						A lexically constructed tuple of 2-tuples. Each 2-tuple has as its first element a predicate function and as its second element an action to perform if the predicate function answers <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4256818863.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4256818863.html">false</a>.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">4</td>
+					<td id="else1054084907" class="stacks i-code">else</td>
+					<td class="stacks i-code">([]→⊤)?</td>
+					<td class="stacks i-desc">
+						A lexically constructed tuple that optionally contains the action to perform if <a href="#firstPredicate1054084907">firstPredicate</a> is <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a> and all predicates of <a href="#elseIfTuple1054084907">elseIfTuple</a> answer <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a>.
 					</td>
 				</tr>
 				<tr>

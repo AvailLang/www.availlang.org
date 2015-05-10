@@ -31,11 +31,11 @@
 	<h2 class="method-heading">take from_while_</h2>
 	<h4 class="method-section-header">Definitions:</h4>
 	<div class="method-section-content">
-		<div class="signature-heading">tuple, [⊥]→boolean</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Tuples</div>
-		<div class="category-list"><em>Categories:</em> Tuples, Transformers</div>
+		<div class="signature-heading">stream, [⊥]→boolean</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Streams/Abstract Streams</div>
+		<div class="category-list"><em>Categories:</em> Data Abstractions, Streams</div>
 		<div class="signature-description">
-			Answer a tuple containing the prefix of <a href="#aTuple597656209">aTuple</a> that answered <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a> to <a href="#predicate597656209">predicate</a>.
+			Answer a tuple containing the prefix of `aStream` that answered `true` to `predicate`.
 		</div>
 		<table class="stacks">
 			<thead>
@@ -53,25 +53,25 @@
 				</tr>
 				<tr class="methodParameters">
 					<td class="stacks i-code">1</td>
-					<td id="aTuple597656209" class="stacks i-code">aTuple</td>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
+					<td id="aStream437733907" class="stacks i-code">aStream</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Streams/Abstract Streams/1746215996.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Streams/Abstract Streams/1746215996.html">stream</a></td>
 					<td class="stacks i-desc">
-						
+						aTuple - A tuple.
 					</td>
 				</tr>
 				<tr class="methodParameters">
 					<td class="stacks i-code">2</td>
-					<td id="predicate597656209" class="stacks i-code">predicate</td>
+					<td id="predicate437733907" class="stacks i-code">predicate</td>
 					<td class="stacks i-code">[⊥]→boolean</td>
 					<td class="stacks i-desc">
-						A function that can accept each element of the specified tuple. It should answer <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a> to keep the element (and continue scanning) or <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4256818863.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4256818863.html">false</a> to abort.
+						predicate - A function that can accept each element of the specified stream. It should answer `true` to keep the element (and continue scanning) or `false` to abort.
 					</td>
 				</tr>
 				<tr>
 					<th class="stacks i-row-label" colspan="3">Returns</th>
 					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
 					<td class="stacks i-desc">
-						A tuple containing the prefix of <a href="#aTuple597656209">aTuple</a> that satisfied <a href="#predicate597656209">predicate</a>.
+						A tuple containing the prefix of `aStream` that satisfied `predicate`.
 					</td>
 				</tr>
 			</tbody>
@@ -121,11 +121,11 @@
 				</tr>
 			</tbody>
 		</table>
-		<div class="signature-heading">stream, [⊥]→boolean</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Streams/Abstract Streams</div>
-		<div class="category-list"><em>Categories:</em> Data Abstractions, Streams</div>
+		<div class="signature-heading">tuple, [⊥]→boolean</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Tuples</div>
+		<div class="category-list"><em>Categories:</em> Tuples, Transformers</div>
 		<div class="signature-description">
-			Answer a tuple containing the prefix of `aStream` that answered `true` to `predicate`.
+			Answer a tuple containing the prefix of <a href="#aTuple597656209">aTuple</a> that answered <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a> to <a href="#predicate597656209">predicate</a>.
 		</div>
 		<table class="stacks">
 			<thead>
@@ -143,25 +143,25 @@
 				</tr>
 				<tr class="methodParameters">
 					<td class="stacks i-code">1</td>
-					<td id="aStream437733907" class="stacks i-code">aStream</td>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Streams/Abstract Streams/1746215996.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Streams/Abstract Streams/1746215996.html">stream</a></td>
+					<td id="aTuple597656209" class="stacks i-code">aTuple</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
 					<td class="stacks i-desc">
-						aTuple - A tuple.
+						
 					</td>
 				</tr>
 				<tr class="methodParameters">
 					<td class="stacks i-code">2</td>
-					<td id="predicate437733907" class="stacks i-code">predicate</td>
+					<td id="predicate597656209" class="stacks i-code">predicate</td>
 					<td class="stacks i-code">[⊥]→boolean</td>
 					<td class="stacks i-desc">
-						predicate - A function that can accept each element of the specified stream. It should answer `true` to keep the element (and continue scanning) or `false` to abort.
+						A function that can accept each element of the specified tuple. It should answer <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a> to keep the element (and continue scanning) or <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4256818863.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4256818863.html">false</a> to abort.
 					</td>
 				</tr>
 				<tr>
 					<th class="stacks i-row-label" colspan="3">Returns</th>
 					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
 					<td class="stacks i-desc">
-						A tuple containing the prefix of `aStream` that satisfied `predicate`.
+						A tuple containing the prefix of <a href="#aTuple597656209">aTuple</a> that satisfied <a href="#predicate597656209">predicate</a>.
 					</td>
 				</tr>
 			</tbody>
