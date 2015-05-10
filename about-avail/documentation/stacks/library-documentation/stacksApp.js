@@ -453,8 +453,8 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "any meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/123117495.html", "distinct" : "any meta/avail/Avail/Foundation/Bootstrap/Special Objects/123117495.html"},
 			{"methodName" : "variable meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/1074882789.html", "distinct" : "variable meta/avail/Avail/Foundation/Bootstrap/Special Objects/1074882789.html"},
 			{"methodName" : "map meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/2940099813.html", "distinct" : "map meta/avail/Avail/Foundation/Bootstrap/Special Objects/2940099813.html"},
-			{"methodName" : "tuple meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/2915683713.html", "distinct" : "tuple meta/avail/Avail/Foundation/Bootstrap/Special Objects/2915683713.html"},
 			{"methodName" : "function meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/3820265869.html", "distinct" : "function meta/avail/Avail/Foundation/Bootstrap/Special Objects/3820265869.html"},
+			{"methodName" : "tuple meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/2915683713.html", "distinct" : "tuple meta/avail/Avail/Foundation/Bootstrap/Special Objects/2915683713.html"},
 			{"methodName" : "set meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/2718349551.html", "distinct" : "set meta/avail/Avail/Foundation/Bootstrap/Special Objects/2718349551.html"},
 			{"methodName" : "continuation meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/3936674258.html", "distinct" : "continuation meta/avail/Avail/Foundation/Bootstrap/Special Objects/3936674258.html"}
 		]
@@ -2007,8 +2007,8 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "any meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/123117495.html", "distinct" : "any meta/avail/Avail/Foundation/Bootstrap/Special Objects/123117495.html"},
 			{"methodName" : "variable meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/1074882789.html", "distinct" : "variable meta/avail/Avail/Foundation/Bootstrap/Special Objects/1074882789.html"},
 			{"methodName" : "map meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/2940099813.html", "distinct" : "map meta/avail/Avail/Foundation/Bootstrap/Special Objects/2940099813.html"},
-			{"methodName" : "tuple meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/2915683713.html", "distinct" : "tuple meta/avail/Avail/Foundation/Bootstrap/Special Objects/2915683713.html"},
 			{"methodName" : "function meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/3820265869.html", "distinct" : "function meta/avail/Avail/Foundation/Bootstrap/Special Objects/3820265869.html"},
+			{"methodName" : "tuple meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/2915683713.html", "distinct" : "tuple meta/avail/Avail/Foundation/Bootstrap/Special Objects/2915683713.html"},
 			{"methodName" : "set meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/2718349551.html", "distinct" : "set meta/avail/Avail/Foundation/Bootstrap/Special Objects/2718349551.html"},
 			{"methodName" : "continuation meta", "link" : "avail/Avail/Foundation/Bootstrap/Special Objects/3936674258.html", "distinct" : "continuation meta/avail/Avail/Foundation/Bootstrap/Special Objects/3936674258.html"}
 		]
@@ -2092,33 +2092,14 @@ stacksApp.factory('Categories', function () {
 	},
 	{
 		"selected" : false,
-		"category" : "Dimensional Analysis",
-		"methods" : [
-			{"methodName" : "_-_", "link" : "avail/Dimensional Analysis/Core/2124146203.html", "distinct" : "_-_/avail/Dimensional Analysis/Core/2124146203.html"},
-			{"methodName" : "_+_", "link" : "avail/Dimensional Analysis/Core/648752861.html", "distinct" : "_+_/avail/Dimensional Analysis/Core/648752861.html"},
-			{"methodName" : "-_", "link" : "avail/Dimensional Analysis/Core/3448065836.html", "distinct" : "-_/avail/Dimensional Analysis/Core/3448065836.html"},
-			{"methodName" : "_<_", "link" : "avail/Dimensional Analysis/Core/1297982970.html", "distinct" : "_<_/avail/Dimensional Analysis/Core/1297982970.html"},
-			{"methodName" : "_÷_", "link" : "avail/Dimensional Analysis/Core/1074891985.html", "distinct" : "_÷_/avail/Dimensional Analysis/Core/1074891985.html"},
-			{"methodName" : "_≤_", "link" : "avail/Dimensional Analysis/Core/4036131282.html", "distinct" : "_≤_/avail/Dimensional Analysis/Core/4036131282.html"},
-			{"methodName" : "_≥_", "link" : "avail/Dimensional Analysis/Core/7923043.html", "distinct" : "_≥_/avail/Dimensional Analysis/Core/7923043.html"},
-			{"methodName" : "_^_", "link" : "avail/Dimensional Analysis/Core/3969385240.html", "distinct" : "_^_/avail/Dimensional Analysis/Core/3969385240.html"},
-			{"methodName" : "_×_", "link" : "avail/Dimensional Analysis/Core/3313719281.html", "distinct" : "_×_/avail/Dimensional Analysis/Core/3313719281.html"},
-			{"methodName" : "_>_", "link" : "avail/Dimensional Analysis/Core/2967698744.html", "distinct" : "_>_/avail/Dimensional Analysis/Core/2967698744.html"}
-		]
-	},
-	{
-		"selected" : false,
 		"category" : "Unclassified",
 		"methods" : [
-			{"methodName" : "«_‡«=|≤|<»!»", "link" : "avail/Dimensional Analysis/Core/3480019926.html", "distinct" : "«_‡«=|≤|<»!»/avail/Dimensional Analysis/Core/3480019926.html"},
 			{"methodName" : "system exception", "link" : "avail/Avail/Foundation/Exceptions/3339444876.html", "distinct" : "system exception/avail/Avail/Foundation/Exceptions/3339444876.html"},
 			{"methodName" : "Require:macro send has no internal whitespace(_)", "link" : "avail/Avail/Foundation/Macro Support/3517158234.html", "distinct" : "Require:macro send has no internal whitespace(_)/avail/Avail/Foundation/Macro Support/3517158234.html"},
 			{"methodName" : "malformed-encoding exception", "link" : "avail/Avail/Data Abstractions/Converters/Abstract Converters/15271498.html", "distinct" : "malformed-encoding exception/avail/Avail/Data Abstractions/Converters/Abstract Converters/15271498.html"},
-			{"methodName" : "`|_`|", "link" : "avail/Dimensional Analysis/Core/2168035951.html", "distinct" : "`|_`|/avail/Dimensional Analysis/Core/2168035951.html"},
-			{"methodName" : "_mod_", "link" : "avail/Dimensional Analysis/Core/3008545014.html", "distinct" : "_mod_/avail/Dimensional Analysis/Core/3008545014.html"},
 			{"methodName" : "Base64 string", "link" : "avail/Avail/Data Abstractions/Converters/Base64 Converters/256704396.html", "distinct" : "Base64 string/avail/Avail/Data Abstractions/Converters/Base64 Converters/256704396.html"},
-			{"methodName" : "Base64 character", "link" : "avail/Avail/Data Abstractions/Converters/Base64 Converters/2969987690.html", "distinct" : "Base64 character/avail/Avail/Data Abstractions/Converters/Base64 Converters/2969987690.html"},
-			{"methodName" : "«_‡«=|≥|>»!»", "link" : "avail/Dimensional Analysis/Core/978602233.html", "distinct" : "«_‡«=|≥|>»!»/avail/Dimensional Analysis/Core/978602233.html"}
+			{"methodName" : "_has|have internal whitespace", "link" : "avail/Avail/Foundation/Macro Support/2688299701.html", "distinct" : "_has|have internal whitespace/avail/Avail/Foundation/Macro Support/2688299701.html"},
+			{"methodName" : "Base64 character", "link" : "avail/Avail/Data Abstractions/Converters/Base64 Converters/2969987690.html", "distinct" : "Base64 character/avail/Avail/Data Abstractions/Converters/Base64 Converters/2969987690.html"}
 		]
 	},
 	{
@@ -2483,8 +2464,10 @@ stacksApp.factory('Categories', function () {
 			{"methodName" : "_is titlecase", "link" : "avail/Avail/Foundation/Characters/939963221.html", "distinct" : "_is titlecase/avail/Avail/Foundation/Characters/939963221.html"},
 			{"methodName" : "titlecase_", "link" : "avail/Avail/Foundation/Characters/1836170157.html", "distinct" : "titlecase_/avail/Avail/Foundation/Characters/1836170157.html"},
 			{"methodName" : "_is lowercase", "link" : "avail/Avail/Foundation/Characters/2184531440.html", "distinct" : "_is lowercase/avail/Avail/Foundation/Characters/2184531440.html"},
+			{"methodName" : "_≤_", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/4036131282.html", "distinct" : "_≤_/avail/Avail/Foundation/Bootstrap/Primitives/4036131282.html"},
 			{"methodName" : "_'s⁇code point", "link" : "avail/Avail/Foundation/Bootstrap/Primitives/3345552701.html", "distinct" : "_'s⁇code point/avail/Avail/Foundation/Bootstrap/Primitives/3345552701.html"},
 			{"methodName" : "lowercase_", "link" : "avail/Avail/Foundation/Characters/896597272.html", "distinct" : "lowercase_/avail/Avail/Foundation/Characters/896597272.html"},
+			{"methodName" : "_≥_", "link" : "avail/Avail/Foundation/Early Math/7923043.html", "distinct" : "_≥_/avail/Avail/Foundation/Early Math/7923043.html"},
 			{"methodName" : "_is uppercase", "link" : "avail/Avail/Foundation/Characters/1156641867.html", "distinct" : "_is uppercase/avail/Avail/Foundation/Characters/1156641867.html"},
 			{"methodName" : "_is an Arabic numeral", "link" : "avail/Avail/Foundation/Characters/125642156.html", "distinct" : "_is an Arabic numeral/avail/Avail/Foundation/Characters/125642156.html"},
 			{"methodName" : "_is whitespace", "link" : "avail/Avail/Foundation/Characters/310828092.html", "distinct" : "_is whitespace/avail/Avail/Foundation/Characters/310828092.html"},
