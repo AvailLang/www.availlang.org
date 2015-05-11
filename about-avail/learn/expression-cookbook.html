@@ -576,12 +576,12 @@ Run
 <table style="width:100%">
 <tr>
 <td>
-&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/365211011.html">"If|if_then_«else if_then_»«else_»?"</a></code>
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/365211011.html">"If|if_then_&#171;else if_then_&#187;&#171;else_&#187;?"</a></code>
 </td>
 </tr>
 <tr>
 <td>
-&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/2378914416.html">"Unless|unless_then_«else unless_then_»«else_»?"</a></code>
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/2378914416.html">"Unless|unless_then_&#171;else unless_then_&#187;&#171;else_&#187;?"</a></code>
 </td>
 </tr>
 </table>
@@ -793,15 +793,44 @@ Run
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
 <![CDATA[
-! filter 1 to 20 in parallel by [i : [1..20] | i is odd]
+! reject each element from 1 to 20 in parallel where [element is odd]
 ]]>
-</script></div></div>
+</script></div>
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! select each element from 1 to 20 in parallel where [element is odd]
+]]>
+</script></div>
 
-<ul>
-<li>
-&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/1160354066.html">"filter_in parallel«_-way»by_"</a></code>
-</li>
-</ul>
+<div class="restricted-width-container">
+<table style="width:100%">
+<tr>
+<td>
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/2175100746.html">"select each&hellip;from_&#167;in parallel&#171;_-way&#187;where_"</a></code> 
+</td>
+<td>
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/3199143567.html">"reject each&hellip;from_&#167;in parallel&#171;_-way&#187;where_"</a></code> 
+</td>
+</tr>
+<tr>
+<td>
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/1855871104.html">"select each&hellip;,&hellip;from_&#167;in parallel&#171;_-way&#187;where_"</a></code>
+</td>
+<td>
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/2879913925.html">"reject each&hellip;,&hellip;from_&#167;in parallel&#171;_-way&#187;where_"</a></code>
+</td>
+</tr>
+<tr>
+<td>
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/3185297698.html">"select each&hellip;&rarr;&hellip;from_&#167;in parallel&#171;_-way&#187;where_"</a></code>	
+</td>
+<td>
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/4209340519.html">"reject each&hellip;&rarr;&hellip;from_&#167;in parallel&#171;_-way&#187;where_"</a></code>	
+</td>
+</tr>
+</table>
+</div>
+
 <hr/>
 <div style="text-align:center"><a href="#top"><small>(back to top)</small></a></div>
 <hr/>
@@ -821,7 +850,7 @@ Run
 
 <ul>
 <li>&#8226; 
-<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Literals/2367902331.html">"{«_&rarr;_‡,»}"</a></code>
+<code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Literals/2367902331.html">"{&#171;_&rarr;_‡,&#187;}"</a></code>
 </li>
 </ul>
 
@@ -854,7 +883,7 @@ Run
 
 <ul>
 <li>
-&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Literals/2367902331.html">"{«_&rarr;_‡,»}"</a></code>
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Literals/2367902331.html">"{&#171;_&rarr;_‡,&#187;}"</a></code>
 </li>
 </ul>
 
@@ -1050,7 +1079,7 @@ Run
 
 <ul>
 <li>
-&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early%20Literals/869143398.html">"{«_‡,»}"</a></code>
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early%20Literals/869143398.html">"{&#171;_‡,&#187;}"</a></code>
 </li>
 </ul>
 
@@ -1258,7 +1287,7 @@ Run
 
 <ul>
 <li>
-&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early%20Literals/219614880.html">"&lt;«_‡,»&gt;"</a></code>
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early%20Literals/219614880.html">"&lt;&#171;_‡,&#187;&gt;"</a></code>
 </li>
 </ul>
 
@@ -1282,7 +1311,7 @@ Run
 
 <ul>
 <li>
-&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early%20Literals/219614880.html">"&lt;«_‡,»&gt;"</a></code>
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early%20Literals/219614880.html">"&lt;&#171;_‡,&#187;&gt;"</a></code>
 </li>
 </ul>
 
@@ -1536,7 +1565,7 @@ Run
 <div class="restricted-width-container">
 <table style="width:100%">
 <tr>
-<td>&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/_Ambiguities/1439340124.html">"«_‡++»"</a></code></td>
+<td>&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/_Ambiguities/1439340124.html">"&#171;_‡++&#187;"</a></code></td>
 <td>&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/582878776.html">"concatenate_"</a></code></td>
 </tr>
 </table>
@@ -1555,7 +1584,7 @@ Run
 
 <ul>
 <li>
-&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/_Ambiguities/1439340124.html">"«_‡++»"</a></code>
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/_Ambiguities/1439340124.html">"&#171;_‡++&#187;"</a></code>
 </li>
 </ul>
 
@@ -1940,7 +1969,7 @@ Run
 &#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Collections/1107959754.html">"For each&hellip;in|of_&#167;do_"</a></code>
 </td>
 <td>
-&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/1110814801.html">"For each&hellip;in|of_&#167;in parallel«_-way»do_"</a></code>
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/1110814801.html">"For each&hellip;in|of_&#167;in parallel&#171;_-way&#187;do_"</a></code>
 </td>
 </tr>
 <tr>
@@ -1948,7 +1977,7 @@ Run
 &#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Tuples/1984216688.html">"For each&hellip;,&hellip;in|of_&#167;do_"</a></code>
 </td>
 <td>
-&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/4185893775.html">"For each&hellip;,&hellip;in|of_&#167;in parallel«_-way»do_"</a></code>
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/4185893775.html">"For each&hellip;,&hellip;in|of_&#167;in parallel&#171;_-way&#187;do_"</a></code>
 </td>
 </tr>
 <tr>
@@ -1956,7 +1985,7 @@ Run
 &#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Maps/2927347210.html">"For each&hellip;&rarr;&hellip;in|of_&#167;do_"</a></code>
 </td>
 <td>
-&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/834057001.html">"For each&hellip;&rarr;&hellip;in|of_&#167;in parallel«_-way»do_"</a></code>
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/834057001.html">"For each&hellip;&rarr;&hellip;in|of_&#167;in parallel&#171;_-way&#187;do_"</a></code>
 </td>
 </tr>
 </table>
@@ -2016,7 +2045,7 @@ Run
 &#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Collections/4042299671.html">"map each&hellip;in|of_&#167;through_"</a></code>
 </td>
 <td>
-&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/441902414.html">"map each&hellip;in|of_&#167;in parallel«_-way»through_"</a></code>
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/441902414.html">"map each&hellip;in|of_&#167;in parallel&#171;_-way&#187;through_"</a></code>
 </td>
 </tr>
 <tr>
@@ -2024,7 +2053,7 @@ Run
 &#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Maps/2103147399.html">"map each&hellip;&rarr;&hellip;in|of_&#167;through_"</a></code>
 </td>
 <td>
-&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/844074966.html">"map each&hellip;&rarr;&hellip;in|of_&#167;in parallel«_-way»through_"</a></code>
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/844074966.html">"map each&hellip;&rarr;&hellip;in|of_&#167;in parallel&#171;_-way&#187;through_"</a></code>
 </td>
 </tr>
 <tr>
@@ -2032,7 +2061,7 @@ Run
 &#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Tuples/1160016877.html">"map each&hellip;,&hellip;in|of_&#167;through_"</a></code>
 </td>
 <td>
-&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/4195911740.html">"map each&hellip;,&hellip;in|of_&#167;in parallel«_-way»through_"</a></code>
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/4195911740.html">"map each&hellip;,&hellip;in|of_&#167;in parallel&#171;_-way&#187;through_"</a></code>
 </td>
 </tr>
 </table>
@@ -2382,7 +2411,7 @@ ho‘⑪’ler c‘④’;‘⑭’‘⑨’ day r‘⑥’, but nevermore‘⑭
 &#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Strings/35454703.html">"format_with_"</a></code>
 </td>
 <td> 
-&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Strings/972373158.html">"format_with«_‡,»"</a></code> 
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Strings/972373158.html">"format_with&#171;_‡,&#187;"</a></code> 
 </td>
 </tr>
 <tr>
@@ -2390,8 +2419,8 @@ ho‘⑪’ler c‘④’;‘⑭’‘⑨’ day r‘⑥’, but nevermore‘⑭
 &#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Strings/2392352593.html">"format_with unchecked_"</a></code>
 </td>
 <td> 
-&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Strings/4100671162.html">"format_with«&hellip;
-[!::=_‡,»"</a></code>
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Strings/4100671162.html">"format_with&#171;&hellip;
+[!::=_‡,&#187;"</a></code>
 </td>
 </tr>
 <tr>
@@ -2399,8 +2428,8 @@ ho‘⑪’ler c‘④’;‘⑭’‘⑨’ day r‘⑥’, but nevermore‘⑭
 &#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Strings/1913558909.html">"partially format_with_"</a></code>
 </td>
 <td> 
-&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Strings/1453934071.html">"partially format_with«&hellip;
-[::=_‡,»"</a></code>
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Strings/1453934071.html">"partially format_with&#171;&hellip;
+[::=_‡,&#187;"</a></code>
 </td>
 </tr>
 </table>
@@ -2538,7 +2567,7 @@ ensure
 &#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Exceptions/2541026102.html">"try_else_"</a></code>
 </td>
 <td>
-&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Exceptions/644971167.html">"Guard|guard_«intercept_»«ensure_»"</a></code>
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Exceptions/644971167.html">"Guard|guard_&#171;intercept_&#187;&#171;ensure_&#187;"</a></code>
 </td>
 </tr>
 </table>
