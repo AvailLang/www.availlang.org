@@ -31,43 +31,6 @@
 	<h2 class="method-heading">⎣_⎦</h2>
 	<h4 class="method-section-header">Definitions:</h4>
 	<div class="method-section-content">
-		<div class="signature-heading">sequence's type</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Sequences/Abstract Sequences</div>
-		<div class="category-list"><em>Categories:</em> Data Abstractions, Sequences</div>
-		<div class="signature-description">
-			Answer the lower bound of the cardinality restriction for instances of the specified <code>sequence</code> type.
-		</div>
-		<table class="stacks">
-			<thead>
-				<tr>
-					<th class="transparent" scope="col"></th>
-					<th class="stacks i-col-label-narrow" scope="col">Position</th>
-					<th class="stacks i-col-label-narrow" scope="col">Name</th>
-					<th class="stacks i-col-label-narrow" scope="col">Type</th>
-					<th class="stacks i-col-label-wide" scope="col">Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th class="stacks i-row-label" rowspan="2">Parameters</th>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">1</td>
-					<td id="sequenceType-870963475" class="stacks i-code">sequenceType</td>
-					<td class="stacks i-code">sequence's type</td>
-					<td class="stacks i-desc">
-						A <code>sequence</code> type.
-					</td>
-				</tr>
-				<tr>
-					<th class="stacks i-row-label" colspan="3">Returns</th>
-					<td class="stacks i-code">[0..∞]</td>
-					<td class="stacks i-desc">
-						The lower bound of <a href="#sequenceType-870963475">sequenceType</a> 's cardinality restriction.
-					</td>
-				</tr>
-			</tbody>
-		</table>
 		<div class="signature-heading">float</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Infallible Primitives</div>
 		<div class="category-list"><em>Categories:</em> Primitives, Numbers, Mathematics</div>
@@ -109,6 +72,43 @@
 		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Sequences/Abstract Sequences</div>
 		<div class="category-list"><em>Categories:</em> Data Abstractions, Sequences</div>
 		<div class="signature-description">
+			Answer the lower bound of the cardinality restriction for instances of the specified <code>sequence</code> type.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="2">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="sequenceType-870963475" class="stacks i-code">sequenceType</td>
+					<td class="stacks i-code">sequence's type</td>
+					<td class="stacks i-desc">
+						A <code>sequence</code> type.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code">[0..∞]</td>
+					<td class="stacks i-desc">
+						The lower bound of <a href="#sequenceType-870963475">sequenceType</a> 's cardinality restriction.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">sequence's type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Sequences/Abstract Sequences</div>
+		<div class="category-list"><em>Categories:</em> Data Abstractions, Sequences</div>
+		<div class="signature-description">
 			Answer the upper bound of the cardinality restriction for instances of the specified <code>sequence</code> type.
 		</div>
 		<table class="stacks">
@@ -138,80 +138,6 @@
 					<td class="stacks i-code">[0..∞]</td>
 					<td class="stacks i-desc">
 						The upper bound of <a href="#sequenceType-870963475">sequenceType</a> 's cardinality restriction.
-					</td>
-				</tr>
-			</tbody>
-		</table>
-		<div class="signature-heading">extended integer meta</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Early Math</div>
-		<div class="category-list"><em>Categories:</em> Integers, Types, Queries</div>
-		<div class="signature-description">
-			Answer the lower bound of the specified integral range type. Note that unlike <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/1265642924.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/1265642924.html">_'s⁇genuine lower bound</a>, this method explicitly forbids the argument from being ⊥. It is intended as a practical (but not universal) replacement.
-		</div>
-		<table class="stacks">
-			<thead>
-				<tr>
-					<th class="transparent" scope="col"></th>
-					<th class="stacks i-col-label-narrow" scope="col">Position</th>
-					<th class="stacks i-col-label-narrow" scope="col">Name</th>
-					<th class="stacks i-col-label-narrow" scope="col">Type</th>
-					<th class="stacks i-col-label-wide" scope="col">Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th class="stacks i-row-label" rowspan="2">Parameters</th>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">1</td>
-					<td id="range-2104934506" class="stacks i-code">range</td>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2190032790.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2190032790.html">extended integer meta</a></td>
-					<td class="stacks i-desc">
-						An integral range type. Must not be ⊥.
-					</td>
-				</tr>
-				<tr>
-					<th class="stacks i-row-label" colspan="3">Returns</th>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/964914967.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/964914967.html">extended integer</a></td>
-					<td class="stacks i-desc">
-						The lower bound of the argument.
-					</td>
-				</tr>
-			</tbody>
-		</table>
-		<div class="signature-heading">map meta</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Literals</div>
-		<div class="category-list"><em>Categories:</em> Maps, Types, Queries</div>
-		<div class="signature-description">
-			Answer the lower bound of the argument.
-		</div>
-		<table class="stacks">
-			<thead>
-				<tr>
-					<th class="transparent" scope="col"></th>
-					<th class="stacks i-col-label-narrow" scope="col">Position</th>
-					<th class="stacks i-col-label-narrow" scope="col">Name</th>
-					<th class="stacks i-col-label-narrow" scope="col">Type</th>
-					<th class="stacks i-col-label-wide" scope="col">Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th class="stacks i-row-label" rowspan="2">Parameters</th>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">1</td>
-					<td id="aMapType-1354867483" class="stacks i-code">aMapType</td>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2940099813.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2940099813.html">map meta</a></td>
-					<td class="stacks i-desc">
-						A map type.
-					</td>
-				</tr>
-				<tr>
-					<th class="stacks i-row-label" colspan="3">Returns</th>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3836536488.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3836536488.html">whole number</a></td>
-					<td class="stacks i-desc">
-						The lower bound of the argument.
 					</td>
 				</tr>
 			</tbody>
@@ -253,6 +179,117 @@
 				</tr>
 			</tbody>
 		</table>
+		<div class="signature-heading">dimensioned extended integer</div>
+		<div class="module-location"><em>Source</em>: /avail/Dimensional Analysis/Core</div>
+		<div class="category-list"><em>Categories:</em> Unclassified</div>
+		<div class="signature-description">
+			Compute and answer the floor of the argument.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="2">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="quantity-1285333906" class="stacks i-code">quantity</td>
+					<td class="stacks i-code">dimensioned extended integer</td>
+					<td class="stacks i-desc">
+						An integral <code>dimensioned quantity</code>.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code">dimensioned extended integer</td>
+					<td class="stacks i-desc">
+						The floor of the argument.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">extended integer meta</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Early Math</div>
+		<div class="category-list"><em>Categories:</em> Integers, Types, Queries</div>
+		<div class="signature-description">
+			Answer the lower bound of the specified integral range type. Note that unlike <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/1265642924.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/1265642924.html">_'s⁇genuine lower bound</a>, this method explicitly forbids the argument from being ⊥. It is intended as a practical (but not universal) replacement.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="2">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="range-2104934506" class="stacks i-code">range</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2190032790.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2190032790.html">extended integer meta</a></td>
+					<td class="stacks i-desc">
+						An integral range type. Must not be ⊥.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/964914967.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/964914967.html">extended integer</a></td>
+					<td class="stacks i-desc">
+						The lower bound of the argument.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">dimensioned extended integer</div>
+		<div class="module-location"><em>Source</em>: /avail/Dimensional Analysis/Core</div>
+		<div class="category-list"><em>Categories:</em> Unclassified</div>
+		<div class="signature-description">
+			Compute and answer the ceiling of the argument.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="2">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="quantity-1285333906" class="stacks i-code">quantity</td>
+					<td class="stacks i-code">dimensioned extended integer</td>
+					<td class="stacks i-desc">
+						An integral <code>dimensioned quantity</code>.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code">dimensioned extended integer</td>
+					<td class="stacks i-desc">
+						The ceiling of the argument.
+					</td>
+				</tr>
+			</tbody>
+		</table>
 		<div class="signature-heading">set meta</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Literals</div>
 		<div class="category-list"><em>Categories:</em> Sets, Types, Queries</div>
@@ -279,6 +316,43 @@
 					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2718349551.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2718349551.html">set meta</a></td>
 					<td class="stacks i-desc">
 						A set type.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3836536488.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3836536488.html">whole number</a></td>
+					<td class="stacks i-desc">
+						The lower bound of the argument.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">map meta</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Literals</div>
+		<div class="category-list"><em>Categories:</em> Maps, Types, Queries</div>
+		<div class="signature-description">
+			Answer the lower bound of the argument.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="2">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="aMapType-1354867483" class="stacks i-code">aMapType</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2940099813.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2940099813.html">map meta</a></td>
+					<td class="stacks i-desc">
+						A map type.
 					</td>
 				</tr>
 				<tr>
@@ -367,10 +441,10 @@
 	</div>
 	<h4 class="method-section-header">Semantic restrictions:</h4>
 	<div class="method-section-content">
-		<div class="signature-heading">extended integer's type</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Math</div>
+		<div class="signature-heading">set meta's type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Literals</div>
 		<div class="signature-description">
-			Integers and infinities are their own floors.
+			Strengthen the lower bound for set types.
 		</div>
 		<table class="stacks">
 			<thead>
@@ -385,7 +459,7 @@
 					<th class="stacks i-row-label" rowspan="2">Parameter Types</th>
 				</tr>
 				<tr class="methodParameters">
-<td id="extended integer's type938866111" class="stacks i-code">extended integer's type</td>
+<td id="set meta's type-309917033" class="stacks i-code">set meta's type</td>
 					<td class="stacks i-code">
 						
 					</td>
@@ -417,10 +491,10 @@
 				</tr>
 			</tbody>
 		</table>
-		<div class="signature-heading">set meta's type</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Literals</div>
+		<div class="signature-heading">extended integer's type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Math</div>
 		<div class="signature-description">
-			Strengthen the lower bound for set types.
+			Integers and infinities are their own floors.
 		</div>
 		<table class="stacks">
 			<thead>
@@ -435,32 +509,7 @@
 					<th class="stacks i-row-label" rowspan="2">Parameter Types</th>
 				</tr>
 				<tr class="methodParameters">
-<td id="set meta's type-309917033" class="stacks i-code">set meta's type</td>
-					<td class="stacks i-code">
-						
-					</td>
-				</tr>
-			</tbody>
-		</table>
-		<div class="signature-heading">tuple meta's type</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Literals</div>
-		<div class="signature-description">
-			Strengthen the lower bound for tuple types.
-		</div>
-		<table class="stacks">
-			<thead>
-				<tr>
-					<th class="transparent" scope="col"></th>
-					<th class="stacks i-col-label-narrow" scope="col">Type</th>
-					<th class="stacks i-col-label-wide" scope="col">Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th class="stacks i-row-label" rowspan="2">Parameter Types</th>
-				</tr>
-				<tr class="methodParameters">
-<td id="tuple meta's type-1751640727" class="stacks i-code">tuple meta's type</td>
+<td id="extended integer's type938866111" class="stacks i-code">extended integer's type</td>
 					<td class="stacks i-code">
 						
 					</td>
@@ -486,6 +535,31 @@
 				</tr>
 				<tr class="methodParameters">
 <td id="map meta's type-88166771" class="stacks i-code">map meta's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">tuple meta's type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Literals</div>
+		<div class="signature-description">
+			Strengthen the lower bound for tuple types.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="2">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="tuple meta's type-1751640727" class="stacks i-code">tuple meta's type</td>
 					<td class="stacks i-code">
 						
 					</td>

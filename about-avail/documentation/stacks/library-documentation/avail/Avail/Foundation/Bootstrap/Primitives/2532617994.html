@@ -51,6 +51,103 @@
 	</div>
 	<h4 class="method-section-header">Definitions:</h4>
 	<div class="method-section-content">
+		<div class="signature-heading">tuple, natural number</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Fallible Primitives</div>
+		<div class="category-list"><em>Categories:</em> Primitives, Tuples, Queries</div>
+		<div class="signature-description">
+			Answer the <a href="#index570103418">index</a> -th element of <a href="#aTuple570103418">aTuple</a>.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="aTuple570103418" class="stacks i-code">aTuple</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
+					<td class="stacks i-desc">
+						A tuple.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="index570103418" class="stacks i-code">index</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2452598284.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2452598284.html">natural number</a></td>
+					<td class="stacks i-desc">
+						The one-based index of the desired element.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/421086860.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/421086860.html">any</a></td>
+					<td class="stacks i-desc">
+						The requested element.
+					</td>
+				</tr>
+					<th class="stacks i-row-label" colspan="3" rowspan="2">Raises</th>
+				<tr class="methodParameters">
+					<td class="stacks i-code">subscript-out-of-bounds exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">tuple meta, natural number</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Infallible Primitives</div>
+		<div class="category-list"><em>Categories:</em> Primitives, Types, Tuples, Queries</div>
+		<div class="signature-description">
+			Answer the element type of the <a href="#index1619181805">index</a> -th element of instances of the specified type. If <a href="#index1619181805">index</a> is out of bounds, then answer <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3534985473.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3534985473.html">⊥</a>.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="aTupleType1619181805" class="stacks i-code">aTupleType</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2915683713.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2915683713.html">tuple meta</a></td>
+					<td class="stacks i-desc">
+						A tuple type.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="index1619181805" class="stacks i-code">index</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2452598284.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2452598284.html">natural number</a></td>
+					<td class="stacks i-desc">
+						The index of the desired element type.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code">(any)'s type</td>
+					<td class="stacks i-desc">
+						The requested element type, or ⊥ if <a href="#index1619181805">index</a> is out of bounds.
+					</td>
+				</tr>
+			</tbody>
+		</table>
 		<div class="signature-heading">empty sequence, natural number</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Sequences/Abstract Sequences</div>
 		<div class="category-list"><em>Categories:</em> Data Abstractions, Sequences</div>
@@ -99,6 +196,399 @@
 					<td class="stacks i-code">subscript-out-of-bounds exception</td>
 					<td class="stacks i-desc">
 						Always.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">any meta, whole number meta</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Infallible Primitives</div>
+		<div class="category-list"><em>Categories:</em> Primitives, Types, POJO, Constructors</div>
+		<div class="signature-description">
+			Construct and answer a pojo array type whose element type is <a href="#elementType536677454">elementType</a> and whose cardinality requirement is <a href="#cardinalityRequirement536677454">cardinalityRequirement</a>.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="elementType536677454" class="stacks i-code">elementType</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/123117495.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/123117495.html">any meta</a></td>
+					<td class="stacks i-desc">
+						The type of the elements of instances.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="cardinalityRequirement536677454" class="stacks i-code">cardinalityRequirement</td>
+					<td class="stacks i-code">whole number meta</td>
+					<td class="stacks i-desc">
+						The range of sizes of instances.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code">(any[])'s type</td>
+					<td class="stacks i-desc">
+						The requested pojo array type.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">sequence, natural number</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Sequences/Abstract Sequences</div>
+		<div class="category-list"><em>Categories:</em> Data Abstractions, Sequences</div>
+		<div class="signature-description">
+			Answer the <a href="#index1965507793">index</a> -th element of <a href="#aSequence1965507793">aSequence</a>.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="aSequence1965507793" class="stacks i-code">aSequence</td>
+					<td class="stacks i-code">sequence</td>
+					<td class="stacks i-desc">
+						A <code>sequence</code>.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="index1965507793" class="stacks i-code">index</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2452598284.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2452598284.html">natural number</a></td>
+					<td class="stacks i-desc">
+						The one-based index of the desired element.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/421086860.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/421086860.html">any</a></td>
+					<td class="stacks i-desc">
+						The requested element.
+					</td>
+				</tr>
+					<th class="stacks i-row-label" colspan="3" rowspan="2">Raises</th>
+				<tr class="methodParameters">
+					<td class="stacks i-code">subscript-out-of-bounds exception</td>
+					<td class="stacks i-desc">
+						If <a href="#index1965507793">index</a> exceeds the size of <a href="#aSequence1965507793">aSequence</a>.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">object, atom</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Fallible Primitives</div>
+		<div class="category-list"><em>Categories:</em> Primitives, Objects, Queries</div>
+		<div class="signature-description">
+			Extract a field's value from an object.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="object154490052" class="stacks i-code">object</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2677522631.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2677522631.html">object</a></td>
+					<td class="stacks i-desc">
+						An object.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="field154490052" class="stacks i-code">field</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3442635109.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3442635109.html">atom</a></td>
+					<td class="stacks i-desc">
+						The field for which to extract the value.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/421086860.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/421086860.html">any</a></td>
+					<td class="stacks i-desc">
+						The field's value.
+					</td>
+				</tr>
+					<th class="stacks i-row-label" colspan="3" rowspan="2">Raises</th>
+				<tr class="methodParameters">
+					<td class="stacks i-code">no-such-field exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">pojo array, natural number</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Fallible Primitives</div>
+		<div class="category-list"><em>Categories:</em> Primitives, POJO, Queries</div>
+		<div class="signature-description">
+			Answer the <a href="#index-1907026197">index</a> -th element of the specified pojo array.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="anArray-1907026197" class="stacks i-code">anArray</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3684443007.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3684443007.html">pojo array</a></td>
+					<td class="stacks i-desc">
+						A pojo array.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="index-1907026197" class="stacks i-code">index</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2452598284.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2452598284.html">natural number</a></td>
+					<td class="stacks i-desc">
+						A one-based index into the pojo array.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/421086860.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/421086860.html">any</a></td>
+					<td class="stacks i-desc">
+						The <a href="#index-1907026197">index</a> -th element of <a href="#anArray-1907026197">anArray</a>.
+					</td>
+				</tr>
+					<th class="stacks i-row-label" colspan="3" rowspan="3">Raises</th>
+				<tr class="methodParameters">
+					<td class="stacks i-code">subscript-out-of-bounds exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">Java-marshaling-failed exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">⊥'s type, natural number</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Literals</div>
+		<div class="category-list"><em>Categories:</em> Types, Queries</div>
+		<div class="signature-description">
+			Disambiguate subscript of ⊥. This is a type subscript operation, such as defined for tuple types or function types, and can consistently answer ⊥.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="bottom-1771991787" class="stacks i-code">bottom</td>
+					<td class="stacks i-code">⊥'s type</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="index-1771991787" class="stacks i-code">index</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2452598284.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2452598284.html">natural number</a></td>
+					<td class="stacks i-desc">
+						The subscript (ignored).
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3534985473.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3534985473.html">⊥</a></td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">object meta, atom</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Fallible Primitives</div>
+		<div class="category-list"><em>Categories:</em> Primitives, Types, Objects, Queries</div>
+		<div class="signature-description">
+			Extract a field's type from an object type.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="objectType1511096247" class="stacks i-code">objectType</td>
+					<td class="stacks i-code">object meta</td>
+					<td class="stacks i-desc">
+						An object type.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="field1511096247" class="stacks i-code">field</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3442635109.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3442635109.html">atom</a></td>
+					<td class="stacks i-desc">
+						The field for which to extract the type.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code">(any)'s type</td>
+					<td class="stacks i-desc">
+						The field's constraining type.
+					</td>
+				</tr>
+					<th class="stacks i-row-label" colspan="3" rowspan="2">Raises</th>
+				<tr class="methodParameters">
+					<td class="stacks i-code">no-such-field exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">any meta</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Pojos</div>
+		<div class="category-list"><em>Categories:</em> Primitives, Types, POJO, Constructors</div>
+		<div class="signature-description">
+			Construct and answer a pojo array type whose element type is <a href="#elementType123117495">elementType</a> and whose cardinality requirement is <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3836536488.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3836536488.html">whole number</a>.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="2">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="elementType123117495" class="stacks i-code">elementType</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/123117495.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/123117495.html">any meta</a></td>
+					<td class="stacks i-desc">
+						The type of the elements of instances.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code">any [whole number]'s type</td>
+					<td class="stacks i-desc">
+						The requested pojo array type.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">map, any</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Fallible Primitives</div>
+		<div class="category-list"><em>Categories:</em> Primitives, Maps, Queries</div>
+		<div class="signature-description">
+			Answer the value bound to <a href="#aMap728009526">aMap</a> in <a href="#key728009526">key</a>.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="aMap728009526" class="stacks i-code">aMap</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html">map</a></td>
+					<td class="stacks i-desc">
+						A map.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="key728009526" class="stacks i-code">key</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/421086860.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/421086860.html">any</a></td>
+					<td class="stacks i-desc">
+						The key whose bound value should be obtained.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/421086860.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/421086860.html">any</a></td>
+					<td class="stacks i-desc">
+						The value bound to <a href="#key728009526">key</a> in <a href="#aMap728009526">aMap</a>.
+					</td>
+				</tr>
+					<th class="stacks i-row-label" colspan="3" rowspan="2">Raises</th>
+				<tr class="methodParameters">
+					<td class="stacks i-code">key-not-found exception</td>
+					<td class="stacks i-desc">
+						
 					</td>
 				</tr>
 			</tbody>
@@ -206,496 +696,6 @@
 				</tr>
 			</tbody>
 		</table>
-		<div class="signature-heading">object, atom</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Fallible Primitives</div>
-		<div class="category-list"><em>Categories:</em> Primitives, Objects, Queries</div>
-		<div class="signature-description">
-			Extract a field's value from an object.
-		</div>
-		<table class="stacks">
-			<thead>
-				<tr>
-					<th class="transparent" scope="col"></th>
-					<th class="stacks i-col-label-narrow" scope="col">Position</th>
-					<th class="stacks i-col-label-narrow" scope="col">Name</th>
-					<th class="stacks i-col-label-narrow" scope="col">Type</th>
-					<th class="stacks i-col-label-wide" scope="col">Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th class="stacks i-row-label" rowspan="3">Parameters</th>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">1</td>
-					<td id="object154490052" class="stacks i-code">object</td>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2677522631.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2677522631.html">object</a></td>
-					<td class="stacks i-desc">
-						An object.
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">2</td>
-					<td id="field154490052" class="stacks i-code">field</td>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3442635109.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3442635109.html">atom</a></td>
-					<td class="stacks i-desc">
-						The field for which to extract the value.
-					</td>
-				</tr>
-				<tr>
-					<th class="stacks i-row-label" colspan="3">Returns</th>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/421086860.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/421086860.html">any</a></td>
-					<td class="stacks i-desc">
-						The field's value.
-					</td>
-				</tr>
-					<th class="stacks i-row-label" colspan="3" rowspan="2">Raises</th>
-				<tr class="methodParameters">
-					<td class="stacks i-code">no-such-field exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-			</tbody>
-		</table>
-		<div class="signature-heading">sequence, natural number</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Sequences/Abstract Sequences</div>
-		<div class="category-list"><em>Categories:</em> Data Abstractions, Sequences</div>
-		<div class="signature-description">
-			Answer the <a href="#index1965507793">index</a> -th element of <a href="#aSequence1965507793">aSequence</a>.
-		</div>
-		<table class="stacks">
-			<thead>
-				<tr>
-					<th class="transparent" scope="col"></th>
-					<th class="stacks i-col-label-narrow" scope="col">Position</th>
-					<th class="stacks i-col-label-narrow" scope="col">Name</th>
-					<th class="stacks i-col-label-narrow" scope="col">Type</th>
-					<th class="stacks i-col-label-wide" scope="col">Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th class="stacks i-row-label" rowspan="3">Parameters</th>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">1</td>
-					<td id="aSequence1965507793" class="stacks i-code">aSequence</td>
-					<td class="stacks i-code">sequence</td>
-					<td class="stacks i-desc">
-						A <code>sequence</code>.
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">2</td>
-					<td id="index1965507793" class="stacks i-code">index</td>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2452598284.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2452598284.html">natural number</a></td>
-					<td class="stacks i-desc">
-						The one-based index of the desired element.
-					</td>
-				</tr>
-				<tr>
-					<th class="stacks i-row-label" colspan="3">Returns</th>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/421086860.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/421086860.html">any</a></td>
-					<td class="stacks i-desc">
-						The requested element.
-					</td>
-				</tr>
-					<th class="stacks i-row-label" colspan="3" rowspan="2">Raises</th>
-				<tr class="methodParameters">
-					<td class="stacks i-code">subscript-out-of-bounds exception</td>
-					<td class="stacks i-desc">
-						If <a href="#index1965507793">index</a> exceeds the size of <a href="#aSequence1965507793">aSequence</a>.
-					</td>
-				</tr>
-			</tbody>
-		</table>
-		<div class="signature-heading">pojo array, natural number</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Fallible Primitives</div>
-		<div class="category-list"><em>Categories:</em> Primitives, POJO, Queries</div>
-		<div class="signature-description">
-			Answer the <a href="#index-1907026197">index</a> -th element of the specified pojo array.
-		</div>
-		<table class="stacks">
-			<thead>
-				<tr>
-					<th class="transparent" scope="col"></th>
-					<th class="stacks i-col-label-narrow" scope="col">Position</th>
-					<th class="stacks i-col-label-narrow" scope="col">Name</th>
-					<th class="stacks i-col-label-narrow" scope="col">Type</th>
-					<th class="stacks i-col-label-wide" scope="col">Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th class="stacks i-row-label" rowspan="3">Parameters</th>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">1</td>
-					<td id="anArray-1907026197" class="stacks i-code">anArray</td>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3684443007.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3684443007.html">pojo array</a></td>
-					<td class="stacks i-desc">
-						A pojo array.
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">2</td>
-					<td id="index-1907026197" class="stacks i-code">index</td>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2452598284.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2452598284.html">natural number</a></td>
-					<td class="stacks i-desc">
-						A one-based index into the pojo array.
-					</td>
-				</tr>
-				<tr>
-					<th class="stacks i-row-label" colspan="3">Returns</th>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/421086860.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/421086860.html">any</a></td>
-					<td class="stacks i-desc">
-						The <a href="#index-1907026197">index</a> -th element of <a href="#anArray-1907026197">anArray</a>.
-					</td>
-				</tr>
-					<th class="stacks i-row-label" colspan="3" rowspan="3">Raises</th>
-				<tr class="methodParameters">
-					<td class="stacks i-code">subscript-out-of-bounds exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">Java-marshaling-failed exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-			</tbody>
-		</table>
-		<div class="signature-heading">tuple meta, natural number</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Infallible Primitives</div>
-		<div class="category-list"><em>Categories:</em> Primitives, Types, Tuples, Queries</div>
-		<div class="signature-description">
-			Answer the element type of the <a href="#index1619181805">index</a> -th element of instances of the specified type. If <a href="#index1619181805">index</a> is out of bounds, then answer <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3534985473.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3534985473.html">⊥</a>.
-		</div>
-		<table class="stacks">
-			<thead>
-				<tr>
-					<th class="transparent" scope="col"></th>
-					<th class="stacks i-col-label-narrow" scope="col">Position</th>
-					<th class="stacks i-col-label-narrow" scope="col">Name</th>
-					<th class="stacks i-col-label-narrow" scope="col">Type</th>
-					<th class="stacks i-col-label-wide" scope="col">Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th class="stacks i-row-label" rowspan="3">Parameters</th>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">1</td>
-					<td id="aTupleType1619181805" class="stacks i-code">aTupleType</td>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2915683713.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2915683713.html">tuple meta</a></td>
-					<td class="stacks i-desc">
-						A tuple type.
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">2</td>
-					<td id="index1619181805" class="stacks i-code">index</td>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2452598284.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2452598284.html">natural number</a></td>
-					<td class="stacks i-desc">
-						The index of the desired element type.
-					</td>
-				</tr>
-				<tr>
-					<th class="stacks i-row-label" colspan="3">Returns</th>
-					<td class="stacks i-code">(any)'s type</td>
-					<td class="stacks i-desc">
-						The requested element type, or ⊥ if <a href="#index1619181805">index</a> is out of bounds.
-					</td>
-				</tr>
-			</tbody>
-		</table>
-		<div class="signature-heading">object meta, atom</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Fallible Primitives</div>
-		<div class="category-list"><em>Categories:</em> Primitives, Types, Objects, Queries</div>
-		<div class="signature-description">
-			Extract a field's type from an object type.
-		</div>
-		<table class="stacks">
-			<thead>
-				<tr>
-					<th class="transparent" scope="col"></th>
-					<th class="stacks i-col-label-narrow" scope="col">Position</th>
-					<th class="stacks i-col-label-narrow" scope="col">Name</th>
-					<th class="stacks i-col-label-narrow" scope="col">Type</th>
-					<th class="stacks i-col-label-wide" scope="col">Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th class="stacks i-row-label" rowspan="3">Parameters</th>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">1</td>
-					<td id="objectType1511096247" class="stacks i-code">objectType</td>
-					<td class="stacks i-code">object meta</td>
-					<td class="stacks i-desc">
-						An object type.
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">2</td>
-					<td id="field1511096247" class="stacks i-code">field</td>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3442635109.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3442635109.html">atom</a></td>
-					<td class="stacks i-desc">
-						The field for which to extract the type.
-					</td>
-				</tr>
-				<tr>
-					<th class="stacks i-row-label" colspan="3">Returns</th>
-					<td class="stacks i-code">(any)'s type</td>
-					<td class="stacks i-desc">
-						The field's constraining type.
-					</td>
-				</tr>
-					<th class="stacks i-row-label" colspan="3" rowspan="2">Raises</th>
-				<tr class="methodParameters">
-					<td class="stacks i-code">no-such-field exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-			</tbody>
-		</table>
-		<div class="signature-heading">tuple, natural number</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Fallible Primitives</div>
-		<div class="category-list"><em>Categories:</em> Primitives, Tuples, Queries</div>
-		<div class="signature-description">
-			Answer the <a href="#index570103418">index</a> -th element of <a href="#aTuple570103418">aTuple</a>.
-		</div>
-		<table class="stacks">
-			<thead>
-				<tr>
-					<th class="transparent" scope="col"></th>
-					<th class="stacks i-col-label-narrow" scope="col">Position</th>
-					<th class="stacks i-col-label-narrow" scope="col">Name</th>
-					<th class="stacks i-col-label-narrow" scope="col">Type</th>
-					<th class="stacks i-col-label-wide" scope="col">Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th class="stacks i-row-label" rowspan="3">Parameters</th>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">1</td>
-					<td id="aTuple570103418" class="stacks i-code">aTuple</td>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
-					<td class="stacks i-desc">
-						A tuple.
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">2</td>
-					<td id="index570103418" class="stacks i-code">index</td>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2452598284.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2452598284.html">natural number</a></td>
-					<td class="stacks i-desc">
-						The one-based index of the desired element.
-					</td>
-				</tr>
-				<tr>
-					<th class="stacks i-row-label" colspan="3">Returns</th>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/421086860.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/421086860.html">any</a></td>
-					<td class="stacks i-desc">
-						The requested element.
-					</td>
-				</tr>
-					<th class="stacks i-row-label" colspan="3" rowspan="2">Raises</th>
-				<tr class="methodParameters">
-					<td class="stacks i-code">subscript-out-of-bounds exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-			</tbody>
-		</table>
-		<div class="signature-heading">⊥'s type, natural number</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Literals</div>
-		<div class="category-list"><em>Categories:</em> Types, Queries</div>
-		<div class="signature-description">
-			Disambiguate subscript of ⊥. This is a type subscript operation, such as defined for tuple types or function types, and can consistently answer ⊥.
-		</div>
-		<table class="stacks">
-			<thead>
-				<tr>
-					<th class="transparent" scope="col"></th>
-					<th class="stacks i-col-label-narrow" scope="col">Position</th>
-					<th class="stacks i-col-label-narrow" scope="col">Name</th>
-					<th class="stacks i-col-label-narrow" scope="col">Type</th>
-					<th class="stacks i-col-label-wide" scope="col">Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th class="stacks i-row-label" rowspan="3">Parameters</th>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">1</td>
-					<td id="bottom-1771991787" class="stacks i-code">bottom</td>
-					<td class="stacks i-code">⊥'s type</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">2</td>
-					<td id="index-1771991787" class="stacks i-code">index</td>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2452598284.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2452598284.html">natural number</a></td>
-					<td class="stacks i-desc">
-						The subscript (ignored).
-					</td>
-				</tr>
-				<tr>
-					<th class="stacks i-row-label" colspan="3">Returns</th>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3534985473.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3534985473.html">⊥</a></td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-			</tbody>
-		</table>
-		<div class="signature-heading">any meta</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Pojos</div>
-		<div class="category-list"><em>Categories:</em> Primitives, Types, POJO, Constructors</div>
-		<div class="signature-description">
-			Construct and answer a pojo array type whose element type is <a href="#elementType123117495">elementType</a> and whose cardinality requirement is <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3836536488.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3836536488.html">whole number</a>.
-		</div>
-		<table class="stacks">
-			<thead>
-				<tr>
-					<th class="transparent" scope="col"></th>
-					<th class="stacks i-col-label-narrow" scope="col">Position</th>
-					<th class="stacks i-col-label-narrow" scope="col">Name</th>
-					<th class="stacks i-col-label-narrow" scope="col">Type</th>
-					<th class="stacks i-col-label-wide" scope="col">Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th class="stacks i-row-label" rowspan="2">Parameters</th>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">1</td>
-					<td id="elementType123117495" class="stacks i-code">elementType</td>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/123117495.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/123117495.html">any meta</a></td>
-					<td class="stacks i-desc">
-						The type of the elements of instances.
-					</td>
-				</tr>
-				<tr>
-					<th class="stacks i-row-label" colspan="3">Returns</th>
-					<td class="stacks i-code">any [whole number]'s type</td>
-					<td class="stacks i-desc">
-						The requested pojo array type.
-					</td>
-				</tr>
-			</tbody>
-		</table>
-		<div class="signature-heading">map, any</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Fallible Primitives</div>
-		<div class="category-list"><em>Categories:</em> Primitives, Maps, Queries</div>
-		<div class="signature-description">
-			Answer the value bound to <a href="#aMap728009526">aMap</a> in <a href="#key728009526">key</a>.
-		</div>
-		<table class="stacks">
-			<thead>
-				<tr>
-					<th class="transparent" scope="col"></th>
-					<th class="stacks i-col-label-narrow" scope="col">Position</th>
-					<th class="stacks i-col-label-narrow" scope="col">Name</th>
-					<th class="stacks i-col-label-narrow" scope="col">Type</th>
-					<th class="stacks i-col-label-wide" scope="col">Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th class="stacks i-row-label" rowspan="3">Parameters</th>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">1</td>
-					<td id="aMap728009526" class="stacks i-code">aMap</td>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html">map</a></td>
-					<td class="stacks i-desc">
-						A map.
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">2</td>
-					<td id="key728009526" class="stacks i-code">key</td>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/421086860.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/421086860.html">any</a></td>
-					<td class="stacks i-desc">
-						The key whose bound value should be obtained.
-					</td>
-				</tr>
-				<tr>
-					<th class="stacks i-row-label" colspan="3">Returns</th>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/421086860.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/421086860.html">any</a></td>
-					<td class="stacks i-desc">
-						The value bound to <a href="#key728009526">key</a> in <a href="#aMap728009526">aMap</a>.
-					</td>
-				</tr>
-					<th class="stacks i-row-label" colspan="3" rowspan="2">Raises</th>
-				<tr class="methodParameters">
-					<td class="stacks i-code">key-not-found exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-			</tbody>
-		</table>
-		<div class="signature-heading">any meta, whole number meta</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Infallible Primitives</div>
-		<div class="category-list"><em>Categories:</em> Primitives, Types, POJO, Constructors</div>
-		<div class="signature-description">
-			Construct and answer a pojo array type whose element type is <a href="#elementType536677454">elementType</a> and whose cardinality requirement is <a href="#cardinalityRequirement536677454">cardinalityRequirement</a>.
-		</div>
-		<table class="stacks">
-			<thead>
-				<tr>
-					<th class="transparent" scope="col"></th>
-					<th class="stacks i-col-label-narrow" scope="col">Position</th>
-					<th class="stacks i-col-label-narrow" scope="col">Name</th>
-					<th class="stacks i-col-label-narrow" scope="col">Type</th>
-					<th class="stacks i-col-label-wide" scope="col">Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th class="stacks i-row-label" rowspan="3">Parameters</th>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">1</td>
-					<td id="elementType536677454" class="stacks i-code">elementType</td>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/123117495.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/123117495.html">any meta</a></td>
-					<td class="stacks i-desc">
-						The type of the elements of instances.
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">2</td>
-					<td id="cardinalityRequirement536677454" class="stacks i-code">cardinalityRequirement</td>
-					<td class="stacks i-code">whole number meta</td>
-					<td class="stacks i-desc">
-						The range of sizes of instances.
-					</td>
-				</tr>
-				<tr>
-					<th class="stacks i-row-label" colspan="3">Returns</th>
-					<td class="stacks i-code">(any[])'s type</td>
-					<td class="stacks i-desc">
-						The requested pojo array type.
-					</td>
-				</tr>
-			</tbody>
-		</table>
 	</div>
 	<h4 class="method-section-header">Semantic restrictions:</h4>
 	<div class="method-section-content">
@@ -730,37 +730,6 @@
 				</tr>
 			</tbody>
 		</table>
-		<div class="signature-heading">tuple meta, natural number's type</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Literals</div>
-		<div class="signature-description">
-			Strengthen the tuple subscript operation. The strongest available static type is the type union of the elements within the slice indicated by the range of the subscript. Forbid any access that could never be correct, i.e., the minimum value of the subscript exceeds the maximum cardinality of the tuple.
-		</div>
-		<table class="stacks">
-			<thead>
-				<tr>
-					<th class="transparent" scope="col"></th>
-					<th class="stacks i-col-label-narrow" scope="col">Type</th>
-					<th class="stacks i-col-label-wide" scope="col">Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th class="stacks i-row-label" rowspan="3">Parameter Types</th>
-				</tr>
-				<tr class="methodParameters">
-<td id="tuple meta-852616043" class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2915683713.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2915683713.html">tuple meta</a></td>
-					<td class="stacks i-code">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-<td id="natural number's type-852616043" class="stacks i-code">natural number's type</td>
-					<td class="stacks i-code">
-						
-					</td>
-				</tr>
-			</tbody>
-		</table>
 		<div class="signature-heading">pojo array's type, natural number's type</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Pojos</div>
 		<div class="signature-description">
@@ -786,6 +755,37 @@
 				</tr>
 				<tr class="methodParameters">
 <td id="natural number's type902132299" class="stacks i-code">natural number's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">tuple meta, natural number's type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Literals</div>
+		<div class="signature-description">
+			Strengthen the tuple subscript operation. The strongest available static type is the type union of the elements within the slice indicated by the range of the subscript. Forbid any access that could never be correct, i.e., the minimum value of the subscript exceeds the maximum cardinality of the tuple.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="tuple meta-852616043" class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2915683713.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2915683713.html">tuple meta</a></td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="natural number's type-852616043" class="stacks i-code">natural number's type</td>
 					<td class="stacks i-code">
 						
 					</td>

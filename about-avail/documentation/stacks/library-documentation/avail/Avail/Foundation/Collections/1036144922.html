@@ -31,51 +31,6 @@
 	<h2 class="method-heading">group_by_</h2>
 	<h4 class="method-section-header">Definitions:</h4>
 	<div class="method-section-content">
-		<div class="signature-heading">tuple, [⊥]→any</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Maps</div>
-		<div class="category-list"><em>Categories:</em> Collections, Tuples, Maps, Transformers</div>
-		<div class="signature-description">
-			Categorize the elements of <a href="#aTuple-1703629843">aTuple</a> via <a href="#discriminator-1703629843">discriminator</a>.
-		</div>
-		<table class="stacks">
-			<thead>
-				<tr>
-					<th class="transparent" scope="col"></th>
-					<th class="stacks i-col-label-narrow" scope="col">Position</th>
-					<th class="stacks i-col-label-narrow" scope="col">Name</th>
-					<th class="stacks i-col-label-narrow" scope="col">Type</th>
-					<th class="stacks i-col-label-wide" scope="col">Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th class="stacks i-row-label" rowspan="3">Parameters</th>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">1</td>
-					<td id="aTuple-1703629843" class="stacks i-code">aTuple</td>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
-					<td class="stacks i-desc">
-						The tuple to categorize.
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">2</td>
-					<td id="discriminator-1703629843" class="stacks i-code">discriminator</td>
-					<td class="stacks i-code">[⊥]→any</td>
-					<td class="stacks i-desc">
-						A function that accepts each element of the tuple and answers a value that represents the group to which the element belongs.
-					</td>
-				</tr>
-				<tr>
-					<th class="stacks i-row-label" colspan="3">Returns</th>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html">map</a></td>
-					<td class="stacks i-desc">
-						A map whose keys describe groups and whose elements are the groups themselves, i.e., the tuples of elements that constitute the described group.
-					</td>
-				</tr>
-			</tbody>
-		</table>
 		<div class="signature-heading">set, [⊥]→any</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Maps</div>
 		<div class="category-list"><em>Categories:</em> Collections, Sets, Maps, Transformers</div>
@@ -117,6 +72,51 @@
 					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html">map</a></td>
 					<td class="stacks i-desc">
 						A map whose keys describe groups and whose elements are the groups themselves, i.e., the sets of elements that constitute the described group.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">tuple, [⊥]→any</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Maps</div>
+		<div class="category-list"><em>Categories:</em> Collections, Tuples, Maps, Transformers</div>
+		<div class="signature-description">
+			Categorize the elements of <a href="#aTuple-1703629843">aTuple</a> via <a href="#discriminator-1703629843">discriminator</a>.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="aTuple-1703629843" class="stacks i-code">aTuple</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
+					<td class="stacks i-desc">
+						The tuple to categorize.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="discriminator-1703629843" class="stacks i-code">discriminator</td>
+					<td class="stacks i-code">[⊥]→any</td>
+					<td class="stacks i-desc">
+						A function that accepts each element of the tuple and answers a value that represents the group to which the element belongs.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html">map</a></td>
+					<td class="stacks i-desc">
+						A map whose keys describe groups and whose elements are the groups themselves, i.e., the tuples of elements that constitute the described group.
 					</td>
 				</tr>
 			</tbody>

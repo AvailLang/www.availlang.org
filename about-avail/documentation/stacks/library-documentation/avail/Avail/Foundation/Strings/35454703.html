@@ -37,9 +37,9 @@
 		<div class="signature-description">
 			Answer the result of fully formatting the specified template using format variable bindings contained in the given map. The map must contain bindings for all variables embedded within the template. <p> A template intermixes raw character data with format variable interpolation sites. An interpolation site begins with either the ¢‘ or ¢“ metacharacter and ends with the corresponding close metacharacter, either ¢’ or ¢”, respectively. An interpolation site may contain any character except the expected close metacharacter. The contents are understood to name a variable that may appear as a key within the specified map; the associated value is this variable's value. If an interpolation site uses ¢“ (and ¢”), then the value will be converted to a string via `“_”` when it is copied into the result. If an interpolation site uses ¢‘ (and ¢’), then the value must be a string and will be copied directly into the result. To escape a metacharacter, precede it immediately by ¢`. </p>
 <p> For example: </p>
-<p> Assert: format ‘greeting’, ‘recipient’!
- with { greeting →"Hello", recipient →"world"} = Hello, world!
-; </p>
+<p> <code class="method">Assert: format ‘greeting’, ‘recipient’!
+ with { greeting →"Hello", recipient →"world"</code> = Hello, world!
+ ;} </p>
 		</div>
 		<table class="stacks">
 			<thead>

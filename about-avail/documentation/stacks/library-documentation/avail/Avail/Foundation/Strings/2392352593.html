@@ -37,9 +37,9 @@
 		<div class="signature-description">
 			Answer the result of fully formatting the specified template using format variable bindings contained in the given tuple. The tuple must contain bindings for all variables embedded within the template. <p> A template intermixes raw character data with format variable interpolation sites. An interpolation site begins with either the ¢‘ or ¢“ metacharacter and ends with the corresponding close metacharacter, either ¢’ or ¢”, respectively. An interpolation site must contain one of the fifty circled number characters (¢①, ¢②, ..., ¢㊿). The circled number character is understood to indicate a subscript within the specified tuple; the value at this subscript is this variable's value. If an interpolation site uses ¢“ (and ¢”), then the value will be converted to a string via `primitive description of_` when it is copied into the result. If an interpolation site uses ¢‘ (and ¢’), then the value must be a string and will be copied directly into the result. To escape a metacharacter, precede it immediately by ¢`. </p>
 <p> For example: </p>
-<p> Assert: format ‘①’, ‘②’!
- with unchecked <"Hello", world > = Hello, world!
-; </p>
+<p> <code class="method">Assert: format ‘①’, ‘②’!
+ with unchecked &lt;"Hello", world > = Hello, world!
+ ;</code> </p>
 		</div>
 		<table class="stacks">
 			<thead>

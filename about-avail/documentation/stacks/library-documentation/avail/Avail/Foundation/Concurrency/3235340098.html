@@ -31,66 +31,6 @@
 	<h2 class="method-heading">filter_in parallel«_-way»by_</h2>
 	<h4 class="method-section-header">Definitions:</h4>
 	<div class="method-section-content">
-		<div class="signature-heading">tuple, natural number?, [⊥, ⊥]→boolean</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Concurrency</div>
-		<div class="category-list"><em>Categories:</em> Collections, Tuples, Transformers</div>
-		<div class="signature-description">
-			Concurrently apply <a href="#filter-2092875899">filter</a> to each consecutive element of <a href="#aTuple-2092875899">aTuple</a>, collecting elements for which <a href="#filter-2092875899">filter</a> answered <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a> into a new tuple (and preserving ordering of the transformed elements). Answer this tuple.
-		</div>
-		<table class="stacks">
-			<thead>
-				<tr>
-					<th class="transparent" scope="col"></th>
-					<th class="stacks i-col-label-narrow" scope="col">Position</th>
-					<th class="stacks i-col-label-narrow" scope="col">Name</th>
-					<th class="stacks i-col-label-narrow" scope="col">Type</th>
-					<th class="stacks i-col-label-wide" scope="col">Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th class="stacks i-row-label" rowspan="4">Parameters</th>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">1</td>
-					<td id="aTuple-2092875899" class="stacks i-code">aTuple</td>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">2</td>
-					<td id="optionalLimit-2092875899" class="stacks i-code">optionalLimit</td>
-					<td class="stacks i-code">natural number?</td>
-					<td class="stacks i-desc">
-						If specified, then the maximum number of worker <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html">fiber</a> s permitted to run in parallel. If not specified, then permit <code>default maximum worker fibers</code> worker <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html">fiber</a> s to run in parallel.
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">3</td>
-					<td id="predicate-2092875899" class="stacks i-code">predicate</td>
-					<td class="stacks i-code">[⊥, ⊥]→boolean</td>
-					<td class="stacks i-desc">
-						A function that accepts 1) an element of the tuple and 2) the index of that element and answers <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a> if the element should be accumulated into the result.
-					</td>
-				</tr>
-				<tr>
-					<th class="stacks i-row-label" colspan="3">Returns</th>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
-					<td class="stacks i-desc">
-						A tuple of elements from <a href="#aTuple-2092875899">aTuple</a> for which <a href="#filter-2092875899">filter</a> answered <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a>.
-					</td>
-				</tr>
-					<th class="stacks i-row-label" colspan="3" rowspan="2">Raises</th>
-				<tr class="methodParameters">
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/3096177729.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/3096177729.html">worker exception</a></td>
-					<td class="stacks i-desc">
-						If any of the forked workers raise an exception.
-					</td>
-				</tr>
-			</tbody>
-		</table>
 		<div class="signature-heading">map, natural number?, [⊥, ⊥]→boolean</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Concurrency</div>
 		<div class="category-list"><em>Categories:</em> Collections, Sets, Transformers</div>
@@ -140,66 +80,6 @@
 					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html">map</a></td>
 					<td class="stacks i-desc">
 						The <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3016318916.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3016318916.html">submap</a> of bindings from <a href="#aMap-1512071863">aMap</a> for which <a href="#filter-1512071863">filter</a> answered <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a>.
-					</td>
-				</tr>
-					<th class="stacks i-row-label" colspan="3" rowspan="2">Raises</th>
-				<tr class="methodParameters">
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/3096177729.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/3096177729.html">worker exception</a></td>
-					<td class="stacks i-desc">
-						If any of the forked workers raise an exception.
-					</td>
-				</tr>
-			</tbody>
-		</table>
-		<div class="signature-heading">tuple, natural number?, [⊥, ⊥]→boolean</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Concurrency</div>
-		<div class="category-list"><em>Categories:</em> Collections, Tuples, Transformers</div>
-		<div class="signature-description">
-			Concurrently apply <a href="#filter-2092875899">filter</a> to each consecutive element of <a href="#aTuple-2092875899">aTuple</a>, collecting elements for which <a href="#filter-2092875899">filter</a> answered <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a> into a new tuple (and preserving ordering of the transformed elements). Answer this tuple.
-		</div>
-		<table class="stacks">
-			<thead>
-				<tr>
-					<th class="transparent" scope="col"></th>
-					<th class="stacks i-col-label-narrow" scope="col">Position</th>
-					<th class="stacks i-col-label-narrow" scope="col">Name</th>
-					<th class="stacks i-col-label-narrow" scope="col">Type</th>
-					<th class="stacks i-col-label-wide" scope="col">Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th class="stacks i-row-label" rowspan="4">Parameters</th>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">1</td>
-					<td id="aTuple-2092875899" class="stacks i-code">aTuple</td>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">2</td>
-					<td id="optionalLimit-2092875899" class="stacks i-code">optionalLimit</td>
-					<td class="stacks i-code">natural number?</td>
-					<td class="stacks i-desc">
-						If specified, then the maximum number of worker <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html">fiber</a> s permitted to run in parallel. If not specified, then permit <code>default maximum worker fibers</code> worker <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html">fiber</a> s to run in parallel.
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">3</td>
-					<td id="predicate-2092875899" class="stacks i-code">predicate</td>
-					<td class="stacks i-code">[⊥, ⊥]→boolean</td>
-					<td class="stacks i-desc">
-						A function that accepts an arbitrary element of the tuple and answers <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a> if the element should be accumulated into the result.
-					</td>
-				</tr>
-				<tr>
-					<th class="stacks i-row-label" colspan="3">Returns</th>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
-					<td class="stacks i-desc">
-						A tuple of elements from <a href="#aTuple-2092875899">aTuple</a> for which <a href="#filter-2092875899">filter</a> answered <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a>.
 					</td>
 				</tr>
 					<th class="stacks i-row-label" colspan="3" rowspan="2">Raises</th>
@@ -271,6 +151,126 @@
 				</tr>
 			</tbody>
 		</table>
+		<div class="signature-heading">tuple, natural number?, [⊥, ⊥]→boolean</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Concurrency</div>
+		<div class="category-list"><em>Categories:</em> Collections, Tuples, Transformers</div>
+		<div class="signature-description">
+			Concurrently apply <a href="#filter-2092875899">filter</a> to each consecutive element of <a href="#aTuple-2092875899">aTuple</a>, collecting elements for which <a href="#filter-2092875899">filter</a> answered <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a> into a new tuple (and preserving ordering of the transformed elements). Answer this tuple.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="4">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="aTuple-2092875899" class="stacks i-code">aTuple</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="optionalLimit-2092875899" class="stacks i-code">optionalLimit</td>
+					<td class="stacks i-code">natural number?</td>
+					<td class="stacks i-desc">
+						If specified, then the maximum number of worker <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html">fiber</a> s permitted to run in parallel. If not specified, then permit <code>default maximum worker fibers</code> worker <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html">fiber</a> s to run in parallel.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">3</td>
+					<td id="predicate-2092875899" class="stacks i-code">predicate</td>
+					<td class="stacks i-code">[⊥, ⊥]→boolean</td>
+					<td class="stacks i-desc">
+						A function that accepts 1) an element of the tuple and 2) the index of that element and answers <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a> if the element should be accumulated into the result.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
+					<td class="stacks i-desc">
+						A tuple of elements from <a href="#aTuple-2092875899">aTuple</a> for which <a href="#filter-2092875899">filter</a> answered <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a>.
+					</td>
+				</tr>
+					<th class="stacks i-row-label" colspan="3" rowspan="2">Raises</th>
+				<tr class="methodParameters">
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/3096177729.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/3096177729.html">worker exception</a></td>
+					<td class="stacks i-desc">
+						If any of the forked workers raise an exception.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">tuple, natural number?, [⊥]→boolean</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Concurrency</div>
+		<div class="category-list"><em>Categories:</em> Concurrency, Control Structures, Loops, Collections, Tuples, Transformers</div>
+		<div class="signature-description">
+			Concurrently apply <a href="#filter-1303351836">filter</a> to each consecutive element of <a href="#aTuple-1303351836">aTuple</a>, collecting elements for which <a href="#filter-1303351836">filter</a> answered <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a> into a new tuple (and preserving ordering of the transformed elements). Answer this tuple.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="4">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="aTuple-1303351836" class="stacks i-code">aTuple</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="optionalLimit-1303351836" class="stacks i-code">optionalLimit</td>
+					<td class="stacks i-code">natural number?</td>
+					<td class="stacks i-desc">
+						If specified, then the maximum number of worker <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html">fiber</a> s permitted to run in parallel. If not specified, then permit <code>default maximum worker fibers</code> worker <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html">fiber</a> s to run in parallel.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">3</td>
+					<td id="predicate-1303351836" class="stacks i-code">predicate</td>
+					<td class="stacks i-code">[⊥]→boolean</td>
+					<td class="stacks i-desc">
+						A function that accepts an arbitrary element of the tuple and answers <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a> if the element should be accumulated into the result.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
+					<td class="stacks i-desc">
+						A tuple of elements from <a href="#aTuple-1303351836">aTuple</a> for which <a href="#filter-1303351836">filter</a> answered <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a>.
+					</td>
+				</tr>
+					<th class="stacks i-row-label" colspan="3" rowspan="2">Raises</th>
+				<tr class="methodParameters">
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/3096177729.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/3096177729.html">worker exception</a></td>
+					<td class="stacks i-desc">
+						If any of the forked workers raise an exception.
+					</td>
+				</tr>
+			</tbody>
+		</table>
 	</div>
 	<h4 class="method-section-header">Semantic restrictions:</h4>
 	<div class="method-section-content">
@@ -311,43 +311,6 @@
 				</tr>
 			</tbody>
 		</table>
-		<div class="signature-heading">tuple meta, natural number?, […]→boolean's type</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Concurrency</div>
-		<div class="signature-description">
-			Ensure that the function will accept all elements and indices of the tuple.
-		</div>
-		<table class="stacks">
-			<thead>
-				<tr>
-					<th class="transparent" scope="col"></th>
-					<th class="stacks i-col-label-narrow" scope="col">Type</th>
-					<th class="stacks i-col-label-wide" scope="col">Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th class="stacks i-row-label" rowspan="4">Parameter Types</th>
-				</tr>
-				<tr class="methodParameters">
-<td id="tuple meta1641896896" class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2915683713.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2915683713.html">tuple meta</a></td>
-					<td class="stacks i-code">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-<td id="natural number?1641896896" class="stacks i-code">natural number?</td>
-					<td class="stacks i-code">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-<td id="[…]→boolean's type1641896896" class="stacks i-code">[…]→boolean's type</td>
-					<td class="stacks i-code">
-						
-					</td>
-				</tr>
-			</tbody>
-		</table>
 		<div class="signature-heading">map meta, natural number?, […]→boolean's type</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Concurrency</div>
 		<div class="signature-description">
@@ -379,6 +342,43 @@
 				</tr>
 				<tr class="methodParameters">
 <td id="[…]→boolean's type-968222324" class="stacks i-code">[…]→boolean's type</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">tuple meta, natural number?, […]→boolean's type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Concurrency</div>
+		<div class="signature-description">
+			Ensure that the function will accept all elements and indices of the tuple.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="4">Parameter Types</th>
+				</tr>
+				<tr class="methodParameters">
+<td id="tuple meta1641896896" class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2915683713.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2915683713.html">tuple meta</a></td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="natural number?1641896896" class="stacks i-code">natural number?</td>
+					<td class="stacks i-code">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+<td id="[…]→boolean's type1641896896" class="stacks i-code">[…]→boolean's type</td>
 					<td class="stacks i-code">
 						
 					</td>

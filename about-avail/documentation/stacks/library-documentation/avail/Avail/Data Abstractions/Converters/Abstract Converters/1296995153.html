@@ -33,7 +33,7 @@
 	<div class="method-section-content">
 		<div class="signature-heading">UTF8 decoder</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Converters/UTF-8 Converters</div>
-		<div class="category-list"><em>Categories:</em> Data Abstractions, Converters, Codecs</div>
+		<div class="category-list"><em>Categories:</em> Data Abstractions, Converters, Codecs, UTF-8</div>
 		<div class="signature-description">
 			Flush the UTF-8 decoder. Since a complete sequence of bytes representing a character would have already produced a corresponding character, it must be the case that a non-empty residue should be treated as an invalid sequence, for which a single Unicode replacement character (U+FFFD) will be emitted.
 		</div>
@@ -64,6 +64,43 @@
 					<td class="stacks i-code">bytes</td>
 					<td class="stacks i-desc">
 						byte*
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">Base64 encoder</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Converters/Base64 Converters</div>
+		<div class="category-list"><em>Categories:</em> Data Abstractions, Converters, Codecs, Base64</div>
+		<div class="signature-description">
+			Flushing a <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Converters/Base64 Converters/827833821.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Converters/Base64 Converters/827833821.html">Base64 encoder</a> produces the final characters and any necessary padding.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="2">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="encoder827833821" class="stacks i-code">encoder</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Converters/Base64 Converters/827833821.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Converters/Base64 Converters/827833821.html">Base64 encoder</a></td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Converters/Base64 Converters/256704396.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Converters/Base64 Converters/256704396.html">Base64 string</a></td>
+					<td class="stacks i-desc">
+						
 					</td>
 				</tr>
 			</tbody>
@@ -99,6 +136,43 @@
 				<tr>
 					<th class="stacks i-row-label" colspan="3">Returns</th>
 					<td class="stacks i-code">any*</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">Base64 decoder</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Converters/Base64 Converters</div>
+		<div class="category-list"><em>Categories:</em> Data Abstractions, Converters, Codecs, Base64</div>
+		<div class="signature-description">
+			Flushing a <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Converters/Base64 Converters/2159975995.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Converters/Base64 Converters/2159975995.html">Base64 decoder</a> produces the final <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3858386480.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3858386480.html">byte</a> s and any necessary padding.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="2">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="decoder-2134991301" class="stacks i-code">decoder</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Converters/Base64 Converters/2159975995.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Data Abstractions/Converters/Base64 Converters/2159975995.html">Base64 decoder</a></td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code">byte*</td>
 					<td class="stacks i-desc">
 						
 					</td>
