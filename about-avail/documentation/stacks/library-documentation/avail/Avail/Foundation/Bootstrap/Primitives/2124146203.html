@@ -31,11 +31,11 @@
 	<h2 class="method-heading">_-_</h2>
 	<h4 class="method-section-header">Definitions:</h4>
 	<div class="method-section-content">
-		<div class="signature-heading">map, any</div>
+		<div class="signature-heading">set, any</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Infallible Primitives</div>
-		<div class="category-list"><em>Categories:</em> Primitives, Maps, Transformers</div>
+		<div class="category-list"><em>Categories:</em> Primitives, Sets, Mathematics</div>
 		<div class="signature-description">
-			Construct and answer a map that is based on the supplied map. The answer (potentially) differs from the argument in that it does not contain a binding for <a href="#key728009526">key</a>; any such previous binding is forgotten in the new map.
+			Compute and answer the asymmetric set difference of the specified set and a set containing the supplied element.
 		</div>
 		<table class="stacks">
 			<thead>
@@ -53,70 +53,25 @@
 				</tr>
 				<tr class="methodParameters">
 					<td class="stacks i-code">1</td>
-					<td id="aMap728009526" class="stacks i-code">aMap</td>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html">map</a></td>
+					<td id="aSet506259264" class="stacks i-code">aSet</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3016318916.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3016318916.html">set</a></td>
 					<td class="stacks i-desc">
-						A map.
+						A set.
 					</td>
 				</tr>
 				<tr class="methodParameters">
 					<td class="stacks i-code">2</td>
-					<td id="key728009526" class="stacks i-code">key</td>
+					<td id="oldElement506259264" class="stacks i-code">oldElement</td>
 					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/421086860.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/421086860.html">any</a></td>
 					<td class="stacks i-desc">
-						A key whose binding should be omitted.
+						The element that must not be present in the resultant set.
 					</td>
 				</tr>
 				<tr>
 					<th class="stacks i-row-label" colspan="3">Returns</th>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html">map</a></td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3016318916.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3016318916.html">set</a></td>
 					<td class="stacks i-desc">
-						The requested map.
-					</td>
-				</tr>
-			</tbody>
-		</table>
-		<div class="signature-heading">tuple, any</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Tuples</div>
-		<div class="category-list"><em>Categories:</em> Tuples</div>
-		<div class="signature-description">
-			Construct and answer a tuple like <a href="#aTuple-1000637190">aTuple</a>, but with the leftmost occurrence of <a href="#doomed-1000637190">doomed</a> removed.
-		</div>
-		<table class="stacks">
-			<thead>
-				<tr>
-					<th class="transparent" scope="col"></th>
-					<th class="stacks i-col-label-narrow" scope="col">Position</th>
-					<th class="stacks i-col-label-narrow" scope="col">Name</th>
-					<th class="stacks i-col-label-narrow" scope="col">Type</th>
-					<th class="stacks i-col-label-wide" scope="col">Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th class="stacks i-row-label" rowspan="3">Parameters</th>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">1</td>
-					<td id="aTuple-1000637190" class="stacks i-code">aTuple</td>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
-					<td class="stacks i-desc">
-						A tuple.
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">2</td>
-					<td id="doomed-1000637190" class="stacks i-code">doomed</td>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/421086860.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/421086860.html">any</a></td>
-					<td class="stacks i-desc">
-						A value.
-					</td>
-				</tr>
-				<tr>
-					<th class="stacks i-row-label" colspan="3">Returns</th>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
-					<td class="stacks i-desc">
-						The requested tuple, which will be <a href="#aTuple-1000637190">aTuple</a> if there were no occurrences of <a href="#doomed-1000637190">doomed</a>.
+						A set that contains the same elements as <a href="#aSet506259264">aSet</a> except that it does not contain <a href="#oldElement506259264">oldElement</a>.
 					</td>
 				</tr>
 			</tbody>
@@ -173,6 +128,51 @@
 				</tr>
 			</tbody>
 		</table>
+		<div class="signature-heading">tuple, any</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Tuples</div>
+		<div class="category-list"><em>Categories:</em> Tuples</div>
+		<div class="signature-description">
+			Construct and answer a tuple like <a href="#aTuple-1000637190">aTuple</a>, but with the leftmost occurrence of <a href="#doomed-1000637190">doomed</a> removed.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="aTuple-1000637190" class="stacks i-code">aTuple</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
+					<td class="stacks i-desc">
+						A tuple.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="doomed-1000637190" class="stacks i-code">doomed</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/421086860.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/421086860.html">any</a></td>
+					<td class="stacks i-desc">
+						A value.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
+					<td class="stacks i-desc">
+						The requested tuple, which will be <a href="#aTuple-1000637190">aTuple</a> if there were no occurrences of <a href="#doomed-1000637190">doomed</a>.
+					</td>
+				</tr>
+			</tbody>
+		</table>
 		<div class="signature-heading">extended integer's type, extended integer's type</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Math</div>
 		<div class="category-list"><em>Categories:</em> Mathematics, Integers, Types</div>
@@ -218,11 +218,11 @@
 				</tr>
 			</tbody>
 		</table>
-		<div class="signature-heading">set, any</div>
+		<div class="signature-heading">map, any</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Infallible Primitives</div>
-		<div class="category-list"><em>Categories:</em> Primitives, Sets, Mathematics</div>
+		<div class="category-list"><em>Categories:</em> Primitives, Maps, Transformers</div>
 		<div class="signature-description">
-			Compute and answer the asymmetric set difference of the specified set and a set containing the supplied element.
+			Construct and answer a map that is based on the supplied map. The answer (potentially) differs from the argument in that it does not contain a binding for <a href="#key728009526">key</a>; any such previous binding is forgotten in the new map.
 		</div>
 		<table class="stacks">
 			<thead>
@@ -240,25 +240,25 @@
 				</tr>
 				<tr class="methodParameters">
 					<td class="stacks i-code">1</td>
-					<td id="aSet506259264" class="stacks i-code">aSet</td>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3016318916.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3016318916.html">set</a></td>
+					<td id="aMap728009526" class="stacks i-code">aMap</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html">map</a></td>
 					<td class="stacks i-desc">
-						A set.
+						A map.
 					</td>
 				</tr>
 				<tr class="methodParameters">
 					<td class="stacks i-code">2</td>
-					<td id="oldElement506259264" class="stacks i-code">oldElement</td>
+					<td id="key728009526" class="stacks i-code">key</td>
 					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/421086860.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/421086860.html">any</a></td>
 					<td class="stacks i-desc">
-						The element that must not be present in the resultant set.
+						A key whose binding should be omitted.
 					</td>
 				</tr>
 				<tr>
 					<th class="stacks i-row-label" colspan="3">Returns</th>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3016318916.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3016318916.html">set</a></td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html">map</a></td>
 					<td class="stacks i-desc">
-						A set that contains the same elements as <a href="#aSet506259264">aSet</a> except that it does not contain <a href="#oldElement506259264">oldElement</a>.
+						The requested map.
 					</td>
 				</tr>
 			</tbody>

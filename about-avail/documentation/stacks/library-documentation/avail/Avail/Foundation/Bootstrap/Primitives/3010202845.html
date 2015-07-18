@@ -31,6 +31,51 @@
 	<h2 class="method-heading">Seal method_at_</h2>
 	<h4 class="method-section-header">Definitions:</h4>
 	<div class="method-section-content">
+		<div class="signature-heading">string, function's type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Security</div>
+		<div class="category-list"><em>Categories:</em> Declarations, Methods</div>
+		<div class="signature-description">
+			Seal the named method at the specified signature. No further definitions may be added at or below this signature. This facility is provided to secure methods against dangerous, unscrupulous, or confusing extensions.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="methodName-348537703" class="stacks i-code">methodName</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2052869683.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2052869683.html">string</a></td>
+					<td class="stacks i-desc">
+						The name of the method to seal.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="functionType-348537703" class="stacks i-code">functionType</td>
+					<td class="stacks i-code">function's type</td>
+					<td class="stacks i-desc">
+						The signature at which the seal should be placed. Only the parameter types are actually used to place the seal, but the semantic restriction cross-checks the return type if possible.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3911882092.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3911882092.html">⊤</a></td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
 		<div class="signature-heading">atom, tuple of any meta</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Fallible Primitives</div>
 		<div class="category-list"><em>Categories:</em> Primitives, Methods, Constructors, Mutators</div>
@@ -363,51 +408,6 @@
 				</tr>
 				<tr class="methodParameters">
 					<td class="stacks i-code">loading-is-over exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-			</tbody>
-		</table>
-		<div class="signature-heading">string, function's type</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Security</div>
-		<div class="category-list"><em>Categories:</em> Declarations, Methods</div>
-		<div class="signature-description">
-			Seal the named method at the specified signature. No further definitions may be added at or below this signature. This facility is provided to secure methods against dangerous, unscrupulous, or confusing extensions.
-		</div>
-		<table class="stacks">
-			<thead>
-				<tr>
-					<th class="transparent" scope="col"></th>
-					<th class="stacks i-col-label-narrow" scope="col">Position</th>
-					<th class="stacks i-col-label-narrow" scope="col">Name</th>
-					<th class="stacks i-col-label-narrow" scope="col">Type</th>
-					<th class="stacks i-col-label-wide" scope="col">Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th class="stacks i-row-label" rowspan="3">Parameters</th>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">1</td>
-					<td id="methodName-348537703" class="stacks i-code">methodName</td>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2052869683.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2052869683.html">string</a></td>
-					<td class="stacks i-desc">
-						The name of the method to seal.
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">2</td>
-					<td id="functionType-348537703" class="stacks i-code">functionType</td>
-					<td class="stacks i-code">function's type</td>
-					<td class="stacks i-desc">
-						The signature at which the seal should be placed. Only the parameter types are actually used to place the seal, but the semantic restriction cross-checks the return type if possible.
-					</td>
-				</tr>
-				<tr>
-					<th class="stacks i-row-label" colspan="3">Returns</th>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3911882092.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3911882092.html">⊤</a></td>
 					<td class="stacks i-desc">
 						
 					</td>

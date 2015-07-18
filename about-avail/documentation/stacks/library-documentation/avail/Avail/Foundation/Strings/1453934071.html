@@ -37,11 +37,11 @@
 		<div class="signature-description">
 			Answer the result of partially formatting the specified template using lexically specified format variable bindings. If a format variable does not have a corresponding binding, then re-emit it into the (partially) formatted result. <p> A template intermixes raw character data with format variable interpolation sites. An interpolation site begins with either the ¢‘ or ¢“ metacharacter and ends with the corresponding close metacharacter, either ¢’ or ¢”, respectively. An interpolation site may contain any character except the expected close metacharacter. The contents are understood to name a variable that may appear as a key within the specified map; the associated value is this variable's value. If an interpolation site uses ¢“ (and ¢”), then the value will be converted to a string via `“_”` when it is copied into the result. If an interpolation site uses ¢‘ (and ¢’), then the value must be a string and will be copied directly into the result. To escape a metacharacter, precede it immediately by ¢`. </p>
 <p> For example: </p>
-<p> Assert: (partially format ‘greeting’, ‘recipient’!
+<p> <code class="method">Assert: (partially format ‘greeting’, ‘recipient’!
  with greeting ::= Hello ) = Hello, “recipient”!
-; Assert: (partially format (partially format ‘greeting’, ‘recipient’!
+ ; Assert: (partially format (partially format ‘greeting’, ‘recipient’!
  with greeting ::= Hello ) with recipient ::= world ) = Hello, world!
-; </p>
+ ;</code> </p>
 <p> The semantic restriction ensures that every lexically specified binding corresponds to a format variable embedded within the template. </p>
 		</div>
 		<table class="stacks">

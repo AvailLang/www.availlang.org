@@ -31,11 +31,11 @@
 	<h2 class="method-heading">map_in parallel«_-way»through_</h2>
 	<h4 class="method-section-header">Definitions:</h4>
 	<div class="method-section-content">
-		<div class="signature-heading">tuple, [⊥]→any, natural number?</div>
+		<div class="signature-heading">map, natural number?, [⊥, ⊥]→any</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Concurrency</div>
-		<div class="category-list"><em>Categories:</em> Concurrency, Control Structures, Loops, Collections, Tuples, Transformers</div>
+		<div class="category-list"><em>Categories:</em> Collections, Maps, Transformers</div>
 		<div class="signature-description">
-			Concurrently apply <a href="#transformer1457277744">transformer</a> to each consecutive element of <a href="#aTuple1457277744">aTuple</a>, collecting the results into a new tuple (and preserving ordering of the transformed elements). Answer this tuple.
+			Concurrently apply <a href="#transformer706514341">transformer</a> to each binding of a map <a href="#map706514341">map</a>, collecting the results into a new map (and preserving the original keys).
 		</div>
 		<table class="stacks">
 			<thead>
@@ -53,33 +53,33 @@
 				</tr>
 				<tr class="methodParameters">
 					<td class="stacks i-code">1</td>
-					<td id="aTuple1457277744" class="stacks i-code">aTuple</td>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
+					<td id="aMap706514341" class="stacks i-code">aMap</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html">map</a></td>
 					<td class="stacks i-desc">
 						
 					</td>
 				</tr>
 				<tr class="methodParameters">
 					<td class="stacks i-code">2</td>
-					<td id="transformer1457277744" class="stacks i-code">transformer</td>
-					<td class="stacks i-code">[⊥]→any</td>
-					<td class="stacks i-desc">
-						A function that accepts an element of the tuple.
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">3</td>
-					<td id="optionalLimit1457277744" class="stacks i-code">optionalLimit</td>
+					<td id="optionalLimit706514341" class="stacks i-code">optionalLimit</td>
 					<td class="stacks i-code">natural number?</td>
 					<td class="stacks i-desc">
 						If specified, then the maximum number of worker <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html">fiber</a> s permitted to run in parallel. If not specified, then permit <code>default maximum worker fibers</code> worker <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html">fiber</a> s to run in parallel.
 					</td>
 				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">3</td>
+					<td id="transformer706514341" class="stacks i-code">transformer</td>
+					<td class="stacks i-code">[⊥, ⊥]→any</td>
+					<td class="stacks i-desc">
+						A function that accepts 1) a key of the map and 2) the value associated with the key.
+					</td>
+				</tr>
 				<tr>
 					<th class="stacks i-row-label" colspan="3">Returns</th>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html">map</a></td>
 					<td class="stacks i-desc">
-						A tuple of results of applications of <a href="#transformer1457277744">transformer</a> to the elements of <a href="#aTuple1457277744">aTuple</a>.
+						A map of results of applications of <a href="#transformer706514341">transformer</a> to the bindings of <a href="#aMap706514341">aMap</a>.
 					</td>
 				</tr>
 					<th class="stacks i-row-label" colspan="3" rowspan="2">Raises</th>
@@ -151,66 +151,6 @@
 				</tr>
 			</tbody>
 		</table>
-		<div class="signature-heading">map, natural number?, [⊥, ⊥]→any</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Concurrency</div>
-		<div class="category-list"><em>Categories:</em> Collections, Maps, Transformers</div>
-		<div class="signature-description">
-			Concurrently apply <a href="#transformer706514341">transformer</a> to each binding of a map <a href="#map706514341">map</a>, collecting the results into a new map (and preserving the original keys).
-		</div>
-		<table class="stacks">
-			<thead>
-				<tr>
-					<th class="transparent" scope="col"></th>
-					<th class="stacks i-col-label-narrow" scope="col">Position</th>
-					<th class="stacks i-col-label-narrow" scope="col">Name</th>
-					<th class="stacks i-col-label-narrow" scope="col">Type</th>
-					<th class="stacks i-col-label-wide" scope="col">Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th class="stacks i-row-label" rowspan="4">Parameters</th>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">1</td>
-					<td id="aMap706514341" class="stacks i-code">aMap</td>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html">map</a></td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">2</td>
-					<td id="optionalLimit706514341" class="stacks i-code">optionalLimit</td>
-					<td class="stacks i-code">natural number?</td>
-					<td class="stacks i-desc">
-						If specified, then the maximum number of worker <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html">fiber</a> s permitted to run in parallel. If not specified, then permit <code>default maximum worker fibers</code> worker <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html">fiber</a> s to run in parallel.
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">3</td>
-					<td id="transformer706514341" class="stacks i-code">transformer</td>
-					<td class="stacks i-code">[⊥, ⊥]→any</td>
-					<td class="stacks i-desc">
-						A function that accepts 1) a key of the map and 2) the value associated with the key.
-					</td>
-				</tr>
-				<tr>
-					<th class="stacks i-row-label" colspan="3">Returns</th>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html">map</a></td>
-					<td class="stacks i-desc">
-						A map of results of applications of <a href="#transformer706514341">transformer</a> to the bindings of <a href="#aMap706514341">aMap</a>.
-					</td>
-				</tr>
-					<th class="stacks i-row-label" colspan="3" rowspan="2">Raises</th>
-				<tr class="methodParameters">
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/3096177729.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/3096177729.html">worker exception</a></td>
-					<td class="stacks i-desc">
-						If any of the forked workers raise an exception.
-					</td>
-				</tr>
-			</tbody>
-		</table>
 		<div class="signature-heading">tuple, natural number?, [⊥, ⊥]→any</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Concurrency</div>
 		<div class="category-list"><em>Categories:</em> Collections, Tuples, Transformers</div>
@@ -260,6 +200,66 @@
 					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
 					<td class="stacks i-desc">
 						A tuple of results of applications of <a href="#transformer-1912800191">transformer</a> to the elements and indices of <a href="#aTuple-1912800191">aTuple</a>.
+					</td>
+				</tr>
+					<th class="stacks i-row-label" colspan="3" rowspan="2">Raises</th>
+				<tr class="methodParameters">
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/3096177729.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/3096177729.html">worker exception</a></td>
+					<td class="stacks i-desc">
+						If any of the forked workers raise an exception.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="signature-heading">tuple, [⊥]→any, natural number?</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Concurrency</div>
+		<div class="category-list"><em>Categories:</em> Concurrency, Control Structures, Loops, Collections, Tuples, Transformers</div>
+		<div class="signature-description">
+			Concurrently apply <a href="#transformer1457277744">transformer</a> to each consecutive element of <a href="#aTuple1457277744">aTuple</a>, collecting the results into a new tuple (and preserving ordering of the transformed elements). Answer this tuple.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="4">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="aTuple1457277744" class="stacks i-code">aTuple</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="transformer1457277744" class="stacks i-code">transformer</td>
+					<td class="stacks i-code">[⊥]→any</td>
+					<td class="stacks i-desc">
+						A function that accepts an element of the tuple.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">3</td>
+					<td id="optionalLimit1457277744" class="stacks i-code">optionalLimit</td>
+					<td class="stacks i-code">natural number?</td>
+					<td class="stacks i-desc">
+						If specified, then the maximum number of worker <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html">fiber</a> s permitted to run in parallel. If not specified, then permit <code>default maximum worker fibers</code> worker <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/1720761500.html">fiber</a> s to run in parallel.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
+					<td class="stacks i-desc">
+						A tuple of results of applications of <a href="#transformer1457277744">transformer</a> to the elements of <a href="#aTuple1457277744">aTuple</a>.
 					</td>
 				</tr>
 					<th class="stacks i-row-label" colspan="3" rowspan="2">Raises</th>

@@ -31,12 +31,12 @@
 	<h2 class="method-heading">Assert:_(_)</h2>
 	<h4 class="method-section-header">Definitions:</h4>
 	<div class="method-section-content">
-		<div class="signature-heading">boolean, string</div>
+		<div class="signature-heading">expression phrase ⇒ boolean, expression phrase ⇒ string</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Assertions</div>
 		<div class="category-list"><em>Categories:</em> Assertions</div>
 		<div class="signature-description">
-			If the argument is <code class="method">false</code>, then raise an descriptive <code>assertion-failed
-  exception</code> that includes the specified <code>message</code>.
+			If <a href="#predicate1526093565">predicate</a> evaluates to <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4256818863.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4256818863.html">false</a>, then raise a <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Exceptions/3892342613.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Exceptions/3892342613.html">descriptive</a> <code>assertion-failed
+  exception</code> that includes an <code>message</code> produced by the specified <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2052869683.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2052869683.html">string</a> <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2803304151.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2803304151.html">expression</a>.
 		</div>
 		<table class="stacks">
 			<thead>
@@ -54,65 +54,24 @@
 				</tr>
 				<tr class="methodParameters">
 					<td class="stacks i-code">1</td>
-					<td id="predicate-647923361" class="stacks i-code">predicate</td>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/149560384.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/149560384.html">boolean</a></td>
+					<td id="predicate1526093565" class="stacks i-code">predicate</td>
+					<td class="stacks i-code">expression phrase ⇒ boolean</td>
 					<td class="stacks i-desc">
 						A predicate.
 					</td>
 				</tr>
 				<tr class="methodParameters">
 					<td class="stacks i-code">2</td>
-					<td id="message-647923361" class="stacks i-code">message</td>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2052869683.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2052869683.html">string</a></td>
+					<td id="message1526093565" class="stacks i-code">message</td>
+					<td class="stacks i-code">expression phrase ⇒ string</td>
 					<td class="stacks i-desc">
-						An error message.
+						An <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2803304151.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2803304151.html">expression</a> that produces an error message. It is only evaluated if <a href="#predicate1526093565">predicate</a> is <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4256818863.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4256818863.html">false</a>.
 					</td>
 				</tr>
 				<tr>
 					<th class="stacks i-row-label" colspan="3">Returns</th>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3911882092.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3911882092.html">⊤</a></td>
+					<td class="stacks i-code">send phrase ⇒ ⊤</td>
 					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-					<th class="stacks i-row-label" colspan="3" rowspan="2">Raises</th>
-				<tr class="methodParameters">
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Assertions/1861212873.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Assertions/1861212873.html">assertion-failed exception</a></td>
-					<td class="stacks i-desc">
-						If <a href="#predicate-647923361">predicate</a> is <code class="method">false</code>.
-					</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-	<h4 class="method-section-header">Semantic restrictions:</h4>
-	<div class="method-section-content">
-		<div class="signature-heading">false's type's type, string's type</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Assertions</div>
-		<div class="signature-description">
-			
-		</div>
-		<table class="stacks">
-			<thead>
-				<tr>
-					<th class="transparent" scope="col"></th>
-					<th class="stacks i-col-label-narrow" scope="col">Type</th>
-					<th class="stacks i-col-label-wide" scope="col">Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th class="stacks i-row-label" rowspan="3">Parameter Types</th>
-				</tr>
-				<tr class="methodParameters">
-<td id="false's type's type2133641430" class="stacks i-code">false's type's type</td>
-					<td class="stacks i-code">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-<td id="string's type2133641430" class="stacks i-code">string's type</td>
-					<td class="stacks i-code">
 						
 					</td>
 				</tr>

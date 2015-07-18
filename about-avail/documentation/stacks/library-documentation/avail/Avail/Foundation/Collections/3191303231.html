@@ -76,6 +76,51 @@
 				</tr>
 			</tbody>
 		</table>
+		<div class="signature-heading">map, [⊥, ⊥]→boolean</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Maps</div>
+		<div class="category-list"><em>Categories:</em> Collections, Maps, Control Structures</div>
+		<div class="signature-description">
+			Iteratively apply <a href="#predicate316157722">predicate</a> to each binding of <a href="#aMap316157722">aMap</a>, in no particular order, collecting those bindings for which <a href="#predicate316157722">predicate</a> answers <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a> into a new map. Answer the new map.
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="aMap316157722" class="stacks i-code">aMap</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html">map</a></td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="predicate316157722" class="stacks i-code">predicate</td>
+					<td class="stacks i-code">[⊥, ⊥]→boolean</td>
+					<td class="stacks i-desc">
+						A function that accepts the bindings of the map and answers <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a> iff they should be accumulated into the output map.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html">map</a></td>
+					<td class="stacks i-desc">
+						A map containing exactly those bindings of <a href="#aMap316157722">aMap</a> for which <a href="#predicate316157722">predicate</a> answered <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a>.
+					</td>
+				</tr>
+			</tbody>
+		</table>
 		<div class="signature-heading">set, [⊥]→boolean</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Sets</div>
 		<div class="category-list"><em>Categories:</em> Collections, Sets, Control Structures</div>
@@ -166,51 +211,6 @@
 				</tr>
 			</tbody>
 		</table>
-		<div class="signature-heading">tuple, [⊥, ⊥]→boolean</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Tuples</div>
-		<div class="category-list"><em>Categories:</em> Tuples, Control Structures, Collections, Transformers</div>
-		<div class="signature-description">
-			Iteratively apply <a href="#predicate1954061950">predicate</a> to each consecutive element and index of <a href="#aTuple1954061950">aTuple</a>, collecting those elements for which <a href="#predicate1954061950">predicate</a> answers <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a> into a new tuple (and preserving ordering). Answer the new tuple.
-		</div>
-		<table class="stacks">
-			<thead>
-				<tr>
-					<th class="transparent" scope="col"></th>
-					<th class="stacks i-col-label-narrow" scope="col">Position</th>
-					<th class="stacks i-col-label-narrow" scope="col">Name</th>
-					<th class="stacks i-col-label-narrow" scope="col">Type</th>
-					<th class="stacks i-col-label-wide" scope="col">Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th class="stacks i-row-label" rowspan="3">Parameters</th>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">1</td>
-					<td id="aTuple1954061950" class="stacks i-code">aTuple</td>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">2</td>
-					<td id="predicate1954061950" class="stacks i-code">predicate</td>
-					<td class="stacks i-code">[⊥, ⊥]→boolean</td>
-					<td class="stacks i-desc">
-						A function that accepts 1) an element of the tuple and 2) the index of that element and which answers <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a> iff the elements should be accumulated into the output tuple.
-					</td>
-				</tr>
-				<tr>
-					<th class="stacks i-row-label" colspan="3">Returns</th>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
-					<td class="stacks i-desc">
-						A tuple containing exactly those elements of <a href="#aTuple1954061950">aTuple</a> for which <a href="#predicate1954061950">predicate</a> answered <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a>.
-					</td>
-				</tr>
-			</tbody>
-		</table>
 		<div class="signature-heading">stream, [⊥]→boolean</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Data Abstractions/Streams/Abstract Streams</div>
 		<div class="category-list"><em>Categories:</em> Data Abstractions, Streams</div>
@@ -259,11 +259,11 @@
 				</tr>
 			</tbody>
 		</table>
-		<div class="signature-heading">map, [⊥, ⊥]→boolean</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Maps</div>
-		<div class="category-list"><em>Categories:</em> Collections, Maps, Control Structures</div>
+		<div class="signature-heading">tuple, [⊥, ⊥]→boolean</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Tuples</div>
+		<div class="category-list"><em>Categories:</em> Tuples, Control Structures, Collections, Transformers</div>
 		<div class="signature-description">
-			Iteratively apply <a href="#predicate316157722">predicate</a> to each binding of <a href="#aMap316157722">aMap</a>, in no particular order, collecting those bindings for which <a href="#predicate316157722">predicate</a> answers <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a> into a new map. Answer the new map.
+			Iteratively apply <a href="#predicate1954061950">predicate</a> to each consecutive element and index of <a href="#aTuple1954061950">aTuple</a>, collecting those elements for which <a href="#predicate1954061950">predicate</a> answers <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a> into a new tuple (and preserving ordering). Answer the new tuple.
 		</div>
 		<table class="stacks">
 			<thead>
@@ -281,25 +281,25 @@
 				</tr>
 				<tr class="methodParameters">
 					<td class="stacks i-code">1</td>
-					<td id="aMap316157722" class="stacks i-code">aMap</td>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html">map</a></td>
+					<td id="aTuple1954061950" class="stacks i-code">aTuple</td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
 					<td class="stacks i-desc">
 						
 					</td>
 				</tr>
 				<tr class="methodParameters">
 					<td class="stacks i-code">2</td>
-					<td id="predicate316157722" class="stacks i-code">predicate</td>
+					<td id="predicate1954061950" class="stacks i-code">predicate</td>
 					<td class="stacks i-code">[⊥, ⊥]→boolean</td>
 					<td class="stacks i-desc">
-						A function that accepts the bindings of the map and answers <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a> iff they should be accumulated into the output map.
+						A function that accepts 1) an element of the tuple and 2) the index of that element and which answers <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a> iff the elements should be accumulated into the output tuple.
 					</td>
 				</tr>
 				<tr>
 					<th class="stacks i-row-label" colspan="3">Returns</th>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3238069178.html">map</a></td>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4241914910.html">tuple</a></td>
 					<td class="stacks i-desc">
-						A map containing exactly those bindings of <a href="#aMap316157722">aMap</a> for which <a href="#predicate316157722">predicate</a> answered <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a>.
+						A tuple containing exactly those elements of <a href="#aTuple1954061950">aTuple</a> for which <a href="#predicate1954061950">predicate</a> answered <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a>.
 					</td>
 				</tr>
 			</tbody>
@@ -345,10 +345,10 @@
 				</tr>
 			</tbody>
 		</table>
-		<div class="signature-heading">tuple meta, […]→boolean's type</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Tuples</div>
+		<div class="signature-heading">set meta, [⊥]→boolean's type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Sets</div>
 		<div class="signature-description">
-			Ensure that the function will accept all elements and indices of the tuple.
+			Ensure that the function will accept all elements of the set.
 		</div>
 		<table class="stacks">
 			<thead>
@@ -363,13 +363,13 @@
 					<th class="stacks i-row-label" rowspan="3">Parameter Types</th>
 				</tr>
 				<tr class="methodParameters">
-<td id="tuple meta-1890053851" class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2915683713.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2915683713.html">tuple meta</a></td>
+<td id="set meta1390798758" class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2718349551.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2718349551.html">set meta</a></td>
 					<td class="stacks i-code">
 						
 					</td>
 				</tr>
 				<tr class="methodParameters">
-<td id="[…]→boolean's type-1890053851" class="stacks i-code">[…]→boolean's type</td>
+<td id="[⊥]→boolean's type1390798758" class="stacks i-code">[⊥]→boolean's type</td>
 					<td class="stacks i-code">
 						
 					</td>
@@ -407,10 +407,10 @@
 				</tr>
 			</tbody>
 		</table>
-		<div class="signature-heading">set meta, [⊥]→boolean's type</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Sets</div>
+		<div class="signature-heading">tuple meta, […]→boolean's type</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Tuples</div>
 		<div class="signature-description">
-			Ensure that the function will accept all elements of the set.
+			Ensure that the function will accept all elements and indices of the tuple.
 		</div>
 		<table class="stacks">
 			<thead>
@@ -425,13 +425,13 @@
 					<th class="stacks i-row-label" rowspan="3">Parameter Types</th>
 				</tr>
 				<tr class="methodParameters">
-<td id="set meta1390798758" class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2718349551.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2718349551.html">set meta</a></td>
+<td id="tuple meta-1890053851" class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2915683713.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2915683713.html">tuple meta</a></td>
 					<td class="stacks i-code">
 						
 					</td>
 				</tr>
 				<tr class="methodParameters">
-<td id="[⊥]→boolean's type1390798758" class="stacks i-code">[⊥]→boolean's type</td>
+<td id="[…]→boolean's type-1890053851" class="stacks i-code">[…]→boolean's type</td>
 					<td class="stacks i-code">
 						
 					</td>

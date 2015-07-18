@@ -32,10 +32,10 @@
 	<h4 class="method-section-header">Definitions:</h4>
 	<div class="method-section-content">
 		<div class="signature-heading">literal phrase ⇒ token, expression phrase ⇒ any, block phrase ⇒ []→⊤</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Tuples</div>
-		<div class="category-list"><em>Categories:</em> Control Structures, Loops, Collections, Tuples</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Sets</div>
+		<div class="category-list"><em>Categories:</em> Control Structures, Loops, Collections, Sets</div>
 		<div class="signature-description">
-			Iteratively apply <a href="#predicate968059654">predicate</a> to each consecutive element of <a href="#aTuple968059654">aTuple</a>, collecting those elements for which <a href="#predicate968059654">predicate</a> answers <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a> into a new tuple (and preserving ordering). Answer the new tuple.
+			Iteratively apply <a href="#predicate968059654">predicate</a> to each consecutive element of <a href="#aSet968059654">aSet</a>, collecting those elements for which <a href="#predicate968059654">predicate</a> answers <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a> into a new set. Answer the new set.
 		</div>
 		<table class="stacks">
 			<thead>
@@ -56,15 +56,15 @@
 					<td id="elementPhrase968059654" class="stacks i-code">elementPhrase</td>
 					<td class="stacks i-code">literal phrase ⇒ token</td>
 					<td class="stacks i-desc">
-						A <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/740996712.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/740996712.html">literal phrase</a> holding a synthetic <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4028275074.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4028275074.html">literal token</a> whose value is the name of the loop variable. The generated loop variable is given the strongest possible type based on the type union of the leading types and default type of <a href="#aTuple968059654">aTuple</a>.
+						A <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/740996712.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/740996712.html">literal phrase</a> holding a synthetic <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4028275074.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4028275074.html">literal token</a> whose value is the name of the loop variable. The generated loop variable is given the strongest possible type based on the type union of the leading types and default type of <a href="#aSet968059654">aSet</a>.
 					</td>
 				</tr>
 				<tr class="methodParameters">
 					<td class="stacks i-code">2</td>
-					<td id="aTuple968059654" class="stacks i-code">aTuple</td>
+					<td id="aSet968059654" class="stacks i-code">aSet</td>
 					<td class="stacks i-code">expression phrase ⇒ any</td>
 					<td class="stacks i-desc">
-						An <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2803304151.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2803304151.html">expression phrase</a> that yields the tuple to iterate over
+						An <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2803304151.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2803304151.html">expression phrase</a> that yields the set to iterate over
 					</td>
 				</tr>
 				<tr class="methodParameters">
@@ -191,10 +191,10 @@
 			</tbody>
 		</table>
 		<div class="signature-heading">literal phrase ⇒ token, expression phrase ⇒ any, block phrase ⇒ []→⊤</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Sets</div>
-		<div class="category-list"><em>Categories:</em> Control Structures, Loops, Collections, Sets</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Tuples</div>
+		<div class="category-list"><em>Categories:</em> Control Structures, Loops, Collections, Tuples</div>
 		<div class="signature-description">
-			Iteratively apply <a href="#predicate968059654">predicate</a> to each consecutive element of <a href="#aSet968059654">aSet</a>, collecting those elements for which <a href="#predicate968059654">predicate</a> answers <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a> into a new set. Answer the new set.
+			Iteratively apply <a href="#predicate968059654">predicate</a> to each consecutive element of <a href="#aTuple968059654">aTuple</a>, collecting those elements for which <a href="#predicate968059654">predicate</a> answers <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2445051960.html">true</a> into a new tuple (and preserving ordering). Answer the new tuple.
 		</div>
 		<table class="stacks">
 			<thead>
@@ -215,15 +215,15 @@
 					<td id="elementPhrase968059654" class="stacks i-code">elementPhrase</td>
 					<td class="stacks i-code">literal phrase ⇒ token</td>
 					<td class="stacks i-desc">
-						A <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/740996712.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/740996712.html">literal phrase</a> holding a synthetic <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4028275074.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4028275074.html">literal token</a> whose value is the name of the loop variable. The generated loop variable is given the strongest possible type based on the type union of the leading types and default type of <a href="#aSet968059654">aSet</a>.
+						A <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/740996712.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/740996712.html">literal phrase</a> holding a synthetic <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4028275074.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/4028275074.html">literal token</a> whose value is the name of the loop variable. The generated loop variable is given the strongest possible type based on the type union of the leading types and default type of <a href="#aTuple968059654">aTuple</a>.
 					</td>
 				</tr>
 				<tr class="methodParameters">
 					<td class="stacks i-code">2</td>
-					<td id="aSet968059654" class="stacks i-code">aSet</td>
+					<td id="aTuple968059654" class="stacks i-code">aTuple</td>
 					<td class="stacks i-code">expression phrase ⇒ any</td>
 					<td class="stacks i-desc">
-						An <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2803304151.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2803304151.html">expression phrase</a> that yields the set to iterate over
+						An <a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2803304151.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/2803304151.html">expression phrase</a> that yields the tuple to iterate over
 					</td>
 				</tr>
 				<tr class="methodParameters">

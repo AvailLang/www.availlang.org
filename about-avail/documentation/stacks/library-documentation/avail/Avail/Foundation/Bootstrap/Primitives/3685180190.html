@@ -31,6 +31,178 @@
 	<h2 class="method-heading">Grammatical restriction_is_</h2>
 	<h4 class="method-section-header">Definitions:</h4>
 	<div class="method-section-content">
+		<div class="signature-heading">nonempty set of string, tuple of set of string</div>
+		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Fallible Primitives</div>
+		<div class="category-list"><em>Categories:</em> Primitives, Name Resolution, Methods, Constructors, Mutators</div>
+		<div class="signature-description">
+			Define the indicated grammatical restrictions. Each method name in <a href="#methodsToRestrict-1448888591">methodsToRestrict</a> must accept the same number of arguments, though not necessarily the same types (or the same order of types). Each element `e` of <a href="#exclusions-1448888591">exclusions</a>, itself a set of method names, corresponds to an argument position `n` of any method name in <a href="#methodsToRestrict-1448888591">methodsToRestrict</a>. The compiler rejects parses of source text that invoke methods named in `e` when they occur grammatically at argument position `n` of an invocation of any method named in <a href="#methodsToRestrict-1448888591">methodsToRestrict</a>. <p> Note that argument position corresponds to a blank, not to a top-level repeating sequence (indicated by guillemet notation). </p>
+		</div>
+		<table class="stacks">
+			<thead>
+				<tr>
+					<th class="transparent" scope="col"></th>
+					<th class="stacks i-col-label-narrow" scope="col">Position</th>
+					<th class="stacks i-col-label-narrow" scope="col">Name</th>
+					<th class="stacks i-col-label-narrow" scope="col">Type</th>
+					<th class="stacks i-col-label-wide" scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="stacks i-row-label" rowspan="3">Parameters</th>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">1</td>
+					<td id="methodsToRestrict-1448888591" class="stacks i-code">methodsToRestrict</td>
+					<td class="stacks i-code">nonempty set of string</td>
+					<td class="stacks i-desc">
+						A set of method names, each of which should be restricted.
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">2</td>
+					<td id="exclusions-1448888591" class="stacks i-code">exclusions</td>
+					<td class="stacks i-code">tuple of set of string</td>
+					<td class="stacks i-desc">
+						A tuple of sets of method names. The method names in the `n`-th set are restricted from occurring grammatically at the `n`-th argument position of any invocation of a method named in <a href="#methodsToRestrict-1448888591">methodsToRestrict</a>.
+					</td>
+				</tr>
+				<tr>
+					<th class="stacks i-row-label" colspan="3">Returns</th>
+					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3911882092.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3911882092.html">⊤</a></td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+					<th class="stacks i-row-label" colspan="3" rowspan="22">Raises</th>
+				<tr class="methodParameters">
+					<td class="stacks i-code">incorrect-number-of-arguments exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">incorrect-argument-type exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">incorrect-type-for-group exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">ambiguous-name exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">exclamation-mark-must-follow-an-alternation-group exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">incorrect-type-for-complex-group exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">incorrect-use-of-double-dagger exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">unbalanced-guillemets exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">method-name-is-not-canonical exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">expected-operator-after-backquote exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">incorrect-type-for-boolean-group exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">incorrect-type-for-counting-group exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">octothorp-must-follow-a-simple-group exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">question-mark-must-follow-a-simple-group exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">case-insensitive-expression-canonization exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">tilde-must-not-follow-argument exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">double-question-mark-must-follow-a-token-or-simple-group exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">alternative-must-not-contain-arguments exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">vertical-bar-must-separate-tokens-or-simple-groups exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">incorrect-type-for-numbered-choice exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+				<tr class="methodParameters">
+					<td class="stacks i-code">loading-is-over exception</td>
+					<td class="stacks i-desc">
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
 		<div class="signature-heading">nonempty set of atom, tuple of set of atom</div>
 		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Fallible Primitives</div>
 		<div class="category-list"><em>Categories:</em> Primitives, Name Resolution, Methods, Constructors, Mutators</div>
@@ -236,178 +408,6 @@
 				<tr>
 					<th class="stacks i-row-label" colspan="3">Returns</th>
 					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3911882092.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3911882092.html">⊤</a></td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-			</tbody>
-		</table>
-		<div class="signature-heading">nonempty set of string, tuple of set of string</div>
-		<div class="module-location"><em>Source</em>: /avail/Avail/Foundation/Bootstrap/Fallible Primitives</div>
-		<div class="category-list"><em>Categories:</em> Primitives, Name Resolution, Methods, Constructors, Mutators</div>
-		<div class="signature-description">
-			Define the indicated grammatical restrictions. Each method name in <a href="#methodsToRestrict-1448888591">methodsToRestrict</a> must accept the same number of arguments, though not necessarily the same types (or the same order of types). Each element `e` of <a href="#exclusions-1448888591">exclusions</a>, itself a set of method names, corresponds to an argument position `n` of any method name in <a href="#methodsToRestrict-1448888591">methodsToRestrict</a>. The compiler rejects parses of source text that invoke methods named in `e` when they occur grammatically at argument position `n` of an invocation of any method named in <a href="#methodsToRestrict-1448888591">methodsToRestrict</a>. <p> Note that argument position corresponds to a blank, not to a top-level repeating sequence (indicated by guillemet notation). </p>
-		</div>
-		<table class="stacks">
-			<thead>
-				<tr>
-					<th class="transparent" scope="col"></th>
-					<th class="stacks i-col-label-narrow" scope="col">Position</th>
-					<th class="stacks i-col-label-narrow" scope="col">Name</th>
-					<th class="stacks i-col-label-narrow" scope="col">Type</th>
-					<th class="stacks i-col-label-wide" scope="col">Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th class="stacks i-row-label" rowspan="3">Parameters</th>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">1</td>
-					<td id="methodsToRestrict-1448888591" class="stacks i-code">methodsToRestrict</td>
-					<td class="stacks i-code">nonempty set of string</td>
-					<td class="stacks i-desc">
-						A set of method names, each of which should be restricted.
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">2</td>
-					<td id="exclusions-1448888591" class="stacks i-code">exclusions</td>
-					<td class="stacks i-code">tuple of set of string</td>
-					<td class="stacks i-desc">
-						A tuple of sets of method names. The method names in the `n`-th set are restricted from occurring grammatically at the `n`-th argument position of any invocation of a method named in <a href="#methodsToRestrict-1448888591">methodsToRestrict</a>.
-					</td>
-				</tr>
-				<tr>
-					<th class="stacks i-row-label" colspan="3">Returns</th>
-					<td class="stacks i-code"><a ng-click="myParent().changeLinkValue('/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3911882092.html')" href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special Objects/3911882092.html">⊤</a></td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-					<th class="stacks i-row-label" colspan="3" rowspan="22">Raises</th>
-				<tr class="methodParameters">
-					<td class="stacks i-code">incorrect-number-of-arguments exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">incorrect-argument-type exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">incorrect-type-for-group exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">ambiguous-name exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">exclamation-mark-must-follow-an-alternation-group exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">incorrect-type-for-complex-group exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">incorrect-use-of-double-dagger exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">unbalanced-guillemets exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">method-name-is-not-canonical exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">expected-operator-after-backquote exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">incorrect-type-for-boolean-group exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">incorrect-type-for-counting-group exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">octothorp-must-follow-a-simple-group exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">question-mark-must-follow-a-simple-group exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">case-insensitive-expression-canonization exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">tilde-must-not-follow-argument exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">double-question-mark-must-follow-a-token-or-simple-group exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">alternative-must-not-contain-arguments exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">vertical-bar-must-separate-tokens-or-simple-groups exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">incorrect-type-for-numbered-choice exception</td>
-					<td class="stacks i-desc">
-						
-					</td>
-				</tr>
-				<tr class="methodParameters">
-					<td class="stacks i-code">loading-is-over exception</td>
 					<td class="stacks i-desc">
 						
 					</td>
