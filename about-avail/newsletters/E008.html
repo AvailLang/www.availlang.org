@@ -1,0 +1,135 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Avail Newsletters, Edition #8: Type-filtered parser.</title>
+	
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+
+<h2 class="content-title">Type filtering - the sparkly new compiler</h2>
+
+<div class="content-meta-info">Edition #8 - November 21, 2016</div>
+
+<p>Mark here.  Did you miss me these last two years?  I didn't do any blogging or newslettering... but I haven't heard from many of you either, so I'm calling it square.</p>
+
+<p>Among the tons of other changes we've all been doing, I spent about a year rebuilding some key pieces of the compiler.  For those of you who haven't read the source code and pieced it all together somehow, here's an overview of how the old Avail compiler worked and how the new one works even better.  I'll start with the old one.</p>
+
+<p>When an atom gets used as the name of a method, a message bundle is created for it.  At that time, the message bundle is parsed into a series of "parts".  These parts differ from the tokens that constitute an Avail source file, but they're related.  As an example, when the atom $"_+_" is first given a method definition, the method and message bundle are created for it.  The message bundle holds the parsed parts "_", "+", and another "_".  Similarly, $"Print:_" is decomposed into "Print", ":", and "_".  One more: $"{«_‡,»}" turns into "{", "«", "_", "‡", ",", "»", and "}".</p>
+
+<p>From this list of parts, the old compiler would convert this into an abstract-syntax-tree-like composition of Expressions.  The specific Expressions included Argument ("_"), Group ("«_‡,»"), Optional ("foo?"), Alternation ("cat|dog"), Sequence ("Print", then ":", then "_") and of course Simple ("Print").  There are more, but that should give you the flavor.</p>
+
+<p>An expression like the set constructor above ($"{«_‡,»}") would be broken down like this:</p>
+<pre>
+   Sequence(
+      Simple("{"),
+      Group(
+         Sequence(
+            Argument("_")),
+         "‡",    <em>which delimits the left/right parts of the group</em>
+         Sequence(
+            Simple(","))),
+      Simple("}"))
+</pre>
+
+<p>This abstract syntax tree would then be asked to produce a series of parsing instructions, essentially like:</p>
+<ol>
+	<li>PARSE_PART ("{")</li>
+	<li>PUSH_EMPTY_LIST</li>
+	<li>PARSE_ARGUMENT</li>
+	<li>APPEND</li>
+	<li>BRANCH to 8</li>
+	<li>PARSE_PART (",")</li>
+	<li>JUMP to 3</li>
+	<li>PARSE_PART ("}")</li>
+</ol>
+
+<p>Note that the branch instruction acts more like a fork, continuing at <em>both</em> the next instruction <em>and</em> the branch target.  The Avail execution thread pool handles multiplexing of these parsing tasks onto OS threads and ultimately physical CPU cores.</p>
+
+<p>Instruction 1 parses a "{" token from the source code, advancing past that token.  If there isn't a "{" at the current position in the source code, then we don't have an invocation of $"{«_‡,»}" there, so the attempt to parse the invocation of $"{«_‡,»}" simply ends right there.  Think of it as working like a zero-way fork in that case.</p>
+
+<p>Instruction 2 pushes an empty list onto the parse stack.  Note that because of the parallel nature of the parsing, this is not a <em>destructive</em> push.  Rather, when the parser runs this instruction it will already be given a parse stack, and this instruction produces another parse stack with one additional empty list append to it, which it then passes to the next instruction(s).</p>
+
+<p>Instruction 3 parses a complete expression from the source, pushing it onto the stack.  Like above, a new stack is created with the expression pushed on it.  In a similar manner, the current parse position is also passed along in the same way (skipping over the tokens of the expression that was parsed), since multiple threads may be working on parsing nearby regions of a source file.</p>
+	
+<p>Note that due to the nature of Avail syntax, there may be many possible expressions at that position in the source code.  For example, if the source code has "{1+2+3,99}" at the initial parsing position, the first instruction will move past the "{", the second instruction will stay in the same parse position but pass along a parse stack with an empty list added to the end, and the third expression, will, well, do a multi-way fork.  In one fork, the expression "1" (a literal phrase) will end up on the stack, the parse position will be after the "1" token, and the next instruction will be #4.  In another fork, "1+2" (a send phrase of $"_+_" with two literals as arguments) will have been pushed, and the parse position located just after the "2".  Another fork may have "(1+2)+3" pushed, with a parse position just before the ",".</p>
+
+<p>All of these possibilities will be explored in parallel (assuming there are enough threads available and they're not busy doing something else).  If running all of these forks to their conclusion leads to multiple ways to parse a top-level statement, an ambiguity error is reported.  If there are no ways found to parse a complete top-level statement, it will report the diagnostics accumulated while attempting to parse the rightmost few locations that were reached.  This seems to work reasonably well in practice, and is usually able to report things like what tokens were expected but not found at or near the problem.</p>
+
+<p>Instruction 4 expects a list to have been pushed, as well as a phrase.  It pops both, adds the phrase to the list, and pushes the new list onto the stack.  Non-destructively, of course.</p>
+
+<p>Instruction 5 deals with the uncertainty of whether there are any additional arguments, falling through for a comma and another argument, and simultaneously forking to 8 to finish the set.  Technically, the old compiler always had to have a branch past the loop (3-7) to deal with the case of zero repetitions.  The new compiler can take type information into account and avoid that.  That's handy, because "{}" is the syntax for the empty map, not the empty set ("∅").</p>
+
+<p>In the fork where the branch was not taken, we reach instruction 6.  As with instruction 1, we look for a "," at the current position in the input.  If found, we continue to 7 with an updated parse position.  If not found, we simply end that path of exploration... but first we record a diagnostic message associated with the current parse position, indicating that it would have been nice to see a "," token here.</p>
+
+<p>Having consumed a comma, instruction 7 jumps back to 3, which reads the next argument.</p>
+
+<p>In a fork where the branch from 5 brought us to 8, we look for the "}".  If it's not there, we record a diagnostic saying how nice it would have been to have found a "}" and give up that fork.  If, on the other hand, there really is a "}" there, we fall off the end of the instructions, which means we've just parsed a send of $"{«_‡,»}".  Yay!  We'll build a send phrase for $"{«_‡,»}" using the arguments that we collected.</p>
+
+<p>So when we have thousands of message bundles, how do we make this parsing strategy reasonably efficient?  Easy (not really).  We parse invocations of all possible messages simultaneously.  Not by throwing more threads/cores at it, but by parsing multiple messages <em>in aggregate</em>, leveraging the commonality of similar-starting methods like $"{«_‡,»}" (set construction) and $"{«_→_‡,»}" (map construction).  I call the mechanism a message bundle tree.  Think of it as a lazily constructed trie over all the message bundles' instruction sequences.</p>
+
+<p>For example, the map construction operation would start out the same, but diverge after parsing its first argument, expecting a right-arrow ("→") and another argument before the comma or close-brace.</p>
+
+<p>The message bundle tree also deals with PARSE_PART instructions specially, building up a map from strings to successor message bundle trees.  If the current token is a key of the current message bundle tree's map, it advances the parse position and simply continues in the message bundle tree corresponding to that string in the map.  Since the vast majority of messages won't be looking for that specific token, the successor message bundle trees generally have far fewer message bundles in  them.</p>
+
+<h3>The new compiler</h3>
+
+<p>So how do types fit into this?  Well, the old compiler would check that all the argument types conformed to at least one existing method definition right at the end of parsing an invocation, right when it's about to build the send phrase.  Unfortunately, that was leading to long "false" parsing trails, where someone looking at the code could see that it was misinterpreting something in a dumb way, and presenting correspondingly foolish diagnostics if things went wrong... or just plain taking too long even if things went right!</p>
+
+<p>For example, consider this source text:</p>
+<pre>
+   x ::= "abc" + 1 × 2 × 3 × 4 × 5;
+</pre>
+
+<p>The old compiler won't be able to complain about a string nonsensically appearing as the left argument of "_+_" (since string concatenation is "_++_") until it got past the 5.  The new compiler uses type filtering, and can report the problem as soon as it sees there isn't a second "+".  Technically, it still accepts all the same expressions that the old compiler could accept, it just rejects the wrong ones both earlier in time and earlier on the page (i.e., more leftward).  It does this by checking the type of each argument as it goes.  As with most things in Avail, it's much deeper than that, but that was the primary motivation.</p>
+	
+<p>I added a TYPE_CHECK_ARGUMENT, which tested that the top of stack conformed to some type.  That type had to come from a method definition, not a method (or message bundle).  So each method definition had to have its own sequence of parsing instructions.  But method definitions are implementations of a method, and a method might be associated with multiple message bundles (due to renames).  So I needed a thing called a parsing plan that bridged the relationship between method definition and message bundle.  While the Expression trees stayed with the message bundle, the parsing instructions had to be tied to the parsing plan, specialized by the argument types.</p>
+
+<p>Type checks were much slower than simple string lookups for token dispatching (PARSE_PART).  But many parsing plans might be testing for the same type.  So I could build a map from type to successor message bundle tree to deal with efficiently implementing TYPE_CHECK_ARGUMENT.  Except unlike strings, types have a relationship to each other: subtyping.  It would have to look at every key of the map, do a type test of the argument against it, and visit the successor message bundle trees for each type that the argument conformed to.  That would be <em>way</em> too slow.</p>
+
+<p>The solution was related to the multi-method dispatch mechanism.  I built a variation of the type-dispatch tree that it used, where a tree of type tests would keep narrowing down the possibilities until only one remained (or trigger a run-time dispatch ambiguity error).  For the compiler, it would start with the latest argument type and navigate down the type tree to reach a leaf node which contained the next message bundle tree to visit.  That message bundle tree would be customized to include exactly those message bundles that should still be possible, given the sequence of type tests that the latest argument passed and failed on the way down.  So it's effectively doing the type checks in aggregate, just like the rest of the parsing.</p>
+
+<p>Repeated arguments (guillemet groups) presented an interesting challenge.  Tuple types are left-heterogenous/right-homogenous, meaning the initial element types can vary from each other, but after some finite point the successive elements must all have the same type constraint.  If I created a method definition for the set constructor that said its sole (repeated, tuple) argument had type &lt;integer|0..>, everything is fine, but instead if I say the argument has type &lt;integer, float, string|0..>, we'll want to different type tests on different iterations of the loop.  So I simply unrolled the loops until it reached the homogenous part.  In this example, the instruction sequence would try to parse an integer, try to parse a float, and then loop while parsing strings.</p>
+
+<p>After getting this much working (with tons of elided detail), performance showed the parsing was dominated by type tests.  There were simply too many false trails requiring arguments that had just been parsed to be type-tested via large type-dispatch trees.  Looking at some of these cases, I realized that I could eliminate the vast majority of those cases simply by looking at what token came next.  I toyed with calculating lookahead sets, but I eventually stumbled on the technique of hoisting PARSE_PART instructions to the left past neighboring TYPE_CHECK_ARGUMENT instructions.  The technique is far more general now.  It <em>greatly</em> reduces the number of type checks that have to be performed during compilation.  See the git commit log for October-November 2016 for more details.</p>
+
+<p>There are other techniques on the near horizon (already partially implemented) to speed up those type checks that simply can't be avoided.  These techniques should even improve the core run-time performance of the Avail VM.</p>
+
+<h3>Type tags</h3>
+
+<p>I added a typeTag field to AbstractDescriptor, and it gets populated during descriptor creation.  If you want test an Avail object to see if it's a tuple or a map or an integer, just go to its descriptor and extract its typeTag.  I plan to add a new kind of type-dispatch node that does an N-way branch based on this super-cheap typeTag.  It's not <em>remotely</em> powerful enough to replace Avail's rich type model, but it should be a great way to get into the right ballpark, where the secondary tests can do their poking and prodding more efficiently.  In the case of dispatching, that means we'll already know that something is a tuple type or character, so we'll be able to perform the appropriate operations without having to rely so much on the megamorphic "o_*" methods (see AbstractDescriptor and its many subclasses).</p>
+
+<h3>Object layout variants</h3>
+
+<p>Objects and object types were implemented (via ObjectDescriptor and ObjectTypeDescriptor, respectively) as simple Avail maps from field keys to field values or field type values.  The new representation keeps a mapping from sets of field keys to ObjectLayoutVariant instances, or "variants".  Each variant is for a particular set of field keys.  The variant keeps a map from field key to slot number.  Each variant has its own triple of descriptors (mutable, immutable, shared).  To access a field of an object, the field atom is looked up in the object's descriptor's variant's field-to-slot map.  That gives a natural number used to index the object's slots.  This is a more space-efficient design than simply using a map, and once L2 starts embedding information about variants, we'll be able to skip the lookup step and directly access the N<sup>th</sup> slot of an object whose variant is known.</p>
+
+<p>Objects and object types that have the same set of keys use the same variant.  This allows faster recursive type checking (isInstanceOf(), isSubtypeOf()) without any hashed map lookups, at least in the case that the same variant is used for both.  Just iterate over the slots in the same order.</p>
+
+<p>The $"explicit-*" atoms that get created when you create an explicit subclass are tagged specially, and get a zero in the variants' slot maps, They do not occupy a slot within objects or object types.</p>
+
+<p>Hopefully this blog post helped explain both how the compiler works and how it has been changing, as well as giving a feel for what's coming up next.  As you're aware, Avail is open source with a generous license, so feel free to <a href="../download/">download</a> it to try it out!</p>
+
+<table class="book-nav">
+	<tr>
+		<td class="book-nav-back"><a class="book-nav-back" href="./E007.html">‹ Previous</a></td>
+		<td class="book-nav-spacer">|</td>
+		<td class="book-nav-up"><a class="book-nav-up" href="./index.html">Return to Newsletters</a></td>
+	</tr>
+</table>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>
