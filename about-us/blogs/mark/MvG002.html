@@ -1,0 +1,70 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Mark's Avail Blog</title>
+	
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+
+<a href="./index.html"><h4 class="content-supertitle">Mark's Avail Blog</h4></a>
+
+<h2 class="content-title">Modular lexical scanning</h2>
+
+<h3 class="content-title">Lead-up: the compiler</h3>
+
+<p>In my previous blog entry (from 2014!) I mentioned macros as a potential next step.  That got finished almost two years ago.  So much so that we threw away all the Java code related to parsing hard-coded syntax.  Instead, the initial syntax (one method and a dozen macros) is specified as pragmas in the header of Origin.avail.  So, in effect, Avail no longer has a syntax.  It's all specified in the library.</p>
+
+<p>The biggest change to the compiler over the last year has been type-checking arguments right after they're parsed.  This presented a slew of unique challenges, due to the nature of Avail's compiler.  The driving mechanism was the introduction of a TYPE_CHECK_ARGUMENT parsing instruction.  To eliminate some of the cost of type checking so many partially constructed method/macro invocations, we re-used a mechanism from our multi-method dispatching playbook: the type dispatch tree.  This is a binary tree (currently) that tests a recently parsed (argument) phrase against a series of types, moving down one of two branches until it reaches a leaf, at which point there are no more tests left to distinguish the types.  The leaf holds a message bundle tree that says how to continue parsing, given that the argument phrase is an X, is a Y, isn't a Z, etc.  This effectively performs the type-check on any number of method definitions (in multiple methods that start the same) in aggregate.</p>
+
+<p>Since we're talking multi-methods here (and multi-macros), each method <em>definition</em> specifies the types that it expects for each argument, not the method itself.  Moreover, guillemet groups in messages like "{«_‡,»}" correspond to method/macro arguments typed with a tuple type.  But Avail tuples have a mixture of heterogenous and homogenous element types, as well as a size range.  So the easiest solution (and it sure wasn't easy) was to generate a different sequence of parsing instructions for each method definition.  The initial iterations implicit in each guillemet group are unrolled, at least to the point where it reaches the homogenously typed part of the tuple type, at which point backward branch instructions form a loop for the remaining elements.  Instructions for checking min and max list sizes were introduced to ensure the list phrase has an acceptable number of elements, as specified by the tuple type.</p>
+
+<p>Since type checks are far more expensive than just looking at the next token, I figured out a way to hoist the next PARSE_PART instruction to before the type check.  There were quite a few related optimizations as well, such as recursively traversing branch and jump instructions during lazy message bundle tree expansion.  This had the effect of eliminating some bifurcated searches, replacing them with additional entries in the bundle tree's mapping from expected token to successor bundle tree.  Since only one token <em>actually</em> occurs at any point in the input, only one path is explored in that case.  I even added limited code-splitting after an optional ("?") message expression, just to avoid a PUSH_FALSE always occurring next in the case the element is absent.  The split paths parse the next message expression instead, keeping track of whether to push true or false implicitly by which duplicated path was taken.  The true or false pushes are postponed until after the following expression is parsed, adjusting the order of stack arguments if necessary.  Because of the hoisting of PARSE_PART instructions, it's often the case that the "present" case and the "absent" case of an Optional each start with a PARSE_PART, allowing a quick map lookup to distinguish them during parsing.</p>
+
+<h3 class="content-title">Literals</h3>
+
+<p>While visiting some of the compiler code, I noticed that it was still parsing non-negative integer literals and string literals directly.  The lexical scanner produces literal tokens for these when it sees a leading digit or quote character, respectively.  The compiler was then special-casing these tokens when attempting to parse a phrase.</p>
+
+<p>This was a bad thing.  It meant we couldn't forbid a domain-specific language (written as a subset of Avail) from accepting string and numeric literals in the syntax.  To resolve this, I removed the code from the compiler that automatically accepted these literals, and added two bootstrap macros, "…$" and "…#", which transformed the literal tokens into literal phrases.  If you don't want 123 to be a valid phrase in your DSL, don't include "…#".  Likewise, if you don't want the quoted string "cheese" to be accepted by your DSL, don't include "…$".  If your DSL doesn't allow the letter Z in literal strings, just write your own version of "…$" that rejects the parse with a suitable syntax error if it sees a Z in the literal token.</p>
+
+<h3 class="content-title">Lexical scanning</h3>
+
+<p>That got me to thinking about quoted strings.  Since pretty much every programming language out there can be expressed to some degree as Avail syntax, how can we authentically parse languages that have string literals with different delimiters and escape sequences?  Some languages even use apostrophes for string literals, which is very much in conflict with Avail's frequent use of them for possessives (e.g., "5's type's lower bound").  Clearly, the decision about how to read and write string literals needs to be modular.</p>
+
+<p>AvailScanner.java is currently responsible for converting a source file from a sequence of characters into a sequence of tokens.  We intend to discard the AvailScanner and replace it with a pure Avail solution: "lexers".</p>
+
+<p>A lexer is a new kind of thing that can be associated with a message bundle, analogously to how method/macro definitions and grammatical restrictions are associated with a message bundle (semantic restrictions are associated with the method itself, making them independent of the name used at an invocation).  A lexer has a function that transforms the remainder of a source file into a pair consisting of a tuple of tokens and the remainder of the file.  Technically, since we want to support the broadest possible grammars, we'll say the lexer takes something which provides access to the remainder of the source file, and invokes a special primitive zero or more times with &lt;tuple-of-tokens, remainder-of-file&gt; pairs.  It may also choose to report a syntax error with a customized message.</p>
+
+<p>To compile a source file, the visible names (atoms) are collected, not just to form the root message bundle tree (for parsing method/macro invocations), but to form the set of available lexers.  At any position in the source file, the visible lexers are executed to produce a short sequence of tokens.  These tokens are fed to the compiler.  The compiler already deals with a search through multiple potential solutions to produce each top-level statement to run, so I don't expect that running the compiler against a lazy directed acyclic graph of tokens will add much complexity.  After each top-level statement is parsed (unambiguously) and executed, any cache of already computed sequences of tokens is discarded, and the lexical scanning and compilation continues at the next source file position.  This allows new lexers to be added incrementally during module loading.</p>
+	
+<p>For good performance, we should try to eliminate the need to run every visible lexer each time tokens are needed, especially when the number of visible lexers is large.  Here are some techniques that might be handy.</p>
+
+<ul>
+	<li>In addition to the remainder of the source file, a lexer function could take the current character (i.e., the first character of the remainder).  By restricting this function argument to a subtype of character (say like <span style="white-space:nowrap">{¢"\""", ¢"'"}ᵀ,</span> the type whose instances are quote and apostrophe), we can limit which lexers will run.  To avoid testing this each time, we can keep a 256- (or 65536-) element array of tuples of lexers.  So if Z is the current character in the source file, its Unicode code point (U+005A = 90) can be looked up in the table, perhaps finding a tuple with just the $"alphanumeric" lexer, used to parse alphanumeric tokens.</li>
+	<li>We can assume lexer functions are stable, i.e., they produce the same output given the same input.  By wrapping access to the source file in a suitable mechanism, we can track which character positions are examined.  If the same characters are to be parsed at a later position in the file, we can avoid running the function and reuse the same tokens, suitably adjusted to the new source position.  Perhaps a trie can be used to find a single lexer's solutions, or perhaps there's even a way to aggregate multiple lexers' solutions.</li>
+</ul>
+
+<p>As always, if you're curious for more details about how lexers are going to be built, what the impact will be, and how this advances Avail's plans for world domination, feel free to <a href="/about-avail/community/index.html">strike up a conversation</a>.</p>
+	
+<table class="book-nav">
+	<tr>
+		<td class="book-nav-up"><a class="book-nav-up" href="./index.html">Return to Mark's Avail Blog</a></td>
+	</tr>
+</table>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>
