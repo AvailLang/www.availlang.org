@@ -1,0 +1,57 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+	<head>
+	
+<!--#include virtual="/_include/head.ssi" -->
+	
+		<title>Avail Newsletters, Edition #9: Modular Lexer.</title>
+	
+	</head>
+
+	<body class="gradient-logo">
+	
+<!--#include virtual="/_include/body-top.ssi" -->
+
+<h2 class="content-title">A Modular Lexer: The Path to Ubiquity</h2>
+
+<div class="content-meta-info">Edition #9 - August 8, 2017</div>
+
+<p>Apologies again for yet another long gap in my blogging, but hopefully this one is worth it.</p>
+
+<p>Among some smaller things (like packaging the Workbench into a Mac app on that platform), the big piece that just got released (still in the Lexer_2017_07_05 branch) is the modular lexer.</p>
+
+<p>Avail, prior to this change, and like those other boring programming languages, used to do lexical scanning via a hard-coded algorithm, relying heavily on a simple dispatch table.  The entire module's source would be transformed into tokens, which would then be fed to the parser.  Not any more.</p>
+
+<p>The new mechanism is more akin to Marvin Minsky's Society of Mind, where agents compete and collaborate to accomplish a goal.  Ok, maybe it's not <em>quite</em> such a divergence from the usual approach, but it's still novel, as far as I'm aware.</p>
+
+<p>The key construct is the lexer.  A lexer takes the source code at a position, and if conditions are right, it runs its body function to create a token representing that position in the source.  Technically, it can create any number of potential tokens at that position, but zero or one is typical.  Every lexer that's visible in the current module gets an opportunity to create tokens at each position.  To reduce the cost, a lexer also has a filter function, which takes a code point and returns a boolean indicating if it's interested in attempting to run whenever that code point is encountered.  This filter function is treated as a pure, stable function, so it only has to run once per unique encountered code point.  Returning false exempts the lexer from having to run its body whenever that code point is encountered.</p>
+
+<p>To control a lexer's scope in a uniform way, it's simply associated with a method.  A method is a core concept in Avail, a place where definitions (method definitions and macro definitions) can be attached.  Now a method can also contain a lexer.  Methods can have multiple names (allowing method/macro renames on import), and lexers can likewise take advantage of this capability of methods.  The name of a lexer (a <em>bundle</em>) is used by module imports, just like ordinary methods, but a lexer doesn't do anything interesting with the name of its bundles (whereas parsing invocations of method definitions and macro definitions is very much affected by the bundle's textual name).</p>
+
+<p>There are currently six bootstrap lexers, defined via pragmas in Origin.avail.  They're used to scan white space, nested /**/ comments, quoted strings, whole numbers, keywords, and operators.  Not all modules import all of these lexers.  In the very near future, we intend to fully support user-defined lexers.  This will enable greater verisimilitude when creating sublanguages of Avail that are simply existing programming languages.  For example, Smalltalk uses the apostrophe for its string literals, and double quotes for comments.  Modular lexers allow modules that use a Smalltalk language module to use this alternate syntax.  This kind of mimicry is exactly the reason why we created the idea of modular lexers.  Eventually, all existing languages will be dialects of Avail.  There's no greater proof of the adequacy of a Domain-Specific Language framework than being able to subsume all existing programming languages.  So that's where the "ubiquity" part of this blog entry's title comes from.</p>
+
+<h3>And then&hellip;</h3>
+
+<p>From our discussions, I think the next piece of the Great Avail Puzzle might be a new kind of token that contains an entire pre-built parse node inside it.  That will enable some fun things like power strings, which look like ordinary string literals, but have \[foo] expressions inside them.  The power string token will contain a concatenation of several expressions, some of them constant pieces of the string, and some of them subexpressions that were found within the string.  And since this is Avail, it'll be fully syntax-checked and type-checked at compile time.</p>
+
+<p>On a related note, the comment syntax might soon be updated as well to include something like \[foo] expressions.  These expressions will be embedded within the captured comment tokens, and will "count" as uses of any variables, methods, and macros that their expressions contain.  That makes them not just subject to refactoring tools, but also static syntax- and type-checking (i.e., they'll be compiled, but never executed).  And unlike tools like JavaDoc, these expressions are compiled within the current scope, so local variables and constants can be safely referenced.  This will be a significant step toward literate programming, which is just one aspect of Avail's articulate programming.</p>
+
+<table class="book-nav">
+	<tr>
+		<td class="book-nav-back"><a class="book-nav-back" href="./E008.html">‹ Previous</a></td>
+		<td class="book-nav-spacer">|</td>
+		<td class="book-nav-up"><a class="book-nav-up" href="./index.html">Return to Newsletters</a></td>
+	</tr>
+</table>
+
+<!--#include virtual="/_include/body-bottom.ssi" -->
+
+	</body>
+
+</html>
