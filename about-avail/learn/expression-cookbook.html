@@ -790,7 +790,6 @@ Run
 </div>
 <p>This does the same computation, but in parallel.</p>
 
-<div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
 <![CDATA[
 ! reject each element from 1 to 20 in parallel where [element is odd]
@@ -1613,6 +1612,36 @@ Run
 <ul>
 <li>
 &#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/_Ambiguities/1439340124.html">"&#171;_‡++&#187;"</a></code>
+</li>
+</ul>
+
+
+<h4 id="tuple-split">How do I split a tuple at an index or by a predicate?</h4>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! split "broken" after 3
+]]>
+</script></div>
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! split <15, 20, 25> before 1
+]]>
+</script></div>
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! split "bWVvdyBtZW93IG1lb3c=======" before [c : character | c = ¢=]
+]]>
+</script></div>
+</div>
+
+<ul>
+<li>
+&#8226; <code class="method"><a href="about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Tuples/1092715625.html">"split_before_"</a></code>
+</li>
+<li>
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Tuples/599566736.html">"split_after_"</a></code>
 </li>
 </ul>
 
