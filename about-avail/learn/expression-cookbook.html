@@ -32,7 +32,7 @@ margin-left: 50px;
 
 <p>Each recipe begins with a question that you might ask, like <a href="#tuple-literal">"How do I create a literal array?"</a> Very likely, you are coming from some other programming language, and framing your question in its terms. We have taken care to include alien terminology in the introduction of each section. This means that a search of the page from your browser will be likely to turn up the right information. This is also a good way to learn Avail's native terminology.</p>
 
-<p>Following each question is a list of answers, each of which is provided as a sample expression. Most of these expressions are prefixed with an <em>exclamation point</em> <code>!</code> <code class="unicode">(U+0021)</code>. You can use the <a href="./availuator.html">Availuator</a> to run any of these expressions from the <a href="./workbench.html">workbench</a>. Simply copy the entire expression, including the leading exclamation point, paste it into the workbench's input field, and press <code>Enter</code>.<sup><a href="#fn1">[1]</a></sup> If you want to use one of these expressions in a module, then do not include the leading exclamation point in the copy. This character is part of the send of <code class="command">"`!_"</code>, the Availuator's primary expression evaluator.</p>
+<p>Following each question is a list of answers, each of which is provided as a sample expression. Most of these expressions are prefixed with an <em>exclamation point</em> <code>!</code> <code class="unicode">(U+0021)</code>. You can use the <a href="/about-avail/documentation/availuator.html">Availuator</a> to run any of these expressions from the <a href="/about-avail/documentation/workbench.html">workbench</a>. Simply copy the entire expression, including the leading exclamation point, paste it into the workbench's input field, and press <code>Enter</code>.<sup><a href="#fn1">[1]</a></sup> If you want to use one of these expressions in a module, then do not include the leading exclamation point in the copy. This character is part of the send of <code class="command">"`!_"</code>, the Availuator's primary expression evaluator.</p>
 
 <p>After the sample expressions are hyperlinks into the <a href="/about-avail/documentation/stacks/library-documentation/index.html">Stacks</a>. Each hyperlink targets a method used in a sample expression. Only methods of primary relevance to the topic are targeted.</p>
 
@@ -1593,7 +1593,7 @@ Run
 <table style="width:100%">
 <tr>
 <td>&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/_Ambiguities/1439340124.html">"&#171;_‡++&#187;"</a></code></td>
-<td>&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/582878776.html">"concatenate_"</a></code></td>
+<td>&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2967470624.html">"concatenate_"</a></code></td>
 </tr>
 </table>
 </div>
@@ -1644,6 +1644,18 @@ Run
 &#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Tuples/599566736.html">"split_after_"</a></code>
 </li>
 </ul>
+
+<!--
+<h4>How do I split a tuple into multiple tuples with a delimited?</h4>
+<p>See <a href="#stream-delimiters">Streams: How do I stream values into tuples based upon occurrences in a delimiter?</a></p>
+
+<div class="restricted-width-container">
+<div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
+<![CDATA[
+! take at most ∞ from a stream over "dog|cat|mayonnaise|parrot|laser" delimited by " " 
+]]>
+</script></div></div>
+-->
 
 <h4 id="tuple-sorting">How do I sort a tuple?</h4>
 
@@ -2127,7 +2139,7 @@ Run
 <div style="text-align:center"><a href="#top"><small>(back to top)</small></a></div>
 <hr/>
 <h3 id="strings"><a href="/about-avail/documentation/type-system/types-string.html">Strings</a></h3>
-<p>Strings are tuples of <a href="/documentation/type-system/types-character.html">Characters</a>.  Strings respond to all tuple methods.  Each element of a string (character) respond to character methods.</p>
+<p>Strings are tuples of <a href="/about-avail/documentation/type-system/types-character.html">Characters</a>.  Strings respond to all tuple methods.  Each element of a string (character) respond to character methods.</p>
 
 <h4 id="strings-characters">How do I represent a character?</h4>
 
@@ -2496,7 +2508,7 @@ ho‘⑪’ler c‘④’;‘⑭’‘⑨’ day r‘⑥’, but nevermore‘⑭
 <hr/>
 <h3 id="exceptions">Exceptions</h3>
 
-<p>Exceptions are forms of <a href="/documentation/type-system/types-object.html">objects</a> in Avail.</p>
+<p>Exceptions are forms of <a href="/about-avail/documentation/type-system/types-object.html">objects</a> in Avail.</p>
 <p><small>Synonyms: errors.</small></p>
 
 <h4 id="exceptions-raise">How do I raise an exception?</h4>
