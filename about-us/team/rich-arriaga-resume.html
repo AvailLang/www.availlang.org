@@ -154,6 +154,7 @@ The Avail Foundation</a>.<br/>
     <tr><td>CSS</td></tr>
     <tr><td>SQL</td></tr>
     <tr><td>SAS</td></tr>
+    <tr><td>C#</td></tr>
 </table>
 </td>
 </tr>
@@ -228,27 +229,44 @@ The Avail Foundation</a>.<br/>
 <tr>
 	<td style="vertical-align:top">Environment:</td>
 	<td>Mac OS X, IntelliJ, Java, Apache Cassandra, Avail, Typescript, Javascript, WebSockets, JSON, Git, Atlassian JIRA, Atlassian 
-Crucible, Atlassian BitBucket</td>
+Crucible, Atlassian BitBucket, Gitlab, JUnit</td>
 </tr>
 
 <tr>
 	<td class="what" colspan="3">
-		<p>Design, implement, maintain, and support commercial products related to the Guruler platform, an application development platform that integrates a powerful rule engine with a high-performance server and a distributed database. The platform tightly integrates: a compiler for a strictly-typed, high-performance domain-specific language (DSL) designed to enable non-technical subject matter experts (SMEs) to develop complex rulesets and formulae; a suite of development tools, including visualization tools for understanding networks of rules and associated state variables; a customizable, asynchronous, parallel rule engine; a high-throughput, deadlock-free, asynchronous, WebSocket-enabled application server; a fully auditable, blob-oriented, distributed, multi-tenant database that automatically generates and maintains indices and data stores in accordance with query, reporting, and aggregation rules defined in the DSL; and a skinnable modern web client. The system supports live and automated intake by multiple simultaneous users, potentially editing through disparate semantic views, and generates appropriate reports, alerts, and events. The system implements a uniform security policy that crosscuts all application layers. The main product built on the platform is the eponymous My Coverage Plan™, a customer decision support tool intended to help advocates and patients to secure healthcare benefits.</p>
+		<p>Design, implement, maintain, and support commercial products related to the Guruler platform, an application development platform that integrates a
+			 powerful rule engine with a high-performance server and a distributed database. The platform tightly integrates: a compiler for a strictly-typed, 
+			 high-performance domain-specific language (DSL) designed to enable non-technical subject matter experts (SMEs) to develop complex rulesets and 
+			 formulae; a suite of development tools, including visualization tools for understanding networks of rules and associated state variables; a 
+			 customizable, asynchronous, parallel rule engine; a high-throughput, deadlock-free, asynchronous, WebSocket-enabled application server; a fully 
+			 auditable, blob-oriented, distributed, multi-tenant database that automatically generates and maintains indices and data stores in accordance with 
+			 query and reporting rules defined in the DSL; user-customizable data exports; data aggregation; and a skinnable modern web client. The system supports 
+			 live and automated intake by multiple simultaneous users, potentially editing through disparate semantic views, and generates appropriate reports, 
+			 alerts, and events. The system implements a uniform security policy that crosscuts all application layers. The main product built on the platform is 
+			 the eponymous Advocus™, a customer decision support tool intended to help advocates and patients to secure healthcare benefits.</p>
 		<ul>
-			<li>Architected and developed a Cassandra driver.</li>
-            <li>Architected and developed infrastructure for dynamic generation of tables and indices that integrate into a fully auditable, blob-oriented, distributed, multi-tenant database.</li>
-            <li>Architected and developed a system that supports live and automated intake by multiple simultaneous users, potentially editing through disparate semantic views with shared state.</li>
-            <li>Architected and developed a watchlist system for managing user worklists.</li>
-            <li>Architected and developed a notification system that processes email notifications to users in near real-time.</li>
-            <li>Developed the majority of the asynchronous, continuation-passing message processor for communicating with clients.</li>
-            <li>Architected and developed a configurable concurrent data migration tool that reads targeted data from the database and passes it down a user-defined operator pipeline that transforms the data before re-writing it back to the database.</li>
-            <li>Developed centralized, server-side, continuation-passing, least recently used (LRU) cache utilized by all active client channels.</li>
-            <li>Developed client channel-specific free list cache that cooperated with the main LRU cache.</li>
-            <li>Architected and developed a templating language for configuring tenant-specific content.</li>
-            <li>Architected and developed a DSL for defining unit tests for subject matter expert (SME) authored rule-sets, and an automated test runner.</li>
-            <li>Participated in the institutionalization of IT technical infrastructure of My Coverage Plan.</li>
-            <li>Participated in business development relative to the My Coverage Plan product suite.</li>
-            <li>Evaluated the state-of-the-art of learning management systems for use with training in the healthcare coverage space.</li>
+			<li>Architected and developed interface for dynamic generation of database tables and indices that integrate into a fully auditable, blob-oriented,
+			 distributed, multi-tenant database; developed Cassandra driver to interact with the Guruler platform.</li>
+			<li>Architected and developed a system that supports live and automated intake by multiple simultaneous users, potentially editing through disparate 
+			semantic views with shared state.</li>
+			<li>Architected and developed a data export system with an extensible export format interface which allows users to define custom-savable data exports
+			 on the client in order to export data from the system.</li>
+			<li>Architected and developed a concurrent data injection system with dynamically code generated client-defined data filters for injecting select data
+			 from the database into both the data export system and the data aggregation system.</li>
+			<li>Architected and developed a configurable concurrent data migration tool that reads targeted data from the database and passes it down a user-defined 
+			operator pipeline that transforms the data before rewriting it back to the database.</li>
+			<li>Architected and developed a notification system that processes email notifications to users in near real-time.</li>
+			<li>Developed the majority of the asynchronous, continuation-passing message processor for communicating with clients.</li>
+			<li>Developed centralized, server-side, continuation-passing, in-memory data store used for caching database data by all active client channels.</li>
+			<li>Developed client channel-specific free list cache that cooperates with the main server data store to provide shared data and channel specific data
+			 to the client.</li>
+			<li>Architected and developed a watchlist system for managing user worklists that tracks changes to items in the watchlist, optionally notifying users 
+			of updates via email notifications.</li>
+			<li>Architected and developed a templating language for configuring tenant-specific content.</li>
+			<li>Architected and developed a DSL for defining unit tests for subject matter expert (SME) authored rule-sets, that code generates Java test classes 
+			that can be run in the JUnit 5-based automated test runner.</li>
+			<li>Participated in the institutionalization of IT technical infrastructure of My Coverage Plan, Inc.</li>
+			<li>Participated in business development relative to the My Coverage Plan product suite.</li>
 		</ul>
 		<hr/>
 	</td>
@@ -273,9 +291,10 @@ Angular, Atlassian JIRA, Atlassian Fisheye, Atlassian Crucible, SVN, REST, JSON,
 
 <tr>
 	<td class="what" colspan="3">
-		<p>Great Lakes Higher Education is non-profit student loan servicer with a large technical infrastucture for developing and supporting forward facing borrower web applications as well as internal data-driven business applications.</p>
+		<p>Great Lakes Higher Education is non-profit student loan servicer with a large technical infrastructure for developing and supporting forward facing 
+			borrower web applications as well as internal data-driven business applications.</p>
 		<ul>
-			<li>Served as technical lead across multiple projects.
+			<li>Served as technical lead:
                 <ul>
                     <li>Interfaced with clients to establish project goals.</li>
                     <li>Architected solutions based upon client requirements.</li>
@@ -286,8 +305,10 @@ Angular, Atlassian JIRA, Atlassian Fisheye, Atlassian Crucible, SVN, REST, JSON,
                     <li>Inherited and re-architected products in order to address client’s evolving needs.</li>
                 </ul>
             </li>
-            <li>Designed and developed a framework for a flexible type-safe copybook generator/parser that could transform Java objects into correctly formatted copy books for input into COBOL stored procedures as well as instantiate Java objects from copybook files.</li>
-            <li>Designed and developed framework for automatically transforming timestamps between UTC and localized time zone to compensate for variations due to lack of UTC support in DB2.</li>
+            <li>Designed and developed a framework for a flexible type-safe copybook generator/parser that could transform Java objects into correctly formatted 
+            copy books for input into COBOL stored procedures as well as instantiate Java objects from copybook files.</li>
+            <li>Designed and developed framework for automatically transforming timestamps between UTC and localized time zone to compensate for variations due to 
+            lack of UTC support in DB2.</li>
             <li>Acted as a technical resource for other developers to discuss design and implementation strategies for projects external to my own.</li>
 		</ul>
 		<hr/>
@@ -379,7 +400,8 @@ Angular, Atlassian JIRA, Atlassian Fisheye, Atlassian Crucible, SVN, REST, JSON,
 			<li>Received companywide award for developing interactive budgeting tool that ran staffing-based cost scenarios for senior management.</li>
 			<li>Acted as lead analyst for the majority of claims staffing operational reporting.</li>
 			<li>Developed interactive monthly report for the CFO, detailing various staffing, workload, and financial metrics for all U.S. states.</li>
-			<li>Redeveloped, enhanced, automated, and effectively reduced the size of several workload and claims staff reports to increase usability for analysts and managers in the claims organization.</li>
+			<li>Redeveloped, enhanced, automated, and effectively reduced the size of several workload and claims staff reports to increase usability for analysts 
+			and managers in the claims organization.</li>
 		</ul>
 		<hr/>
 	</td>
