@@ -172,45 +172,45 @@ $ .\gradlew.bat build</div></div>
 <p>Where <code>$PROJ</code> is the location of your local copy of the Avail project repository. You should see output similar to this:</p>
 
 <div class="restricted-width-container"><div class="console code-block">ATTENTION ==========================================================
-	Be sure to set AVAIL_HOME to:
+Be sure to set AVAIL_HOME to:
 
-	$PROJ/distro
+$PROJ/distro
 
-	And update your path to include:
+And update your path to include:
 
-	$PROJ/distro/bin
+$PROJ/distro/bin
 
-	For example, a user of bash might include something like the
-	following in the appropriate shell config file:
+For example, a user of bash might include something like the
+following in the appropriate shell config file:
 
-	export AVAIL_HOME=$PROJ/distro
-	export PATH=$PATH:$PROJ/distro/bin
+export AVAIL_HOME=$PROJ/distro
+export PATH=$PATH:$PROJ/distro/bin
 
-	Once your path has been updated, from any directory you can launch
-	the Avail workbench like this:
+Once your path has been updated, from any directory you can launch
+the Avail workbench like this:
 
-	avail-dev
+avail-dev
 
-	Or the Avail server like this:
+Or the Avail server like this:
 
-	avail-server
+avail-server
 
-	(The server is currently hard-wired to run on port 40000. This will
-	change at some point.)
+(The server is currently hard-wired to run on port 40000. This will
+change at some point.)
 
-	To develop Avail code, you will also need to set AVAIL_ROOTS to a
-	valid module root path. If AVAIL_ROOTS is not set, then avail-dev
-	temporarily sets it to:
+To develop Avail code, you will also need to set AVAIL_ROOTS to a
+valid module root path. If AVAIL_ROOTS is not set, then avail-dev
+temporarily sets it to:
 
-	avail=$HOME/.avail/repos/avail.repo,$PROJ/distro/src/avail;\
-	examples=$HOME/.avail/repos/examples.repo,$PROJ/distro/src/examples
+avail=$HOME/.avail/repos/avail.repo,$PROJ/distro/src/avail;\
+examples=$HOME/.avail/repos/examples.repo,$PROJ/distro/src/examples
 
-	This is convenient for experimenting with Avail, but must be
-	extended with custom module roots as you develop your own modules.
-	====================================================================
+This is convenient for experimenting with Avail, but must be
+extended with custom module roots as you develop your own modules.
+====================================================================
 
-	BUILD SUCCESSFUL in 23s
-	19 actionable tasks: 19 executed</div></div>
+BUILD SUCCESSFUL in 23s
+19 actionable tasks: 19 executed</div></div>
 
 <p>If your transcript includes <code>BUILD SUCCESSFUL</code> near the end, then your build is ready for use. You may, of course, move the <code>distro</code> subdirectory to another user-specific or even system-wide location, and then update your <code>AVAIL_HOME</code> and <code>PATH</code> variables accordingly. Hereinafter we use $INSTALL to refer to the final destination of the <code>distro</code> directory.</p>
 
