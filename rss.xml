@@ -4,8 +4,15 @@
 		<title>The Avail Programming Language</title>
 		<description>Fresh posts on the site, including newsletters, tutorials, documentation, etc.</description>
 		<link>http://www.availlang.org</link>
-		<copyright>© 2012-2014 The Avail Foundation, LLC</copyright>
+		<copyright>© 2012-2019 The Avail Foundation, LLC</copyright>
 
+		<item>
+			<title>General update.</title>
+			<pubDate>Fri, 16 Aug 2019 20:03:00 GMT</pubDate>
+			<description>Avail 1.4.0 is now out and recommended for production usage.</description>
+			<link>http://www.availlang.org/index.html</link>
+			<guid>http://www.availlang.org/index.html</guid>
+  		</item>
 		<item>
 			<title>Team update.</title>
 			<pubDate>Tue, 13 Jan 2015 00:41:00 GMT</pubDate>
