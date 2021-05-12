@@ -1,32 +1,28 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 	<head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-	
+
+{% include head.html %}
+
 		<title>Avail - Mobile text rendering</title>
-	
+
 	</head>
 
 	<body class="gradient-logo">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
+
+{% include body-top.html %}
 
 		<h2 class="content-title">Text Rendering for Mobile Users</h2>
-		
+
 <p>
 Some users have reported problems viewing some characters on our site when using a mobile browser. Avail uses many characters outside of the normal Latin script, and mobile browsers may have problems rendering these characters. Unfortunately, we do not have a full complement of mobile devices to test this issue.
 </p><p>
 We would be enormously grateful if our readers could help us identify where and when these font rendering problems arise, so that we can get everything fixed up. If you notice a page with a "tofu" character (an empty rectangle), an out-of-place question mark or other character, a blank space where it looks like a character is missing, etc., please <a href="mailto:webmaster@availlang.org?subject=Missing Character on availlang.org&body=My operating system:  %0D%0A%0D%0APage address:  %0D%0A%0D%0ASuspicious text:%20%20">email our webmaster</a>!
 </p>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
+{% include body-bottom.html %}
 
 	</body>
 

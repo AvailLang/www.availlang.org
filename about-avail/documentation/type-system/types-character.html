@@ -1,26 +1,22 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 	<head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-	
+
+{% include head.html %}
+
 		<title>Avail - Type System</title>
-	
+
 	</head>
 
 	<body class="gradient-logo">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
+
+{% include body-top.html %}
 
 		<h2 class="content-title"><code>character</code></h2>
 <div style="float: right;" class="floating-svg-wrapper">
-<!--#include virtual="/_images/type-system/type-system-character-focus.svg"-->
+<!--#include virtual="/images/type-system/type-system-character-focus.svg"-->
 </div>
 <p>
 A <strong>character</strong> is a sign or symbol in the semiotic sense: an entity with distinct identity that is nonetheless generally intended and understood to represent something other than itself. The visual representation of a character is a <strong>glyph</strong>. A character is necessarily distinct from how it is written or printed. The same character will differ in any two handwritten occurrences, even when the same person is responsible for the production of both. Likewise the printed representation of a character will differ by font or style. For example, each of "<span style="font-family: Futura;">a</span>", "<span style="font-family: Times New Roman;">a</span>", and "<span style="font-family: Helvetica;">a</span>" are understood by readers of Roman-influenced languages as representing the same character. So a character has identity independent of any and all glyphs that transcribe it.
@@ -59,7 +55,7 @@ Assert: "	tab"[1] = ¢"\t";</div>
 	</tr>
 </table>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
+{% include body-bottom.html %}
 
 	</body>
 

@@ -1,23 +1,19 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 	<head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-	
+
+{% include head.html %}
+
 		<title>Avail - Rich's Blog</title>
-	
+
 	</head>
 
 	<body class="gradient-logo">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
-		
+
+{% include body-top.html %}
+
 <a href="./index.html"><h3 class="content-supertitle">Rich's Blog</h3></a>
 <h2 class="content-title">Something changed leads to something broken</h2>
 
@@ -27,15 +23,15 @@ And so continues the learning process that is ultimately followed by recoding an
 </p>
 <div class="restricted-width-container">
 <div class="good-code code-block">/**
- * A class that defines a token for the Avail scanner.  
- * 
+ * A class that defines a token for the Avail scanner.
+ *
  * @type "scanner token"
  * @supertype {@type "object" object}
  * @category Stacks
  * @field "lexeme" "string"
  *  string representation of token
  * @field "line" "natural number"
- *  line number on which token appears 
+ *  line number on which token appears
  * @field "position" "natural number"
  *  column position where token begins
  * @author Richard Arriaga
@@ -48,7 +44,7 @@ Public class "scanner token" extends object
 <p>
 It is amazing how modular the concrete implementation of <code>stacks scanner</code> has become.  I'm finding it much easier to perform the necessary tasks with this generic model.  The code is much easier to follow.  Initially, my code to tokenize a comment was quite monstrous.  (I'm in a sharing mood, so I'll append the monstrous code at the bottom---just remember, this is <b>NOT</b> being used in the final product).  The writing of the new code has also gone much quicker.  In part, that is due to the fact that there have been several iterations of this project.  As painful as some of the earlier code has been, it has provided me some good insight on how to do things <em>better</em>.
 </p><p>
-Now I'm pretty deep into the <code>stack's scanner</code> implementation.  I've moved some of the token abstraction over to the <em>Avail Scanner</em> module.  This has forced me to reconsider the splitting of the tokenized comments.  I initially would parse the tokens and store them with their key words in a map, keyed by the lexeme of the keyword token, with the value containing a tuple pair of the keyword token object and a tuple of the tokens associated with it: <code>{string→{&lt;stacks token, &lt;stacks token…|>…|>|}|}</code>.  From there I was going to create the Stacks method/type objects that contained this info.  I think I may want to do this somewhat differently, but I haven't quite gotten back to the parser section just yet.  I have some time to think about it. 
+Now I'm pretty deep into the <code>stack's scanner</code> implementation.  I've moved some of the token abstraction over to the <em>Avail Scanner</em> module.  This has forced me to reconsider the splitting of the tokenized comments.  I initially would parse the tokens and store them with their key words in a map, keyed by the lexeme of the keyword token, with the value containing a tuple pair of the keyword token object and a tuple of the tokens associated with it: <code>{string→{&lt;stacks token, &lt;stacks token…|>…|>|}|}</code>.  From there I was going to create the Stacks method/type objects that contained this info.  I think I may want to do this somewhat differently, but I haven't quite gotten back to the parser section just yet.  I have some time to think about it.
 </p><p>
 At the most current of moments, I'm dealing with an error in <em>Stacks Scanner</em>.  It doesn't seem to like the following bit of code:
 </p>
@@ -58,7 +54,7 @@ At the most current of moments, I'm dealing with an error in <em>Stacks Scanner<
  *
  * @method "_ is a stacks token"
  * @categories "Stacks"
- * @param "name" "string" 
+ * @param "name" "string"
  *		name of new token type
  * @returnType "⊤"
  *		none
@@ -112,18 +108,18 @@ The error is clear as mud, right?  I may have to break down and poke Todd about 
  	openComment : whole number := 0;
 	openQuote : whole number := 0;
 	stacksTokens : &lt;stacks token…|> := &lt;>;
-	
+
 	/* delimiting characters for tokenization */
 	keyCharacters ::= {¢@,¢" ",¢"\"",¢{,¢},¢`,¢/,¢*,¢"\t",¢"\n"};
- 
+
 	doNotTokenize ::= {"/*","/**","*/"," ","","\t"};
-	
-	newLinePositions ::= all indices of comment where 
+
+	newLinePositions ::= all indices of comment where
 		[c : character | c = ¢"\n"];
 
 	priorNewLine : natural number := 1;
 	bufferMap : {natural number→string|} := {};
-	
+
 	/* Break up comment by new lines.  Map key is line count, value is line *
 	 * less the new line character at the end of the line                   */
 	For each newLinePositions do
@@ -137,11 +133,11 @@ The error is clear as mud, right?  I may have to break down and poke Todd about 
 	 	[
 	 	 	bufferMap := bufferMap + lineCount→comment[priorNewLine + 1..i-1];
 	 	];
-	 
+
 	 	priorNewLine := i;
 		lineCount++;
 	];
-	
+
 	/* Tokenize comment lines */
 	For each bufferMap do
 	[
@@ -168,25 +164,25 @@ The error is clear as mud, right?  I may have to break down and poke Todd about 
 			 	]
 			 	do
 			 	[
-	
+
 			 	 	/* Consume nested comment without tokenizing but moving *
 			 	 	 * column pointer										*/
 			 	 	If charCounter = 0 then [charCounter++;];
-			 	 	
-					word : &lt;character…|> := take from commentLine[charCounter+1..] 
-					until 
+
+					word : &lt;character…|> := take from commentLine[charCounter+1..]
+					until
 					[
-					 	c : character 
+					 	c : character
 					 |
-	
+
 						If charCounter ≠ |commentLine| then [charCounter++;];
 					 	c ∈ {¢/,¢*}  ∨ [charCounter = |commentLine|]
 					];
-			 	 	
-			 	 	j : natural number := cast charCounter into 
+
+			 	 	j : natural number := cast charCounter into
 						[n : natural number | n];
-	
-			 	 	If charCounter &lt; |commentLine| +1 ∧ [commentLine[j] ∈ {¢/,¢*}] then  
+
+			 	 	If charCounter &lt; |commentLine| +1 ∧ [commentLine[j] ∈ {¢/,¢*}] then
 					[
 						Cast commentLine[j] into
 						[
@@ -214,7 +210,7 @@ The error is clear as mud, right?  I may have to break down and poke Todd about 
 							];
 						];
 					];
-			 	 	
+
 			 	];
 			];
 			While
@@ -224,73 +220,73 @@ The error is clear as mud, right?  I may have to break down and poke Todd about 
 			do
 			[
 			 	wordStart : natural number := charCounter + 1;
-				word : &lt;character…|> := take from commentLine[charCounter+1..] until 
+				word : &lt;character…|> := take from commentLine[charCounter+1..] until
 				[
-				 	c : character 
+				 	c : character
 				 |
 				 	charCounter++;
 				 	c ∈ keyCharacters  ∨ [charCounter = |commentLine|+1]
 				];
-	
-				j : natural number := cast charCounter into 
+
+				j : natural number := cast charCounter into
 					[n : natural number | n];
-	
+
 				if charCounter &lt; |commentLine| then
 				[
 					Cast commentLine[j] into
 					[
-					 	c : enumeration of 
+					 	c : enumeration of
 					 		{¢@,¢" ",¢"\"",¢{,¢},¢`,¢/,¢*,¢"\t",¢"\n"}
 					 |
 						Choose c from enumeration of keyCharacters
 						where
 						¢"\t" is
 						[
-						 	If word ∉ doNotTokenize then 
+						 	If word ∉ doNotTokenize then
 						 	[
-						 	 	stacksTokens := stacksTokens ++ 
+						 	 	stacksTokens := stacksTokens ++
 						 	 		&lt;token &lt;word,lineNumber,wordStart>>;
 						 	];
 						],
 						¢@ is
 						[
-						 	If word ∉ doNotTokenize then 
+						 	If word ∉ doNotTokenize then
 						 	[
-						 	 	stacksTokens := stacksTokens ++ 
+						 	 	stacksTokens := stacksTokens ++
 						 	 		&lt;token &lt;word,lineNumber,wordStart>>;
 						 	];
 			 				wordStart := j;
-			 				word := take from commentLine[j..] until 
+			 				word := take from commentLine[j..] until
 			 				[
-			 					ch : character 
+			 					ch : character
 			 				 |
 			 				 	charCounter++;
 			 					ch = ¢" " ∨ [ch =  ¢"\n"]
 			 				];
-				 			stacksTokens := stacksTokens ++ 
+				 			stacksTokens := stacksTokens ++
 				 				&lt;token &lt;word,lineNumber,wordStart>>;
 						 	/* Counter will be re-incremented above.*/
 						 	charCounter--;
 						],
 						¢" " is
 						[
-						 	If word ∉ doNotTokenize then 
+						 	If word ∉ doNotTokenize then
 						 	[
-						 	 	stacksTokens := stacksTokens ++ 
+						 	 	stacksTokens := stacksTokens ++
 						 	 		&lt;token &lt;word,lineNumber,wordStart>>;
 						 	];
 						],
 						¢"\"" is
 						[
-						 	If word ∉ doNotTokenize then 
+						 	If word ∉ doNotTokenize then
 						 	[
-						 	 	stacksTokens := stacksTokens ++ 
+						 	 	stacksTokens := stacksTokens ++
 						 	 		&lt;token &lt;word,lineNumber,wordStart>>;
 						 	];
 				 			wordStart := j;
-			 				word := take from commentLine[j+1..] until 
+			 				word := take from commentLine[j+1..] until
 			 				[
-			 					ch : character 
+			 					ch : character
 			 				 |
 			 					charCounter++;
 			 					ch = ¢"\"" ∨ [charCounter = |commentLine|]
@@ -298,7 +294,7 @@ The error is clear as mud, right?  I may have to break down and poke Todd about 
 						 	if charCounter &lt; |commentLine| + 1 then
 						 	[
 						 		word := &lt;¢"\""> ++ word ++ &lt;¢"\"">;
-						 		stacksTokens := stacksTokens ++ 
+						 		stacksTokens := stacksTokens ++
 						 			&lt;token &lt;word,lineNumber,wordStart>>;
 						 	] else
 						 	[
@@ -307,22 +303,22 @@ The error is clear as mud, right?  I may have to break down and poke Todd about 
 						],
 						¢{ is
 						[/* TODO Better handling of this, want entire thing in one token if followed by @ tag*/
-						 	If word ∉ doNotTokenize then 
+						 	If word ∉ doNotTokenize then
 						 	[
-						 	 	stacksTokens := stacksTokens ++ 
+						 	 	stacksTokens := stacksTokens ++
 						 	 		&lt;token &lt;word,lineNumber,wordStart>>;
 						 	];
-							stacksTokens := stacksTokens ++ 
+							stacksTokens := stacksTokens ++
 								&lt;token &lt;"{",lineNumber,j>>;
 						],
 						¢} is
 						[/* TODO Don't actually need this once { is handled correctly*/
-						 	If word ∈ doNotTokenize then 
+						 	If word ∈ doNotTokenize then
 						 	[
-						 	 	stacksTokens := stacksTokens ++ 
+						 	 	stacksTokens := stacksTokens ++
 						 	 		&lt;token &lt;word,lineNumber,wordStart>>;
 						 	];
-				 			stacksTokens := stacksTokens ++ 
+				 			stacksTokens := stacksTokens ++
 				 				&lt;token &lt;"}",lineNumber,j>>;
 						],
 						¢` is
@@ -336,45 +332,45 @@ The error is clear as mud, right?  I may have to break down and poke Todd about 
 							  		charCounter++;
 							  		If charCounter ≠ |commentLine| then
 							  		[
-								  		word := word ++ 
-								  			take from commentLine[j+2..] until 
+								  		word := word ++
+								  			take from commentLine[j+2..] until
 						 				[
-						 					ch : character 
+						 					ch : character
 						 				 |
 						 					charCounter++;
-						 					ch ∈ keyCharacters  
+						 					ch ∈ keyCharacters
 						 				];
-									 	If word ∉ doNotTokenize then 
+									 	If word ∉ doNotTokenize then
 									 	[
-									 	 	stacksTokens := stacksTokens ++ 
+									 	 	stacksTokens := stacksTokens ++
 									 	 		&lt;token &lt;word,lineNumber,wordStart>>;
 									 	];
 									];
 							  	]
-							  	else 
+							  	else
 							  	[
 							  	 	word := word ++ &lt;commentLine[j]>;
 							  		charCounter++;
-							  		word := word ++ take from commentLine[j+1..] until 
+							  		word := word ++ take from commentLine[j+1..] until
 					 				[
-					 					ch : character 
+					 					ch : character
 					 				 |
 					 					charCounter++;
-					 					ch ∈ keyCharacters ∨ 
+					 					ch ∈ keyCharacters ∨
 				 							[charCounter = |commentLine|]
 					 				];
-								 	If word ∉ doNotTokenize then 
+								 	If word ∉ doNotTokenize then
 								 	[
-								 	 	stacksTokens := stacksTokens ++ 
+								 	 	stacksTokens := stacksTokens ++
 								 	 		&lt;token &lt;word,lineNumber,wordStart>>;
 								 	];
 							  	];
 							] else
 							[
 							 	word := word ++ &lt;commentLine[j]>;
-							 	If word ∉ doNotTokenize then 
+							 	If word ∉ doNotTokenize then
 							 	[
-							 	 	stacksTokens := stacksTokens ++ 
+							 	 	stacksTokens := stacksTokens ++
 							 	 		&lt;token &lt;word,lineNumber,wordStart>>;
 							 	];
 							];
@@ -404,18 +400,18 @@ The error is clear as mud, right?  I may have to break down and poke Todd about 
 							[
 						  	 	word := word ++ &lt;commentLine[j]>;
 						  		charCounter++;
-						  		word := word ++ take from commentLine[j+1..] until 
+						  		word := word ++ take from commentLine[j+1..] until
 				 				[
-				 					ch : character 
+				 					ch : character
 				 				 |
 				 					charCounter++;
-				 					ch ∈ keyCharacters ∨ 
+				 					ch ∈ keyCharacters ∨
 			 							[charCounter = |commentLine|]
 				 				];
 							];
-						 	If word ∉ doNotTokenize then 
+						 	If word ∉ doNotTokenize then
 						 	[
-						 	 	stacksTokens := stacksTokens ++ 
+						 	 	stacksTokens := stacksTokens ++
 						 	 		&lt;token &lt;word,lineNumber,wordStart>>;
 						 	];
 						],
@@ -424,26 +420,26 @@ The error is clear as mud, right?  I may have to break down and poke Todd about 
 						 /*Do nothing special here.  If closing comment, it will *
 						  * end the buffer.  If not, `* will not be converted 	 *
 						  * into a token.  Tokenize prior word if applicable.	 */
-						 	If word ∉ doNotTokenize then 
+						 	If word ∉ doNotTokenize then
 						 	[
-						 	 	stacksTokens := stacksTokens ++ 
+						 	 	stacksTokens := stacksTokens ++
 						 	 		&lt;token &lt;word,lineNumber,wordStart>>;
 						 	];
 						 ],
 						 ¢"\n" is
 						 [
-						 	If word ∉ doNotTokenize then 
+						 	If word ∉ doNotTokenize then
 						 	[
-						 	 	stacksTokens := stacksTokens ++ 
+						 	 	stacksTokens := stacksTokens ++
 						 	 		&lt;token &lt;word,lineNumber,wordStart>>;
 						 	];
 						 ];
 					];
 				] else
 				[
-				 	If word ∉ doNotTokenize then 
+				 	If word ∉ doNotTokenize then
 				 	[
-				 	 	stacksTokens := stacksTokens ++ 
+				 	 	stacksTokens := stacksTokens ++
 				 	 		&lt;token &lt;word,lineNumber,wordStart>>;
 				 	];
 				];
@@ -463,7 +459,7 @@ The error is clear as mud, right?  I may have to break down and poke Todd about 
 	</div>
 </tr>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
+{% include body-bottom.html %}
 
 	</body>
 

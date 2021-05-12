@@ -1,23 +1,19 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 	<head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-	
+
+{% include head.html %}
+
 		<title>Avail - Rich's Blog</title>
-	
+
 	</head>
 
 	<body class="gradient-logo">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
-		
+
+{% include body-top.html %}
+
 <a href="./index.html"><h3 class="content-supertitle">Rich's Blog</h3></a>
 <h2 class="content-title">Two nights, one blog</h2>
 
@@ -40,11 +36,11 @@ Having completed the task of the <code>Avail scanner</code> abstraction, I've mo
  *
  * @method "Next character from_"
  * @categories "Avail Lexical Scanner"
- * @param "scanner" "Avail scanner" 
+ * @param "scanner" "Avail scanner"
  *		an Avail scanner
  * @returnType "⊤"
  *		none
- * @raises "Raise an exhausted-iterator exception" 
+ * @raises "Raise an exhausted-iterator exception"
  *		there is nothing left on the iterator to consume
  * @author "Richard Arriaga"
  */
@@ -56,8 +52,8 @@ Public method "Next character from_" is
  	[
 		Advance scanner's source;
 		If scanner's source is not exhausted then
-		[ 
-			if scanner's source's current element = ¢"\n" then 
+		[
+			if scanner's source's current element = ¢"\n" then
 			[
 				↓scanner's column number ?= 1;
 				scanner's line number++;
@@ -67,7 +63,7 @@ Public method "Next character from_" is
 			 	scanner's column number++;
 			];
 		];
- 	] 
+ 	]
  	else
  	[
  	 	Raise an exhausted-iterator exception
@@ -80,7 +76,7 @@ Public method "Next character from_" is
  *
  * @method "Exhaust_"
  * @categories "Avail Lexical Scanner"
- * @param "scanner" "Avail scanner" 
+ * @param "scanner" "Avail scanner"
  *		an Avail scanner
  * @returnType "⊤"
  *		none
@@ -92,11 +88,11 @@ Public method "Exhaust_" is
 |
 	While
 	[
-		scanner's source is not exhausted 
+		scanner's source is not exhausted
 	]
 	do
 	[
-		c ::= scanner's source's current element; 
+		c ::= scanner's source's current element;
 		/*  TODO:  Current implementation is incomplete due to lacking character
 		 * functionality.  May miss many operator characters.  Once tuple
 		 * performance issue and character module limitiations addressed,
@@ -110,7 +106,7 @@ Public method "Exhaust_" is
 			 	 	if s's source's current element is whitespace then
 			 	 	[
 			 	 	 	Process white space from s;
-			 	 	] 
+			 	 	]
 			 	 	else
 			 	 	[
 			 	 	 	Process identifier starter from s;
@@ -123,15 +119,15 @@ Public method "Exhaust_" is
 ]:⊤;
 
 /**
- * Read from Avail scanner's source while supplied condition is true or the 
+ * Read from Avail scanner's source while supplied condition is true or the
  * source is exhausted.
  *
  * @method "read from_while_"
  * @public
  * @categories "Avail Lexical Scanner"
- * @param "scanner" "Avail scanner" 
- *		an avail scanner 
- * @param "predicate" "boolean" 
+ * @param "scanner" "Avail scanner"
+ *		an avail scanner
+ * @param "predicate" "boolean"
  *		The function that guards repeated application of reading from the source
  * @returnType "&lt;character…|>"
  *		the tuple of characters read from the source
@@ -143,9 +139,9 @@ Public method "read from_while_" is
  	predicate : []→boolean
  |
  	buffer : &lt;character…|> := &lt;>;
-	While 
+	While
 	[
-	 	scanner's source is not exhausted ∧ 
+	 	scanner's source is not exhausted ∧
 	 		[predicate()]
 	]
 	do
@@ -166,7 +162,7 @@ Public method "read from_while_" is
 	</div>
 </tr>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
+{% include body-bottom.html %}
 
 	</body>
 

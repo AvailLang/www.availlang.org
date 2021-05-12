@@ -1,23 +1,19 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 	<head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-	
+
+{% include head.html %}
+
 		<title>Modules - Active Versions Section</title>
 
 	</head>
 
 	<body class="gradient-logo">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
-		
+
+{% include body-top.html %}
+
 <h2 class="content-title">Active Versions Section</h2>
 
 <p>The <code>Versions</code> keyword begins the <strong>active versions section</strong>. The contents of this section are zero or more <a href="/about-avail/documentation/type-system/types-string.html">string literal</a>s separated by <em>commas</em> <code>,</code> <code class="unicode">(U+002C)</code>. Each string literal corresponds to a version of the API that the module pledges to support. Versions are specified as arbitrary strings to allow developers to adopt different versioning taxonomies for their products.</p>
@@ -88,7 +84,7 @@ Body</div></div>
 	</tr>
 </table>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
+{% include body-bottom.html %}
 
 	</body>
 

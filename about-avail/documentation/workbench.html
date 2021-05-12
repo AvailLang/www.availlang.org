@@ -1,31 +1,27 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 	<head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-	
+
+{% include head.html %}
+
 		<title>The Avail Workbench</title>
-	
+
 	</head>
 
 	<body class="gradient-logo">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
+
+{% include body-top.html %}
 
 		<h2 class="content-title">The Avail Workbench</h2>
 
-<p>		
+<p>
 Now that you've <a href="/about-avail/download/index.html">downloaded, installed, configured, and opened</a> the Avail workbench, let's take a tour!
 </p>
 <h3>Tour of the workbench</h3>
 <figure class="full-line-screenshot">
-    <a href="/_images/documentation/workbench/fresh-workbench.png" title="View image at full resolution."><img src="/_images/documentation/workbench/fresh-workbench.png" width=820 alt="A screenshot of the Avail workbench."></a>
+    <a href="/images/documentation/workbench/fresh-workbench.png" title="View image at full resolution."><img src="/images/documentation/workbench/fresh-workbench.png" width=820 alt="A screenshot of the Avail workbench."></a>
     <figcaption>A fresh instance of the Avail workbench, with several items collapsed for variety.</figcaption>
 </figure>
 <p>
@@ -40,29 +36,29 @@ The workbench has five main sections:
 </p><p>
 <h4>1. The modules pane</h4>
 <figure class="top-right-screenshot">
-	<a href="/_images/documentation/workbench/modules-pane.png" title="View image at full resolution."><img src="/_images/documentation/workbench/modules-pane.png" width=232 alt="The workbench screenshot, cropped to show only the modules pane. Selected module roots and packages have been expanded or collapsed to show variety."></a>
+	<a href="/images/documentation/workbench/modules-pane.png" title="View image at full resolution."><img src="/images/documentation/workbench/modules-pane.png" width=232 alt="The workbench screenshot, cropped to show only the modules pane. Selected module roots and packages have been expanded or collapsed to show variety."></a>
 	<figcaption>The modules pane.</figcaption>
 </figure>
 Recall from the installation <code class="module">README</code> that the Avail workbench depends on the <code>AVAIL_ROOTS</code> environment variable for the <strong>root</strong> directories where Avail libraries may be found. If this variable is not explicitly set before the workbench is opened, the default roots <code>avail</code> and <code>examples</code> will be used. <code>avail</code> is the root of the standard library, which contains all of the functionality needed to program in Avail. Accordingly, this root must always be present. <code>examples</code> contains smallish programs that demonstrate various uses of Avail. This includes the source modules for all of the <a href="/about-avail/learn/index.html">tutorials</a> featured on the website.
 </p><p>
 Regardless of how they are specified, roots show up in the workbench modules pane as top-level, collapsible entities, and are arranged in the order that they were specified. As top-level entities of hierarchical structures, they are left-justified within the pane. Each root name is bolded, and the display visibility of each root's contents can be toggled by clicking on the triangle to the left of the root name.
 </p><p>
-Every time it starts up, the workbench determines the contents of each root by recursively exploring its corresponding directory. Within a root directory, all file names that end with <code>.avail</code> are considered, regardless of their actual content, to be Avail <strong>modules</strong> named by whatever precedes this extension. Files without this extension are ignored. Similarly, all directory names that end with <code>.avail</code> are considered to be Avail module <strong>packages</strong>, and all other directories and their contents are ignored. Within each root and package, there may be any number of modules and packages. They are displayed in the modules pane in lexicographic order. Module names appear to the right of a <code>.avail</code> file icon (<img src="/_images/download-icons/avail.png" alt="module" width="24" height="24">), and packages appear to the right of a the Avail package icon, which looks like a folder (<img src="/_images/documentation/workbench/package.png" alt="package" width="24" height="24">).
+Every time it starts up, the workbench determines the contents of each root by recursively exploring its corresponding directory. Within a root directory, all file names that end with <code>.avail</code> are considered, regardless of their actual content, to be Avail <strong>modules</strong> named by whatever precedes this extension. Files without this extension are ignored. Similarly, all directory names that end with <code>.avail</code> are considered to be Avail module <strong>packages</strong>, and all other directories and their contents are ignored. Within each root and package, there may be any number of modules and packages. They are displayed in the modules pane in lexicographic order. Module names appear to the right of a <code>.avail</code> file icon (<img src="/images/download-icons/avail.png" alt="module" width="24" height="24">), and packages appear to the right of a the Avail package icon, which looks like a folder (<img src="/images/documentation/workbench/package.png" alt="package" width="24" height="24">).
 </p><p>
 The Avail compiler requires that each package directory contain an identically-named file, just inside, to function as the package representative module. Realistically, this representative <em>is</em> the package, because it encapsulates the component modules and provides a common interface for their public functionality. But to preserve hierarchical structuring in the filesystem, we must use directories. Since the workbench is focused on Avail's structure, and not the filesystem's structure, it provides access to the package through the package name. Accordingly, the representative module is not listed as a subordinate, and because of the structural nature of the scan, it does not even require its presence. So, beware! A directory that doesn't actually include a representative module will display as a package, but the package will fail to compile. We'll get to compilation after we're done with the tour.
 </p><p>
 <h4>2. The entry points pane</h4>
 <figure class="top-right-screenshot">
-	<a href="/_images/documentation/workbench/entry-points-pane.png" title="View image at full resolution."><img src="/_images/documentation/workbench/entry-points-pane.png" width=233 align="right" alt="The workbench screenshot, cropped to show only the entry points pane. Selected entry point modules have been expanded or collapsed to show variety."></a>
+	<a href="/images/documentation/workbench/entry-points-pane.png" title="View image at full resolution."><img src="/images/documentation/workbench/entry-points-pane.png" width=233 align="right" alt="The workbench screenshot, cropped to show only the entry points pane. Selected entry point modules have been expanded or collapsed to show variety."></a>
 	<figcaption>The entry points pane.</figcaption>
 </figure>
 After the workbench finishes scanning for all accessible <code>.avail</code> files and directories within its roots, it invokes the Avail compiler in a limited "header-scanning" mode. The compiler goes through all of the <code>.avail</code> files found, interpreting the information in its <code>Uses</code>, <code>Extends</code>, <code>Names</code>, and <code>Entries</code> sections in order to build the roots' dependency graphs. Whenever any module included anywhere on the dependency graph specifies a method in its <code>Entries</code> section, it is being marked as an Avail entry point. The method name and path are stored into a list, and that list is the source of information for the workbench's entry points pane.
 </p><p>
-Though entry points may occur at any depth within their own package hierarchy, entry points are Avail's equivalent of the classic <code>main()</code> method: each is a top-level program. So instead of displaying entry points hierarchically, they are instead grouped by their source module's full path. These path headings are displayed in bold and arranged in lexicographic order. The display visibility of a path's entry points can be toggled by clicking on the triangle to the left of the path. When visible, entry points common to a single path are displayed slightly indented below their path heading, and are listed in lexicographic order. 
+Though entry points may occur at any depth within their own package hierarchy, entry points are Avail's equivalent of the classic <code>main()</code> method: each is a top-level program. So instead of displaying entry points hierarchically, they are instead grouped by their source module's full path. These path headings are displayed in bold and arranged in lexicographic order. The display visibility of a path's entry points can be toggled by clicking on the triangle to the left of the path. When visible, entry points common to a single path are displayed slightly indented below their path heading, and are listed in lexicographic order.
 </p><p>
 <h4>3. The text input field</h4>
 <figure class="top-right-screenshot">
-	<a href="/_images/documentation/workbench/text-entry-field.png" title="View image at full resolution."><img src="/_images/documentation/workbench/text-entry-field.png" width=294 align="right" alt="The workbench screenshot, cropped to show only the left side of the empty and inactive text input field."></a>
+	<a href="/images/documentation/workbench/text-entry-field.png" title="View image at full resolution."><img src="/images/documentation/workbench/text-entry-field.png" width=294 align="right" alt="The workbench screenshot, cropped to show only the left side of the empty and inactive text input field."></a>
 	<figcaption>The text input field.</figcaption>
 </figure>
 There's not much to say about the initial appearance of the text input field. When the workbench is opened, it will be empty and have a grey background. Just above it is the label "Command:".
@@ -70,7 +66,7 @@ There's not much to say about the initial appearance of the text input field. Wh
 Yup. There it is, just sitting there, waiting for you to breathe life into it!
 <h4>4. The transcript pane</h4>
 <figure class="top-right-screenshot">
-	<a href="/_images/documentation/workbench/transcript-pane.png" title="View image at full resolution."><img src="/_images/documentation/workbench/transcript-pane.png" width=291 align="right" alt="The workbench screenshot, cropped to show only a small portion of the empty transcript pane."></a>
+	<a href="/images/documentation/workbench/transcript-pane.png" title="View image at full resolution."><img src="/images/documentation/workbench/transcript-pane.png" width=291 align="right" alt="The workbench screenshot, cropped to show only a small portion of the empty transcript pane."></a>
 	<figcaption>The transcript pane.</figcaption>
 </figure>
 
@@ -131,7 +127,7 @@ In order for the workbench to actually do anything other than sit there looking 
 The workbench serves two essential functions: Avail developers can use it to assist in module debugging and testing, and users can run Avail programs by entering commands. In order to take part in either of these activities, at least one module must be activated. Since you have, of course, read our fabulous <a href="/about-avail/documentation/modules/index.html">documentation of modules</a>, you know all about module dependencies: in order to use any target module, all of its upstream dependencies must be processed. And because you took the tour above, you know that there is a difference between a module being compiled and a module being loaded into memory: compiled modules reside in the repository, while loaded modules are available in the workbench's program memory for use. Activation of a module in the workbench ensures that module and its ancestors are all both compiled and loaded.
 </p><p>
 <h4>Activating modules</h4>
-The modules pane distinguishes between modules that have not yet been activated in the current workbench instance and those that have. In the tour screenshot, all of the modules appeared in grey italic text. This is because a freshly-opened workbench will have no modules active. 
+The modules pane distinguishes between modules that have not yet been activated in the current workbench instance and those that have. In the tour screenshot, all of the modules appeared in grey italic text. This is because a freshly-opened workbench will have no modules active.
 </p><p>
 To activate a module, and all of its upstream modules, you can do any of the following:
 <ol>
@@ -144,7 +140,7 @@ When an activation is started, the transcript will be cleared of any old text au
 </p><p>
 Avail modules are essentially directions to the Avail runtime. For example, module declarations and definitions tell the runtime to recognize and take meaning from certain specific text and syntax. Modules can also make the runtime do something, as opposed to learning something: print statements. Because the compilation of source modules and the loading of binary modules involves the runtime processing the directives in those modules, print statement output is displayed in the transcript pane in <code><span style="color:black">standard output text</span></code> while modules are being compiled or loaded. The Avail standard library does not contain any print-to-standard-out statements, and such side-effects are highly discouraged in finished products; however, using temporary print statements to help you debug your code can be very advantageous.
 </p><p>
-Once a module activates successfully, i.e. without any compilation or dependency resolution errors, its name becomes un-italicized and turns from grey to black. After the full activation process is complete, the progress bar disappears and the transcript window displays the informational message <code><span style="color:blue">Done (###s).</span></code> where ### is the total activation process time in seconds. 
+Once a module activates successfully, i.e. without any compilation or dependency resolution errors, its name becomes un-italicized and turns from grey to black. After the full activation process is complete, the progress bar disappears and the transcript window displays the informational message <code><span style="color:blue">Done (###s).</span></code> where ### is the total activation process time in seconds.
 </p><p>
 <h4>Debugging</h4>
 When there is an error in the compilation of your target module or one of its ancestors, the progress bar will disappear and the transcript pane will display, in <code><span style="color:red">standard error text</span></code>, a code snippet of the offending module source followed by a veritable <a class="offsite" href="http://en.wikipedia.org/wiki/Sm%C3%B6rg%C3%A5sbord">smörgåsbord</a> of suggestions about what you might have done wrong. When the target module has ancestors, it's likely that at least one of them compiled and activated successfully. So while your buggy module and all of its descendants will remain grey, italic, and sad, the buggy module's ancestors may be standing proud. When you've made a change and are hopeful it will result in successful compilation, or at least want to see what it does wrong now, try activating the buggy module or any module downstream from it. Remember: any new activation request will clear the previous transcript contents, so don't try to activate something until after you are certain you can live with never seeing the current contents of the transcript pane again.
@@ -163,7 +159,7 @@ A semantically correct send of an entry point, AKA a command requires that:
 	<li>The entry point is activated.</li>
 	<li>The entry point name is in the text input field, and all argument blanks have been replaced with arguments.</li>
 	<li>The supplied arguments are semantically correct for the message.</li>
-	<li>The cursor is in the text input field, and the Enter key is pressed!</li> 
+	<li>The cursor is in the text input field, and the Enter key is pressed!</li>
 </ul>
 </p><p>
 Unlike activation attempts, commands do <em>not</em> clear the existing contents of the transcript. Instead, new text is appended. (If you would like to clear the transcript, you can always do so manually.) Your command is echoed to the next line of the transcript in <code><span style="color:magenta">magenta</span></code>. Text output produced by the entry point is displayed in <code><span style="color:black">black</span></code>. While your entry point is running, the text entry field background is green, indicating that any text submitted is interpreted as input to the running process, and your input text is echoed to the transcript in <code><span style="color:green">green</span></code>. If the entry point you invoked runs and finishes quickly without requiring user input, you might not even see the field's background color change.
@@ -180,7 +176,7 @@ Now that you know every nook and cranny of the Avail workbench, go give it a spi
 	</tr>
 </table>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
+{% include body-bottom.html %}
 
 	</body>
 

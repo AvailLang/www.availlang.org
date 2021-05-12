@@ -1,26 +1,22 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 	<head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-	
+
+{% include head.html %}
+
 		<title>Avail - Type System</title>
-	
+
 	</head>
 
 	<body class="gradient-logo">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
+
+{% include body-top.html %}
 
 		<h2 class="content-title"><code>type ≝ {⊤}ᵀ</code></h2>
 <div class="svg-wrapper">
-<!--#include virtual="/_images/type-system/type-system-type-focus.svg"-->
+<!--#include virtual="/images/type-system/type-system-type-focus.svg"-->
 </div>
 <p>
 Since <code><a href="./types-top.html">⊤</a></code> is the most general type, then, by the <a href="./metatypes.html">law of metacovariance</a>, <code>{⊤}ᵀ</code> is the most general <a class="glossary" href="/about-avail/glossary/metatype.html">metatype</a>. This type is usually referred to as <code>type</code> in Avail code. Every type is an instance of <code>type</code> and every metatype is a subtype of <code>type</code>. It is a sibling of <code><a href="./types-nontype.html">nontype</a></code>, and every value is either an instance of <code>nontype</code> or <code>type</code>.
@@ -45,7 +41,7 @@ Assert: any ∈ type;</div>
 	</tr>
 </table>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
+{% include body-bottom.html %}
 
 	</body>
 

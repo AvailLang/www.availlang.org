@@ -1,14 +1,10 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 	<head>
-	
-<!--#include virtual="/_include/head.ssi" -->
+
+{% include head.html %}
 
 		<title>Modules - Name Resolution</title>
 		<style>
@@ -20,14 +16,14 @@
 	</head>
 
 	<body class="gradient-logo">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
-<!--#include virtual="/_include/sh-head.ssi" -->
+
+{% include body-top.html %}
+{% include sh-head.html %}
 
 <h2 class="content-title">Name Resolution</h2>
 
 <figure class="top-right-screenshot">
-    <img src="/_images/modules/import-export-intersection.png" alt="A Venn diagram showing that the 'Uses' section is an import section, the 'Names' section is an export section, and the 'Extends' section is both an import and export section." width="220" height="260"/>
+    <img src="/images/modules/import-export-intersection.png" alt="A Venn diagram showing that the 'Uses' section is an import section, the 'Names' section is an export section, and the 'Extends' section is both an import and export section." width="220" height="260"/>
     <figcaption>The flow of names into, out of, and through an Avail module is controlled by its header sections.</figcaption>
 </figure>
 
@@ -55,7 +51,7 @@
 <p><strong>Module resolution</strong> is the process by which names are resolved to atoms.</p>
 
 <div class="svg-wrapper">
-<!--#include virtual="/_images/modules/name-resolution.svg"-->
+<!--#include virtual="/images/modules/name-resolution.svg"-->
 </div>
 
 <dl>
@@ -89,9 +85,9 @@ where <code>A<sub>0</sub></code> through <code>A<sub>n</sub></code> are the cand
 
 	<ul>
 	<li><code>|C| = 1</code>: Only one imported atom, <code>A<sub>0</sub></code>, is named <code>N</code>, therefore <code>C</code> is
-		
+
 		<blockquote style="font-size: 14pt"><code>C &#8797; {A<sub>0</sub>}</code>.</blockquote>
-	
+
 	Name resolution has succeeded: <code>N</code> is resolved to <code>A<sub>0</sub></code>.</li>
 	<li class="resolution-rules"><code>|C| &ge; 2</code>: <code>N</code> is a viable name for any element of <code>C</code>, so <code>N</code> has <strong>surface ambiguity</strong>. It may be possible <a href="#typeInfo">to use type information</a> to further disambiguate <code>N</code>.</li>
 	</ul>
@@ -112,7 +108,7 @@ where <code>A<sub>i</sub></code>, <code>A<sub>j</sub></code>, <code>A<sub>k</sub
 	<li class="resolution-rules"><code>|C&prime;| = 1</code>: Exactly one visible method definition accepts the supplied argument types, therefore <code>C&prime;</code> is
 
 		<blockquote style="font-size: 14pt"><code>C&prime; &#8797; {A<sub>i</sub>}</code>.</blockquote>
-	
+
 	Name resolution has succeeded: <code>N</code> is resolved to <code>A<sub>i</sub></code>.</li>
 	<li class="resolution-rules"><code>|C&prime;| = 2</code>: Multiple method definitions accept the supplied argument types, i.e., the available type information was insufficient to uniquely disambiguate <code>N</code>. Name resolution has failed: <code>N</code> is semantically ambiguous.</li>
 	</ul>
@@ -188,8 +184,8 @@ Method "_+_" is
 	</tr>
 </table>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
-<!--#include virtual="/_include/sh-bottom.ssi" -->
+{% include body-bottom.html %}
+{% include sh-bottom.html %}
 
 	</body>
 

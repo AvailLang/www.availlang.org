@@ -1,31 +1,27 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 <head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-	
+
+{% include head.html %}
+
 		<title>Avail - Glossary</title>
-	
+
 	</head>
 
 	<body class="gradient-logo">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
-		
+
+{% include body-top.html %}
+
 <h2 class="content-title">Downstream</h2>
 
 <p>A module is downstream of another module if the first cannot be compiled until the second has been compiled. <a href="upstream.html">Upstream</a> and downstream are reciprocal relationships based on the notion of module dependency: a module depends upon another (upstream) module, directly or indirectly, if it consumes services made available by that module.</p>
 
 <p>
-<strong>Example:</strong> 
+<strong>Example:</strong>
 <div class="svg-wrapper">
-<!--#include virtual="/_images/modules/upstream-downstream.svg"-->
+<!--#include virtual="/images/modules/upstream-downstream.svg"-->
 </div>
 </p>
 
@@ -42,7 +38,7 @@
 	</div>
 </tr>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
+{% include body-bottom.html %}
 
 	</body>
 

@@ -1,15 +1,11 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 	<head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-	
+
+{% include head.html %}
+
 		<title>Modules - Module Resolution</title>
 		<style>
 		.resolution-rules
@@ -20,9 +16,9 @@
 	</head>
 
 	<body class="gradient-logo">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
-		
+
+{% include body-top.html %}
+
 <h2 class="content-title">Module Resolution</h2>
 
 <p>Recall that <a href="./private-imports-section.html">import targets</a> are specified by their <a href="./module-name-section.html">local names</a> only. It is perfectly legal that there should be many <a href="./module-discovery.html">discoverable</a> modules that share the same local name. Yet it is essential that an import target should be unambiguously understood, lest the wrong module be selected to satisfy an import.</p>
@@ -44,7 +40,7 @@
 <p>Following is a detailed description of the module resolution algorithm: <sup><a href="#fn1">[1]</a></sup></p>
 
 <div class="svg-wrapper">
-<!--#include virtual="/_images/modules/module-resolution.svg" -->
+<!--#include virtual="/images/modules/module-resolution.svg" -->
 </div>
 
 <dl>
@@ -240,7 +236,7 @@ This file exists, so resolution succeeds.</li>
 	</tr>
 </table>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
+{% include body-bottom.html %}
 
 	</body>
 

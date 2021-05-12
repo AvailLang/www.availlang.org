@@ -1,22 +1,18 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 <head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-	
+
+{% include head.html %}
+
 		<title>Avail - Rich's Blog</title>
-	
+
 	</head>
 
 	<body class="gradient-logo">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
+
+{% include body-top.html %}
 <h2 class="content-title">So many types, so little CPU time</h2>
 
 <div class="content-meta-info">October 5, 2013</div>
@@ -62,9 +58,9 @@
 
 <p>Given the above descriptions, you should be able to parse my earlier description of the Avail type system, <span style="color: black;"><em>"...an infinitely calculable Structural type system that is both Strongly Statically typed as well as Strongly Dynamically typed and contains both implicit and explicit typing..."</em></span>.  The only part I haven't described is that "infinitely calculable" bit.  See, Avail's type system is infinite in nature, but as we've learned from Square One, you can't just sit around and wait for infinity to be calculated.  When you load up Avail, it doesn't take until the end of time to load because it <em>does not</em> precompute the entire type system.  However, it <em>does</em> have the ability to recognize an infinite number of types.  In this way, Avail's type system is <em>infinitely calculable</em>.</p>
 
-<p>You might be wondering how there can be an infinite number of types.  Let's consider the Avail type, integer.  There are infinitely many integers.  To understand the implications of that, take for example the integer range <code>[2..4]</code>.  This is a <a href="./BERA002.html#subtype">subtype</a> of the type integer, however integer is not the only <a href="./BERA002.html#supertype">supertype</a> of this integer range.  It is actually a subtype of infinitely many other distinct subtypes of integers.  One can easily illustrate this by constructing the integer type range, <code>[2..n]</code>, where <code>n</code> is an integer strictly greater than 4.  There are infinitely many integers that fit this criteria.  Subtyping integers in this way alone provides an infinite number of types.</p> 
+<p>You might be wondering how there can be an infinite number of types.  Let's consider the Avail type, integer.  There are infinitely many integers.  To understand the implications of that, take for example the integer range <code>[2..4]</code>.  This is a <a href="./BERA002.html#subtype">subtype</a> of the type integer, however integer is not the only <a href="./BERA002.html#supertype">supertype</a> of this integer range.  It is actually a subtype of infinitely many other distinct subtypes of integers.  One can easily illustrate this by constructing the integer type range, <code>[2..n]</code>, where <code>n</code> is an integer strictly greater than 4.  There are infinitely many integers that fit this criteria.  Subtyping integers in this way alone provides an infinite number of types.</p>
 
-<p>To sum it all up, what <em>infinitely calculable</em> mostly means is that Avail does not need to explicitly know about a type that exists in its type system before a type is presented to Avail by a programmer.  Once Avail is told by a programmer about the existence of one of its types, Avail can then tell you a lot about that type and it'll know what can and can't be done with it.  In this way Avail is like a sleepy old librarian.  She couldn't tell you the name and contents of every book in the library, but if you hand the librarian a book, she can walk you to where that book came from and tell you all sorts of things about that book and even answer any questions you might have about the books related to it.  Of course, this particular library is infinite in size and filled with an infinite number of books.  But like <a class="offsite" href="http://en.wikipedia.org/wiki/Hilbert's_paradox_of_the_Grand_Hotel">Hilbert's Grand Hotel</a>, there is always room in Avail's type system for more books!</p>  
+<p>To sum it all up, what <em>infinitely calculable</em> mostly means is that Avail does not need to explicitly know about a type that exists in its type system before a type is presented to Avail by a programmer.  Once Avail is told by a programmer about the existence of one of its types, Avail can then tell you a lot about that type and it'll know what can and can't be done with it.  In this way Avail is like a sleepy old librarian.  She couldn't tell you the name and contents of every book in the library, but if you hand the librarian a book, she can walk you to where that book came from and tell you all sorts of things about that book and even answer any questions you might have about the books related to it.  Of course, this particular library is infinite in size and filled with an infinite number of books.  But like <a class="offsite" href="http://en.wikipedia.org/wiki/Hilbert's_paradox_of_the_Grand_Hotel">Hilbert's Grand Hotel</a>, there is always room in Avail's type system for more books!</p>
 
 
 <table class="book-nav">
@@ -77,7 +73,7 @@
 	</tr>
 </table>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
+{% include body-bottom.html %}
 
 	</body>
 

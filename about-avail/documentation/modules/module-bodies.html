@@ -1,16 +1,12 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 	<head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-<!--#include virtual="/_include/sh-head.ssi" -->
-	
+
+{% include head.html %}
+{% include sh-head.html %}
+
 		<title>Modules - Module Bodies</title>
 		<style>
 		.top-level-statement
@@ -21,9 +17,9 @@
 	</head>
 
 	<body class="gradient-logo">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
-		
+
+{% include body-top.html %}
+
 <h2 class="content-title">Module Bodies</h2>
 
 <p>Every module includes a module body. A <strong>module body</strong> is a lexical container of Avail source code, and as such comprises a sequence of top-level statements. The body of a module begins immediately after the keyword <code>Body</code>, which must always be the last keyword to occur within a <a href="./module-headers.html">module header</a>.</p>
@@ -105,8 +101,8 @@ Method "Next Fibonacci number" is
 	</tr>
 </table>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
-<!--#include virtual="/_include/sh-bottom.ssi" -->
+{% include body-bottom.html %}
+{% include sh-bottom.html %}
 
 	</body>
 

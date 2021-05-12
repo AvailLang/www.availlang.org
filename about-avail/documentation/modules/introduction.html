@@ -1,23 +1,19 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 	<head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-	
+
+{% include head.html %}
+
 		<title>Modules - Introduction</title>
-	
+
 	</head>
 
 	<body class="gradient-logo">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
-		
+
+{% include body-top.html %}
+
 <h2 class="content-title">Introduction</h2>
 
 <p>An Avail program &mdash; be it a system, library, or application &mdash; comprises a collection of modules. A <strong>module</strong> is a container for Avail code. These statements are loose enough to be true, in different ways, at both compile time and run time.</p>
@@ -37,7 +33,7 @@
 </ul>
 
 <div style="float: right;" class="floating-svg-wrapper">
-<!--#include virtual="/_images/modules/upstream-downstream.svg" -->
+<!--#include virtual="/images/modules/upstream-downstream.svg" -->
 </div>
 
 <p>A module <code class="module">A</code> is <strong>upstream</strong> of a module <code class="module">B</code> if <code class="module">A</code> must be compiled before <code class="module">B</code> can be compiled. A module <code class="module">C</code> is <strong>downstream</strong> of a module <code class="module">D</code> if <code class="module">C</code> cannot be compiled until <code class="module">D</code> has been compiled. So upstream and downstream are reciprocal relationships based on the notion of <strong>module dependency</strong>: a module depends upon another (upstream) module, directly or indirectly, if it consumes services made available by that module.</p>
@@ -63,7 +59,7 @@
 	</tr>
 </table>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
+{% include body-bottom.html %}
 
 	</body>
 

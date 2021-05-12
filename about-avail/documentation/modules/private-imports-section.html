@@ -1,30 +1,26 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 	<head>
-	
-<!--#include virtual="/_include/head.ssi" -->
+
+{% include head.html %}
 
 		<script language="javascript" type="text/javascript">
 			function autoResize(id) {
 				var newheight;
 				var newwidth;
-				
+
 				if(document.getElementById) {
 					newheight = document.getElementById(id).contentWindow.document.body.scrollHeight;
 					newwidth = document.getElementById(id).contentWindow.document.body.scrollWidth;
 				}
-				
+
 				document.getElementById(id).height = (newheight) + "px";
 				document.getElementById(id).width = (newwidth) + "px";
 			}
 		</script>
-	
+
 		<title>Modules - Private Imports Section</title>
 		<style>
 		.import-rules
@@ -35,16 +31,16 @@
 	</head>
 
 	<body class="gradient-logo">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
-		
+
+{% include body-top.html %}
+
 <h2 class="content-title">Private Imports Section</h2>
 
 <p>The <code>Uses</code> keyword begins the <strong>private imports section</strong>. The contents of this section are zero or more import specifications separated by <em>commas</em> <code>,</code> <code class="unicode">(U+002C)</code>. An <strong><a id="import-specification">import specification</a></strong> constitutes a request to import the exported names of a given module, called the <strong>import target</strong>. These names are available for private use only; they are not re-exported to downstream modules. An import specification satisfies the <code>ImportSpecification</code> <a class="offsite" href="http://en.wikipedia.org/wiki/Syntax_diagram">syntax diagram</a>,</p>
 
 <div class="svg-wrapper">
 <p style="text-align: center"><code>ImportSpecification</code></p>
-<img id="ImportSpecification" src="/_images/modules/import-specification.svg" class="embedded-svg">
+<img id="ImportSpecification" src="/images/modules/import-specification.svg" class="embedded-svg">
 </div>
 
 <p>where the <a class="offsite" href="http://en.wikipedia.org/wiki/Terminal_and_nonterminal_symbols">terminal</a> <code>module</code> is a <a href="/about-avail/documentation/type-system/types-string.html">string literal</a> that specifies the <a href="./module-name-section.html">local name</a> of the import target. The import target is, by definition, an upstream module.</p>
@@ -53,7 +49,7 @@
 
 <div class="svg-wrapper">
 <p style="text-align: center"><code>VersionList</code></p>
-<img src="/_images/modules/version-list.svg" class="embedded-svg">
+<img src="/images/modules/version-list.svg" class="embedded-svg">
 </div>
 
 <p>where <code>version</code> is a string literal that denotes an acceptable version of the import target. If the import target advertises no versions in common with the required versions list, then the compiler or executor aborts linkage of the dependent module.</p>
@@ -64,7 +60,7 @@
 
 <div class="svg-wrapper">
 <p style="text-align: center"><code>CustomImportRulesList</code></p>
-<img src="/_images/modules/custom-import-rules-list.svg" class="embedded-svg">
+<img src="/images/modules/custom-import-rules-list.svg" class="embedded-svg">
 </div>
 
 <p>where each of the terminals <code>name</code>, <code>rename</code>, and <code>excludedName</code> are string literals. The sundry paths through the syntax diagram represent <strong>custom import rules</strong>, which come in four varieties:</p>
@@ -172,7 +168,7 @@ Body</div></div>
 	</tr>
 </table>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
+{% include body-bottom.html %}
 
 	</body>
 

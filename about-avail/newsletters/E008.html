@@ -1,22 +1,18 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 	<head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-	
+
+{% include head.html %}
+
 		<title>Avail Newsletters, Edition #8: Type-filtered parser.</title>
-	
+
 	</head>
 
 	<body class="gradient-logo">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
+
+{% include body-top.html %}
 
 <h2 class="content-title">Type filtering - the sparkly new compiler</h2>
 
@@ -62,7 +58,7 @@
 <p>Instruction 2 pushes an empty list onto the parse stack.  Note that because of the parallel nature of the parsing, this is not a <em>destructive</em> push.  Rather, when the parser runs this instruction it will already be given a parse stack, and this instruction produces another parse stack with one additional empty list append to it, which it then passes to the next instruction(s).</p>
 
 <p>Instruction 3 parses a complete expression from the source, pushing it onto the stack.  Like above, a new stack is created with the expression pushed on it.  In a similar manner, the current parse position is also passed along in the same way (skipping over the tokens of the expression that was parsed), since multiple threads may be working on parsing nearby regions of a source file.</p>
-	
+
 <p>Note that due to the nature of Avail syntax, there may be many possible expressions at that position in the source code.  For example, if the source code has "{1+2+3,99}" at the initial parsing position, the first instruction will move past the "{", the second instruction will stay in the same parse position but pass along a parse stack with an empty list added to the end, and the third expression, will, well, do a multi-way fork.  In one fork, the expression "1" (a literal phrase) will end up on the stack, the parse position will be after the "1" token, and the next instruction will be #4.  In another fork, "1+2" (a send phrase of $"_+_" with two literals as arguments) will have been pushed, and the parse position located just after the "2".  Another fork may have "(1+2)+3" pushed, with a parse position just before the ",".</p>
 
 <p>All of these possibilities will be explored in parallel (assuming there are enough threads available and they're not busy doing something else).  If running all of these forks to their conclusion leads to multiple ways to parse a top-level statement, an ambiguity error is reported.  If there are no ways found to parse a complete top-level statement, it will report the diagnostics accumulated while attempting to parse the rightmost few locations that were reached.  This seems to work reasonably well in practice, and is usually able to report things like what tokens were expected but not found at or near the problem.</p>
@@ -93,14 +89,14 @@
 </pre>
 
 <p>The old compiler won't be able to complain about a string nonsensically appearing as the left argument of "_+_" (since string concatenation is "_++_") until it got past the 5.  The new compiler uses type filtering, and can report the problem as soon as it sees there isn't a second "+".  Technically, it still accepts all the same expressions that the old compiler could accept, it just rejects the wrong ones both earlier in time and earlier on the page (i.e., more leftward).  It does this by checking the type of each argument as it goes.  As with most things in Avail, it's much deeper than that, but that was the primary motivation.</p>
-	
+
 <p>I added a TYPE_CHECK_ARGUMENT, which tested that the top of stack conformed to some type.  That type had to come from a method definition, not a method (or message bundle).  So each method definition had to have its own sequence of parsing instructions.  But method definitions are implementations of a method, and a method might be associated with multiple message bundles (due to renames).  So I needed a thing called a parsing plan that bridged the relationship between method definition and message bundle.  While the Expression trees stayed with the message bundle, the parsing instructions had to be tied to the parsing plan, specialized by the argument types.</p>
 
 <p>Type checks were much slower than simple string lookups for token dispatching (PARSE_PART).  But many parsing plans might be testing for the same type.  So I could build a map from type to successor message bundle tree to deal with efficiently implementing TYPE_CHECK_ARGUMENT.  Except unlike strings, types have a relationship to each other: subtyping.  It would have to look at every key of the map, do a type test of the argument against it, and visit the successor message bundle trees for each type that the argument conformed to.  That would be <em>way</em> too slow.</p>
 
 <p>The solution was related to the multi-method dispatch mechanism.  I built a variation of the type-dispatch tree that it used, where a tree of type tests would keep narrowing down the possibilities until only one remained (or trigger a run-time dispatch ambiguity error).  For the compiler, it would start with the latest argument type and navigate down the type tree to reach a leaf node which contained the next message bundle tree to visit.  That message bundle tree would be customized to include exactly those message bundles that should still be possible, given the sequence of type tests that the latest argument passed and failed on the way down.  So it's effectively doing the type checks in aggregate, just like the rest of the parsing.</p>
 
-<p>Repeated arguments (guillemet groups) presented an interesting challenge.  Tuple types are left-heterogenous/right-homogenous, meaning the initial element types can vary from each other, but after some finite point the successive elements must all have the same type constraint.  If I created a method definition for the set constructor that said its sole (repeated, tuple) argument had type &lt;integer|0..>, everything is fine, but instead if I say the argument has type &lt;integer, float, string|0..>, we'll want to different type tests on different iterations of the loop.  So I simply unrolled the loops until it reached the homogenous part.  In this example, the instruction sequence would try to parse an integer, try to parse a float, and then loop while parsing strings.</p>
+<p>Repeated arguments (guillemet groups) presented an interesting challenge.  Tuple types are left-heterogeneous/right-homogenous, meaning the initial element types can vary from each other, but after some finite point the successive elements must all have the same type constraint.  If I created a method definition for the set constructor that said its sole (repeated, tuple) argument had type &lt;integer|0..>, everything is fine, but instead if I say the argument has type &lt;integer, float, string|0..>, we'll want to different type tests on different iterations of the loop.  So I simply unrolled the loops until it reached the homogenous part.  In this example, the instruction sequence would try to parse an integer, try to parse a float, and then loop while parsing strings.</p>
 
 <p>After getting this much working (with tons of elided detail), performance showed the parsing was dominated by type tests.  There were simply too many false trails requiring arguments that had just been parsed to be type-tested via large type-dispatch trees.  Looking at some of these cases, I realized that I could eliminate the vast majority of those cases simply by looking at what token came next.  I toyed with calculating lookahead sets, but I eventually stumbled on the technique of hoisting PARSE_PART instructions to the left past neighboring TYPE_CHECK_ARGUMENT instructions.  The technique is far more general now.  It <em>greatly</em> reduces the number of type checks that have to be performed during compilation.  See the git commit log for October-November 2016 for more details.</p>
 
@@ -130,7 +126,7 @@
 	</tr>
 </table>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
+{% include body-bottom.html %}
 
 	</body>
 

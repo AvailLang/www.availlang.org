@@ -1,27 +1,23 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 <head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-	
+
+{% include head.html %}
+
 		<title>Avail - Glossary</title>
-	
+
 	</head>
 
 	<body class="gradient-logo">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
-		
+
+{% include body-top.html %}
+
 <h2 class="content-title">Statement</h2>
 
 <p>
-An <a href="./expression.html">expression</a> with a return type of <a href="./top.html">⊤</a> that is terminated with a semicolon. A statement is the smallest unit that can be understood as a complete directive. 
+An <a href="./expression.html">expression</a> with a return type of <a href="./top.html">⊤</a> that is terminated with a semicolon. A statement is the smallest unit that can be understood as a complete directive.
 </p><p>
 If a programmer wants to run a value-returning expression for its side-effects but will not use its return value, this value-returning expression can be turned into a ⊤-returning expression by passing it as the argument to the (⊤-returning, argument-value-discarding) method <code>"Ignore:_"</code>.
 </p>
@@ -31,7 +27,7 @@ If a programmer wants to run a value-returning expression for its side-effects b
 	</div>
 </tr>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
+{% include body-bottom.html %}
 
 	</body>
 

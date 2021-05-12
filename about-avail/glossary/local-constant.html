@@ -1,23 +1,19 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 <head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-	
+
+{% include head.html %}
+
 		<title>Avail - Glossary</title>
-	
+
 	</head>
 
 	<body class="gradient-logo">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
-		
+
+{% include body-top.html %}
+
 <h2 class="content-title">Local Constant</h2>
 
 <p>A local constant is one that is defined inside a function definition. A local constant definition may be bound to any expression whatsoever, including one that refers to variables and arguments. Its type is the same as the inferred type of the expression. The local constant definition itself is a statement, and therefore its inferred type is <code>⊤</code>.</p>
@@ -44,7 +40,7 @@
 	</div>
 </tr>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
+{% include body-bottom.html %}
 
 	</body>
 

@@ -1,6 +1,6 @@
 DOT       = dot
 MV        = mv
-TARGETDIR = ../../../../../_images/type-system/
+TARGETDIR = ../../../../../images/type-system/
 
 %.svg: %.gv
 	$(DOT) -Tsvg -o $@ $<

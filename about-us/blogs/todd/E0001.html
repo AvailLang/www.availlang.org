@@ -1,22 +1,18 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 	<head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-	
+
+{% include head.html %}
+
 		<title>Avail - Todd's Blog</title>
-	
+
 	</head>
 
 	<body class="gradient-logo">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
+
+{% include body-top.html %}
 
 <a href="./index.html"><h4 class="content-supertitle">Programming Profundities: The Blog of Todd L Smith</h4></a>
 
@@ -63,11 +59,11 @@
 <p>
 	Here's a screenshot of the current version of the tool:
 </p>
-<img src="/_images/blogs/todd/E0001-TestClient-Wumpus.png" alt="The web workbench playing Wump the Wumpus. Well, losing really.">
+<img src="/images/blogs/todd/E0001-TestClient-Wumpus.png" alt="The web workbench playing Wump the Wumpus. Well, losing really.">
 <p>
 	And here it is again, with the command console open:
 </p>
-<img src="/_images/blogs/todd/E0001-TestClient-Availuator.png" alt="The web workbench with an Availuator transcript and an open command console.">
+<img src="/images/blogs/todd/E0001-TestClient-Availuator.png" alt="The web workbench with an Availuator transcript and an open command console.">
 <p>
 	The web workbench serves primarily to prototype an Avail web client. The command console exists to illustrate how interaction between the client and the server happens, and assists in debugging. If you are interested in the web workbench, then start the Avail server (<code>com.avail.server.AvailServer</code>) and then navigate your web browser to <code>file://$AVAIL_HOME/web/ide/TestClient.html</code>. The web workbench is cool, but it is not the real goal.
 </p>
@@ -97,16 +93,16 @@
 <p>
 	On Sunday October 26th, to make Cislyn smile I decided to build a custom web UI for <em>"The Ship of Stories"</em>, the choosable path adventure that she built using Avail. The following snapshots are a short sequence of play, with the selected choices highlighted in yellow:
 </p>
-<img src="/_images/blogs/todd/E0001-Princess%201.png" alt="The web workbench playing The Ship of Stories on the main page.">
-<img src="/_images/blogs/todd/E0001-Princess%202.png" alt="The web workbench playing The Ship of Stories as the Princess.">
-<img src="/_images/blogs/todd/E0001-Princess%203.png" alt="The web workbench playing The Ship of Stories as the Princess breaking out.">
-<img src="/_images/blogs/todd/E0001-Princess%204.png" alt="The web workbench playing The Ship of Stories… Well, not any more.">
+<img src="/images/blogs/todd/E0001-Princess%201.png" alt="The web workbench playing The Ship of Stories on the main page.">
+<img src="/images/blogs/todd/E0001-Princess%202.png" alt="The web workbench playing The Ship of Stories as the Princess.">
+<img src="/images/blogs/todd/E0001-Princess%203.png" alt="The web workbench playing The Ship of Stories as the Princess breaking out.">
+<img src="/images/blogs/todd/E0001-Princess%204.png" alt="The web workbench playing The Ship of Stories… Well, not any more.">
 <p>
 	To try the web UI yourself, start the Avail server and then navigate your browser to <code>file://$AVAIL_HOME/web/clients/The%20Ship%20of%20Stories/Client.html</code>.
 </p>
 <p>
 	We have a pretty big vision for Avail on the web, and I promise to blog about it soon.
-</p>		
+</p>
 
 <table class="book-nav">
 	<tr>
@@ -114,7 +110,7 @@
 	</tr>
 </table>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
+{% include body-bottom.html %}
 
 	</body>
 

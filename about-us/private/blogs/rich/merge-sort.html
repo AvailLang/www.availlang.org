@@ -1,23 +1,19 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 	<head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-<!--#include virtual="/_include/sh-head.ssi" -->
-	
+
+{% include head.html %}
+{% include sh-head.html %}
+
 		<title>Avail - Tutorials - Merge Sort</title>
-	
+
 	</head>
 
 	<body class="gradient-logo">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
+
+{% include body-top.html %}
 
 <h2 class="content-title">Merge Sort</h2>
 
@@ -35,7 +31,7 @@ localhost:~/avail$ </div>
 
 <p>Just feel the optimism effervescing from those happy pixels!</p>
 
-		
+
 <h3><a id="Prerequisites">Prerequisites</a></h3>
 <p>There are no prerequisites for appreciating this tutorial. You don't need to know anything about programming in Avail, so this is an excellent place to begin.</p>
 
@@ -50,9 +46,9 @@ localhost:~/avail$ </div>
 
 <h3><a id="Sources">Complete Sources</a></h3>
 <ul>
-<li><code><a href="/_examples/Hello%20World.avail"><img src="/_images/download-icons/avail.png" height="24px" style="padding-bottom:14px;padding-right:4px;">Hello World.avail</a></code></li>
+<li><code><a href="/examples/Hello%20World.avail"><img src="/images/download-icons/avail.png" height="24px" style="padding-bottom:14px;padding-right:4px;">Hello World.avail</a></code></li>
 </ul>
-   
+
 <h3><a id="Walkthrough">Walkthrough</a></h3>
 <p>An Avail program is described by a collection of source modules. A source module is just a plain-text file that encodes some part of an Avail program. Over the course of many tutorials, you will glean what exactly goes into a source module. For now, let's concentrate on the two major parts of every source module: the <strong>module header</strong> and the <strong>module body</strong>.</p>
 
@@ -120,8 +116,8 @@ Method "Greet" is [ Print: "Hello, world!\n"; ];
 	</div>
 </tr>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
-<!--#include virtual="/_include/sh-bottom.ssi" -->
+{% include body-bottom.html %}
+{% include sh-bottom.html %}
 
 	</body>
 

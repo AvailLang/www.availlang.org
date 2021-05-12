@@ -1,23 +1,19 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 	<head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-<!--#include virtual="/_include/sh-head.ssi" -->
-	
+
+{% include head.html %}
+{% include sh-head.html %}
+
 		<title>Avail - Tutorials - Guess the Number</title>
-	
+
 	</head>
 
 	<body class="gradient-logo">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
+
+{% include body-top.html %}
 
 <h2 class="content-title">Guess the Number</h2>
 
@@ -31,7 +27,7 @@
 <p>Playing the game should look something like this:</p>
 
 <figure class="full-line-screenshot">
-    <a href="/_images/examples/guess-the-number/transcript.png"><img src="/_images/examples/guess-the-number/transcript.png" alt="A sample transcript of &quot;Play guess a number between_and_&quot;."/></a>
+    <a href="/images/examples/guess-the-number/transcript.png"><img src="/images/examples/guess-the-number/transcript.png" alt="A sample transcript of &quot;Play guess a number between_and_&quot;."/></a>
     <figcaption>The Avail workbench after running <code class="command">"Play guess a number between_and_"</code>.</figcaption>
 </figure>
 
@@ -67,7 +63,7 @@
 
 <h3><a id="Sources">Complete Sources</a></h3>
 <ul>
-<li><code><a href="/_examples/guess-the-number/Guess%20the%20Number.avail"><img src="/_images/download-icons/avail.png" alt="Avail source module logo" class="download-list-icon">Guess the Number.avail</a></code></li>
+<li><code><a href="/examples/guess-the-number/Guess%20the%20Number.avail"><img src="/images/download-icons/avail.png" alt="Avail source module logo" class="download-list-icon">Guess the Number.avail</a></code></li>
 </ul>
 
 <h3><a id="Walkthrough">Walkthrough</a></h3>
@@ -166,7 +162,7 @@ Private method "tries to guess_from range_" is
 <p><strong>Lines 61-76</strong> constitute our first control structure. The method <code>"Do_until_alternate with_"</code> implements a loop. Each of its arguments are <code><a href="/about-avail/documentation/type-system/types-function.html">function</a></code>s. The first argument is the <strong>body</strong> of the loop, that is, the central part that is intended to be repeated. The second argument is the <strong>predicate</strong>, the condition that controls whether to evaluate the body again. The third argument is the <strong>interstice</strong>, and is only evaluated between two evaluations of the body. This kind of loop works like this:</p>
 
 <div class="svg-wrapper" style="margin: auto">
-<img src="/_images/examples/guess-the-number/do-until-alternate_with.svg" style="float: left" class="embedded-svg">
+<img src="/images/examples/guess-the-number/do-until-alternate_with.svg" style="float: left" class="embedded-svg">
 <iframe srcdoc="
 <small>
 <ol>
@@ -318,7 +314,7 @@ Private method "comment for_tries given a range of_" is
 <p>Well&hellip; What happens if the user supplies perverse values to <code>"Play guess a number between_and_"</code>? It says that it requires its arguments to be <code>integer</code>s, so we don't expect to be able to build a command with totally inappropriate arguments. Let's see what happens if we try.</p>
 
 <figure class="full-line-screenshot">
-    <a href="/_images/examples/guess-the-number/bad-arguments.png"><img src="/_images/examples/guess-the-number/bad-arguments.png" alt="Attempting to &quot;Play guess a number between_and_&quot;. with Flintstones."/></a>
+    <a href="/images/examples/guess-the-number/bad-arguments.png"><img src="/images/examples/guess-the-number/bad-arguments.png" alt="Attempting to &quot;Play guess a number between_and_&quot;. with Flintstones."/></a>
     <figcaption>An erroneous send of <code>"Play guess a number between_and_"</code>.</figcaption>
 </figure>
 <p>See? The compiler handily defeated our puerile attempt at flippancy. So we'll just have to try harder to break the program. How about we run the command with a <code>minimum</code> that is larger than the <code>maximum</code>? The parameter declarations just say that the arguments have to be integers, not that the first one has to be smaller than the second one. In fact, there isn't any way to define the parameter types to express this idea short of resorting to explicit ranges like <code>[50..100]</code> and <code>[200..300]</code>. But we can see that a command like <code class="command">Play guess a number between 20 and 10</code> is stupid, so what can we do about it?</p>
@@ -359,7 +355,7 @@ Semantic restriction "Play guess a number between_and_" is
 <p>So let's concentrate on the conditional. <strong>Line 118</strong> asks if the lower bound of <code>minimumType</code> is greater than the upper bound of <code>maximumType</code>. If so, then there is no instance of <code>minimumType</code> that is smaller than any instance of <code>maximumType</code>. When that is the case, then it is guaranteed that the user is trying to supply the arguments in the wrong order. <strong>Lines 120-121</strong> use <code>"Reject parse,expected:_"</code> to instruct the compiler to reject the parse of this call site. The compiler records the supplied message to report if and only if it should later decide to terminate the exploration of a top-level statement's meaning because every possible parse was invalid in some way. If the compiler does decide to abandon the parse, then this message will be issued when the compiler's error report is printed. Since this semantic restriction will only run on commands that represent external call sites of <code>"Play guess a number between_and_"</code>, our custom parse rejection is pretty much guaranteed to show up. If that was a whole lot of technobabble, then hopefully a screenshot will clear things up:</p>
 
 <figure class="full-line-screenshot">
-    <a href="/_images/examples/guess-the-number/parse-rejected.png"><img src="/_images/examples/guess-the-number/parse-rejected.png" alt="Attempting to &quot;Play guess a number between_and_&quot; with the arguments reversed."/></a>
+    <a href="/images/examples/guess-the-number/parse-rejected.png"><img src="/images/examples/guess-the-number/parse-rejected.png" alt="Attempting to &quot;Play guess a number between_and_&quot; with the arguments reversed."/></a>
     <figcaption>Another erroneous send of <code>"Play guess a number between_and_"</code>.</figcaption>
 </figure>
 
@@ -374,7 +370,7 @@ Semantic restriction "Play guess a number between_and_" is
 
 <p>If you want to read about why it is, or is not, a good reason to cite <a class="offsite" href="http://www.wikipedia.org">Wikipedia</a> so very much, then read about it <a class="offsite" href="http://en.wikipedia.org/wiki/Reliability_of_Wikipedia">here</a> while suppressing a smirk of irony.</p>
 
-<p>If you didn't understand why 42 and &infin; were juxtaposed above, then I highly recommend that you read <a class="offsite" href="http://www.douglasadams.com/">Douglas Adams'</a> <a class="offsite" href="http://en.wikipedia.org/wiki/The_Hitchhiker's_Guide_to_the_Galaxy">The Hitchhiker's Guide to the Galaxy</a>. It's true comedy gold for the modern age.</p> 
+<p>If you didn't understand why 42 and &infin; were juxtaposed above, then I highly recommend that you read <a class="offsite" href="http://www.douglasadams.com/">Douglas Adams'</a> <a class="offsite" href="http://en.wikipedia.org/wiki/The_Hitchhiker's_Guide_to_the_Galaxy">The Hitchhiker's Guide to the Galaxy</a>. It's true comedy gold for the modern age.</p>
 
 <p>Oh, I suppose that you might also want to read more about Avail. In that case, see what the manual has to say about <a href="/about-avail/documentation/type-system/semantic-restrictions.html">semantic restrictions</a>.</p>
 
@@ -393,8 +389,8 @@ Semantic restriction "Play guess a number between_and_" is
 	</tr>
 </table>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
-<!--#include virtual="/_include/sh-bottom.ssi" -->
+{% include body-bottom.html %}
+{% include sh-bottom.html %}
 
 	</body>
 

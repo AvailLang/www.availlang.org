@@ -1,15 +1,11 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 	<head>
 
-<!--#include virtual="/_include/head.ssi" -->
-<!--#include virtual="/_include/sh-head.ssi" -->
+{% include head.html %}
+{% include sh-head.html %}
 
 		<title>Avail - Tutorials - Fibonacci</title>
 		<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -17,7 +13,7 @@
 
 	<body class="gradient-logo">
 
-<!--#include virtual="/_include/body-top.ssi" -->
+{% include body-top.html %}
 
 <h2 class="content-title">Fibonacci</h2>
 
@@ -27,13 +23,13 @@
 <p>The <a class="offsite" href="http://en.wikipedia.org/wiki/Sequence">sequence</a> itself is charmingly simple:</p>
 
 
-<math display="block" altimg="/_images/examples/fibonacci/sequence.png"><mrow><mn>1</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>13</mn><mo>,</mo><mn>21</mn><mo>,</mo><mn>34</mn><mo>,</mo><mn>55</mn><mo>,</mo><mn>89</mn><mo>,</mo><mn>144</mn><mo>,</mo><mn>233</mn><mo>,</mo><mn>377</mn><mo>,</mo><mo>&hellip;</mo></mrow></math>
+<math display="block" altimg="/images/examples/fibonacci/sequence.png"><mrow><mn>1</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>13</mn><mo>,</mo><mn>21</mn><mo>,</mo><mn>34</mn><mo>,</mo><mn>55</mn><mo>,</mo><mn>89</mn><mo>,</mo><mn>144</mn><mo>,</mo><mn>233</mn><mo>,</mo><mn>377</mn><mo>,</mo><mo>&hellip;</mo></mrow></math>
 
 
 <p>And is defined by the <a class="offsite" href="http://en.wikipedia.org/wiki/Recurrence_relation">recurrence relation</a>:</p>
 
 
-<math display="block" altimg="/_images/examples/fibonacci/recurrence.png"><mrow><msub><mi>F</mi><mn>n</mn></msub><mo>=</mo><msub><mi>F</mi><mrow><mn>n</mn><mo>-</mo><mn>1</mn></mrow></msub><mo>+</mo><msub><mi>F</mi><mrow><mn>n</mn><mo>-</mo><mn>2</mn></mrow></msub></mrow></math>
+<math display="block" altimg="/images/examples/fibonacci/recurrence.png"><mrow><msub><mi>F</mi><mn>n</mn></msub><mo>=</mo><msub><mi>F</mi><mrow><mn>n</mn><mo>-</mo><mn>1</mn></mrow></msub><mo>+</mo><msub><mi>F</mi><mrow><mn>n</mn><mo>-</mo><mn>2</mn></mrow></msub></mrow></math>
 
 
 <p>In other words, the first two terms are both <code>1</code>, and every subsequent term is the sum of the two previous terms.</p>
@@ -41,7 +37,7 @@
 <p>In this tutorial, we will implement a Fibonacci sequence generator. When we are finished, the result will look something like this:</p>
 
 <figure class="full-line-screenshot">
-    <a href="/_images/examples/fibonacci/transcript.png"><img src="/_images/examples/fibonacci/transcript.png" alt="A sample transcript of &quot;_st|nd|rd|th Fibonacci number&quot;."/></a>
+    <a href="/images/examples/fibonacci/transcript.png"><img src="/images/examples/fibonacci/transcript.png" alt="A sample transcript of &quot;_st|nd|rd|th Fibonacci number&quot;."/></a>
     <figcaption>The Avail workbench after running <code class="command">"_st|nd|rd|th Fibonacci number"</code> a few times.</figcaption>
 </figure>
 
@@ -75,7 +71,7 @@
 
 <h3><a id="CompleteSources">Complete Sources</a></h3>
 <ul>
-<li><code><a href="/_examples/fibonacci/Fibonacci.avail">Fibonacci.avail</a></code></li>
+<li><code><a href="/examples/fibonacci/Fibonacci.avail">Fibonacci.avail</a></code></li>
 </ul>
 
 <h3><a id="Walkthrough">Walkthrough</a></h3>
@@ -173,7 +169,7 @@ Method "_st|nd|rd|th Fibonacci number" is
 <p>Let's take a closer look at the loop and its contents before we declare victory. An <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/3060146973.html">"Until_do_"</a></code> loop takes two functions &mdash; first a predicate and then a body &mdash; and works like this:</p>
 
 <div class="svg-wrapper" style="margin: auto">
-<img src="/_images/examples/fibonacci/until-do.svg" style="float: left" class="embedded-svg">
+<img src="/images/examples/fibonacci/until-do.svg" style="float: left" class="embedded-svg">
 <iframe srcdoc="
 <small>
 <ol>
@@ -200,7 +196,7 @@ Method "_st|nd|rd|th Fibonacci number" is
 <p>Encountering the Fibonacci sequence is an excellent excuse to learn more about the <a class="offsite" href="http://en.wikipedia.org/wiki/History_of_mathematics">history of mathematics</a>, which is a fascinating topic.</p>
 
 <h3><a id="Exercises">Exercises</a></h3>
-<p>The Fibonacci sequence is defined by a <a class="offsite" href="http://en.wikipedia.org/wiki/Linear_Recurrence_Sequence#Linear_homogeneous_recurrence_relations_with_constant_coefficients">linear recurrence relation with constant coefficients</a>, so it has a <a class="offsite" href="http://en.wikipedia.org/wiki/Closed-form_expression">closed-form expression</a>. The <em>n</em><sup>th</sup> Fibonacci number is given by the formula <math display="inline" altimg="/_images/examples/fibonacci/closed-form.png"><mrow><msub><mi>F</mi><mn>n</mn></msub><mo>=</mo><mfrac><mrow><msup><mi>&phi;</mi><mn>n</mn></msup><mo>-</mo><msup><mi>&psi;</mi><mn>n</mn></msup></mrow><mrow><msqrt><mn>5</mn></msqrt></mrow></mfrac></mrow></math>, where <math display="inline" alttext="&phi;"><mi>&phi;</mi></math> is the <a class="offsite" href="http://en.wikipedia.org/wiki/Golden_ratio">golden ratio</a> and <math display="inline"><mi>&psi;</mi></math> is <math display="inline" alttext="1 - &psi;"><mn>1</mn><mo>-</mo><mi>&phi;</mi></math>. Build a new entry point, <code class="command">"_st|nd|rd|th closed-form Fibonacci number"</code>, that uses this formula to answer the requested element of the series. (Note that you will have to muck about with <code><a href="/about-avail/documentation/type-system/types-double.html">double</a></code>s and inexact answers.)</p>
+<p>The Fibonacci sequence is defined by a <a class="offsite" href="http://en.wikipedia.org/wiki/Linear_Recurrence_Sequence#Linear_homogeneous_recurrence_relations_with_constant_coefficients">linear recurrence relation with constant coefficients</a>, so it has a <a class="offsite" href="http://en.wikipedia.org/wiki/Closed-form_expression">closed-form expression</a>. The <em>n</em><sup>th</sup> Fibonacci number is given by the formula <math display="inline" altimg="/images/examples/fibonacci/closed-form.png"><mrow><msub><mi>F</mi><mn>n</mn></msub><mo>=</mo><mfrac><mrow><msup><mi>&phi;</mi><mn>n</mn></msup><mo>-</mo><msup><mi>&psi;</mi><mn>n</mn></msup></mrow><mrow><msqrt><mn>5</mn></msqrt></mrow></mfrac></mrow></math>, where <math display="inline" alttext="&phi;"><mi>&phi;</mi></math> is the <a class="offsite" href="http://en.wikipedia.org/wiki/Golden_ratio">golden ratio</a> and <math display="inline"><mi>&psi;</mi></math> is <math display="inline" alttext="1 - &psi;"><mn>1</mn><mo>-</mo><mi>&phi;</mi></math>. Build a new entry point, <code class="command">"_st|nd|rd|th closed-form Fibonacci number"</code>, that uses this formula to answer the requested element of the series. (Note that you will have to muck about with <code><a href="/about-avail/documentation/type-system/types-double.html">double</a></code>s and inexact answers.)</p>
 
 <p><code class="command">"_st|nd|rd|th Fibonacci number"</code> does not forbid incorrect <a class="offsite" href="http://en.wikipedia.org/wiki/Ordinal_indicator">ordinal indicators</a>, so you can run a command like <code class="command">51nd Fibonacci number</code> without a complaint from the compiler. Make the compiler more earnest about proper English grammar by disallowing inappropriate constructions. Start by renaming the method to <code class="command">"_«st|nd|rd|th»!Fibonacci number"</code>. This message uses the <strong>semantic option group</strong> (<code>«c<sub>0</sub>|c<sub>1</sub>|…|c<sub>n</sub>»!</code>) construction, which must correspond to a <code>natural number</code> parameter (call it <code>option</code>). The values of <code>option</code> will range from <code>1</code> to <code>n</code>, and the exact value is determined by the option that appears at a call site. Once this is in place, you can use a <a href="/about-avail/documentation/type-system/semantic-restrictions.html">semantic restriction</a> that operates on the <a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early Enumeration Support/2988760413.html">exact instance</a> of <code>option</code> in order to <a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/1295719819.html">reject an unwanted parse</a>.</p>
 
@@ -212,8 +208,8 @@ Method "_st|nd|rd|th Fibonacci number" is
 	</tr>
 </table>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
-<!--#include virtual="/_include/sh-bottom.ssi" -->
+{% include body-bottom.html %}
+{% include sh-bottom.html %}
 
 	</body>
 

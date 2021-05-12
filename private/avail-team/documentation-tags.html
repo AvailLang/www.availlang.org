@@ -1,49 +1,45 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 	<head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-	
+
+{% include head.html %}
+
 		<title>Avail Team - Doc Tag Guidelines</title>
-		
+
 		<style>
-		
-		.tblGenFixed td {padding:0 3px;overflow:hidden;letter-spacing:0;word-spacing:0;background-color:#fff;z-index:1;border-top:0px none;border-left:0px none;border-bottom:1px solid #CCC;border-right:1px solid #CCC;} 
-		
-		.dn {display:none} 
-		
-		.tblGenFixed td.s0 {background-color:white;font-family:arial,sans,sans-serif;font-size:80.0%;font-weight:normal;font-style:normal;text-decoration:none;vertical-align:bottom;direction:Context;white-space:normal;overflow:hidden;border-top:1px solid #CCC;border-right:;border-bottom:;border-left:1px solid #CCC;} 
-		
-		.tblGenFixed td.s2 {background-color:#000000;font-family:calibri,arial,sans,sans-serif;font-size:80.0%;font-weight:bold;font-style:normal;color:#FFFFFF;text-decoration:none;text-align:left;vertical-align:top;direction:auto-ltr;white-space:normal;overflow:hidden;border-top:1px solid black;border-right:1px solid black;border-bottom:1px solid black;} 
-		
-		.tblGenFixed td.s1 {background-color:white;font-family:arial,sans,sans-serif;font-size:80.0%;font-weight:normal;font-style:normal;text-decoration:none;vertical-align:bottom;direction:Context;white-space:normal;overflow:hidden;border-top:1px solid #CCC;border-right:1px solid black;border-bottom:;} 
-		
-		.tblGenFixed td.s9 {background-color:#f2f2f2;font-family:calibri,arial,sans,sans-serif;font-size:80.0%;font-weight:normal;font-style:normal;color:#BFBFBF;text-decoration:none;text-align:left;vertical-align:top;direction:auto-ltr;white-space:normal;overflow:hidden;border-right:1px solid black;border-bottom:1px solid black;} 
-		
-		.tblGenFixed td.s7 {background-color:white;font-family:calibri,arial,sans,sans-serif;font-size:80.0%;font-weight:normal;font-style:normal;color:#59C629;text-decoration:none;text-align:left;vertical-align:top;direction:auto-ltr;white-space:normal;overflow:hidden;border-right:1px solid black;border-bottom:1px solid black;border-left:1px solid black;} 
-		
-		.tblGenFixed td.s8 {background-color:white;font-family:calibri,arial,sans,sans-serif;font-size:80.0%;font-weight:normal;font-style:normal;color:#000000;text-decoration:none;text-align:left;vertical-align:top;direction:auto-ltr;white-space:normal;overflow:hidden;border-right:1px solid black;border-bottom:1px solid black;} 
-		
-		.tblGenFixed td.s5 {background-color:#e5ffe7;font-family:calibri,arial,sans,sans-serif;font-size:80.0%;font-weight:normal;font-style:normal;color:#000000;text-decoration:none;text-align:left;vertical-align:top;direction:auto-ltr;white-space:normal;overflow:hidden;border-right:1px solid black;border-bottom:1px solid black;} 
-		
-		.tblGenFixed td.s6 {background-color:#dce8f3;font-family:calibri,arial,sans,sans-serif;font-size:80.0%;font-weight:normal;font-style:normal;color:#000000;text-decoration:none;text-align:left;vertical-align:top;direction:auto-ltr;white-space:normal;overflow:hidden;border-right:1px solid black;border-bottom:1px solid black;} 
-		
-		.tblGenFixed td.s3 {background-color:white;font-family:arial,sans,sans-serif;font-size:80.0%;font-weight:normal;font-style:normal;text-decoration:none;vertical-align:bottom;direction:Context;white-space:normal;overflow:hidden;border-right:;border-bottom:1px solid black;border-left:1px solid #CCC;} 
-		
-		.tblGenFixed td.s4 {background-color:white;font-family:arial,sans,sans-serif;font-size:80.0%;font-weight:normal;font-style:normal;text-decoration:none;vertical-align:bottom;direction:Context;white-space:normal;overflow:hidden;border-right:1px solid black;border-bottom:1px solid black;} 
-		
+
+		.tblGenFixed td {padding:0 3px;overflow:hidden;letter-spacing:0;word-spacing:0;background-color:#fff;z-index:1;border-top:0px none;border-left:0px none;border-bottom:1px solid #CCC;border-right:1px solid #CCC;}
+
+		.dn {display:none}
+
+		.tblGenFixed td.s0 {background-color:white;font-family:arial,sans,sans-serif;font-size:80.0%;font-weight:normal;font-style:normal;text-decoration:none;vertical-align:bottom;direction:Context;white-space:normal;overflow:hidden;border-top:1px solid #CCC;border-right:;border-bottom:;border-left:1px solid #CCC;}
+
+		.tblGenFixed td.s2 {background-color:#000000;font-family:calibri,arial,sans,sans-serif;font-size:80.0%;font-weight:bold;font-style:normal;color:#FFFFFF;text-decoration:none;text-align:left;vertical-align:top;direction:auto-ltr;white-space:normal;overflow:hidden;border-top:1px solid black;border-right:1px solid black;border-bottom:1px solid black;}
+
+		.tblGenFixed td.s1 {background-color:white;font-family:arial,sans,sans-serif;font-size:80.0%;font-weight:normal;font-style:normal;text-decoration:none;vertical-align:bottom;direction:Context;white-space:normal;overflow:hidden;border-top:1px solid #CCC;border-right:1px solid black;border-bottom:;}
+
+		.tblGenFixed td.s9 {background-color:#f2f2f2;font-family:calibri,arial,sans,sans-serif;font-size:80.0%;font-weight:normal;font-style:normal;color:#BFBFBF;text-decoration:none;text-align:left;vertical-align:top;direction:auto-ltr;white-space:normal;overflow:hidden;border-right:1px solid black;border-bottom:1px solid black;}
+
+		.tblGenFixed td.s7 {background-color:white;font-family:calibri,arial,sans,sans-serif;font-size:80.0%;font-weight:normal;font-style:normal;color:#59C629;text-decoration:none;text-align:left;vertical-align:top;direction:auto-ltr;white-space:normal;overflow:hidden;border-right:1px solid black;border-bottom:1px solid black;border-left:1px solid black;}
+
+		.tblGenFixed td.s8 {background-color:white;font-family:calibri,arial,sans,sans-serif;font-size:80.0%;font-weight:normal;font-style:normal;color:#000000;text-decoration:none;text-align:left;vertical-align:top;direction:auto-ltr;white-space:normal;overflow:hidden;border-right:1px solid black;border-bottom:1px solid black;}
+
+		.tblGenFixed td.s5 {background-color:#e5ffe7;font-family:calibri,arial,sans,sans-serif;font-size:80.0%;font-weight:normal;font-style:normal;color:#000000;text-decoration:none;text-align:left;vertical-align:top;direction:auto-ltr;white-space:normal;overflow:hidden;border-right:1px solid black;border-bottom:1px solid black;}
+
+		.tblGenFixed td.s6 {background-color:#dce8f3;font-family:calibri,arial,sans,sans-serif;font-size:80.0%;font-weight:normal;font-style:normal;color:#000000;text-decoration:none;text-align:left;vertical-align:top;direction:auto-ltr;white-space:normal;overflow:hidden;border-right:1px solid black;border-bottom:1px solid black;}
+
+		.tblGenFixed td.s3 {background-color:white;font-family:arial,sans,sans-serif;font-size:80.0%;font-weight:normal;font-style:normal;text-decoration:none;vertical-align:bottom;direction:Context;white-space:normal;overflow:hidden;border-right:;border-bottom:1px solid black;border-left:1px solid #CCC;}
+
+		.tblGenFixed td.s4 {background-color:white;font-family:arial,sans,sans-serif;font-size:80.0%;font-weight:normal;font-style:normal;text-decoration:none;vertical-align:bottom;direction:Context;white-space:normal;overflow:hidden;border-right:1px solid black;border-bottom:1px solid black;}
+
 		</style>
-	
+
 	</head>
 
 	<body class="gradient-logo">
-	
+
 <!--#include virtual="/_include/private/body-top.ssi" -->
 
 		<h2 class="content-title">Documentation Tag Guidelines</h2>
@@ -107,7 +103,7 @@
 
 <tr dir='ltr'>
 <td dir='ltr' class='s7'>@public
-<td dir='ltr' class='s8'>SINGLE - Indi&shy;cates that the method or object will be freely access&shy;ible for use in any AVAIL program regard&shy;less of its visi&shy;bility in the module hier&shy;archy. No text follows the tag. 
+<td dir='ltr' class='s8'>SINGLE - Indi&shy;cates that the method or object will be freely access&shy;ible for use in any AVAIL program regard&shy;less of its visi&shy;bility in the module hier&shy;archy. No text follows the tag.
 <td dir='ltr' class='s5'>OPTIONAL
 <td dir='ltr' class='s9'>NOT USED
 <td dir='ltr' class='s5'>OPTIONAL
@@ -249,7 +245,7 @@
 
 </table>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
+{% include body-bottom.html %}
 
 	</body>
 

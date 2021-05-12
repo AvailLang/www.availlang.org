@@ -1,27 +1,23 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 <head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-	
+
+{% include head.html %}
+
 		<title>Avail - Glossary</title>
-	
+
 	</head>
 
 	<body class="gradient-logo">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
-		
+
+{% include body-top.html %}
+
 <h2 class="content-title">Grammatical Restriction</h2>
 
 <p>
-A compiler-run <a href="./function.html">function</a> that enforces a set of rules regarding what <a href="./method-call.html">method calls</a> can be used as arguments for the named method(s). 
+A compiler-run <a href="./function.html">function</a> that enforces a set of rules regarding what <a href="./method-call.html">method calls</a> can be used as arguments for the named method(s).
 </p><p>
 The addition of restrictions to multiple methods within the same statement requires that the methods all have the same number of arguments.
 </p><p>
@@ -38,7 +34,7 @@ In this example we effect the elimination of ambiguity for nested calls that do 
 	</div>
 </tr>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
+{% include body-bottom.html %}
 
 	</body>
 

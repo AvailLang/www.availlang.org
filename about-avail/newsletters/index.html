@@ -1,23 +1,19 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 	<head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-	
+
+{% include head.html %}
+
 		<title>Avail - Newsletters</title>
-	
+
 	</head>
 
 	<body class="gradient-logo">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
-		
+
+{% include body-top.html %}
+
 <h2 class="content-title">Newsletters</h2>
 
 <h3><a href="/about-avail/newsletters/E009.html">The modular lexer</a></h3>
@@ -56,7 +52,7 @@
 <div class="content-meta-info">Edition 1 - October 20, 2012</div>
 <p>In this edition (the first public edition of the Avail programming language newsletter), we announce several additions to the Avail codebase. The first is an adaptation of Hunt the Wumpus, a text adventure game. The second is support for unwind protection in the exception handling process--the ability to execute code after an exception might have been thrown but before moving on. The third is support for computational backtracking. Backtracking enables you to specify a sequence of possible paths; the failed exploration of one path will immediately result in the exploration of the subsequent path. Using backtracking, we can solve the <strong>N queens problem</strong> in a handful of lines of elegant code!&nbsp; <a href="/about-avail/newsletters/E001.html">[read more&hellip;]</a></p>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
+{% include body-bottom.html %}
 
 	</body>
 

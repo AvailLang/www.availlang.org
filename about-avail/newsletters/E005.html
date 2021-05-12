@@ -1,22 +1,18 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 	<head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-	
+
+{% include head.html %}
+
 		<title>Avail Newsletters, Edition #5: The Builder</title>
-	
+
 	</head>
 
 	<body class="gradient-logo">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
+
+{% include body-top.html %}
 
 <h2 class="content-title">The Builder</h2>
 
@@ -47,7 +43,7 @@
 <p>There are three phases to a build with the new Builder:
 <ol>
 <li>The first phase is to identify which loaded modules have source code that no longer agrees with what's loaded.  This is done in parallel.  For each loaded module, a cryptographic digest is computed for that module's source file.  The associated repository speeds this up by keeping a persistent cache from &lt;file name, file modification timestamp&gt; pairs to the associated source digest, to avoid having to actually recompute the digest if the file has not been modified since the last check.  After ascertaining which modules are invalid (disagree with their current source), those modules and all their descendants are unloaded from the runtime environment, in reverse-dependency order.</li>
-<li>The second phase recursively traces the selected module, resolving local module names mentioned in Uses/Extends clauses to fully qualified names.  This phase produces a graph of modules that are either currently loaded or need to be. 
+<li>The second phase recursively traces the selected module, resolving local module names mentioned in Uses/Extends clauses to fully qualified names.  This phase produces a graph of modules that are either currently loaded or need to be.
 <li>The third phase actually loads or compiles all missing modules, in dependency order.  Loading is only possible if the predecessors of a module have compilation times that agree with a compilation key in the repository; otherwise the Avail source code must be compiled, writing the module's compiled form into the repository when complete.</li>
 </ol>
 
@@ -94,7 +90,7 @@
 	</tr>
 </table>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
+{% include body-bottom.html %}
 
 	</body>
 

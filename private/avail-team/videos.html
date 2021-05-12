@@ -1,35 +1,31 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 	<head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-<script src="/_javascript/jquery.js"></script>
-<script src="/_javascript/mediaelement-and-player.min.js"></script>
-<link rel="stylesheet" href="/_css/mediaelementplayer.css" />
-	
+
+{% include head.html %}
+<script src="/javascript/jquery.js"></script>
+<script src="/javascript/mediaelement-and-player.min.js"></script>
+<link rel="stylesheet" href="/css/mediaelementplayer.css" />
+
 		<title>Videos</title>
-	
+
 	</head>
 
 	<body class="gradient-logo">
-	
+
 <!--#include virtual="/_include/private/body-top.ssi" -->
 
 		<h2 class="private content-title">Videos</h2>
-<p>		
+<p>
 Check out some videos recorded right here at Avail HQ.
 </p><p>
 <h3>Nothing yet</h3>
 <!-- <video src="/private/echo-hereweare.mp4" controls="controls" width="320" height="240"></video> -->
 </p>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
+{% include body-bottom.html %}
 
 	</body>
 

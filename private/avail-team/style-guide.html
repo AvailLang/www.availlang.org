@@ -1,26 +1,22 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 	<head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-<!--#include virtual="/_include/sh-head.ssi" -->
-	
+
+{% include head.html %}
+{% include sh-head.html %}
+
 		<title>Avail - Website Style Guide</title>
-	
+
 	</head>
 
 	<body class="gradient-logo">
-	
+
 <!--#include virtual="/_include/private/body-top.ssi" -->
 
 		<h2 class="private content-title">Website Style Guide for AvailLang.org</h2>
-		
+
 <p>
 Below are some examples of how to use the HTML tags and CSS styles in keeping with the style of our site. To copy these examples for use as code templates in a page you are making, view the html source of this page. Alternatively, view the source of a page whose style matches your new page.
 </p>
@@ -92,14 +88,14 @@ In text where you want to make an inline reference to Avail or other code elemen
 When linking to a page whose title is something normally in a code tag, <code><a href="/blah.html">use both</a></code>. The order of their use does matter here. The code tag on the outside applies a font and a text color; the a tag overwrites the color with the site-wide link color.
 </p>
 <p>
-When listing a file download inline with text, use the download-inline-icon class on the icon that corresponds to its filetype. See <a href="/nothing/something.pdf"><img src="/_images/download-icons/pdf.png" alt="" class="download-inline-icon">something.pdf</a> or <a href="/nothing/somethingelse.xls"><img src="/_images/download-icons/xls.png" alt="" class="download-inline-icon">somethingelse.xls</a> to see that these example links don't go anywhere.
+When listing a file download inline with text, use the download-inline-icon class on the icon that corresponds to its filetype. See <a href="/nothing/something.pdf"><img src="/images/download-icons/pdf.png" alt="" class="download-inline-icon">something.pdf</a> or <a href="/nothing/somethingelse.xls"><img src="/images/download-icons/xls.png" alt="" class="download-inline-icon">somethingelse.xls</a> to see that these example links don't go anywhere.
 </p>
 <p>
 When you are listing file downloads in an itemized list, use the download-list-icon style.
 </p>
 <ul>
-<li><code><a href="/_examples/RPN.avail"><img src="/_images/download-icons/avail.png" alt="" class="download-list-icon">RPN.avail</a></code></li>
-<li><code><a href="/nothing/yomama.doc"><img src="/_images/download-icons/doc.png" alt="" class="download-list-icon">yomama.doc</a></code></li>
+<li><code><a href="/examples/RPN.avail"><img src="/images/download-icons/avail.png" alt="" class="download-list-icon">RPN.avail</a></code></li>
+<li><code><a href="/nothing/yomama.doc"><img src="/images/download-icons/doc.png" alt="" class="download-list-icon">yomama.doc</a></code></li>
 </ul>
 <div class="restricted-width-container">
 	<div class="neutral-code code-block">
@@ -126,7 +122,7 @@ use "bad-code code-block" as the inner style.</div>
 
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; first-line: 42"><![CDATA[
-Excerpts from actual files with lines you want to reference by number are nested 
+Excerpts from actual files with lines you want to reference by number are nested
 within a "neutral-code code-block" and the syntaxhighlighter javascript syntax.
 It's kinda hard to describe in words, so just check out the source.
 
@@ -136,8 +132,8 @@ and you must add the sh-bottom.ssi includes link just before the closing body ta
 </script></div></div>
 
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
-<!--#include virtual="/_include/sh-bottom.ssi" -->
+{% include body-bottom.html %}
+{% include sh-bottom.html %}
 
 	</body>
 

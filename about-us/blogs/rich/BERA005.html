@@ -1,29 +1,25 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 <head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-<!--#include virtual="/_include/sh-head.ssi" -->
-	
+
+{% include head.html %}
+{% include sh-head.html %}
+
 		<title>Avail - Rich's Blog</title>
-	
+
 	</head>
 
 	<body class="gradient-logo">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
+
+{% include body-top.html %}
 <h2 class="content-title">Method Overloading and Method Overriding</h2>
 <p><em>If you haven't yet had an introduction to methods, I highly recommend reading my <a href="./BERA004.html">previous blog post</a> for a basic introduction before proceeding.</em></p>
-<p>A good way to describe Avail is that it is an <em>operation-oriented language</em> (operations take precedence in Avail).  Avail supports objects, however, unlike in object oriented-programming, method definitions are independent of any object.  Methods can take objects as input, but they are not subordinate to any object in their definition.  This is important as it allows for much greater flexibility when using methods.  Two key method features supported by Avail are <a href="">method overloading</a> as well as <a href="">method overriding</a>.</p>  
+<p>A good way to describe Avail is that it is an <em>operation-oriented language</em> (operations take precedence in Avail).  Avail supports objects, however, unlike in object oriented-programming, method definitions are independent of any object.  Methods can take objects as input, but they are not subordinate to any object in their definition.  This is important as it allows for much greater flexibility when using methods.  Two key method features supported by Avail are <a href="">method overloading</a> as well as <a href="">method overriding</a>.</p>
 
 
-<p>At compile time, The parameters' types of any given method defines the behavior dispatched at runtime for any method call (Avail supports <a class="offsite" href="http://en.wikipedia.org/wiki/Multiple_dispatch">multiple dispatch</a>).  Though Avail has objects,   With respect to methods, objects are treated like any other parameter (like whole number or 5's type).  So overloading methods in Avail is simply taking a method and defining different functions based upon the provided parameters' types.</p>  
+<p>At compile time, The parameters' types of any given method defines the behavior dispatched at runtime for any method call (Avail supports <a class="offsite" href="http://en.wikipedia.org/wiki/Multiple_dispatch">multiple dispatch</a>).  Though Avail has objects,   With respect to methods, objects are treated like any other parameter (like whole number or 5's type).  So overloading methods in Avail is simply taking a method and defining different functions based upon the provided parameters' types.</p>
 
 <p>For example, take the method <code>"_fires the_"</code> in the two following calls:
 <code>Grandma fires the plumber</code> and <code>The submarine fires the torpedoes</code>. The meaning of the word <em>fires</em> implied in a statement is usually based upon the context within which it is used.  Grandma is not picking up the plumber and using him as a projectile weapon, nor is the submarine sending the torpedoes to the unemployment line.  Though the functionality of <code>"_fires the_"</code> implied for each call here is very different, the implementations of these methods can exist side by side in Avail without ambiguity because of the context in which they are used.   That context in the case of Avail are the types of the method's input parameters.  In the two examples of our method, <code>"_fires the_"</code>, we have the input types <code>[employer, employee]</code> for grandma and the plumber and <code>[weaponized vehicle,projectile]</code> for the submarine and the torpedoes(these different parameter types of the inputs determines the implementation of the method used at runtime).</p>
@@ -39,33 +35,33 @@
 Private method "insertion sort_with_" is
 [
 	aTuple : &lt;any…|2..10>, /* a tuple type of size [2..10] */
-	
-	/* a function type that takes two inputs and returns a boolean. * 
+
+	/* a function type that takes two inputs and returns a boolean. *
 	 * This function serves as the comparison criteria to assert    *
 	 * the sorting rules of the tuple.                              */
-	comparator : [⊥, ⊥]→boolean  
+	comparator : [⊥, ⊥]→boolean
  |
  	/* The tuple to sort in place */
 	output : &lt;any…|2..> := aTuple;
-	From 2 to |aTuple| do  
+	From 2 to |aTuple| do
 	[
 		i : [2..10]  /* Type of the numeric range from 2 to 10 */
 	 |
 		/* counter of primary element being inspected; *
 		 * will be reduced as the element moves left   */
-		k : [2..10] := i; 
-		
+		k : [2..10] := i;
+
 		/* counter of element to the left of the *
 		 * primary element being compared        */
-		j : [1..9] := i - 1; 
-		
+		j : [1..9] := i - 1;
+
 		/* the sorting condition criteria function call */
-		While [j > 1 ∧ [comparator(output[k],output[j])]]  
+		While [j > 1 ∧ [comparator(output[k],output[j])]]
 		do
 		[
 			/* swap the element at the k<sup>th</sup> index with *
 			 * the element at the j<sup>th</sup> index           */
-		 	output := output[k↔j]; 
+		 	output := output[k↔j];
 			j--;  /* decrement j */
 			k--;  /* decrement k */
 		];
@@ -77,8 +73,8 @@ Private method "insertion sort_with_" is
 		 * We cannot reduce the range to [0..9] because that is        *
 		 * outside the bounds of the natural number type requirement   *
 		 * for indices                								   */
-		output := if j = 1 ∧ [comparator(output[k],output[j])] then 
-			[output[k↔j]] else [output];  
+		output := if j = 1 ∧ [comparator(output[k],output[j])] then
+			[output[k↔j]] else [output];
 	];
 	output     /* The return value */
 ]:&lt;any…|2..>;  /* The return type of the method */
@@ -90,18 +86,18 @@ For maximal utility of the definition of insertion sort as well as for merge sor
 <font color="green">/* the tuple to sort */</font>
 aTuple : &lt;natural number…|1..8> := &lt;8,7,4,6,3,5,1,2>;
 
-<font color="green">/* a function that accepts as its inputs two natural numbers * 
+<font color="green">/* a function that accepts as its inputs two natural numbers *
  * and determines the order they come in                     */</font>
-comparator :  [natural number, natural number]→boolean := 
+comparator :  [natural number, natural number]→boolean :=
 [
-   n : natural number, m : natural number 
- | 
+   n : natural number, m : natural number
+ |
    <font color="green">/* n comes before m if n is odd and m is even */</font>
    n is odd ∧ [m is even] ∨
 	  <font color="green">/* n comes before m if n and m are odd and n ≤ m */</font>
-      [n is odd ∧ [m is odd ∧ [n ≤ m]]] ∨ 
+      [n is odd ∧ [m is odd ∧ [n ≤ m]]] ∨
       <font color="green">/* n comes before m if n and m are even and n ≥ m */</font>
-      [n is even ∧ [m is even ∧ [n ≥ m]]] 
+      [n is even ∧ [m is even ∧ [n ≥ m]]]
 ];
 
 <font color="green">/* insertion sort takes the tuple as the first input and the *
@@ -126,8 +122,8 @@ Print: “sorted”; </div></div>
 	</tr>
 </table>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
-<!--#include virtual="/_include/sh-bottom.ssi" -->
+{% include body-bottom.html %}
+{% include sh-bottom.html %}
 
 	</body>
 

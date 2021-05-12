@@ -4,13 +4,13 @@
 
 READ ME!
 
-Styles on this sheet are applied in order of appearance. In order to customize 
-display for screens based on the width of the display window, the styles at the 
-top of the page are for small screens. Any style adjustments desired for larger 
-screens are applied later and delimited by the screen's minimum width. 
+Styles on this sheet are applied in order of appearance. In order to customize
+display for screens based on the width of the display window, the styles at the
+top of the page are for small screens. Any style adjustments desired for larger
+screens are applied later and delimited by the screen's minimum width.
 
-Keep styling adjustments that are specific to the window size at the BOTTOM of 
-the block, separate from generalized styling, and add preceding comments 
+Keep styling adjustments that are specific to the window size at the BOTTOM of
+the block, separate from generalized styling, and add preceding comments
 describing their function.
 
 ============================================================================= */
@@ -67,39 +67,39 @@ a:hover {
 
 /*a:visited {
 	background-color: transparent;
-/*	color: inherit; 
+/*	color: inherit;
 }*/
 
-b, strong { 
+b, strong {
 	font-weight: 400; /* When setting, check this matches an imported weight! */
 }
 
 body {
-	margin: 0; 
+	margin: 0;
 
 	min-width: 320px;
 
-	font-size: 15px; 
-	line-height: 1.4; 
+	font-size: 15px;
+	line-height: 1.4;
 
 	-webkit-font-smoothing: subpixel-antialiased;
 }
 
 body, button, input, select, textarea {
-	font-family: 'Lato', sans-serif; 
-	font-weight: 300; 
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
 
 	color: #222;
 	background-color: transparent;
 }
 
 code {
-	/* Reduce crowding of inline code because of comparatively narrow spaces in 
+	/* Reduce crowding of inline code because of comparatively narrow spaces in
 	default font */
-	margin-left: 2px; 
+	margin-left: 2px;
 	margin-right: 2px;
 
-	font-family: 'DejaVu Sans Mono', Consolas, 'Lucida Console', Menlo, Monaco, 
+	font-family: 'DejaVu Sans Mono', Consolas, 'Lucida Console', Menlo, Monaco,
 		monospace, sans-serif;
 	font-size: .9em;
 
@@ -131,13 +131,13 @@ h2 {
 	font-size: 22px;
 }
 h3 {
-	margin-bottom: 9.5px;	
+	margin-bottom: 9.5px;
 	padding-top: 12px;
 
 	font-size: 19px;
 }
 h4 {
-	margin-bottom: 7.5px;	
+	margin-bottom: 7.5px;
 	padding-top: 10px;
 
 	font-size: 15px;
@@ -169,8 +169,8 @@ a.footer {
 }
 
 a.intentional-full-path {
-	/* Links to pages within www.availlang.org that should not have their link 
-	addressess truncated to the root-relative path. This is a dummy style for 
+	/* Links to pages within www.availlang.org that should not have their link
+	addresses truncated to the root-relative path. This is a dummy style for
 	help with automated detection of unclassified links. */
 }
 
@@ -178,19 +178,19 @@ a.offsite {
 	padding-right: 13px;
 
 	color: green;
-	background: transparent url("/_images/offsite-link.png") no-repeat scroll 
+	background: transparent url("/images/offsite-link.png") no-repeat scroll
 		right center;
 }
 
 a.unmarked {
-	/* Offsite links that are not visually marked with an icon. This is a dummy 
+	/* Offsite links that are not visually marked with an icon. This is a dummy
 	style for help with automated detection of unclassified links. */
 }
 
 body.gradient-logo {
-	background-image: url(/_images/site-background.png);
+	background-image: url(/images/site-background.png);
 	background-repeat: no-repeat;
-	background-color: rgb(248,248,248); 
+	background-color: rgb(248,248,248);
 }
 
 code.command {
@@ -217,10 +217,10 @@ div.svg-wrapper {
 }
 
 div.floating-svg-wrapper {
-	overflow-x: auto; 
+	overflow-x: auto;
 	overflow-y: hidden;
 
-	max-width: 100%; 
+	max-width: 100%;
 }
 
 img.download-inline-icon {
@@ -253,14 +253,14 @@ figure.full-line-screenshot {
 figure.top-right-screenshot {
 	margin-bottom: 15px;
 	margin-left: 15px;
-	
+
 	float: right;
 }
 
 figure.top-left-screenshot {
 	margin-bottom: 15px;
 	margin-right: 15px;
-	
+
 	float: left;
 }
 
@@ -278,19 +278,19 @@ figcaption {
 /********** Unrestricted style classes **********/
 /* These can be used on almost any tag, so construct them judiciously! */
 
-/* Style for a warning about missing characters for mobile viewers on pages that 
+/* Style for a warning about missing characters for mobile viewers on pages that
 contain <code> */
 .mobile-only {
 	margin-bottom: 15px;
 
-	display: none; 	/* This gets overridden by mobile-detection.js when it adds 
+	display: none; 	/* This gets overridden by mobile-detection.js when it adds
 	mobile-font.css file */
 	text-align: center;
 
 	font-weight: bold;
 
 	color: #bb0000;
-	background-color: transparent;	
+	background-color: transparent;
 }
 
 /* Change the color of private content to differentiate it visually. */
@@ -308,7 +308,7 @@ contain <code> */
 }
 
 .text-highlight {
-	margin: 25px;	
+	margin: 25px;
 	border-radius: 15px;
 
 	font-weight: 400;
@@ -415,19 +415,19 @@ contain <code> */
 
      /*** Main Content ***/
 
-.content-wrapper {	
+.content-wrapper {
 	/* Default to no left margin because of vertical inline. */
-	
+
 }
 
 .content {
 	background-color: white;
-	
+
 	/* Small screen: set down from inline navigation menu, and inset a small amount. */
 	margin-top: 20px;
 	margin-bottom: 30px;
 	padding: 20px;
-	
+
 	overflow-y: auto;
 }
 
@@ -477,7 +477,7 @@ contain <code> */
 	text-align: center;
 
 	list-style-type: none;
-	
+
 	clear: both;
 }
 .book-nav-back, .book-nav-up, .book-nav-forward {
@@ -518,14 +518,14 @@ contain <code> */
 .code-block {
 	margin-top: 15px;
 	margin-bottom: 15px;
-	padding: 15px;	
+	padding: 15px;
 	border-radius: 15px;
 
 	display: block;
 	overflow: auto;
 
 	font-family: 'DejaVu Sans Mono', Consolas, 'Lucida Console', Menlo, Monaco, monospace, sans-serif;
-	font-size: .9em; 
+	font-size: .9em;
 	line-height: normal;
 	-moz-tab-size: 4;
     -o-tab-size: 4;
@@ -551,7 +551,7 @@ contain <code> */
 
 .neutral-code {
 	color: rgb(0, 0, 160); /* dark blue */
-	background-color: #eeeeee; /* light grey */
+	background-color: #dddddd !important; /* light grey */
 }
 
 .code-comment {
@@ -619,7 +619,7 @@ contain <code> */
 
 .footer-line-separator {
 	/* Don't display when footer-lines are wrapping */
-	display: none; 	
+	display: none;
 }
 
 
@@ -643,36 +643,36 @@ contain <code> */
 
 		width: 220px;
 	}
-	
+
 	.nav-wrapper {
 		/* Float to the left of the content */
-		float: left; 
+		float: left;
 	}
-	
+
 	.navigation {
 		/* Readjust for left float */
 		margin-top: 0px;
 	}
-	
-	.content-wrapper {	
+
+	.content-wrapper {
 		/* To allow for floated navigation pane */
 		margin-left: 160px;
 /*		display: table-row;*/
 	}
-		
+
 	.content {
-		/* Set the white content pane in from the sides of the page, and have a 
+		/* Set the white content pane in from the sides of the page, and have a
 		minimum height that is no shorter than the navigation menu */
 		margin: 20px;
 		margin-bottom: 30px;
 	}
-	
+
 	.code-block {
 		/* Set in farther since the page is larger */
 		margin-left: 35px;
 		margin-right: 35px;
 	}
-		
+
 	.footer-line {
 		/* Inline when the screen is wide enough */
 		display: inline-block;
@@ -681,21 +681,21 @@ contain <code> */
 
 	.footer-line-separator {
 		/* Display when footer-lines are not wrapping. */
-		display: inline-block; 	
+		display: inline-block;
 		clear: none;
 	}
 }
 
 
 /* =============================================================================
-   Width 900px to 999px  
+   Width 900px to 999px
    ========================================================================== */
 
 @media only screen and (min-width: 900px) {
 
 	.header-wrapper {
 		/* Increase text to preferred size now that clearance is available */
-		font-size: 24px;	
+		font-size: 24px;
 		line-height: 23px;
 	}
 }
@@ -710,20 +710,20 @@ contain <code> */
 	.search-bar {
 		width: 300px;
 	}
-	
+
 	.nav-wrapper {
-	
-		/* Add additional margin to compensate for changes due to content width 
-		restriciton. */
+
+		/* Add additional margin to compensate for changes due to content width
+		restriction. */
 		margin-top: 20px;
 	}
 
-	.content-wrapper {	
-		/* Larger space induces a right margin. This should match the left 
+	.content-wrapper {
+		/* Larger space induces a right margin. This should match the left
 		margin from the narrower style. */
 		margin-right: 160px;
-		
-		/* Allow the restricted-width content pane to be centered within the 
+
+		/* Allow the restricted-width content pane to be centered within the
 		window. */
 		text-align: center;
 	}
@@ -731,21 +731,21 @@ contain <code> */
 	.content {
 		/* Increased padding when the screen width is a reasonable size */
 		padding: 40px;
-				
-		/* Restrict the width of the content pane to improve readability on very 
+
+		/* Restrict the width of the content pane to improve readability on very
 		wide screens. */
 		width: 100%;
 		max-width: 1000px;
 		display: inline-block;
 		text-align: left;
 	}
-	
+
 	.code-block {
 		/* Set in even more fartherer since the page is way big */
 		margin-left: 45px;
 		margin-right: 45px;
 	}
-	
+
 	.book-nav {
 		/* Move the nav links slightly closer to the bottom of the content panel
 		than on narrower screens, since the padding is larger. */

@@ -1,28 +1,24 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 	<head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-	
+
+{% include head.html %}
+
 		<title>Avail Newsletters, Edition #3, Supplemental: availc -?</title>
-	
+
 	</head>
 
 	<body class="gradient-logo">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
+
+{% include body-top.html %}
 
 		<h2 class="content-title">availc -? (help listing)</h2>
-		
+
 <div class="restricted-width-container">
 <div class="console code-block">localhost:~$ availc -?
-The Avail compiler understands the following options: 
+The Avail compiler understands the following options:
 
 --availRenames
     The absolute path to the renames file. This option overrides environment
@@ -72,7 +68,7 @@ The Avail compiler understands the following options:
 --verboseMode
     The option to request minimum verbosity ( -v or --verboseMode ) or
     manually set the verbosity level ( --verboseMode=# ). This option
-    overrides environment variables. 
+    overrides environment variables.
 
     Possible values for # include:
     0 - Zero extra verbosity. Only error messages will be output. This is
@@ -102,7 +98,7 @@ The Avail compiler understands the following options:
 	</tr>
 </table>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
+{% include body-bottom.html %}
 
 	</body>
 

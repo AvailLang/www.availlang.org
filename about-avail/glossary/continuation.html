@@ -1,27 +1,23 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 <head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-	
+
+{% include head.html %}
+
 		<title>Avail - Glossary</title>
-	
+
 	</head>
 
 	<body class="gradient-logo">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
-		
+
+{% include body-top.html %}
+
 <h2 class="content-title">Continuation</h2>
 
 <p>
-An entity which crystallizes the entire execution state of the running thread (the stack, program counter, etc.) for later use. The parameter types and return types of the continuation match the corresponding types of the <a href="./block.html">block</a> in which it is defined. 
+An entity which crystallizes the entire execution state of the running thread (the stack, program counter, etc.) for later use. The parameter types and return types of the continuation match the corresponding types of the <a href="./block.html">block</a> in which it is defined.
 </p><p>
 Continuations can be exited or resumed. When a continuation is exited, the program execution state is replaced with the contents of the continuation, and the most recently entered block (the top block on the continuation's stored stack) is exited with the supplied return value (if any). When a continuation is resumed, the program execution state is replaced with the contents of the continuation, and the next statement in line is executed. Both the exit and resume instructions are of return type <a href="./bottom.html"><code>⊥</code></a>, since continuations do not "return".
 </p><p>
@@ -35,7 +31,7 @@ Continuations can be exited or resumed. When a continuation is exited, the progr
 	</div>
 </tr>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
+{% include body-bottom.html %}
 
 	</body>
 

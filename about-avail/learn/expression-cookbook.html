@@ -1,31 +1,27 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 	<head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-<!--#include virtual="/_include/sh-head.ssi" -->
+
+{% include head.html %}
+{% include sh-head.html %}
 <style>
 ul {list-style-type: none;}
-table{ 
+table{
 margin-left: 50px;
 }
 
 </style>
-	
+
 		<title>Avail Documentation - Expression Cookbook</title>
-	
+
 	</head>
 
 	<body class="gradient-logo">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
-		
+
+{% include body-top.html %}
+
 <h2 class="content-title">Expression Cookbook</h2>
 
 <p>Here can be found handy expressions that illustrate a wide variety of small programming tasks.</p>
@@ -240,7 +236,7 @@ margin-left: 50px;
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
 <![CDATA[
-! 120 &divide; 3 > 39 
+! 120 &divide; 3 > 39
 ]]>
 </script></div></div>
 <p><small>Character comparison is based upon a character's numeric code point</small></p>
@@ -446,7 +442,7 @@ margin-left: 50px;
 <![CDATA[
 Run
 [
-	a ::= 5; 
+	a ::= 5;
 	If a > 3 then [Print: "yes";];
 ]
 ]]>
@@ -456,7 +452,7 @@ Run
 <![CDATA[
 Run
 [
-	a ::= 5; 
+	a ::= 5;
 	Unless a < 3 then [Print: &OpenCurlyDoubleQuote;a&CloseCurlyDoubleQuote;;];
 ]
 ]]>
@@ -466,7 +462,7 @@ Run
 <![CDATA[
 Run
 [
-	a ::= 5; 
+	a ::= 5;
 	If a < 3 then [Print: "yes";] else [Print: "no";];
 ]
 ]]>
@@ -522,9 +518,9 @@ Run
 <![CDATA[
 Run
 [
-	a ::= 5; 
-    If a < 3 then [Print: "a < 3";] 
-    else if 3 &leq; a < 6 then [Print: "3 &leq; a < 6";] 
+	a ::= 5;
+    If a < 3 then [Print: "a < 3";]
+    else if 3 &leq; a < 6 then [Print: "3 &leq; a < 6";]
     else [Print: "None of these";];
 ]
 ]]>
@@ -534,8 +530,8 @@ Run
 <![CDATA[
 Run
 [
-	a ::= 5; 
-    If a < 3 then [Print: "a < 3";] 
+	a ::= 5;
+    If a < 3 then [Print: "a < 3";]
     else if 3 &leq; a < 6 then [Print: "3 &leq; a < 6";];
 ]
 ]]>
@@ -545,9 +541,9 @@ Run
 <![CDATA[
 Run
 [
-	a ::= 5; 
-    Unless a > 3 then [Print: "a < 3";] 
-    else unless 8 &leq; a  then [Print: "3 &leq; a < 8";] 
+	a ::= 5;
+    Unless a > 3 then [Print: "a < 3";]
+    else unless 8 &leq; a  then [Print: "3 &leq; a < 8";]
     else [Print: "a > 8";];
 ]
 ]]>
@@ -555,19 +551,19 @@ Run
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
 <![CDATA[
-! if 5 < 3 then [1] 
-  else if 3 &leq; 8 < 6 then [2] 
-  else if 9 &leq; 11 < 16 &and; 19 &geq; 16 &geq; 7 &or; 5's type ⊆ integer then [3] 
+! if 5 < 3 then [1]
+  else if 3 &leq; 8 < 6 then [2]
+  else if 9 &leq; 11 < 16 &and; 19 &geq; 16 &geq; 7 &or; 5's type ⊆ integer then [3]
   else [4]
 ]]>
 </script></div></div>
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
 <![CDATA[
-! unless 2 < 3 then [1] 
-  else unless 3 &leq; 5 < 6 then [2] 
-  else unless 9 &leq; 11 < 16 &and; 19 &geq; 16 &geq; 7 &or; 5's type ⊆ integer then [3] 
-  else unless integer ⊆ 5's type then [4] 
+! unless 2 < 3 then [1]
+  else unless 3 &leq; 5 < 6 then [2]
+  else unless 9 &leq; 11 < 16 &and; 19 &geq; 16 &geq; 7 &or; 5's type ⊆ integer then [3]
+  else unless integer ⊆ 5's type then [4]
   else [5]
 ]]>
 </script></div></div>
@@ -619,7 +615,7 @@ Run
 </script></div></div>
 
 <ul>
-<li>&#8226; 
+<li>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Collections/3469355514.html">"_is empty"</a></code>
 </li>
 </ul>
@@ -651,18 +647,18 @@ Run
 <div class="restricted-width-container">
 <table style="width:100%">
 <tr>
-<td>&#8226; 
+<td>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Collections/2758872406.html">"any&hellip;in|of_&#167;satisfies_"</a></code>
 </td>
-<td>&#8226; 
+<td>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Maps/4224081814.html">"any&hellip;&rarr;&hellip;in|of_&#167;satisfies_"</a></code>
 </td>
 </tr>
 <tr>
-<td>&#8226; 
+<td>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Collections/4002697519.html">"each&hellip;in|of_&#167;satisfies_"</a></code>
 </td>
-<td>&#8226; 
+<td>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Maps/1693384303.html">"each&hellip;&rarr;&hellip;in|of_&#167;satisfies_"</a></code>
 </td>
 </tr>
@@ -689,10 +685,10 @@ Run
 <div class="restricted-width-container">
 <table style="width:100%">
 <tr>
-<td>&#8226; 
+<td>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Collections/3622004228.html">"count of&hellip;from|in|of_&#167;where_"</a></code>
 </td>
-<td>&#8226; 
+<td>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Maps/4276944932.html">"count of&hellip;&rarr;&hellip;from|in|of_&#167;where_"</a></code>
 </td>
 </tr>
@@ -805,10 +801,10 @@ Run
 <table style="width:100%">
 <tr>
 <td>
-&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/2175100746.html">"select each&hellip;from_&#167;in parallel&#171;_-way&#187;where_"</a></code> 
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/2175100746.html">"select each&hellip;from_&#167;in parallel&#171;_-way&#187;where_"</a></code>
 </td>
 <td>
-&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/3199143567.html">"reject each&hellip;from_&#167;in parallel&#171;_-way&#187;where_"</a></code> 
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/3199143567.html">"reject each&hellip;from_&#167;in parallel&#171;_-way&#187;where_"</a></code>
 </td>
 </tr>
 <tr>
@@ -821,10 +817,10 @@ Run
 </tr>
 <tr>
 <td>
-&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/3185297698.html">"select each&hellip;&rarr;&hellip;from_&#167;in parallel&#171;_-way&#187;where_"</a></code>	
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/3185297698.html">"select each&hellip;&rarr;&hellip;from_&#167;in parallel&#171;_-way&#187;where_"</a></code>
 </td>
 <td>
-&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/4209340519.html">"reject each&hellip;&rarr;&hellip;from_&#167;in parallel&#171;_-way&#187;where_"</a></code>	
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Concurrency/4209340519.html">"reject each&hellip;&rarr;&hellip;from_&#167;in parallel&#171;_-way&#187;where_"</a></code>
 </td>
 </tr>
 </table>
@@ -876,7 +872,7 @@ Run
 </script></div></div>
 
 <ul>
-<li>&#8226; 
+<li>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Literals/2367902331.html">"{&#171;_&rarr;_‡,&#187;}"</a></code>
 </li>
 </ul>
@@ -1143,10 +1139,10 @@ Run
 <div class="restricted-width-container">
 <table style="width:50%">
 <tr>
-<td>&#8226; 
+<td>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/648752861.html">"_+_"</a></code>
 </td>
-<td>&#8226; 
+<td>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2124146203.html">"_-_"</a></code>
 </td>
 </tr>
@@ -1171,16 +1167,16 @@ Run
 <div class="restricted-width-container">
 <table style="width:100%">
 <tr>
-<td>&#8226; 
+<td>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/156781086.html">"_∈_"</a></code>
 </td>
-<td>&#8226; 
+<td>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Collections/4095105007.html">"_∉_"</a></code>
 </td>
-<td>&#8226; 
+<td>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Sets/2855935869.html">"_∋_"</a></code>
 </td>
-<td>&#8226; 
+<td>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Sets/2150005162.html">"_∌_"</a></code>
 </td>
 </tr>
@@ -1205,30 +1201,30 @@ Run
 <div class="restricted-width-container">
 <table style="width:100%">
 <tr>
-<td>&#8226; 
+<td>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Sets/1294107252.html">"_⊂_"</a></code>
 </td>
-<td>&#8226; 
+<td>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Sets/2762189234.html">"_⊄_"</a></code>
 </td>
-<td>&#8226; 
+<td>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/595778544.html">"_⊆_"</a></code>
 </td>
-<td>&#8226; 
+<td>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Types/1457465502.html">"_⊈_"</a></code>
 </td>
 </tr>
 <tr>
-<td>&#8226; 
+<td>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Sets/563172975.html">"_⊉_"</a></code>
 </td>
-<td>&#8226; 
+<td>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Sets/1785948801.html">"_⊇_"</a></code>
 </td>
-<td>&#8226; 
+<td>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Sets/3081759941.html">"_⊃_"</a></code>
 </td>
-<td>&#8226; 
+<td>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Sets/4219477571.html">"_⊅_"</a></code>
 </td>
 </tr>
@@ -1265,13 +1261,13 @@ Run
 <div class="restricted-width-container">
 <table style="width:100%">
 <tr>
-<td>&#8226; 
+<td>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2794616015.html">"_∩_"</a></code>
 </td>
-<td>&#8226; 
+<td>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/2800898572.html">"_∪_"</a></code>
 </td>
-<td>&#8226; 
+<td>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Sets/542060898.html">"_Δ_"</a></code>
 </td>
 </tr>
@@ -1652,7 +1648,7 @@ Run
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
 <![CDATA[
-! take at most ∞ from a stream over "dog|cat|mayonnaise|parrot|laser" delimited by " " 
+! take at most ∞ from a stream over "dog|cat|mayonnaise|parrot|laser" delimited by " "
 ]]>
 </script></div></div>
 -->
@@ -1716,7 +1712,7 @@ Run
 <div class="restricted-width-container">
 <table style="width:100%">
 <tr>
-<td>&#8226; 
+<td>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Tuples/2662703844.html">"quicksort_"</a></code>
 </td>
 <td>&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Tuples/2169357673.html">"quicksort&hellip;,&hellip;in|of_§by_"</a></code>
@@ -1725,12 +1721,12 @@ Run
 </td>
 </tr>
 <tr>
-<td>&#8226; 
+<td>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Tuples/1034928887.html">"merge sort_"</a></code>
 </td>
 <td>&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Tuples/3156705720.html">"merge sort&hellip;,&hellip;in|of_§by_"</a></code>
 </td>
-<td>&#8226; 
+<td>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Tuples/3002682086.html">"merge sort_with_"</a></code>
 </td>
 </tr>
@@ -1747,7 +1743,7 @@ Run
 <![CDATA[
 Run
 [
-	For each i from 1 to 10 do 
+	For each i from 1 to 10 do
 	[Print: &OpenCurlyDoubleQuote;i&CloseCurlyDoubleQuote; ++ " ";];
 ]
 ]]>
@@ -1757,7 +1753,7 @@ Run
 <![CDATA[
 Run
 [
-	For each i from 2 to 22 by 4 do 
+	For each i from 2 to 22 by 4 do
 	[Print: &OpenCurlyDoubleQuote;i&CloseCurlyDoubleQuote; ++ " ";];
 ]
 ]]>
@@ -1769,8 +1765,8 @@ Run
 <![CDATA[
 Run
 [
-	t ::= 10 to 20; 
-	For each i from 1 to |t| do 
+	t ::= 10 to 20;
+	For each i from 1 to |t| do
 	[Print: &OpenCurlyDoubleQuote;t[i]&CloseCurlyDoubleQuote; ++ " ";];
 ]
 ]]>
@@ -1780,7 +1776,7 @@ Run
 <table style="width:100%">
 <tr>
 <td>&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/2753007895.html">"From_to_do_"</a></code></td>
-<td>&#8226; 
+<td>&#8226;
 <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/1003154888.html">"For each&hellip;from_to_&#167;do_"</a></code>
 </td>
 </tr>
@@ -1792,7 +1788,7 @@ Run
 <![CDATA[
 Run
 [
-	i : integer := 1; 
+	i : integer := 1;
 	While i < 5 do [Print: &OpenCurlyDoubleQuote;i&CloseCurlyDoubleQuote; ++ " "; i++;];
 ]
 ]]>
@@ -1801,7 +1797,7 @@ Run
 <![CDATA[
 Run
 [
-	i : integer := 1; 
+	i : integer := 1;
 	Do [Print: &OpenCurlyDoubleQuote;i&CloseCurlyDoubleQuote; ++ " "; i++;] while i < 5;
 ]
 ]]>
@@ -1810,7 +1806,7 @@ Run
 <![CDATA[
 Run
 [
-	i : integer := 1; 
+	i : integer := 1;
 	Until i > 5 do [Print: &OpenCurlyDoubleQuote;i&CloseCurlyDoubleQuote; ++ " "; i++;];
 ]
 ]]>
@@ -1819,7 +1815,7 @@ Run
 <![CDATA[
 Run
 [
-	i : integer := 1; 
+	i : integer := 1;
 	Do [Print: &OpenCurlyDoubleQuote;i&CloseCurlyDoubleQuote; ++ " "; i++;] until i > 5;
 ]
 ]]>
@@ -1828,9 +1824,9 @@ Run
 <![CDATA[
 Run
 [
-	i : integer := 1; 
-	While i < 5 
-	do [Print: &OpenCurlyDoubleQuote;i&CloseCurlyDoubleQuote; ++ " "; i++;] 
+	i : integer := 1;
+	While i < 5
+	do [Print: &OpenCurlyDoubleQuote;i&CloseCurlyDoubleQuote; ++ " "; i++;]
 	alternate with [Print: "\nIn between!\n";];
 ]
 ]]>
@@ -1839,9 +1835,9 @@ Run
 <![CDATA[
 Run
 [
-	i : integer := 1; 
-	Do [Print: &OpenCurlyDoubleQuote;i&CloseCurlyDoubleQuote; ++ " "; i++;] 
-	while i < 5 
+	i : integer := 1;
+	Do [Print: &OpenCurlyDoubleQuote;i&CloseCurlyDoubleQuote; ++ " "; i++;]
+	while i < 5
 	alternate with [Print: "\nIn between!\n";];
 ]
 ]]>
@@ -1851,9 +1847,9 @@ Run
 <![CDATA[
 Run
 [
-	i : integer := 1; 
-	Until i > 5 
-	do [Print: &OpenCurlyDoubleQuote;i&CloseCurlyDoubleQuote; ++ " "; i++;] 
+	i : integer := 1;
+	Until i > 5
+	do [Print: &OpenCurlyDoubleQuote;i&CloseCurlyDoubleQuote; ++ " "; i++;]
 	alternate with [Print: "\nIn between!\n";];
 ]
 ]]>
@@ -1862,9 +1858,9 @@ Run
 <![CDATA[
 Run
 [
-	i : integer := 1; 
-	Do [Print: &OpenCurlyDoubleQuote;i&CloseCurlyDoubleQuote; ++ " "; i++;] 
-	until i > 5 
+	i : integer := 1;
+	Do [Print: &OpenCurlyDoubleQuote;i&CloseCurlyDoubleQuote; ++ " "; i++;]
+	until i > 5
 	alternate with [Print: "\nIn between!\n";];
 ]
 ]]>
@@ -1919,7 +1915,7 @@ Run
 Run
 [
 	aTuple ::= <1,2,3,4>;
-	For each element of aTuple do 
+	For each element of aTuple do
 	[Print: &OpenCurlyDoubleQuote;element&CloseCurlyDoubleQuote; ++ " ";];
 ]
 ]]>
@@ -1931,7 +1927,7 @@ Run
 Run
 [
 	aTuple ::= <8,7,6,5>;
-	For each element, index of aTuple do 
+	For each element, index of aTuple do
 	[Print: &OpenCurlyDoubleQuote;element&CloseCurlyDoubleQuote; ++ " is at index " ++ &OpenCurlyDoubleQuote;index&CloseCurlyDoubleQuote; ++ " \n";];
 ]
 ]]>
@@ -1955,8 +1951,8 @@ Run
 <![CDATA[
 Run
 [
-	aMap ::= {"foo"&rarr;1,"bar"&rarr;2,"frog"&rarr;3,"prince"&rarr;4}; 
-	For each key &rarr; value of aMap do 
+	aMap ::= {"foo"&rarr;1,"bar"&rarr;2,"frog"&rarr;3,"prince"&rarr;4};
+	For each key &rarr; value of aMap do
 	[Print: key ++ "&rarr;" ++ &OpenCurlyDoubleQuote;value&CloseCurlyDoubleQuote; ++ "\n";];
 ]
 ]]>
@@ -1967,7 +1963,7 @@ Run
 Run
 [
 	aReader ::= a reader over <1,2,3,4>;
-	For each element of aReader do 
+	For each element of aReader do
 	[Print: &OpenCurlyDoubleQuote;element&CloseCurlyDoubleQuote; ++ " ";];
 ]
 ]]>
@@ -1978,7 +1974,7 @@ Run
 Run
 [
 	aStream ::= a stream over <1,2,3,4>;
-	For each element of aStream do 
+	For each element of aStream do
 	[Print: &OpenCurlyDoubleQuote;element&CloseCurlyDoubleQuote; ++ " ";];
 ]
 ]]>
@@ -1991,7 +1987,7 @@ Run
 <![CDATA[
 Run
 [
-	For each i of 10 to 20 in parallel do 
+	For each i of 10 to 20 in parallel do
 	[Print: &OpenCurlyDoubleQuote;i&CloseCurlyDoubleQuote; ++ " ";];
 ]
 ]]>
@@ -2001,7 +1997,7 @@ Run
 <![CDATA[
 Run
 [
-	For each element,index of 10 to 20 in parallel do 
+	For each element,index of 10 to 20 in parallel do
 	[Print: &OpenCurlyDoubleQuote;index&CloseCurlyDoubleQuote; ++ ": " ++&OpenCurlyDoubleQuote;element&CloseCurlyDoubleQuote; ++ "\n";];
 ]
 ]]>
@@ -2012,8 +2008,8 @@ Run
 <![CDATA[
 Run
 [
-	aSet ::= {1,2,3,4}; 
-	For each i of aSet in parallel do 
+	aSet ::= {1,2,3,4};
+	For each i of aSet in parallel do
 	[Print: &OpenCurlyDoubleQuote;i&CloseCurlyDoubleQuote; ++ " ";];
 ]
 ]]>
@@ -2025,7 +2021,7 @@ Run
 Run
 [
 	aMap ::= {"foo"&rarr;1,"bar"&rarr;2,"frog"&rarr;3,"prince"&rarr;4};
-	For each key &rarr; value of aMap in parallel 
+	For each key &rarr; value of aMap in parallel
 	do [Print: key ++ "&rarr;" ++ &OpenCurlyDoubleQuote;value&CloseCurlyDoubleQuote; ++ "\n";];
 ]
 ]]>
@@ -2186,10 +2182,10 @@ Run
 <td>
 &#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/3345552701.html">"_'s&#8263;code point"</a></code>
 </td>
-<td> 
+<td>
 &#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Primitives/388711886.html">"_&rarr;character"</a></code>
 </td>
-<td> 
+<td>
 &#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Strings/3097851224.html">"_→string"</a></code>
 </td>
 </tr>
@@ -2233,15 +2229,15 @@ Run
 <td>
 &#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Characters/2184531440.html">"_is lowercase"</a></code>
 </td>
-<td> 
+<td>
 &#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Characters/1156641867.html">"_is uppercase"</a></code>
 </td>
 </tr>
 <tr>
-<td> 
+<td>
 &#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Characters/125642156.html">"_is an Arabic numeral"</a></code>
 </td>
-<td> 
+<td>
 &#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Characters/310828092.html">"_is whitespace"</a></code>
 </td>
 </tr>
@@ -2270,7 +2266,7 @@ Run
 <td>
 &#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Characters/1525689923.html">"uppercase_"</a></code>
 </td>
-<td> 
+<td>
 &#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Characters/896597272.html">"lowercase_"</a></code>
 </td>
 </tr>
@@ -2314,13 +2310,13 @@ Run
 <td>
 &#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early%20Literals/202741432.html">"&OpenCurlyDoubleQuote;_&CloseCurlyDoubleQuote;"</a></code>
 </td>
-<td> 
+<td>
 &#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Strings/1453070126.html">"&OpenCurlyDoubleQuote;_&CloseCurlyDoubleQuote;(hex)"</a></code>
 </td>
 <td>
 &#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early%20Tuples/260428668.html">"a UUID"</a></code>
 </td>
-<td> 
+<td>
 &#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Strings/1810231868.html">"&OpenCurlyDoubleQuote;_&CloseCurlyDoubleQuote;(UUID)"</a></code>
 </td>
 </tr>
@@ -2356,11 +2352,11 @@ Run
 <![CDATA[
 Run
 [
-	Print: 
-		<84, 104, 101, 115, 101, 32, 
-		 97, 114, 101, 32, 116, 104, 
-		 101, 32, 34, 97, 98, 99, 
-		 39, 115, 34, 32, 111, 102, 
+	Print:
+		<84, 104, 101, 115, 101, 32,
+		 97, 114, 101, 32, 116, 104,
+		 101, 32, 34, 97, 98, 99,
+		 39, 115, 34, 32, 111, 102,
 		 32, 65, 118, 97, 105, 108>→string;
 ]
 ]]>
@@ -2388,7 +2384,7 @@ Run
 <div class="restricted-width-container">
 <table style="width:100%">
 <tr>
-<td> 
+<td>
 &#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Strings/2428097291.html">"trim_"</a></code>
 </td>
 </tr>
@@ -2415,7 +2411,7 @@ Run
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
 <![CDATA[
-! format "‘primaryInventor’ started development on ‘language’ way back in “year”!" with 
+! format "‘primaryInventor’ started development on ‘language’ way back in “year”!" with
 	"language" ::= "Avail", "year" ::= 1993, "primaryInventor" ::= "Mark van Gulik"
 ]]>
 </script></div></div>
@@ -2428,10 +2424,10 @@ Run
 </script></div></div>
 
 <p><small>
-The input in the Availuator is a text field.  Because of this, it doesn't recognize newlines.  In order to break continuous 
+The input in the Availuator is a text field.  Because of this, it doesn't recognize newlines.  In order to break continuous
 strings over multiple lines, ignoring newlines and other whitespace, in an actual avail module, you'd insert a back slash (\)
-at the end of the line immediately preceding the newline character.  On the next line, all white space is ignored up to the 
-first occurrence of the combination of a back slash (\) immediately followed by a pipe (|).  The following example is meant 
+at the end of the line immediately preceding the newline character.  On the next line, all white space is ignored up to the
+first occurrence of the combination of a back slash (\) immediately followed by a pipe (|).  The following example is meant
 for use in an Avail module and will not run in the Availuator.
 </small></p>
 
@@ -2447,9 +2443,9 @@ brokenUpString ::= "In 1493 Columbus \
 <p><small>
 The following example has been created to work specifically in the Availuator. This will work as is in an Avail module,
 however, all the newlines will be captured as they are literally placed in the current code.  To run this example in an
-Avail module utilizing continuous string breaking formatting, the above line breaking methodology would need 
-to be implemented at each newline.  Indentation at the next line would also be added before the "\|" characters.  
-We considered not adding the following example because of this, but I had too much fun building it not to show it! 
+Avail module utilizing continuous string breaking formatting, the above line breaking methodology would need
+to be implemented at each newline.  Indentation at the next line would also be added before the "\|" characters.
+We considered not adding the following example because of this, but I had too much fun building it not to show it!
 </small></p>
 
 <div class="restricted-width-container">
@@ -2479,15 +2475,15 @@ ho‘⑪’ler c‘④’;‘⑭’‘⑨’ day r‘⑥’, but nevermore‘⑭
 <td>
 &#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Strings/35454703.html">"format_with_"</a></code>
 </td>
-<td> 
-&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Strings/972373158.html">"format_with&#171;_‡,&#187;"</a></code> 
+<td>
+&#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Strings/972373158.html">"format_with&#171;_‡,&#187;"</a></code>
 </td>
 </tr>
 <tr>
 <td>
 &#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Strings/2392352593.html">"format_with unchecked_"</a></code>
 </td>
-<td> 
+<td>
 &#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Strings/4100671162.html">"format_with&#171;&hellip;
 [!::=_‡,&#187;"</a></code>
 </td>
@@ -2496,7 +2492,7 @@ ho‘⑪’ler c‘④’;‘⑭’‘⑨’ day r‘⑥’, but nevermore‘⑭
 <td>
 &#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Strings/1913558909.html">"partially format_with_"</a></code>
 </td>
-<td> 
+<td>
 &#8226; <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Strings/1453934071.html">"partially format_with&#171;&hellip;
 [::=_‡,&#187;"</a></code>
 </td>
@@ -2523,9 +2519,9 @@ Run [ Raise an arithmetic exception]
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
 <![CDATA[
-Run 
+Run
 [
-	Raise a descriptive exception with 
+	Raise a descriptive exception with
 		error message ::= "Hmmmm&hellip; AHA!  There's &#11015; your problem!"
 ]
 ]]>
@@ -2547,7 +2543,7 @@ Run
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
 <![CDATA[
 ! try [Raise a cannot-divide-by-zero exception]
-else 
+else
 [
 	"Did that break?!  Well run me instead!"
 ]
@@ -2557,15 +2553,15 @@ else
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
 <![CDATA[
-Run 
-[ 
-	Guard [Raise a cannot-add-unlike-infinities exception] 
-	intercept 
+Run
+[
+	Guard [Raise a cannot-add-unlike-infinities exception]
+	intercept
 	[
-		e : cannot-add-unlike-infinities exception 
-	| 
+		e : cannot-add-unlike-infinities exception
+	|
 		Print: "Intercepted that exception&hellip;\n";
-	]; 
+	];
 	Print: "&hellip;and then kept going!";
 ]
 ]]>
@@ -2573,12 +2569,12 @@ Run
 
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
-<![CDATA[ 
-! guard [Raise a cannot-read-unassigned-variable exception] 
-intercept 
+<![CDATA[
+! guard [Raise a cannot-read-unassigned-variable exception]
+intercept
 [
 	e : cannot-read-unassigned-variable exception
-| 
+|
 	7
 ]
 ]]>
@@ -2588,12 +2584,12 @@ intercept
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
 <![CDATA[
 Run
-[ 
-	Guard [Raise a no-such-fiber-variable exception] 
-	intercept 
+[
+	Guard [Raise a no-such-fiber-variable exception]
+	intercept
 	[
 		e : subscript-out-of-bounds exception
-	| 
+	|
 		Print: "You won't get here because it isn't intercepting correctly";
 	]
 	ensure
@@ -2607,18 +2603,18 @@ Run
 <div class="restricted-width-container">
 <div class="neutral-code code-block"><script type="syntaxhighlighter" class="brush: plain; gutter: false">
 <![CDATA[
-! guard [Raise a incorrect-number-of-arguments exception] 
-intercept 
+! guard [Raise a incorrect-number-of-arguments exception]
+intercept
 [
 	e : incorrect-argument-type exception
-| 
+|
 	Print: "The first intercept does not catch this\n";
 	13
 ]
-intercept 
+intercept
 [
 	e : incorrect-number-of-arguments exception
-| 
+|
 	Print: "The second intercept caught this and gave you a 7 instead\n";
 	7
 ]
@@ -2652,8 +2648,8 @@ ensure
 	</tr>
 </table>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
-<!--#include virtual="/_include/sh-bottom.ssi" -->
+{% include body-bottom.html %}
+{% include sh-bottom.html %}
 
 	</body>
 

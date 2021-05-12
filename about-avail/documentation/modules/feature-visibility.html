@@ -1,23 +1,19 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 	<head>
-	
-<!--#include virtual="/_include/head.ssi" -->
+
+{% include head.html %}
 
 		<title>Modules - Feature Visibility</title>
 
 	</head>
 
 	<body class="gradient-logo">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
-<!--#include virtual="/_include/sh-head.ssi" -->
+
+{% include body-top.html %}
+{% include sh-head.html %}
 
 <h2 class="content-title">Feature Visibility</h2>
 
@@ -107,7 +103,7 @@ z : integer := 5 added to 3;
 <p><code class="module">Passive Integer Adder</code> imports and re-exports everything from <code class="module">Passive Number Adder</code>, and also adds a definition that specializes <code class="method">"_added to_"</code> to answer an <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special%20Objects/1558086042.html">"integer"</a></code> when the arguments are <code>integer</code>s. Call this definition <code>D<sub>1</sub></code>.</p>
 
 <div style="float: right;" class="floating-svg-wrapper">
-<!--#include virtual="/_images/modules/feature-visibility.svg" -->
+<!--#include virtual="/images/modules/feature-visibility.svg" -->
 </div>
 
 <p><code class="module">Passive String Adder</code> imports from <code class="module">Passive Number Adder</code>, and adds a definition that operates on <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Special%20Objects/2052869683.html">"string"</a></code>s, but does not re-export anything. Call this definition <code>D<sub>2</sub></code>.</p>
@@ -151,8 +147,8 @@ z : integer := 5 added to 3;
 	</tr>
 </table>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
-<!--#include virtual="/_include/sh-bottom.ssi" -->
+{% include body-bottom.html %}
+{% include sh-bottom.html %}
 
 	</body>
 

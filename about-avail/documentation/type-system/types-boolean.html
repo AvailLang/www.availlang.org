@@ -1,26 +1,22 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 	<head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-	
+
+{% include head.html %}
+
 		<title>Avail - Type System</title>
-	
+
 	</head>
 
 	<body class="gradient-logo">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
+
+{% include body-top.html %}
 
 		<h2 class="content-title"><code>boolean ≝ {true, false}ᵀ</code></h2>
 <div style="float: right;" class="floating-svg-wrapper">
-<!--#include virtual="/_images/type-system/type-system-boolean-focus.svg"-->
+<!--#include virtual="/images/type-system/type-system-boolean-focus.svg"-->
 </div>
 <p>
 Rather than being a specialized type, <code>boolean</code> is simply the name given to the enumeration of the special <a href="./types-atom.html">atoms</a> <code>true</code> and <code>false</code>: <code>{true, false}ᵀ</code>. These atoms are defined and exported by the virtual machine for use by programmers. Every primitive interrogative method, such as <code>"_=_"</code> or <code>"_≤_"</code>, uses classical (Boolean) bivalence, and every stable primitive interrogative obeys the three classical (Aristotelian) laws of thought.
@@ -136,7 +132,7 @@ Assert: (p ∨ q) = true;</div>
 	</tr>
 </table>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
+{% include body-bottom.html %}
 
 	</body>
 

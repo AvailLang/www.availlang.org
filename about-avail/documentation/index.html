@@ -1,23 +1,19 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 <head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-	
+
+{% include head.html %}
+
 		<title>Avail - Documentation</title>
-	
+
 	</head>
 
 	<body class="gradient-logo">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
-		
+
+{% include body-top.html %}
+
 <h2 class="content-title">Documentation</h2>
 
 <h3><a href="./stacks/library-documentation/index.html">The Stacks <small>(Avail API documentation)</small></a></h3>
@@ -44,7 +40,7 @@
 <h3><a href="./method-finder/index.html">The Great Method Finder</a></h3>
 <p>The names of Avail's methods are way more complex than the web readily allows, so we resort to hashing them in order to provide web-friendly, unambiguous URLs. But this also makes it impossible for a human to intuit the correct URL of the method they want to hyperlink in a blog post. This simple web app converts method names to styled hyperlinks that are ready for embedding in the web document of your choice.&nbsp; <a href="./method-finder/index.html">[read more&hellip;]</a></p>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
+{% include body-bottom.html %}
 
 	</body>
 

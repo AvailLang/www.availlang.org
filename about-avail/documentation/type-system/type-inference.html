@@ -1,22 +1,18 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 	<head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-	
+
+{% include head.html %}
+
 		<title>Avail - Type System</title>
-	
+
 	</head>
 
 	<body class="gradient-logo">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
+
+{% include body-top.html %}
 
 		<h2 class="content-title">Type Inference</h2>
 <p>
@@ -41,7 +37,7 @@ A <strong>module constant definition</strong> phrase permanently binds a name to
  * floating point approximation of "π". The assignment to "pi", a variable that
  * can only store the value 3.141592653589793, is legal only because "π" is known
  * to have a compatible type.
- */ 
+ */
 π ::= 3.141592653589793;
 pi : 3.141592653589793’s type := π;</div>
 </div>
@@ -150,7 +146,7 @@ sum : 7's type := 5 + 2;</div>
 	</tr>
 </table>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
+{% include body-bottom.html %}
 
 	</body>
 

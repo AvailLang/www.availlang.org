@@ -1,23 +1,19 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 	<head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-	
+
+{% include head.html %}
+
 		<title>Modules - Introduced Names Section</title>
 
 	</head>
 
 	<body class="gradient-logo">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
-		
+
+{% include body-top.html %}
+
 <h2 class="content-title">Introduced Names Section</h2>
 
 <p>The <code>Names</code> keyword begins the <strong>introduced names section</strong>. The contents of this section are zero or more <a href="/about-avail/documentation/type-system/types-string.html">string literal</a>s separated by <em>commas</em> <code>,</code> <code class="unicode">(U+002C)</code>. Each string literal introduces an <a href="/about-avail/documentation/type-system/types-atom.html">atom</a> and exports it for use by downstream modules. For example:</p>
@@ -42,7 +38,7 @@ Names
 
 	/* Evaluating dice expressions. */
 	"«using_,»roll_",
-	
+
 	/* Accessors and mutators (dice expression outcome). */
 	"integrate_and_with_",
 	"_'s⁇detailed outcome",
@@ -135,7 +131,7 @@ Method "Increment counter" is [atomically read ↑_counter and add 1] : ⊤;
 	</tr>
 </table>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
+{% include body-bottom.html %}
 
 	</body>
 

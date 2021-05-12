@@ -32,5 +32,5 @@ var onMobileDevice = isMobile.any();
 	}
 
 if( onMobileDevice ) {
-	addStyleSheet("/_css/mobile.css");			    
+	addStyleSheet("/css/mobile.css");
 }

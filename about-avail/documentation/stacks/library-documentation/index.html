@@ -1,75 +1,72 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html>
-<!--<![endif]-->
+<html lang="en-US">
 	<head>
-		<link href="/_css/stacks.css" rel="stylesheet" type="text/css">
-		
-		<!--#include virtual="/_include/head.ssi" -->
-		
+		<link href="/css/stacks.css" rel="stylesheet" type="text/css">
+
+		{% include head.html %}
+
 		<style>
 			body {overflow-y:hidden;}
 			#SidePane
 			{
 				height:100%;
 				width:20%;
-				
+
 				float: left;
 			}
-			
+
 			#CategoriesPane
 			{
 				position: relative;
 				height:50%;
 				width:100%;
 			}
-			
+
 			#MethodsPane
 			{
 				position: relative;
 				height:50%;
 				width:100%;
 			}
-			
+
 			#MainPane
 			{
 				height:100%;
 				width: 80%;
-				
+
 				float: right;
 				overflow: hidden;
 			}
-			.menu-show-setup, .menu-hide-setup 
+			.menu-show-setup, .menu-hide-setup
 			{
 				  transition:all 0.5s ease-out;
 				  overflow:hidden
 			}
-				
-			.menu-show-setup 
+
+			.menu-show-setup
 			{
 				  max-height:0;
 			}
-			.menu-show-setup.menu-show-start 
+			.menu-show-setup.menu-show-start
 			{
 				  max-height:200px;
 			}
-				
-			.menu-hide-setup 
+
+			.menu-hide-setup
 			{
 				max-height:200px;
 			}
-			.menu-hide-setup.menu-hide-start 
+			.menu-hide-setup.menu-hide-start
 			{
 				  max-height:0;
 			}
 
 		</style>
-	
+
 		<title>Stacks - The Avail API</title>
-		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="/javascript/angular.min.js"></script>
 		<script type="text/javascript" src="stacksApp.js"></script>
 	</head>
 
@@ -82,9 +79,9 @@
 				<div class="pane-filter" style="z-index:1"> <span style="width:30%">Filter:</span> <input style="width:70%" type="text" ng-model="search"><br></div>
 				<div class="pane-contents">
 					<div ng-repeat="stacksCategory in categories.content | orderBy: ['-selected','category'] | filter : filterOnCategory ">
-						<div>
+						<div markdown="0">
 							<input type="checkbox" name="favoriteColors" ng-model="stacksCategory.selected" ng-change="methodListUpdate()">
-							{{" " + stacksCategory.category + " "}}
+							{% raw %}{{" " + stacksCategory.category + " "}}{% endraw %}
 						</div>
 					</div>
 				</div>
@@ -112,7 +109,7 @@
 				<a class="pane-heading-link" title="Direct link to method page in frame outside of Stacks." href='{{visibleFramedPage}}'>Direct Link</a>
 			</h2>
 			<div style="padding-top:10px; padding-left:10px; padding-bottom:2px" class="method-section-header">
-				<strong>Method Search:</strong> &nbsp;<input type="text" ng-model="methodSearch" ng-enter="getInternalLink(methodSearch)">&nbsp; 
+				<strong>Method Search:</strong> &nbsp;<input type="text" ng-model="methodSearch" ng-enter="getInternalLink(methodSearch)">&nbsp;
 				<button ng-click="getInternalLink(methodSearch)">Search</button>
 				<br>
 				<span style="padding-left:20px; font-size:small"><input type="checkbox" ng-model="strictSearch">Exact match</span>
@@ -120,11 +117,11 @@
 				<div style="padding-left:20px" ng-repeat="(key, value) in methodLinkagePairedDown | orderBy: 'key' | filter : methodSearch">
 					<a style="{{customStyle}}" ng-click="changeLinkValue(value)">{{key}}</a>
 				</div>
-			
+
 		    <div class="main-frame">
 			<iframe id="api_frame" class="main-frame" src="{{linkValue}}"></iframe></div>
 			</div>
-			
+
 		</div>
 	</body>
 </html>

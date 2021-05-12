@@ -1,25 +1,21 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 	<head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-	
+
+{% include head.html %}
+
 		<title>Avail Team - Setting Up Avail</title>
-	
+
 	</head>
 
 	<body class="gradient-logo">
-	
+
 <!--#include virtual="/_include/private/body-top.ssi" -->
 
 		<h2 class="private content-title">Step 1: Install or Upgrade Java</h2>
-		
+
 <p>
 Avail is built on top of Java, and requires it in order to run. Depending on your operating system or installed applications, you may already have a version of Java installed in the form of the JRE (Java Runtime Environment). The JRE is sufficient for the development of, and programming in, Avail. (If you plan to work on the underlying Java-implemented Avail VM, you will need the Java Development Kit, or JDK. This is more advanced work and is restricted to experienced Java developers--who probably already have the JDK installed or know how to do it.)
 </p><p>
@@ -46,7 +42,7 @@ For more information on Java, visit <a class="offsite" href="http://www.java.com
 	</div>
 </tr>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
+{% include body-bottom.html %}
 
 	</body>
 

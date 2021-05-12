@@ -1,6 +1,6 @@
 /*
- * Fibonacci.avail
- * Copyright © 1993-2014, The Avail Foundation, LLC.
+ * Hello World.avail
+ * Copyright © 1993-2021, The Avail Foundation, LLC.
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -30,41 +30,9 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-Module "Fibonacci"
-Uses
-	"Avail"
-Entries
-	"_st|nd|rd|th Fibonacci number"
+Module "Hello World"
+Uses "Avail"
+Entries "Greet"
 Body
 
-Method "a Fibonacci generator" is
-[
-	x : natural number;
-	y : natural number := 1;
-	z : natural number := 1;
-	[
-		x := y;
-		y := z;
-		z := x + y;
-		x
-	]
-] : []→natural number;
-
-generator ::= a Fibonacci generator;
-cache : {natural number→natural number|} := {};
-
-Method "_st|nd|rd|th Fibonacci number" is
-[
-	n : natural number
-|
-	cache[n] else
-	[
-		next : natural number;
-		Until [|cache| = n] do
-		[
-			next := generator();
-			cache := cache + |cache|+1 → next;
-		];
-		next
-	]
-];
+Method "Greet" is [ Print: "Hello, world!\n"; ];

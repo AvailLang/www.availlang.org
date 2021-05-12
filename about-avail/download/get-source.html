@@ -1,15 +1,11 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 	<head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-	
+
+{% include head.html %}
+
 		<title>Download</title>
 		<style>
 			table.branches
@@ -39,8 +35,8 @@
 	</head>
 
 	<body class="gradient-logo">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
+
+{% include body-top.html %}
 
 		<h2 class="content-title">Get the Avail Source</h2>
 
@@ -239,7 +235,7 @@ BUILD SUCCESSFUL in 23s
 
 <p>A <strong>module root path</strong> is actually a conjunction of a binary repository path and a source module path, respectively, separated by a <em>comma</em> <code>,</code> <code class="unicode">(U+002C)</code>. A <strong>binary repository path</strong> locates a binary file that contains the compiled forms of Avail source modules. A <strong>source module path</strong> locates a directory containing Avail source modules. The same binary repository path may be used for many source paths. If a binary repository path does not refer to an existing file, then <code>avail-dev</code> will create and populate this file as needed. A source path must always refer to an existing directory that is readable by the user running <code>avail-dev</code>.
 
-<p>If <code>AVAIL_ROOTS</code> is not defined, then <code>avail-dev</code> will use the following module 
+<p>If <code>AVAIL_ROOTS</code> is not defined, then <code>avail-dev</code> will use the following module
 roots path by default:</p>
 
 <div class="restricted-width-container"><div class="code-block">avail=$HOME/.avail/repos/avail.repo,$INSTALL/src/avail;examples=$HOME/.avail/repos/examples.repo,$INSTALL/src/examples</div></div>
@@ -270,7 +266,7 @@ roots path by default:</p>
 	</tr>
 </table>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
+{% include body-bottom.html %}
 
 	</body>
 

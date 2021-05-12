@@ -1,3 +1,5 @@
+---
+---
 <!doctype html>
 <!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
 <!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
@@ -7,11 +9,11 @@
 <!--<![endif]-->
 
 	<head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-	
+
+{% include head.html %}
+
 		<title>Unicode Cheat Sheet</title>
-		<script type="text/javascript" src="/_javascript/angular.min.js"></script>
+		<script type="text/javascript" src="/javascript/angular.min.js"></script>
 		<script type="text/javascript" src="./cheat-sheet-app.js"></script>
 		<style>
 			table.codePoints
@@ -51,11 +53,11 @@
 	</head>
 
 	<body class="gradient-logo" ng-controller="CheatSheetController">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
+
+{% include body-top.html %}
 
 		<h2 class="content-title">Unicode Cheat Sheet</h2>
-		
+
 <p>Please find below the comprehensive collection of non-ASCII, non-alphanumeric Unicode code points that are used by the Avail virtual machine, standard library, or standard test suites as of <code>1.0.0 DEV 2014-04-28</code>.</p>
 
 <p>If you do not have an editor that supports template expansion, you are strongly encouraged to obtain one, as it will make your programming experience much nicer. But you can also copy the Unicode characters from this page and paste them into your code.</p>
@@ -87,7 +89,7 @@
 	</tr>
 </table>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
+{% include body-bottom.html %}
 
 	</body>
 

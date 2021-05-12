@@ -1,26 +1,22 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 	<head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-	
+
+{% include head.html %}
+
 		<title>Avail - Type System</title>
-	
+
 	</head>
 
 	<body class="gradient-logo">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
+
+{% include body-top.html %}
 
 		<h2 class="content-title"><code>tuple ≝ &lt;any…|&gt;</code></h2>
 <div class="svg-wrapper">
-<!--#include virtual="/_images/type-system/type-system-tuple-focus.svg"-->
+<!--#include virtual="/images/type-system/type-system-tuple-focus.svg"-->
 </div>
 <p>
 A <strong>tuple</strong> is an immutable, finite, ordered list of indexable, heterogeneous values, called <strong>elements</strong>, each of which is accessible by a <a href="./types-extended-integer.html#types-natural-number">natural number</a> <strong>subscript</strong>. The number of elements is the <strong>size</strong> of the tuple. Taking this apart:
@@ -117,8 +113,8 @@ Assert: tupleType's default type = integer;
 Assert: ||tupleType|| = [0..3];
 
 /* Here are some example instances of "tupleType". */
-Assert: &lt;&gt; ∈ tupleType; 
-Assert: &lt;"picturesque"&gt; ∈ tupleType; 
+Assert: &lt;&gt; ∈ tupleType;
+Assert: &lt;"picturesque"&gt; ∈ tupleType;
 Assert: &lt;"Phil", "Harmonic"&gt; ∈ tupleType;
 Assert: &lt;"A", "K", 47&gt; ∈ tupleType;</div>
 </div>
@@ -199,7 +195,7 @@ Assert: U ⊆ V;</div>
 	</tr>
 </table>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
+{% include body-bottom.html %}
 
 	</body>
 

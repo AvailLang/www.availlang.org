@@ -1,33 +1,29 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 <head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-	
+
+{% include head.html %}
+
 		<title>Avail - Rich's Blog</title>
-	
+
 	</head>
 
 	<body class="gradient-logo">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
+
+{% include body-top.html %}
 <h2 class="content-title">Informally speaking, what is a type?</h2>
 
 <div class="content-meta-info">October 5, 2013</div>
 <p><em>As I confessed in my <a href="./BERA001.html">welcome blog</a>, I had written blogs before.  This is the first of my ported blogs.  I chose this one to port first because this was the first time I stepped back from my blogs to reassess what I was trying to communicate, mainly information about Avail.  I wanted to start from step one, and this seemed like the obvious choice.  If I had to date this blog, I'd say circa January 2013.</em></p>
 <h5>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</h5>
 
-<p>In the past few months I have been undertaking the feat of becoming a more knowledgable programmer.  Scratch that, let's just say I have been trying to <em>become</em> a programmer; preferably one that is knowledgable about the domain as a whole.  To achieve this goal I have been doing a lot of reading and research.  The more I learn, the more doors open leading to more questions.  These new questions lead to more reading and more research, which of course leads to more questions (it has been rather invigorating as I haven't been this cerebrally active since grad school).  I've tried my best to catalog this academic journey on this blog.  The posts have been an evolution in writing style as well as technical content.  From that sentence if you understood my meaning to be <em>"some posts have been good and some have sort of sucked"</em>, then you've drawn the right conclusion.</p>  
+<p>In the past few months I have been undertaking the feat of becoming a more knowledgable programmer.  Scratch that, let's just say I have been trying to <em>become</em> a programmer; preferably one that is knowledgable about the domain as a whole.  To achieve this goal I have been doing a lot of reading and research.  The more I learn, the more doors open leading to more questions.  These new questions lead to more reading and more research, which of course leads to more questions (it has been rather invigorating as I haven't been this cerebrally active since grad school).  I've tried my best to catalog this academic journey on this blog.  The posts have been an evolution in writing style as well as technical content.  From that sentence if you understood my meaning to be <em>"some posts have been good and some have sort of sucked"</em>, then you've drawn the right conclusion.</p>
 
 <p>My goal, of course, is not to waste your time with pointless garbage, but to compose good posts that are worth reading.  Because of that, I'd like to address something common to all of my posts that has been nagging at me: <em>I have written them with the one very large assumption that all my readers know what a type is</em>.  While perusing the Avail website, if you find that you are often asking yourself, <em>"What is a <a href="/about-avail/documentation/type-system/types.html">type</a>?"</em>,  then this is the blog post for you!</p>
 
-<p>So what is it that I hope to achieve in this blog?  Well, I don't think it is a good idea for me to go into a formal exhaustive discussion of <a class="offsite" href="http://en.wikipedia.org/wiki/Type_theory">type theory</a>.  In fact, that is exactly what I intend not to do.  It is my goal to provide you with what I believe to be the basic understanding of types that will allow you to not only understand my blogs, but also to go off and comfortably compose your own programs. So in this post I will go over a few things that I believe are important to this topic.</p>  
+<p>So what is it that I hope to achieve in this blog?  Well, I don't think it is a good idea for me to go into a formal exhaustive discussion of <a class="offsite" href="http://en.wikipedia.org/wiki/Type_theory">type theory</a>.  In fact, that is exactly what I intend not to do.  It is my goal to provide you with what I believe to be the basic understanding of types that will allow you to not only understand my blogs, but also to go off and comfortably compose your own programs. So in this post I will go over a few things that I believe are important to this topic.</p>
 
 <p>In order to program Avail (or mostly any other languages for that matter), you should have:
 <ol>
@@ -81,7 +77,7 @@ To describe the relationship from the other direction, you would say that <code>
 	</tr>
 </table>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
+{% include body-bottom.html %}
 
 	</body>
 

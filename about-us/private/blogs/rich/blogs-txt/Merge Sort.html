@@ -1,22 +1,18 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 	<head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-	
+
+{% include head.html %}
+
 		<title>Avail - Tutorials - Merge Sort</title>
-	
+
 	</head>
 
 	<body class="gradient-logo">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
+
+{% include body-top.html %}
 
 <h2 class="content-title">Merge Sort</h2>
 
@@ -45,22 +41,22 @@
 	j : natural number := 1; <font color="green">/*index counter for second tuple*/</font>
 	k : natural number := 1; <font color="green">/*index counter for combined sorted tuple*/</font>
 
-	<font color="green">/* The creation of the final output tuple.  It is cheaper to build it and swap elements out then it is 
+	<font color="green">/* The creation of the final output tuple.  It is cheaper to build it and swap elements out then it is
 	 * to add to an empty tuple with tuple concatenation.*/</font>
 	output : tuple := splitInput[1] ++ splitInput[2];
 
 	<font color="green">/*continue loop while there are elements in both tuples to be compared*/</font>
-	While [i ≤ |splitInput[1]| ∧  [j ≤ |splitInput[2]|]] 
+	While [i ≤ |splitInput[1]| ∧  [j ≤ |splitInput[2]|]]
 	do
 	[
-		<font color="green">/* Compare the i<sup>th</sup> element of the first tuple with the j<sup>th</sup> element of the second tuple using 
-		 * the comparator function to see which element is chosen next to be added to the combined 
+		<font color="green">/* Compare the i<sup>th</sup> element of the first tuple with the j<sup>th</sup> element of the second tuple using
+		 * the comparator function to see which element is chosen next to be added to the combined
 		 * sorted tuple.*/</font>
-		If comparator(splitInput[1][i] ,splitInput[2][j]) then 
+		If comparator(splitInput[1][i] ,splitInput[2][j]) then
 		[
 			<font color="green">/*tuple 1 wins. swap out the k<sup>th</sup> element of the output tuple with the i<sup>th</sup> element of tuple 1
 			 * and increment the tuple 1 index counter.*/</font>
-			output := output[k]→splitInput[1][i]; 
+			output := output[k]→splitInput[1][i];
 			i++;
 		]
 		else
@@ -84,7 +80,7 @@
 <li>A tuple containing between 2 and 10 elements</li>
 <li>A tuple of 11 or more elements</li>
 </ul>
-In the third implementation, the method makes recursive calls to itself in order to split the tuple into smaller tuples that can be sorted more easily.  In order to call a method recursively, the compiler must be made aware of the existence of the method before its implementation with the recursive call.  To satisfy this requirement, I created an abstract version of the method: 
+In the third implementation, the method makes recursive calls to itself in order to split the tuple into smaller tuples that can be sorted more easily.  In order to call a method recursively, the compiler must be made aware of the existence of the method before its implementation with the recursive call.  To satisfy this requirement, I created an abstract version of the method:
 <div class="restricted-width-container">
 <div class="good-code-block">Public abstract method "merge sort_with_" is [tuple, [⊥, ⊥]→boolean]→tuple;</div></div>
 Implementations are chosen at runtime, so we can safely do this and call the method in our code before it is defined.  The abstract not only permits the recursive calling of the method before a concrete implementation is defined, it defines the entire range of tuple sizes to be sorted by our three different cases.  Note that all my concrete implementations of <code>"merge sort_with_"</code> must cover the entire range of inputs indicated in the abstract definition.</p>
@@ -97,7 +93,7 @@ Implementations are chosen at runtime, so we can safely do this and call the met
 	comparator : [⊥, ⊥]→boolean
 |
 	<font color="green">/*the input is already sorted, so just return it*/</font>
-	trivial 
+	trivial
 ] : <any…|0..1>;</div></div>
 
 <p>The implementation of the second case, a tuple of 2 to 10 elements, uses the implementation of the sorting method, insertion sort.  In my <a href="/content/diversion-sorts">previous post on insertion sort</a>, I explained that for small tuples using insertion sort is more efficient than using merge sort.   To increase the overall efficiency of the calls to <code>"merge sort_with_"</code>,  I used a call to <code>"insertion sort_with_"</code> to perform the task of sorting smaller tuples.  This implementation is almost as simple as the implementation of the trivial case above:</p>
@@ -108,7 +104,7 @@ Implementations are chosen at runtime, so we can safely do this and call the met
 	comparator : [⊥, ⊥]→boolean
  |
 	<font color="green">/*a call to insertion sort to perform the sort*/</font>
-	insertion sort aTuple with comparator 
+	insertion sort aTuple with comparator
 ]: tuple;</div></div>
 
 <p>The final case of 11 or more elements is the actual implementation of the <a class="offsite" href="http://en.wikipedia.org/wiki/Merge_sort">merge sort algorithm</a>.  In order to sort the input tuple, it makes a recursive call to itself on each half of the input tuple.  Each successive call splits the tuple into smaller and smaller pieces until the size of the pieces are less than 11 elements.  Once the size of the input tuple is less than 11, the call of <code>"merge sort_with_"</code>, uses the implementation that calls <code>"insertion sort_with_"</code> to complete the sort.  This is then passed back up out of the recursive calls and the sorted pieces are successively merged into larger pieces using <code>"merge_with_"</code>.  This implementation is only slightly longer in length than the prior two implementations:</p>
@@ -141,7 +137,7 @@ for the tuple of numbers implementation.  This is done because this type of comp
 
 <p>The implementations of <code>"merge sort_with_"</code> discussed in this blog is an example of <a class="offsite" href="http://en.wikipedia.org/wiki/Multiple_dispatch">multiple dispatch</a> in Avail.  As calls to <code>"merge sort_with_"</code> will have the input tuple-size appropriate implementation decided at runtime, the burden of an efficient implementation for sorting is lifted from the programmer.  Tack on a <a href="/content/semantic-restrictions">semantic restriction</a>, and now you not only have an efficient, less burdensome way of sorting, you can safely know the stronger type of the output tuple at compile time. So without having to create a new, more input type specific implementation for the sort method, you can be more specific about the tuple type of the variable when assigning the output of the sort to it.  How's that you ask?  Well, that's a bit out of scope for this post, but perhaps I'll discuss semantic restrictions in a future post.</p>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
+{% include body-bottom.html %}
 
 	</body>
 

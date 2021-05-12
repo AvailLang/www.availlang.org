@@ -1,23 +1,19 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 	<head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-	
+
+{% include head.html %}
+
 		<title>Modules - Module Name Section</title>
 
 	</head>
 
 	<body class="gradient-logo">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
-		
+
+{% include body-top.html %}
+
 <h2 class="content-title">Module Name Section</h2>
 
 <p>The <code>Module</code> keyword begins the <strong>module name section</strong>. The module name section must be the first section of every module header. Following this keyword is a <a href="/about-avail/documentation/type-system/types-string.html">string literal</a> that specifies the <strong>local name</strong> of the module. The local name is a logical name, not a file system reference. As such it must match the file name, but must not include the <code>.avail</code> file extension. For example, a module named <code class="module">Foo</code> must reside in a file whose name is <code class="module">Foo.avail</code>, and its module name section should look like this:</p>
@@ -48,7 +44,7 @@
 	</tr>
 </table>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
+{% include body-bottom.html %}
 
 	</body>
 

@@ -1,23 +1,19 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 	<head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-	
+
+{% include head.html %}
+
 		<title>Avail - Rich's Blog</title>
-	
+
 	</head>
 
 	<body class="gradient-logo">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
-		
+
+{% include body-top.html %}
+
 <a href="./index.html"><h3 class="content-supertitle">Rich's Blog</h3></a>
 <h2 class="content-title">Tries and more trees</h2>
 
@@ -28,13 +24,13 @@ So it is that time of the year again.  I saw xmas trees for sale outside the gro
 Or more precisely, <em>trie</em>.  On my quest to build Stacks I have learned many a new things.  I've improved the quality of my code writing as I've gotten better at compartmentalizing things and factoring code so that I only solve a problem once.  Recognizing the fact that I've been re-writing the same type of procedure over and over, I decided to generalize it.  The procedure of which I speak is the act of reading characters from an iterator over delimited regions.  A delimited region would be things like comments, text in blocks and in quotes (/*...*/, [...],"...").  I pretty much got tired of reconstructing this same algorithm over and over as it always takes a while to build each time I need to implement it.  So I wised up and decided to create the method <code>"read_'s⁇region delimited by_and_«with|without»!nesting"</code> in the module <em>Avail Scanner</em>.  It is a method that accepts a scanner and reads a delimited region indicated by the provided delimiters.  Here is the signature of the simple character delimited version of the method:
 </p>
 <div class="restricted-width-container">
-<div class="good-code code-block">"read_'s⁇region delimited by_and_«with|without»!nesting" is 
+<div class="good-code code-block">"read_'s⁇region delimited by_and_«with|without»!nesting" is
    [Avail scanner, character, character, [1..2]]→string</div></div>
 <p>
 The part of the signature corresponding to the integer range type, <code>[1..2]</code> is the optional words with in the guillemets, <code>«with|without»!</code>.  This method will be called using the word "with" or the word "without".  The method will apply the correct behavior given the request.  This allows me to write one method that handles similar functionalities.  (Note: in order to use the nesting feature, the start delimiter and the end delimiter must be different).  If <code>with</code> is used, the fourth input will correspond to the value "1".  If <code>without</code> is used, the fourth input will use the value "2".  You can put as many options delimited by pipes in the guillemets as long as you have the correct integer range to adequately represent all the options. Since comments are delimited by a series of strings ("/*" and "*/"), I also composed the string version of this method:
 </p>
 <div class="restricted-width-container">
-<div class="good-code code-block">"read_'s⁇region delimited by_and_«with|without»!nesting" is 
+<div class="good-code code-block">"read_'s⁇region delimited by_and_«with|without»!nesting" is
    [Avail scanner, string, string, [1..2]]→string</div></div>
 <p>
 This is where things got a wee bit tricky.  The case in which we are not allowing nested regions is fairly trivial.  The part that gets more difficult is when you wish to handle nesting.  After discussing this with Todd, it was determined that the best approach would be to implement a <em>Patricia Trie</em>.  The spelling "trie" threw me all night.  It is tricky to spell something different after spelling it one way all your life.  I tripped myself up by doing this: <code>tree : patricia trie</code>, but spelling the respective "trees" wrong.
@@ -55,7 +51,7 @@ Now it is off to dreamland to dream about all things trees and tries...
 	</div>
 </tr>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
+{% include body-bottom.html %}
 
 	</body>
 

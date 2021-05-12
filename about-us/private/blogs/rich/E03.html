@@ -1,23 +1,19 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 	<head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-	
+
+{% include head.html %}
+
 		<title>Avail - Rich's Blog</title>
-	
+
 	</head>
 
 	<body class="gradient-logo">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
-		
+
+{% include body-top.html %}
+
 <a href="./index.html"><h3 class="content-supertitle">Rich's Blog</h3></a>
 <h2 class="content-title">A long Avail Saturday</h2>
 
@@ -57,14 +53,14 @@ Here is an excerpt of the code for the <code>Avail Scanner</code>.
 
 /**
  * A class that defines an Avail lexical scanner.  This is an abstract class.
- * 
+ *
  * @type "Avail scanner"
  * @supertype {@type "object" object}
  * @category Avail Lexical Scanner
  * @field "source" "iterator of character"
  * 	an iterator over the .avail input file
  * @field "line number" "natural number"
- * 	line number of current element of the iterator 
+ * 	line number of current element of the iterator
  * @field "column number" "natural number"
  * 	column position on line of current element of the iterator
  * @author Richard Arriaga
@@ -81,7 +77,7 @@ Public class "Avail scanner" extends object
  *
  * @method "construct Avail Scanner with_"
  * @categories "Avail Lexical Scanner"
- * @param "iter" "iterator of character" 
+ * @param "iter" "iterator of character"
  *		and iterator of characters
  * @returnType "Avail scanner"
  *		an Avail scanner object
@@ -122,7 +118,7 @@ Well it is now that time in which I head off to sleep and hope that I retain a g
 	</div>
 </tr>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
+{% include body-bottom.html %}
 
 	</body>
 

@@ -1,32 +1,28 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 <head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-	
+
+{% include head.html %}
+
 		<title>Avail - Glossary</title>
-	
+
 	</head>
 
 	<body class="gradient-logo">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
-		
+
+{% include body-top.html %}
+
 <h2 class="content-title">Bottom</h2>
 
 <p>
 <code>⊥</code><br />
 (Unicode character U+22A5: "up tack")
 </p><p>
-"Nothing". The abstract <a href="./subtype-supertype.html">subtype</a> of all types; the strongest and most specific type. 
+"Nothing". The abstract <a href="./subtype-supertype.html">subtype</a> of all types; the strongest and most specific type.
 </p><p>
-Bottom cannot have any instances because they would be logically inconsistent. 
+Bottom cannot have any instances because they would be logically inconsistent.
 </p><p>
 Bottom serves as the "return type" for <a href="./function.html">functions</a> which cannot return (because of program exit, infinite looping, unhandled exceptions, or calling a <a href="./continuation.html">continuation</a>).
 </p><p>
@@ -40,7 +36,7 @@ Bottom serves as the "return type" for <a href="./function.html">functions</a> w
 	</div>
 </tr>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
+{% include body-bottom.html %}
 
 	</body>
 

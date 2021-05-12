@@ -1,15 +1,11 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 	<head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-	
+
+{% include head.html %}
+
 		<title>Modules - Module Headers</title>
 		<style>
 			table.keywords
@@ -39,9 +35,9 @@
 	</head>
 
 	<body class="gradient-logo">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
-		
+
+{% include body-top.html %}
+
 <h2 class="content-title">Module Headers</h2>
 
 <p>Every module begins with a module header.<sup><a href="#fn1">[1]</a></sup> A module header specifies linkage information that the compiler or executor uses to resolve names mentioned within the module body. Unlike the bulk of an Avail program, which uses an extremely fluid syntax, a module header has a rigid structure that revolves around a small vocabulary of fixed keywords. This rigidity makes it easy and fast for a human or machine reader to understand a module's relationship to upstream modules.<sup><a href="#fn2">[2]</a></sup></p>
@@ -115,7 +111,7 @@
 	</tr>
 </table>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
+{% include body-bottom.html %}
 
 	</body>
 

@@ -1,23 +1,19 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 	<head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-<!--#include virtual="/_include/sh-head.ssi" -->
-	
+
+{% include head.html %}
+{% include sh-head.html %}
+
 		<title>Avail - Tutorials - Hello, world!</title>
-	
+
 	</head>
 
 	<body class="gradient-logo">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
+
+{% include body-top.html %}
 
 <h2 class="content-title">Hello, world!</h2>
 
@@ -27,13 +23,13 @@
 <p>Running the program should look something like this:</p>
 
 <figure class="full-line-screenshot">
-	<a href="/_images/examples/hello-world/transcript.png"><img src="/_images/examples/hello-world/transcript.png" alt="A sample transcript of using &quot;Greet&quot;."/></a>
+	<a href="/images/examples/hello-world/transcript.png"><img src="/images/examples/hello-world/transcript.png" alt="A sample transcript of using &quot;Greet&quot;."/></a>
 	<figcaption>The Avail workbench after running <code class="command">"Greet"</code>.</figcaption>
 </figure>
 
 <p>Just feel the optimism effervescing from those happy pixels!</p>
 
-		
+
 <h3><a id="Prerequisites">Prerequisites</a></h3>
 <ul>
 <li>While technically not required, you will get the most out of this and subsequent tutorials if you <a href="/about-avail/download/index.html">download Avail</a>, so that you can run the tutorials and work through the exercises.</li>
@@ -53,7 +49,7 @@
 
 <h3><a id="Sources">Complete Sources</a></h3>
 <ul>
-<li><code><a href="/_examples/hello-world/Hello%20World.avail"><img src="/_images/download-icons/avail.png" class="download-list-icon" alt="Avail source module logo.">Hello World.avail</a></code></li>
+<li><code><a href="/examples/hello-world/Hello%20World.avail"><img src="/images/download-icons/avail.png" class="download-list-icon" alt="Avail source module logo.">Hello World.avail</a></code></li>
 </ul>
 
 <p>If you have installed Avail on your system, then you can find a local copy of this file in your installation directory.</p>
@@ -133,8 +129,8 @@ Method "Greet" is [ Print: "Hello, world!\n"; ];
 	</tr>
 </table>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
-<!--#include virtual="/_include/sh-bottom.ssi" -->
+{% include body-bottom.html %}
+{% include sh-bottom.html %}
 
 	</body>
 

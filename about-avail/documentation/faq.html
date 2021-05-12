@@ -1,16 +1,12 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 	<head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-<!--#include virtual="/_include/sh-head.ssi" -->
-	
+
+{% include head.html %}
+{% include sh-head.html %}
+
 		<title>Avail FAQ</title>
 		<style>
 			table.faq
@@ -44,8 +40,8 @@
 	</head>
 
 	<body class="gradient-logo">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
+
+{% include body-top.html %}
 
 		<h2 class="content-title">Frequently Asked Questions <small>(FAQ)</small></h2>
 
@@ -117,7 +113,7 @@
 The (2-tuple of real)-valued formula called:
 	roots of a degree-2 polynomial given coefficents
 		_ (called a),
-		_ (called b), 
+		_ (called b),
 		and _ (called c);
 Where:
 	Parameter a is an integer;
@@ -284,8 +280,8 @@ Method "Play Crimson Short One" is
 	</tr>
 </table>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
-<!--#include virtual="/_include/sh-bottom.ssi" -->
+{% include body-bottom.html %}
+{% include sh-bottom.html %}
 
 	</body>
 

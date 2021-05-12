@@ -1,14 +1,10 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 	<head>
-	
-<!--#include virtual="/_include/head.ssi" -->
+
+{% include head.html %}
 
 		<title>Modules - Module Life Cycle</title>
 		<style>
@@ -20,9 +16,9 @@
 	</head>
 
 	<body class="gradient-logo">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
-<!--#include virtual="/_include/sh-head.ssi" -->
+
+{% include body-top.html %}
+{% include sh-head.html %}
 
 <h2 class="content-title">Module Life Cycle</h2>
 
@@ -31,7 +27,7 @@
 <p>Let us now turn our attention to the final topic in this trail, the <strong>module life cycle</strong>, which we will consider relative to development using the <a href="/about-avail/documentation/workbench.html">Avail workbench</a><sup><a href="#fn1">[1]</a></sup>. Please turn your attention to the <em>bottom</em> of the following diagram. <small>(Unless your display is 3 meters high, then very likely you will need to scroll down&hellip;)</small></p>
 
 <div class="svg-wrapper">
-<!--#include virtual="/_images/modules/module-life-cycle.svg" -->
+<!--#include virtual="/images/modules/module-life-cycle.svg" -->
 </div>
 
 <dl>
@@ -169,8 +165,8 @@ Private method "Remember the current module" is
 	</tr>
 </table>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
-<!--#include virtual="/_include/sh-bottom.ssi" -->
+{% include body-bottom.html %}
+{% include sh-bottom.html %}
 
 	</body>
 

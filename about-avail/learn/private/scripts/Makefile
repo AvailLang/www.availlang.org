@@ -1,7 +1,7 @@
 DOT       = dot
 CP        = cp
 MV        = mv
-TARGETDIR = ../../../../_images/examples
+TARGETDIR = ../../../../images/examples
 
 %.svg: %.gv
 	$(DOT) -Tsvg -o $@ $<

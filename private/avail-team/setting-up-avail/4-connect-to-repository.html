@@ -1,25 +1,21 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 	<head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-	
+
+{% include head.html %}
+
 		<title>Avail Team - Setting Up Avail</title>
-	
+
 	</head>
 
 	<body class="gradient-logo">
-	
+
 <!--#include virtual="/_include/private/body-top.ssi" -->
 
 		<h2 class="private content-title">Step 4: Connect to the Avail Source Repository</h2>
-		
+
 <p>
 In this process you will connect to Avail's Git source repository at AvailLang.org using your supplied credentials and download a copy of the code to your local machine.
 </p><p>
@@ -28,7 +24,7 @@ In this process you will connect to Avail's Git source repository at AvailLang.o
 	<li>From the <strong>File</strong> menu, choose <strong>Import…</strong>.</li>
 	<li>Open the <strong>Git</strong> folder and choose <strong>Projects from Git</strong>; hit <strong>Next</strong>.</li>
 	<li>Select <strong>URI</strong>; hit <strong>Next</strong>.</li>
-<img src="/private/avail-team/_images/ConnectToRepository1.png" alt="Import Projects from Git screenshot">
+<img src="/private/avail-team/images/ConnectToRepository1.png" alt="Import Projects from Git screenshot">
 	<li>IGNORE the URI field (it auto-populates from the Host and Repository path fields). Enter the following information exactly (it is case-sensitive):</li>
 	<small><table class="inset">
 		<tr><td><strong>Host</strong></td><td><em>availlang.org</em></td></tr>
@@ -68,7 +64,7 @@ For more information on working with Git, visit <a class="offsite" href="http://
 	</div>
 </tr>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
+{% include body-bottom.html %}
 
 	</body>
 

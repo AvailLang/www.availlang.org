@@ -1,22 +1,18 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 	<head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-	
+
+{% include head.html %}
+
 		<title>Insertion Sort</title>
-	
+
 	</head>
 
 	<body class="gradient-logo">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
+
+{% include body-top.html %}
 
 <p>Happy new year and welcome to my first blog of 2013.  A new year often symbolizes a fresh start, something new.  My last post on the <a href="/content/substrings-historical-tidbit-and-few-shoutouts">KMP string searching algorithm</a> got me thinking about something I could try in my future blog posts.  Seeing as part of the purpose of this blog is to introduce people to actually programming in Avail,  I've decided that from time to time, I should take a break from what I'm doing to build common algorithms in Avail and talk about them here.  This will give me the opportunity to demonstrate Avail implementations of generally well understood programming algorithms (as well as learn a thing or two as I go).  Through this I hope to show off some functionality to be found in the standard Avail library.  This should be especially helpful seeing as a certain slacker hasn't quite finished his project on converting Avail files into a fully navigable library website...</p>
 
@@ -24,7 +20,7 @@
 
 <p><b>Common Algorithm Series: An Avail Approach to Insertion Sort</b></p>
 
-<p>The place to start in my inaugural post to the common algorithm series is to give a quick overview on Avail methods.  A good way to describe Avail is that it is an <em>operation-oriented language</em> (operations take precedence in Avail).  In my experience, a lot of programming in Avail is done through the creation of methods.  The parameters' types of any given method defines the behavior dispatched at runtime for any method call (Avail supports multiple dispatch).  Though Avail has objects, method definitions are independent of any object.  With respect to methods, objects are treated like any other parameter (like whole number or 5's type).  So overloading methods in Avail is simply taking a method and defining different functions based upon the provided parameters' types.</p>  
+<p>The place to start in my inaugural post to the common algorithm series is to give a quick overview on Avail methods.  A good way to describe Avail is that it is an <em>operation-oriented language</em> (operations take precedence in Avail).  In my experience, a lot of programming in Avail is done through the creation of methods.  The parameters' types of any given method defines the behavior dispatched at runtime for any method call (Avail supports multiple dispatch).  Though Avail has objects, method definitions are independent of any object.  With respect to methods, objects are treated like any other parameter (like whole number or 5's type).  So overloading methods in Avail is simply taking a method and defining different functions based upon the provided parameters' types.</p>
 
 <p>For example, take the method <code>"_fires the_"</code> in the two following calls:
 <code>Grandma fires the plumber</code> and <code>The submarine fires the torpedos</code>. The meaning of the word <em>fires</em> implied in a statement is usually based upon the context within which it is used.  Grandma is not picking up the plumber and using him as a projectile weapon, nor is the submarine sending the torpedos to the unemployment line.  Though the functionality of <code>"_fires the_"</code> implied for each call here is very different, the implementations of these methods can exist side by side in Avail without ambiguity because of the context in which they are used.   That context in the case of Avail are the types of the method's input parameters.  In the two examples of our method, <code>"_fires the_"</code>, we have the input types <code>[employer, employee]</code> for grandma and the plumber and <code>[weaponized vehicle,projectile]</code> for the submarine and the torpedos(these different parameter types of the inputs determines the implementation of the method used at runtime).</p>
@@ -37,9 +33,9 @@
 <a id="methodsUsed"></a>
 <ul>
 <li><code>"↑_"</code> :: <code>[any meta]→variable meta</code> - Construct and answer a variable type with the specified containment type.
-<li><code>"_++"</code> / <code>"_--"</code> :: <code>[variable]→⊤</code> - increment/decrement the numeric variable</li> 
-<li><code>"|_|"</code> :: <code>[tuple]→whole number</code> - returns the size of a tuple</li> 
-<li><code>"_[_↔_]"</code> :: <code>[tuple, natural number,natural number]→tuple</code> - accepts a tuple and swaps the elements at the two indices provided.</li> 
+<li><code>"_++"</code> / <code>"_--"</code> :: <code>[variable]→⊤</code> - increment/decrement the numeric variable</li>
+<li><code>"|_|"</code> :: <code>[tuple]→whole number</code> - returns the size of a tuple</li>
+<li><code>"_[_↔_]"</code> :: <code>[tuple, natural number,natural number]→tuple</code> - accepts a tuple and swaps the elements at the two indices provided.</li>
 <li><code>"_[_]→_"</code> :: <code>[tuple, natural number,any]→tuple</code> - accepts a tuple and swaps the element at the index with the provided element</li>
 <li><code>"From_to_do_"</code> :: <code>[integer,extended integer,[⊥]→boolean]→⊤</code> - a loop that counts from value1 to value2 in increments of 1 performing the action in the input funtion</li>
 <li><code>"While_do_"</code> :: <code>[[]→boolean,[]→⊤]→⊤</code> - a loop that checks the predicate function then executes the given function if the predicate is true.  The loop terminates when the predicate returns false.</li>
@@ -53,15 +49,15 @@
 	aTuple : &lt;any…|2..10>,        <font color="green">/*a tuple type of size [2..10]*/</font>
 	<font color="green">/* a function type that takes two inputs and returns a boolean.  This function serves as the comparison
 	 * criteria to assert the sorting rules of the tuple*/</font>
-	comparator : [⊥, ⊥]→boolean  
+	comparator : [⊥, ⊥]→boolean
  |
 	output : &lt;any…|2..> := aTuple;  <font color="green">/*The tuple to sort in place*/</font>
-	From 2 to |aTuple| do  
+	From 2 to |aTuple| do
 	[
 		i : [2..10]  <font color="green">/*type of the numeric range from 2 to 10*/</font>
 	 |
 		<font color="green">/*counter of primary element being inspected; will be reduced as the element moves left*/</font>
-		k : [2..10] := i; 
+		k : [2..10] := i;
 		j : [1..9] := i - 1; <font color="green">/*counter of element to the left of the primary element being compared*/</font>
 		While [j > 1 ∧ [comparator(output[k],output[j])]]  <font color="green">/*the sorting condition criteria function call*/</font>
 		do
@@ -75,8 +71,8 @@
 		* would reduce the value of j post comparison to 0.  This is outside of the range of [1..9].  We
 		* cannot reduce the range to [0..9] because that is outside the bounds of the natural number type
 		* requirement for indices*/</font>
-		output := if j = 1 ∧ [comparator(output[k],output[j])] then 
-			[output[k↔j]] else [output];  
+		output := if j = 1 ∧ [comparator(output[k],output[j])] then
+			[output[k↔j]] else [output];
 	];
 	output     <font color="green">/*The return value*/</font>
 ]:&lt;any…|2..>;  <font color="green">/*The return type of the method*/</font>
@@ -86,10 +82,10 @@ For maximal utility of the definition of insertion sort as well as for merge sor
 <div class="good-code code-block">
 aTuple : &lt;natural number…|1..8> := &lt;8,7,4,6,3,5,1,2>;  <font color="green">/*the tuple to sort*/</font>
 <font color="green">/*a function that accepts as its inputs two natural numbers and determines the order they come in*/</font>
-comparator :  [natural number, natural number]→boolean := 
+comparator :  [natural number, natural number]→boolean :=
 [
-   n : natural number, m : natural number 
- | 
+   n : natural number, m : natural number
+ |
    n is odd ∧ [m is even] ∨               <font color="green">/*n comes before m if n is odd and m is even */</font>
       [n is odd ∧ [m is odd ∧ [n ≤ m]]] ∨ <font color="green">/*n comes before m if n and m are odd and n ≤ m*/</font>
       [n is even ∧ [m is even ∧ [n ≥ m]]] <font color="green">/*n comes before m if n and m are even and n ≥ m*/</font>
@@ -103,7 +99,7 @@ Print: “sorted”; </div></div>
 
 <p>I think that is enough ground covered for one night.  When I initially set out, I was also going to discuss merge sort in this post.  Part way through writing this post, I decided to push merge sort to my next blog in order to keep this post from running overly long.  So look for my conversation on merge sort in my next post, <b><em>A diversion of sorts...part deux</em></b></p>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
+{% include body-bottom.html %}
 
 	</body>
 

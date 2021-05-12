@@ -1,22 +1,18 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 	<head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-	
+
+{% include head.html %}
+
 		<title>Mark's Avail Blog</title>
-	
+
 	</head>
 
 	<body class="gradient-logo">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
+
+{% include body-top.html %}
 
 <a href="./index.html"><h4 class="content-supertitle">Mark's Avail Blog</h4></a>
 
@@ -47,7 +43,7 @@
 <p>A lexer is a new kind of thing that can be associated with a message bundle, analogously to how method/macro definitions and grammatical restrictions are associated with a message bundle (semantic restrictions are associated with the method itself, making them independent of the name used at an invocation).  A lexer has a function that transforms the remainder of a source file into a pair consisting of a tuple of tokens and the remainder of the file.  Technically, since we want to support the broadest possible grammars, we'll say the lexer takes something which provides access to the remainder of the source file, and invokes a special primitive zero or more times with &lt;tuple-of-tokens, remainder-of-file&gt; pairs.  It may also choose to report a syntax error with a customized message.</p>
 
 <p>To compile a source file, the visible names (atoms) are collected, not just to form the root message bundle tree (for parsing method/macro invocations), but to form the set of available lexers.  At any position in the source file, the visible lexers are executed to produce a short sequence of tokens.  These tokens are fed to the compiler.  The compiler already deals with a search through multiple potential solutions to produce each top-level statement to run, so I don't expect that running the compiler against a lazy directed acyclic graph of tokens will add much complexity.  After each top-level statement is parsed (unambiguously) and executed, any cache of already computed sequences of tokens is discarded, and the lexical scanning and compilation continues at the next source file position.  This allows new lexers to be added incrementally during module loading.</p>
-	
+
 <p>For good performance, we should try to eliminate the need to run every visible lexer each time tokens are needed, especially when the number of visible lexers is large.  Here are some techniques that might be handy.</p>
 
 <ul>
@@ -56,14 +52,14 @@
 </ul>
 
 <p>As always, if you're curious for more details about how lexers are going to be built, what the impact will be, and how this advances Avail's plans for world domination, feel free to <a href="/about-avail/community/index.html">strike up a conversation</a>.</p>
-	
+
 <table class="book-nav">
 	<tr>
 		<td class="book-nav-up"><a class="book-nav-up" href="./index.html">Return to Mark's Avail Blog</a></td>
 	</tr>
 </table>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
+{% include body-bottom.html %}
 
 	</body>
 

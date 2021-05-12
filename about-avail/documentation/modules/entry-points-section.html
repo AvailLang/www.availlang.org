@@ -1,23 +1,19 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 	<head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-	
+
+{% include head.html %}
+
 		<title>Modules - Entry Points Section</title>
 
 	</head>
 
 	<body class="gradient-logo">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
-		
+
+{% include body-top.html %}
+
 <h2 class="content-title">Entry Points Section</h2>
 
 <p>The <code>Entries</code> keyword begins the <strong>entry points section</strong>. The contents of this section are zero or more <a href="/about-avail/documentation/type-system/types-string.html">string literal</a>s separated by <em>commas</em> <code>,</code> <code class="unicode">(U+002C)</code>. Each string literal corresponds to an <strong>entry point</strong>, i.e., a message that should be exported for use at an external call site. For example:</p>
@@ -57,7 +53,7 @@ Body
 </div></div>
 
 <figure class="full-line-screenshot">
-    <img src="/_images/modules/external-call-site.png" alt="The Command field of the Avail workbench is an external call site."/>
+    <img src="/images/modules/external-call-site.png" alt="The Command field of the Avail workbench is an external call site."/>
     <figcaption>The Command field of the Avail workbench is an external call site.</figcaption>
 </figure>
 
@@ -76,7 +72,7 @@ Body
 	</tr>
 </table>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
+{% include body-bottom.html %}
 
 	</body>
 

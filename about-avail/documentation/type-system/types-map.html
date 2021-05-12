@@ -1,26 +1,22 @@
+---
+---
 <!doctype html>
-<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="">
-<!--<![endif]-->
-
+<html lang="en-US">
 	<head>
-	
-<!--#include virtual="/_include/head.ssi" -->
-	
+
+{% include head.html %}
+
 		<title>Avail - Type System</title>
-	
+
 	</head>
 
 	<body class="gradient-logo">
-	
-<!--#include virtual="/_include/body-top.ssi" -->
+
+{% include body-top.html %}
 
 		<h2 class="content-title"><code>map ≝ {any→any|}</code></h2>
 <div class="svg-wrapper">
-<!--#include virtual="/_images/type-system/type-system-map-focus.svg"-->
+<!--#include virtual="/images/type-system/type-system-map-focus.svg"-->
 </div>
 
 <p>
@@ -116,7 +112,7 @@ Assert: {"Borr"→"Bestla", "Thor"→"Sif", "Njörðr"→"Skaði", "Óðinn"→"
 <li>
 The method <code>"{_→_|.._}"</code> accepts the key type, value type, and the upper bound of the cardinality restriction, respectively. To determine the cardinality restriction, take the specified upper bound, <code>upper</code>, and compute the type <code>[0..upper+1)</code>.
 <div class="restricted-width-container">
-<div class="good-code code-block">mapType ::= {set→integer|..2};
+<div class="good-code code-block" markdown="0">{% raw %}mapType ::= {set→integer|..2};
 Assert: mapType's key type = set;
 Assert: mapType's value type = integer;
 Assert: ||mapType|| = [0..2];
@@ -125,6 +121,7 @@ Assert: ||mapType|| = [0..2];
 Assert: {} ∈ mapType;
 Assert: {{1, "fish", 2}→3} ∈ mapType;
 Assert: {∅→0, {"megaphone"}→1} ∈ mapType;
+{% endraw %}
 </div>
 </div>
 </li>
@@ -174,7 +171,7 @@ A map type is <a href="./type-parameterization.html">covariant</a> by key type, 
 	</tr>
 </table>
 
-<!--#include virtual="/_include/body-bottom.ssi" -->
+{% include body-bottom.html %}
 
 	</body>
 
