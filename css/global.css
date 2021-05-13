@@ -187,10 +187,21 @@ a.unmarked {
 	style for help with automated detection of unclassified links. */
 }
 
-body.gradient-logo {
-	background-image: url(/images/site-background.png);
-	background-repeat: no-repeat;
-	background-color: rgb(248,248,248);
+@media (prefers-color-scheme: light) {
+	body.gradient-logo {
+		background-image: url(/images/site-background.png);
+		background-repeat: no-repeat;
+		background-color: rgb(248,248,248);
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	body.gradient-logo {
+		background-image: url(/images/site-background-dark.png);
+		background-repeat: no-repeat;
+		background-color: black;
+		filter: invert(1) hue-rotate(180deg);
+	}
 }
 
 code.command {

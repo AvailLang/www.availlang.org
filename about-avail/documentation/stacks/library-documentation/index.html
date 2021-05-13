@@ -8,7 +8,17 @@
 		{% include head.html %}
 
 		<style>
-			body {overflow-y:hidden;}
+			body {
+				overflow-y:hidden;
+			}
+
+			@media (prefers-color-scheme: dark) {
+				body {
+					background-color: black;
+					filter: invert(90%) hue-rotate(180deg);
+				}
+			}
+
 			#SidePane
 			{
 				height:100%;
@@ -92,7 +102,10 @@
 			    <div class="pane-filter"><span style="width:30%">Filter:</span> <input style="width:70%" type="text" ng-model="find.name"><br></div>
 				<div class="pane-contents">
 					<div ng-repeat="method in methodList.content | orderBy: 'name' | filter : find">
-						<a title="{{method.link}}" style= "cursor: pointer" ng-click="changeLinkValue(method.link)">{{method.name}}</a><br>
+						<a
+							title="{% raw %}{{method.link}}{% endraw %}"
+							style="cursor: pointer"
+							ng-click="changeLinkValue(method.link)">{% raw %}{{method.name}}{% endraw %}</a><br>
 					</div>
 				</div>
 			</div>
@@ -106,7 +119,10 @@
 				&nbsp;
 				<a class="pane-heading-link" ng-click='backPage()'>Back</a>
 				&nbsp;
-				<a class="pane-heading-link" title="Direct link to method page in frame outside of Stacks." href='{{visibleFramedPage}}'>Direct Link</a>
+				<a
+					class="pane-heading-link"
+					title="Direct link to method page in frame outside of Stacks."
+					href='{% raw %}{{visibleFramedPage}}{% endraw %}'>Direct Link</a>
 			</h2>
 			<div style="padding-top:10px; padding-left:10px; padding-bottom:2px" class="method-section-header">
 				<strong>Method Search:</strong> &nbsp;<input type="text" ng-model="methodSearch" ng-enter="getInternalLink(methodSearch)">&nbsp;
@@ -115,11 +131,13 @@
 				<span style="padding-left:20px; font-size:small"><input type="checkbox" ng-model="strictSearch">Exact match</span>
 				<br>
 				<div style="padding-left:20px" ng-repeat="(key, value) in methodLinkagePairedDown | orderBy: 'key' | filter : methodSearch">
-					<a style="{{customStyle}}" ng-click="changeLinkValue(value)">{{key}}</a>
+					<a
+						style="{% raw %}{{customStyle}}{% endraw %}"
+						ng-click="changeLinkValue(value)">{% raw %}{{key}}{% endraw %}</a>
 				</div>
 
 		    <div class="main-frame">
-			<iframe id="api_frame" class="main-frame" src="{{linkValue}}"></iframe></div>
+			<iframe id="api_frame" class="main-frame" src="{% raw %}{{linkValue}}{% endraw %}"></iframe></div>
 			</div>
 
 		</div>

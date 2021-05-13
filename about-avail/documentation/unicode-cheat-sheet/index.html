@@ -74,11 +74,11 @@
 </thead>
 <tbody>
 <tr class="codePoints" ng-repeat="info in symbolicCharacterInfo">
-	<td class="character">{{info[1]}}</td>
-	<td class="unicodeName">{{info[2]}}</td>
-	<td><code class="unicode">{{info[3]}}</code></td>
-	<td><code class="unicode">{{info[4]}}</code></td>
-	<td><code class="unicode">{{info[5]}}</code></td>
+	<td class="character">{% raw %}{{info[1]}}{% endraw %}</td>
+	<td class="unicodeName">{% raw %}{{info[2]}}{% endraw %}</td>
+	<td><code class="unicode">{% raw %}{{info[3]}}{% endraw %}</code></td>
+	<td><code class="unicode">{% raw %}{{info[4]}}{% endraw %}</code></td>
+	<td><code class="unicode">{% raw %}{{info[5]}}{% endraw %}</code></td>
 </tr>
 </tbody>
 </table>
