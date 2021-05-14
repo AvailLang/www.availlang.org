@@ -22,7 +22,7 @@
 	From October 22nd to October 27th, Mark, Rich, and I were in <a class="offsite" href="https://www.google.com/maps/place/Two+Rivers,+WI">Two Rivers, WI</a>, on the first annual Avail retreat. The retreat was a smashing success that produced some awesome technology. It was exactly what we all needed to get back into the swing of things after an uncomfortably long hiatus. It struck the perfect balance between hiking, eating, and coding.
 </p>
 <p>
-	Just after the <code>"1.0.0 DEV 2014-04-28"</code> release, I began work on a subproject codenamed <strong>"Avalanche"</strong>. Avalanche was an attempt to migrate Avail's implementation from Java to machine code (plus dynamic translation via <a class="offsite" href="http://llvm.org">LLVM</a>). I had most of the LLVM instruction set codified, and a substantial portion of the Avalanche front-end and back-end written.
+	Just after the <code>"1.0.0 DEV 2014-04-28"</code> release, I began work on a subproject codenamed <strong>"Avalanche"</strong>. Avalanche was an attempt to migrate Avail's implementation from Java to machine code (plus dynamic translation via <a class="offsite" href="https://llvm.org">LLVM</a>). I had most of the LLVM instruction set codified, and a substantial portion of the Avalanche front-end and back-end written.
 </p>
 <p>
 	And then my laptop crashed. The hard drive died in a major way. No problem, though, because I'm a good boy who makes regular backups.
@@ -50,7 +50,7 @@
 	Then I rebuilt Avail's standard I/O infrastructure. Every fiber now has its own standard input (<code>"next character"</code>), standard output (<code>"Print:_"</code>, and standard error channel (<code>"Error:_"</code>), and forked fibers inherit their parent's channels. The server architecture permits these channels to be layered on top of WebSocket (or some other transport).
 </li>
 <li>
-	Then I gave every Avail value the ability to render its observable properties as <a class="offsite" href="http://json.org">JSON</a>, taking special care to prevent emitting cycles.
+	Then I gave every Avail value the ability to render its observable properties as <a class="offsite" href="https://json.org">JSON</a>, taking special care to prevent emitting cycles.
 </li>
 </ul>
 <p>

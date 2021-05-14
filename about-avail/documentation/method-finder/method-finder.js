@@ -37,7 +37,7 @@ internalLinkApp.controller(
 			{
 				$scope.directLink = $scope.methodLinkage[aMethod];
 				$scope.linkText = 'Link to page';
-				return '<a href="http://www.availlang.org' + encodeURI($scope.methodLinkage[aMethod]) + '">"' + htmlSafe(aMethod) + '"</a>';
+				return '<a href="https://www.availlang.org' + encodeURI($scope.methodLinkage[aMethod]) + '">"' + htmlSafe(aMethod) + '"</a>';
 			}
 			$scope.directLink = '';
 			$scope.linkText = '';

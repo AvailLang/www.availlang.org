@@ -16,13 +16,13 @@
 
 		<h2 class="content-title"><code>float</code></h2>
 <p>
-A <strong>float</strong> — that is, an <a class="offsite" href="http://grouper.ieee.org/groups/754">IEEE 754</a> single-precision floating point number — is an approximation of a real number. The representation uses 32 bits, organized as 1 sign bit, 23 bits of mantissa, and 8 bits of exponent. Finite <code>float</code> values range from <code>-3.40282347e+38</code> to <code>3.40282347e+38</code>. The closest to zero nonzero <code>float</code> values are <code>±1.40239846e-45</code>. Positive zero (<code>0.0</code>) and negative zero (<code>-0.0</code>) are considered distinct. Infinities are supported, but indicate an overflow of representational limits (rather than <code>±∞</code>). Some values are <code>NaN</code>s. No two differing <code>NaN</code> encodings are considered equal.
+A <strong>float</strong> — that is, an <a class="offsite" href="https://standards.ieee.org/standard/754-2019.html">IEEE 754</a> single-precision floating point number — is an approximation of a real number. The representation uses 32 bits, organized as 1 sign bit, 23 bits of mantissa, and 8 bits of exponent. Finite <code>float</code> values range from <code>-3.40282347e+38</code> to <code>3.40282347e+38</code>. The closest to zero nonzero <code>float</code> values are <code>±1.40239846e-45</code>. Positive zero (<code>0.0</code>) and negative zero (<code>-0.0</code>) are considered distinct. Infinities are supported, but indicate an overflow of representational limits (rather than <code>±∞</code>). Some values are <code>NaN</code>s. No two differing <code>NaN</code> encodings are considered equal.
 </p>
 <p>
 In Avail, a literal float comprises one or more decimal digits, then a <em>full stop</em> <code>.</code> <code class="unicode">(U+002E)</code> and fractional part, then optional exponential notation &mdash; an <code>E</code> <code class="unicode">(U+0045)</code>or <code>e</code> <code class="unicode">(U+0065)</code>followed by one or more decimal digits &mdash; and finally <code>f</code> <code class="unicode">(U+0066)</code>. Examples include <code>1.0</code>, <code>0.1</code>, <code>0.0025</code>, <code>2.5E-3</code>, <code>2500.0</code>, <code>2.5E3</code>, and <code>3.141592653589793</code>. Literal floats are defined by the macros <code class="method">"…#.…#«f»?"</code>, <code class="method">"…#.…#…"</code>, and <code class="method">"…#.…#e|E«+|-»!…#«f»?"</code>.
 </p>
 <p>
-The <code>float</code> type is provided only for interoperation with the <a class="offsite" href="http://www.java.com">Java</a> programming language. Use of <code>float</code> values is generally discouraged; prefer <code><a href="./types-double.html">double</a></code> values whenever possible.
+The <code>float</code> type is provided only for interoperation with the <a class="offsite" href="https://www.java.com">Java</a> programming language. Use of <code>float</code> values is generally discouraged; prefer <code><a href="./types-double.html">double</a></code> values whenever possible.
 </p>
 
 <table class="book-nav">

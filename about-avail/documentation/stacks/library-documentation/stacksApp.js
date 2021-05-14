@@ -67,7 +67,7 @@ function CategoriesCntrl($scope,$http,Categories) {
 		{
 			$scope.directLink = $scope.methodLinkage[aMethod];
 			$scope.linkText = 'Link to page';
-			return '<a href="http://www.availlang.org' + $scope.methodLinkage[aMethod] + '">"' + aMethod + '"</a>';
+			return '<a href="https://www.availlang.org' + $scope.methodLinkage[aMethod] + '">"' + aMethod + '"</a>';
 		}
 		$scope.directLink = '';
 		$scope.linkText = '';

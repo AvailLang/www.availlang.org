@@ -240,7 +240,7 @@ Body
 
 <p>Module bodies are fully tokenized prior to parsing. The parser operates on tokens to produce unambiguous top-level sends of macros and methods.</p>
 
-<p>There are four (4) types of tokens, described below using <a class="offsite" href="http://www.regular-expressions.info/unicode.html">regular expressions and Unicode categories</a>:</p>
+<p>There are four (4) types of tokens, described below using <a class="offsite" href="https://www.regular-expressions.info/unicode.html">regular expressions and Unicode categories</a>:</p>
 
 <table class="quick-ref">
 <thead>
@@ -361,7 +361,7 @@ Jackson5
 
 <h3 id="parsing">Parsing</h3>
 
-<p>The compiler parses a module body by attempting to convert sequences of tokens into unambiguous top-level sends of <code><a href="/about-avail/documentation/type-system/types-statement.html">statement</a></code>-valued macros and <code><a href="/about-avail/documentation/type-system/types-top.html">⊤</a></code>-valued methods. Whenever such a send is recognized, the compiler evaluates it immediately, allowing it to perform its side effects in the environment of the module undergoing compilation. These side effects are how new Avail elements are introduced, like method definitions, macro definitions, semantic restrictions, grammatical restrictions, etc. Once an Avail element has been introduced, it can be used immediately, i.e., in the next top-level statement.</p>
+<p>The compiler parses a module body by attempting to convert sequences of tokens into unambiguous top-level sends of <code><a href="/about-avail/documentation/type-system/types-phrase.html">statement</a></code>-valued macros and <code><a href="/about-avail/documentation/type-system/types-top.html">⊤</a></code>-valued methods. Whenever such a send is recognized, the compiler evaluates it immediately, allowing it to perform its side effects in the environment of the module undergoing compilation. These side effects are how new Avail elements are introduced, like method definitions, macro definitions, semantic restrictions, grammatical restrictions, etc. Once an Avail element has been introduced, it can be used immediately, i.e., in the next top-level statement.</p>
 
 <h3 id="types">Types</h3>
 
@@ -612,7 +612,7 @@ favoriteSong : nonempty string := "Amnesia";
 ]]>
 </script></div></div>
 
-<p>Despite Avail's many <a class="offsite" href="http://en.wikipedia.org/wiki/Functional_programming">functional programming</a> features, Avail is an <a class="offsite" href="http://en.wikipedia.org/wiki/Imperative_programming">imperative programming language</a>. As such, it permits the declaration of variables&mdash;holders of state that can be written as well as read and can thus change over time.</p>
+<p>Despite Avail's many <a class="offsite" href="https://en.wikipedia.org/wiki/Functional_programming">functional programming</a> features, Avail is an <a class="offsite" href="https://en.wikipedia.org/wiki/Imperative_programming">imperative programming language</a>. As such, it permits the declaration of variables&mdash;holders of state that can be written as well as read and can thus change over time.</p>
 
 <p>Variables can be initialized upon declaration. A variable that is not explicitly initialized is deemed <em>unassigned</em> until it is written. Reading from an unassigned variable will raise a <code class="method">cannot-read-unassigned-variable exception</code>.</p>
 
@@ -900,7 +900,7 @@ Method "How many angels can dance on the head of a pin`?" is
 
 <h4 id="blocks-blocks-in-control-structures">Blocks in Control Structures</h4>
 
-<p>Because blocks are just lexical specifications of functions, they may appear wherever functions may appear. This means that blocks can occur as arguments to standard control structures, like <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early%20Conditionals/2164012100.html">"If_then_"</a></code> and <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/2864842610.html">"While_do_"</a></code>. This makes Avail ideal for <a class="offsite" href="http://en.wikipedia.org/wiki/Higher-order_programming">higher-order programming</a>.</p>
+<p>Because blocks are just lexical specifications of functions, they may appear wherever functions may appear. This means that blocks can occur as arguments to standard control structures, like <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Early%20Conditionals/2164012100.html">"If_then_"</a></code> and <code class="method"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Control%20Structures/2864842610.html">"While_do_"</a></code>. This makes Avail ideal for <a class="offsite" href="https://en.wikipedia.org/wiki/Higher-order_programming">higher-order programming</a>.</p>
 
 <p>And because block labels represent continuations, blocks can even be used to implement low-level constructs like loops.</p>
 
@@ -936,7 +936,7 @@ Method "How many angels can dance on the head of a pin`?" is
 </thead>
 <tbody>
 <tr class="quick-ref">
-	<td><code class="method" style="white-space: pre"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Origin/766417660.html">"\
+	<td><code class="method" style="white-space: pre"><a href="/about-avail/documentation/stacks/library-documentation/avail/Avail/Foundation/Bootstrap/Origin/581900467.html">"\
 	\|[\
 		\|««…:_†§‡,»`|»?\
 		\|«Primitive…#«(…:_†)»?§;»?\

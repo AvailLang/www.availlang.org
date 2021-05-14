@@ -2,15 +2,15 @@
 
 <div class="restricted-width-container">
 <div class="good-code-block">/**
- * A class that defines a token for the Avail scanner.  
- * 
+ * A class that defines a token for the Avail scanner.
+ *
  * @type "scanner token"
  * @supertype {@type "object" object}
  * @category Stacks
  * @field "lexeme" "string"
  *  string representation of token
  * @field "line" "natural number"
- *  line number on which token appears 
+ *  line number on which token appears
  * @field "position" "natural number"
  *  column position where token begins
  * @author Richard Arriaga
@@ -32,7 +32,7 @@ Public class "scanner token" extends object
  *
  * @method "_ is a stacks token"
  * @categories "Stacks"
- * @param "name" "string" 
+ * @param "name" "string"
  *		name of new token type
  * @returnType "⊤"
  *		none
@@ -73,7 +73,7 @@ unhandled exception [an ambiguous-name exception]:<br>
 The current fiber will be terminated.</font>
 </p>
 
-<p>The error is clear as mud, right?  I may have to break down and poke Todd about this one.  In any event, not one of those things I'll figure out tonight.  I'm not too worried about it as I am making good progress.  I'll get back on it at some point this weekend.  Hmmm, I haven't eaten since lunch about 11 hours ago.  Even though it is late, perhaps it is a good idea to put something in the belly.  Maybe watch some <a class="offsite" href="http://tfwiki.net/wiki/Transformers:_Prime_(cartoon)">Transformers Prime</a> on Netflix (this cartoon was recommended to me by my father), then get to bed.  But before I go...</p>
+<p>The error is clear as mud, right?  I may have to break down and poke Todd about this one.  In any event, not one of those things I'll figure out tonight.  I'm not too worried about it as I am making good progress.  I'll get back on it at some point this weekend.  Hmmm, I haven't eaten since lunch about 11 hours ago.  Even though it is late, perhaps it is a good idea to put something in the belly.  Maybe watch some <a class="offsite" href="https://tfwiki.net/wiki/Transformers:_Prime_(cartoon)">Transformers Prime</a> on Netflix (this cartoon was recommended to me by my father), then get to bed.  But before I go...</p>
 
 <p><em>Ladies and gentlemen!  As promised earlier in this blog, I present to you the monstrosity of yester-code!  Behold, the <b>Beast</b>!</em></p>
 <div class="restricted-width-container">
@@ -85,18 +85,18 @@ The current fiber will be terminated.</font>
  	openComment : whole number := 0;
 	openQuote : whole number := 0;
 	stacksTokens : <stacks token…|> := <>;
-	
+
 	/* delimiting characters for tokenization */
 	keyCharacters ::= {¢@,¢" ",¢"\"",¢{,¢},¢`,¢/,¢*,¢"\t",¢"\n"};
- 
+
 	doNotTokenize ::= {"/*","/**","*/"," ","","\t"};
-	
-	newLinePositions ::= all indices of comment where 
+
+	newLinePositions ::= all indices of comment where
 		[c : character | c = ¢"\n"];
 
 	priorNewLine : natural number := 1;
 	bufferMap : {natural number→string|} := {};
-	
+
 	/* Break up comment by new lines.  Map key is line count, value is line *
 	 * less the new line character at the end of the line                   */
 	For each newLinePositions do
@@ -110,11 +110,11 @@ The current fiber will be terminated.</font>
 	 	[
 	 	 	bufferMap := bufferMap + lineCount→comment[priorNewLine + 1..i-1];
 	 	];
-	 
+
 	 	priorNewLine := i;
 		lineCount++;
 	];
-	
+
 	/* Tokenize comment lines */
 	For each bufferMap do
 	[
@@ -141,25 +141,25 @@ The current fiber will be terminated.</font>
 			 	]
 			 	do
 			 	[
-	
+
 			 	 	/* Consume nested comment without tokenizing but moving *
 			 	 	 * column pointer										*/
 			 	 	If charCounter = 0 then [charCounter++;];
-			 	 	
-					word : <character…|> := take from commentLine[charCounter+1..] 
-					until 
+
+					word : <character…|> := take from commentLine[charCounter+1..]
+					until
 					[
-					 	c : character 
+					 	c : character
 					 |
-	
+
 						If charCounter ≠ |commentLine| then [charCounter++;];
 					 	c ∈ {¢/,¢*}  ∨ [charCounter = |commentLine|]
 					];
-			 	 	
-			 	 	j : natural number := cast charCounter into 
+
+			 	 	j : natural number := cast charCounter into
 						[n : natural number | n];
-	
-			 	 	If charCounter < |commentLine| +1 ∧ [commentLine[j] ∈ {¢/,¢*}] then  
+
+			 	 	If charCounter < |commentLine| +1 ∧ [commentLine[j] ∈ {¢/,¢*}] then
 					[
 						Cast commentLine[j] into
 						[
@@ -187,7 +187,7 @@ The current fiber will be terminated.</font>
 							];
 						];
 					];
-			 	 	
+
 			 	];
 			];
 			While
@@ -197,73 +197,73 @@ The current fiber will be terminated.</font>
 			do
 			[
 			 	wordStart : natural number := charCounter + 1;
-				word : <character…|> := take from commentLine[charCounter+1..] until 
+				word : <character…|> := take from commentLine[charCounter+1..] until
 				[
-				 	c : character 
+				 	c : character
 				 |
 				 	charCounter++;
 				 	c ∈ keyCharacters  ∨ [charCounter = |commentLine|+1]
 				];
-	
-				j : natural number := cast charCounter into 
+
+				j : natural number := cast charCounter into
 					[n : natural number | n];
-	
+
 				if charCounter < |commentLine| then
 				[
 					Cast commentLine[j] into
 					[
-					 	c : enumeration of 
+					 	c : enumeration of
 					 		{¢@,¢" ",¢"\"",¢{,¢},¢`,¢/,¢*,¢"\t",¢"\n"}
 					 |
 						Choose c from enumeration of keyCharacters
 						where
 						¢"\t" is
 						[
-						 	If word ∉ doNotTokenize then 
+						 	If word ∉ doNotTokenize then
 						 	[
-						 	 	stacksTokens := stacksTokens ++ 
+						 	 	stacksTokens := stacksTokens ++
 						 	 		<token <word,lineNumber,wordStart>>;
 						 	];
 						],
 						¢@ is
 						[
-						 	If word ∉ doNotTokenize then 
+						 	If word ∉ doNotTokenize then
 						 	[
-						 	 	stacksTokens := stacksTokens ++ 
+						 	 	stacksTokens := stacksTokens ++
 						 	 		<token <word,lineNumber,wordStart>>;
 						 	];
 			 				wordStart := j;
-			 				word := take from commentLine[j..] until 
+			 				word := take from commentLine[j..] until
 			 				[
-			 					ch : character 
+			 					ch : character
 			 				 |
 			 				 	charCounter++;
 			 					ch = ¢" " ∨ [ch =  ¢"\n"]
 			 				];
-				 			stacksTokens := stacksTokens ++ 
+				 			stacksTokens := stacksTokens ++
 				 				<token <word,lineNumber,wordStart>>;
 						 	/* Counter will be re-incremented above.*/
 						 	charCounter--;
 						],
 						¢" " is
 						[
-						 	If word ∉ doNotTokenize then 
+						 	If word ∉ doNotTokenize then
 						 	[
-						 	 	stacksTokens := stacksTokens ++ 
+						 	 	stacksTokens := stacksTokens ++
 						 	 		<token <word,lineNumber,wordStart>>;
 						 	];
 						],
 						¢"\"" is
 						[
-						 	If word ∉ doNotTokenize then 
+						 	If word ∉ doNotTokenize then
 						 	[
-						 	 	stacksTokens := stacksTokens ++ 
+						 	 	stacksTokens := stacksTokens ++
 						 	 		<token <word,lineNumber,wordStart>>;
 						 	];
 				 			wordStart := j;
-			 				word := take from commentLine[j+1..] until 
+			 				word := take from commentLine[j+1..] until
 			 				[
-			 					ch : character 
+			 					ch : character
 			 				 |
 			 					charCounter++;
 			 					ch = ¢"\"" ∨ [charCounter = |commentLine|]
@@ -271,7 +271,7 @@ The current fiber will be terminated.</font>
 						 	if charCounter < |commentLine| + 1 then
 						 	[
 						 		word := <¢"\""> ++ word ++ <¢"\"">;
-						 		stacksTokens := stacksTokens ++ 
+						 		stacksTokens := stacksTokens ++
 						 			<token <word,lineNumber,wordStart>>;
 						 	] else
 						 	[
@@ -280,22 +280,22 @@ The current fiber will be terminated.</font>
 						],
 						¢{ is
 						[/* TODO Better handling of this, want entire thing in one token if followed by @ tag*/
-						 	If word ∉ doNotTokenize then 
+						 	If word ∉ doNotTokenize then
 						 	[
-						 	 	stacksTokens := stacksTokens ++ 
+						 	 	stacksTokens := stacksTokens ++
 						 	 		<token <word,lineNumber,wordStart>>;
 						 	];
-							stacksTokens := stacksTokens ++ 
+							stacksTokens := stacksTokens ++
 								<token <"{",lineNumber,j>>;
 						],
 						¢} is
 						[/* TODO Don't actually need this once { is handled correctly*/
-						 	If word ∈ doNotTokenize then 
+						 	If word ∈ doNotTokenize then
 						 	[
-						 	 	stacksTokens := stacksTokens ++ 
+						 	 	stacksTokens := stacksTokens ++
 						 	 		<token <word,lineNumber,wordStart>>;
 						 	];
-				 			stacksTokens := stacksTokens ++ 
+				 			stacksTokens := stacksTokens ++
 				 				<token <"}",lineNumber,j>>;
 						],
 						¢` is
@@ -309,45 +309,45 @@ The current fiber will be terminated.</font>
 							  		charCounter++;
 							  		If charCounter ≠ |commentLine| then
 							  		[
-								  		word := word ++ 
-								  			take from commentLine[j+2..] until 
+								  		word := word ++
+								  			take from commentLine[j+2..] until
 						 				[
-						 					ch : character 
+						 					ch : character
 						 				 |
 						 					charCounter++;
-						 					ch ∈ keyCharacters  
+						 					ch ∈ keyCharacters
 						 				];
-									 	If word ∉ doNotTokenize then 
+									 	If word ∉ doNotTokenize then
 									 	[
-									 	 	stacksTokens := stacksTokens ++ 
+									 	 	stacksTokens := stacksTokens ++
 									 	 		<token <word,lineNumber,wordStart>>;
 									 	];
 									];
 							  	]
-							  	else 
+							  	else
 							  	[
 							  	 	word := word ++ <commentLine[j]>;
 							  		charCounter++;
-							  		word := word ++ take from commentLine[j+1..] until 
+							  		word := word ++ take from commentLine[j+1..] until
 					 				[
-					 					ch : character 
+					 					ch : character
 					 				 |
 					 					charCounter++;
-					 					ch ∈ keyCharacters ∨ 
+					 					ch ∈ keyCharacters ∨
 				 							[charCounter = |commentLine|]
 					 				];
-								 	If word ∉ doNotTokenize then 
+								 	If word ∉ doNotTokenize then
 								 	[
-								 	 	stacksTokens := stacksTokens ++ 
+								 	 	stacksTokens := stacksTokens ++
 								 	 		<token <word,lineNumber,wordStart>>;
 								 	];
 							  	];
 							] else
 							[
 							 	word := word ++ <commentLine[j]>;
-							 	If word ∉ doNotTokenize then 
+							 	If word ∉ doNotTokenize then
 							 	[
-							 	 	stacksTokens := stacksTokens ++ 
+							 	 	stacksTokens := stacksTokens ++
 							 	 		<token <word,lineNumber,wordStart>>;
 							 	];
 							];
@@ -377,18 +377,18 @@ The current fiber will be terminated.</font>
 							[
 						  	 	word := word ++ <commentLine[j]>;
 						  		charCounter++;
-						  		word := word ++ take from commentLine[j+1..] until 
+						  		word := word ++ take from commentLine[j+1..] until
 				 				[
-				 					ch : character 
+				 					ch : character
 				 				 |
 				 					charCounter++;
-				 					ch ∈ keyCharacters ∨ 
+				 					ch ∈ keyCharacters ∨
 			 							[charCounter = |commentLine|]
 				 				];
 							];
-						 	If word ∉ doNotTokenize then 
+						 	If word ∉ doNotTokenize then
 						 	[
-						 	 	stacksTokens := stacksTokens ++ 
+						 	 	stacksTokens := stacksTokens ++
 						 	 		<token <word,lineNumber,wordStart>>;
 						 	];
 						],
@@ -397,26 +397,26 @@ The current fiber will be terminated.</font>
 						 /*Do nothing special here.  If closing comment, it will *
 						  * end the buffer.  If not, `* will not be converted 	 *
 						  * into a token.  Tokenize prior word if applicable.	 */
-						 	If word ∉ doNotTokenize then 
+						 	If word ∉ doNotTokenize then
 						 	[
-						 	 	stacksTokens := stacksTokens ++ 
+						 	 	stacksTokens := stacksTokens ++
 						 	 		<token <word,lineNumber,wordStart>>;
 						 	];
 						 ],
 						 ¢"\n" is
 						 [
-						 	If word ∉ doNotTokenize then 
+						 	If word ∉ doNotTokenize then
 						 	[
-						 	 	stacksTokens := stacksTokens ++ 
+						 	 	stacksTokens := stacksTokens ++
 						 	 		<token <word,lineNumber,wordStart>>;
 						 	];
 						 ];
 					];
 				] else
 				[
-				 	If word ∉ doNotTokenize then 
+				 	If word ∉ doNotTokenize then
 				 	[
-				 	 	stacksTokens := stacksTokens ++ 
+				 	 	stacksTokens := stacksTokens ++
 				 	 		<token <word,lineNumber,wordStart>>;
 				 	];
 				];

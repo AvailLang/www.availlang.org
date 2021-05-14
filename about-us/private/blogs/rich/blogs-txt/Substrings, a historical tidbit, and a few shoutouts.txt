@@ -4,20 +4,20 @@
 
      <p ALIGN=Center><b>Rich = new programmer without formal computer science education</b></p>
 
-<p>Now that we have reviewed something I pointed out in my first blog, let us review what I knew about searching for substrings inside of strings prior to the start of creating this functionality in the Avail library:</p> 
+<p>Now that we have reviewed something I pointed out in my first blog, let us review what I knew about searching for substrings inside of strings prior to the start of creating this functionality in the Avail library:</p>
       <p ALIGN=Center><i>nothing</i></p>
-<p>After reviewing what I knew when I set out (a very short endeavor indeed), I then headed to the source of all knowledge everywhere and anywhere, the internet.  Google plus the source of all knowledge quickly narrowed down my options from everything to a more manageable list of Wikipedia pages and links to forums discussing the subject in varying levels of detail.  Given the density with which some Wikipedia articles are written, I quickly looked to the links to questions asking efficient ways to search strings for substrings.  That is where I first ran into the <a class="offsite" href="http://en.wikipedia.org/wiki/Knuth-Morris-Pratt_algorithm">Knuth-Morris-Pratt (KMP)</a> string matching algorithm.  Thank you internet people who go forth and do useful things with the internet (like answer other people's posted questions), for it was by your collective selflessness that I learned of <a class="offsite" href="http://en.wikipedia.org/wiki/Knuth-Morris-Pratt_algorithm">KMP</a>.  
+<p>After reviewing what I knew when I set out (a very short endeavor indeed), I then headed to the source of all knowledge everywhere and anywhere, the internet.  Google plus the source of all knowledge quickly narrowed down my options from everything to a more manageable list of Wikipedia pages and links to forums discussing the subject in varying levels of detail.  Given the density with which some Wikipedia articles are written, I quickly looked to the links to questions asking efficient ways to search strings for substrings.  That is where I first ran into the <a class="offsite" href="https://en.wikipedia.org/wiki/Knuth-Morris-Pratt_algorithm">Knuth-Morris-Pratt (KMP)</a> string matching algorithm.  Thank you internet people who go forth and do useful things with the internet (like answer other people's posted questions), for it was by your collective selflessness that I learned of <a class="offsite" href="https://en.wikipedia.org/wiki/Knuth-Morris-Pratt_algorithm">KMP</a>.
 </p>
 
-<p>Discovery of efficient algorithm?  <i>Check!</i>  Next up?  Understand algorithm.  Again Wikipedia is kind of dense so back to Google I went.  I found (in my opinion) a great treatment on KMP in the <a class="offsite" href="http://www.ics.uci.edu/~eppstein/161/960227.html">February 27, 1996 lecture notes</a> of <a class="offsite" href="http://www.ics.uci.edu/~eppstein/">Dr. David Eppstein</a> at the University of California, Irvine.  Thank you Dr. Eppstein for leaving those notes up for over a decade as it did a great deal in helping me understand this algorithm!</p>
+<p>Discovery of efficient algorithm?  <i>Check!</i>  Next up?  Understand algorithm.  Again Wikipedia is kind of dense so back to Google I went.  I found (in my opinion) a great treatment on KMP in the <a class="offsite" href="https://www.ics.uci.edu/~eppstein/161/960227.html">February 27, 1996 lecture notes</a> of <a class="offsite" href="https://www.ics.uci.edu/~eppstein/">Dr. David Eppstein</a> at the University of California, Irvine.  Thank you Dr. Eppstein for leaving those notes up for over a decade as it did a great deal in helping me understand this algorithm!</p>
 
-<p>Seeing as <a class="offsite" href="http://www.ics.uci.edu/~eppstein/">Dr. Eppstein's treatment of KMP</a> is what I used to understand KMP, I'll not rehash what you can read for yourself in his notes (I don't think they're going anywhere anytime soon).   I will however point out a few things about the algorithm so that my subsequent explanation of my work is accompanied by some degree of context on the subject. </p>
+<p>Seeing as <a class="offsite" href="https://www.ics.uci.edu/~eppstein/">Dr. Eppstein's treatment of KMP</a> is what I used to understand KMP, I'll not rehash what you can read for yourself in his notes (I don't think they're going anywhere anytime soon).   I will however point out a few things about the algorithm so that my subsequent explanation of my work is accompanied by some degree of context on the subject. </p>
 
 <p>First and most importantly, the KMP algorithm is an efficient way for locating substrings in linear time, O(n), where n is the length of the tuple (string) being searched.  If there wasn't an efficiency improvement here, I'd not be talking about KMP, but as it so happens there is a vast improvement over the double loop naive approach which has a time complexity of O(mn), where m is the length of the subtuple (substring) being searched for in n-length tuple (string).  (From this point, I'll just refer to the substring as the <i>"subtuple"</i> and the string being searched as the <i>"target tuple"</i>.)</p>
 
 <p>The long and short of KMP is that it eliminates redundant comparisons in both the target tuple and the subtuple.  It does this by "remembering" how far it has gotten in obtaining a match of the subtuple in the target tuple and knowing if there are any redundancies in the pattern of the subtuple.  For example, the character tuple <code>"back bar bank"</code> has the prefix redundancy of the characters, <code>"ba"</code>.  This redundancy occurs starting in the first position, the sixth position, and the tenth position of this tuple (henceforth referred to as subtuple).  If you are searching for this subtuple in the target tuple, <code>"c back back bar bank fish sticks"</code>, you begin your partial match with the subtuple starting at the third position of the target tuple.  By the tenth position in the target tuple, you have ended your partial match with a mismatch.  Instead of resuming your search at the fourth position of the target tuple (<code>"c ba"</code>) and the first position of subtuple (<code>"b"</code>), you begin your search starting at the tenth position of the target tuple (<code>"c back bac"</code>) and the third position of subtuple (<code>"bac"</code>).  There is no need to reinvestigate the target tuple for positions four through nine as they've already been inspected.  You also know that positions eight and nine of the target tuple contain characters that are a redundancy in the prefix of your subtuple (<code>"ba"</code>). So you already know that positions eight and nine of the target tuple are the first two positions in your subtuple.  From there, you continue the match comparisons until you've successfully reached the end of your subtuple in the target tuple.</p>
 
-<p> Ok, so now onto my code....well, I did kind of promise a historical tidbit in the title of the blog and it is important to my implementation of the algorithm versus the pseudocode most prevalent on the internet.  So maybe I should talk about zero-based indexing first, then my Avail code.  Why talk about that?  Well, a good majority of the pseudocode I came across on the KMP algorithm was written up using zero-based numbering for their arrays (actually I think it was all of the pseudocode I came across, but I can't be certain and I try not to talk in absolutes so we'll go with "most").  Because of the prevalence of zero-based indexing in pseudocode, I think it is important to point out a difference in Avail's indexing from many other languages.  So on to that historical tidbit...</p> 
+<p> Ok, so now onto my code....well, I did kind of promise a historical tidbit in the title of the blog and it is important to my implementation of the algorithm versus the pseudocode most prevalent on the internet.  So maybe I should talk about zero-based indexing first, then my Avail code.  Why talk about that?  Well, a good majority of the pseudocode I came across on the KMP algorithm was written up using zero-based numbering for their arrays (actually I think it was all of the pseudocode I came across, but I can't be certain and I try not to talk in absolutes so we'll go with "most").  Because of the prevalence of zero-based indexing in pseudocode, I think it is important to point out a difference in Avail's indexing from many other languages.  So on to that historical tidbit...</p>
 
 <p>Anyone who knows anything about  the language C likely knows more than me.  But back at the turn of the millenium, Todd did endeavor to teach me some C.  And from those lessons mostly long forgotten (see no absolute there), I do recall pointers.  In C you have much more control (hence responsibility) when it comes to memory management.  Pointers in C are actual memory addresses where data is stored.  You allocate some memory to your C array and store elements in each of the contiguous memory slots from that initial position of the pointer (the head of the array).  The array is indexed using zero-based numbering as each index indicates the offset from the memory position of the pointer that started the array.  Hence the first element in your array is actually the zeroth element as it has an offset of zero from the place in memory where the array starts.  Thus the "second" element in a zero-base indexed array is actually the third element stored in the array, which is two offset from the head element of the array.  So to bring it all together, the practice of zero-based indexing was in part made popular through pointers in C where you actually have direct control of memory allocation and deallocation (the practice actually originated with Assembly).   Playing with memory as you can in C isn't something you get to do in higher level languages.  Avail, unlike many other languages, utilizes a one-based numbering system for its numerical indexing purposes.  It does not utilize an offset count from the start so the "first" element in a tuple is just that, the first element.  So that historical nugget is what ultimately resulted in my having to translate the pseudocode from zero-based indexing to one-based indexing so that I could make KMP work correctly in Avail.</p>
 
@@ -53,7 +53,7 @@ Because it is getting late and I have been working on this blog post almost as l
 		[
 		 	current++;
 
-		] 
+		]
 		else
 		[
 			current := 1;
@@ -65,10 +65,10 @@ Because it is getting late and I have been working on this blog post almost as l
 ]:{tuple→natural number|};
 </div></div>
 
-<p>Now on to the non-trivial portion of the fourth implementation of <code>"first index of_in_"</code>, where KMP is actually implemented.  That would be the instance where the following were not true:  
-<code>|subtuple| > |aTuple| 
+<p>Now on to the non-trivial portion of the fourth implementation of <code>"first index of_in_"</code>, where KMP is actually implemented.  That would be the instance where the following were not true:
+<code>|subtuple| > |aTuple|
 [|subtuple| = 1</code>
-The remaning code indicated here is the KMP implementation in Avail.  This portion should mirror the <a class="offsite" href="http://en.wikipedia.org/wiki/Knuth-Morris-Pratt_algorithm">pseudocode on Wikipedia</a> except for the one-based indexing used in Avail.  Because of this being fairly straightforward, I'm once again being lazy and just displaying the exact Avail code of this implementation.</p>
+The remaning code indicated here is the KMP implementation in Avail.  This portion should mirror the <a class="offsite" href="https://en.wikipedia.org/wiki/Knuth-Morris-Pratt_algorithm">pseudocode on Wikipedia</a> except for the one-based indexing used in Avail.  Because of this being fairly straightforward, I'm once again being lazy and just displaying the exact Avail code of this implementation.</p>
 
 <div class="restricted-width-container">
 <div class="good-code-block">Method "first index of_in_" is
@@ -82,7 +82,7 @@ The remaning code indicated here is the KMP implementation in Avail.  This porti
 		tupleIndex : natural number := 1;
 		subtupleIndex : natural number := 1;
 		overlapTable : {tuple→natural number|} := self overlap subtuple;
-		Until 
+		Until
 		[
 			found ∨ [tupleIndex + |subtuple| - subtupleIndex > |aTuple|]
 		]
@@ -90,18 +90,18 @@ The remaning code indicated here is the KMP implementation in Avail.  This porti
 		[
 			If aTuple[tupleIndex] = subtuple[subtupleIndex] then
 			[
-				If subtupleIndex = |subtuple| then 
+				If subtupleIndex = |subtuple| then
 				[
 					found := true;
-					subtupleStart := cast tupleIndex - subtupleIndex + 1 into 
+					subtupleStart := cast tupleIndex - subtupleIndex + 1 into
 						[w : whole number | w];
 				]
 				else [subtupleIndex++;];
-				
+
 			]
 			else
 			[
-			 	subtupleIndex := overlapTable[subtuple[..subtupleIndex]] 
+			 	subtupleIndex := overlapTable[subtuple[..subtupleIndex]]
 			 		else [1];
 			];
 			tupleIndex++;
