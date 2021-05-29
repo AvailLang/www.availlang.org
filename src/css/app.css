@@ -1,0 +1,79 @@
+#root
+{
+	min-height: 100vh;
+}
+
+.app {
+	text-align: center;
+	min-height: 100vh;
+}
+
+.app-logo
+{
+	width: 200px;
+	padding: 20px 40px;
+}
+
+.icon
+{
+	width: 25px;
+	height: 25px;
+}
+
+@media only screen and (min-width: 600px)
+{
+	.app-logo
+	{
+		width: 300px;
+		padding: 35px 70px;
+	}
+
+	.icon
+	{
+		width: 30px;
+		height: 30px;
+	}
+}
+
+@media only screen and (min-width: 998px)
+{
+	.app-logo
+	{
+		width: 400px;
+		padding: 40px 80px;
+	}
+
+	.icon
+	{
+		width: 40px;
+		height: 40px;
+	}
+}
+
+@media only screen and (min-width: 2500px)
+{
+	.app-logo
+	{
+		width: 800px;
+		padding: 80px 160px;
+	}
+}
+
+button
+{
+	outline: none;
+	border: none;
+	padding: 10px 30px;
+	cursor: pointer;
+	border-radius: 2px;
+}
+
+.clickable
+{
+	cursor: pointer;
+}
+
+.clickable:active
+{
+	opacity: .9;
+}
