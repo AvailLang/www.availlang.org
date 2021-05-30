@@ -65,4 +65,4 @@ export enum Warning
 
 	/** Error during local storage theme cast. */
 	LOCAL_STORAGE_THEME_FAILED = "Failed to use theme from local storage."
-}
+};

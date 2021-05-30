@@ -166,6 +166,5 @@ const setTheme = (state: AppState, theme?: AppTheme): AppState =>
 			? AppTheme.LIGHT 
 			: AppTheme.DARK });
 
-
 export default App;
 
