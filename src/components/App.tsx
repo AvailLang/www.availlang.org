@@ -9,6 +9,7 @@ import { errors } from "../helpers/errors";
 import { settings } from "../globalSettings";
 import { log, LogLevel, Warning } from "../helpers/logs";
 import { colors } from "../helpers/colors";
+import { defaultStrings, WebsiteStrings } from "../internationalization/strings";
 
 /**
  * The complete state of the ${@link App}.
@@ -22,6 +23,9 @@ interface AppState
 
 	/** The current {@link AppTheme theme}. */
 	theme: AppTheme;
+
+	/** The complete set of content for the {@link App}. */
+	strings: WebsiteStrings;
 }
 
 /**
@@ -32,7 +36,8 @@ interface AppState
 const initialState: AppState =
 {
 	initialized: false,
-	theme: AppTheme.DARK
+	theme: AppTheme.DARK,
+	strings: defaultStrings
 };
 
 /**
@@ -51,6 +56,10 @@ const App = () =>
 		? { background: colors.BLACK }
 		: { background: colors.WHITE };
 	const themeLogo = state.theme === AppTheme.DARK ? logoWhite : logoBlack;
+	const fontStyle = state.theme === AppTheme.DARK
+		? { color: colors.WHITE }
+		: { color: colors.BLACK };
+	const {strings} = state;
 	// Google Analytics initial log.
 	useEffect(() =>
 	{
@@ -95,6 +104,7 @@ const App = () =>
 			/>
 			{/* ATF */}
 			<img src={themeLogo} className="app-logo" alt="logo" />
+			<h1 style={fontStyle}>{strings.tagline}</h1>
 			{/* Tagline */}
 			{/* Text, Github and example */}
 			{/* Content/ code examples */}
@@ -164,7 +174,8 @@ const setTheme = (state: AppState, theme?: AppTheme): AppState =>
 		? theme 
 		: state.theme === AppTheme.DARK 
 			? AppTheme.LIGHT 
-			: AppTheme.DARK });
+			: AppTheme.DARK
+});
 
 export default App;
 
