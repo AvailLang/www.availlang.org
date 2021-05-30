@@ -1,8 +1,8 @@
 import React, { useEffect, useReducer } from "react";
 import logoWhite from "../images/logo-white.svg";
 import logoBlack from "../images/logo-black.svg";
-import sun from "../images/sun.svg";
-import moon from "../images/moon.svg";
+import sun from "../images/sun-fold.svg";
+import moon from "../images/moon-fold.svg";
 import '../css/app.css';
 import { AppTheme } from "../helpers/theme";
 import { errors } from "../helpers/errors";
@@ -54,6 +54,7 @@ const App = () =>
 	// Google Analytics initial log.
 	useEffect(() =>
 	{
+		// Initialization is manually flagged to control re-running.
 		if (state.initialized === true)
 		{
 			return;
@@ -72,12 +73,12 @@ const App = () =>
 			window.gtag(
 				"config",
 				settings.GOOGLE_ANALYTICS_ID,
-				{page_path: path}
+				{ page_path: path }
 			)
 		}
 		catch
 		{
-			log(Warning.ANALYTICS_NOT_CONFIGURED, LogLevel.WARN);
+			log(Warning.INVALID_URL_PATH, LogLevel.ERROR);
 		}
 	});
 	return (
@@ -87,10 +88,10 @@ const App = () =>
 		>
 			<img 
 				src={toggleThemeIcon} 
-				className="icon clickable" 
+				className="toggle-theme clickable" 
 				alt="toggle dark mode"
 				onClick={toggleTheme}
-				style={{ position: "absolute", top: 10, right: 15 }}
+				style={{ position: "absolute", top: 0, right: 0 }}
 			/>
 			{/* ATF */}
 			<img src={themeLogo} className="app-logo" alt="logo" />

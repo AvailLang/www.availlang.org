@@ -1,3 +1,19 @@
+:root
+{
+	--black: #201218;
+	--white: #fff;
+	--light-code-background: #f5efd6;
+	--light-code-color: #8e9a9d;
+	--dark-code-background: #012430;
+	--dark-code-color: #5c6c76;
+	--code-yellow: #b58900;
+	--code-red: #dc322f;
+	--code-magenta: #d33682;
+	--code-blue: #268bd2;
+	--code-cyan: #2aa198;
+	--code-green: #859900;
+}
+
 #root
 {
 	min-height: 100vh;
@@ -18,6 +34,12 @@
 {
 	width: 25px;
 	height: 25px;
+}
+
+.toggle-theme
+{
+	width: 100px;
+	height: 100px;
 }
 
 @media only screen and (min-width: 600px)
