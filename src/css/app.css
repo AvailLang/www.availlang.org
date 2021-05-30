@@ -243,6 +243,8 @@ button
 	border-top-left-radius: 10px;
 	border-bottom-right-radius: 0px;
 	border-bottom-left-radius: 0px;
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 
 .code-block p

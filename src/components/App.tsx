@@ -14,6 +14,7 @@ import { LocalStorageInstance } from "../helpers/storage";
 import { Homepage } from "./Homepage";
 import backgroundLight from "../images/background-light.svg";
 import backgroundDark from "../images/background-dark.svg";
+import { getAnalyticsId } from "../helpers/environment";
 
 /**
  * The complete state of the ${@link App}.
@@ -98,8 +99,11 @@ const App = () =>
 		dispatch({type: "initialize"});
 
 		// Google Analytics initial log.
+		const analyticsId = getAnalyticsId();
 		// @ts-ignore-nextline
-		if (window.gtag === undefined || settings.GOOGLE_ANALYTICS_ID === undefined)
+		if (window.gtag === undefined 
+			|| analyticsId === undefined 
+			|| analyticsId === "")
 		{
 			log(Warning.ANALYTICS_NOT_CONFIGURED, LogLevel.WARN);
 			return;
@@ -110,7 +114,7 @@ const App = () =>
 			// @ts-ignore-nextline
 			window.gtag(
 				"config",
-				settings.GOOGLE_ANALYTICS_ID,
+				analyticsId,
 				{ page_path: path }
 			)
 		}

@@ -5,10 +5,6 @@
  */
 export const settings =
 {
-	// TODO: Update the Avail Google Analytics ID.
-	/** The Google Analytics tracking ID. */
-	GOOGLE_ANALYTICS_ID: undefined,
-
 	/** 'true' iff Javascript console logs are enabled. */
 	LOG_TO_CONSOLE: true,
 
