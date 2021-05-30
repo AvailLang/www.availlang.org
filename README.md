@@ -16,6 +16,14 @@ TODO
 
 TODO
 
-## Extending App Contents
+## Editing Text Content
+
+TODO
+
+## Adding Code Examples
+
+TODO
+
+## Sharing a Specific Code Example
 
 TODO
