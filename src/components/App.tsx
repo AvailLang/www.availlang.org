@@ -11,16 +11,17 @@ import { log, LogLevel, Warning } from "../helpers/logs";
 import { colors } from "../helpers/colors";
 import { defaultStrings, WebsiteStrings } from "../internationalization/strings";
 
-// TODO (~7-8)
-//  Link in local storage (20)
+// TODO:
+//  Link in local storage (15)
 //  Link in code examples and page content (60)
-//  Style code exmamples and page content (120)
-//  Add Github link (20)
+//  Style code exmamples and page content (90)
+//  Add Github link (15)
 //  Add contact info (15)
-//  Add copyright and footer (10)
+//  Add copyright and footer (15)
 //  Add background image? (60)
 //  Add routing and example instance view (60)
 //  Add share links with URL and mail (30)
+//  Add mobile scroll to top button (30)
 //  Finish readme (30)
 
 /**
