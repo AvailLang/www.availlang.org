@@ -82,7 +82,7 @@ const App = () =>
 		}
 		dispatch({type: "initialize"});
 		// @ts-ignore-nextline
-		if (window.gtag === undefined || settings.GOOGLE_ANALYTICS_ID.trim() === "")
+		if (window.gtag === undefined || settings.GOOGLE_ANALYTICS_ID === undefined)
 		{
 			log(Warning.ANALYTICS_NOT_CONFIGURED, LogLevel.WARN);
 			return;

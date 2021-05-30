@@ -6,10 +6,13 @@
 export const settings =
 {
 	// TODO: Update the Avail Google Analytics ID.
-	//  Settings > Account > Property > Property Settings > Tracking Id
 	/** The Google Analytics tracking ID. */
-	GOOGLE_ANALYTICS_ID: "",
+	GOOGLE_ANALYTICS_ID: undefined,
 
 	/** 'true' iff Javascript console logs are enabled. */
-	LOG_TO_CONSOLE: true
+	LOG_TO_CONSOLE: true,
+
+	// TODO: Update this address, if desired.
+	/** The email address visitors can use to contact, if any. */
+	MAILING_ADDRESS: undefined
 };

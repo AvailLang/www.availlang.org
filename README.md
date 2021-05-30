@@ -1,16 +1,12 @@
-## Available Scripts
-
-### `npm start`
+## The Avail Programming Language Website
 
 TODO
 
-### `npm run build`
+## Required Configurations: Analytics and Mailing
 
 TODO
-
-## Google Analytics Configuration
-
-TODO
+Note: Settings > Account > Property > Property Settings > Tracking Id
+Note: recommend Google Search Console setup via DNS
 
 ## Deployment
 
