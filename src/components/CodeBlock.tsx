@@ -51,11 +51,13 @@ export const CodeBlock = (props: CodeBlockProps) =>
 
 /**
  * Generate an HTML paragraph element view of an {@link CodeLine}.
- * 
+ *
  * @param line
  *   The {@link CodeLine}.
- * @param index 
+ * @param index
  *   The index of the line as it appears in an array of lines.
+ * @param theme
+ *   The app theme.
  * @returns
  *   The HTML paragraph element.
  * @author Tristan J Berto <hello@tristanberto.com>
@@ -81,7 +83,7 @@ const getCodeLineView = (line: CodeLine, index: number, theme: AppTheme) =>
 }
 
 /**
- * Parameters of a line of code in a {@link ContentSection}.
+ * Parameters required to display a code line view.
  * 
  * @author Tristan J Berto <hello@tristanberto.com>
  */
@@ -92,7 +94,7 @@ export interface CodeLine
 
 	/** The number of (tab) indents to display for the line. */
 	indent: number
-};
+}
 
 /**
  * Parameters of a span of text within a {@link CodeLine}.
@@ -115,7 +117,7 @@ export interface CodeSpan
  */
 export const codeStyle =
 {
-	/** Get the dynamic code style for non-hilighted text. */
+	/** Get the dynamic code style for non-highlighted text. */
 	DYNAMIC_BASE: (theme: AppTheme) =>
 	{
 		switch (theme)
@@ -129,8 +131,8 @@ export const codeStyle =
 		}
 	},
 
-	/** Get a dynamic hilight color (#1) that depends on the theme. */
-	DYNAMIC_HILIGHT_1: (theme: AppTheme) =>
+	/** Get a dynamic highlight color (#1) that depends on the theme. */
+	DYNAMIC_HIGHLIGHT_1: (theme: AppTheme) =>
 	{
 		switch (theme)
 		{
@@ -143,10 +145,10 @@ export const codeStyle =
 		}
 	},
 
-	/** Get a dynamic color (#2) hilight that varies by theme. */
+	/** Get a dynamic color (#2) highlight that varies by theme. */
 	GREEN: { color: colors.CODE_GREEN },
 
-	/** Get a dynamic color (#2) hilight that varies by theme. */
+	/** Get a dynamic color (#2) highlight that varies by theme. */
 	BLUE: { color: colors.CODE_BLUE },
 
 	/** Get red colored styling for the theme. */

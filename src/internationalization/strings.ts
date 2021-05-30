@@ -7,21 +7,9 @@ import { en } from "./en";
  */
 export enum Language
 {
-	/** The Engligh language: Freedom Edition. */
+	/** The English language: Freedom Edition. */
 	EN = "en"
-};
-
-/**
- * Remove leading and trailing whitespace from each line of a string.
- * 
- * @param multiline 
- *   A string, generally only used with multiline template literals.
- * @returns 
- *   The string with new lines and their leading/ trailing space removed.
- * @author Tristan J Berto <hello@tristanberto.com>
- */
-export const multiline = (multiline: string) =>
-	multiline.replaceAll(/( |\t)*\n( |\t)*/g, " ").trim();
+}
 
 /**
  * A complete set of translations for the {@link App}.
@@ -64,13 +52,13 @@ export interface WebsiteStrings
 	 */
 	codeExamples:
 	{
-		/** The paragrah(s) before the first code example. */
+		/** The paragraph(s) before the first code example. */
 		exampleOneIntroduction: string[];
 
-		/** The paragrah(s) before the second code example. */
+		/** The paragraph(s) before the second code example. */
 		exampleTwoIntroduction: string[];
 
-		/** The paragrah(s) before the third code example. */
+		/** The paragraph(s) before the third code example. */
 		exampleThreeIntroduction: string[];
 	};
 }
@@ -85,5 +73,5 @@ export const strings = new Map<Language, WebsiteStrings> ([
 	[Language.EN, en]
 ]);
 
-/** The default application content (Engligh strings). */
+/** The default application content (English strings). */
 export const defaultStrings = en;

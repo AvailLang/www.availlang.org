@@ -6,7 +6,6 @@ import "../css/reset.css";
 import "../css/app.css";
 import { AppTheme } from "../helpers/theme";
 import { errors } from "../helpers/errors";
-import { settings } from "../globalSettings";
 import { log, LogLevel, Warning } from "../helpers/logs";
 import { colors } from "../helpers/colors";
 import { defaultStrings, WebsiteStrings } from "../internationalization/strings";
@@ -65,20 +64,23 @@ const App = () =>
 	const {strings} = state;
 	const toggleTheme = () => dispatch({type: "setTheme"});
 	const toggleThemeIcon = state.theme === AppTheme.DARK ? sun : moon;
+	const backgroundBase =
+	{
+		backgroundRepeat: "no-repeat",
+		backgroundPosition: "0 150px"
+	};
 	const backgroundStyle = state.theme === AppTheme.DARK
 		? 
-			{ 
+			{
+				...backgroundBase,
 				backgroundColor: colors.BLACK,
 				backgroundImage: `url(${backgroundDark})`,
-				backgroundRepeat: "no-repeat",
-				backgroundPosition: "0 150px"
 			}
 		: 
-			{ 
+			{
+				...backgroundBase,
 				backgroundColor: colors.WHITE,
 				backgroundImage: `url(${backgroundLight})`,
-				backgroundRepeat: "no-reapeat",
-				backgroundPosition: "0 150px"
 			};
 	const fontStyle = state.theme === AppTheme.DARK
 		? { color: colors.WHITE }
@@ -197,7 +199,7 @@ const setTheme = (state: AppState, theme?: AppTheme): AppState =>
 				? AppTheme.LIGHT
 				: AppTheme.DARK);
 	return { ...state, theme: state.localStorage.getTheme() };
-}
+};
 
 export default App;
 

@@ -1,0 +1,23 @@
+<component name="ProjectCodeStyleConfiguration">
+  <code_scheme name="Project" version="173">
+    <RsCodeStyleSettings>
+      <option name="ALIGN_RET_TYPE" value="false" />
+      <option name="ALIGN_WHERE_BOUNDS" value="false" />
+      <option name="INDENT_WHERE_CLAUSE" value="false" />
+    </RsCodeStyleSettings>
+    <ScalaCodeStyleSettings>
+      <option name="MULTILINE_STRING_CLOSING_QUOTES_ON_NEW_LINE" value="true" />
+    </ScalaCodeStyleSettings>
+    <codeStyleSettings language="Rust">
+      <option name="RIGHT_MARGIN" value="-1" />
+      <option name="KEEP_BLANK_LINES_IN_DECLARATIONS" value="1" />
+      <option name="KEEP_BLANK_LINES_IN_CODE" value="1" />
+      <option name="ALIGN_MULTILINE_PARAMETERS" value="false" />
+      <option name="ALIGN_MULTILINE_PARAMETERS_IN_CALLS" value="false" />
+      <option name="SOFT_MARGINS" value="80" />
+      <indentOptions>
+        <option name="USE_TAB_CHARACTER" value="true" />
+      </indentOptions>
+    </codeStyleSettings>
+  </code_scheme>
+</component>

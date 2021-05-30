@@ -13,7 +13,7 @@ import { colors } from "../helpers/colors";
 interface CodeExampleProps extends CodeExampleData
 {
 	/** The element's children. */
-	children: ReactNode;
+	children?: ReactNode;
 
 	/** The {@link App} theme. */
 	theme: AppTheme;

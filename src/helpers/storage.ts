@@ -46,7 +46,7 @@ export class LocalStorageInstance
 	private data = defaultLocalStorageData;
 
 	/** 
-	 * Construce a new {@link LocalStorage} class.
+	 * Construct a new {@link LocalStorageInstance} class.
 	 * 
 	 * This implementation assumes minimal use of local storage.
 	 */
@@ -81,19 +81,17 @@ export class LocalStorageInstance
 	getTheme()
 	{
 		return this.data.theme;
-	}
+	};
 
 	/**
 	 * Set the user's preferred theme.
 	 * 
 	 * @param newTheme
 	 *   The theme.
-	 * @param callback
-	 *   A callback to invoke after setting the theme.
 	 */
 	setTheme(newTheme: AppTheme)
 	{
 		this.storage.setItem(this.keys.theme, newTheme);
 		this.data = {...this.data, theme: newTheme};
-	}
-};
+	};
+}

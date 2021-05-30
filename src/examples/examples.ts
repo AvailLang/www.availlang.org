@@ -22,7 +22,7 @@ export interface CodeExampleData
 /**
  * An extension of {@link CodeExampleData} that includes extended content
  * beyond what is displayed on the main page. This is intended for instance
- * pages for each example that might hold more explaination.
+ * pages for each example that might hold more explanation.
  * 
  * @author Tristan J Berto <hello@tristanberto.com>
  */
@@ -32,7 +32,7 @@ export interface ExtendedCodeExampleData extends CodeExampleData
 	featured: boolean;
 
 	/** Additional content to display on a dedicated example instance view. */
-	longExplaination?: ReactNode;
+	longExplanation?: ReactNode;
 }
 
 /**
@@ -65,7 +65,7 @@ export const codeExamples: ExtendedCodeExampleData[] =
 					},
 					{
 						text: "and ",
-						style: codeStyle.DYNAMIC_HILIGHT_1
+						style: codeStyle.DYNAMIC_HIGHLIGHT_1
 					},
 					{
 						text: "more ",
@@ -77,7 +77,7 @@ export const codeExamples: ExtendedCodeExampleData[] =
 					},
 					{
 						text: "{}",
-						style: codeStyle.DYNAMIC_HILIGHT_1
+						style: codeStyle.DYNAMIC_HIGHLIGHT_1
 					}
 				],
 				indent: 0
@@ -99,7 +99,7 @@ export const codeExamples: ExtendedCodeExampleData[] =
 					},
 					{
 						text: "and ",
-						style: codeStyle.DYNAMIC_HILIGHT_1
+						style: codeStyle.DYNAMIC_HIGHLIGHT_1
 					},
 					{
 						text: "more ",
@@ -111,7 +111,7 @@ export const codeExamples: ExtendedCodeExampleData[] =
 					},
 					{
 						text: "{}",
-						style: codeStyle.DYNAMIC_HILIGHT_1
+						style: codeStyle.DYNAMIC_HIGHLIGHT_1
 					}
 				],
 				indent: 1
@@ -133,7 +133,7 @@ export const codeExamples: ExtendedCodeExampleData[] =
 					},
 					{
 						text: "and ",
-						style: codeStyle.DYNAMIC_HILIGHT_1
+						style: codeStyle.DYNAMIC_HIGHLIGHT_1
 					},
 					{
 						text: "more ",
@@ -145,7 +145,7 @@ export const codeExamples: ExtendedCodeExampleData[] =
 					},
 					{
 						text: "{}",
-						style: codeStyle.DYNAMIC_HILIGHT_1
+						style: codeStyle.DYNAMIC_HIGHLIGHT_1
 					}
 				],
 				indent: 0
@@ -240,7 +240,7 @@ export const codeExamples: ExtendedCodeExampleData[] =
 					},
 					{
 						text: "and ",
-						style: codeStyle.DYNAMIC_HILIGHT_1
+						style: codeStyle.DYNAMIC_HIGHLIGHT_1
 					},
 					{
 						text: "more ",
@@ -252,7 +252,7 @@ export const codeExamples: ExtendedCodeExampleData[] =
 					},
 					{
 						text: "{}",
-						style: codeStyle.DYNAMIC_HILIGHT_1
+						style: codeStyle.DYNAMIC_HIGHLIGHT_1
 					}
 				],
 				indent: 0
@@ -274,7 +274,7 @@ export const codeExamples: ExtendedCodeExampleData[] =
 					},
 					{
 						text: "and ",
-						style: codeStyle.DYNAMIC_HILIGHT_1
+						style: codeStyle.DYNAMIC_HIGHLIGHT_1
 					},
 					{
 						text: "more ",
@@ -286,7 +286,7 @@ export const codeExamples: ExtendedCodeExampleData[] =
 					},
 					{
 						text: "{}",
-						style: codeStyle.DYNAMIC_HILIGHT_1
+						style: codeStyle.DYNAMIC_HIGHLIGHT_1
 					}
 				],
 				indent: 1
@@ -308,7 +308,7 @@ export const codeExamples: ExtendedCodeExampleData[] =
 					},
 					{
 						text: "and ",
-						style: codeStyle.DYNAMIC_HILIGHT_1
+						style: codeStyle.DYNAMIC_HIGHLIGHT_1
 					},
 					{
 						text: "more ",
@@ -320,7 +320,7 @@ export const codeExamples: ExtendedCodeExampleData[] =
 					},
 					{
 						text: "{}",
-						style: codeStyle.DYNAMIC_HILIGHT_1
+						style: codeStyle.DYNAMIC_HIGHLIGHT_1
 					}
 				],
 				indent: 0
@@ -351,7 +351,7 @@ export const codeExamples: ExtendedCodeExampleData[] =
 					},
 					{
 						text: "and ",
-						style: codeStyle.DYNAMIC_HILIGHT_1
+						style: codeStyle.DYNAMIC_HIGHLIGHT_1
 					},
 					{
 						text: "more ",
@@ -363,7 +363,7 @@ export const codeExamples: ExtendedCodeExampleData[] =
 					},
 					{
 						text: "{}",
-						style: codeStyle.DYNAMIC_HILIGHT_1
+						style: codeStyle.DYNAMIC_HIGHLIGHT_1
 					}
 				],
 				indent: 0
@@ -385,7 +385,7 @@ export const codeExamples: ExtendedCodeExampleData[] =
 					},
 					{
 						text: "and ",
-						style: codeStyle.DYNAMIC_HILIGHT_1
+						style: codeStyle.DYNAMIC_HIGHLIGHT_1
 					},
 					{
 						text: "more ",
@@ -397,7 +397,7 @@ export const codeExamples: ExtendedCodeExampleData[] =
 					},
 					{
 						text: "{}",
-						style: codeStyle.DYNAMIC_HILIGHT_1
+						style: codeStyle.DYNAMIC_HIGHLIGHT_1
 					}
 				],
 				indent: 1
@@ -419,7 +419,7 @@ export const codeExamples: ExtendedCodeExampleData[] =
 					},
 					{
 						text: "and ",
-						style: codeStyle.DYNAMIC_HILIGHT_1
+						style: codeStyle.DYNAMIC_HIGHLIGHT_1
 					},
 					{
 						text: "more ",
@@ -431,16 +431,16 @@ export const codeExamples: ExtendedCodeExampleData[] =
 					},
 					{
 						text: "{}",
-						style: codeStyle.DYNAMIC_HILIGHT_1
+						style: codeStyle.DYNAMIC_HIGHLIGHT_1
 					}
 				],
 				indent: 0
 			}
 		],
-		codeOutput: []	
+		codeOutput: []
 	}
 ];
 
 /** An array of code examples to be featured on the homepage. */
 export const featuredExamples = 
-	codeExamples.filter(example => example.featured === true);
+	codeExamples.filter(example => example.featured);

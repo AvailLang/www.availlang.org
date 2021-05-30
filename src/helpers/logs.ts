@@ -31,7 +31,7 @@ export enum LogLevel
  */
 export const log = (log: string, level: LogLevel = LogLevel.INFO) =>
 {
-	if (settings.LOG_TO_CONSOLE === true)
+	if (settings.LOG_TO_CONSOLE)
 	{
 		switch(level)
 		{
@@ -62,10 +62,4 @@ export enum Warning
 
 	/** A call to parse the document URI failed. */
 	INVALID_URL_PATH = "The URL path could not be parsed.",
-
-	/** Error during local storage theme cast. */
-	LOCAL_STORAGE_THEME_FAILED = "Failed to use theme from local storage.",
-
-	/** Unnecessary (inefficient) string permutation. */
-	UNNECESSARY_MULTILINE_PARSE = "Trimming multiline string with no lines."
-};
+}

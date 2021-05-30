@@ -26,9 +26,6 @@ export enum colors
 	/** The code color for the light theme. */
 	LIGHT_CODE_COLOR = "#4b5961",
 
-	/** The secondary code color for the light theme. */
-	LIGHT_CODE_COLOR_SECONDARY = "#7a8588",
-
 	/** The code block background color for the dark theme. */
 	DARK_CODE_BACKGROUND = "#02232e",
 
@@ -38,24 +35,21 @@ export enum colors
 	/** The code color for the dark theme. */
 	DARK_CODE_COLOR = "#8e9a9d",
 
-	/** The secondary code color for the dark theme. */
-	DARK_CODE_COLOR_SECONDARY = "#667883",
-
-	/** The yellow code hilighting color. */
+	/** The yellow code highlighting color. */
 	CODE_YELLOW = "#c79d1f",
 
-	/** The orange code hilighting color. */
+	/** The orange code highlighting color. */
 	CODE_RED = "#dc4e35",
 
-	/** The magenta code hilighting color. */
+	/** The magenta code highlighting color. */
 	CODE_MAGENTA = "#d03b83",
 
-	/** The blue code hilighting color. */
+	/** The blue code highlighting color. */
 	CODE_BLUE = "#227dcd",
 
-	/** The cyan code hilighting color. */
+	/** The cyan code highlighting color. */
 	CODE_CYAN = "#27968f",
 
-	/** The green code hilighting color. */
+	/** The green code highlighting color. */
 	CODE_GREEN = "#4c853e",
-};
+}

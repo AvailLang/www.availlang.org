@@ -55,8 +55,7 @@ export const Homepage = (props: HomepageProps) =>
 			codeLines={example.codeLines}
 			codeOutput={example.codeOutput}
 			key={`code-example-${index}`}
-		>
-		</CodeExample>);
+		/>);
 	return(
 		<div className="homepage view">
 			<div className="atf">
@@ -134,7 +133,7 @@ const GitHub = (props: GitHubProps) =>
 				/>
 			</a>
 		</div>
-	)
+	);
 }
 
 /**

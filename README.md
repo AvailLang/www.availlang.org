@@ -1,12 +1,11 @@
 ## The Avail Programming Language Website
 
-This web application presents the Avail programming language to the general
-public.
+This web application presents the Avail programming language to the public.
 
 ## Required Configurations: Analytics and Mailing
 
 Before deploying the website, be sure to add the Avail Google Analytics
-property id in a `.env` file (ignored):
+property id in a `.env` file and in `public/index.html`:
 
 `REACT_APP_GOOGLE_ANALYTICS_ID=...`
 
@@ -31,7 +30,7 @@ Run `npm run start` to start the development server.
 Text content is maintained in language-specific files in the 
 `src/internationalization` directory.
 
-Currently only English is supported. Edit text or add new strings
+Currently, only English is supported. Edit text or add new strings
 in `src/internationalization/en.ts` and maintain the `WebsiteStrings`
 interface in `src/internationalization/strings.ts`.
 
@@ -45,7 +44,7 @@ The text within code examples is not currently part of the translations.
 
 ## Adding Code Examples
 
-Add or edit code exampels by using the `CodeExample` component directly,
+Add or edit code examples by using the `CodeExample` component directly,
 or adding to the array of examples in `src/examples/examples.ts`. Note that
 only examples flagged as `featured` will automatically display on the homepage.
 Others are not currently displayed anywhere. In the future, the site might 
