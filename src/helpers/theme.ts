@@ -6,8 +6,8 @@
 export enum AppTheme
 {
 	/** The light mode theme. */
-	"LIGHT",
+	LIGHT = "light",
 
 	/** The dark mode theme. */
-	"DARK"
+	DARK = "dark"
 }
