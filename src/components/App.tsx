@@ -11,6 +11,18 @@ import { log, LogLevel, Warning } from "../helpers/logs";
 import { colors } from "../helpers/colors";
 import { defaultStrings, WebsiteStrings } from "../internationalization/strings";
 
+// TODO (~7-8)
+//  Link in local storage (20)
+//  Link in code examples and page content (60)
+//  Style code exmamples and page content (120)
+//  Add Github link (20)
+//  Add contact info (15)
+//  Add copyright and footer (10)
+//  Add background image? (60)
+//  Add routing and example instance view (60)
+//  Add share links with URL and mail (30)
+//  Finish readme (30)
+
 /**
  * The complete state of the ${@link App}.
  * 

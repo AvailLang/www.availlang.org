@@ -12,11 +12,19 @@
 	--code-blue: #227dcd;
 	--code-cyan: #27968f;
 	--code-green: #5a974b;
+	--sans-serif: 'Titillium Web', sans-serif;
+	--monospace: 'Share Tech Mono', monospace;
 }
 
 #root
 {
 	min-height: 100vh;
+	font-family: var(--sans-serif);
+}
+
+.code
+{
+	font-family: var(--monospace);
 }
 
 .app {
