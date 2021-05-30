@@ -12,7 +12,6 @@ export const settings =
 	/** 'true' iff Javascript console logs are enabled. */
 	LOG_TO_CONSOLE: true,
 
-	// TODO: Update this address, if desired.
-	/** The email address visitors can use to contact, if any. */
-	MAILING_ADDRESS: undefined
+	/** The Avail project repository URI on GitHub. */
+	GITHUB_URL: "https://github.com/AvailLang/Avail.git"
 };

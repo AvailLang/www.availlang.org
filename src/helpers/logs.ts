@@ -64,5 +64,8 @@ export enum Warning
 	INVALID_URL_PATH = "The URL path could not be parsed.",
 
 	/** Error during local storage theme cast. */
-	LOCAL_STORAGE_THEME_FAILED = "Failed to use theme from local storage."
+	LOCAL_STORAGE_THEME_FAILED = "Failed to use theme from local storage.",
+
+	/** Unnecessary (inefficient) string permutation. */
+	UNNECESSARY_MULTILINE_PARSE = "Trimming multiline string with no lines."
 };

@@ -11,5 +11,9 @@ export const errors =
 
 	/** The app found an unknown code line type. */
 	UNKNOWN_CODE_LINE: () =>
-		new Error("Unknown code line type.")
+		new Error("Unknown code line type."),
+
+	/** The app found an unknown theme identifier. */
+	UNKNOWN_THEME: () =>
+		new Error("Unknown theme identifier.")
 };

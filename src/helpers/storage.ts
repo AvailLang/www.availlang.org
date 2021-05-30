@@ -30,7 +30,7 @@ const defaultLocalStorageData: LocalStorageData =
  * 
  * @author Tristan J Berto <hello@tristanberto.com> 
  */
-export class LocalStorage
+export class LocalStorageInstance
 {
 	/** The current origin's local storage. */
 	private storage = window.localStorage;
@@ -88,6 +88,8 @@ export class LocalStorage
 	 * 
 	 * @param newTheme
 	 *   The theme.
+	 * @param callback
+	 *   A callback to invoke after setting the theme.
 	 */
 	setTheme(newTheme: AppTheme)
 	{

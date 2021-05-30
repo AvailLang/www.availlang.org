@@ -1,0 +1,75 @@
+/* CSS Custom Properties. Import before all other CSS files. */
+
+:root
+{
+	/*******************************************************************/
+	/*   Colors (manually maintained to match src/helpers/colors.ts).  */
+	/*******************************************************************/
+
+	/* The app's black color. Do not use pure black. */
+	--black: #201218;
+
+	/* Pure white. */
+	--white: #fff;
+
+	/* Paragraph background behind light text. */
+	--light-text-background: #ffffff4a;
+
+	/* Paragraph background behind dark text. */
+	--dark-text-background: #2112194d;
+
+	/* The code block background color for the light theme. */
+	--light-code-background: #f5efd6;
+
+	/* The code area secondary background for the light theme. */
+	--light-code-background-secondary: #d1cbb2;
+
+	/* The code color for the light theme. */
+	--light-code-color: #4b5961;
+
+	/* The secondary code color for the light theme. */
+	--light-code-color-secondary: #7a8588;
+
+	/* The code block background color for the dark theme. */
+	--dark-code-background: #02232e;
+
+	/* The secondary code background color for the dark theme. */
+	--dark-code-background-secondary: #053646;
+
+	/* The code color for the dark theme. */
+	--dark-code-color: #8e9a9d;
+
+	/* The secondary code color for the dark theme. */
+	--dark-code-color-secondary: #667883;
+
+	/* The yellow code hilighting color. */
+	--code-yellow: #c79d1f;
+
+	/* The red code hilighting color. */
+	--code-red: #dc4e35;
+
+	/* The magenta code hilighting color. */
+	--code-magenta: #d03b83;
+
+	/* The blue code hilighting color. */
+	--code-blue: #227dcd;
+
+	/* The cyan code hilighting color. */
+	--code-cyan: #27968f;
+
+	/* The green code hilighting color. */
+	--code-green: #4c853e;
+
+	/*******************************************************************/
+	/*                              Fonts.                             */
+	/*******************************************************************/
+
+	/* The primary app font families, sans-serif. */
+	--sans-serif: 'Titillium Web', sans-serif;
+
+	/* The primary font used for displaying code or code output. */
+	--monospace: 'Share Tech Mono', monospace;
+
+	/* A serif font (generally not used). */
+	--serif: Georgia, serif;
+}

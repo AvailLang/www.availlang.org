@@ -1,0 +1,100 @@
+/* CSS Reset. Import after custom properties, then before all other CSS. */
+
+:root, html, body
+{
+	padding: 0;
+	margin: 0;
+	scroll-behavior: smooth;
+}
+
+div
+{
+	box-sizing: border-box;
+}
+
+button
+{
+	box-sizing: border-box;
+	outline: none;
+	border: none;
+	padding: 10px 20px;
+	cursor: pointer;
+}
+
+a
+{
+	cursor: pointer;
+	text-decoration: none;
+	color: var(--code-magenta);
+}
+
+p, a, div, span, label, input, h1, h2, h3, h4, h5, h6
+{
+	font-family: var(--sans-serif);
+	color: inherit;
+	max-width: 100%;
+}
+
+p, a, div, span, label, input, h5, h6
+{
+	font-size: 12pt;
+	text-align: left;
+}
+
+h1
+{
+	font-size: 15pt;
+	font-weight: bold;
+}
+
+h2
+{
+	font-size: 14pt;
+	font-weight: bold;
+}
+
+h3
+{
+	font-size: 13pt;
+	font-weight: bold;
+}
+
+h4
+{
+	font-size: 12.5pt;
+	font-weight: bold;
+}
+
+h5
+{
+	font-weight: bold;
+}
+
+h6
+{
+	font-weight: normal;
+	font-style: italic;
+}
+
+@media only screen and (min-width: 998px)
+{
+	h1
+	{
+		font-size: 20pt;
+	}
+
+	h2
+	{
+		font-size: 18pt;
+	}
+
+	h3
+	{
+		font-size: 16.5pt;
+	}
+
+	h4
+	{
+		font-size: 15pt;
+	}
+}

@@ -1,28 +1,25 @@
 import React, { useEffect, useReducer } from "react";
-import logoWhite from "../images/logo-white.svg";
-import logoBlack from "../images/logo-black.svg";
 import sun from "../images/sun-fold.svg";
 import moon from "../images/moon-fold.svg";
-import '../css/app.css';
+import "../css/properties.css";
+import "../css/reset.css";
+import "../css/app.css";
 import { AppTheme } from "../helpers/theme";
 import { errors } from "../helpers/errors";
 import { settings } from "../globalSettings";
 import { log, LogLevel, Warning } from "../helpers/logs";
 import { colors } from "../helpers/colors";
 import { defaultStrings, WebsiteStrings } from "../internationalization/strings";
+import { LocalStorageInstance } from "../helpers/storage";
+import { Homepage } from "./Homepage";
+import backgroundLight from "../images/background-light.svg";
+import backgroundDark from "../images/background-dark.svg";
+import backgroundImg from "../images/background.svg";
 
 // TODO:
-//  Link in local storage (15)
-//  Link in code examples and page content (60)
-//  Style code exmamples and page content (90)
-//  Add Github link (15)
-//  Add contact info (15)
-//  Add copyright and footer (15)
-//  Add background image? (60)
-//  Add routing and example instance view (60)
-//  Add share links with URL and mail (30)
-//  Add mobile scroll to top button (30)
-//  Finish readme (30)
+//  Finish code example styles              (60)
+//  Add background image?                   (60)
+//  Finish readme                           (30)
 
 /**
  * The complete state of the ${@link App}.
@@ -34,11 +31,14 @@ interface AppState
 	/** 'true' iff the application has already initialized. */
 	initialized: boolean;
 
-	/** The current {@link AppTheme theme}. */
-	theme: AppTheme;
-
 	/** The complete set of content for the {@link App}. */
 	strings: WebsiteStrings;
+
+	/** Local storage management. */
+	localStorage: LocalStorageInstance;
+
+	/** The {@link App} theme, light or dark. */
+	theme: AppTheme;
 }
 
 /**
@@ -46,11 +46,15 @@ interface AppState
  * 
  * @author Tristan J Berto <hello@tristanberto.com>
  */
-const initialState: AppState =
+const initialState = (): AppState =>
 {
-	initialized: false,
-	theme: AppTheme.DARK,
-	strings: defaultStrings
+	const localStorage = new LocalStorageInstance();
+	return {
+		initialized: false,
+		strings: defaultStrings,
+		localStorage,
+		theme: localStorage.getTheme()
+	}
 };
 
 /**
@@ -62,26 +66,44 @@ const initialState: AppState =
  */
 const App = () =>
 {
-	const [state, dispatch] = useReducer(reducer, initialState);
+	const [state, dispatch] = useReducer(reducer, initialState());
+	const {strings} = state;
 	const toggleTheme = () => dispatch({type: "setTheme"});
 	const toggleThemeIcon = state.theme === AppTheme.DARK ? sun : moon;
 	const backgroundStyle = state.theme === AppTheme.DARK
-		? { background: colors.BLACK }
-		: { background: colors.WHITE };
-	const themeLogo = state.theme === AppTheme.DARK ? logoWhite : logoBlack;
+		? 
+			{ 
+				backgroundColor: colors.BLACK,
+				backgroundImage: `url(${backgroundDark})`,
+				backgroundRepeat: "no-repeat",
+				backgroundPosition: "0 150px"
+			}
+		: 
+			{ 
+				backgroundColor: colors.WHITE,
+				backgroundImage: `url(${backgroundLight})`,
+				backgroundRepeat: "no-reapeat",
+				backgroundPosition: "0 150px"
+			};
 	const fontStyle = state.theme === AppTheme.DARK
 		? { color: colors.WHITE }
 		: { color: colors.BLACK };
-	const {strings} = state;
-	// Google Analytics initial log.
+	const footerBackgroundStyle = state.theme === AppTheme.DARK
+		? { background:  colors.LIGHT_TEXT_BACKGROUND }
+		: { background:  colors.DARK_TEXT_BACKGROUND };
 	useEffect(() =>
 	{
+		// Set the document title on re-render in case translation is needed.
+		document.title = strings.longName;
+
 		// Initialization is manually flagged to control re-running.
 		if (state.initialized === true)
 		{
 			return;
 		}
 		dispatch({type: "initialize"});
+
+		// Google Analytics initial log.
 		// @ts-ignore-nextline
 		if (window.gtag === undefined || settings.GOOGLE_ANALYTICS_ID === undefined)
 		{
@@ -115,13 +137,12 @@ const App = () =>
 				onClick={toggleTheme}
 				style={{ position: "absolute", top: 0, right: 0 }}
 			/>
-			{/* ATF */}
-			<img src={themeLogo} className="app-logo" alt="logo" />
-			<h1 style={fontStyle}>{strings.tagline}</h1>
-			{/* Tagline */}
-			{/* Text, Github and example */}
-			{/* Content/ code examples */}
-			{/* Footer */}
+			<Homepage theme={state.theme} strings={strings}/>
+			<div className="main-footer" style={footerBackgroundStyle}>
+				<p className="legal-text" style={fontStyle}>
+					&copy; {strings.copyright}
+				</p>
+			</div>
 		</div>
 	);
 };
@@ -133,16 +154,16 @@ const App = () =>
  */
 type AppAction =
 {
-	/** Set the light or dark theme. */
-	type: "setTheme",
-
-	/** The {@link AppTheme theme} or 'undefined' to toggle. */
-	theme?: AppTheme
+	/** Flag the {@link App} as having initialized. */
+	type: "initialize"
 }
 |
 {
-	/** Flag the {@link App} as having initialized. */
-	type: "initialize"
+	/** Set the {@link App} theme, light or dark. */
+	type: "setTheme",
+
+	/** The new theme or 'undefined' to toggle. */
+	theme?: AppTheme
 };
 
 /**
@@ -160,35 +181,25 @@ const reducer = (state: AppState, action: AppAction): AppState =>
 {
 	switch(action.type)
 	{
-		case "setTheme":
-			return setTheme(state, action.theme);
 		case "initialize":
 			return {...state, initialized: true};
+		case "setTheme":
+			return setTheme(state, action.theme);
 		default:
 			throw errors.UNKNOWN_ACTION();
 	}
 };
 
-/**
- * Set the {@link App} {@link AppTheme theme}.
- * 
- * @param state
- *   The initial state.
- * @param theme
- *   The new theme or 'undefined' to toggle.
- * @returns
- *   The new state.
- * @author Tristan J Berto <hello@tristanberto.com>
- */
 const setTheme = (state: AppState, theme?: AppTheme): AppState =>
-({
-	...state, 
-	theme: theme !== undefined 
-		? theme 
-		: state.theme === AppTheme.DARK 
-			? AppTheme.LIGHT 
-			: AppTheme.DARK
-});
+{
+	const currentTheme = state.theme;
+	state.localStorage.setTheme(
+		theme !== undefined ? theme :
+			currentTheme === AppTheme.DARK
+				? AppTheme.LIGHT
+				: AppTheme.DARK);
+	return { ...state, theme: state.localStorage.getTheme() };
+}
 
 export default App;
 

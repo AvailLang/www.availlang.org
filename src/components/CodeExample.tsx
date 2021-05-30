@@ -1,28 +1,25 @@
-import { CSSProperties, ReactNode } from "react";
-import { errors } from "../helpers/errors";
+import { ReactNode } from "react";
+import { CodeBlock } from "./CodeBlock";
 import { AppTheme } from "../helpers/theme";
+import { CodeExampleData } from "../examples/examples";
+import { WebsiteStrings } from "../internationalization/strings";
+import { colors } from "../helpers/colors";
 
 /**
  * The React properties for a {@link CodeExample} component.
  * 
  * @author Tristan J Berto <hello@tristanberto.com>
  */
-interface CodeExampleProps
+interface CodeExampleProps extends CodeExampleData
 {
 	/** The element's children. */
-	children?: ReactNode;
-
-	/** An array of descriptive paragraph text. */
-	description: string[];
-
-	/** The code example {@link CodeLine data}. */
-	codeLines: CodeLine[];
-
-	/** An array of {@link CodeLine output text} that the code might return. */
-	codeOutput: string[];
+	children: ReactNode;
 
 	/** The {@link App} theme. */
 	theme: AppTheme;
+
+	/** The website text translations. */
+	strings: WebsiteStrings;
 }
 
 /**
@@ -36,14 +33,21 @@ interface CodeExampleProps
  */
 export const CodeExample = (props: CodeExampleProps) =>
 {
-	const {children, description, codeLines, codeOutput, theme} = props;
-	const descriptionParagraphs = description.map((text, index) =>
+	const {
+		children, 
+		description, 
+		codeLines, 
+		codeOutput, 
+		theme, 
+		strings
+	} = props;
+	const descriptionParagraphs = description(strings).map((text, index) =>
 		<p key={`${index}`}> {text} </p> );
 	const outputParagraphs = codeOutput.map((text, index) =>
 		<p key={`${index}`}> {text} </p> );
 	const descriptionStyle = theme === AppTheme.DARK
-		? { /* TODO */ }
-		: { /* TODO */ };
+		? { color: colors.WHITE, background: colors.DARK_TEXT_BACKGROUND }
+		: { color: colors.BLACK, background: colors.LIGHT_TEXT_BACKGROUND };
 	const outputStyle = theme === AppTheme.DARK
 		? { /* TODO */ }
 		: { /* TODO */ };
@@ -65,138 +69,3 @@ export const CodeExample = (props: CodeExampleProps) =>
 
 /** A paragraph element indicating a code sample with no expected output. */
 const noOutput = <p><em>No Output</em></p>;
-
-/**
- * The React properties for a {@link CodeBlock} component.
- * 
- * @author Tristan J Berto <hello@tristanberto.com>
- */
-interface CodeBlockProps
-{
-	/** An array of {@link CodeLine output text} that the code might return. */
-	lines: CodeLine[];
-
-	/** The {@link App} theme. */
-	theme: AppTheme;
-}
-
-/**
- * A display for a block of code with different colored spans.
- * 
- * @param props 
- *   The React properties.
- * @returns 
- *   The React element.
- * @author Tristan J Berto <hello@tristanberto.com>
- */
-export const CodeBlock = (props: CodeBlockProps) =>
-{
-	const {lines, theme} = props;
-	const lineElements = lines.map((line, index) =>
-		getCodeLineView(line, index));
-	return(
-		<div className="code-block">
-
-		</div>
-	)
-};
-
-/**
- * Generate an HTML paragraph element view of an {@link CodeLine}.
- * 
- * @param line
- *   The {@link CodeLine}.
- * @param index 
- *   The index of the line as it appears in an array of lines.
- * @returns
- *   The HTML paragraph element.
- * @author Tristan J Berto <hello@tristanberto.com>
- */
-const getCodeLineView = (line: CodeLine, index: number) =>
-{
-	const tabs = (count: number) =>
-		Array(count).fill("&emsp;").join();
-	switch(line.type)
-	{
-		case "text":
-			return (
-				<p key={`code-line-${index}`}> {`${tabs(line.indent)}${line.text}`} </p>
-			)
-		case "code":
-			return (
-				<p key={`code-line-${index}`}>
-					{`${tabs(line.indent)}`}
-					{
-						line.content.map((codeSpan, index) =>
-							<span style={codeSpan.style}> {codeSpan.text} </span>
-					)}
-				</p>
-			)
-		default:
-			throw errors.UNKNOWN_CODE_LINE();
-	}
-}
-
-/**
- * Parameters of a line of code in a {@link ContentSection}.
- * 
- * @author Tristan J Berto <hello@tristanberto.com>
- */
-type CodeLine =
-{
-	type: "text",
-	text: string,
-	indent: number
-}
-|
-{
-	type: "code",
-	content: CodeSpan[],
-	indent: number
-};
-
-/**
- * Parameters of a span of text within a {@link CodeLine}.
- * 
- * @author Tristan J Berto <hello@tristanberto.com>
- */
-interface CodeSpan
-{
-	/** The code text. */
-	text: string;
-
-	/** CSS styling to apply to the text. */
-	style: CSSProperties;
-}
-
-/**
- * Code style CSS getters for different colors of text.
- * 
- * @author Tristan J Berto <hello@tristanberto.com>
- */
-export const codeStyle =
-{
-	/** Get yellow colored styling for the theme. */
-	YELLOWISH: (theme: AppTheme) =>
-	{
-		// TODO
-	},
-
-	/** Get red colored styling for the theme. */
-	REDDISH: (theme: AppTheme) =>
-	{
-		// TODO
-	},
-
-	/** Get blue colored styling for the theme. */
-	BLUISH: (theme: AppTheme) =>
-	{
-		// TODO
-	},
-
-	/** Get green colored styling for the theme. */
-	GREENISH: (theme: AppTheme) =>
-	{
-		// TODO
-	}
-};
