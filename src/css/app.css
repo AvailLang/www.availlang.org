@@ -40,20 +40,12 @@
 {
 	.view
 	{
-		margin-bottom: 80px;
+		margin-bottom: 70px;
 	}
 
 	.atf 
 	{
 		min-height: 50vh;
-	}
-}
-
-@media only screen and (min-width: 998px)
-{
-	.view
-	{
-		margin-bottom: 100px;
 	}
 }
 
@@ -176,14 +168,51 @@ button
 	}
 }
 
+.code-and-output
+{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	width: 100%;
+}
+
 .code-block
 {
 	padding: 10px 20px;
-	margin: 20px 0;
+	margin: 20px 0 0 0;
 	border-radius: 10px;
 	overflow: scroll;
 	max-width: 100%;
 	max-height: 26em;
+	flex-grow: 2;
+}
+
+.code-block > p, 
+.code-block > p > span
+{
+	font-family: var(--monospace);
+}
+
+.code-output
+{
+	flex-grow: 0;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-top-right-radius: 0px;
+	border-top-left-radius: 0px;
+	margin: 0 0 20px;
+	padding: 10px 20px;
+}
+
+.code-output > p
+{
+	font-family: var(--monospace);
+}
+
+.code-output p::before
+{
+	content: ">> ";
 }
 
 .code-block::-webkit-scrollbar
@@ -210,7 +239,10 @@ button
 
 .code-example .code-block
 {
-	border-radius: 0;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px;
 }
 
 .code-block p
@@ -235,9 +267,25 @@ button
 
 @media only screen and (min-width: 998px)
 {
+	.code-and-output
+	{
+		flex-direction: row;
+	}
+
 	.code-block
 	{
 		overscroll-behavior: contain;
+		margin: 20px 0 0 0;
+	}
+
+	.code-output
+	{
+		width: 20em;
+		margin: 20px 0 0 0;
+		border-bottom-right-radius: 10px;
+		border-bottom-left-radius: 0px;
+		border-top-right-radius: 10px;
+		border-top-left-radius: 0px;
 	}
 
 	.two-column
@@ -248,6 +296,14 @@ button
 	.two-column > *
 	{
 		width: 48%;
+	}
+
+	.code-example .code-block
+	{
+		border-top-right-radius: 0px;
+		border-top-left-radius: 10px;
+		border-bottom-right-radius: 0px;
+		border-bottom-left-radius: 10px;
 	}
 }
 

@@ -331,7 +331,7 @@ export const codeExamples: ExtendedCodeExampleData[] =
 	{
 		description: (strings: WebsiteStrings) => 
 			strings.codeExamples.exampleThreeIntroduction,
-		featured: false,
+		featured: true,
 		codeLines: 
 		[
 			{

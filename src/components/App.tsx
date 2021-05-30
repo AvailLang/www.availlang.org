@@ -14,12 +14,6 @@ import { LocalStorageInstance } from "../helpers/storage";
 import { Homepage } from "./Homepage";
 import backgroundLight from "../images/background-light.svg";
 import backgroundDark from "../images/background-dark.svg";
-import backgroundImg from "../images/background.svg";
-
-// TODO:
-//  Finish code example styles              (60)
-//  Add background image?                   (60)
-//  Finish readme                           (30)
 
 /**
  * The complete state of the ${@link App}.

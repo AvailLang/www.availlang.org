@@ -46,20 +46,42 @@ export const CodeExample = (props: CodeExampleProps) =>
 	const outputParagraphs = codeOutput.map((text, index) =>
 		<p key={`${index}`}> {text} </p> );
 	const descriptionStyle = theme === AppTheme.DARK
-		? { color: colors.WHITE, background: colors.DARK_TEXT_BACKGROUND }
-		: { color: colors.BLACK, background: colors.LIGHT_TEXT_BACKGROUND };
+		? 
+			{ 
+				color: colors.WHITE, 
+				background: colors.DARK_TEXT_BACKGROUND 
+			}
+		: 
+			{ 
+				color: colors.BLACK, 
+				background: colors.LIGHT_TEXT_BACKGROUND 
+			};
 	const outputStyle = theme === AppTheme.DARK
-		? { /* TODO */ }
-		: { /* TODO */ };
+		? 
+			{ 
+				color: colors.WHITE, 
+				background: colors.DARK_CODE_BACKGROUND_SECONDARY 
+			}
+		: 
+			{ 
+				color: colors.BLACK, 
+				background: colors.LIGHT_CODE_BACKGROUND_SECONDARY 
+			};
 	return(
 		<div className="code-example">
 			<div className="code-display">
 				<div className="description" style={descriptionStyle}>
 					{descriptionParagraphs}
 				</div>
-				<CodeBlock lines={codeLines} theme={theme}/>
-				<div className="code-output" style={outputStyle}>
-					{outputParagraphs.length !== 0 ? outputParagraphs : noOutput}
+				<div className="code-and-output">
+					<CodeBlock lines={codeLines} theme={theme}/>
+					<div className="code-output" style={outputStyle}>
+						{
+							outputParagraphs.length !== 0 
+								? outputParagraphs 
+								: noOutput
+						}
+					</div>
 				</div>
 			</div>
 			{children}
@@ -68,4 +90,4 @@ export const CodeExample = (props: CodeExampleProps) =>
 };
 
 /** A paragraph element indicating a code sample with no expected output. */
-const noOutput = <p><em>No Output</em></p>;
+const noOutput = <p style={{opacity: .6}}><em>No Output</em></p>;

@@ -32,8 +32,16 @@ export const CodeBlock = (props: CodeBlockProps) =>
 	const lineElements = lines.map((line, index) =>
 		getCodeLineView(line, index, theme));
 	const backgroundStyle = theme === AppTheme.DARK
-		? { background: colors.DARK_CODE_BACKGROUND }
-		: { background: colors.LIGHT_CODE_BACKGROUND };
+		? 
+			{ 
+				background: colors.DARK_CODE_BACKGROUND, 
+				border: `1px solid ${colors.DARK_CODE_BACKGROUND_SECONDARY}` 
+			}
+		: 
+			{ 
+				background: colors.LIGHT_CODE_BACKGROUND, 
+				border: `1px solid ${colors.LIGHT_CODE_BACKGROUND_SECONDARY}` 
+			};
 	return(
 		<div className="code-block" style={backgroundStyle}>
 			{lineElements}
@@ -61,7 +69,10 @@ const getCodeLineView = (line: CodeLine, index: number, theme: AppTheme) =>
 		>
 			{
 				line.content.map((codeSpan, index) =>
-					<span style={codeSpan.style(theme)}> 
+					<span 
+						style={codeSpan.style(theme)}
+						key={`code-span-${index}`}
+					> 
 						{codeSpan.text} 
 					</span>
 			)}
