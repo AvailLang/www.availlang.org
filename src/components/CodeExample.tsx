@@ -86,8 +86,8 @@ export const CodeExample = (props: CodeExampleProps) =>
 			</div>
 			{children}
 		</div>
-	)
+	);
 };
 
 /** A paragraph element indicating a code sample with no expected output. */
-const noOutput = <p style={{opacity: .6}}><em>No Output</em></p>;
+const noOutput = <p style={{opacity: 0.6}}><em>No Output</em></p>;

@@ -46,7 +46,7 @@ export const CodeBlock = (props: CodeBlockProps) =>
 		<div className="code-block" style={backgroundStyle}>
 			{lineElements}
 		</div>
-	)
+	);
 };
 
 /**
@@ -77,9 +77,10 @@ const getCodeLineView = (line: CodeLine, index: number, theme: AppTheme) =>
 					> 
 						{codeSpan.text} 
 					</span>
-			)}
+				)
+			}
 		</p>
-	)
+	);
 }
 
 /**
@@ -155,5 +156,5 @@ export const codeStyle =
 	RED: { color: colors.CODE_RED },
 
 	/** Get magenta colored styling for the theme. */
-	MAGENTA: { color: colors.CODE_MAGENTA },
+	MAGENTA: { color: colors.CODE_MAGENTA }
 };
