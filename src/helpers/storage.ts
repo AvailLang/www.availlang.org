@@ -1,7 +1,5 @@
 import { AppTheme } from "./theme";
 
-// TODO: Link local storage in to the rest of the app.
-
 /**
  * The complete structure of the {@link App App's} local storage values.
  * 
@@ -11,18 +9,15 @@ export interface LocalStorageData
 {
 	/** The App's theme, light or dark mode. */
 	theme: AppTheme;
-	version: number;
+	version?: number;
 }
-
-const currentLocalStorageVersion = 1;
 
 /**
  * Default settings for {@link LocalStorageData}.
  */
 const defaultLocalStorageData: LocalStorageData =
 {
-	theme: AppTheme.DARK,
-	version: currentLocalStorageVersion
+	theme: AppTheme.DARK
 };
 
 /**
@@ -32,11 +27,14 @@ const defaultLocalStorageData: LocalStorageData =
  */
 export class LocalStorageInstance
 {
+	/** The current storage protocol version. */
+	public static readonly protocolVersion = 1;
+
 	/** The current origin's local storage. */
 	private storage = window.localStorage;
 
 	/** The complete set of valid local storage keys. */
-	private keys = 
+	private static readonly keys =
 	{
 		theme: "theme",
 		version: "version"
@@ -52,23 +50,28 @@ export class LocalStorageInstance
 	 */
 	constructor()
 	{
-		const version = this.storage.getItem(this.keys.version);
-		if (version !== currentLocalStorageVersion.toString())
+		const keys = LocalStorageInstance.keys;
+		const protocol = LocalStorageInstance.protocolVersion.toString();
+		const foundVersion = this.storage.getItem(keys.version);
+		if (foundVersion === null || foundVersion !== protocol)
 		{
 			this.storage.clear();
-			this.storage.setItem(
-				this.keys.version, 
-				currentLocalStorageVersion.toString()
-			);
+			this.storage.setItem(keys.version, protocol);
 		}
-		const theme = this.storage.getItem(this.keys.theme);
-		if (theme === null)
+		const theme = this.storage.getItem(keys.theme);
+		switch (theme)
 		{
-			this.storage.setItem(this.keys.theme, this.data.theme);
-		}
-		else
-		{
-			this.data = {...this.data, theme: theme as AppTheme}
+			case null:
+				this.storage.setItem(keys.theme, this.data.theme);
+				break;
+			case AppTheme.DARK:
+			case AppTheme.LIGHT:
+				this.data = {...this.data, theme: theme}
+				break;
+			default:
+				this.storage.clear();
+				this.storage.setItem(keys.version, protocol);
+				this.storage.setItem(keys.theme, defaultLocalStorageData.theme);
 		}
 	};
 
@@ -91,7 +94,7 @@ export class LocalStorageInstance
 	 */
 	setTheme(newTheme: AppTheme)
 	{
-		this.storage.setItem(this.keys.theme, newTheme);
+		this.storage.setItem(LocalStorageInstance.keys.theme, newTheme);
 		this.data = {...this.data, theme: newTheme};
 	};
 }

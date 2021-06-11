@@ -52,11 +52,20 @@ export interface WebsiteStrings
 	 */
 	codeExamples:
 	{
+		/**	The heading above the first example. */
+		exampleOneHeading: string;
+
 		/** The paragraph(s) before the first code example. */
 		exampleOneIntroduction: string[];
 
+		/**	The heading above the second example. */
+		exampleTwoHeading: string;
+
 		/** The paragraph(s) before the second code example. */
 		exampleTwoIntroduction: string[];
+
+		/**	The heading above the third example. */
+		exampleThreeHeading: string;
 
 		/** The paragraph(s) before the third code example. */
 		exampleThreeIntroduction: string[];

@@ -1,9 +1,61 @@
 import { ReactNode } from "react";
-import { CodeBlock } from "./CodeBlock";
+import {CodeBlock, CodeLine} from "./CodeBlock";
 import { AppTheme } from "../helpers/theme";
-import { CodeExampleData } from "../examples/examples";
 import { WebsiteStrings } from "../internationalization/strings";
 import { colors } from "../helpers/colors";
+
+/**
+ * The core data required to display an example of Avail code.
+ *
+ * @author Tristan J Berto <hello@tristanberto.com>
+ */
+export interface CodeExampleData
+{
+	/**	A title or heading for the example.*/
+	heading: (strings: WebsiteStrings) => string;
+
+	/** An array of descriptive paragraph text. */
+	description: (strings: WebsiteStrings) => string[];
+
+	/** The code example {@link CodeLine data}. */
+	codeLines: CodeLine[];
+
+	/** An array of {@link CodeLine output text} that the code might return. */
+	codeOutput: string[];
+}
+
+/**
+ * An extension of {@link CodeExampleData} that includes extended content
+ * beyond what is displayed on the main page. This is intended for instance
+ * pages for each example that might hold more explanation.
+ *
+ * @author Tristan J Berto <hello@tristanberto.com>
+ */
+export interface ExtendedCodeExampleData extends CodeExampleData
+{
+	/** 'true' iff the example is to be featured on the homepage.  */
+	featured: boolean;
+
+	/**
+	 * A unique identifier for this example that will not change.
+	 *
+	 * This value will be used in the URI for this specific example:
+	 * `https://availlang.org/examples?title=the-value-of-this-field`
+	 *
+	 * Changing it in the future may throw off some search engine results, so it's
+	 * best not to change it for the life of the example.
+	 *
+	 * TODO: This is not currently used.
+	 */
+	queryStringTitle: string;
+
+	/**
+	 * Additional explanation, figures, etc. not displayed on the homepage.
+	 *
+	 * TODO: This is not currently used.
+	 */
+	longExplanation?: ReactNode;
+}
 
 /**
  * The React properties for a {@link CodeExample} component.
@@ -34,11 +86,12 @@ interface CodeExampleProps extends CodeExampleData
 export const CodeExample = (props: CodeExampleProps) =>
 {
 	const {
-		children, 
+		children,
+		heading,
 		description, 
-		codeLines, 
-		codeOutput, 
-		theme, 
+		codeLines,
+		codeOutput,
+		theme,
 		strings
 	} = props;
 	const descriptionParagraphs = description(strings).map((text, index) =>
@@ -71,6 +124,7 @@ export const CodeExample = (props: CodeExampleProps) =>
 		<div className="code-example">
 			<div className="code-display">
 				<div className="description" style={descriptionStyle}>
+					<h4>{heading(strings)}</h4>
 					{descriptionParagraphs}
 				</div>
 				<div className="code-and-output">
@@ -86,8 +140,8 @@ export const CodeExample = (props: CodeExampleProps) =>
 			</div>
 			{children}
 		</div>
-	);
+	)
 };
 
 /** A paragraph element indicating a code sample with no expected output. */
-const noOutput = <p style={{opacity: 0.6}}><em>No Output</em></p>;
+const noOutput = <p style={{opacity: .6}}><em>No Output</em></p>;

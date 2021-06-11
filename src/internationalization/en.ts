@@ -32,6 +32,7 @@ export const en: WebsiteStrings =
 	},
 	codeExamples:
 	{
+		exampleOneHeading: "A Field of Dreams",
 		exampleOneIntroduction: 
 		[
 			`The articulate programming paradigm espoused by Avail is not
@@ -39,6 +40,7 @@ export const en: WebsiteStrings =
 			this: programs should not be written using natural language. I ask the
 			court, who on earth wants to write code like this?`
 		],
+		exampleTwoHeading: "More Types of Things",
 		exampleTwoIntroduction:
 		[
 			`This example has clearly been taken to its absurd, ham-fisted
@@ -53,6 +55,7 @@ export const en: WebsiteStrings =
 			something like the silliness above. But a real Avail implementation would
 			look more like this:`
 		],
+		exampleThreeHeading: "And Another Thing",
 		exampleThreeIntroduction:
 		[
 			`It just so happens that articulate programming often employs

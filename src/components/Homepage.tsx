@@ -1,3 +1,4 @@
+import "../css/homepage.css";
 import { colors } from "../helpers/colors";
 import { AppTheme } from "../helpers/theme";
 import { WebsiteStrings } from "../internationalization/strings";
@@ -51,6 +52,7 @@ export const Homepage = (props: HomepageProps) =>
 		<CodeExample
 			theme={theme}
 			strings={strings}
+			heading={example.heading}
 			description={example.description}
 			codeLines={example.codeLines}
 			codeOutput={example.codeOutput}

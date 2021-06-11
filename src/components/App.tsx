@@ -1,9 +1,9 @@
 import React, { useEffect, useReducer } from "react";
-import sun from "../images/sun-fold.svg";
-import moon from "../images/moon-fold.svg";
 import "../css/properties.css";
 import "../css/reset.css";
 import "../css/app.css";
+import sun from "../images/sun-fold.svg";
+import moon from "../images/moon-fold.svg";
 import { AppTheme } from "../helpers/theme";
 import { errors } from "../helpers/errors";
 import { log, LogLevel, Warning } from "../helpers/logs";
