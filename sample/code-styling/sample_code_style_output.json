@@ -1,136 +1,171 @@
 [
 	{
-		"segment": "Method ",
-		"style": "#m-definer",
-		"methodName": "Method_is_",
-		"sourceModule": "gotta/start/somewhere",
-		"generated": false,
-		"lineNumber": 32
+		"content": [
+			{
+				"segment": "Method ",
+				"style": "#m-definer",
+				"methodName": "Method_is_",
+				"sourceModule": "gotta/start/somewhere",
+				"generated": false,
+				"lineNumber": 32
+			},
+			{
+				"segment": "\"\\_plus\\_\"",
+				"style": "#m-name",
+				"methodName": "_",
+				"sourceModule": "just/itself",
+				"generated": false,
+				"lineNumber": 745
+			},
+			{
+				"segment": "is ",
+				"style": "#m-definer",
+				"methodName": "Method_is_",
+				"sourceModule": "gotta/start/somewhere",
+				"generated": false,
+				"lineNumber": 32
+			}
+		],
+		"indent": 0
 	},
 	{
-		"segment": "\"\\_plus\\_\"",
-		"style": "#m-name",
-		"methodName": "_",
-		"sourceModule": "just/itself",
-		"generated": false,
-		"lineNumber": 745
+		"content": [
+			{
+				"segment": "[ ",
+				"style": "#block",
+				"methodName": "[§««…:_†§‡,»`|»?«Primitive…«(…:_†)»?;§»?«`$…«:_†»?;§»?«_!§»«_!»?]§«:_†»?«^«_†‡,»»?",
+				"sourceModule": "block/it/in",
+				"generated": false,
+				"lineNumber": 22
+			}
+		],
+		"indent": 0
 	},
 	{
-		"segment": "is ",
-		"style": "#m-definer",
-		"methodName": "Method_is_",
-		"sourceModule": "gotta/start/somewhere",
-		"generated": false,
-		"lineNumber": 32
+		"content": [
+			{
+				"segment": "x",
+				"style": "#p-def",
+				"sourceModule": "just/itself",
+				"generated": false,
+				"lineNumber": 745
+			},
+			{
+				"segment": ": ",
+				"style": "#block",
+				"methodName": "[§««…:_†§‡,»`|»?«Primitive…«(…:_†)»?;§»?«`$…«:_†»?;§»?«_!§»«_!»?]§«:_†»?«^«_†‡,»»?",
+				"sourceModule": "block/it/in",
+				"generated": false,
+				"lineNumber": 22
+			},
+			{
+				"segment": "number",
+				"style": "#type",
+				"methodName": "_",
+				"sourceModule": "just/itself",
+				"generated": false,
+				"lineNumber": 745
+			},
+			{
+				"segment": ", ",
+				"style": "#block",
+				"methodName": "[§««…:_†§‡,»`|»?«Primitive…«(…:_†)»?;§»?«`$…«:_†»?;§»?«_!§»«_!»?]§«:_†»?«^«_†‡,»»?",
+				"sourceModule": "block/it/in",
+				"generated": false,
+				"lineNumber": 22
+			}
+		],
+		"indent": 1
 	},
 	{
-		"segment": "[ ",
-		"style": "#block",
-		"methodName": "[§««…:_†§‡,»`|»?«Primitive…«(…:_†)»?;§»?«`$…«:_†»?;§»?«_!§»«_!»?]§«:_†»?«^«_†‡,»»?",
-		"sourceModule": "block/it/in",
-		"generated": false,
-		"lineNumber": 22
+		"content": [
+			{
+				"segment": "y",
+				"style": "#p-def",
+				"sourceModule": "just/itself",
+				"generated": false,
+				"lineNumber": 745
+			},
+			{
+				"segment": ": ",
+				"style": "#block",
+				"methodName": "[§««…:_†§‡,»`|»?«Primitive…«(…:_†)»?;§»?«`$…«:_†»?;§»?«_!§»«_!»?]§«:_†»?«^«_†‡,»»?",
+				"sourceModule": "block/it/in",
+				"generated": false,
+				"lineNumber": 22
+			},
+			{
+				"segment": "number",
+				"style": "#type",
+				"methodName": "_",
+				"sourceModule": "just/itself",
+				"generated": false,
+				"lineNumber": 745
+			}
+		],
+		"indent": 1
 	},
 	{
-		"segment": "x",
-		"style": "#p-def",
-		"sourceModule": "just/itself",
-		"generated": false,
-		"lineNumber": 745
+		"content": [
+			{
+				"segment": "| ",
+				"style": "#block",
+				"methodName": "[§««…:_†§‡,»`|»?«Primitive…«(…:_†)»?;§»?«`$…«:_†»?;§»?«_!§»«_!»?]§«:_†»?«^«_†‡,»»?",
+				"sourceModule": "block/it/in",
+				"generated": false,
+				"lineNumber": 22
+			}
+		],
+		"indent": 0
 	},
 	{
-		"segment": ": ",
-		"style": "#block",
-		"methodName": "[§««…:_†§‡,»`|»?«Primitive…«(…:_†)»?;§»?«`$…«:_†»?;§»?«_!§»«_!»?]§«:_†»?«^«_†‡,»»?",
-		"sourceModule": "block/it/in",
-		"generated": false,
-		"lineNumber": 22
+		"content": [
+			{
+				"segment": "x",
+				"style": "#p-use",
+				"methodName": "…",
+				"sourceModule": "just/itself",
+				"generated": false,
+				"lineNumber": 745
+			},
+			{
+				"segment": "+ ",
+				"style": "#send",
+				"methodName": "_+_",
+				"sourceModule": "more/numbers",
+				"generated": false,
+				"lineNumber": 123
+			},
+			{
+				"segment": "y",
+				"style": "#p-use",
+				"methodName": "…",
+				"sourceModule": "just/itself",
+				"generated": false,
+				"lineNumber": 745
+			}
+		],
+		"indent": 1
 	},
 	{
-		"segment": "number",
-		"style": "#type",
-		"methodName": "_",
-		"sourceModule": "just/itself",
-		"generated": false,
-		"lineNumber": 745
-	},
-	{
-		"segment": ", ",
-		"style": "#block",
-		"methodName": "[§««…:_†§‡,»`|»?«Primitive…«(…:_†)»?;§»?«`$…«:_†»?;§»?«_!§»«_!»?]§«:_†»?«^«_†‡,»»?",
-		"sourceModule": "block/it/in",
-		"generated": false,
-		"lineNumber": 22
-	},
-	{
-		"segment": "y",
-		"style": "#p-def",
-		"sourceModule": "just/itself",
-		"generated": false,
-		"lineNumber": 745
-	},
-	{
-		"segment": ": ",
-		"style": "#block",
-		"methodName": "[§««…:_†§‡,»`|»?«Primitive…«(…:_†)»?;§»?«`$…«:_†»?;§»?«_!§»«_!»?]§«:_†»?«^«_†‡,»»?",
-		"sourceModule": "block/it/in",
-		"generated": false,
-		"lineNumber": 22
-	},
-	{
-		"segment": "number",
-		"style": "#type",
-		"methodName": "_",
-		"sourceModule": "just/itself",
-		"generated": false,
-		"lineNumber": 745
-	},
-	{
-		"segment": "| ",
-		"style": "#block",
-		"methodName": "[§««…:_†§‡,»`|»?«Primitive…«(…:_†)»?;§»?«`$…«:_†»?;§»?«_!§»«_!»?]§«:_†»?«^«_†‡,»»?",
-		"sourceModule": "block/it/in",
-		"generated": false,
-		"lineNumber": 22
-	},
-	{
-		"segment": "x",
-		"style": "#p-use",
-		"methodName": "…",
-		"sourceModule": "just/itself",
-		"generated": false,
-		"lineNumber": 745
-	},
-	{
-		"segment": "+ ",
-		"style": "#send",
-		"methodName": "_+_",
-		"sourceModule": "more/numbers",
-		"generated": false,
-		"lineNumber": 123
-	},
-	{
-		"segment": "y",
-		"style": "#p-use",
-		"methodName": "…",
-		"sourceModule": "just/itself",
-		"generated": false,
-		"lineNumber": 745
-	},
-	{
-		"segment": "]",
-		"style": "#block",
-		"methodName": "[§««…:_†§‡,»`|»?«Primitive…«(…:_†)»?;§»?«`$…«:_†»?;§»?«_!§»«_!»?]§«:_†»?«^«_†‡,»»?",
-		"sourceModule": "block/it/in",
-		"generated": false,
-		"lineNumber": 22
-	},
-	{
-		"segment": ";",
-		"style": "#statement",
-		"methodName": "_!;",
-		"sourceModule": "somewhere/out/there",
-		"generated": false,
-		"lineNumber": 55
+		"content": [
+			{
+				"segment": "]",
+				"style": "#block",
+				"methodName": "[§««…:_†§‡,»`|»?«Primitive…«(…:_†)»?;§»?«`$…«:_†»?;§»?«_!§»«_!»?]§«:_†»?«^«_†‡,»»?",
+				"sourceModule": "block/it/in",
+				"generated": false,
+				"lineNumber": 22
+			},
+			{
+				"segment": ";",
+				"style": "#statement",
+				"methodName": "_!;",
+				"sourceModule": "somewhere/out/there",
+				"generated": false,
+				"lineNumber": 55
+			}
+		],
+		"indent": 0
 	}
 ]
