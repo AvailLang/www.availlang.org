@@ -56,35 +56,63 @@ line 6 of the block of Avail code above (*the above lexeme*):
 
 ## Processing
 
-Within each lexeme there may be underscores, `_`,. These underscores 
-represent a node in the tree that must be traversed (*depth-first*). Each 
-segment in the processed output either terminates at an underscore replacing 
-the underscore with a space ` ` character, or it terminates at the end of the
-lexeme.
+The segments of a lexeme are processed in order.  When an underscore (`_`) is
+encountered, the next child of the current tree node is processed to produce
+output in place of the underscore.
 
 Each lexeme may include escaped characters. The escaping character is a 
-backslash, `\\`. Any escaped character should be ignored. Characters that may 
-be escaped are:
+backslash, `\ `. Any escaped character should be treated as an ordinary
+character, suppressing any special interpretation it might otherwise have.
+Characters that may be escaped are:
 
- * `\` - `\\` should treat the immediately next character as not being ignored.
- * `"` - The lexeme contains a string, the contents of which should be ignored.
- * `_` - An escaped underscore should not be treated as a node in the tree.
+ * `\ `
+ * `"`
+ * `_`
+ * `«`
+ * `»`
+ * `‡`
+
+Note that in the JSON source itself, the quoted lexeme must use *two*
+backslashes to escape the above characters. The first backslash is to keep JSON
+from treating the second backslash as an escape within a JSON string, and the
+second one indicates that the lexeme should treat the next character literally.
+
+JSON allows `\n` and `\t` to occur in its strings (i.e., within a quoted string,
+a single backslash followed by an `n` or `t`). These represent the newline
+(`u+000A`) and tab (`u+0009`) characters, respectively. These characters are
+processed specially by the S-expression transformer.
+
+When processing of a node begins, the current indent level is recorded as the
+`node-start indent`. When an `\n` is encountered in the lexeme, a new output
+line is started, automatically indented to the node-start indent level, and
+the current indent level is reset to the node-start indent.
+
+When a run of `\t` characters are encountered, the indent level is set to the
+node-start index plus the number of `\t` characters. A new line is then started
+(no `\n` is needed for this), which starts at the new current indent level.
+Child nodes processed while this tab is active will capture this new indent
+level as their node-start indent. A subsequent `\n` or run of `\t` characters
+will reset the level relative to the current node's node-start indent.
+
+
 
 ### Repetitions
 
 Special handling of Avail repetitions is required. A repetition in Avail can be
-identified as a sequence of characters surrounded by guillemets, `« … »` with a 
-double dagger inside the guillemets, `‡`. Guillemet lexemes must both start with
-an open guillemet `«` and end with a close guillemet `»`: no other characters 
-can come before or after the guillemets. An example of a repetition is:
+identified as a sequence of characters surrounded by guillemets, `« … »` with an
+optional double dagger (`‡`) inside the guillemets. Omitting the double dagger
+is equivalent to including it just before the close-guillemet. Guillemet lexemes
+must both start with an open guillemet `«` and end with a close guillemet `»`:
+no other characters can come before or after the guillemets. An example of a
+repetition is:
 ```
-"«_:_‡,|,»"
+"«_:_‡and»"
 ```
-The number of child lexemes that follows the guillemet lexeme must come in 
-multiples of the underscores to the left of the double dagger (`‡`). In the 
-provided example, because there are two underscores to the left of the 
-double dagger there must be exactly two child lexemes for each repetition. 
-If the lexeme had been `"«_:_:_‡,|,»"`, there would need to be exactly three 
+The number of child lexemes that follows the guillemet lexeme must come in
+multiples of the underscores to the left of the double dagger (`‡`). In the
+provided example, because there are two underscores to the left of the double
+dagger there must be exactly two child lexemes for each repetition. If the
+lexeme had instead been `"«_:_:_‡and»"`, there would need to be exactly three
 child lexemes for each repetition.
 
 All the characters to the right of the double dagger (`‡`) must appear as 
@@ -100,3 +128,12 @@ It uses repetitions in its method signature. This is deconstructed for
 styling: the input from Avail is represented by 
 `sample_repetition_code_style_input.json`, the processed output is 
 represented by `sample_repetition_code_style_output.json`.
+
+In the atypical case that there are underscores *after* the double dagger, we
+expect the child nodes to correspond with underscores to the left of the double
+dagger (if any), followed by the underscores to the right of the double dagger,
+followed by underscores to the left again, etc., ending with the underscores on
+the *left* of the double dagger (since the right portion only occurs *between*
+iterations). If there are `L` underscores to the left of the double dagger, and
+`R` underscores to the right of the double dagger, the only valid counts of
+children are L + n * (R + L), where n ≥ 0.
