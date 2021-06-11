@@ -1,0 +1,110 @@
+[
+	"_;",
+	{
+		"style": "#statement",
+		"methodName": "_;",
+		"sourceModule": "somewhere/out/there",
+		"generated": false,
+		"lineNumber": 55
+	},
+	[
+		"Method_is_",
+		{
+			"style": "#method-definer",
+			"methodName": "Method_is_",
+			"sourceModule": "gotta/start/somewhere",
+			"generated": false,
+			"lineNumber": 32
+		},
+		[
+			"\"\\_plus\\_\"",
+			{
+				"style": "#method-name",
+				"methodName": "_",
+				"sourceModule": "just/itself",
+				"generated": false,
+				"lineNumber": 745
+			}
+		],
+		[
+			"[_:_,_:_|_]",
+			{
+				"style": "#block",
+				"methodName": "[_:_,_:_|_]",
+				"sourceModule": "block/it/in",
+				"generated": false,
+				"lineNumber": 22
+			},
+			[
+				"x",
+				{
+					"style": "#parameter-definition",
+					"methodName": "_",
+					"sourceModule": "just/itself",
+					"generated": false,
+					"lineNumber": 745
+				}
+			],
+			[
+				"number",
+				{
+					"style": "#type",
+					"methodName": "_",
+					"sourceModule": "just/itself",
+					"generated": false,
+					"lineNumber": 745
+				}
+			],
+			[
+				"y",
+				{
+					"style": "#parameter-definition",
+					"methodName": "_",
+					"sourceModule": "just/itself",
+					"generated": false,
+					"lineNumber": 745
+				}
+			],
+			[
+				"number",
+				{
+					"style": "#type",
+					"methodName": "_",
+					"sourceModule": "just/itself",
+					"generated": false,
+					"lineNumber": 745
+				}
+			],
+			[
+				"_+_",
+				{
+					"style": "#send",
+					"methodName": "_+_",
+					"sourceModule": "more/numbers",
+					"generated": false,
+					"lineNumber": 123
+				},
+				[
+					"x",
+					{
+						"style": "#parameter-use",
+						"methodName": "_",
+						"sourceModule": "just/itself",
+						"generated": false,
+						"lineNumber": 745
+					}
+				],
+				[
+					"y",
+					{
+						"style": "#parameter-use",
+						"methodName": "_",
+						"sourceModule": "just/itself",
+						"generated": false,
+						"lineNumber": 745
+					}
+				]
+			]
+		]
+	]
+]

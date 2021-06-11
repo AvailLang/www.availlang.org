@@ -1,0 +1,100 @@
+[
+	"_;",
+	{
+		"style": "#statement",
+		"methodName": "_;",
+		"sourceModule": "somewhere/out/there",
+		"generated": false,
+		"lineNumber": 55
+	},
+	[
+		"_::=_",
+		{
+			"style": "#statement",
+			"methodName": "`«_::=_`»",
+			"sourceModule": "Avail/Foundation/Bootstrap/Infallible Primitives",
+			"generated": false,
+			"lineNumber": 2633
+		},
+		[
+			"y",
+			{
+				"style": "#parameter-definition",
+				"methodName": "_",
+				"sourceModule": "just/itself",
+				"generated": false,
+				"lineNumber": 745
+			}
+		],
+		[
+			"{«_→_‡,»}",
+			{
+				"style": "#send",
+				"methodName": "{«_→_‡,»}",
+				"sourceModule": "Avail/Foundation/Literals",
+				"generated": false,
+				"lineNumber": 663
+			},
+			[
+				"1",
+				{
+					"style": "#literal",
+					"methodName": "_",
+					"sourceModule": "just/itself",
+					"generated": false,
+					"lineNumber": 745
+				}
+			],
+			[
+				"\"one\"",
+				{
+					"style": "#literal",
+					"methodName": "_",
+					"sourceModule": "just/itself",
+					"generated": false,
+					"lineNumber": 745
+				}
+			],
+			[
+				"2",
+				{
+					"style": "#literal",
+					"methodName": "_",
+					"sourceModule": "just/itself",
+					"generated": false,
+					"lineNumber": 745
+				}
+			],
+			[
+				"\"two\"",
+				{
+					"style": "#literal",
+					"methodName": "_",
+					"sourceModule": "just/itself",
+					"generated": false,
+					"lineNumber": 745
+				}
+			],
+			[
+				"3",
+				{
+					"style": "#literal",
+					"methodName": "_",
+					"sourceModule": "just/itself",
+					"generated": false,
+					"lineNumber": 745
+				}
+			],
+			[
+				"\"three\"",
+				{
+					"style": "#literal",
+					"methodName": "_",
+					"sourceModule": "just/itself",
+					"generated": false,
+					"lineNumber": 745
+				}
+			]
+		]
+	]
+]
