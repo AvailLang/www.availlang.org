@@ -1,123 +1,128 @@
 [
 	{
-		"segment": "y",
-		"style": "#constant-definition",
-		"sourceModule": "just/itself",
-		"generated": false,
-		"lineNumber": 745
-	},
-	{
-		"segment": "::= ",
-		"style": "#statement",
-		"methodName": "…::=_;",
-		"sourceModule": "Avail/Foundation/Bootstrap/Infallible Primitives",
-		"generated": false,
-		"lineNumber": 2633
-	},
-	{
-		"segment": "{ ",
-		"style": "#literal",
-		"methodName": "{«_→_‡,»}",
-		"sourceModule": "Avail/Foundation/Literals",
-		"generated": false,
-		"lineNumber": 663
-	},
-	{
-		"segment": "1",
-		"style": "#literal",
-		"sourceModule": "just/itself",
-		"generated": false,
-		"lineNumber": 745
-	},
-	{
-		"segment": "→ ",
-		"style": "#literal",
-		"methodName": "{«_→_‡,»}",
-		"sourceModule": "Avail/Foundation/Literals",
-		"generated": false,
-		"lineNumber": 663
-	},
-	{
-		"segment": "\"one\"",
-		"style": "#literal",
-		"sourceModule": "just/itself",
-		"generated": false,
-		"lineNumber": 745
-	},
-	{
-		"segment": ", ",
-		"style": "#literal",
-		"methodName": "{«_→_‡,»}",
-		"sourceModule": "Avail/Foundation/Literals",
-		"generated": false,
-		"lineNumber": 663
-	},
-	{
-		"segment": "2",
-		"style": "#literal",
-		"sourceModule": "just/itself",
-		"generated": false,
-		"lineNumber": 745
-	},
-	{
-		"segment": "→ ",
-		"style": "#literal",
-		"methodName": "{«_→_‡,»}",
-		"sourceModule": "Avail/Foundation/Literals",
-		"generated": false,
-		"lineNumber": 663
-	},
-	{
-		"segment": "\"two\"",
-		"style": "#literal",
-		"sourceModule": "just/itself",
-		"generated": false,
-		"lineNumber": 745
-	},
-	{
-		"segment": ", ",
-		"style": "#literal",
-		"methodName": "{«_→_‡,»}",
-		"sourceModule": "Avail/Foundation/Literals",
-		"generated": false,
-		"lineNumber": 663
-	},
-	{
-		"segment": "3",
-		"style": "#literal",
-		"sourceModule": "just/itself",
-		"generated": false,
-		"lineNumber": 745
-	},
-	{
-		"segment": "→ ",
-		"style": "#literal",
-		"methodName": "{«_→_‡,»}",
-		"sourceModule": "Avail/Foundation/Literals",
-		"generated": false,
-		"lineNumber": 663
-	},
-	{
-		"segment": "\"three\"",
-		"style": "#literal",
-		"sourceModule": "just/itself",
-		"generated": false,
-		"lineNumber": 745
-	},
-	{
-		"segment": "}",
-		"style": "#literal",
-		"methodName": "{«_→_‡,»}",
-		"sourceModule": "Avail/Foundation/Literals",
-		"generated": false,
-		"lineNumber": 663
-	},
-	{
-		"segment": ";",
-		"style": "#statement",
-		"methodName": "…::=_;",
-		"sourceModule": "somewhere/out/there",
-		"generated": false,
-		"lineNumber": 55
+		"content": [
+			{
+				"segment": "y",
+				"style": "#constant-definition",
+				"sourceModule": "just/itself",
+				"generated": false,
+				"lineNumber": 745
+			},
+			{
+				"segment": "::= ",
+				"style": "#statement",
+				"methodName": "…::=_;",
+				"sourceModule": "Avail/Foundation/Bootstrap/Infallible Primitives",
+				"generated": false,
+				"lineNumber": 2633
+			},
+			{
+				"segment": "{ ",
+				"style": "#literal",
+				"methodName": "{«_→_‡,»}",
+				"sourceModule": "Avail/Foundation/Literals",
+				"generated": false,
+				"lineNumber": 663
+			},
+			{
+				"segment": "1",
+				"style": "#literal",
+				"sourceModule": "just/itself",
+				"generated": false,
+				"lineNumber": 745
+			},
+			{
+				"segment": "→ ",
+				"style": "#literal",
+				"methodName": "{«_→_‡,»}",
+				"sourceModule": "Avail/Foundation/Literals",
+				"generated": false,
+				"lineNumber": 663
+			},
+			{
+				"segment": "\"one\"",
+				"style": "#literal",
+				"sourceModule": "just/itself",
+				"generated": false,
+				"lineNumber": 745
+			},
+			{
+				"segment": ", ",
+				"style": "#literal",
+				"methodName": "{«_→_‡,»}",
+				"sourceModule": "Avail/Foundation/Literals",
+				"generated": false,
+				"lineNumber": 663
+			},
+			{
+				"segment": "2",
+				"style": "#literal",
+				"sourceModule": "just/itself",
+				"generated": false,
+				"lineNumber": 745
+			},
+			{
+				"segment": "→ ",
+				"style": "#literal",
+				"methodName": "{«_→_‡,»}",
+				"sourceModule": "Avail/Foundation/Literals",
+				"generated": false,
+				"lineNumber": 663
+			},
+			{
+				"segment": "\"two\"",
+				"style": "#literal",
+				"sourceModule": "just/itself",
+				"generated": false,
+				"lineNumber": 745
+			},
+			{
+				"segment": ", ",
+				"style": "#literal",
+				"methodName": "{«_→_‡,»}",
+				"sourceModule": "Avail/Foundation/Literals",
+				"generated": false,
+				"lineNumber": 663
+			},
+			{
+				"segment": "3",
+				"style": "#literal",
+				"sourceModule": "just/itself",
+				"generated": false,
+				"lineNumber": 745
+			},
+			{
+				"segment": "→ ",
+				"style": "#literal",
+				"methodName": "{«_→_‡,»}",
+				"sourceModule": "Avail/Foundation/Literals",
+				"generated": false,
+				"lineNumber": 663
+			},
+			{
+				"segment": "\"three\"",
+				"style": "#literal",
+				"sourceModule": "just/itself",
+				"generated": false,
+				"lineNumber": 745
+			},
+			{
+				"segment": "}",
+				"style": "#literal",
+				"methodName": "{«_→_‡,»}",
+				"sourceModule": "Avail/Foundation/Literals",
+				"generated": false,
+				"lineNumber": 663
+			},
+			{
+				"segment": ";",
+				"style": "#statement",
+				"methodName": "…::=_;",
+				"sourceModule": "somewhere/out/there",
+				"generated": false,
+				"lineNumber": 55
+			}
+		],
+		"indent": 0
 	}
 ]
