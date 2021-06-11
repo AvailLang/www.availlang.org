@@ -26,7 +26,7 @@
 	{
 		"segment": "[ ",
 		"style": "#block",
-		"methodName": "[_:_,_:_|_]",
+		"methodName": "[§««…:_†§‡,»`|»?«Primitive…«(…:_†)»?;§»?«`$…«:_†»?;§»?«_!§»«_!»?]§«:_†»?«^«_†‡,»»?",
 		"sourceModule": "block/it/in",
 		"generated": false,
 		"lineNumber": 22
@@ -34,7 +34,6 @@
 	{
 		"segment": "x",
 		"style": "#p-def",
-		"methodName": "_",
 		"sourceModule": "just/itself",
 		"generated": false,
 		"lineNumber": 745
@@ -42,7 +41,7 @@
 	{
 		"segment": ": ",
 		"style": "#block",
-		"methodName": "[_:_,_:_|_]",
+		"methodName": "[§««…:_†§‡,»`|»?«Primitive…«(…:_†)»?;§»?«`$…«:_†»?;§»?«_!§»«_!»?]§«:_†»?«^«_†‡,»»?",
 		"sourceModule": "block/it/in",
 		"generated": false,
 		"lineNumber": 22
@@ -58,7 +57,7 @@
 	{
 		"segment": ", ",
 		"style": "#block",
-		"methodName": "[_:_,_:_|_]",
+		"methodName": "[§««…:_†§‡,»`|»?«Primitive…«(…:_†)»?;§»?«`$…«:_†»?;§»?«_!§»«_!»?]§«:_†»?«^«_†‡,»»?",
 		"sourceModule": "block/it/in",
 		"generated": false,
 		"lineNumber": 22
@@ -66,7 +65,6 @@
 	{
 		"segment": "y",
 		"style": "#p-def",
-		"methodName": "_",
 		"sourceModule": "just/itself",
 		"generated": false,
 		"lineNumber": 745
@@ -74,7 +72,7 @@
 	{
 		"segment": ": ",
 		"style": "#block",
-		"methodName": "[_:_,_:_|_]",
+		"methodName": "[§««…:_†§‡,»`|»?«Primitive…«(…:_†)»?;§»?«`$…«:_†»?;§»?«_!§»«_!»?]§«:_†»?«^«_†‡,»»?",
 		"sourceModule": "block/it/in",
 		"generated": false,
 		"lineNumber": 22
@@ -90,7 +88,7 @@
 	{
 		"segment": "| ",
 		"style": "#block",
-		"methodName": "[_:_,_:_|_]",
+		"methodName": "[§««…:_†§‡,»`|»?«Primitive…«(…:_†)»?;§»?«`$…«:_†»?;§»?«_!§»«_!»?]§«:_†»?«^«_†‡,»»?",
 		"sourceModule": "block/it/in",
 		"generated": false,
 		"lineNumber": 22
@@ -98,7 +96,7 @@
 	{
 		"segment": "x",
 		"style": "#p-use",
-		"methodName": "_",
+		"methodName": "…",
 		"sourceModule": "just/itself",
 		"generated": false,
 		"lineNumber": 745
@@ -114,7 +112,7 @@
 	{
 		"segment": "y",
 		"style": "#p-use",
-		"methodName": "_",
+		"methodName": "…",
 		"sourceModule": "just/itself",
 		"generated": false,
 		"lineNumber": 745
@@ -122,7 +120,7 @@
 	{
 		"segment": "]",
 		"style": "#block",
-		"methodName": "[_:_,_:_|_]",
+		"methodName": "[§««…:_†§‡,»`|»?«Primitive…«(…:_†)»?;§»?«`$…«:_†»?;§»?«_!§»«_!»?]§«:_†»?«^«_†‡,»»?",
 		"sourceModule": "block/it/in",
 		"generated": false,
 		"lineNumber": 22
@@ -130,7 +128,7 @@
 	{
 		"segment": ";",
 		"style": "#statement",
-		"methodName": "_;",
+		"methodName": "_!;",
 		"sourceModule": "somewhere/out/there",
 		"generated": false,
 		"lineNumber": 55

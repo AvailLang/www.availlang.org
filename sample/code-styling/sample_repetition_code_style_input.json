@@ -1,35 +1,34 @@
 [
-	"_;",
+	"…::=_;",
 	{
 		"style": "#statement",
-		"methodName": "_;",
-		"sourceModule": "somewhere/out/there",
+		"methodName": "`«_::=_`»",
+		"sourceModule": "Avail/Foundation/Bootstrap/Infallible Primitives",
 		"generated": false,
-		"lineNumber": 55
+		"lineNumber": 2633
 	},
 	[
-		"_::=_",
+		"y",
 		{
-			"style": "#statement",
-			"methodName": "`«_::=_`»",
-			"sourceModule": "Avail/Foundation/Bootstrap/Infallible Primitives",
+			"style": "#constant-definition",
+			"sourceModule": "just/itself",
 			"generated": false,
-			"lineNumber": 2633
+			"lineNumber": 745
+		}
+	],
+	[
+		"{_}",
+		{
+			"style": "#literal",
+			"methodName": "{«_→_‡,»}",
+			"sourceModule": "Avail/Foundation/Literals",
+			"generated": false,
+			"lineNumber": 663
 		},
 		[
-			"y",
+			"«_→_‡,»",
 			{
-				"style": "#parameter-definition",
-				"methodName": "_",
-				"sourceModule": "just/itself",
-				"generated": false,
-				"lineNumber": 745
-			}
-		],
-		[
-			"{«_→_‡,»}",
-			{
-				"style": "#send",
+				"style": "#literal",
 				"methodName": "{«_→_‡,»}",
 				"sourceModule": "Avail/Foundation/Literals",
 				"generated": false,

@@ -63,7 +63,7 @@ the underscore with a space ` ` character, or it terminates at the end of the
 lexeme.
 
 Each lexeme may include escaped characters. The escaping character is a 
-backslash, `\`. Any escaped character should be ignored. Characters that may 
+backslash, `\\`. Any escaped character should be ignored. Characters that may 
 be escaped are:
 
  * `\` - `\\` should treat the immediately next character as not being ignored.
