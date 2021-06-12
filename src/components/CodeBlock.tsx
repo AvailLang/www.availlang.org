@@ -156,6 +156,19 @@ export const codeStyle =
 
 	/** Get magenta colored styling for any theme. */
 	MAGENTA: { color: colors.CODE_MAGENTA },
+
+	STATEMENT: (theme: AppTheme) =>
+	{
+		switch (theme)
+		{
+			case AppTheme.DARK:
+				return { color: colors.CODE_YELLOW };
+			case AppTheme.LIGHT:
+				return { color: colors.CODE_CYAN };
+			default:
+				throw errors.UNKNOWN_THEME();
+		}
+	},
 };
 
 /** Either a getter for theme styling or a CSS property set. */

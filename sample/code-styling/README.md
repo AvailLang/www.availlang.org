@@ -46,7 +46,7 @@ line 6 of the block of Avail code above (*the above lexeme*):
 ```json5
 {
     "segment": "+ ",
-    "style": "#send",
+    "semanticClassifier": "#send",
     "methodName": "_+_",
     "sourceModule": "more/numbers",
     "generated": false,
@@ -77,63 +77,43 @@ backslashes to escape the above characters. The first backslash is to keep JSON
 from treating the second backslash as an escape within a JSON string, and the
 second one indicates that the lexeme should treat the next character literally.
 
+### Whitespace
+
 JSON allows `\n` and `\t` to occur in its strings (i.e., within a quoted string,
 a single backslash followed by an `n` or `t`). These represent the newline
-(`u+000A`) and tab (`u+0009`) characters, respectively. These characters are
-processed specially by the S-expression transformer.
+(`u+000A`) and tab (`u+0009`) characters, respectively.
 
-When processing of a node begins, the current indent level is recorded as the
-`node-start indent`. When an `\n` is encountered in the lexeme, a new output
-line is started, automatically indented to the node-start indent level, and
-the current indent level is reset to the node-start indent.
+In order to be able to style, or even transform, source code whitespace for the
+client (such as transforming space characters to interpuncts, tabs to arrows,
+etc.), all whitespace in the source must also be represented in a segment
+string.
 
-When a run of `\t` characters are encountered, the indent level is set to the
-node-start index plus the number of `\t` characters. A new line is then started
-(no `\n` is needed for this), which starts at the new current indent level.
-Child nodes processed while this tab is active will capture this new indent
-level as their node-start indent. A subsequent `\n` or run of `\t` characters
-will reset the level relative to the current node's node-start indent.
+In order to specify that certain verbatim spacing MUST be styled as part of a
+lexeme, that spacing MUST be included in the lexeme string in the input.
+However, only spaces that follow a literal character can be represented this
+way. Spaces that follow parameter underscores (or separate repeated underscores)
+cannot be represented this way because the parser will attach them to the
+parameter.
 
-
+The styling of spaces actually encountered will be specified by the nearest
+ancestor's `spacingClassifier`, or the default style if no ancestor has one.
 
 ### Repetitions
 
-Special handling of Avail repetitions is required. A repetition in Avail can be
-identified as a sequence of characters surrounded by guillemets, `« … »` with an
-optional double dagger (`‡`) inside the guillemets. Omitting the double dagger
-is equivalent to including it just before the close-guillemet. Guillemet lexemes
-must both start with an open guillemet `«` and end with a close guillemet `»`:
-no other characters can come before or after the guillemets. An example of a
-repetition is:
-```
-"«_:_‡and»"
-```
-The number of child lexemes that follows the guillemet lexeme must come in
-multiples of the underscores to the left of the double dagger (`‡`). In the
-provided example, because there are two underscores to the left of the double
-dagger there must be exactly two child lexemes for each repetition. If the
-lexeme had instead been `"«_:_:_‡and»"`, there would need to be exactly three
-child lexemes for each repetition.
+Special handling of Avail repetitions is not possible, due to the possibility of
+varying space character uses in each repeated instance. Instead, Avail must emit
+the fully-expanded lexeme with the specific space characters used at each
+"repeat" site.
 
-All the characters to the right of the double dagger (`‡`) must appear as 
-*segments* between each repetition present in the processed output. The 
-segment should appear `n-1` times, where `n` is the number of repetitions 
-present.
-
-The following is an example of an Avail map literal: 
+For example, when a method name looks like this:
 ```
-y ::= { 1 → "one", 2 → "two", 3 → "three"};
+"«_→_‡,»"
 ```
-It uses repetitions in its method signature. This is deconstructed for 
-styling: the input from Avail is represented by 
-`sample_repetition_code_style_input.json`, the processed output is 
-represented by `sample_repetition_code_style_output.json`.
-
-In the atypical case that there are underscores *after* the double dagger, we
-expect the child nodes to correspond with underscores to the left of the double
-dagger (if any), followed by the underscores to the right of the double dagger,
-followed by underscores to the left again, etc., ending with the underscores on
-the *left* of the double dagger (since the right portion only occurs *between*
-iterations). If there are `L` underscores to the left of the double dagger, and
-`R` underscores to the right of the double dagger, the only valid counts of
-children are L + n * (R + L), where n ≥ 0.
+but is intended to represent the contents of the following map:
+```
+y ::= { 1 →"one", 2 → "two",3 →   "three"};
+```
+then the expanded lexeme would be:
+```
+"_→_, _→ _,_→   _"
+```

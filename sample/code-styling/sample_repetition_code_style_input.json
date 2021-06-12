@@ -1,99 +1,89 @@
 [
-	"…::=_;",
+	"_ ::= _;",
 	{
-		"style": "#statement",
-		"methodName": "`«_::=_`»",
-		"sourceModule": "Avail/Foundation/Bootstrap/Infallible Primitives",
-		"generated": false,
-		"lineNumber": 2633
+		"semanticClassifier": "#statement",
+		"methodName": "…::=_;",
+		"sourceModule": "Avail/Foundation/Bootstrap/Origin",
+		"generated": true,
+		"lineNumber": 184
 	},
 	[
 		"y",
 		{
-			"style": "#constant-definition",
+			"semanticClassifier": "#constant-definition",
 			"sourceModule": "just/itself",
 			"generated": false,
 			"lineNumber": 745
 		}
 	],
 	[
-		"{_}",
+		"{_ →_, _ → _,_ →   _}",
 		{
-			"style": "#literal",
+			"semanticClassifier": "#literal",
 			"methodName": "{«_→_‡,»}",
 			"sourceModule": "Avail/Foundation/Literals",
 			"generated": false,
 			"lineNumber": 663
 		},
 		[
-			"«_→_‡,»",
+			"1",
 			{
-				"style": "#literal",
-				"methodName": "{«_→_‡,»}",
-				"sourceModule": "Avail/Foundation/Literals",
+				"semanticClassifier": "#literal",
+				"methodName": "_",
+				"sourceModule": "just/itself",
 				"generated": false,
-				"lineNumber": 663
-			},
-			[
-				"1",
-				{
-					"style": "#literal",
-					"methodName": "_",
-					"sourceModule": "just/itself",
-					"generated": false,
-					"lineNumber": 745
-				}
-			],
-			[
-				"\"one\"",
-				{
-					"style": "#literal",
-					"methodName": "_",
-					"sourceModule": "just/itself",
-					"generated": false,
-					"lineNumber": 745
-				}
-			],
-			[
-				"2",
-				{
-					"style": "#literal",
-					"methodName": "_",
-					"sourceModule": "just/itself",
-					"generated": false,
-					"lineNumber": 745
-				}
-			],
-			[
-				"\"two\"",
-				{
-					"style": "#literal",
-					"methodName": "_",
-					"sourceModule": "just/itself",
-					"generated": false,
-					"lineNumber": 745
-				}
-			],
-			[
-				"3",
-				{
-					"style": "#literal",
-					"methodName": "_",
-					"sourceModule": "just/itself",
-					"generated": false,
-					"lineNumber": 745
-				}
-			],
-			[
-				"\"three\"",
-				{
-					"style": "#literal",
-					"methodName": "_",
-					"sourceModule": "just/itself",
-					"generated": false,
-					"lineNumber": 745
-				}
-			]
+				"lineNumber": 745
+			}
+		],
+		[
+			"\"one\"",
+			{
+				"semanticClassifier": "#literal",
+				"methodName": "_",
+				"sourceModule": "just/itself",
+				"generated": false,
+				"lineNumber": 745
+			}
+		],
+		[
+			"2",
+			{
+				"semanticClassifier": "#literal",
+				"methodName": "_",
+				"sourceModule": "just/itself",
+				"generated": false,
+				"lineNumber": 745
+			}
+		],
+		[
+			"\"two\"",
+			{
+				"semanticClassifier": "#literal",
+				"methodName": "_",
+				"sourceModule": "just/itself",
+				"generated": false,
+				"lineNumber": 745
+			}
+		],
+		[
+			"3",
+			{
+				"semanticClassifier": "#literal",
+				"methodName": "_",
+				"sourceModule": "just/itself",
+				"generated": false,
+				"lineNumber": 745
+			}
+		],
+		[
+			"\"three\"",
+			{
+				"semanticClassifier": "#literal",
+				"methodName": "_",
+				"sourceModule": "just/itself",
+				"generated": false,
+				"lineNumber": 745
+			}
 		]
 	]
 ]

@@ -1,25 +1,26 @@
 [
 	"_;",
 	{
-		"style": "#statement",
+		"semanticClassifier": "#statement",
+		"spacingClassifier": "#default-spacing",
 		"methodName": "_;",
 		"sourceModule": "somewhere/out/there",
 		"generated": false,
 		"lineNumber": 55
 	},
 	[
-		"Method_is_",
+		"Method _is\n_",
 		{
-			"style": "#method-definer",
+			"semanticClassifier": "#method-definer",
 			"methodName": "Method_is_",
 			"sourceModule": "gotta/start/somewhere",
 			"generated": false,
 			"lineNumber": 32
 		},
 		[
-			"\"\\_plus\\_\"",
+			"\"\\_plus\\_\" ",
 			{
-				"style": "#method-name",
+				"semanticClassifier": "#method-name",
 				"methodName": "_",
 				"sourceModule": "just/itself",
 				"generated": false,
@@ -27,18 +28,18 @@
 			}
 		],
 		[
-			"[_:_,_:_|_]",
+			"[\n\t_: _,\n\t_: _\n|\n\t_]",
 			{
-				"style": "#block",
+				"semanticClassifier": "#block",
 				"methodName": "[_:_,_:_|_]",
 				"sourceModule": "block/it/in",
 				"generated": false,
 				"lineNumber": 22
 			},
 			[
-				"x",
+				"x ",
 				{
-					"style": "#parameter-definition",
+					"semanticClassifier": "#parameter-definition",
 					"methodName": "_",
 					"sourceModule": "just/itself",
 					"generated": false,
@@ -48,7 +49,7 @@
 			[
 				"number",
 				{
-					"style": "#type",
+					"semanticClassifier": "#type",
 					"methodName": "_",
 					"sourceModule": "just/itself",
 					"generated": false,
@@ -56,9 +57,9 @@
 				}
 			],
 			[
-				"y",
+				"y ",
 				{
-					"style": "#parameter-definition",
+					"semanticClassifier": "#parameter-definition",
 					"methodName": "_",
 					"sourceModule": "just/itself",
 					"generated": false,
@@ -68,7 +69,7 @@
 			[
 				"number",
 				{
-					"style": "#type",
+					"semanticClassifier": "#type",
 					"methodName": "_",
 					"sourceModule": "just/itself",
 					"generated": false,
@@ -76,18 +77,18 @@
 				}
 			],
 			[
-				"_+_",
+				"_+ _",
 				{
-					"style": "#send",
+					"semanticClassifier": "#send",
 					"methodName": "_+_",
 					"sourceModule": "more/numbers",
 					"generated": false,
 					"lineNumber": 123
 				},
 				[
-					"x",
+					"x ",
 					{
-						"style": "#parameter-use",
+						"semanticClassifier": "#parameter-use",
 						"methodName": "_",
 						"sourceModule": "just/itself",
 						"generated": false,
@@ -97,7 +98,7 @@
 				[
 					"y",
 					{
-						"style": "#parameter-use",
+						"semanticClassifier": "#parameter-use",
 						"methodName": "_",
 						"sourceModule": "just/itself",
 						"generated": false,
