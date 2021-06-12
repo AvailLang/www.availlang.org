@@ -1,128 +1,123 @@
 [
 	{
-		"content": [
-			{
-				"segment": "y",
-				"semanticClassifier": "#constant-definition",
-				"sourceModule": "just/itself",
-				"generated": false,
-				"lineNumber": 745
-			},
-			{
-				"segment": "::= ",
-				"semanticClassifier": "#statement",
-				"methodName": "…::=_;",
-				"sourceModule": "Avail/Foundation/Bootstrap/Infallible Primitives",
-				"generated": false,
-				"lineNumber": 2633
-			},
-			{
-				"segment": "{ ",
-				"semanticClassifier": "#literal",
-				"methodName": "{«_→_‡,»}",
-				"sourceModule": "Avail/Foundation/Literals",
-				"generated": false,
-				"lineNumber": 663
-			},
-			{
-				"segment": "1",
-				"semanticClassifier": "#literal",
-				"sourceModule": "just/itself",
-				"generated": false,
-				"lineNumber": 745
-			},
-			{
-				"segment": "→ ",
-				"semanticClassifier": "#literal",
-				"methodName": "{«_→_‡,»}",
-				"sourceModule": "Avail/Foundation/Literals",
-				"generated": false,
-				"lineNumber": 663
-			},
-			{
-				"segment": "\"one\"",
-				"semanticClassifier": "#literal",
-				"sourceModule": "just/itself",
-				"generated": false,
-				"lineNumber": 745
-			},
-			{
-				"segment": ", ",
-				"semanticClassifier": "#literal",
-				"methodName": "{«_→_‡,»}",
-				"sourceModule": "Avail/Foundation/Literals",
-				"generated": false,
-				"lineNumber": 663
-			},
-			{
-				"segment": "2",
-				"semanticClassifier": "#literal",
-				"sourceModule": "just/itself",
-				"generated": false,
-				"lineNumber": 745
-			},
-			{
-				"segment": "→ ",
-				"semanticClassifier": "#literal",
-				"methodName": "{«_→_‡,»}",
-				"sourceModule": "Avail/Foundation/Literals",
-				"generated": false,
-				"lineNumber": 663
-			},
-			{
-				"segment": "\"two\"",
-				"semanticClassifier": "#literal",
-				"sourceModule": "just/itself",
-				"generated": false,
-				"lineNumber": 745
-			},
-			{
-				"segment": ", ",
-				"semanticClassifier": "#literal",
-				"methodName": "{«_→_‡,»}",
-				"sourceModule": "Avail/Foundation/Literals",
-				"generated": false,
-				"lineNumber": 663
-			},
-			{
-				"segment": "3",
-				"semanticClassifier": "#literal",
-				"sourceModule": "just/itself",
-				"generated": false,
-				"lineNumber": 745
-			},
-			{
-				"segment": "→ ",
-				"semanticClassifier": "#literal",
-				"methodName": "{«_→_‡,»}",
-				"sourceModule": "Avail/Foundation/Literals",
-				"generated": false,
-				"lineNumber": 663
-			},
-			{
-				"segment": "\"three\"",
-				"semanticClassifier": "#literal",
-				"sourceModule": "just/itself",
-				"generated": false,
-				"lineNumber": 745
-			},
-			{
-				"segment": "}",
-				"semanticClassifier": "#literal",
-				"methodName": "{«_→_‡,»}",
-				"sourceModule": "Avail/Foundation/Literals",
-				"generated": false,
-				"lineNumber": 663
-			},
-			{
-				"segment": ";",
-				"semanticClassifier": "#statement",
-				"methodName": "…::=_;",
-				"sourceModule": "somewhere/out/there",
-				"generated": false,
-				"lineNumber": 55
-			}
-		],
-		"indent": 0
+		"segment": "y",
+		"semanticClassifier": "#constant-definition",
+		"sourceModule": "just/itself",
+		"generated": false,
+		"lineNumber": 745
+	},
+	{
+		"segment": " ::= ",
+		"semanticClassifier": "#statement",
+		"methodName": "…::=_;",
+		"sourceModule": "Avail/Foundation/Bootstrap/Infallible Primitives",
+		"generated": false,
+		"lineNumber": 2633
+	},
+	{
+		"segment": "{ ",
+		"semanticClassifier": "#literal",
+		"methodName": "{«_→_‡,»}",
+		"sourceModule": "Avail/Foundation/Literals",
+		"generated": false,
+		"lineNumber": 663
+	},
+	{
+		"segment": "1",
+		"semanticClassifier": "#literal",
+		"sourceModule": "just/itself",
+		"generated": false,
+		"lineNumber": 745
+	},
+	{
+		"segment": " →",
+		"semanticClassifier": "#literal",
+		"methodName": "{«_→_‡,»}",
+		"sourceModule": "Avail/Foundation/Literals",
+		"generated": false,
+		"lineNumber": 663
+	},
+	{
+		"segment": "\"one\"",
+		"semanticClassifier": "#literal",
+		"sourceModule": "just/itself",
+		"generated": false,
+		"lineNumber": 745
+	},
+	{
+		"segment": ", ",
+		"semanticClassifier": "#literal",
+		"methodName": "{«_→_‡,»}",
+		"sourceModule": "Avail/Foundation/Literals",
+		"generated": false,
+		"lineNumber": 663
+	},
+	{
+		"segment": "2",
+		"semanticClassifier": "#literal",
+		"sourceModule": "just/itself",
+		"generated": false,
+		"lineNumber": 745
+	},
+	{
+		"segment": " → ",
+		"semanticClassifier": "#literal",
+		"methodName": "{«_→_‡,»}",
+		"sourceModule": "Avail/Foundation/Literals",
+		"generated": false,
+		"lineNumber": 663
+	},
+	{
+		"segment": "\"two\"",
+		"semanticClassifier": "#literal",
+		"sourceModule": "just/itself",
+		"generated": false,
+		"lineNumber": 745
+	},
+	{
+		"segment": ",",
+		"semanticClassifier": "#literal",
+		"methodName": "{«_→_‡,»}",
+		"sourceModule": "Avail/Foundation/Literals",
+		"generated": false,
+		"lineNumber": 663
+	},
+	{
+		"segment": "3",
+		"semanticClassifier": "#literal",
+		"sourceModule": "just/itself",
+		"generated": false,
+		"lineNumber": 745
+	},
+	{
+		"segment": " →   ",
+		"semanticClassifier": "#literal",
+		"methodName": "{«_→_‡,»}",
+		"sourceModule": "Avail/Foundation/Literals",
+		"generated": false,
+		"lineNumber": 663
+	},
+	{
+		"segment": "\"three\"",
+		"semanticClassifier": "#literal",
+		"sourceModule": "just/itself",
+		"generated": false,
+		"lineNumber": 745
+	},
+	{
+		"segment": "}",
+		"semanticClassifier": "#literal",
+		"methodName": "{«_→_‡,»}",
+		"sourceModule": "Avail/Foundation/Literals",
+		"generated": false,
+		"lineNumber": 663
+	},
+	{
+		"segment": ";",
+		"semanticClassifier": "#statement",
+		"methodName": "…::=_;",
+		"sourceModule": "somewhere/out/there",
+		"generated": false,
+		"lineNumber": 55
 	}
 ]

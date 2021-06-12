@@ -1,171 +1,136 @@
 [
 	{
-		"content": [
-			{
-				"segment": "Method ",
-				"semanticClassifier": "#m-definer",
-				"methodName": "Method_is_",
-				"sourceModule": "gotta/start/somewhere",
-				"generated": false,
-				"lineNumber": 32
-			},
-			{
-				"segment": "\"\\_plus\\_\"",
-				"semanticClassifier": "#m-name",
-				"methodName": "_",
-				"sourceModule": "just/itself",
-				"generated": false,
-				"lineNumber": 745
-			},
-			{
-				"segment": "is ",
-				"semanticClassifier": "#m-definer",
-				"methodName": "Method_is_",
-				"sourceModule": "gotta/start/somewhere",
-				"generated": false,
-				"lineNumber": 32
-			}
-		],
-		"indent": 0
+		"segment": "Method ",
+		"semanticClassifier": "#m-definer",
+		"methodName": "Method_is_",
+		"sourceModule": "gotta/start/somewhere",
+		"generated": false,
+		"lineNumber": 32
 	},
 	{
-		"content": [
-			{
-				"segment": "[\n\t",
-				"semanticClassifier": "#block",
-				"methodName": "[§««…:_†§‡,»`|»?«Primitive…«(…:_†)»?;§»?«`$…«:_†»?;§»?«_!§»«_!»?]§«:_†»?«^«_†‡,»»?",
-				"sourceModule": "block/it/in",
-				"generated": false,
-				"lineNumber": 22
-			}
-		],
-		"indent": 0
+		"segment": "\"\\_plus\\_\"",
+		"semanticClassifier": "#m-name",
+		"methodName": "_",
+		"sourceModule": "just/itself",
+		"generated": false,
+		"lineNumber": 745
 	},
 	{
-		"content": [
-			{
-				"segment": "x",
-				"semanticClassifier": "#p-def",
-				"sourceModule": "just/itself",
-				"generated": false,
-				"lineNumber": 745
-			},
-			{
-				"segment": ": ",
-				"semanticClassifier": "#block",
-				"methodName": "[§««…:_†§‡,»`|»?«Primitive…«(…:_†)»?;§»?«`$…«:_†»?;§»?«_!§»«_!»?]§«:_†»?«^«_†‡,»»?",
-				"sourceModule": "block/it/in",
-				"generated": false,
-				"lineNumber": 22
-			},
-			{
-				"segment": "number",
-				"semanticClassifier": "#type",
-				"methodName": "_",
-				"sourceModule": "just/itself",
-				"generated": false,
-				"lineNumber": 745
-			},
-			{
-				"segment": ",\n\t",
-				"semanticClassifier": "#block",
-				"methodName": "[§««…:_†§‡,»`|»?«Primitive…«(…:_†)»?;§»?«`$…«:_†»?;§»?«_!§»«_!»?]§«:_†»?«^«_†‡,»»?",
-				"sourceModule": "block/it/in",
-				"generated": false,
-				"lineNumber": 22
-			}
-		],
-		"indent": 1
+		"segment": "is\n",
+		"semanticClassifier": "#m-definer",
+		"methodName": "Method_is_",
+		"sourceModule": "gotta/start/somewhere",
+		"generated": false,
+		"lineNumber": 32
 	},
 	{
-		"content": [
-			{
-				"segment": "y",
-				"semanticClassifier": "#p-def",
-				"sourceModule": "just/itself",
-				"generated": false,
-				"lineNumber": 745
-			},
-			{
-				"segment": ": ",
-				"semanticClassifier": "#block",
-				"methodName": "[§««…:_†§‡,»`|»?«Primitive…«(…:_†)»?;§»?«`$…«:_†»?;§»?«_!§»«_!»?]§«:_†»?«^«_†‡,»»?",
-				"sourceModule": "block/it/in",
-				"generated": false,
-				"lineNumber": 22
-			},
-			{
-				"segment": "number",
-				"semanticClassifier": "#type",
-				"methodName": "_",
-				"sourceModule": "just/itself",
-				"generated": false,
-				"lineNumber": 745
-			}
-		],
-		"indent": 1
+		"segment": "[\n\t",
+		"semanticClassifier": "#block",
+		"methodName": "[§««…:_†§‡,»`|»?«Primitive…«(…:_†)»?;§»?«`$…«:_†»?;§»?«_!§»«_!»?]§«:_†»?«^«_†‡,»»?",
+		"sourceModule": "block/it/in",
+		"generated": false,
+		"lineNumber": 22
 	},
 	{
-		"content": [
-			{
-				"segment": "\n|\n\t",
-				"semanticClassifier": "#block",
-				"methodName": "[§««…:_†§‡,»`|»?«Primitive…«(…:_†)»?;§»?«`$…«:_†»?;§»?«_!§»«_!»?]§«:_†»?«^«_†‡,»»?",
-				"sourceModule": "block/it/in",
-				"generated": false,
-				"lineNumber": 22
-			}
-		],
-		"indent": 0
+		"segment": "x",
+		"semanticClassifier": "#p-def",
+		"sourceModule": "just/itself",
+		"generated": false,
+		"lineNumber": 745
 	},
 	{
-		"content": [
-			{
-				"segment": "x",
-				"semanticClassifier": "#p-use",
-				"methodName": "…",
-				"sourceModule": "just/itself",
-				"generated": false,
-				"lineNumber": 745
-			},
-			{
-				"segment": "+ ",
-				"semanticClassifier": "#send",
-				"methodName": "_+_",
-				"sourceModule": "more/numbers",
-				"generated": false,
-				"lineNumber": 123
-			},
-			{
-				"segment": "y",
-				"semanticClassifier": "#p-use",
-				"methodName": "…",
-				"sourceModule": "just/itself",
-				"generated": false,
-				"lineNumber": 745
-			}
-		],
-		"indent": 1
+		"segment": ": ",
+		"semanticClassifier": "#block",
+		"methodName": "[§««…:_†§‡,»`|»?«Primitive…«(…:_†)»?;§»?«`$…«:_†»?;§»?«_!§»«_!»?]§«:_†»?«^«_†‡,»»?",
+		"sourceModule": "block/it/in",
+		"generated": false,
+		"lineNumber": 22
 	},
 	{
-		"content": [
-			{
-				"segment": "\n]",
-				"semanticClassifier": "#block",
-				"methodName": "[§««…:_†§‡,»`|»?«Primitive…«(…:_†)»?;§»?«`$…«:_†»?;§»?«_!§»«_!»?]§«:_†»?«^«_†‡,»»?",
-				"sourceModule": "block/it/in",
-				"generated": false,
-				"lineNumber": 22
-			},
-			{
-				"segment": ";",
-				"semanticClassifier": "#statement",
-				"methodName": "_!;",
-				"sourceModule": "somewhere/out/there",
-				"generated": false,
-				"lineNumber": 55
-			}
-		],
-		"indent": 0
+		"segment": "number",
+		"semanticClassifier": "#type",
+		"methodName": "_",
+		"sourceModule": "just/itself",
+		"generated": false,
+		"lineNumber": 745
+	},
+	{
+		"segment": ",\n\t",
+		"semanticClassifier": "#block",
+		"methodName": "[§««…:_†§‡,»`|»?«Primitive…«(…:_†)»?;§»?«`$…«:_†»?;§»?«_!§»«_!»?]§«:_†»?«^«_†‡,»»?",
+		"sourceModule": "block/it/in",
+		"generated": false,
+		"lineNumber": 22
+	},
+	{
+		"segment": "y",
+		"semanticClassifier": "#p-def",
+		"sourceModule": "just/itself",
+		"generated": false,
+		"lineNumber": 745
+	},
+	{
+		"segment": ": ",
+		"semanticClassifier": "#block",
+		"methodName": "[§««…:_†§‡,»`|»?«Primitive…«(…:_†)»?;§»?«`$…«:_†»?;§»?«_!§»«_!»?]§«:_†»?«^«_†‡,»»?",
+		"sourceModule": "block/it/in",
+		"generated": false,
+		"lineNumber": 22
+	},
+	{
+		"segment": "number",
+		"semanticClassifier": "#type",
+		"methodName": "_",
+		"sourceModule": "just/itself",
+		"generated": false,
+		"lineNumber": 745
+	},
+	{
+		"segment": "\n|\n\t",
+		"semanticClassifier": "#block",
+		"methodName": "[§««…:_†§‡,»`|»?«Primitive…«(…:_†)»?;§»?«`$…«:_†»?;§»?«_!§»«_!»?]§«:_†»?«^«_†‡,»»?",
+		"sourceModule": "block/it/in",
+		"generated": false,
+		"lineNumber": 22
+	},
+	{
+		"segment": "x",
+		"semanticClassifier": "#p-use",
+		"methodName": "…",
+		"sourceModule": "just/itself",
+		"generated": false,
+		"lineNumber": 745
+	},
+	{
+		"segment": "+ ",
+		"semanticClassifier": "#send",
+		"methodName": "_+_",
+		"sourceModule": "more/numbers",
+		"generated": false,
+		"lineNumber": 123
+	},
+	{
+		"segment": "y",
+		"semanticClassifier": "#p-use",
+		"methodName": "…",
+		"sourceModule": "just/itself",
+		"generated": false,
+		"lineNumber": 745
+	},
+	{
+		"segment": "\n]",
+		"semanticClassifier": "#block",
+		"methodName": "[§««…:_†§‡,»`|»?«Primitive…«(…:_†)»?;§»?«`$…«:_†»?;§»?«_!§»«_!»?]§«:_†»?«^«_†‡,»»?",
+		"sourceModule": "block/it/in",
+		"generated": false,
+		"lineNumber": 22
+	},
+	{
+		"segment": ";",
+		"semanticClassifier": "#statement",
+		"methodName": "_!;",
+		"sourceModule": "somewhere/out/there",
+		"generated": false,
+		"lineNumber": 55
 	}
 ]
