@@ -17,7 +17,7 @@
 	},
 	{
 		"segment":"_",
-		"semanticClassifier": "#metacharacter",
+		"semanticClassifier": "#method-name",
 		"methodName": "_",
 		"sourceModule": "just/itself",
 		"generated": false,
@@ -33,7 +33,7 @@
 	},
 	{
 		"segment":"_",
-		"semanticClassifier": "#metacharacter",
+		"semanticClassifier": "#method-name",
 		"methodName": "_",
 		"sourceModule": "just/itself",
 		"generated": false,
