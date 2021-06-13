@@ -8,8 +8,40 @@
 		"lineNumber": 32
 	},
 	{
-		"segment": "\"\\_plus\\_\"",
-		"semanticClassifier": "#method-name",
+		"segment":"\"",
+		"semanticClassifier": "#string-literal",
+		"methodName": "_",
+		"sourceModule": "just/itself",
+		"generated": false,
+		"lineNumber": 745
+	},
+	{
+		"segment":"_",
+		"semanticClassifier": "#metacharacter",
+		"methodName": "_",
+		"sourceModule": "just/itself",
+		"generated": false,
+		"lineNumber": 745
+	},
+	{
+		"segment": "plus",
+		"semanticClassifier": "#string-literal",
+		"methodName": "_",
+		"sourceModule": "just/itself",
+		"generated": false,
+		"lineNumber": 745
+	},
+	{
+		"segment":"_",
+		"semanticClassifier": "#metacharacter",
+		"methodName": "_",
+		"sourceModule": "just/itself",
+		"generated": false,
+		"lineNumber": 745
+	},
+	{
+		"segment":"\" ",
+		"semanticClassifier": "#string-literal",
 		"methodName": "_",
 		"sourceModule": "just/itself",
 		"generated": false,

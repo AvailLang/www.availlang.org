@@ -17,41 +17,9 @@
 			"lineNumber": 32
 		},
 		[
-			"\"",
+			"\"\\_plus\\_\"",
 			{
-				"semanticClassifier": "#string-literal",
-				"methodName": "_",
-				"sourceModule": "just/itself",
-				"generated": false,
-				"lineNumber": 745
-			},
-			"_",
-			{
-				"semanticClassifier": "#metacharacter",
-				"methodName": "_",
-				"sourceModule": "just/itself",
-				"generated": false,
-				"lineNumber": 745
-			},
-			"plus",
-			{
-				"semanticClassifier": "#string-literal",
-				"methodName": "_",
-				"sourceModule": "just/itself",
-				"generated": false,
-				"lineNumber": 745
-			},
-			"_",
-			{
-				"semanticClassifier": "#metacharacter",
-				"methodName": "_",
-				"sourceModule": "just/itself",
-				"generated": false,
-				"lineNumber": 745
-			},
-			"\" ",
-			{
-				"semanticClassifier": "#string-literal",
+				"style": "#method-name",
 				"methodName": "_",
 				"sourceModule": "just/itself",
 				"generated": false,
