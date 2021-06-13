@@ -98,6 +98,31 @@ parameter.
 The styling of spaces actually encountered will be specified by the nearest
 ancestor's `spacingClassifier`, or the default style if no ancestor has one.
 
+### String Literals
+String literals must have special styling applied depending on how it is 
+used. Each String must be broken up into lexemes, sub character ranges, 
+grouped by their applied style (*semanticClassifier*).
+
+#### Basic String
+Any String literal that is not a method name must allow for two different 
+semantic  classifiers to be applied depending on the character sub ranges:
+ 1. **Control Characters** - Anything preceded by a `\` such as `\n`, `\t`, 
+    or the standard manner in which Avail splits strings over multiple 
+    lines `|\`.
+ 1. **Common Characters** - These are all the non-special characters that 
+    include the opening and closing `"`.
+
+#### Method Name
+Any String literal that is a method name must allow for three different semantic
+classifiers to be applied depending on the character sub ranges: the two 
+provided in *Basic String* as well as: 
+are 
+styled in the sam
+1. **Metacharacters** - All of the characters listed in the enumeration,
+   `Metacharacter` in `MessageSplitter.kt`.
+   
+![Alt text](img/string-style.jpg?raw=true "String Style")
+
 ### Repetitions
 
 Special handling of Avail repetitions is not possible, due to the possibility of
