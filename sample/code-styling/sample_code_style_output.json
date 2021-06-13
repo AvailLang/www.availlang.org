@@ -1,7 +1,7 @@
 [
 	{
 		"segment": "Method ",
-		"semanticClassifier": "#m-definer",
+		"semanticClassifier": "#method-definition",
 		"methodName": "Method_is_",
 		"sourceModule": "gotta/start/somewhere",
 		"generated": false,
@@ -9,7 +9,7 @@
 	},
 	{
 		"segment": "\"\\_plus\\_\"",
-		"semanticClassifier": "#m-name",
+		"semanticClassifier": "#method-name",
 		"methodName": "_",
 		"sourceModule": "just/itself",
 		"generated": false,
@@ -17,7 +17,7 @@
 	},
 	{
 		"segment": "is\n",
-		"semanticClassifier": "#m-definer",
+		"semanticClassifier": "#method-definition",
 		"methodName": "Method_is_",
 		"sourceModule": "gotta/start/somewhere",
 		"generated": false,
@@ -33,7 +33,7 @@
 	},
 	{
 		"segment": "x",
-		"semanticClassifier": "#p-def",
+		"semanticClassifier": "#parameter-definition",
 		"sourceModule": "just/itself",
 		"generated": false,
 		"lineNumber": 745
@@ -64,7 +64,7 @@
 	},
 	{
 		"segment": "y",
-		"semanticClassifier": "#p-def",
+		"semanticClassifier": "#parameter-definition",
 		"sourceModule": "just/itself",
 		"generated": false,
 		"lineNumber": 745
@@ -95,7 +95,7 @@
 	},
 	{
 		"segment": "x",
-		"semanticClassifier": "#p-use",
+		"semanticClassifier": "#parameter-use",
 		"methodName": "…",
 		"sourceModule": "just/itself",
 		"generated": false,
@@ -111,7 +111,7 @@
 	},
 	{
 		"segment": "y",
-		"semanticClassifier": "#p-use",
+		"semanticClassifier": "#parameter-use",
 		"methodName": "…",
 		"sourceModule": "just/itself",
 		"generated": false,

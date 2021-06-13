@@ -2,7 +2,6 @@
 	"_;",
 	{
 		"semanticClassifier": "#statement",
-		"spacingClassifier": "#default-spacing",
 		"methodName": "_;",
 		"sourceModule": "somewhere/out/there",
 		"generated": false,
@@ -11,7 +10,7 @@
 	[
 		"Method _is\n_",
 		{
-			"semanticClassifier": "#method-definer",
+			"semanticClassifier": "#method-definition",
 			"methodName": "Method_is_",
 			"sourceModule": "gotta/start/somewhere",
 			"generated": false,

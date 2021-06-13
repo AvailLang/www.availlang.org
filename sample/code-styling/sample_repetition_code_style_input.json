@@ -1,7 +1,7 @@
 [
 	"_ ::= _;",
 	{
-		"semanticClassifier": "#statement",
+		"semanticClassifier": "#macro-send",
 		"methodName": "…::=_;",
 		"sourceModule": "Avail/Foundation/Bootstrap/Origin",
 		"generated": true,
@@ -10,7 +10,7 @@
 	[
 		"y",
 		{
-			"semanticClassifier": "#constant-definition",
+			"semanticClassifier": "#local-constant-definition",
 			"sourceModule": "just/itself",
 			"generated": false,
 			"lineNumber": 745
@@ -19,7 +19,7 @@
 	[
 		"{_ →_, _ → _,_ →   _}",
 		{
-			"semanticClassifier": "#literal",
+			"semanticClassifier": "#map-literal",
 			"methodName": "{«_→_‡,»}",
 			"sourceModule": "Avail/Foundation/Literals",
 			"generated": false,
@@ -28,7 +28,7 @@
 		[
 			"1",
 			{
-				"semanticClassifier": "#literal",
+				"semanticClassifier": "#numeric-literal",
 				"methodName": "_",
 				"sourceModule": "just/itself",
 				"generated": false,
@@ -38,7 +38,7 @@
 		[
 			"\"one\"",
 			{
-				"semanticClassifier": "#literal",
+				"semanticClassifier": "#string-literal",
 				"methodName": "_",
 				"sourceModule": "just/itself",
 				"generated": false,
@@ -48,7 +48,7 @@
 		[
 			"2",
 			{
-				"semanticClassifier": "#literal",
+				"semanticClassifier": "#numeric-literal",
 				"methodName": "_",
 				"sourceModule": "just/itself",
 				"generated": false,
@@ -58,7 +58,7 @@
 		[
 			"\"two\"",
 			{
-				"semanticClassifier": "#literal",
+				"semanticClassifier": "#string-literal",
 				"methodName": "_",
 				"sourceModule": "just/itself",
 				"generated": false,
@@ -68,7 +68,7 @@
 		[
 			"3",
 			{
-				"semanticClassifier": "#literal",
+				"semanticClassifier": "#numeric-literal",
 				"methodName": "_",
 				"sourceModule": "just/itself",
 				"generated": false,
@@ -78,7 +78,7 @@
 		[
 			"\"three\"",
 			{
-				"semanticClassifier": "#literal",
+				"semanticClassifier": "#string-literal",
 				"methodName": "_",
 				"sourceModule": "just/itself",
 				"generated": false,
