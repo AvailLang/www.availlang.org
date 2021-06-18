@@ -319,6 +319,128 @@ export interface CodeStyleProps
 }
 
 /**
+ * Retrieve the {@link ClassifierStyleSet} for the provided `Metadata`
+ * `semanticClassifier`.
+ *
+ * @param {string} semanticClassifier
+ *   The string semantic classifier provided in the metadata from an
+ *   `InputSegmentsTree`.
+ * @param {CodeStyleProps} props
+ *   The source CodeStyleProps to get the `ClassifierStyleSet` from.
+ * @returns {ClassifierStyleSet}
+ *   The ClassifierStyleSet associated with the provided `semanticClassifier`.
+ */
+export const semanticClassifierMapper =
+	(semanticClassifier: string, props: CodeStyleProps): ClassifierStyleSet =>
+	{
+		switch (semanticClassifier)
+		{
+			case "#block":
+				return props.BLOCK;
+			case "#method-definition":
+				return props.METHOD_DEFINITION;
+			case "#method-name":
+				return props.METHOD_NAME;
+			case "#parameter-definition":
+				return props.PARAMETER_DEFINITION;
+			case "#parameter-use":
+				return props.PARAMETER_USE;
+			case "#method-send":
+				return props.METHOD_SEND;
+			case "#statement":
+				return props.STATEMENT;
+			case "#type":
+				return props.TYPE;
+			case "#module-header":
+				return props.MODULE_HEADER;
+			case "#version":
+				return props.VERSION;
+			case "#import":
+				return props.IMPORT;
+			case "#export":
+				return props.EXPORT;
+			case "#entry-point":
+				return props.ENTRY_POINT;
+			case "#comment":
+				return props.COMMENT;
+			case "#documentation":
+				return props.DOCUMENTATION;
+			case "#documentation-tag":
+				return props.DOCUMENTATION_TAG;
+			case "#module-constant-definition":
+				return props.MODULE_CONSTANT_DEFINITION;
+			case "#module-variable-declaration":
+				return props.MODULE_VARIABLE_DECLARATION;
+			case "#local-constant-definition":
+				return props.LOCAL_CONSTANT_DEFINITION;
+			case "##local-variable-definition":
+				return props.LOCAL_VARIABLE_DECLARATION;
+			case "#module-constant-use":
+				return props.MODULE_CONSTANT_USE;
+			case "#module-variable-use":
+				return props.MODULE_VARIABLE_USE;
+			case "#local-constant-use":
+				return props.LOCAL_CONSTANT_USE;
+			case "#local-variable-use":
+				return props.LOCAL_VARIABLE_USE;
+			case "#string-literal":
+				return props.STRING_LITERAL;
+			case "#string-escape-sequence":
+				return props.STRING_ESCAPE_SEQUENCE;
+			case "#numeric-literal":
+				return props.NUMERIC_LITERAL;
+			case "#boolean-literal":
+				return props.BOOLEAN_LITERAL;
+			case "#tuple-literal":
+				return props.TUPLE_LITERAL;
+			case "#set-literal":
+				return props.SET_LITERAL;
+			case "#map-literal":
+				return props.MAP_LITERAL;
+			case "#character-literal":
+				return props.CHARACTER_LITERAL;
+			case "#atom-literal":
+				return props.ATOM_LITERAL;
+			case "#conditional":
+				return props.CONDITIONAL;
+			case "#loop":
+				return props.LOOP;
+			case "#label":
+				return props.LABEL;
+			case "#lexer-definition":
+				return props.LEXER_DEFINITION;
+			case "#macro-definition":
+				return props.MACRO_DEFINITION;
+			case "#macro-send":
+				return props.MACRO_SEND;
+			case "#semantic-restriction-definition":
+				return props.SEMANTIC_RESTRICTION_DEFINITION;
+			case "#grammatical-restriction-definition":
+				return props.GRAMMATICAL_RESTRICTION_DEFINITION;
+			case "#seal-definition":
+				return props.SEAL_DEFINITION;
+			case "#object-type-definition":
+				return props.OBJECT_TYPE_DEFINITION;
+			case "#metatype":
+				return props.METATYPE;
+			case "#phrase":
+				return props.PHRASE;
+			case "#phrase-type":
+				return props.PHRASE_TYPE;
+			case "#return-value":
+				return props.RETURN_VALUE;
+			case "#nonlocal-control":
+				return props.NONLOCAL_CONTROL;
+			case "#primitive-block":
+				return props.PRIMITIVE_BLOCK;
+			case "#special-object-definition":
+				return props.SPECIAL_OBJECT_DEFINITION;
+			default: throw new Error(
+				"Unrecognized semanticClassifier string: "
+					+ semanticClassifier);
+		}
+	}
+/**
  * A code theme instance specifies the CodeStyleProps instances that are to be
  * used when code is viewed in light and dark mode.
  */

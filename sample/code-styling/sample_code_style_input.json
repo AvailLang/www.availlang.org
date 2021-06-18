@@ -1,5 +1,5 @@
 [
-	"_;",
+	["",";"],
 	{
 		"semanticClassifier": "#statement",
 		"methodName": "_;",
@@ -8,7 +8,7 @@
 		"lineNumber": 55
 	},
 	[
-		"Method _is\n_",
+		["Method ", " is\n", ""],
 		{
 			"semanticClassifier": "#method-definition",
 			"methodName": "Method_is_",
@@ -17,17 +17,62 @@
 			"lineNumber": 32
 		},
 		[
-			"\"\\_plus\\_\"",
+			["",""],
 			{
-				"style": "#method-name",
-				"methodName": "_",
+				"semanticClassifier": "#string-literal",
+				"methodName": "…$",
 				"sourceModule": "just/itself",
 				"generated": false,
 				"lineNumber": 745
-			}
+			},
+			[
+				["", "", "plus", "", ""],
+				{
+					"semanticClassifier": "#string-literal",
+					"sourceModule": "just/itself",
+					"generated": false,
+					"lineNumber": 745
+				},
+				[
+					["\""],
+					{
+						"semanticClassifier": "#string-literal",
+						"sourceModule": "just/itself",
+						"generated": false,
+						"lineNumber": 745
+					}
+				],
+				[
+					["_"],
+					{
+						"semanticClassifier": "#method-name",
+						"sourceModule": "just/itself",
+						"generated": false,
+						"lineNumber": 745
+					}
+				],
+				[
+					["_"],
+					{
+						"semanticClassifier": "#method-name",
+						"sourceModule": "just/itself",
+						"generated": false,
+						"lineNumber": 745
+					}
+				],
+				[
+					["\""],
+					{
+						"semanticClassifier": "#string-literal",
+						"sourceModule": "just/itself",
+						"generated": false,
+						"lineNumber": 745
+					}
+				]
+			]
 		],
 		[
-			"[\n\t_: _,\n\t_: _\n|\n\t_]",
+			["[\n\t", ": ", "\n\t", ": ", "\n|\n\t", "]"],
 			{
 				"semanticClassifier": "#block",
 				"methodName": "[_:_,_:_|_]",
@@ -36,7 +81,7 @@
 				"lineNumber": 22
 			},
 			[
-				"x ",
+				["x "],
 				{
 					"semanticClassifier": "#parameter-definition",
 					"methodName": "_",
@@ -46,7 +91,7 @@
 				}
 			],
 			[
-				"number",
+				["number"],
 				{
 					"semanticClassifier": "#type",
 					"methodName": "_",
@@ -56,7 +101,7 @@
 				}
 			],
 			[
-				"y ",
+				["y "],
 				{
 					"semanticClassifier": "#parameter-definition",
 					"methodName": "_",
@@ -66,7 +111,7 @@
 				}
 			],
 			[
-				"number",
+				["number"],
 				{
 					"semanticClassifier": "#type",
 					"methodName": "_",
@@ -76,7 +121,7 @@
 				}
 			],
 			[
-				"_+ _",
+				["", " + ", ""],
 				{
 					"semanticClassifier": "#send",
 					"methodName": "_+_",
@@ -85,7 +130,7 @@
 					"lineNumber": 123
 				},
 				[
-					"x ",
+					["x "],
 					{
 						"semanticClassifier": "#parameter-use",
 						"methodName": "_",
@@ -95,7 +140,7 @@
 					}
 				],
 				[
-					"y",
+					["y"],
 					{
 						"semanticClassifier": "#parameter-use",
 						"methodName": "_",

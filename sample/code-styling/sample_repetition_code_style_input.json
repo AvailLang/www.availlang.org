@@ -1,5 +1,5 @@
 [
-	"_ ::= _;",
+	[",", " ::= ", ";"],
 	{
 		"semanticClassifier": "#macro-send",
 		"methodName": "…::=_;",
@@ -8,7 +8,7 @@
 		"lineNumber": 184
 	},
 	[
-		"y",
+		["y"],
 		{
 			"semanticClassifier": "#local-constant-definition",
 			"sourceModule": "just/itself",
@@ -17,7 +17,7 @@
 		}
 	],
 	[
-		"{_ →_, _ → _,_ →   _}",
+		["{", " →", ", ", " → ", "," ," →   ", "}"],
 		{
 			"semanticClassifier": "#map-literal",
 			"methodName": "{«_→_‡,»}",
@@ -26,7 +26,7 @@
 			"lineNumber": 663
 		},
 		[
-			"1",
+			["1"],
 			{
 				"semanticClassifier": "#numeric-literal",
 				"methodName": "_",
@@ -36,7 +36,7 @@
 			}
 		],
 		[
-			"\"one\"",
+			["\"one\""],
 			{
 				"semanticClassifier": "#string-literal",
 				"methodName": "_",
@@ -46,7 +46,7 @@
 			}
 		],
 		[
-			"2",
+			["2"],
 			{
 				"semanticClassifier": "#numeric-literal",
 				"methodName": "_",
@@ -56,7 +56,7 @@
 			}
 		],
 		[
-			"\"two\"",
+			["\"two\""],
 			{
 				"semanticClassifier": "#string-literal",
 				"methodName": "_",
@@ -66,7 +66,7 @@
 			}
 		],
 		[
-			"3",
+			["3"],
 			{
 				"semanticClassifier": "#numeric-literal",
 				"methodName": "_",
@@ -76,7 +76,7 @@
 			}
 		],
 		[
-			"\"three\"",
+			["\"three\""],
 			{
 				"semanticClassifier": "#string-literal",
 				"methodName": "_",

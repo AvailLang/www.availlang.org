@@ -1,7 +1,10 @@
 [
 	{
 		"segment": "Method ",
-		"semanticClassifier": "#method-definition",
+		"cssProps":
+		{
+
+		},
 		"methodName": "Method_is_",
 		"sourceModule": "gotta/start/somewhere",
 		"generated": false,
@@ -9,7 +12,10 @@
 	},
 	{
 		"segment":"\"",
-		"semanticClassifier": "#string-literal",
+		"cssProps":
+		{
+
+		},
 		"methodName": "_",
 		"sourceModule": "just/itself",
 		"generated": false,
@@ -17,7 +23,10 @@
 	},
 	{
 		"segment":"_",
-		"semanticClassifier": "#method-name",
+		"cssProps":
+		{
+
+		},
 		"methodName": "_",
 		"sourceModule": "just/itself",
 		"generated": false,
@@ -25,7 +34,10 @@
 	},
 	{
 		"segment": "plus",
-		"semanticClassifier": "#string-literal",
+		"cssProps":
+		{
+
+		},
 		"methodName": "_",
 		"sourceModule": "just/itself",
 		"generated": false,
@@ -33,7 +45,10 @@
 	},
 	{
 		"segment":"_",
-		"semanticClassifier": "#method-name",
+		"cssProps":
+		{
+
+		},
 		"methodName": "_",
 		"sourceModule": "just/itself",
 		"generated": false,
@@ -41,7 +56,10 @@
 	},
 	{
 		"segment":"\" ",
-		"semanticClassifier": "#string-literal",
+		"cssProps":
+		{
+
+		},
 		"methodName": "_",
 		"sourceModule": "just/itself",
 		"generated": false,
@@ -49,7 +67,10 @@
 	},
 	{
 		"segment": "is\n",
-		"semanticClassifier": "#method-definition",
+		"cssProps":
+		{
+
+		},
 		"methodName": "Method_is_",
 		"sourceModule": "gotta/start/somewhere",
 		"generated": false,
@@ -57,7 +78,10 @@
 	},
 	{
 		"segment": "[\n\t",
-		"semanticClassifier": "#block",
+		"cssProps":
+		{
+
+		},
 		"methodName": "[§««…:_†§‡,»`|»?«Primitive…«(…:_†)»?;§»?«`$…«:_†»?;§»?«_!§»«_!»?]§«:_†»?«^«_†‡,»»?",
 		"sourceModule": "block/it/in",
 		"generated": false,
@@ -65,14 +89,20 @@
 	},
 	{
 		"segment": "x",
-		"semanticClassifier": "#parameter-definition",
+		"cssProps":
+		{
+
+		},
 		"sourceModule": "just/itself",
 		"generated": false,
 		"lineNumber": 745
 	},
 	{
 		"segment": ": ",
-		"semanticClassifier": "#block",
+		"cssProps":
+		{
+
+		},
 		"methodName": "[§««…:_†§‡,»`|»?«Primitive…«(…:_†)»?;§»?«`$…«:_†»?;§»?«_!§»«_!»?]§«:_†»?«^«_†‡,»»?",
 		"sourceModule": "block/it/in",
 		"generated": false,
@@ -80,7 +110,10 @@
 	},
 	{
 		"segment": "number",
-		"semanticClassifier": "#type",
+		"cssProps":
+		{
+
+		},
 		"methodName": "_",
 		"sourceModule": "just/itself",
 		"generated": false,
@@ -88,7 +121,10 @@
 	},
 	{
 		"segment": ",\n\t",
-		"semanticClassifier": "#block",
+		"cssProps":
+		{
+
+		},
 		"methodName": "[§««…:_†§‡,»`|»?«Primitive…«(…:_†)»?;§»?«`$…«:_†»?;§»?«_!§»«_!»?]§«:_†»?«^«_†‡,»»?",
 		"sourceModule": "block/it/in",
 		"generated": false,
@@ -96,14 +132,20 @@
 	},
 	{
 		"segment": "y",
-		"semanticClassifier": "#parameter-definition",
+		"cssProps":
+		{
+
+		},
 		"sourceModule": "just/itself",
 		"generated": false,
 		"lineNumber": 745
 	},
 	{
 		"segment": ": ",
-		"semanticClassifier": "#block",
+		"cssProps":
+		{
+
+		},
 		"methodName": "[§««…:_†§‡,»`|»?«Primitive…«(…:_†)»?;§»?«`$…«:_†»?;§»?«_!§»«_!»?]§«:_†»?«^«_†‡,»»?",
 		"sourceModule": "block/it/in",
 		"generated": false,
@@ -111,7 +153,10 @@
 	},
 	{
 		"segment": "number",
-		"semanticClassifier": "#type",
+		"cssProps":
+		{
+
+		},
 		"methodName": "_",
 		"sourceModule": "just/itself",
 		"generated": false,
@@ -119,7 +164,10 @@
 	},
 	{
 		"segment": "\n|\n\t",
-		"semanticClassifier": "#block",
+		"cssProps":
+		{
+
+		},
 		"methodName": "[§««…:_†§‡,»`|»?«Primitive…«(…:_†)»?;§»?«`$…«:_†»?;§»?«_!§»«_!»?]§«:_†»?«^«_†‡,»»?",
 		"sourceModule": "block/it/in",
 		"generated": false,
@@ -127,7 +175,10 @@
 	},
 	{
 		"segment": "x",
-		"semanticClassifier": "#parameter-use",
+		"cssProps":
+		{
+
+		},
 		"methodName": "…",
 		"sourceModule": "just/itself",
 		"generated": false,
@@ -135,7 +186,10 @@
 	},
 	{
 		"segment": "+ ",
-		"semanticClassifier": "#send",
+		"cssProps":
+		{
+
+		},
 		"methodName": "_+_",
 		"sourceModule": "more/numbers",
 		"generated": false,
@@ -143,7 +197,10 @@
 	},
 	{
 		"segment": "y",
-		"semanticClassifier": "#parameter-use",
+		"cssProps":
+		{
+
+		},
 		"methodName": "…",
 		"sourceModule": "just/itself",
 		"generated": false,
@@ -151,7 +208,10 @@
 	},
 	{
 		"segment": "\n]",
-		"semanticClassifier": "#block",
+		"cssProps":
+		{
+
+		},
 		"methodName": "[§««…:_†§‡,»`|»?«Primitive…«(…:_†)»?;§»?«`$…«:_†»?;§»?«_!§»«_!»?]§«:_†»?«^«_†‡,»»?",
 		"sourceModule": "block/it/in",
 		"generated": false,
@@ -159,7 +219,10 @@
 	},
 	{
 		"segment": ";",
-		"semanticClassifier": "#statement",
+		"cssProps":
+		{
+
+		},
 		"methodName": "_!;",
 		"sourceModule": "somewhere/out/there",
 		"generated": false,
