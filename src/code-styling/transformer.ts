@@ -41,6 +41,12 @@ export interface Metadata
 	sourceModule: string;
 
 	/**
+	 * The name of the Avail method that the segments array represents.
+	 * @type {string}
+	 */
+	methodName?: string;
+
+	/**
 	 * `false` if the method name that the lexeme segments represent are from
 	 * actual written code in the `sourceModule` or `true` if the method name
 	 * was constructed as a result of code generation (indicates it does not
@@ -234,15 +240,15 @@ export const inputSegmentsTreeTransformer = function* (
 	let classifierStyleSet : ClassifierStyleSet =
 		semanticClassifierMapper(metadata.semanticClassifier, theme);
 
-	// TODO Leslie this is the style black box. I'm not sure where to use
-	//  selfProps and childProps
-	let cssProps = classifierStyleSet.selfProps;
-	if (cssPropsStack.length > 0)
-	{
-		let peekLast: CSSProperties = cssPropsStack.splice(-1)[0];
-		cssProps = {...peekLast, ...classifierStyleSet.selfProps};
-	}
-	// TODO END
+	let peekLast: CSSProperties = cssPropsStack.splice(-1)[0];
+	let stackCssProps = {...peekLast, ...classifierStyleSet.childProps ?? {}};
+	let cssProps = {...peekLast, ...classifierStyleSet.selfProps};
+
+	// The method name must be extracted from the metadata if the metadata
+	// is a MethodSpecificMetadata. If it is not, an inherited method name
+	// must be taken from the top of the methodNameStack
+	let methodName =
+		metadata.methodName ?? methodNameStack.splice(-1)[0];
 
 	if (segments.length === 1)
 	{
@@ -253,25 +259,6 @@ export const inputSegmentsTreeTransformer = function* (
 			throw new MalformedInputTreeError(
 				"Expected no children for " + segments + " (with metadata: "
 				+ metadata + "), but received: " + trees[2]);
-		}
-
-		// The method name must be extracted from the metadata if the metadata
-		// is a MethodSpecificMetadata. If it is not, an inherited method name
-		// must be taken from the top of the methodNameStack
-		let methodName : string = "";
-		if (proposedMetaData as MethodSpecificMetadata)
-		{
-			methodName =
-				(proposedMetaData as MethodSpecificMetadata).methodName;
-		}
-		else
-		{
-			if (methodNameStack.length === 0)
-			{
-				throw new MalformedInputTreeError(
-					"No method name available for " + segments);
-			}
-			methodName = methodNameStack.splice(-1)[0];
 		}
 
 		// The final yield that marks the end of the recursion into this branch
@@ -311,7 +298,8 @@ export const inputSegmentsTreeTransformer = function* (
 
 		// A copy of cssProps must be added for each segment in the segments
 		// to make it available to its children.
-		cssPropsStack.push(cssProps);
+		cssPropsStack.push(stackCssProps);
+		undoLocalEffects.push(() => cssPropsStack.pop());
 
 		// Establish how the method name is retrieved. Either it is inherited or
 		// we must extract it from the metadata and pop it when this branch has
@@ -339,10 +327,9 @@ export const inputSegmentsTreeTransformer = function* (
 				segment,
 				methodName,
 				cssProps,
-				metadata)
-
+				metadata);
 			yield* inputSegmentsTreeTransformer(
-				trees,
+				children[i],
 				theme,
 				methodNameStack,
 				cssPropsStack);

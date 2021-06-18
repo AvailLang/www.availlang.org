@@ -1,5 +1,4 @@
 [
-	[",", " ::= ", ";"],
 	{
 		"semanticClassifier": "#macro-send",
 		"methodName": "…::=_;",
@@ -7,17 +6,17 @@
 		"generated": true,
 		"lineNumber": 184
 	},
+	[",", " ::= ", ";"],
 	[
-		["y"],
 		{
 			"semanticClassifier": "#local-constant-definition",
 			"sourceModule": "just/itself",
 			"generated": false,
 			"lineNumber": 745
-		}
+		},
+		["y"]
 	],
 	[
-		["{", " →", ", ", " → ", "," ," →   ", "}"],
 		{
 			"semanticClassifier": "#map-literal",
 			"methodName": "{«_→_‡,»}",
@@ -25,65 +24,66 @@
 			"generated": false,
 			"lineNumber": 663
 		},
+		["{", " →", ", ", " → ", "," ," →   ", "}"],
 		[
-			["1"],
 			{
 				"semanticClassifier": "#numeric-literal",
 				"methodName": "_",
 				"sourceModule": "just/itself",
 				"generated": false,
 				"lineNumber": 745
-			}
+			},
+			["1"]
 		],
 		[
-			["\"one\""],
 			{
 				"semanticClassifier": "#string-literal",
 				"methodName": "_",
 				"sourceModule": "just/itself",
 				"generated": false,
 				"lineNumber": 745
-			}
+			},
+			["\"one\""]
 		],
 		[
-			["2"],
 			{
 				"semanticClassifier": "#numeric-literal",
 				"methodName": "_",
 				"sourceModule": "just/itself",
 				"generated": false,
 				"lineNumber": 745
-			}
+			},
+			["2"]
 		],
 		[
-			["\"two\""],
 			{
 				"semanticClassifier": "#string-literal",
 				"methodName": "_",
 				"sourceModule": "just/itself",
 				"generated": false,
 				"lineNumber": 745
-			}
+			},
+			["\"two\""]
 		],
 		[
-			["3"],
 			{
 				"semanticClassifier": "#numeric-literal",
 				"methodName": "_",
 				"sourceModule": "just/itself",
 				"generated": false,
 				"lineNumber": 745
-			}
+			},
+			["3"]
 		],
 		[
-			["\"three\""],
 			{
 				"semanticClassifier": "#string-literal",
 				"methodName": "_",
 				"sourceModule": "just/itself",
 				"generated": false,
 				"lineNumber": 745
-			}
+			},
+			["\"three\""]
 		]
 	]
 ]
