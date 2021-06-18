@@ -1,5 +1,4 @@
 [
-	["",";"],
 	{
 		"semanticClassifier": "#statement",
 		"methodName": "_;",
@@ -7,8 +6,8 @@
 		"generated": false,
 		"lineNumber": 55
 	},
+	["",";"],
 	[
-		["Method ", " is\n", ""],
 		{
 			"semanticClassifier": "#method-definition",
 			"methodName": "Method_is_",
@@ -16,8 +15,8 @@
 			"generated": false,
 			"lineNumber": 32
 		},
+		["Method ", " is\n", ""],
 		[
-			["",""],
 			{
 				"semanticClassifier": "#string-literal",
 				"methodName": "…$",
@@ -25,54 +24,54 @@
 				"generated": false,
 				"lineNumber": 745
 			},
+			["", ""],
 			[
-				["", "", "plus", "", ""],
 				{
 					"semanticClassifier": "#string-literal",
 					"sourceModule": "just/itself",
 					"generated": false,
 					"lineNumber": 745
 				},
+				["", "", "plus", "", ""],
 				[
-					["\""],
 					{
 						"semanticClassifier": "#string-literal",
 						"sourceModule": "just/itself",
 						"generated": false,
 						"lineNumber": 745
-					}
+					},
+					["\""]
 				],
 				[
-					["_"],
 					{
 						"semanticClassifier": "#method-name",
 						"sourceModule": "just/itself",
 						"generated": false,
 						"lineNumber": 745
-					}
+					},
+					["_"]
 				],
 				[
-					["_"],
 					{
 						"semanticClassifier": "#method-name",
 						"sourceModule": "just/itself",
 						"generated": false,
 						"lineNumber": 745
-					}
+					},
+					["_"]
 				],
 				[
-					["\""],
 					{
 						"semanticClassifier": "#string-literal",
 						"sourceModule": "just/itself",
 						"generated": false,
 						"lineNumber": 745
-					}
+					},
+					["\""]
 				]
 			]
 		],
 		[
-			["[\n\t", ": ", "\n\t", ": ", "\n|\n\t", "]"],
 			{
 				"semanticClassifier": "#block",
 				"methodName": "[_:_,_:_|_]",
@@ -80,48 +79,48 @@
 				"generated": false,
 				"lineNumber": 22
 			},
+			["[\n\t", ": ", "\n\t", ": ", "\n|\n\t", "]"],
 			[
-				["x "],
 				{
 					"semanticClassifier": "#parameter-definition",
 					"methodName": "_",
 					"sourceModule": "just/itself",
 					"generated": false,
 					"lineNumber": 745
-				}
+				},
+				["x "]
 			],
 			[
-				["number"],
 				{
 					"semanticClassifier": "#type",
 					"methodName": "_",
 					"sourceModule": "just/itself",
 					"generated": false,
 					"lineNumber": 745
-				}
+				},
+				["number"]
 			],
 			[
-				["y "],
 				{
 					"semanticClassifier": "#parameter-definition",
 					"methodName": "_",
 					"sourceModule": "just/itself",
 					"generated": false,
 					"lineNumber": 745
-				}
+				},
+				["y "]
 			],
 			[
-				["number"],
 				{
 					"semanticClassifier": "#type",
 					"methodName": "_",
 					"sourceModule": "just/itself",
 					"generated": false,
 					"lineNumber": 745
-				}
+				},
+				["number"]
 			],
 			[
-				["", " + ", ""],
 				{
 					"semanticClassifier": "#send",
 					"methodName": "_+_",
@@ -129,25 +128,26 @@
 					"generated": false,
 					"lineNumber": 123
 				},
+				["", " + ", ""],
 				[
-					["x "],
 					{
 						"semanticClassifier": "#parameter-use",
 						"methodName": "_",
 						"sourceModule": "just/itself",
 						"generated": false,
 						"lineNumber": 745
-					}
+					},
+					["x "]
 				],
 				[
-					["y"],
 					{
 						"semanticClassifier": "#parameter-use",
 						"methodName": "_",
 						"sourceModule": "just/itself",
 						"generated": false,
 						"lineNumber": 745
-					}
+					},
+					["y"]
 				]
 			]
 		]

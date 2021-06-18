@@ -64,15 +64,6 @@ export interface Metadata
 }
 
 /**
- * The interface that describes a {@link Metadata} input object that is
- * accompanied by the name of the method it represents.
- */
-export interface MethodSpecificMetadata extends Metadata
-{
-	methodName: string;
-}
-
-/**
  * This represents the s-expression tree type that is the input from Avail that
  * needs to be flattened for styling.
  *
@@ -84,7 +75,7 @@ export interface MethodSpecificMetadata extends Metadata
  *    represented array.
  *  * A non-empty array iff there are more than one strings in the segment array.
  */
-type InputSegmentsTree = string[] | Metadata | InputSegmentsTree[];
+type InputSegmentsTree = readonly [Metadata, string[], ...InputSegmentsTree[]];
 
 /**
  * The object that represents the element in the flat array of styled text
@@ -195,38 +186,22 @@ export class OutputSegment
  *   {@link OutputSegment}.
  */
 export const inputSegmentsTreeTransformer = function* (
-	trees: InputSegmentsTree[],
+	trees: InputSegmentsTree,
 	theme: CodeStyleProps = DEFAULT_THEME,
 	methodNameStack: string[] = [],
-	cssPropsStack: CSSProperties[]): any
+	cssPropsStack: CSSProperties[] = [{}]
+): Generator<OutputSegment, void>
 {
 	if (trees.length < 2)
 	{
 		throw new MalformedInputTreeError(
-			"I expected receive a tree that had at least a string lexeme and a"
+			"Expected receive a tree that had at least a string lexeme and a"
 			+ " `Metadata`, but received a tree of size: " + trees.length);
 	}
 
 	// Grab the array of segments and the metadata that must be present at the
 	// top of any tree.
-	const proposedSegments = trees[0];
-	const proposedMetaData = trees[1];
-
-	if (!Array.isArray(proposedSegments))
-	{
-		throw new MalformedInputTreeError(
-			"I expected to receive a string[] of segments but received: "
-				+ proposedSegments);
-	}
-	if ((proposedMetaData as Metadata).generated)
-	{
-		throw new MalformedInputTreeError(
-			"I expected to receive a `Metadata`, but received: "
-				+ proposedMetaData);
-	}
-
-	const segments: string[] = proposedSegments as string[];
-	let metadata: Metadata = proposedMetaData as Metadata;
+	const [metadata, segments, ...children] = trees;
 
 	if (segments.length === 0)
 	{
@@ -254,11 +229,11 @@ export const inputSegmentsTreeTransformer = function* (
 	{
 		// We have reached a leaf in the tree and expect this to be the bottom
 		// of this branch.
-		if (trees.length > 2)
+		if (children.length !== 0)
 		{
 			throw new MalformedInputTreeError(
-				"Expected no children for " + segments + " (with metadata: "
-				+ metadata + "), but received: " + trees[2]);
+				`Expected no children for ${segments} (with metadata: `
+				+ `${metadata}), but received: ${children}`);
 		}
 
 		// The final yield that marks the end of the recursion into this branch
@@ -267,34 +242,17 @@ export const inputSegmentsTreeTransformer = function* (
 	}
 	else
 	{
-		// We are not at the bottom of this branch in the tree. The segments
-		// array contains more than one string which indicates the presence of
-		// children.
-		if (trees.length < 3)
-		{
-			throw new MalformedInputTreeError(
-				"I expected to receive a child array of InputSegmentsTree, but "
-				+ "received none: " + proposedMetaData);
-		}
-
-		// We know we must have child trees so there must at least be one more
-		// element in our tree that must be an array.
-		let proposedChildren = trees[2];
-		if (!Array.isArray(proposedChildren))
-		{
-			throw new MalformedInputTreeError(
-				"Expected to receive a InputSegmentsTree[] of children but "
-				+ "received: " + proposedChildren);
-		}
-		let children: InputSegmentsTree[] =
-			proposedChildren as InputSegmentsTree[];
 		if (children.length !== segments.length - 1)
 		{
 			throw new MalformedInputTreeError(
-				"Expected to receive a " + (segments.length - 1)
-				+ " InputSegmentsTree[] children but received: "
+				`Expected to receive a ${segments.length - 1} `
+				+ `InputSegmentsTree[] children but received: `
 				+ children.length);
 		}
+
+		// The undo actions for any local effects that we've had on the
+		// management stacks.
+		const undoLocalEffects = [];
 
 		// A copy of cssProps must be added for each segment in the segments
 		// to make it available to its children.
@@ -304,27 +262,17 @@ export const inputSegmentsTreeTransformer = function* (
 		// Establish how the method name is retrieved. Either it is inherited or
 		// we must extract it from the metadata and pop it when this branch has
 		// been processed.
-		let hasMethodName: boolean = false;
-		let methodName: string;
-		if (proposedMetaData as MethodSpecificMetadata)
+		if (metadata.methodName !== undefined)
 		{
-			methodName =
-				(proposedMetaData as MethodSpecificMetadata).methodName;
-			methodNameStack.push(methodName);
-			hasMethodName = true;
-		}
-		else
-		{
-			methodName = methodNameStack.splice(-1)[0];
+			undoLocalEffects.push(() => methodNameStack.pop());
 		}
 
 		// Process each segment and the following subtree in segments. The last
 		// segment does not have a subtree and will be processed after.
 		for (let i = 0; i < segments.length - 2; i++)
 		{
-			let segment = segments[i];
 			yield new OutputSegment(
-				segment,
+				segments[i],
 				methodName,
 				cssProps,
 				metadata);
@@ -333,18 +281,7 @@ export const inputSegmentsTreeTransformer = function* (
 				theme,
 				methodNameStack,
 				cssPropsStack);
-
 		}
-
-		// Process the last segment in segments performing the necessary cleanup
-		// along the way.
-		if (hasMethodName)
-		{
-			// We added a method name to the stack, thus it must be removed.
-			methodNameStack.pop();
-		}
-		// We always remove the CSSProperties we added to the stack.
-		cssPropsStack.pop();
 
 		// End the recursion from this branch by yielding the final styled
 		// OutputSegment.
@@ -353,6 +290,8 @@ export const inputSegmentsTreeTransformer = function* (
 			methodName,
 			cssProps,
 			metadata);
+
+		/// Undo all local effects.
+		undoLocalEffects.forEach(undo => undo());
 	}
-	return "Complete";
 };
