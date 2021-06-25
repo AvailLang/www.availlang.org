@@ -124,6 +124,13 @@ export class OutputSegment
 	lineNumber: number;
 
 	/**
+	 * The set of ids that represent the OutputSegments related to this
+	 * OutputSegment.
+	 * @type {Set<string>}
+	 */
+	idSet: Set<string>;
+
+	/**
 	 * Create a new OutputSegment.
 	 *
 	 * @param {string} segment
@@ -135,12 +142,16 @@ export class OutputSegment
 	 * @param {Metadata} metadata
 	 *   The originating `Metadata` associated with this segment as received in
 	 *   the `InputSegmentsTree`.
+	 * @param {Set<string>} idSet
+	 *   The set of ids that represent the OutputSegments related to this
+	 *   OutputSegment.
 	 */
 	constructor (
 		segment: string,
 		methodName: string,
 		cssProps: CSSProperties,
-		metadata: Metadata)
+		metadata: Metadata,
+		idSet: Set<string>)
 	{
 		this.segment = segment;
 		this.cssProps = cssProps;
@@ -148,6 +159,7 @@ export class OutputSegment
 		this.sourceModule = metadata.sourceModule;
 		this.generated = metadata.generated;
 		this.lineNumber = metadata.lineNumber;
+		this.idSet = idSet;
 	}
 
 	/**
@@ -178,6 +190,8 @@ export class OutputSegment
  *   The the S-expression tree.
  * @param {CodeStyleProps} theme
  *   The theme to use to style the {@link OutputSegment}s.
+ * @param {number} idCounter
+ *   The counter for creating unique ids for the different segments.
  * @param {string[]} methodNameStack
  *   The stack of method names that are used to populate the flattened array
  *   with {@link OutputSegment}s.
@@ -188,6 +202,7 @@ export class OutputSegment
 export const inputSegmentsTreeTransformer = function* (
 	trees: InputSegmentsTree,
 	theme: CodeStyleProps = DEFAULT_THEME,
+	idCounter: number,
 	methodNameStack: string[] = [],
 	cssPropsStack: CSSProperties[] = [{}]
 ): Generator<OutputSegment, void>
@@ -202,6 +217,7 @@ export const inputSegmentsTreeTransformer = function* (
 	// Grab the array of segments and the metadata that must be present at the
 	// top of any tree.
 	const [metadata, segments, ...children] = trees;
+	const idSet = new Set<string>();
 
 	if (segments.length === 0)
 	{
@@ -235,10 +251,11 @@ export const inputSegmentsTreeTransformer = function* (
 				`Expected no children for ${segments} (with metadata: `
 				+ `${metadata}), but received: ${children}`);
 		}
-
+		idSet.add("m" + (idCounter++));
 		// The final yield that marks the end of the recursion into this branch
 		// of the tree.
-		yield new OutputSegment(segments[0], methodName, cssProps, metadata);
+		yield new OutputSegment(
+			segments[0], methodName, cssProps, metadata, idSet);
 	}
 	else
 	{
@@ -271,25 +288,29 @@ export const inputSegmentsTreeTransformer = function* (
 		// segment does not have a subtree and will be processed after.
 		for (let i = 0; i < segments.length - 2; i++)
 		{
+			idSet.add("m" + (idCounter++));
 			yield new OutputSegment(
 				segments[i],
 				methodName,
 				cssProps,
-				metadata);
+				metadata,
+				idSet);
 			yield* inputSegmentsTreeTransformer(
 				children[i],
 				theme,
+				idCounter,
 				methodNameStack,
 				cssPropsStack);
 		}
-
+		idSet.add("m" + (idCounter++));
 		// End the recursion from this branch by yielding the final styled
 		// OutputSegment.
 		yield new OutputSegment(
 			segments.splice(-1)[0],
 			methodName,
 			cssProps,
-			metadata);
+			metadata,
+			idSet);
 
 		/// Undo all local effects.
 		undoLocalEffects.forEach(undo => undo());
