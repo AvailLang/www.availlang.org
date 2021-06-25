@@ -182,6 +182,33 @@ export class OutputSegment
 }
 
 /**
+ * An counter used to create element ids.
+ */
+class IdCounter
+{
+	/**
+	 * The next counter value.
+	 * @type {number}
+	 */
+	counter: number = 0;
+
+	/**
+	 * Provide the next id string.
+	 * @returns {string}
+	 */
+	next = (): string =>
+	{
+		return "m" + (this.counter++);
+	}
+}
+
+/**
+ * The global IdCounter.
+ * @type {IdCounter}
+ */
+const ID_COUNTER: IdCounter = new IdCounter();
+
+/**
  * Map an array of {@link InputSegmentsTree}s into a flat array. Traverse the
  * trees in depth-first order. Trees are visited after their children.
  *
@@ -190,8 +217,6 @@ export class OutputSegment
  *   The the S-expression tree.
  * @param {CodeStyleProps} theme
  *   The theme to use to style the {@link OutputSegment}s.
- * @param {number} idCounter
- *   The counter for creating unique ids for the different segments.
  * @param {string[]} methodNameStack
  *   The stack of method names that are used to populate the flattened array
  *   with {@link OutputSegment}s.
@@ -202,7 +227,6 @@ export class OutputSegment
 export const inputSegmentsTreeTransformer = function* (
 	trees: InputSegmentsTree,
 	theme: CodeStyleProps = DEFAULT_THEME,
-	idCounter: number,
 	methodNameStack: string[] = [],
 	cssPropsStack: CSSProperties[] = [{}]
 ): Generator<OutputSegment, void>
@@ -251,7 +275,7 @@ export const inputSegmentsTreeTransformer = function* (
 				`Expected no children for ${segments} (with metadata: `
 				+ `${metadata}), but received: ${children}`);
 		}
-		idSet.add("m" + (idCounter++));
+		idSet.add(ID_COUNTER.next());
 		// The final yield that marks the end of the recursion into this branch
 		// of the tree.
 		yield new OutputSegment(
@@ -288,7 +312,7 @@ export const inputSegmentsTreeTransformer = function* (
 		// segment does not have a subtree and will be processed after.
 		for (let i = 0; i < segments.length - 2; i++)
 		{
-			idSet.add("m" + (idCounter++));
+			idSet.add(ID_COUNTER.next());
 			yield new OutputSegment(
 				segments[i],
 				methodName,
@@ -298,11 +322,10 @@ export const inputSegmentsTreeTransformer = function* (
 			yield* inputSegmentsTreeTransformer(
 				children[i],
 				theme,
-				idCounter,
 				methodNameStack,
 				cssPropsStack);
 		}
-		idSet.add("m" + (idCounter++));
+		idSet.add(ID_COUNTER.next());
 		// End the recursion from this branch by yielding the final styled
 		// OutputSegment.
 		yield new OutputSegment(
