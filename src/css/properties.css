@@ -62,7 +62,7 @@
 	--sans-serif: 'Titillium Web', sans-serif;
 
 	/* The primary font used for displaying code or code output. */
-	--monospace: 'Share Tech Mono', monospace;
+	--monospace: monospace;
 
 	/* A serif font (generally not used). */
 	--serif: Georgia, serif;

@@ -1,55 +1,55 @@
 /** 
  * A registry of colors used in the app.
- * 
- * @author Tristan J Berto <hello@tristanberto.com>
  */
 export enum colors
 {
-	/** The app's black color. */
-	BLACK = "#201218",
+	BLACK = "#000000",
+	WHITE = "#FFFFFF",
 
-	/** Pure white. */
-	WHITE = "#fff",
+	TEXT_BACKGROUND_DARK = "#2112194D",
+	TEXT_BACKGROUND_LIGHT = "#FFFFFF4A",
 
-	/** Paragraph background behind light text. */
-	LIGHT_TEXT_BACKGROUND = "#ffffff4a",
+	CODE_BACKGROUND_DARK = "#02232E",
+	CODE_BACKGROUND_LIGHT = "#F7F7F7",
 
-	/** Paragraph background behind dark text. */
-	DARK_TEXT_BACKGROUND = "#2112194d",
+	CONSOLE_BACKGROUND_DARK = "#053646",
+	CONSOLE_BACKGROUND_LIGHT = "#E6E6E6",
 
-	/** The code block background color for the light theme. */
-	LIGHT_CODE_BACKGROUND = "#f5efd6",
+	BASE_CODE_DARK = "#FFFFFFEE",
+	BASE_CODE_LIGHT = "#000000EE",
 
-	/** The code area secondary background for the light theme. */
-	LIGHT_CODE_BACKGROUND_SECONDARY = "#d1cbb2",
+	STRONG_GRAY_DARK = "#FFFFFF77",
+	STRONG_GRAY_LIGHT = "#00000077",
 
-	/** The code color for the light theme. */
-	LIGHT_CODE_COLOR = "#4b5961",
+	WEAK_GRAY_DARK = "#FFFFFF44",
+	WEAK_GRAY_LIGHT = "#00000044",
 
-	/** The code block background color for the dark theme. */
-	DARK_CODE_BACKGROUND = "#02232e",
+	LILAC_DARK = "#6659e2",
+	LILAC_LIGHT = "#8174ff",
 
-	/** The secondary code background color for the dark theme. */
-	DARK_CODE_BACKGROUND_SECONDARY = "#053646",
+	MAGENTA_DARK = "#D25B94",
+	MAGENTA_LIGHT = "#D03B83",
+	TRANSPARENT_MAGENTA_DARK = "#D25B94AA",
+	TRANSPARENT_MAGENTA_LIGHT = "#D03B83AA",
 
-	/** The code color for the dark theme. */
-	DARK_CODE_COLOR = "#8e9a9d",
+	ROSE_DARK = "#dc4444",
+	ROSE_LIGHT = "#dc4444",
+	TRANSPARENT_ROSE_DARK = "#dc444488",
+	TRANSPARENT_ROSE_LIGHT = "#dc444488",
 
-	/** The yellow code highlighting color. */
-	CODE_YELLOW = "#c79d1f",
+	MANGO_DARK = "#ff8836",
+	MANGO_LIGHT = "#ee731b",
 
-	/** The orange code highlighting color. */
-	CODE_RED = "#dc4e35",
+	MUSTARD_DARK = "#ffd659",
+	MUSTARD_LIGHT = "#e8b000",
+	TRANSPARENT_MUSTARD_DARK = "#ffd65918",
+	TRANSPARENT_MUSTARD_LIGHT = "#e8b00018",
 
-	/** The magenta code highlighting color. */
-	CODE_MAGENTA = "#d03b83",
+	GREEN_DARK = "#78B669",
+	GREEN_LIGHT = "#4C853E",
+	TRANSPARENT_GREEN_DARK = "#78B66988",
+	TRANSPARENT_GREEN_LIGHT = "#4C853E88",
 
-	/** The blue code highlighting color. */
-	CODE_BLUE = "#227dcd",
-
-	/** The cyan code highlighting color. */
-	CODE_CYAN = "#27968f",
-
-	/** The green code highlighting color. */
-	CODE_GREEN = "#4c853e",
+	BLUE_DARK = "#38b1e5",
+	BLUE_LIGHT = "#2294c6"
 }

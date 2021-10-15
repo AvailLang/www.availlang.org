@@ -146,6 +146,6 @@ const codeExample = codeExamples[0];
 /**
  * Temporary code lines used to mock in the intro section. TODO: Remove.
  */
-const introCodeLines: CodeLine[] = codeExample !== undefined
+const introCodeLines: ReadonlyArray<CodeLine> = codeExample !== undefined
 	? codeExample.codeLines
 	: [];

@@ -18,7 +18,7 @@ export interface CodeExampleData
 	description: (strings: WebsiteStrings) => string[];
 
 	/** The code example {@link CodeLine data}. */
-	codeLines: CodeLine[];
+	codeLines: ReadonlyArray<CodeLine>;
 
 	/** An array of {@link CodeLine output text} that the code might return. */
 	codeOutput: string[];
@@ -102,23 +102,23 @@ export const CodeExample = (props: CodeExampleProps) =>
 		? 
 			{ 
 				color: colors.WHITE, 
-				background: colors.DARK_TEXT_BACKGROUND 
+				background: colors.TEXT_BACKGROUND_DARK
 			}
 		: 
 			{ 
 				color: colors.BLACK, 
-				background: colors.LIGHT_TEXT_BACKGROUND 
+				background: colors.TEXT_BACKGROUND_LIGHT
 			};
 	const outputStyle = theme === AppTheme.DARK
 		? 
 			{ 
 				color: colors.WHITE, 
-				background: colors.DARK_CODE_BACKGROUND_SECONDARY 
+				background: colors.CONSOLE_BACKGROUND_DARK
 			}
 		: 
 			{ 
 				color: colors.BLACK, 
-				background: colors.LIGHT_CODE_BACKGROUND_SECONDARY 
+				background: colors.CONSOLE_BACKGROUND_LIGHT
 			};
 	return(
 		<div className="code-example">

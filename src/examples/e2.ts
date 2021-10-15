@@ -15,33 +15,9 @@ export const e2: ExtendedCodeExampleData =
 	featured: true,
 	codeLines: codeLineArray([
 		// This uses an array-based shorthand to add lines and indents.
-		[0, [
-			["Some ", codeStyle.BLUE],
-			["code"],
-			["() ", codeStyle.GREEN],
-			["and ", codeStyle.DYNAMIC_HIGHLIGHT_1],
-			["more ", codeStyle.RED],
-			["stuff", codeStyle.MAGENTA],
-			["{}", codeStyle.DYNAMIC_HIGHLIGHT_1]
-		]],
-		[1, [
-			["Some ", codeStyle.BLUE],
-			["code"],
-			["() ", codeStyle.GREEN],
-			["and ", codeStyle.DYNAMIC_HIGHLIGHT_1],
-			["more ", codeStyle.RED],
-			["stuff", codeStyle.MAGENTA],
-			["{}", codeStyle.DYNAMIC_HIGHLIGHT_1]
-		]],
-		[0, [
-			["Some ", codeStyle.BLUE],
-			["code"],
-			["() ", codeStyle.GREEN],
-			["and ", codeStyle.DYNAMIC_HIGHLIGHT_1],
-			["more ", codeStyle.RED],
-			["stuff", codeStyle.MAGENTA],
-			["{}", codeStyle.DYNAMIC_HIGHLIGHT_1]
-		]]
+		[
+			["TODO", codeStyle.TEMP_REMOVE]
+		]
 	]),
 	codeOutput: ["Wow, very wow."]
 };

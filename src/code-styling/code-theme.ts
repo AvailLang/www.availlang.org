@@ -373,7 +373,7 @@ export const semanticClassifierMapper =
 				return props.MODULE_VARIABLE_DECLARATION;
 			case "#local-constant-definition":
 				return props.LOCAL_CONSTANT_DEFINITION;
-			case "##local-variable-definition":
+			case "#local-variable-declaration":
 				return props.LOCAL_VARIABLE_DECLARATION;
 			case "#module-constant-use":
 				return props.MODULE_CONSTANT_USE;
@@ -448,12 +448,6 @@ export interface CodeTheme
 {
 	light: CodeStyleProps;
 	dark: CodeStyleProps;
-}
-
-export enum CodeThemeModeSelector
-{
-	light = "light",
-	dark = "dark"
 }
 
 /**

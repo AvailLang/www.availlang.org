@@ -37,7 +37,6 @@ p, a, div, span, label, input, h1, h2, h3, h4, h5, h6
 
 p, a, div, span, label, input, h5, h6
 {
-	font-size: 12pt;
 	text-align: left;
 }
 
@@ -67,11 +66,13 @@ h4
 
 h5
 {
+	font-size: 12pt;
 	font-weight: bold;
 }
 
 h6
 {
+	font-size: 12pt;
 	font-weight: normal;
 	font-style: italic;
 }

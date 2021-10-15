@@ -86,8 +86,8 @@ const App = () =>
 		? { color: colors.WHITE }
 		: { color: colors.BLACK };
 	const footerBackgroundStyle = state.theme === AppTheme.DARK
-		? { background:  colors.LIGHT_TEXT_BACKGROUND }
-		: { background:  colors.DARK_TEXT_BACKGROUND };
+		? { background:  colors.TEXT_BACKGROUND_LIGHT }
+		: { background:  colors.TEXT_BACKGROUND_DARK };
 	useEffect(() =>
 	{
 		// Set the document title on re-render in case translation is needed.
