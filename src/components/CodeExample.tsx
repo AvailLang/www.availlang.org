@@ -3,6 +3,8 @@ import {CodeBlock, CodeLine} from "./CodeBlock";
 import { AppTheme } from "../helpers/theme";
 import { WebsiteStrings } from "../internationalization/strings";
 import { colors } from "../helpers/colors";
+import remarkGfm from "remark-gfm";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 /**
  * The core data required to display an example of Avail code.
@@ -94,8 +96,10 @@ export const CodeExample = (props: CodeExampleProps) =>
 		theme,
 		strings
 	} = props;
-	const descriptionParagraphs = description(strings).map((text, index) =>
-		<p key={`${index}`}> {text} </p> );
+	const descriptionParagraphs = description(strings).map((markdown, index) =>
+		<p key={`${index}`}>
+			<ReactMarkdown children={markdown} remarkPlugins={[remarkGfm]} />
+		</p>);
 	const outputParagraphs = codeOutput.map((text, index) =>
 		<p key={`${index}`}> {text} </p> );
 	const descriptionStyle = theme === AppTheme.DARK

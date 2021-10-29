@@ -10,6 +10,8 @@ import { settings } from "../globalSettings";
 import { CodeBlock, CodeLine } from "./CodeBlock";
 import { codeExamples, featuredExamples } from "../examples/examples";
 import { CodeExample } from "./CodeExample";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+import remarkGfm from "remark-gfm";
 
 /** 
  * The React properties for the {@link Homepage} component.
@@ -41,12 +43,12 @@ export const Homepage = (props: HomepageProps) =>
 	const fontStyle = theme === AppTheme.DARK
 		? { color: colors.WHITE }
 		: { color: colors.BLACK };
-	const introduction = strings.frontPage.introduction.map((text, index) =>
+	const introduction = strings.frontPage.introduction.map((markdown, index) =>
 		<p 
 			key={`intro-paragraph-${index}`}
 			style={fontStyle}
 		> 
-			{text} 
+			<ReactMarkdown children={markdown} remarkPlugins={[remarkGfm]} />
 		</p>);
 	const frontPageExamples = featuredExamples.map((example, index) =>
 		<CodeExample

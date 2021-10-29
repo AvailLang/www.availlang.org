@@ -16,7 +16,7 @@ export const e3: ExtendedCodeExampleData =
 	codeLines: codeLineArray([
 		// This uses an array-based shorthand to add lines and indents.
 		[
-			["TODO", codeStyle.TEMP_REMOVE]
+			["TODO", codeStyle.WHITESPACE]
 		]
 	]),
 	codeOutput: []

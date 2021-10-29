@@ -24,7 +24,7 @@ export const e1: ExtendedCodeExampleData =
 			[" */", codeStyle.COMMENT]
 		],
 		[
-			[" ", codeStyle.TEMP_REMOVE] // TODO: no way to insert empty line without nbsp
+			[" ", codeStyle.WHITESPACE] // TODO: no way to insert empty line without nbsp
 		],
 		[
 			["Module ", codeStyle.MODULE_HEADER],
@@ -58,7 +58,7 @@ export const e1: ExtendedCodeExampleData =
 			["Body", codeStyle.MODULE_HEADER]
 		],
 		[
-			[" ", codeStyle.TEMP_REMOVE] // TODO: no way to insert empty line without nbsp
+			[" ", codeStyle.WHITESPACE] // TODO: no way to insert empty line without nbsp
 		],
 		[
 			["\"collection\"", codeStyle.ATOM_LITERAL],
@@ -66,7 +66,7 @@ export const e1: ExtendedCodeExampleData =
 			[";", codeStyle.STATEMENT]
 		],
 		[
-			[" ", codeStyle.TEMP_REMOVE] // TODO: no way to insert empty line without nbsp
+			[" ", codeStyle.WHITESPACE] // TODO: no way to insert empty line without nbsp
 		],
 		[
 			["naturalNumberVariable", codeStyle.MODULE_CONSTANT_USE],
@@ -91,7 +91,7 @@ export const e1: ExtendedCodeExampleData =
 			[";", codeStyle.STATEMENT]
 		],
 		[
-			[" ", codeStyle.TEMP_REMOVE] // TODO: no way to insert empty line without nbsp
+			[" ", codeStyle.WHITESPACE] // TODO: no way to insert empty line without nbsp
 		],
 		[
 			["// This is a line comment", codeStyle.COMMENT]
@@ -110,14 +110,14 @@ export const e1: ExtendedCodeExampleData =
 			["[", codeStyle.BLOCK]
 		],
 		[
-			["\t", codeStyle.TEMP_REMOVE],
+			["\t", codeStyle.WHITESPACE],
 			["x", codeStyle.PARAMETER_USE],
 			[" : ", codeStyle.PARAMETER_DEFINITION],
 			["number", codeStyle.TYPE],
 			[",", codeStyle.BLOCK]
 		],
 		[
-			["\t", codeStyle.TEMP_REMOVE],
+			["\t", codeStyle.WHITESPACE],
 			["y", codeStyle.PARAMETER_USE],
 			[" : ", codeStyle.PARAMETER_DEFINITION],
 			["number", codeStyle.TYPE]
@@ -126,7 +126,7 @@ export const e1: ExtendedCodeExampleData =
 			["|", codeStyle.BLOCK]
 		],
 		[
-			["\t", codeStyle.TEMP_REMOVE],
+			["\t", codeStyle.WHITESPACE],
 			["$labelName", codeStyle.LABEL],
 			[" : ", codeStyle.BLOCK],
 			["3", codeStyle.NUMERIC_LITERAL],
@@ -135,7 +135,7 @@ export const e1: ExtendedCodeExampleData =
 			[";", codeStyle.STATEMENT]
 		],
 		[
-			["\t", codeStyle.TEMP_REMOVE],
+			["\t", codeStyle.WHITESPACE],
 			["baz", codeStyle.LOCAL_VARIABLE_USE],
 			[" : ", codeStyle.LOCAL_VARIABLE_DECLARATION],
 			["boolean", codeStyle.TYPE],
@@ -144,7 +144,7 @@ export const e1: ExtendedCodeExampleData =
 			[";", codeStyle.STATEMENT]
 		],
 		[
-			["\t", codeStyle.TEMP_REMOVE],
+			["\t", codeStyle.WHITESPACE],
 			["If ", codeStyle.CONDITIONAL],
 			["baz", codeStyle.LOCAL_VARIABLE_USE],
 			[" = ", codeStyle.METHOD_SEND],
@@ -155,7 +155,7 @@ export const e1: ExtendedCodeExampleData =
 			["\t[", codeStyle.BLOCK]
 		],
 		[
-			["\t\t", codeStyle.TEMP_REMOVE],
+			["\t\t", codeStyle.WHITESPACE],
 			["foo", codeStyle.LOCAL_CONSTANT_USE],
 			[" ::= ", codeStyle.LOCAL_CONSTANT_DEFINITION],
 			["\"", codeStyle.STRING_LITERAL],
@@ -164,7 +164,7 @@ export const e1: ExtendedCodeExampleData =
 			[";", codeStyle.STATEMENT]
 		],
 		[
-			["\t\t", codeStyle.TEMP_REMOVE],
+			["\t\t", codeStyle.WHITESPACE],
 			["slashChar", codeStyle.LOCAL_CONSTANT_USE],
 			[" ::= ", codeStyle.LOCAL_CONSTANT_DEFINITION],
 			["¢/", codeStyle.CHARACTER_LITERAL],
@@ -189,7 +189,7 @@ export const e1: ExtendedCodeExampleData =
 			[";", codeStyle.STATEMENT]
 		],
 		[
-			["\t", codeStyle.TEMP_REMOVE],
+			["\t", codeStyle.WHITESPACE],
 			["Exit ", codeStyle.NONLOCAL_CONTROL],
 			["$labelName", codeStyle.NONLOCAL_CONTROL, codeStyle.LABEL],
 			[" with ", codeStyle.NONLOCAL_CONTROL, codeStyle.NONLOCAL_CONTROL],
@@ -199,7 +199,7 @@ export const e1: ExtendedCodeExampleData =
 			[";", codeStyle.STATEMENT]
 		],
 		[
-			["\t", codeStyle.TEMP_REMOVE],
+			["\t", codeStyle.WHITESPACE],
 			["x ", codeStyle.RETURN_VALUE, codeStyle.PARAMETER_USE],
 			["+ ", codeStyle.RETURN_VALUE, codeStyle.METHOD_SEND],
 			["y", codeStyle.RETURN_VALUE, codeStyle.PARAMETER_USE]
@@ -221,7 +221,7 @@ export const e1: ExtendedCodeExampleData =
 			[";", codeStyle.STATEMENT]
 		],
 		[
-			[" ", codeStyle.TEMP_REMOVE] // TODO: no way to insert empty line without nbsp
+			[" ", codeStyle.WHITESPACE] // TODO: no way to insert empty line without nbsp
 		],
 		[
 			["Primitive ", codeStyle.METHOD_DEFINITION],
@@ -232,14 +232,14 @@ export const e1: ExtendedCodeExampleData =
 			["[", codeStyle.PRIMITIVE_BLOCK]
 		],
 		[
-			["\t", codeStyle.TEMP_REMOVE],
+			["\t", codeStyle.WHITESPACE],
 			["anAtom", codeStyle.PARAMETER_USE],
 			[" : ", codeStyle.PARAMETER_DEFINITION],
 			["atom", codeStyle.TYPE],
 			[",", codeStyle.PRIMITIVE_BLOCK]
 		],
 		[
-			["\t", codeStyle.TEMP_REMOVE],
+			["\t", codeStyle.WHITESPACE],
 			["key", codeStyle.PARAMETER_USE],
 			[" : ", codeStyle.PARAMETER_DEFINITION],
 			["atom", codeStyle.TYPE]
@@ -248,7 +248,7 @@ export const e1: ExtendedCodeExampleData =
 			["|", codeStyle.PRIMITIVE_BLOCK]
 		],
 		[
-			["\t", codeStyle.TEMP_REMOVE],
+			["\t", codeStyle.WHITESPACE],
 			["Primitive ", codeStyle.PRIMITIVE_BLOCK],
 			["AtomGetProperty ", codeStyle.PRIMITIVE_NAME],
 			["(", codeStyle.PRIMITIVE_BLOCK],
@@ -257,14 +257,14 @@ export const e1: ExtendedCodeExampleData =
 			["{", codeStyle.SET_LITERAL]
 		],
 		[
-			["\t\t", codeStyle.TEMP_REMOVE],
+			["\t\t", codeStyle.WHITESPACE],
 			["no-such-field code", codeStyle.METHOD_SEND],
 			["}", codeStyle.SET_LITERAL],
 			["ᵀ", codeStyle.TYPE],
 			[");", codeStyle.PRIMITIVE_BLOCK]
 		],
 		[
-			["\t", codeStyle.TEMP_REMOVE],
+			["\t", codeStyle.WHITESPACE],
 			["Private invoke _fail_primitive with ", codeStyle.NONLOCAL_CONTROL, codeStyle.METHOD_SEND],
 			["failureCode", codeStyle.NONLOCAL_CONTROL, codeStyle.PRIMITIVE_FAILURE_VARIABLE_USE]
 		],
@@ -274,7 +274,7 @@ export const e1: ExtendedCodeExampleData =
 			[";", codeStyle.STATEMENT]
 		],
 		[
-			[" ", codeStyle.TEMP_REMOVE]
+			[" ", codeStyle.WHITESPACE]
 		],
 		//		Special object "boolean" is special object 2;
 		[
@@ -286,7 +286,7 @@ export const e1: ExtendedCodeExampleData =
 			[";", codeStyle.STATEMENT]
 		],
 		[
-			[" ", codeStyle.TEMP_REMOVE]
+			[" ", codeStyle.WHITESPACE]
 		],
 		[
 			["Private macro ", codeStyle.MACRO_DEFINITION],
@@ -297,7 +297,7 @@ export const e1: ExtendedCodeExampleData =
 			["[", codeStyle.BLOCK]
 		],
 		[
-			["\t", codeStyle.TEMP_REMOVE],
+			["\t", codeStyle.WHITESPACE],
 			["firstBlock", codeStyle.PARAMETER_USE],
 			[" : ", codeStyle.PARAMETER_DEFINITION],
 			["block phrase ⇒ ", codeStyle.PHRASE_TYPE],
@@ -305,7 +305,7 @@ export const e1: ExtendedCodeExampleData =
 			[",", codeStyle.BLOCK]
 		],
 		[
-			["\t", codeStyle.TEMP_REMOVE],
+			["\t", codeStyle.WHITESPACE],
 			["secondBlock", codeStyle.PARAMETER_USE],
 			[" : ", codeStyle.PARAMETER_DEFINITION],
 			["block phrase ⇒ ", codeStyle.PHRASE_TYPE],
@@ -315,7 +315,7 @@ export const e1: ExtendedCodeExampleData =
 			["|", codeStyle.BLOCK]
 		],
 		[
-			["\t", codeStyle.TEMP_REMOVE],
+			["\t", codeStyle.WHITESPACE],
 			["first", codeStyle.LOCAL_CONSTANT_USE],
 			[" ::= ", codeStyle.LOCAL_CONSTANT_DEFINITION],
 			["seq «", codeStyle.PHRASE],
@@ -325,7 +325,7 @@ export const e1: ExtendedCodeExampleData =
 			[";", codeStyle.STATEMENT]
 		],
 		[
-			["\t", codeStyle.TEMP_REMOVE],
+			["\t", codeStyle.WHITESPACE],
 			["second", codeStyle.LOCAL_CONSTANT_USE],
 			[" ::= ", codeStyle.LOCAL_CONSTANT_DEFINITION],
 			["seq «", codeStyle.PHRASE],
@@ -335,7 +335,7 @@ export const e1: ExtendedCodeExampleData =
 			[";", codeStyle.STATEMENT]
 		],
 		[
-			["\t", codeStyle.TEMP_REMOVE],
+			["\t", codeStyle.WHITESPACE],
 			["first-of-seq «<", codeStyle.NONLOCAL_CONTROL, codeStyle.PHRASE],
 			["first", codeStyle.NONLOCAL_CONTROL, codeStyle.LOCAL_CONSTANT_USE],
 			[", ", codeStyle.NONLOCAL_CONTROL, codeStyle.PHRASE],

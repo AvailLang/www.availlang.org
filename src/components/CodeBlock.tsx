@@ -149,9 +149,12 @@ export const codeLineArray = (
 /** Either a getter for theme styling or a CSS property set. */
 export type StyleOption = ((theme: AppTheme) => CSSProperties) | CSSProperties;
 
+/**
+ * The complete collection of semantic code styles.
+ */
 interface CodeStyle
 {
-	TEMP_REMOVE: StyleOption,
+	WHITESPACE: StyleOption,
 	COMMENT: StyleOption,
 	DOCUMENTATION: StyleOption,
 	DOCUMENTATION_TAG: StyleOption,
@@ -209,9 +212,15 @@ interface CodeStyle
 
 export const codeStyle: CodeStyle =
 {
-	// TODO: Remove this when there are no more placeholder filler examples
-	// using it.
-	TEMP_REMOVE: (theme: AppTheme): CSSProperties =>
+	/*
+	Conventions:
+	- Module-scoped item names are italic; more narrow scope remains straight.
+	- Mutable item names are underlined; immutable item names are not.
+	 */
+
+	// Comments, documentation, doc tags, method sends, macro sends, and
+	// statement [terminators] are in grayscale.
+	WHITESPACE: (theme: AppTheme): CSSProperties =>
 	{
 		switch (theme)
 		{
@@ -223,15 +232,6 @@ export const codeStyle: CodeStyle =
 				throw errors.UNKNOWN_THEME();
 		}
 	},
-
-	/*
-	Conventions:
-	- Module-scoped item names are italic; more narrow scope remains straight.
-	- Mutable item names are underlined; immutable item names are not.
-	 */
-
-	// Comments, documentation, doc tags, method sends, macro sends, and
-	// statement [terminators] are in grayscale.
 	COMMENT: (theme: AppTheme): CSSProperties =>
 	{
 		switch (theme)
