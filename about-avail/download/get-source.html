@@ -133,21 +133,15 @@
 <p>Before installing Avail, you will need to make sure that you have obtained and installed the prerequisite software:</p>
 
 <ol>
-<li><p><a class="offsite" href="https://www.oracle.com/java/technologies/oracle-java-archive-downloads.html">Java</a>: You will need version 1.8, or later, of the Java Development Kit (JDK). Many modern systems already have some version of the JDK, so you should check your JDK version before obtaining and installing it from Oracle (or some other vendor). You can do so like this:</p>
+<li><p><a class="offsite" href="https://www.oracle.com/java/technologies/oracle-java-archive-downloads.html">Java</a>: You will need version 17, or later, of the Java Development Kit (JDK). Many modern systems already have some version of the JDK, so you should check your JDK version before obtaining and installing it from Oracle (or some other vendor). You can do so like this:</p>
 
 <div class="restricted-width-container"><div class="console code-block">$ javac -version</div></div>
 
 <p>And hopefully you get back something like this:</p>
 
-<div class="restricted-width-container"><div class="console code-block">javac 1.8.0_221</div></div>
+<div class="restricted-width-container"><div class="console code-block">javac 17.0.2</div></div>
 
-<p>Otherwise, the latest version of the Java SE Development Kit 8 can be obtained at:</p>
-
-<table style="margin: auto; margin-top: 15px; margin-bottom: 15px">
-<tr>
-<td><code><a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</a></code></td>
-</tr>
-</table>
+<p>Otherwise, the latest version of the Java SE Development Kit 17 can be obtained from Oracle or other vendors.  Links to Oracle's Java versions are notoriously brittle, so it's best to just search for it on their site and find a link that hasn't been broken yet.  We've had good experiences with OpenJDK, but other Java 17 JDKs can be used instead.</p>
 
 <p>Please follow any installation directions provided by the Oracle website or included with the JDK.</p>
 
@@ -211,40 +205,13 @@ extended with custom module roots as you develop your own modules.
 BUILD SUCCESSFUL in 23s
 19 actionable tasks: 19 executed</div></div>
 
-<p>If your transcript includes <code>BUILD SUCCESSFUL</code> near the end, then your build is ready for use. You may, of course, move the <code>distro</code> subdirectory to another user-specific or even system-wide location, and then update your <code>AVAIL_HOME</code> and <code>PATH</code> variables accordingly. Hereinafter we use $INSTALL to refer to the final destination of the <code>distro</code> directory.</p>
+<p>If your transcript includes <code>BUILD SUCCESSFUL</code> near the end, then your build is ready for use.  Refer to the Avail project's README.md file for additional instructions.</p>
 
-<h4 id="configuring">Configuring</h4>
 
-<p>In order to develop Avail libraries and programs, you will need to configure your environment appropriately. On Unix, this is best accomplished by updating your shell configuration file. On Windows, you can use the Control Panel to adjust the environment variables.</p>
-
-<p>The following steps should be taken to prepare your environment for Avail development:</p>
-
-<ol>
-	<li>Set the <code>AVAIL_HOME</code> environment variable to <code>$INSTALL</code>. <small>(You will need to put <code>$INSTALL</code> in <em>quotation marks</em> <code>"</code> <code class="unicode">(U+0022)</code> if it contains <em>spaces</em> <code class="unicode">(U+0020)</code>.)</small> The <a href="/about-avail/documentation/workbench.html">Avail workbench</a>, <code>avail-dev</code> on Unix and <code>avail-dev.bat</code> on vanilla Windows, uses this information to locate Avail, and will not run correctly without <code>AVAIL_HOME</code> being set.</li>
-
-<li style="margin-top: 15px">Update your <code>PATH</code> to include <code>$INSTALL/bin</code>. <small>(Again, on Unix systems you will need to put <code>$INSTALL</code> in quotation marks if it contains spaces.)</small> This is where <code>avail-dev</code> and <code>avail-dev.bat</code> are located. This enables your shell to find the command without the user needing to prefix its exact path or change the working directory.</li>
-
-<li style="margin-top: 15px">Set the <code>AVAIL_ROOTS</code> environment variable to a valid module roots path so that Avail can find its modules, or &hellip;</li>
-
-<li style="margin-top: 15px">&hellip; alternatively, you may start the Avail workbench without specifying <code>AVAIL_HOME</code> and use the <em>Preferences&hellip;</em> menu item to enter the module roots path, one module root at a time. Upon exiting the Avail workbench, this information is persisted for future sessions.</li>
-</ol>
-
-<p>A <strong>module roots path</strong> is a specification of locations that contain Avail code, in either binary or source form. A module roots path comprises several <strong>module root specifications</strong> separated by <em>semicolons</em> <code>;</code> <code class="unicode">(U+003B)</code>. (On Unix systems, you will need to put each semicolon in <em>apostrophes</em> <code>'</code> <code class="unicode">(U+0027)</code>, in order to hide it from the shell's command parser.)</p>
-
-<p>Each module root specification comprises a <strong>module root name</strong>, which is just a unique logical identifier, and a module root path. A module root name usually denotes a vendor or a project, and does not need to have any relationship to the file system. By convention, the module root name of the Avail standard library is <code>avail</code>, and the official collection of examples supported by The Avail Foundation is called <code>examples</code>. The Avail Foundation advises Avail developers to follow a <a class="offsite" href="https://en.wikipedia.org/wiki/Reverse_domain_name_notation">reverse DNS name convention</a>, like <code>com.acme.super-neato-project</code>, to prevent collision between module root names among several vendors and projects.</p>
-
-<p>A <strong>module root path</strong> is actually a conjunction of a binary repository path and a source module path, respectively, separated by a <em>comma</em> <code>,</code> <code class="unicode">(U+002C)</code>. A <strong>binary repository path</strong> locates a binary file that contains the compiled forms of Avail source modules. A <strong>source module path</strong> locates a directory containing Avail source modules. The same binary repository path may be used for many source paths. If a binary repository path does not refer to an existing file, then <code>avail-dev</code> will create and populate this file as needed. A source path must always refer to an existing directory that is readable by the user running <code>avail-dev</code>.
-
-<p>If <code>AVAIL_ROOTS</code> is not defined, then <code>avail-dev</code> will use the following module
-roots path by default:</p>
-
-<div class="restricted-width-container"><div class="code-block">avail=$HOME/.avail/repos/avail.repo,$INSTALL/src/avail;examples=$HOME/.avail/repos/examples.repo,$INSTALL/src/examples</div></div>
-
-<p>This default is suitable for interacting with the Avail system as shipped by The Avail Foundation, but not for developing your own Avail modules. To develop your own Avail modules, your <code>AVAIL_ROOTS</code> environment variable must at least include a module root specification for the Avail standard library, and it must also include module root specifications for your own Avail projects.</p>
 
 <p>Note that <code>avail-dev.bat</code> makes no effort to configure the environment. You must preconfigure the environment yourself, customize <code>avail-dev.bat</code> to suit your own needs, or use the Avail workbench to establish the module roots. <small>(A lack of Windows expertise on the part of The Avail Foundation is responsible for this minimality; hopefully <code>avail-dev.bat</code> will be richer in a future release.)</small></p>
 
-<p>For more information on this topic, please read about <a href="/about-avail/documentation/modules/module-discovery.html">module discovery</a>.</p>
+<p>For information about Avail's modules, please read <a href="/about-avail/documentation/modules/module-discovery.html">module discovery</a>.</p>
 
 <h3>After Installation</h3>
 
