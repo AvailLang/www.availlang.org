@@ -3,12 +3,20 @@
   <component name="CopilotDiffPersistence">
     <option name="pendingDiffs">
       <map>
+        <entry key="$PROJECT_DIR$/.github/workflows/jekyll.yml">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/.github/workflows/jekyll.yml" />
+              <option name="updatedContent" value="name: Deploy Jekyll site to Pages&#10;&#10;on:&#10;  push:&#10;    branches: [&quot;main&quot;]&#10;  workflow_dispatch:&#10;&#10;permissions:&#10;  contents: read&#10;  pages: write&#10;  id-token: write&#10;&#10;concurrency:&#10;  group: &quot;pages&quot;&#10;  cancel-in-progress: false&#10;&#10;jobs:&#10;  build:&#10;    runs-on: ubuntu-latest&#10;    steps:&#10;      - name: Checkout&#10;        uses: actions/checkout@v4&#10;&#10;      - name: Setup Ruby&#10;        uses: ruby/setup-ruby@v1&#10;        with:&#10;          ruby-version: '3.2'&#10;          bundler-cache: true&#10;&#10;      - name: Setup Pages&#10;        uses: actions/configure-pages@v4&#10;&#10;      - name: Build with Jekyll&#10;        run: bundle exec jekyll build --destination _site&#10;        env:&#10;          JEKYLL_ENV: production&#10;&#10;      - name: Upload artifact&#10;        uses: actions/upload-pages-artifact@v3&#10;&#10;  deploy:&#10;    environment:&#10;      name: github-pages&#10;      url: ${{ steps.deployment.outputs.page_url }}&#10;    runs-on: ubuntu-latest&#10;    needs: build&#10;    steps:&#10;      - name: Deploy to GitHub Pages&#10;        id: deployment&#10;        uses: actions/deploy-pages@v4" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/assets/main.scss">
           <value>
             <PendingDiffInfo>
               <option name="filePath" value="$PROJECT_DIR$/assets/main.scss" />
               <option name="originalContent" value="---&#10;ignore_placeholder: &quot;&quot;&#10;---&#10;&#10;@use &quot;../_sass/minima.scss&quot; as *;&#10;" />
-              <option name="updatedContent" value="---&#10;---&#10;&#10;@use &quot;../_sass/minima.scss&quot; as *;" />
+              <option name="updatedContent" value="@use &quot;../_sass/minima.scss&quot; as *;" />
             </PendingDiffInfo>
           </value>
         </entry>
