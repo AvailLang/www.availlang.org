@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/assets/main.scss">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/assets/main.scss" />
+              <option name="originalContent" value="---&#10;ignore_placeholder: &quot;&quot;&#10;---&#10;&#10;@use &quot;../_sass/minima.scss&quot; as *;&#10;" />
+              <option name="updatedContent" value="---&#10;---&#10;&#10;@use &quot;../_sass/minima.scss&quot; as *;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
