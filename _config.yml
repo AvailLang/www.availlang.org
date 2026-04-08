@@ -32,6 +32,12 @@ theme: minima
 plugins:
   - jekyll-feed
 
+minima:
+  sass:
+    variables:
+      grey-color-light: "#c9c9c9"
+      grey-color-dark: "#5e5e5e"
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
